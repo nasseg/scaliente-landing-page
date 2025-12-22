@@ -32,7 +32,7 @@ const Footer = () => (
             </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
-            © 2024 Scaliente. Tous droits réservés.
+            © {new Date().getFullYear()} Scaliente. Tous droits réservés.
         </div>
     </footer>
 );
