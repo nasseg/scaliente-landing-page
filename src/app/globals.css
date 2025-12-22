@@ -26,8 +26,8 @@ body {
   width: 100%;
   overflow-x: hidden;
   color: rgb(var(--foreground-rgb));
-  background: #0F1115;
-  /* Match footer color */
+  background: transparent;
+  /* Transparent to show WebGL effect */
   overscroll-behavior: none;
   /* Disable bounce completely */
 }
