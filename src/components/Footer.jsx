@@ -1,7 +1,7 @@
 import { TrendingUp } from 'lucide-react';
 
 const Footer = () => (
-    <footer className="liquid-glass py-12">
+    <footer className="bg-[#0F1115] border-t border-white/5 py-12 relative z-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="col-span-2">
                 <div className="flex items-center gap-2 mb-4">
