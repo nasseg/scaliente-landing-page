@@ -7,10 +7,23 @@
   }
 
   .liquid-glass {
-    @apply bg-slate-950/40 backdrop-blur-3xl border-y border-white/5;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    @apply bg-slate-950/40 backdrop-blur-2xl border-t border-t-white/10 border-b border-b-black/20;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    /* GPU isolation to prevent flickering with WebGL background */
+    isolation: isolate;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: backdrop-filter;
   }
+}
+
+/* Global GPU isolation for all backdrop-filter elements */
+[class*="backdrop-blur"] {
+  isolation: isolate;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 :root {

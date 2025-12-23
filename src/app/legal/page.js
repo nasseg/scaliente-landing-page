@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Shield, Lock, FileText, Trash2, Mail } from 'lucide-react';
+import { Shield, Lock, FileText, Trash2, Mail, Scale } from 'lucide-react';
 
 export const metadata = {
     title: 'Legal Center - Privacy & Terms',
@@ -22,7 +22,9 @@ export default function LegalPage() {
                         Scaliente
                     </Link>
                     <nav className="hidden sm:flex gap-6 text-sm font-medium text-neutral-600">
+                        <a href="#mentions" className="hover:text-rose-600 transition-colors">Mentions Légales</a>
                         <a href="#privacy" className="hover:text-rose-600 transition-colors">Privacy Policy</a>
+                        <a href="#cgv" className="hover:text-rose-600 transition-colors">CGV (Sales Terms)</a>
                         <a href="#terms" className="hover:text-rose-600 transition-colors">Terms of Service</a>
                         <a href="#deletion" className="hover:text-rose-600 transition-colors">Data Deletion</a>
                     </nav>
@@ -46,6 +48,45 @@ export default function LegalPage() {
 
                 {/* Legal Content Container */}
                 <div className="space-y-16">
+
+                    {/* MENTIONS LEGALES SECTION - ADDED */}
+                    <section id="mentions" className="scroll-mt-24">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
+                                <Scale size={24} />
+                            </div>
+                            <h2 className="text-3xl font-bold">Mentions Légales</h2>
+                        </div>
+
+                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
+                            <h3>1. Éditeur du Site</h3>
+                            <p>
+                                Le site <strong>Scaliente</strong> (accessible à l'adresse www.scaliente.com et app.scaliente.com) est édité par la société <strong>SCALIENTE LLC</strong>.
+                                <br />
+                                <strong>Forme juridique :</strong> Limited Liability Company (LLC)
+                                <br />
+                                <strong>Siège social :</strong> 1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA
+                                <br />
+                                <strong>Email de contact :</strong> <a href="mailto:scalientesolutions@gmail.com">scalientesolutions@gmail.com</a>
+                                <br />
+                                <strong>Directeur de la publication :</strong> SCALIENTE LLC
+                            </p>
+
+                            <h3>2. Hébergement</h3>
+                            <p>
+                                Le site est hébergé par la société <strong>Vercel Inc.</strong>
+                                <br />
+                                <strong>Adresse :</strong> 340 S Lemon Ave #4133 Walnut, CA 91789, USA
+                                <br />
+                                <strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">https://vercel.com</a>
+                            </p>
+
+                            <h3>3. Propriété Intellectuelle</h3>
+                            <p>
+                                L'ensemble de ce site relève de la législation internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les documents téléchargeables et les représentations iconographiques et photographiques. La reproduction de tout ou partie de ce site sur un support électronique ou papier quel qu'il soit est formellement interdite sauf autorisation expresse du directeur de la publication.
+                            </p>
+                        </div>
+                    </section>
 
                     {/* PRIVACY POLICY SECTION */}
                     <section id="privacy" className="scroll-mt-24">
@@ -102,6 +143,55 @@ export default function LegalPage() {
                             </ul>
                         </div>
                     </section>
+
+                    {/* CGV SECTION - ADDED */}
+                    <section id="cgv" className="scroll-mt-24">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
+                                <FileText size={24} />
+                            </div>
+                            <h2 className="text-3xl font-bold">Conditions Générales de Vente (CGV)</h2>
+                        </div>
+
+                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
+                            <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
+                                <p className="text-amber-800 text-sm">
+                                    <strong>Usage Professionnel Uniquement (B2B) :</strong> Les services de SCALIENTE sont exclusivement destinés aux professionnels (e-commerçants, agences). En souscrivant, vous reconnaissez agir à des fins professionnelles, ce qui exclut l'application du droit de la consommation (sauf dispositions d'ordre public).
+                                </p>
+                            </div>
+
+                            <h3>1. Objet</h3>
+                            <p>
+                                Les présentes Conditions Générales de Vente (CGV) régissent la fourniture des services SaaS proposés par SCALIENTE LLC ("le Prestataire") au Client ("le Client"). Toute souscription implique l'adhésion sans réserve à ces CGV.
+                            </p>
+
+                            <h3>2. Prix et Paiement</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                                <li><strong>Tarifs :</strong> Les prix sont indiqués en Euros ou Dollars hors taxes. SCALIENTE se réserve le droit de modifier ses tarifs à tout moment pour la période de renouvellement suivante, sous réserve d'en informer le Client au moins 30 jours à l'avance.</li>
+                                <li><strong>Facturation :</strong> Le paiement est exigible d'avance (terme à échoir) par carte bancaire via notre prestataire sécurisé Stripe.</li>
+                                <li><strong>Retard de paiement :</strong> Tout retard entraîne la suspension immédiate de l'accès aux services.</li>
+                            </ul>
+
+                            <h3>3. Durée et Résiliation</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                                <li><strong>Santé de l'abonnement :</strong> L'abonnement est conclu pour une durée indéterminée avec tacite reconduction mensuelle ou annuelle selon le plan choisi.</li>
+                                <li><strong>Annulation (Désabonnement) :</strong> Le Client peut résilier son abonnement à tout moment depuis son espace client. La résiliation prendra effet à la fin de la période de facturation en cours. <strong>Aucun remboursement prorata temporis n'est effectué pour la période entamée.</strong></li>
+                            </ul>
+
+                            <h3>4. Renonciation au Droit de Rétractation (Fin de Non-Recevoir)</h3>
+                            <p>
+                                Conformément à l'article L.221-28 du Code de la Consommation (et équivalents européens), le droit de rétractation ne peut être exercé pour les contrats de fourniture d'un contenu numérique non fourni sur un support matériel dont l'exécution a commencé après accord préalable exprès du consommateur et renoncement exprès à son droit de rétractation.
+                                <br /><br />
+                                <strong>En validant sa commande et en accédant immédiatement au service, le Client reconnait expressément que l'exécution du service commence immédiatement et renonce expressément à son droit de rétractation de 14 jours.</strong>
+                            </p>
+
+                            <h3>5. Limitation de Responsabilité</h3>
+                            <p>
+                                SCALIENTE LLC s'engage à une obligation de moyens. La responsabilité de SCALIENTE ne pourra être engagée qu'en cas de faute prouvée. En tout état de cause, la responsabilité globale de SCALIENTE, toutes causes confondues, est strictement limitée au montant total payé par le Client au cours des 3 derniers mois précédant le fait générateur. SCALIENTE ne saurait être tenu responsable des pertes indirectes (perte de chiffre d'affaires, perte de données, préjudice d'image).
+                            </p>
+                        </div>
+                    </section>
+
 
                     {/* TERMS OF SERVICE SECTION */}
                     <section id="terms" className="scroll-mt-24">

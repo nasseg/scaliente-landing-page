@@ -1,5 +1,5 @@
 const CTA = () => (
-    <section className="py-24 liquid-glass relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-orange-600/10"></div>
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Prêt à voir la vérité ?</h2>

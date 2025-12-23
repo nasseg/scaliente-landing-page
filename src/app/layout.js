@@ -18,10 +18,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
         <BackgroundEffect />
-        <main className="relative z-10 w-full min-h-screen">
+        <main
+          className="relative z-10 w-full min-h-screen"
+          style={{
+            isolation: 'isolate',
+            transform: 'translateZ(0)',
+          }}
+        >
           {children}
         </main>
       </body>

@@ -19,10 +19,12 @@ const Navbar = () => (
                 <a href="#pricing" className="hover:text-white transition-colors">Tarifs</a>
             </div>
             <div className="flex items-center gap-4">
-                <button className="hidden md:block text-sm text-gray-300 hover:text-white">Connexion</button>
-                <button className="bg-white text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                <a href="https://app.scaliente.com" className="hidden md:block text-sm text-gray-300 hover:text-white transition-colors">
+                    Connexion
+                </a>
+                <a href="#pricing" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
                     Essai Gratuit
-                </button>
+                </a>
             </div>
         </div>
     </nav>

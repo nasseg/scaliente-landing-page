@@ -1,4 +1,5 @@
 import { TrendingUp } from 'lucide-react';
+import Link from 'next/link';
 
 const Footer = () => (
     <footer className="bg-[#0F1115] border-t border-white/5 py-12 relative z-20">
@@ -17,17 +18,17 @@ const Footer = () => (
             <div>
                 <h4 className="text-white font-bold mb-4">Produit</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                    <li><a href="#" className="hover:text-orange-400">Fonctionnalités</a></li>
-                    <li><a href="#" className="hover:text-orange-400">Intégrations</a></li>
-                    <li><a href="#" className="hover:text-orange-400">Tarifs</a></li>
+                    <li><a href="/#features" className="hover:text-orange-400 transition-colors">Fonctionnalités</a></li>
+                    <li><a href="/#pricing" className="hover:text-orange-400 transition-colors">Tarifs</a></li>
+                    <li><a href="https://app.scaliente.com" className="hover:text-orange-400 transition-colors">Se connecter</a></li>
                 </ul>
             </div>
             <div>
                 <h4 className="text-white font-bold mb-4">Légal</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                    <li><a href="#" className="hover:text-orange-400">Confidentialité</a></li>
-                    <li><a href="#" className="hover:text-orange-400">CGU</a></li>
-                    <li><a href="#" className="hover:text-orange-400">Mentions Légales</a></li>
+                    <li><Link href="/legal#privacy" className="hover:text-orange-400 transition-colors">Confidentialité</Link></li>
+                    <li><Link href="/legal#terms" className="hover:text-orange-400 transition-colors">CGU</Link></li>
+                    <li><Link href="/legal" className="hover:text-orange-400 transition-colors">Mentions Légales</Link></li>
                 </ul>
             </div>
         </div>
