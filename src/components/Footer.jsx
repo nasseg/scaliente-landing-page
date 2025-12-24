@@ -39,7 +39,7 @@ const Footer = ({ content, lang }) => (
             </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-gray-600 text-sm">
-            <div>© {new Date().getFullYear()} Scaliente. {content?.rights || "Tous droits réservés."}</div>
+            <div>{content?.copyright?.replace('{{year}}', new Date().getFullYear()) || `© ${new Date().getFullYear()} Scaliente. Tous droits réservés.`}</div>
             <LanguageSelector currentLang={lang} position="top" />
         </div>
     </footer>

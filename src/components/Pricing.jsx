@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, HelpCircle, ArrowRight, ShieldCheck, Zap, Globe, Sparkles } from 'lucide-react';
 
 const Pricing = ({ content, common }) => {
-    const [isAnnual, setIsAnnual] = useState(false);
+    const [isAnnual, setIsAnnual] = useState(true);
 
     // Reconstruct plans from dictionary content if available, otherwise use defaults/placeholders to prevent crashes
     const plans = [
@@ -139,9 +139,9 @@ const Pricing = ({ content, common }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                     {plans.map((plan, idx) => {
                         const colors = colorClasses[plan.color];
-                        const price = isAnnual ? plan.price.annual : plan.price.monthly;
-                        const period = isAnnual ? `/${common?.year || 'an'}` : `/${common?.month || 'mois'}`;
-                        const monthlyEquivalent = isAnnual ? Math.round(plan.price.annual / 12) : plan.price.monthly;
+                        const monthlyEquivalent = Math.round(plan.price.annual / 12);
+                        const displayPrice = isAnnual ? monthlyEquivalent : plan.price.monthly;
+                        const period = `/${common?.month || 'mois'}`;
 
                         return (
                             <motion.div
@@ -170,15 +170,20 @@ const Pricing = ({ content, common }) => {
                                 </div>
 
                                 <div className="mb-8">
-                                    <div className="flex items-baseline gap-1">
+                                    <div className="flex items-baseline gap-2 flex-wrap">
+                                        {isAnnual && (
+                                            <span className="text-xl text-gray-500 line-through decoration-red-500/50 decoration-2">
+                                                {plan.price.monthly}€
+                                            </span>
+                                        )}
                                         <span className="text-4xl md:text-5xl font-bold text-white transition-all duration-300">
-                                            {price}€
+                                            {displayPrice}€
                                         </span>
                                         <span className="text-gray-500">{period}</span>
                                     </div>
                                     {isAnnual && (
                                         <p className={`text-sm mt-2 font-medium ${colors.text}`}>
-                                            {content?.monthlyEquivalent?.replace('{{price}}', monthlyEquivalent)}
+                                            {common?.billed || 'Facturé'} {plan.price.annual}€ /{common?.year || 'an'}
                                         </p>
                                     )}
                                 </div>

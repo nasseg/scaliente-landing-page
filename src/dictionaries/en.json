@@ -10,7 +10,8 @@
         "month": "month",
         "year": "year",
         "monthly": "Monthly",
-        "annual": "Annual"
+        "annual": "Annual",
+        "billed": "Billed"
     },
     "navbar": {
         "features": "Features",

@@ -10,7 +10,8 @@
         "month": "Monat",
         "year": "Jahr",
         "monthly": "Monatlich",
-        "annual": "Jährlich"
+        "annual": "Jährlich",
+        "billed": "Abgerechnet"
     },
     "navbar": {
         "features": "Funktionen",
