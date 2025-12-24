@@ -3,57 +3,58 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, X, HelpCircle, ArrowRight, ShieldCheck, Zap, Globe, Sparkles } from 'lucide-react';
 
-const Pricing = () => {
+const Pricing = ({ content, common }) => {
     const [isAnnual, setIsAnnual] = useState(false);
 
+    // Reconstruct plans from dictionary content if available, otherwise use defaults/placeholders to prevent crashes
     const plans = [
         {
-            name: 'Starter',
+            name: content?.plans?.starter?.name || 'Starter',
             color: 'green',
             badge: null,
-            desc: "Savoir enfin si tu gagnes de l'argent",
+            desc: content?.plans?.starter?.desc || "Savoir enfin si tu gagnes de l'argent",
             price: { monthly: 99, annual: 950 },
             features: [
-                { text: "1 Shop", included: true },
-                { text: "Profit réel journalier", included: true },
-                { text: "Ads + shipping + fees + outils", included: true },
-                { text: "Alerte jour non rentable", included: true },
-                { text: "Consolidation multi-shops", included: false },
-                { text: "Comparaison des shops", included: false },
+                { text: content?.plans?.starter?.features?.["1shop"], included: true },
+                { text: content?.plans?.starter?.features?.dailyProfit, included: true },
+                { text: content?.plans?.starter?.features?.allCosts, included: true },
+                { text: content?.plans?.starter?.features?.alert, included: true },
+                { text: content?.plans?.starter?.features?.consolidation, included: false },
+                { text: content?.plans?.starter?.features?.comparison, included: false },
             ],
-            cta: "Commencer avec Starter"
+            cta: content?.plans?.starter?.cta || "Commencer avec Starter"
         },
         {
-            name: 'Pro',
+            name: content?.plans?.pro?.name || 'Pro',
             color: 'blue',
-            badge: '⭐️ Le + Populaire',
-            desc: "Piloter plusieurs shops sans approximation",
+            badge: content?.plans?.pro?.badge || '⭐️ Le + Populaire',
+            desc: content?.plans?.pro?.desc || "Piloter plusieurs shops sans approximation",
             price: { monthly: 149, annual: 1430 },
             features: [
-                { text: "Jusqu'à 3 Shops", included: true, highlight: true },
-                { text: "Vue consolidée", included: true },
-                { text: "Comparaison des shops", included: true },
-                { text: "Décisions rapides (cut / scale)", included: true },
-                { text: "Analyse journalière précise", included: true },
-                { text: "Support prioritaire", included: true },
+                { text: content?.plans?.pro?.features?.["3shops"], included: true, highlight: true },
+                { text: content?.plans?.pro?.features?.consolidatedView, included: true },
+                { text: content?.plans?.pro?.features?.comparison, included: true },
+                { text: content?.plans?.pro?.features?.decisions, included: true },
+                { text: content?.plans?.pro?.features?.analysis, included: true },
+                { text: content?.plans?.pro?.features?.support, included: true },
             ],
-            cta: "Passer au Pro"
+            cta: content?.plans?.pro?.cta || "Passer au Pro"
         },
         {
-            name: 'Max',
+            name: content?.plans?.max?.name || 'Max',
             color: 'orange',
-            badge: 'Ultimate',
-            desc: "Maîtrise totale de la rentabilité multi-shops",
+            badge: content?.plans?.max?.badge || 'Ultimate',
+            desc: content?.plans?.max?.desc || "Maîtrise totale de la rentabilité multi-shops",
             price: { monthly: 299, annual: 2870 },
             features: [
-                { text: "Jusqu'à 7 Shops", included: true, highlight: true },
-                { text: "Multi-marques / multi-pays", included: true },
-                { text: "Historique long terme", included: true },
-                { text: "Comparaison avancée", included: true },
-                { text: "Accès anticipé features", included: true },
-                { text: "Onboarding + support dédié", included: true },
+                { text: content?.plans?.max?.features?.["7shops"], included: true, highlight: true },
+                { text: content?.plans?.max?.features?.multiBrand, included: true },
+                { text: content?.plans?.max?.features?.history, included: true },
+                { text: content?.plans?.max?.features?.advancedComparison, included: true },
+                { text: content?.plans?.max?.features?.earlyAccess, included: true },
+                { text: content?.plans?.max?.features?.dedicatedSupport, included: true },
             ],
-            cta: "Passer au Max"
+            cta: content?.plans?.max?.cta || "Passer au Max"
         }
     ];
 
@@ -102,7 +103,7 @@ const Pricing = () => {
                         className="inline-block"
                     >
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                            Investissez dans votre <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">contrôle</span>.
+                            {content?.header?.title?.main} <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">{content?.header?.title?.highlight}</span>.
                         </h2>
                     </motion.div>
 
@@ -113,12 +114,12 @@ const Pricing = () => {
                         transition={{ delay: 0.1 }}
                         className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto font-medium mb-8"
                     >
-                        &quot;On ne track pas des ventes. On track ce que tu gardes vraiment.&quot;
+                        &quot;{content?.header?.quote}&quot;
                     </motion.p>
 
                     {/* Toggle Switch */}
                     <div className="flex items-center justify-center gap-4 mb-12">
-                        <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-gray-500'}`}>Mensuel</span>
+                        <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-gray-500'}`}>{content?.toggle?.monthly}</span>
                         <button
                             onClick={() => setIsAnnual(!isAnnual)}
                             className="w-14 h-8 bg-[#1A1D24] border border-white/10 rounded-full relative p-1 transition-colors hover:border-white/20"
@@ -129,7 +130,7 @@ const Pricing = () => {
                             />
                         </button>
                         <span className={`text-sm font-medium ${isAnnual ? 'text-white' : 'text-gray-500'}`}>
-                            Annuel <span className="text-green-400 text-xs font-bold ml-1 bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">-20%</span>
+                            {content?.toggle?.annual} <span className="text-green-400 text-xs font-bold ml-1 bg-green-500/10 px-2 py-0.5 rounded-full border border-green-500/20">{content?.toggle?.discount}</span>
                         </span>
                     </div>
                 </div>
@@ -139,7 +140,7 @@ const Pricing = () => {
                     {plans.map((plan, idx) => {
                         const colors = colorClasses[plan.color];
                         const price = isAnnual ? plan.price.annual : plan.price.monthly;
-                        const period = isAnnual ? '/an' : '/mois';
+                        const period = isAnnual ? `/${common?.year || 'an'}` : `/${common?.month || 'mois'}`;
                         const monthlyEquivalent = isAnnual ? Math.round(plan.price.annual / 12) : plan.price.monthly;
 
                         return (
@@ -177,7 +178,7 @@ const Pricing = () => {
                                     </div>
                                     {isAnnual && (
                                         <p className={`text-sm mt-2 font-medium ${colors.text}`}>
-                                            Reviens à {monthlyEquivalent}€/mois
+                                            {content?.monthlyEquivalent?.replace('{{price}}', monthlyEquivalent)}
                                         </p>
                                     )}
                                 </div>
@@ -208,10 +209,10 @@ const Pricing = () => {
                                 </a>
 
                                 {/* Anti-objection for this plan */}
-                                {plan.name === 'Pro' && (
+                                {plan.name === (content?.plans?.pro?.name || 'Pro') && (
                                     <div className="mt-4 text-center">
                                         <p className="text-xs text-gray-500">
-                                            Le choix de 70% des e-commerçants
+                                            {content?.plans?.pro?.socialProof}
                                         </p>
                                     </div>
                                 )}
@@ -236,29 +237,25 @@ const Pricing = () => {
                                 <div className="p-2 bg-white/10 rounded-lg">
                                     <ShieldCheck className="w-6 h-6 text-white" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-white">Enterprise / Agency</h3>
+                                <h3 className="text-2xl font-bold text-white">{content?.enterprise?.title}</h3>
                             </div>
                             <p className="text-gray-400 max-w-md mb-6">
-                                Pour les agences et groupes e-commerce qui gèrent du gros volume. Shops illimités, accès équipe et permissions avancées.
+                                {content?.enterprise?.desc}
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <span className="flex items-center gap-2 text-sm text-gray-300">
-                                    <Check className="w-4 h-4 text-white" /> Shops illimités
-                                </span>
-                                <span className="flex items-center gap-2 text-sm text-gray-300">
-                                    <Check className="w-4 h-4 text-white" /> Reporting client
-                                </span>
-                                <span className="flex items-center gap-2 text-sm text-gray-300">
-                                    <Check className="w-4 h-4 text-white" /> SLA Support
-                                </span>
+                                {content?.enterprise?.features && Object.values(content.enterprise.features).map((feature, i) => (
+                                    <span key={i} className="flex items-center gap-2 text-sm text-gray-300">
+                                        <Check className="w-4 h-4 text-white" /> {feature}
+                                    </span>
+                                ))}
                             </div>
                         </div>
 
                         <div className="text-center md:text-right shrink-0">
-                            <div className="text-lg text-gray-400 font-medium mb-1">Sur devis</div>
-                            <div className="text-3xl font-bold text-white mb-6">500€ - 2000€<span className="text-sm font-normal text-gray-500">/mois</span></div>
+                            <div className="text-lg text-gray-400 font-medium mb-1">{content?.enterprise?.price?.custom}</div>
+                            <div className="text-3xl font-bold text-white mb-6">{content?.enterprise?.price?.range}<span className="text-sm font-normal text-gray-500">/{common?.month || 'mois'}</span></div>
                             <button className="px-8 py-3 bg-white text-black font-bold rounded-lg hover:bg-gray-200 transition-colors flex items-center gap-2 mx-auto md:mx-0">
-                                Contacter l&apos;équipe Sales <ArrowRight className="w-4 h-4" />
+                                {content?.enterprise?.cta} <ArrowRight className="w-4 h-4" />
                             </button>
                         </div>
                     </div>
@@ -267,7 +264,7 @@ const Pricing = () => {
                 {/* Bottom Anti-Objection */}
                 <div className="text-center mt-20">
                     <p className="text-gray-400 text-sm md:text-base italic max-w-2xl mx-auto">
-                        &quot;Une seule journée mal pilotée coûte plus cher qu&apos;un mois d&apos;abonnement. Les chiffres Shopify ne montrent pas ce que tu gardes.&quot;
+                        &quot;{content?.finalQuote}&quot;
                     </p>
                 </div>
             </div>

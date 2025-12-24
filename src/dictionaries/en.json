@@ -1,0 +1,381 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "error": "An error occurred",
+        "getStarted": "Get Started Now",
+        "viewDemo": "View Demo",
+        "login": "Login",
+        "freeTrial": "Free Trial",
+        "24hTrial": "24h Free Trial",
+        "month": "month",
+        "year": "year",
+        "monthly": "Monthly",
+        "annual": "Annual"
+    },
+    "navbar": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "comparison": "Before/After",
+        "login": "Login",
+        "freeTrial": "Free Trial"
+    },
+    "hero": {
+        "pill": "Precision down to the penny",
+        "title": "Your Real Profit.",
+        "subtitle": "No Surprises.",
+        "description": "Stop guessing. Scaliente centralizes your revenue and automatically deducts your expenses (Ads, COGS, Shipping, Taxes) to reveal your true profit. The powerful alternative at a fixed price.",
+        "ctaStart": "Get Started Now",
+        "ctaDemo": "View Demo",
+        "dashboard": {
+            "overview": "Overview",
+            "performance": "Your real-time performance",
+            "today": "Today",
+            "yesterday": "Yesterday",
+            "totalRevenue": "Total Revenue",
+            "netProfit": "Net Profit",
+            "netMargin": "Net Margin:",
+            "supplierCosts": "Supplier Costs",
+            "adSpend": "Ad Spend",
+            "avgOrderValue": "AOV",
+            "pending": "Pending",
+            "menu": {
+                "dashboard": "Dashboard",
+                "adsInsights": "Ads Insights",
+                "profit": "Profit",
+                "inbox": "Inbox",
+                "settings": "Settings",
+                "logout": "Log out"
+            }
+        }
+    },
+    "logoMarquee": {
+        "title": "Native integrations with"
+    },
+    "features": {
+        "title": {
+            "part1": "Centralize. Analyze.",
+            "part2": "Scale."
+        },
+        "description": "Scaliente connects to all your tools in one click. No more Excel spreadsheets and manual calculations at 2 AM.",
+        "cards": {
+            "ads": {
+                "title": "All your ads in one place",
+                "desc": "Stop switching between Business Manager, Google Ads, and TikTok. All your campaigns centralized in one click."
+            },
+            "profit": {
+                "title": "Real Net Profit (POAS)",
+                "desc": "We deduct everything: Product cost (COGS), shipping fees, Stripe/PayPal transaction fees, and taxes."
+            },
+            "realtime": {
+                "title": "Real Time",
+                "desc": "Your data refreshes every 5 minutes. Make decisions based on the present moment, not yesterday."
+            }
+        },
+        "howItWorks": "How it works",
+        "bento": {
+            "totalRevenue": "Total Revenue",
+            "ads": "Ads",
+            "cogs": "COGS",
+            "shipping": "Shipping",
+            "fees": "Fees",
+            "trueProfit": "Your True Profit",
+            "margin": "Margin:"
+        }
+    },
+    "beforeAfter": {
+        "title": {
+            "main": "A radical",
+            "highlight": "Before/After"
+        },
+        "subtitle": "Stop juggling 10 tabs. Centralize everything.",
+        "before": {
+            "label": "Current Chaos",
+            "tabs": {
+                "profitCalc": "Profit Calc v3",
+                "businessManager": "Business Manager",
+                "googleAds": "Google Ads",
+                "tiktokAds": "TikTok Ads",
+                "snapchatAds": "Snapchat Ads",
+                "pinterest": "Pinterest",
+                "shopifyAdmin": "Shopify Admin"
+            },
+            "excel": {
+                "filename": "Profit_Tracking_December_v3_FINAL.xlsx",
+                "columns": [
+                    "Date",
+                    "Rev",
+                    "Ads",
+                    "COGS",
+                    "Net"
+                ],
+                "error": "Calculation Error"
+            },
+            "quote": "\"I forgot to log yesterday's TikTok spend...\" 🤯"
+        },
+        "after": {
+            "label": "Scaliente Clarity",
+            "tabs": {
+                "scaliente": "Scaliente"
+            },
+            "dashboard": {
+                "title": "Dashboard",
+                "lastUpdate": "Last update: 2 min ago",
+                "live": "LIVE",
+                "netProfit": "Net Profit",
+                "vsYesterday": "+12% vs yesterday",
+                "margin": "Margin",
+                "stable": "Stable",
+                "synced": "Data synced"
+            },
+            "quote": "Everything is there. Automatic. Real-time. 🧘‍♂️"
+        }
+    },
+    "pricing": {
+        "header": {
+            "title": {
+                "main": "Invest in your",
+                "highlight": "control"
+            },
+            "quote": "\"We don't track sales. We track what you actually keep.\""
+        },
+        "toggle": {
+            "monthly": "Monthly",
+            "annual": "Annual",
+            "discount": "-20%"
+        },
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "desc": "Finally know if you're making money",
+                "features": {
+                    "1shop": "1 Shop",
+                    "dailyProfit": "Daily real profit",
+                    "allCosts": "Ads + shipping + fees + tools",
+                    "alert": "Non-profitable day alert",
+                    "consolidation": "Multi-shop consolidation",
+                    "comparison": "Shop comparison"
+                },
+                "cta": "Start with Starter"
+            },
+            "pro": {
+                "name": "Pro",
+                "badge": "⭐️ Most Popular",
+                "desc": "Drive multiple shops without approximation",
+                "features": {
+                    "3shops": "Up to 3 Shops",
+                    "consolidatedView": "Consolidated view",
+                    "comparison": "Shop comparison",
+                    "decisions": "Fast decisions (cut / scale)",
+                    "analysis": "Precise daily analysis",
+                    "support": "Priority support"
+                },
+                "cta": "Switch to Pro",
+                "socialProof": "The choice of 70% of e-merchants"
+            },
+            "max": {
+                "name": "Max",
+                "badge": "Ultimate",
+                "desc": "Total mastery of multi-shop profitability",
+                "features": {
+                    "7shops": "Up to 7 Shops",
+                    "multiBrand": "Multi-brand / multi-country",
+                    "history": "Long-term history",
+                    "advancedComparison": "Advanced comparison",
+                    "earlyAccess": "Early access features",
+                    "dedicatedSupport": "Onboarding + dedicated support"
+                },
+                "cta": "Switch to Max"
+            }
+        },
+        "enterprise": {
+            "title": "Enterprise / Agency",
+            "desc": "For agencies and e-commerce groups managing high volume. Unlimited shops, team access, and advanced permissions.",
+            "features": {
+                "unlimitedShops": "Unlimited Shops",
+                "clientReporting": "Client Reporting",
+                "slaSupport": "SLA Support"
+            },
+            "price": {
+                "range": "500€ - 2000€"
+            },
+            "cta": "Contact Sales Team"
+        },
+        "monthlyEquivalent": "Comes to {{price}}€/month",
+        "comparison": {
+            "title": "Detailed Comparison",
+            "features": {
+                "dataSources": "Data Sources (Shopify, Ads, Stripe)",
+                "updateFreq": "Update Frequency",
+                "history": "Data History",
+                "support": "Customer Support",
+                "apiAccess": "API Access",
+                "teams": "Team Management"
+            }
+        },
+        "antiObjection": {
+            "title": "Ironclad Guarantee",
+            "text": "The Pro plan costs {price}€/mo. If we don't help you save or earn at least 10x that amount in the first month, we'll refund you in full. No questions asked."
+        },
+        "finalQuote": "\"A single poorly managed day costs more than a month's subscription. Shopify numbers don't show what you keep.\""
+    },
+    "testimonials": {
+        "badge": "Testimonials",
+        "title": {
+            "main": "They took back",
+            "highlight": "control"
+        },
+        "subtitle": "E-merchants like you who stopped flying blind.",
+        "reviews": [
+            {
+                "text": "I used a premium competitor for 4 years. Way too complex for what I was actually doing. Scaliente gives me exactly what I need: my real profitability, in seconds. And most importantly, the price doesn't explode with my revenue.",
+                "role": "Founder, 7 figures/year",
+                "author": "Mark D."
+            },
+            {
+                "text": "My old tool was too expensive and misleading. I was making decisions based on useless metrics. Since I'm on Scaliente, my decisions are clear and support is ultra reactive. They add features continuously!",
+                "role": "E-commerce Owner, Multi-shops",
+                "author": "Sophie L."
+            },
+            {
+                "text": "I was posting my \"wins\" on X while in reality, they were disastrous days. With Scaliente, I discovered my 1K/day product was only 8% profitable. I could cut my losing tests and identify my real winners.",
+                "role": "Dropshipper, Heavy Testing",
+                "author": "Thomas B."
+            }
+        ],
+        "stats": {
+            "activeUsers": "+200 active e-merchants",
+            "satisfaction": "4.9/5 satisfaction",
+            "support": "Support in less than 2h"
+        }
+    },
+    "faq": {
+        "badge": "Support & Questions",
+        "title": "Answers to your doubts",
+        "subtitle": "Everything you need to know before taking back control.",
+        "questions": {
+            "slowDown": {
+                "q": "Will Scaliente slow down my Shopify site?",
+                "a": "Absolutely not. Scaliente works via the official Shopify API and connects in the background. No script is injected onto your storefront, so zero impact on loading times or Core Web Vitals."
+            },
+            "customTheme": {
+                "q": "My store uses a custom theme, is it compatible?",
+                "a": "Yes, Scaliente is compatible with 100% of Shopify themes (2.0 and older). Since we don't alter your theme code, everything works perfectly regardless of your visual setup."
+            },
+            "installation": {
+                "q": "Is it complicated to install? I'm not a dev.",
+                "a": "It's child's play. Installation takes 1 click via the Shopify App Store. Then, you connect your ad accounts (Facebook, Google, etc.) via a standard secure connection. In 2 minutes flat, your dashboard is ready."
+            },
+            "security": {
+                "q": "Is my data safe?",
+                "a": "Security is our top priority. We only use read-only access to analyze your ads. Your sales data is encrypted (AES-256) and we never sell your information to third parties."
+            },
+            "shopifyAnalytics": {
+                "q": "Why not just use Shopify Analytics?",
+                "a": "Shopify gives you your Revenue, not your real profit. It doesn't deduct your ad costs, transaction fees (Stripe/PayPal), or product costs (COGS) in real-time. Scaliente shows you what really stays in your pocket."
+            },
+            "commitment": {
+                "q": "Am I locked in?",
+                "a": "No, there's no commitment. You can cancel your subscription at any time from your dashboard in one click. Access will simply stop at the end of your current billing period."
+            }
+        }
+    },
+    "cta": {
+        "title": "Ready to see the truth?",
+        "subtitle": "Join the e-merchants who stopped losing money with blurry data.",
+        "button": "24h Free Trial",
+        "noCard": "No credit card required."
+    },
+    "footer": {
+        "tagline": "The ultimate profit tracker for ambitious e-merchants.",
+        "product": "Product",
+        "legal": "Legal",
+        "links": {
+            "features": "Features",
+            "pricing": "Pricing",
+            "login": "Login",
+            "privacy": "Privacy",
+            "cookies": "Cookies",
+            "terms": "Terms",
+            "legalMentions": "Legal Mentions"
+        },
+        "copyright": "© {{year}} Scaliente. All rights reserved."
+    },
+    "cookieConsent": {
+        "title": "🍪 We use cookies",
+        "text": "This site uses essential cookies for site operation and analytics cookies to improve your experience. By clicking \"Accept\", you consent to the use of all cookies. You can modify your preferences at any time.",
+        "learnMore": "Learn more",
+        "acceptAll": "Accept all cookies",
+        "essentialOnly": "Essential cookies only"
+    },
+    "metadata": {
+        "title": "Scaliente - Your Real E-commerce Profit",
+        "description": "Stop guessing your profitability. Scaliente centralizes your revenue and expenses (Ads, COGS, Shipping) to reveal your true profit. 24h free trial.",
+        "ogTitle": "Scaliente - Your Real E-commerce Profit",
+        "ogDescription": "Stop guessing your profitability. Scaliente centralizes your revenue and expenses to reveal your true profit.",
+        "twitterTitle": "Scaliente - Your Real E-commerce Profit",
+        "twitterDescription": "Stop guessing. See your real profit in real-time."
+    },
+    "legalPage": {
+        "title": "Legal Center",
+        "subtitle": "Transparency is core to our values. Below you will find our Privacy Policy, Terms of Service, and Data Deletion instructions.",
+        "updated": "Last Updated:",
+        "nav": {
+            "mentions": "Legal Mentions",
+            "privacy": "Privacy Policy",
+            "cookies": "Cookies",
+            "cgv": "Terms of Sale (CGV)",
+            "terms": "Terms of Service",
+            "deletion": "Data Deletion"
+        },
+        "sections": {
+            "mentions": {
+                "title": "Legal Mentions",
+                "editor": "Site Editor",
+                "hosting": "Hosting",
+                "ip": "Intellectual Property",
+                "ip_text": "All rights reserved. Reproduction prohibited without permission."
+            },
+            "privacy": {
+                "title": "Privacy Policy",
+                "intro": "This Privacy Policy explains how SCALIENTE LLC collects, uses, and discloses information about you.",
+                "collect": "Information Collected",
+                "collect_text": "We collect information you provide directly to us (account info, platform connections).",
+                "use": "Data Usage",
+                "use_text": "To provide, maintain, and improve our unified analytics dashboard.",
+                "sharing": "Data Sharing",
+                "sharing_text": "We do not sell your personal data."
+            },
+            "cookies": {
+                "title": "Cookie Policy",
+                "intro": "A cookie is a small text file stored on your browser.",
+                "types": "Types of Cookies Used",
+                "essential": "Essential cookies: Necessary.",
+                "analytics": "Analytics cookies: Anonymous stats.",
+                "manage": "Managing Preferences",
+                "manage_text": "Via browser settings or our banner."
+            },
+            "cgv": {
+                "title": "General Terms and Conditions of Sale (CGV)",
+                "b2b": "Professional Use Only (B2B)",
+                "price": "Price and Payment",
+                "termination": "Duration and Termination",
+                "termination_text": "Cancel anytime.",
+                "retraction": "Waiver of Withdrawal Right",
+                "retraction_text": "Waiver due to immediate delivery of digital service."
+            },
+            "terms": {
+                "title": "Terms of Service",
+                "acceptance": "Acceptance of Terms",
+                "description": "Description of Service",
+                "responsibilities": "User Responsibilities"
+            },
+            "deletion": {
+                "title": "Data Deletion Instructions",
+                "intro": "If you wish to remove your account and delete all associated data:",
+                "option1": "Option 1: Automated (Settings Page)",
+                "option2": "Option 2: Email Request",
+                "process": "What happens next?"
+            }
+        }
+    }
+}

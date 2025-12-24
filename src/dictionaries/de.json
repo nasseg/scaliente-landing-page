@@ -1,0 +1,381 @@
+{
+    "common": {
+        "loading": "Lädt...",
+        "error": "Ein Fehler ist aufgetreten",
+        "getStarted": "Jetzt starten",
+        "viewDemo": "Demo ansehen",
+        "login": "Anmelden",
+        "freeTrial": "Kostenlos testen",
+        "24hTrial": "24h kostenlos testen",
+        "month": "Monat",
+        "year": "Jahr",
+        "monthly": "Monatlich",
+        "annual": "Jährlich"
+    },
+    "navbar": {
+        "features": "Funktionen",
+        "pricing": "Preise",
+        "comparison": "Vorher/Nachher",
+        "login": "Anmelden",
+        "freeTrial": "Kostenlos testen"
+    },
+    "hero": {
+        "pill": "Präzision auf den Cent genau",
+        "title": "Ihr echter Gewinn.",
+        "subtitle": "Ohne Überraschungen.",
+        "description": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und zieht automatisch Ihre Ausgaben (Ads, COGS, Versand, Steuern) ab, um Ihren wahren Gewinn zu enthüllen. Die leistungsstarke Alternative zum Festpreis.",
+        "ctaStart": "Jetzt starten",
+        "ctaDemo": "Demo ansehen",
+        "dashboard": {
+            "overview": "Übersicht",
+            "performance": "Ihre Leistung in Echtzeit",
+            "today": "Heute",
+            "yesterday": "Gestern",
+            "totalRevenue": "Gesamtumsatz",
+            "netProfit": "Reingewinn",
+            "netMargin": "Nettomarge:",
+            "supplierCosts": "Lieferantenkosten",
+            "adSpend": "Werbeausgaben",
+            "avgOrderValue": "Warenkorbwert",
+            "pending": "Ausstehend",
+            "menu": {
+                "dashboard": "Dashboard",
+                "adsInsights": "Ads Insights",
+                "profit": "Gewinn",
+                "inbox": "Posteingang",
+                "settings": "Einstellungen",
+                "logout": "Abmelden"
+            }
+        }
+    },
+    "logoMarquee": {
+        "title": "Native Integrationen mit"
+    },
+    "features": {
+        "title": {
+            "part1": "Zentralisieren. Analysieren.",
+            "part2": "Skalieren."
+        },
+        "description": "Scaliente verbindet sich mit einem Klick mit all Ihren Tools. Keine Excel-Tabellen und manuellen Berechnungen um 2 Uhr morgens mehr.",
+        "cards": {
+            "ads": {
+                "title": "Alle Ihre Anzeigen an einem Ort",
+                "desc": "Schluss mit dem Wechsel zwischen Business Manager, Google Ads und TikTok. Alle Kampagnen zentralisiert mit einem Klick."
+            },
+            "profit": {
+                "title": "Echter Reingewinn (POAS)",
+                "desc": "Wir ziehen alles ab: Produktkosten (COGS), Versandkosten, Stripe/PayPal-Transaktionsgebühren und Steuern."
+            },
+            "realtime": {
+                "title": "Echtzeit",
+                "desc": "Ihre Daten werden alle 5 Minuten aktualisiert. Treffen Sie Entscheidungen basierend auf dem jetzigen Moment, nicht auf gestern."
+            }
+        },
+        "howItWorks": "Wie es funktioniert",
+        "bento": {
+            "totalRevenue": "Gesamtumsatz",
+            "ads": "Ads",
+            "cogs": "COGS",
+            "shipping": "Versand",
+            "fees": "Gebühren",
+            "trueProfit": "Ihr wahrer Gewinn",
+            "margin": "Marge:"
+        }
+    },
+    "beforeAfter": {
+        "title": {
+            "main": "Ein radikales",
+            "highlight": "Vorher/Nachher"
+        },
+        "subtitle": "Hören Sie auf, mit 10 Tabs zu jonglieren. Zentralisieren Sie alles.",
+        "before": {
+            "label": "Aktuelles Chaos",
+            "tabs": {
+                "profitCalc": "Profit Calc v3",
+                "businessManager": "Business Manager",
+                "googleAds": "Google Ads",
+                "tiktokAds": "TikTok Ads",
+                "snapchatAds": "Snapchat Ads",
+                "pinterest": "Pinterest",
+                "shopifyAdmin": "Shopify Admin"
+            },
+            "excel": {
+                "filename": "Gewinnverfolgung_Dezember_v3_FINAL.xlsx",
+                "columns": [
+                    "Datum",
+                    "Umsatz",
+                    "Ads",
+                    "COGS",
+                    "Netto"
+                ],
+                "error": "Berechnungsfehler"
+            },
+            "quote": "\"Ich habe vergessen, die TikTok-Ausgaben von gestern einzutragen...\" 🤯"
+        },
+        "after": {
+            "label": "Scaliente Klarheit",
+            "tabs": {
+                "scaliente": "Scaliente"
+            },
+            "dashboard": {
+                "title": "Dashboard",
+                "lastUpdate": "Letzte Akt.: vor 2 Min",
+                "live": "LIVE",
+                "netProfit": "Reingewinn",
+                "vsYesterday": "+12% vs gestern",
+                "margin": "Marge",
+                "stable": "Stabil",
+                "synced": "Daten synchronisiert"
+            },
+            "quote": "Alles ist da. Automatisch. In Echtzeit. 🧘‍♂️"
+        }
+    },
+    "pricing": {
+        "header": {
+            "title": {
+                "main": "Investieren Sie in Ihre",
+                "highlight": "Kontrolle"
+            },
+            "quote": "\"Wir tracken keine Verkäufe. Wir tracken, was Sie wirklich behalten.\""
+        },
+        "toggle": {
+            "monthly": "Monatlich",
+            "annual": "Jährlich",
+            "discount": "-20%"
+        },
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "desc": "Endlich wissen, ob Sie Geld verdienen",
+                "features": {
+                    "1shop": "1 Shop",
+                    "dailyProfit": "Täglicher echter Gewinn",
+                    "allCosts": "Ads + Versand + Gebühren + Tools",
+                    "alert": "Warnung bei unrentablem Tag",
+                    "consolidation": "Multi-Shop-Konsolidierung",
+                    "comparison": "Shop-Vergleich"
+                },
+                "cta": "Mit Starter beginnen"
+            },
+            "pro": {
+                "name": "Pro",
+                "badge": "⭐️ Beliebteste",
+                "desc": "Mehrere Shops ohne Schätzung steuern",
+                "features": {
+                    "3shops": "Bis zu 3 Shops",
+                    "consolidatedView": "Konsolidierte Ansicht",
+                    "comparison": "Shop-Vergleich",
+                    "decisions": "Schnelle Entscheidungen (Cut / Scale)",
+                    "analysis": "Präzise tägliche Analyse",
+                    "support": "Prioritäts-Support"
+                },
+                "cta": "Auf Pro wechseln",
+                "socialProof": "Die Wahl von 70% der E-Händler"
+            },
+            "max": {
+                "name": "Max",
+                "badge": "Ultimativ",
+                "desc": "Totale Beherrschung der Multi-Shop-Rentabilität",
+                "features": {
+                    "7shops": "Bis zu 7 Shops",
+                    "multiBrand": "Multi-Marke / Multi-Land",
+                    "history": "Langzeithistorie",
+                    "advancedComparison": "Erweiterter Vergleich",
+                    "earlyAccess": "Early Access Funktionen",
+                    "dedicatedSupport": "Onboarding + dedizierter Support"
+                },
+                "cta": "Auf Max wechseln"
+            }
+        },
+        "enterprise": {
+            "title": "Enterprise / Agentur",
+            "desc": "Für Agenturen und E-Commerce-Gruppen mit hohem Volumen. Unbegrenzte Shops, Teamzugriff und erweiterte Berechtigungen.",
+            "features": {
+                "unlimitedShops": "Unbegrenzte Shops",
+                "clientReporting": "Kunden-Reporting",
+                "slaSupport": "SLA Support"
+            },
+            "price": {
+                "range": "500€ - 2000€"
+            },
+            "cta": "Kontaktieren Sie das Sales-Team"
+        },
+        "monthlyEquivalent": "Entspricht {{price}}€/Monat",
+        "comparison": {
+            "title": "Detaillierter Vergleich",
+            "features": {
+                "dataSources": "Datenquellen (Shopify, Ads, Stripe)",
+                "updateFreq": "Aktualisierungsfrequenz",
+                "history": "Datenhistorie",
+                "support": "Kundensupport",
+                "apiAccess": "API-Zugriff",
+                "teams": "Teamverwaltung"
+            }
+        },
+        "antiObjection": {
+            "title": "Eiserne Garantie",
+            "text": "Der Pro-Plan kostet {price}€/Mo. Wenn wir Ihnen nicht helfen, im ersten Monat mindestens das 10-fache dieses Betrags zu sparen oder zu verdienen, erstatten wir Ihnen den vollen Betrag. Keine Fragen."
+        },
+        "finalQuote": "\"Ein einziger schlecht gesteuerter Tag kostet mehr als ein Monatsabonnement. Shopify-Zahlen zeigen nicht, was Sie behalten.\""
+    },
+    "testimonials": {
+        "badge": "Kundenstimmen",
+        "title": {
+            "main": "Sie haben die Kontrolle",
+            "highlight": "zurückgewonnen"
+        },
+        "subtitle": "E-Händler wie Sie, die aufgehört haben, blind zu fliegen.",
+        "reviews": [
+            {
+                "text": "Ich habe 4 Jahre lang einen Premium-Konkurrenten genutzt. Viel zu komplex für das, was ich wirklich tat. Scaliente gibt mir genau das, was ich brauche: meine echte Rentabilität in Sekunden. Und vor allem explodiert der Preis nicht mit meinem Umsatz.",
+                "role": "Gründer, 7-stellig/Jahr",
+                "author": "Mark D."
+            },
+            {
+                "text": "Mein altes Tool war zu teuer und führte mich in die Irre. Ich traf Entscheidungen auf Basis nutzloser Metriken. Seit ich bei Scaliente bin, sind meine Entscheidungen klar und der Support ist extrem reaktionsschnell.",
+                "role": "E-Händlerin, Multi-Shops",
+                "author": "Sophie L."
+            },
+            {
+                "text": "Ich postete meine 'Wins' auf X, während es in Wirklichkeit katastrophale Tage waren. Mit Scaliente entdeckte ich, dass mein 1K/Tag-Produkt nur 8% profitabel war. Ich konnte meine verlustbringenden Tests stoppen und meine wahren Gewinner identifizieren.",
+                "role": "Dropshipper, Intensives Testing",
+                "author": "Thomas B."
+            }
+        ],
+        "stats": {
+            "activeUsers": "+200 aktive E-Händler",
+            "satisfaction": "4.9/5 Zufriedenheit",
+            "support": "Support in weniger als 2h"
+        }
+    },
+    "faq": {
+        "badge": "Support & Fragen",
+        "title": "Antworten auf Ihre Zweifel",
+        "subtitle": "Alles, was Sie wissen müssen, bevor Sie die Kontrolle zurückgewinnen.",
+        "questions": {
+            "slowDown": {
+                "q": "Wird Scaliente meinen Shopify-Shop verlangsamen?",
+                "a": "Absolut nicht. Scaliente arbeitet über die offizielle Shopify-API und verbindet sich im Hintergrund. Es wird kein Skript in Ihren Storefront injiziert, also null Auswirkungen auf Ladezeiten oder Core Web Vitals."
+            },
+            "customTheme": {
+                "q": "Mein Shop verwendet ein benutzerdefiniertes Theme, ist es kompatibel?",
+                "a": "Ja, Scaliente ist mit 100% der Shopify-Themes (2.0 und älter) kompatibel. Da wir Ihren Theme-Code nicht ändern, funktioniert alles perfekt, unabhängig von Ihrer visuellen Konfiguration."
+            },
+            "installation": {
+                "q": "Ist die Installation kompliziert? Ich bin kein Entwickler.",
+                "a": "Es ist ein Kinderspiel. Die Installation erfolgt mit 1 Klick über den Shopify App Store. Dann verbinden Sie Ihre Werbekonten (Facebook, Google usw.) über eine sichere Standardverbindung. In 2 Minuten ist Ihr Dashboard bereit."
+            },
+            "security": {
+                "q": "Sind meine Daten sicher?",
+                "a": "Sicherheit ist unsere oberste Priorität. Wir verwenden nur Lesezugriff (Read-Only), um Ihre Anzeigen zu analysieren. Ihre Verkaufsdaten werden verschlüsselt (AES-256) und wir verkaufen Ihre Informationen niemals an Dritte."
+            },
+            "shopifyAnalytics": {
+                "q": "Warum nicht einfach Shopify Analytics nutzen?",
+                "a": "Shopify zeigt Ihnen Ihren Umsatz, nicht Ihren echten Gewinn. Es zieht Ihre Werbekosten, Transaktionsgebühren (Stripe/PayPal) oder Produktkosten (COGS) nicht in Echtzeit ab. Scaliente zeigt Ihnen, was wirklich in Ihrer Tasche bleibt."
+            },
+            "commitment": {
+                "q": "Bin ich langfristig gebunden?",
+                "a": "Nein, es gibt keine Bindung. Sie können Ihr Abonnement jederzeit mit einem Klick in Ihrem Dashboard kündigen. Der Zugriff endet einfach am Ende Ihres aktuellen Abrechnungszeitraums."
+            }
+        }
+    },
+    "cta": {
+        "title": "Bereit, die Wahrheit zu sehen?",
+        "subtitle": "Schließen Sie sich den E-Händlern an, die aufgehört haben, mit unscharfen Daten Geld zu verlieren.",
+        "button": "24h kostenlos testen",
+        "noCard": "Keine Kreditkarte erforderlich."
+    },
+    "footer": {
+        "tagline": "Der ultimative Profit-Tracker für ambitionierte E-Händler.",
+        "product": "Produkt",
+        "legal": "Rechtliches",
+        "links": {
+            "features": "Funktionen",
+            "pricing": "Preise",
+            "login": "Anmelden",
+            "privacy": "Datenschutz",
+            "cookies": "Cookies",
+            "terms": "AGB",
+            "legalMentions": "Impressum"
+        },
+        "copyright": "© {{year}} Scaliente. Alle Rechte vorbehalten."
+    },
+    "cookieConsent": {
+        "title": "🍪 Wir verwenden Cookies",
+        "text": "Diese Website verwendet wesentliche Cookies für den Betrieb der Website und Analyse-Cookies, um Ihre Erfahrung zu verbessern. Durch Klicken auf \"Akzeptieren\" stimmen Sie der Verwendung aller Cookies zu. Sie können Ihre Einstellungen jederzeit ändern.",
+        "learnMore": "Mehr erfahren",
+        "acceptAll": "Alle Cookies akzeptieren",
+        "essentialOnly": "Nur wesentliche Cookies"
+    },
+    "metadata": {
+        "title": "Scaliente - Ihr echter E-Commerce-Gewinn",
+        "description": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben (Ads, COGS, Versand), um Ihren wahren Gewinn zu enthüllen. 24h kostenlos testen.",
+        "ogTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
+        "ogDescription": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
+        "twitterTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
+        "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit."
+    },
+    "legalPage": {
+        "title": "Rechtszentrum",
+        "subtitle": "Transparenz gehört zu unseren Grundwerten. Unten finden Sie unser Impressum, unsere Datenschutzrichtlinie und AGB.",
+        "updated": "Zuletzt aktualisiert:",
+        "nav": {
+            "mentions": "Impressum",
+            "privacy": "Datenschutz",
+            "cookies": "Cookies",
+            "cgv": "AGB (Verkauf)",
+            "terms": "Nutzungsbedingungen",
+            "deletion": "Datenlöschung"
+        },
+        "sections": {
+            "mentions": {
+                "title": "Impressum",
+                "editor": "Herausgeber der Website",
+                "hosting": "Hosting",
+                "ip": "Geistiges Eigentum",
+                "ip_text": "Alle Rechte vorbehalten. Vervielfältigung ohne Genehmigung untersagt."
+            },
+            "privacy": {
+                "title": "Datenschutzrichtlinie",
+                "intro": "Diese Datenschutzrichtlinie erklärt, wie SCALIENTE LLC Informationen über Sie sammelt, verwendet und offenlegt.",
+                "collect": "Gesammelte Informationen",
+                "collect_text": "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen (Kontodaten, Plattformverbindungen).",
+                "use": "Datennutzung",
+                "use_text": "Bereitstellung, Wartung und Verbesserung unseres einheitlichen Analyse-Dashboards.",
+                "sharing": "Datenweitergabe",
+                "sharing_text": "Wir verkaufen Ihre persönlichen Daten nicht."
+            },
+            "cookies": {
+                "title": "Cookie-Richtlinie",
+                "intro": "Ein Cookie ist eine kleine Textdatei, die in Ihrem Browser gespeichert wird.",
+                "types": "Arten von Cookies",
+                "essential": "Essenzielle Cookies: Notwendig.",
+                "analytics": "Analyse-Cookies: Anonyme Statistiken.",
+                "manage": "Verwaltung Ihrer Einstellungen",
+                "manage_text": "Über Browsereinstellungen oder unser Banner."
+            },
+            "cgv": {
+                "title": "Allgemeine Verkaufsbedingungen (AGB)",
+                "b2b": "Nur für gewerbliche Nutzung (B2B)",
+                "price": "Preis und Zahlung",
+                "termination": "Laufzeit und Kündigung",
+                "termination_text": "Jederzeit kündbar.",
+                "retraction": "Verzicht auf Widerrufsrecht",
+                "retraction_text": "Verzicht aufgrund der sofortigen Bereitstellung der digitalen Dienstleistung."
+            },
+            "terms": {
+                "title": "Nutzungsbedingungen",
+                "acceptance": "Annahme der Bedingungen",
+                "description": "Leistungsbeschreibung",
+                "responsibilities": "Verantwortlichkeiten des Nutzers"
+            },
+            "deletion": {
+                "title": "Anweisungen zur Datenlöschung",
+                "intro": "Wenn Sie Ihr Konto und alle zugehörigen Daten löschen möchten:",
+                "option1": "Option 1: Automatisch (Einstellungen)",
+                "option2": "Option 2: Per E-Mail",
+                "process": "Was passiert als Nächstes?"
+            }
+        }
+    }
+}

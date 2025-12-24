@@ -43,7 +43,7 @@ const Logos = {
     ),
 };
 
-const LogoMarquee = () => {
+const LogoMarquee = ({ content }) => {
     const logos = [
         { name: "Shopify", Component: Logos.Shopify },
         { name: "Google", Component: Logos.Google },
@@ -57,7 +57,7 @@ const LogoMarquee = () => {
     return (
         <section className="py-10 relative overflow-hidden">
             <div className="text-center mb-6">
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">Intégrations natives avec</p>
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">{content?.title}</p>
             </div>
 
             <div className="flex relative w-full overflow-hidden mask-linear-fade">

@@ -4,7 +4,7 @@ import { ArrowRight, LayoutDashboard, BarChart3, Package, Layers, CreditCard } f
 import AnimatedGrid from './ui/AnimatedGrid';
 import Image from 'next/image';
 
-const Hero = () => {
+const Hero = ({ content, common }) => {
     const { scrollY } = useScroll();
     const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
@@ -19,27 +19,27 @@ const Hero = () => {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                     </span>
-                    La précision au centime près
+                    {content?.pill}
                 </motion.div>
 
                 <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                    Votre Profit Réel. <br />
+                    {content?.title} <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
-                        Sans Surprises.
+                        {content?.subtitle}
                     </span>
                 </motion.h1>
 
                 <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                    Arrêtez de deviner. Scaliente centralise vos revenus et déduit automatiquement vos dépenses (Ads, COGS, Shipping, Taxes) pour révéler votre vrai profit. L'alternative puissante à prix fixe.
+                    {content?.description}
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
                     <a href="https://app.scaliente.com" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 rounded-xl text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all flex items-center justify-center gap-2 group">
-                        Commencer Maintenant
+                        {content?.ctaStart}
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                     <a href="/#comparison" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all backdrop-blur-sm text-center">
-                        Voir la démo
+                        {content?.ctaDemo}
                     </a>
                 </motion.div>
 
@@ -71,11 +71,11 @@ const Hero = () => {
                                 {/* Menu Items */}
                                 <nav className="space-y-1">
                                     {[
-                                        { icon: LayoutDashboard, label: 'Dashboard', active: true },
-                                        { icon: BarChart3, label: 'Ads Insights', active: false },
-                                        { icon: CreditCard, label: 'Bénéfice', active: false },
-                                        { icon: Package, label: 'Inbox', active: false },
-                                        { icon: Layers, label: 'Paramètres', active: false },
+                                        { icon: LayoutDashboard, label: content?.dashboard?.menu?.dashboard || 'Dashboard', active: true },
+                                        { icon: BarChart3, label: content?.dashboard?.menu?.adsInsights || 'Ads Insights', active: false },
+                                        { icon: CreditCard, label: content?.dashboard?.menu?.profit || 'Bénéfice', active: false },
+                                        { icon: Package, label: content?.dashboard?.menu?.inbox || 'Inbox', active: false },
+                                        { icon: Layers, label: content?.dashboard?.menu?.settings || 'Paramètres', active: false },
                                     ].map((item, i) => (
                                         <div key={i} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${item.active ? 'bg-orange-500/10 text-orange-500 border-l-2 border-orange-500' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
                                             <item.icon className="w-5 h-5" />
@@ -88,7 +88,7 @@ const Hero = () => {
                             <div className="px-6 py-4 border-t border-white/5">
                                 <div className="flex items-center gap-3 text-gray-400 hover:text-white cursor-pointer">
                                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
-                                    <span className="hidden lg:block text-sm">Se déconnecter</span>
+                                    <span className="hidden lg:block text-sm">{content?.dashboard?.menu?.logout || 'Se déconnecter'}</span>
                                 </div>
                             </div>
                         </div>
@@ -97,7 +97,7 @@ const Hero = () => {
                         <div className="flex-1 bg-[#0F1115] text-white relative w-full flex flex-col">
                             {/* Top Header */}
                             <div className="h-16 border-b border-white/5 flex items-center justify-between px-6 md:px-8 bg-[#0F1115]">
-                                <div className="block md:hidden text-lg font-bold text-white">Dashboard</div>
+                                <div className="block md:hidden text-lg font-bold text-white">{content?.dashboard?.menu?.dashboard || 'Dashboard'}</div>
                                 <div className="hidden md:block"></div>
                                 <div className="flex items-center gap-4">
                                     <div className="flex items-center gap-2 bg-[#1A1D24] border border-white/10 px-3 py-1.5 rounded-lg">
@@ -114,7 +114,7 @@ const Hero = () => {
                                 <div className="bg-[#1A1D24] border border-white/10 rounded-2xl p-4 flex justify-between items-center">
                                     <div className="flex items-center gap-3 text-gray-300 font-medium">
                                         <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                        Aujourd'hui
+                                        {content?.dashboard?.today || "Aujourd'hui"}
                                     </div>
                                     <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                                 </div>
@@ -124,12 +124,12 @@ const Hero = () => {
                             <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1 pb-28 md:pb-8">
                                 <div className="hidden md:flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
                                     <div>
-                                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">Vue d'ensemble</h2>
-                                        <p className="text-gray-400 text-sm md:text-base">Vos performances en temps réel</p>
+                                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">{content?.dashboard?.overview || "Vue d'ensemble"}</h2>
+                                        <p className="text-gray-400 text-sm md:text-base">{content?.dashboard?.performance || "Vos performances en temps réel"}</p>
                                     </div>
                                     <div className="flex items-center gap-2 bg-[#1A1D24] border border-white/10 rounded-lg p-1 self-start sm:self-auto">
-                                        <button className="px-3 md:px-4 py-1.5 bg-white text-black rounded text-xs md:text-sm font-bold shadow-sm">Aujourd'hui</button>
-                                        <button className="px-3 md:px-4 py-1.5 text-gray-400 hover:text-white text-xs md:text-sm font-medium transition-colors">Hier</button>
+                                        <button className="px-3 md:px-4 py-1.5 bg-white text-black rounded text-xs md:text-sm font-bold shadow-sm">{content?.dashboard?.today || "Aujourd'hui"}</button>
+                                        <button className="px-3 md:px-4 py-1.5 text-gray-400 hover:text-white text-xs md:text-sm font-medium transition-colors">{content?.dashboard?.yesterday || "Hier"}</button>
                                     </div>
                                 </div>
 
@@ -139,7 +139,7 @@ const Hero = () => {
                                     {/* CA TOTAL - Top Row, Full Width */}
                                     <div className="col-span-12 bg-[#15181E] border border-white/5 rounded-3xl p-6 flex justify-between items-center">
                                         <div>
-                                            <div className="text-blue-400 text-xs font-bold uppercase mb-2">CA Total</div>
+                                            <div className="text-blue-400 text-xs font-bold uppercase mb-2">{content?.dashboard?.totalRevenue || "CA Total"}</div>
                                             <div className="text-3xl md:text-4xl font-bold text-white">68,540.20 €</div>
                                         </div>
                                     </div>

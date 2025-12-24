@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const CookieConsent = () => {
+const CookieConsent = ({ content }) => {
     const [showBanner, setShowBanner] = useState(false);
 
     useEffect(() => {
@@ -27,22 +27,18 @@ const CookieConsent = () => {
         setShowBanner(false);
     };
 
-    if (!showBanner) return null;
+    if (!showBanner || !content) return null;
 
     return (
         <div className="fixed bottom-0 left-0 right-0 z-50 p-4">
             <div className="max-w-4xl mx-auto bg-[#1A1D24] border border-white/10 rounded-2xl p-4 md:p-6 shadow-2xl backdrop-blur-xl">
                 <div className="flex flex-col gap-4">
                     <div>
-                        <p className="text-white text-sm md:text-base font-medium mb-2">
-                            🍪 Nous utilisons des cookies
-                        </p>
+                        <h3 className="text-lg font-bold text-white mb-2">{content?.title}</h3>
                         <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
-                            Ce site utilise des cookies essentiels au fonctionnement du site et des cookies d'analyse
-                            pour améliorer votre expérience. En cliquant sur "Accepter", vous consentez à l'utilisation
-                            de tous les cookies. Vous pouvez modifier vos préférences à tout moment.{' '}
+                            {content?.text}{' '}
                             <Link href="/legal#cookies" className="text-orange-400 hover:underline">
-                                En savoir plus
+                                {content?.learnMore}
                             </Link>
                         </p>
                     </div>
@@ -51,13 +47,13 @@ const CookieConsent = () => {
                             onClick={declineCookies}
                             className="px-5 py-2.5 text-sm text-gray-400 hover:text-white border border-white/10 rounded-lg hover:bg-white/5 transition-all"
                         >
-                            Cookies essentiels uniquement
+                            {content?.essentialOnly}
                         </button>
                         <button
                             onClick={acceptCookies}
                             className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-pink-600 text-white text-sm font-bold rounded-lg hover:shadow-lg hover:shadow-orange-500/20 transition-all"
                         >
-                            Accepter tous les cookies
+                            {content?.acceptAll}
                         </button>
                     </div>
                 </div>

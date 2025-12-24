@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Layers, DollarSign, Activity } from 'lucide-react';
 import FeatureCard from './ui/FeatureCard';
 
-const FeatureSection = () => {
+const FeatureSection = ({ content }) => {
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -23,26 +23,26 @@ const FeatureSection = () => {
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
                 <div className="mb-16 text-center">
-                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Centralisez. Analysez. <span className="text-orange-500">Scalez.</span></h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto">Scaliente se connecte à tous vos outils en un clic. Fini les tableurs Excel et les calculs manuels à 2h du matin.</p>
+                    <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">{content?.title?.part1} <span className="text-orange-500">{content?.title?.part2}</span></h2>
+                    <p className="text-gray-400 max-w-2xl mx-auto">{content?.description}</p>
                 </div>
 
                 {/* Feature Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     <FeatureCard
                         icon={<Layers className="text-purple-400" />}
-                        title="Toutes vos pubs au même endroit"
-                        desc="Fini de switcher entre Business Manager, Google Ads et TikTok. Toutes vos campagnes centralisées en un clic."
+                        title={content?.cards?.ads?.title}
+                        desc={content?.cards?.ads?.desc}
                     />
                     <FeatureCard
                         icon={<DollarSign className="text-green-400" />}
-                        title="Profit Net Réel (POAS)"
-                        desc="Nous déduisons tout : Coût produit (COGS), frais de port, frais de transaction Stripe/PayPal et taxes."
+                        title={content?.cards?.profit?.title}
+                        desc={content?.cards?.profit?.desc}
                     />
                     <FeatureCard
                         icon={<Activity className="text-orange-400" />}
-                        title="Temps Réel"
-                        desc="Vos données sont rafraîchies toutes les 5 minutes. Prenez des décisions basées sur l'instant présent, pas sur hier."
+                        title={content?.cards?.realtime?.title}
+                        desc={content?.cards?.realtime?.desc}
                     />
                 </div>
 
@@ -57,7 +57,7 @@ const FeatureSection = () => {
                     {/* Section Label */}
                     <motion.div variants={itemVariants} className="text-center mb-8">
                         <span className="inline-block px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 border border-orange-500/20 rounded-full">
-                            Comment ça marche
+                            {content?.howItWorks}
                         </span>
                     </motion.div>
 
@@ -70,7 +70,7 @@ const FeatureSection = () => {
                         >
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-sm font-bold">CA</div>
-                                <span className="text-white text-sm font-medium">Chiffre d'affaires Total</span>
+                                <span className="text-white text-sm font-medium">{content?.bento?.totalRevenue || "Chiffre d'affaires Total"}</span>
                             </div>
                             <span className="text-xl md:text-2xl font-bold text-white">68,540.20 €</span>
                         </motion.div>
@@ -78,28 +78,28 @@ const FeatureSection = () => {
                         {/* Expenses Row - 2x2 Grid */}
                         <motion.div variants={itemVariants} className="col-span-6 md:col-span-3 bg-red-500/5 border border-red-500/20 rounded-2xl p-4">
                             <div className="text-red-400 text-[10px] font-bold uppercase tracking-wider mb-2 flex items-center gap-1">
-                                <span className="text-lg">−</span> Ads
+                                <span className="text-lg">−</span> {content?.bento?.ads || "Ads"}
                             </div>
                             <div className="text-lg md:text-xl font-bold text-red-400">8,340 €</div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="col-span-6 md:col-span-3 bg-orange-500/5 border border-orange-500/20 rounded-2xl p-4">
                             <div className="text-orange-400 text-[10px] font-bold uppercase tracking-wider mb-2 flex items-center gap-1">
-                                <span className="text-lg">−</span> COGS
+                                <span className="text-lg">−</span> {content?.bento?.cogs || "COGS"}
                             </div>
                             <div className="text-lg md:text-xl font-bold text-orange-400">12,120 €</div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="col-span-6 md:col-span-3 bg-yellow-500/5 border border-yellow-500/20 rounded-2xl p-4">
                             <div className="text-yellow-400 text-[10px] font-bold uppercase tracking-wider mb-2 flex items-center gap-1">
-                                <span className="text-lg">−</span> Shipping
+                                <span className="text-lg">−</span> {content?.bento?.shipping || "Shipping"}
                             </div>
                             <div className="text-lg md:text-xl font-bold text-yellow-400">18,750 €</div>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="col-span-6 md:col-span-3 bg-purple-500/5 border border-purple-500/20 rounded-2xl p-4">
                             <div className="text-purple-400 text-[10px] font-bold uppercase tracking-wider mb-2 flex items-center gap-1">
-                                <span className="text-lg">−</span> Fees
+                                <span className="text-lg">−</span> {content?.bento?.fees || "Fees"}
                             </div>
                             <div className="text-lg md:text-xl font-bold text-purple-400">2,878 €</div>
                         </motion.div>
@@ -115,14 +115,14 @@ const FeatureSection = () => {
                                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-500/20 to-green-500/5 flex items-center justify-center text-green-400 font-bold">=</div>
                                     <div>
                                         <div className="flex items-center gap-2">
-                                            <span className="text-gray-400 text-xs font-medium uppercase tracking-wide">Votre Vrai Profit</span>
+                                            <span className="text-gray-400 text-xs font-medium uppercase tracking-wide">{content?.bento?.trueProfit || "Votre Vrai Profit"}</span>
                                             <span className="px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/10 border border-orange-500/20 rounded">Scaliente</span>
                                         </div>
                                         <span className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-300 to-green-500">26,450.90 €</span>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-2 bg-green-500/10 border border-green-500/20 px-3 py-1.5 rounded-lg">
-                                    <span className="text-gray-400 text-xs font-medium">Marge:</span>
+                                    <span className="text-gray-400 text-xs font-medium">{content?.bento?.margin || "Marge:"}</span>
                                     <span className="text-green-400 font-bold">38.6%</span>
                                 </div>
                             </div>

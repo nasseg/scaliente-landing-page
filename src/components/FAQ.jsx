@@ -73,8 +73,20 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     );
 };
 
-const FAQ = () => {
+const FAQ = ({ content }) => {
     const [openIndex, setOpenIndex] = useState(0);
+
+    // Map dictionary structure to component expectations
+    const faqs = content?.questions ? Object.values(content.questions).map(q => ({
+        question: q.q,
+        answer: q.a
+    })) : [
+        // Fallback
+        {
+            question: "Est-ce que Scaliente va ralentir mon site Shopify ?",
+            answer: "Absolument pas. Scaliente fonctionne via l'API officielle de Shopify et se connecte en arrière-plan. Aucun script n'est injecté sur votre vitrine (storefront), donc aucun impact sur vos temps de chargement ou vos Core Web Vitals."
+        }
+    ];
 
     return (
         <section className="py-24 relative z-10">
@@ -82,13 +94,13 @@ const FAQ = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 mb-6">
                         <HelpCircle className="w-4 h-4 text-orange-400" />
-                        <span className="text-sm font-medium text-orange-200">Support & Questions</span>
+                        <span className="text-sm font-medium text-orange-200">{content?.badge || "Support & Questions"}</span>
                     </div>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Réponses à vos doutes
+                        {content?.title}
                     </h2>
                     <p className="text-gray-400 text-lg">
-                        Tout ce que vous devez savoir avant de reprendre le contrôle.
+                        {content?.subtitle}
                     </p>
                 </div>
 

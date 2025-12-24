@@ -65,7 +65,29 @@ const TestimonialCard = ({ testimonial, index }) => (
     </motion.div>
 );
 
-const Testimonials = () => {
+const Testimonials = ({ content }) => {
+    // Map dictionaries data to match component expectations
+    // content.reviews is an array in dictionary
+    const testimonials = content?.reviews?.map(review => ({
+        // We might not have 'color' or 'avatar' in the dictionary, so we assign them based on the review index or name
+        name: review.author,
+        role: review.role,
+        avatar: review.author.charAt(0),
+        color: review.author.startsWith('T') ? "from-green-500 to-teal-500" : review.author.startsWith('S') ? "from-blue-500 to-purple-500" : "from-orange-500 to-pink-500", // Preserving original color logic based on mock data names essentially
+        rating: 5,
+        text: review.text
+    })) || [
+            // Fallback to avoid crash if dictionary is missing
+            {
+                name: "Maxime D.",
+                role: "Fondateur, 7 figures/an",
+                avatar: "M",
+                color: "from-orange-500 to-pink-500",
+                rating: 5,
+                text: "J'ai utilisé un concurrent premium pendant 4 ans. Beaucoup trop complexe pour ce que j'en faisais réellement. Scaliente me donne exactement ce dont j'ai besoin : ma rentabilité réelle, en quelques secondes. Et surtout, le prix n'explose pas avec mon chiffre d'affaires.",
+            }
+        ];
+
     return (
         <section className="py-16 relative overflow-hidden">
             <div className="absolute inset-0 pointer-events-none">
@@ -80,13 +102,13 @@ const Testimonials = () => {
                     className="text-center mb-16"
                 >
                     <span className="inline-block px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 border border-orange-500/20 rounded-full mb-6">
-                        Témoignages
+                        {content?.badge || "Témoignages"}
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
-                        Ils ont repris le <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-500">contrôle</span>
+                        {content?.title?.main} <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-500">{content?.title?.highlight}</span>
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg">
-                        Des e-commerçants comme vous qui ont arrêté de piloter à l'aveugle.
+                        {content?.subtitle}
                     </p>
                 </motion.div>
 
@@ -105,15 +127,15 @@ const Testimonials = () => {
                 >
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span>+200 e-commerçants actifs</span>
+                        <span>{content?.stats?.activeUsers || "+200 e-commerçants actifs"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-orange-500" />
-                        <span>4.9/5 de satisfaction</span>
+                        <span>{content?.stats?.satisfaction || "4.9/5 de satisfaction"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-500" />
-                        <span>Support en moins de 2h</span>
+                        <span>{content?.stats?.support || "Support en moins de 2h"}</span>
                     </div>
                 </motion.div>
             </div>
