@@ -24,8 +24,9 @@ export default function LegalPage() {
                     <nav className="hidden sm:flex gap-6 text-sm font-medium text-neutral-600">
                         <a href="#mentions" className="hover:text-rose-600 transition-colors">Mentions Légales</a>
                         <a href="#privacy" className="hover:text-rose-600 transition-colors">Privacy Policy</a>
-                        <a href="#cgv" className="hover:text-rose-600 transition-colors">CGV (Sales Terms)</a>
-                        <a href="#terms" className="hover:text-rose-600 transition-colors">Terms of Service</a>
+                        <a href="#cookies" className="hover:text-rose-600 transition-colors">Cookies</a>
+                        <a href="#cgv" className="hover:text-rose-600 transition-colors">CGV</a>
+                        <a href="#terms" className="hover:text-rose-600 transition-colors">Terms</a>
                         <a href="#deletion" className="hover:text-rose-600 transition-colors">Data Deletion</a>
                     </nav>
                 </div>
@@ -140,6 +141,51 @@ export default function LegalPage() {
                             <ul className="list-disc pl-5 space-y-2">
                                 <li><strong>Service Providers:</strong> Vendors who perform services on our behalf (e.g., hosting via Vercel, database via Supabase).</li>
                                 <li><strong>Compliance:</strong> In response to a request for information if we believe disclosure is in accordance with any applicable law or legal process.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    {/* COOKIES SECTION */}
+                    <section id="cookies" className="scroll-mt-24">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
+                                <Shield size={24} />
+                            </div>
+                            <h2 className="text-3xl font-bold">Politique des Cookies</h2>
+                        </div>
+
+                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
+                            <h3>1. Qu'est-ce qu'un cookie ?</h3>
+                            <p>
+                                Un cookie est un petit fichier texte stocké sur votre navigateur lorsque vous visitez un site web.
+                                Les cookies permettent au site de mémoriser vos préférences et d'améliorer votre expérience utilisateur.
+                            </p>
+
+                            <h3>2. Types de cookies utilisés</h3>
+                            <ul className="list-disc pl-5 space-y-2">
+                                <li><strong>Cookies essentiels :</strong> Nécessaires au fonctionnement du site (authentification, sécurité). Ces cookies ne peuvent pas être désactivés.</li>
+                                <li><strong>Cookies d'analyse :</strong> Nous aident à comprendre comment les visiteurs interagissent avec le site (pages vues, durée de visite). Ces données sont anonymisées.</li>
+                            </ul>
+
+                            <h3>3. Gestion de vos préférences</h3>
+                            <p>
+                                Lors de votre première visite, une bannière vous permet d'accepter ou de refuser les cookies non essentiels.
+                                Vous pouvez modifier vos préférences à tout moment en supprimant les cookies de votre navigateur.
+                            </p>
+
+                            <h3>4. Durée de conservation</h3>
+                            <p>
+                                Votre choix concernant les cookies est conservé pendant 12 mois. Passé ce délai, la bannière vous sera présentée à nouveau.
+                            </p>
+
+                            <h3>5. Comment supprimer les cookies ?</h3>
+                            <p>
+                                Vous pouvez supprimer les cookies à tout moment via les paramètres de votre navigateur :
+                            </p>
+                            <ul className="list-disc pl-5 space-y-1">
+                                <li><strong>Chrome :</strong> Paramètres → Confidentialité et sécurité → Cookies</li>
+                                <li><strong>Firefox :</strong> Préférences → Vie privée et sécurité → Cookies</li>
+                                <li><strong>Safari :</strong> Préférences → Confidentialité → Gérer les données</li>
                             </ul>
                         </div>
                     </section>

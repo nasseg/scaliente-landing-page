@@ -4,6 +4,7 @@ import LogoMarquee from '@/components/LogoMarquee';
 import FeatureSection from '@/components/Features';
 import BeforeAfter from '@/components/BeforeAfter';
 import Pricing from '@/components/Pricing';
+import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -19,6 +20,7 @@ export default function Home() {
         <FeatureSection />
         <BeforeAfter />
         <Pricing />
+        <Testimonials />
         <FAQ />
         <CTA />
       </div>

@@ -34,13 +34,13 @@ const Hero = () => {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-                    <button className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 rounded-xl text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all flex items-center justify-center gap-2 group">
+                    <a href="https://app.scaliente.com" className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 rounded-xl text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all flex items-center justify-center gap-2 group">
                         Commencer Maintenant
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                    <button className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all backdrop-blur-sm">
+                    </a>
+                    <a href="/#comparison" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all backdrop-blur-sm text-center">
                         Voir la démo
-                    </button>
+                    </a>
                 </motion.div>
 
                 {/* Dashboard Visualization with Beam Effect */}

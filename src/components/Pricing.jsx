@@ -8,7 +8,7 @@ const Pricing = () => {
 
     const plans = [
         {
-            name: 'Clarity',
+            name: 'Starter',
             color: 'green',
             badge: null,
             desc: "Savoir enfin si tu gagnes de l'argent",
@@ -21,12 +21,12 @@ const Pricing = () => {
                 { text: "Consolidation multi-shops", included: false },
                 { text: "Comparaison des shops", included: false },
             ],
-            cta: "Commencer avec Clarity"
+            cta: "Commencer avec Starter"
         },
         {
-            name: 'Control',
+            name: 'Pro',
             color: 'blue',
-            badge: '⭐️ Most Popular',
+            badge: '⭐️ Le + Populaire',
             desc: "Piloter plusieurs shops sans approximation",
             price: { monthly: 149, annual: 1430 },
             features: [
@@ -37,11 +37,11 @@ const Pricing = () => {
                 { text: "Analyse journalière précise", included: true },
                 { text: "Support prioritaire", included: true },
             ],
-            cta: "Passer au niveau Control"
+            cta: "Passer au Pro"
         },
         {
-            name: 'Command',
-            color: 'purple',
+            name: 'Max',
+            color: 'orange',
             badge: 'Ultimate',
             desc: "Maîtrise totale de la rentabilité multi-shops",
             price: { monthly: 299, annual: 2870 },
@@ -53,7 +53,7 @@ const Pricing = () => {
                 { text: "Accès anticipé features", included: true },
                 { text: "Onboarding + support dédié", included: true },
             ],
-            cta: "Obtenir la puissance Command"
+            cta: "Passer au Max"
         }
     ];
 
@@ -74,13 +74,13 @@ const Pricing = () => {
             button: 'bg-blue-500 text-white hover:bg-blue-600 border-transparent',
             glow: 'shadow-[0_0_30px_rgba(59,130,246,0.15)]'
         },
-        purple: {
-            bg: 'bg-purple-500/10',
-            border: 'border-purple-500/20',
-            text: 'text-purple-400',
-            badge: 'bg-purple-500',
-            button: 'hover:bg-purple-500 hover:text-white border-purple-500/30 text-purple-400',
-            glow: 'group-hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]'
+        orange: {
+            bg: 'bg-[#FF6B35]/10',
+            border: 'border-[#FF6B35]/20',
+            text: 'text-[#FF6B35]',
+            badge: 'bg-[#FF6B35]',
+            button: 'hover:bg-[#FF6B35] hover:text-white border-[#FF6B35]/30 text-[#FF6B35]',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(255,107,53,0.15)]'
         }
     };
 
@@ -197,15 +197,18 @@ const Pricing = () => {
                                     ))}
                                 </ul>
 
-                                <button className={`
-                                    w-full py-4 rounded-xl font-bold transition-all duration-300 border
-                                    ${colors.button}
-                                `}>
+                                <a
+                                    href="https://app.scaliente.com"
+                                    className={`
+                                        w-full py-4 rounded-xl font-bold transition-all duration-300 border block text-center
+                                        ${colors.button}
+                                    `}
+                                >
                                     {plan.cta}
-                                </button>
+                                </a>
 
                                 {/* Anti-objection for this plan */}
-                                {plan.name === 'Control' && (
+                                {plan.name === 'Pro' && (
                                     <div className="mt-4 text-center">
                                         <p className="text-xs text-gray-500">
                                             Le choix de 70% des e-commerçants
