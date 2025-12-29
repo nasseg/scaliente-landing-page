@@ -332,6 +332,12 @@
             "mentions": {
                 "title": "Legal Mentions",
                 "editor": "Site Editor",
+                "editor_text": "The site <strong>Scaliente</strong> (accessible at www.scaliente.com and app.scaliente.com) is published by <strong>SCALIENTE LLC</strong>.",
+                "legal_form_label": "Legal Form:",
+                "legal_form_value": "Limited Liability Company (LLC)",
+                "headquarters_label": "Headquarters:",
+                "headquarters_value": "1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA",
+                "email_label": "Contact Email:",
                 "hosting": "Hosting",
                 "ip": "Intellectual Property",
                 "ip_text": "This entire site is subject to international legislation on copyright, trademark law and, in general, on intellectual property. Any reproduction or representation, in whole or in part, of the pages, data and any other element constituting the site, by any process or medium whatsoever, is prohibited and constitutes an infringement without the authorization of the editor."

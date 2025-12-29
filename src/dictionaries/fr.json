@@ -333,6 +333,12 @@
             "mentions": {
                 "title": "Mentions Légales",
                 "editor": "Éditeur du Site",
+                "editor_text": "Le site <strong>Scaliente</strong> (accessible à l'adresse www.scaliente.com et app.scaliente.com) est édité par la société <strong>SCALIENTE LLC</strong>.",
+                "legal_form_label": "Forme juridique :",
+                "legal_form_value": "Limited Liability Company (LLC)",
+                "headquarters_label": "Siège social :",
+                "headquarters_value": "1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA",
+                "email_label": "Email de contact :",
                 "hosting": "Hébergement",
                 "ip": "Propriété Intellectuelle",
                 "ip_text": "L'ensemble de ce site relève de la législation internationale sur le droit d'auteur, le droit des marques et, de façon générale, sur la propriété intellectuelle. Toute reproduction ou représentation, intégrale ou partielle, des pages, des données et de tout autre élément constitutif au site, par quelque procédé ou support que ce soit, est interdite et constitue sans autorisation de l'éditeur une contrefaçon."

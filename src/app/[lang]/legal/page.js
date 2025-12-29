@@ -71,13 +71,13 @@ export default async function LegalPage({ params }) {
                         <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
                             <h3>1. {content?.sections?.mentions?.editor}</h3>
                             <p>
-                                Le site <strong>Scaliente</strong> (accessible à l&apos;adresse www.scaliente.com et app.scaliente.com) est édité par la société <strong>SCALIENTE LLC</strong>.
+                                <span dangerouslySetInnerHTML={{ __html: content?.sections?.mentions?.editor_text }} />
                                 <br />
-                                <strong>Forme juridique :</strong> Limited Liability Company (LLC)
+                                <strong>{content?.sections?.mentions?.legal_form_label}</strong> {content?.sections?.mentions?.legal_form_value}
                                 <br />
-                                <strong>Siège social :</strong> 1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA
+                                <strong>{content?.sections?.mentions?.headquarters_label}</strong> {content?.sections?.mentions?.headquarters_value}
                                 <br />
-                                <strong>Email de contact :</strong> <a href="mailto:scalientesolutions@gmail.com">scalientesolutions@gmail.com</a>
+                                <strong>{content?.sections?.mentions?.email_label}</strong> <a href="mailto:scalientesolutions@gmail.com">scalientesolutions@gmail.com</a>
                             </p>
 
                             <h3>2. {content?.sections?.mentions?.hosting}</h3>
