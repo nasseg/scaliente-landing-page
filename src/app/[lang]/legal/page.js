@@ -104,27 +104,14 @@ export default async function LegalPage({ params }) {
                         </div>
 
                         <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p>
-                                {content?.sections?.privacy?.intro}
-                            </p>
-                            <h3>1. {content?.sections?.privacy?.collect}</h3>
-                            <p>
-                                {content?.sections?.privacy?.collect_text}
-                            </p>
+                            <p className="mb-6">{content?.sections?.privacy?.intro}</p>
 
-                            <div className="my-8 p-6 bg-blue-50 border border-blue-100 rounded-xl">
-                                <h4 className="text-blue-900 text-lg font-bold mb-2 flex items-center gap-2">
-                                    <Shield size={18} /> Google Limited Use Disclosure
-                                </h4>    <p className="text-blue-800 text-sm leading-relaxed">
-                                    Scaliente&apos;s use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">Google API Services User Data Policy</a>, including the Limited Use requirements.
-                                </p>
-                            </div>
-
-                            <h3>2. {content?.sections?.privacy?.use}</h3>
-                            <p>{content?.sections?.privacy?.use_text}</p>
-
-                            <h3>3. {content?.sections?.privacy?.sharing}</h3>
-                            <p>{content?.sections?.privacy?.sharing_text}</p>
+                            {content?.sections?.privacy?.items?.map((item, index) => (
+                                <div key={index} className="mb-6">
+                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                                    <div className="text-neutral-600" dangerouslySetInnerHTML={{ __html: item.content }} />
+                                </div>
+                            ))}
                         </div>
                     </section>
 
@@ -182,9 +169,14 @@ export default async function LegalPage({ params }) {
                             <h2 className="text-3xl font-bold">{content?.sections?.terms?.title}</h2>
                         </div>
                         <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p>{content?.sections?.terms?.acceptance}</p>
-                            <p>{content?.sections?.terms?.description}</p>
-                            <p>{content?.sections?.terms?.responsibilities}</p>
+                            <p className="mb-6">{content?.sections?.terms?.intro}</p>
+
+                            {content?.sections?.terms?.items?.map((item, index) => (
+                                <div key={index} className="mb-6">
+                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                                    <div className="text-neutral-600" dangerouslySetInnerHTML={{ __html: item.content }} />
+                                </div>
+                            ))}
                         </div>
                     </section>
 
@@ -200,7 +192,7 @@ export default async function LegalPage({ params }) {
                         <div className="bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
                             <p className="text-neutral-600 mb-6">{content?.sections?.deletion?.intro}</p>
 
-                            <div className="grid gap-6 md:grid-cols-2">
+                            <div className="grid gap-6 md:grid-cols-2 mb-6">
                                 <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
                                     <h4 className="font-bold text-lg mb-2">{content?.sections?.deletion?.option1}</h4>
                                 </div>
@@ -210,6 +202,11 @@ export default async function LegalPage({ params }) {
                                         <Mail size={16} /> scalientesolutions@gmail.com
                                     </a>
                                 </div>
+                            </div>
+
+                            <div className="bg-rose-50 p-6 rounded-xl text-sm text-neutral-700">
+                                <h4 className="font-bold mb-2">{content?.sections?.deletion?.process}</h4>
+                                <p>{content?.sections?.deletion?.process_text}</p>
                             </div>
                         </div>
                     </section>

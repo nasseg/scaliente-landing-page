@@ -335,48 +335,101 @@
                 "editor": "Éditeur du Site",
                 "hosting": "Hébergement",
                 "ip": "Propriété Intellectuelle",
-                "ip_text": "L'ensemble de ce site relève de la législation internationale sur le droit d'auteur."
+                "ip_text": "L'ensemble de ce site relève de la législation internationale sur le droit d'auteur, le droit des marques et, de façon générale, sur la propriété intellectuelle. Toute reproduction ou représentation, intégrale ou partielle, des pages, des données et de tout autre élément constitutif au site, par quelque procédé ou support que ce soit, est interdite et constitue sans autorisation de l'éditeur une contrefaçon."
             },
             "privacy": {
                 "title": "Politique de Confidentialité",
-                "intro": "Cette politique explique comment SCALIENTE LLC collecte, utilise et protège vos informations.",
-                "collect": "Informations collectées",
-                "collect_text": "Nous collectons les informations que vous nous fournissez directement (compte, connexion plateformes).",
-                "use": "Utilisation des données",
-                "use_text": "Pour fournir, maintenir et améliorer notre dashboard unifié.",
-                "sharing": "Partage des données",
-                "sharing_text": "Nous ne vendons pas vos données personnelles."
+                "intro": "Chez SCALIENTE LLC, nous prenons la protection de vos données très au sérieux. Cette politique de confidentialité détaille comment nous collectons, utilisons, et protégeons vos informations personnelles lorsque vous utilisez notre application Scaliente.",
+                "items": [
+                    {
+                        "title": "1. Collecte des Informations",
+                        "content": "Nous collectons les types d'informations suivants pour fournir notre service :<br/><br/><strong>a) Informations de Compte :</strong> Lorsque vous créez un compte, nous collectons votre nom, adresse email et mot de passe chiffré.<br/><strong>b) Données des Plateformes Connectées :</strong> Avec votre autorisation explicite (via OAuth), nous accédons aux données de vos boutiques Shopify (commandes, produits) et de vos comptes publicitaires (Meta Ads, Google Ads, TikTok Ads, Snapchat Ads, Pinterest Ads) pour calculer vos métriques de profitabilité. Nous ne collectons que les données strictement nécessaires (dépenses publicitaires, revenus, coûts)."
+                    },
+                    {
+                        "title": "2. Utilisation des Données",
+                        "content": "Vos données sont utilisées exclusivement pour :<br/>- Vous fournir les tableaux de bord et analyses de profitabilité en temps réel.<br/>- Améliorer nos services et développer de nouvelles fonctionnalités.<br/>- Assurer la sécurité de votre compte et prévenir la fraude.<br/>- Communiquer avec vous concernant votre abonnement ou des mises à jour importantes."
+                    },
+                    {
+                        "title": "3. Partage des Données",
+                        "content": "<strong>Nous ne vendons jamais vos données personnelles.</strong> Nous partageons vos informations uniquement avec les tiers suivants, nécessaires au fonctionnement du service :<br/>- <strong>Vercel & Supabase :</strong> Pour l'hébergement et la base de données (sécurisés et conformes GDPR/CCPA).<br/>- <strong>Stripe :</strong> Pour le traitement sécurisé des paiements.<br/>- <strong>Crisp :</strong> Pour le support client (chat).<br/><br/>Nous exigeons de tous nos sous-traitants qu'ils respectent des normes strictes de sécurité et de confidentialité."
+                    },
+                    {
+                        "title": "4. Divulgation Google Limited Use",
+                        "content": "L'utilisation par Scaliente des informations reçues des API Google respectera la <a href='https://developers.google.com/terms/api-services-user-data-policy' target='_blank' class='underline hover:text-rose-600'>Politique relative aux données utilisateur des services API Google</a>, y compris les exigences d'utilisation limitée (Limited Use requirements)."
+                    },
+                    {
+                        "title": "5. Conformité Meta Platform Terms",
+                        "content": "Conformément aux conditions de la plateforme Meta :<br/>- Nous n'utilisons les données Meta Ads que pour fournir des analyses agrégées à l'utilisateur.<br/>- Nous ne transférons pas, ne vendons pas et n'utilisons pas ces données pour la surveillance ou le profilage en dehors du service Scaliente.<br/>- Vous pouvez révoquer l'accès de Scaliente à vos données Meta à tout moment via les paramètres de votre compte Facebook."
+                    },
+                    {
+                        "title": "6. Sécurité des Données",
+                        "content": "Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles robustes pour protéger vos données : chiffrement en transit (TLS/SSL) et au repos (AES-256), contrôles d'accès stricts et audits de sécurité réguliers."
+                    },
+                    {
+                        "title": "7. Vos Droits",
+                        "content": "Conformément au RGPD et au CCPA, vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données. Pour exercer ces droits, contactez-nous à <a href='mailto:scalientesolutions@gmail.com' class='underline hover:text-rose-600'>scalientesolutions@gmail.com</a>."
+                    },
+                    {
+                        "title": "8. Conservation des Données",
+                        "content": "Nous conservons vos données aussi longtemps que votre compte est actif. Si vous supprimez votre compte, vos données sont supprimées de nos serveurs actifs immédiatement et de nos sauvegardes sous 30 jours, sauf obligation légale contraire."
+                    }
+                ]
             },
             "cookies": {
                 "title": "Politique des Cookies",
-                "intro": "Un cookie est un petit fichier texte stocké sur votre navigateur.",
+                "intro": "Un cookie est un petit fichier texte stocké sur votre terminal lors de la visite de notre site.",
                 "types": "Types de cookies utilisés",
-                "essential": "Cookies essentiels : Nécessaires.",
-                "analytics": "Cookies d'analyse : Statistiques anonymes.",
+                "essential": "Cookies Essentiels : Indispensables au fonctionnement du site (authentification, sécurité). Ils ne peuvent pas être désactivés.",
+                "analytics": "Cookies d'Analyse : Nous aident à comprendre comment le site est utilisé pour l'améliorer. Nous utilisons des outils respectueux de la vie privée.",
                 "manage": "Gestion de vos préférences",
-                "manage_text": "Via les paramètres de votre navigateur ou notre bannière."
+                "manage_text": "Vous pouvez configurer votre navigateur pour refuser tous les cookies ou être alerté lorsqu'un cookie est envoyé. Toutefois, certaines fonctionnalités du site peuvent ne pas fonctionner correctement sans cookies essentiels."
             },
             "cgv": {
                 "title": "Conditions Générales de Vente (CGV)",
                 "b2b": "Usage Professionnel Uniquement (B2B)",
                 "price": "Prix et Paiement",
                 "termination": "Durée et Résiliation",
-                "termination_text": "Résiliation à tout moment.",
+                "termination_text": "L'abonnement est sans engagement. Vous pouvez le résilier à tout moment depuis votre dashboard. La résiliation prendra effet à la fin de la période de facturation en cours.",
                 "retraction": "Renonciation au Droit de Rétractation",
-                "retraction_text": "Renoncement du fait de la fourniture immédiate du service numérique."
+                "retraction_text": "Conformément à la loi, en souscrivant à Scaliente, vous acceptez la fourniture immédiate du service numérique et renoncez expressément à votre droit de rétractation de 14 jours. Toutefois, nous offrons une garantie 'Satisfait ou Remboursé' sous conditions (voir page Tarifs)."
             },
             "terms": {
-                "title": "Conditions d'Utilisation (Terms)",
-                "acceptance": "Acceptation des conditions",
-                "description": "Description du service",
-                "responsibilities": "Responsabilités de l'utilisateur"
+                "title": "Conditions Générales d'Utilisation (CGU)",
+                "intro": "Bienvenue sur Scaliente. En accédant à notre site web et en utilisant nos services, vous acceptez d'être lié par les présentes Conditions Générales d'Utilisation.",
+                "items": [
+                    {
+                        "title": "1. Objet du Service",
+                        "content": "Scaliente est une solution SaaS (Software as a Service) d'analyse de données pour les e-commerçants. Elle agrège les données de vente et de publicité pour calculer la rentabilité. Le service est fourni 'en l'état'."
+                    },
+                    {
+                        "title": "2. Compte Utilisateur",
+                        "content": "Vous êtes responsable de maintenir la confidentialité de votre compte et de votre mot de passe. Toutes les activités effectuées sous votre compte relèvent de votre responsabilité. Vous vous engagez à fournir des informations exactes et complètes lors de l'inscription."
+                    },
+                    {
+                        "title": "3. Conditions Financières",
+                        "content": "L'accès aux services complets de Scaliente nécessite un abonnement payant (mensuel ou annuel). Les paiements sont sécurisés par Stripe. Les prix affichés sont en Euros ou Dollars et hors taxes, sauf indication contraire. Tout défaut de paiement peut entraîner la suspension du compte."
+                    },
+                    {
+                        "title": "4. Propriété Intellectuelle (Utilisateur)",
+                        "content": "Vous conservez tous les droits sur les données que vous importez dans Scaliente. Vous nous accordez une licence mondiale, non exclusive et gratuite pour utiliser, héberger et analyser ces données dans le seul but de vous fournir le service."
+                    },
+                    {
+                        "title": "5. Limitation de Responsabilité",
+                        "content": "Dans toute la mesure permise par la loi, SCALIENTE LLC ne pourra être tenue responsable des dommages indirects, incidents, spéciaux ou consécutifs, y compris la perte de profits ou de données, résultant de l'utilisation ou de l'impossibilité d'utiliser le service."
+                    },
+                    {
+                        "title": "6. Loi Applicable et Juridiction",
+                        "content": "Ces conditions sont régies par les lois de l'État du Wyoming, USA. Tout litige relatif à ces conditions sera soumis à la compétence exclusive des tribunaux du Wyoming."
+                    }
+                ]
             },
             "deletion": {
                 "title": "Instructions de Suppression de Données",
-                "intro": "Si vous souhaitez supprimer votre compte et toutes les données associées :",
-                "option1": "Option 1 : Automatique (depuis les paramètres)",
-                "option2": "Option 2 : Par email",
-                "process": "Que se passe-t-il ensuite ?"
+                "intro": "Vous avez le contrôle total sur vos données. Voici comment demander leur suppression définitive :",
+                "option1": "Option 1 : Automatique (Recommandé)",
+                "option2": "Option 2 : Demande par Email",
+                "process": "Que se passe-t-il ensuite ?",
+                "process_text": "Une fois la demande reçue (ou l'action effectuée via le dashboard), nous supprimons instantanément vos clés API et tokens d'accès. Vos données historiques sont purgées de nos bases de données actives sous 24h et de nos sauvegardes sous 30 jours."
             }
         }
     }

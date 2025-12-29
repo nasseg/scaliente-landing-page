@@ -317,14 +317,14 @@
         "twitterDescription": "Stop guessing. See your real profit in real-time."
     },
     "legalPage": {
-        "title": "Legal Center",
+        "title": "Legal Information",
         "subtitle": "Transparency is core to our values. Below you will find our Privacy Policy, Terms of Service, and Data Deletion instructions.",
         "updated": "Last Updated:",
         "nav": {
             "mentions": "Legal Mentions",
             "privacy": "Privacy Policy",
             "cookies": "Cookies",
-            "cgv": "Terms of Sale (CGV)",
+            "cgv": "Terms of Sale",
             "terms": "Terms of Service",
             "deletion": "Data Deletion"
         },
@@ -334,48 +334,101 @@
                 "editor": "Site Editor",
                 "hosting": "Hosting",
                 "ip": "Intellectual Property",
-                "ip_text": "All rights reserved. Reproduction prohibited without permission."
+                "ip_text": "This entire site is subject to international legislation on copyright, trademark law and, in general, on intellectual property. Any reproduction or representation, in whole or in part, of the pages, data and any other element constituting the site, by any process or medium whatsoever, is prohibited and constitutes an infringement without the authorization of the editor."
             },
             "privacy": {
                 "title": "Privacy Policy",
-                "intro": "This Privacy Policy explains how SCALIENTE LLC collects, uses, and discloses information about you.",
-                "collect": "Information Collected",
-                "collect_text": "We collect information you provide directly to us (account info, platform connections).",
-                "use": "Data Usage",
-                "use_text": "To provide, maintain, and improve our unified analytics dashboard.",
-                "sharing": "Data Sharing",
-                "sharing_text": "We do not sell your personal data."
+                "intro": "At SCALIENTE LLC, we take the protection of your data very seriously. This Privacy Policy details how we collect, use, and protect your personal information when you use our Scaliente application.",
+                "items": [
+                    {
+                        "title": "1. Information Collection",
+                        "content": "We collect the following types of information to provide our service:<br/><br/><strong>a) Account Information:</strong> When you create an account, we collect your name, email address, and encrypted password.<br/><strong>b) Connected Platform Data:</strong> With your explicit authorization (via OAuth), we access data from your Shopify stores (orders, products) and your advertising accounts (Meta Ads, Google Ads, TikTok Ads, Snapchat Ads, Pinterest Ads) to calculate your profitability metrics. We only collect the data strictly necessary (ad spend, revenue, costs)."
+                    },
+                    {
+                        "title": "2. Data Usage",
+                        "content": "Your data is used exclusively to:<br/>- Provide you with real-time profitability dashboards and analytics.<br/>- Improve our services and develop new features.<br/>- Ensure the security of your account and prevent fraud.<br/>- Communicate with you regarding your subscription or important updates."
+                    },
+                    {
+                        "title": "3. Data Sharing",
+                        "content": "<strong>We never sell your personal data.</strong> We only share your information with the following third parties, necessary for the operation of the service:<br/>- <strong>Vercel & Supabase:</strong> For hosting and database (secure and GDPR/CCPA compliant).<br/>- <strong>Stripe:</strong> For secure payment processing.<br/>- <strong>Crisp:</strong> For customer support (chat).<br/><br/>We require all our processors to comply with strict security and confidentiality standards."
+                    },
+                    {
+                        "title": "4. Google Limited Use Disclosure",
+                        "content": "Scaliente's use and transfer to any other app of information received from Google APIs will adhere to the <a href='https://developers.google.com/terms/api-services-user-data-policy' target='_blank' class='underline hover:text-rose-600'>Google API Services User Data Policy</a>, including the Limited Use requirements."
+                    },
+                    {
+                        "title": "5. Meta Platform Terms Compliance",
+                        "content": "In accordance with Meta Platform Terms:<br/>- We only use Meta Ads data to provide aggregated analytics to the user.<br/>- We do not transfer, sell, or use this data for surveillance or profiling outside of the Scaliente service.<br/>- You can revoke Scaliente's access to your Meta data at any time via your Facebook account settings."
+                    },
+                    {
+                        "title": "6. Data Security",
+                        "content": "We implement robust technical and organizational security measures to protect your data: encryption in transit (TLS/SSL) and at rest (AES-256), strict access controls, and regular security audits."
+                    },
+                    {
+                        "title": "7. Your Rights",
+                        "content": "In accordance with GDPR and CCPA, you have the right to access, rectify, delete, and port your data. To exercise these rights, contact us at <a href='mailto:scalientesolutions@gmail.com' class='underline hover:text-rose-600'>scalientesolutions@gmail.com</a>."
+                    },
+                    {
+                        "title": "8. Data Retention",
+                        "content": "We retain your data as long as your account is active. If you delete your account, your data is deleted from our active servers immediately and from our backups within 30 days, unless otherwise required by law."
+                    }
+                ]
             },
             "cookies": {
                 "title": "Cookie Policy",
-                "intro": "A cookie is a small text file stored on your browser.",
+                "intro": "A cookie is a small text file stored on your device when you visit our site.",
                 "types": "Types of Cookies Used",
-                "essential": "Essential cookies: Necessary.",
-                "analytics": "Analytics cookies: Anonymous stats.",
-                "manage": "Managing Preferences",
-                "manage_text": "Via browser settings or our banner."
+                "essential": "Essential Cookies: Necessary for the site to function (authentication, security). They cannot be disabled.",
+                "analytics": "Analytics Cookies: Help us understand how the site is used to improve it. We use privacy-friendly tools.",
+                "manage": "Managing Your Preferences",
+                "manage_text": "You can configure your browser to refuse all cookies or to be alerted when a cookie is sent. However, some site features may not function correctly without essential cookies."
             },
             "cgv": {
-                "title": "General Terms and Conditions of Sale (CGV)",
+                "title": "General Terms of Sale",
                 "b2b": "Professional Use Only (B2B)",
                 "price": "Price and Payment",
                 "termination": "Duration and Termination",
-                "termination_text": "Cancel anytime.",
+                "termination_text": "The subscription is non-binding. You can cancel it at any time from your dashboard. The cancellation will take effect at the end of the current billing period.",
                 "retraction": "Waiver of Withdrawal Right",
-                "retraction_text": "Waiver due to immediate delivery of digital service."
+                "retraction_text": "In accordance with the law, by subscribing to Scaliente, you agree to the immediate provision of the digital service and expressly waive your 14-day right of withdrawal. However, we offer a 'Money-Back Guarantee' under conditions (see Pricing page)."
             },
             "terms": {
                 "title": "Terms of Service",
-                "acceptance": "Acceptance of Terms",
-                "description": "Description of Service",
-                "responsibilities": "User Responsibilities"
+                "intro": "Welcome to Scaliente. By accessing our website and using our services, you agree to be bound by these Terms of Service.",
+                "items": [
+                    {
+                        "title": "1. Service Description",
+                        "content": "Scaliente is a SaaS (Software as a Service) data analytics solution for e-merchants. It aggregates sales and advertising data to calculate profitability. The service is provided 'as is'."
+                    },
+                    {
+                        "title": "2. User Account",
+                        "content": "You are responsible for maintaining the confidentiality of your account and password. All activities under your account are your responsibility. You agree to provide accurate and complete information during registration."
+                    },
+                    {
+                        "title": "3. Financial Terms",
+                        "content": "Access to Scaliente's full services requires a paid subscription (monthly or annual). Payments are secured by Stripe. Prices displayed are in Euros or Dollars and exclude taxes, unless otherwise stated. Failure to pay may result in account suspension."
+                    },
+                    {
+                        "title": "4. Intellectual Property (User)",
+                        "content": "You retain all rights to the data you import into Scaliente. You grant us a worldwide, non-exclusive, royalty-free license to use, host, and analyze this data for the sole purpose of providing the service to you."
+                    },
+                    {
+                        "title": "5. Limitation of Liability",
+                        "content": "To the fullest extent permitted by law, SCALIENTE LLC shall not be liable for any indirect, incidental, special, or consequential damages, including loss of profits or data, arising from the use or inability to use the service."
+                    },
+                    {
+                        "title": "6. Governing Law and Jurisdiction",
+                        "content": "These terms are governed by the laws of the State of Wyoming, USA. Any dispute relating to these terms shall be submitted to the exclusive jurisdiction of the courts of Wyoming."
+                    }
+                ]
             },
             "deletion": {
                 "title": "Data Deletion Instructions",
-                "intro": "If you wish to remove your account and delete all associated data:",
-                "option1": "Option 1: Automated (Settings Page)",
+                "intro": "You have full control over your data. Here is how to request permanent deletion:",
+                "option1": "Option 1: Automated (Recommended)",
                 "option2": "Option 2: Email Request",
-                "process": "What happens next?"
+                "process": "What happens next?",
+                "process_text": "Once the request is received (or action taken via dashboard), we instantly delete your API keys and access tokens. Your historical data is purged from our active databases within 24h and from our backups within 30 days."
             }
         }
     }
