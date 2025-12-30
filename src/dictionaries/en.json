@@ -295,9 +295,9 @@
             "features": "Features",
             "pricing": "Pricing",
             "login": "Login",
-            "privacy": "Privacy",
+            "privacy": "Privacy Policy",
             "cookies": "Cookies",
-            "terms": "Terms",
+            "terms": "Terms of Service",
             "legalMentions": "Legal Mentions"
         },
         "copyright": "© {{year}} Scaliente. All rights reserved."

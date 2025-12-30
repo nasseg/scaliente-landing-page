@@ -31,10 +31,10 @@ const Footer = ({ content, lang }) => (
             <div>
                 <h4 className="text-white font-bold mb-4">{content?.legal}</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                    <li><Link href={`/${lang}/privacy-policy`} className="hover:text-orange-400 transition-colors">{content?.links?.privacy}</Link></li>
-                    <li><Link href={`/${lang}/cookies`} className="hover:text-orange-400 transition-colors">{content?.links?.cookies}</Link></li>
-                    <li><Link href={`/${lang}/terms-of-service`} className="hover:text-orange-400 transition-colors">{content?.links?.terms}</Link></li>
-                    <li><Link href={`/${lang}/legal`} className="hover:text-orange-400 transition-colors">{content?.links?.legalMentions}</Link></li>
+                    <li><a href={`/${lang}/privacy-policy`} className="hover:text-orange-400 transition-colors">{content?.links?.privacy}</a></li>
+                    <li><a href={`/${lang}/cookies`} className="hover:text-orange-400 transition-colors">{content?.links?.cookies}</a></li>
+                    <li><a href={`/${lang}/terms-of-service`} className="hover:text-orange-400 transition-colors">{content?.links?.terms}</a></li>
+                    <li><a href={`/${lang}/legal`} className="hover:text-orange-400 transition-colors">{content?.links?.legalMentions}</a></li>
                 </ul>
             </div>
         </div>

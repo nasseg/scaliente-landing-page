@@ -295,9 +295,9 @@
             "features": "Funktionen",
             "pricing": "Preise",
             "login": "Anmelden",
-            "privacy": "Datenschutz",
+            "privacy": "Datenschutzerklärung",
             "cookies": "Cookies",
-            "terms": "AGB",
+            "terms": "Nutzungsbedingungen",
             "legalMentions": "Impressum"
         },
         "copyright": "© {{year}} Scaliente. Alle Rechte vorbehalten."
