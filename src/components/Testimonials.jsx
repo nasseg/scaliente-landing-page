@@ -127,7 +127,7 @@ const Testimonials = ({ content }) => {
                 >
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span>{content?.stats?.activeUsers || "+200 active e-merchants"}</span>
+                        <span>{content?.stats?.activeUsers || "+2500 active e-merchants"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-orange-500" />
