@@ -135,21 +135,21 @@ const BeforeAfter = ({ content }) => {
                             compact={true}
                             className="h-[400px]"
                             tabs={[
-                                { name: 'Profit Calc v3', icon: <FileSpreadsheet className="w-4 h-4 text-green-600" /> },
-                                { name: 'Meta', icon: <BrandIcons.Meta /> },
-                                { name: 'Google Ads', icon: <BrandIcons.Google /> },
-                                { name: 'TikTok', icon: <BrandIcons.TikTok /> },
-                                { name: 'Snapchat', icon: <BrandIcons.Snapchat /> },
-                                { name: 'Pinterest', icon: <BrandIcons.Pinterest /> },
-                                { name: 'Shopify', icon: <BrandIcons.Shopify /> },
-                                { name: 'Google Ads', icon: <BrandIcons.Google /> },
-                                { name: 'Meta', icon: <BrandIcons.Meta /> },
-                                { name: 'TikTok', icon: <BrandIcons.TikTok /> },
-                                { name: 'Shopify', icon: <BrandIcons.Shopify /> },
-                                { name: 'Snapchat', icon: <BrandIcons.Snapchat /> },
-                                { name: 'Pinterest', icon: <BrandIcons.Pinterest /> },
-                                { name: 'Meta', icon: <BrandIcons.Meta /> },
-                                { name: 'Google Ads', icon: <BrandIcons.Google /> },
+                                { name: content?.before?.tabs?.profitCalc || 'Profit Calc v3', icon: <FileSpreadsheet className="w-4 h-4 text-green-600" /> },
+                                { name: content?.before?.tabs?.businessManager || 'Meta', icon: <BrandIcons.Meta /> },
+                                { name: content?.before?.tabs?.googleAds || 'Google Ads', icon: <BrandIcons.Google /> },
+                                { name: content?.before?.tabs?.tiktokAds || 'TikTok', icon: <BrandIcons.TikTok /> },
+                                { name: content?.before?.tabs?.snapchatAds || 'Snapchat', icon: <BrandIcons.Snapchat /> },
+                                { name: content?.before?.tabs?.pinterest || 'Pinterest', icon: <BrandIcons.Pinterest /> },
+                                { name: content?.before?.tabs?.shopifyAdmin || 'Shopify', icon: <BrandIcons.Shopify /> },
+                                { name: content?.before?.tabs?.googleAds || 'Google Ads', icon: <BrandIcons.Google /> },
+                                { name: content?.before?.tabs?.businessManager || 'Meta', icon: <BrandIcons.Meta /> },
+                                { name: content?.before?.tabs?.tiktokAds || 'TikTok', icon: <BrandIcons.TikTok /> },
+                                { name: content?.before?.tabs?.shopifyAdmin || 'Shopify', icon: <BrandIcons.Shopify /> },
+                                { name: content?.before?.tabs?.snapchatAds || 'Snapchat', icon: <BrandIcons.Snapchat /> },
+                                { name: content?.before?.tabs?.pinterest || 'Pinterest', icon: <BrandIcons.Pinterest /> },
+                                { name: content?.before?.tabs?.businessManager || 'Meta', icon: <BrandIcons.Meta /> },
+                                { name: content?.before?.tabs?.googleAds || 'Google Ads', icon: <BrandIcons.Google /> },
                             ]}
                         >
                             {/* EXCEL UI */}

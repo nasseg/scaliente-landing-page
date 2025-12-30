@@ -31,15 +31,15 @@ const Footer = ({ content, lang }) => (
             <div>
                 <h4 className="text-white font-bold mb-4">{content?.legal}</h4>
                 <ul className="space-y-2 text-sm text-gray-400">
-                    <li><Link href={`/${lang}/legal#privacy`} className="hover:text-orange-400 transition-colors">{content?.links?.privacy}</Link></li>
-                    <li><Link href={`/${lang}/legal#cookies`} className="hover:text-orange-400 transition-colors">{content?.links?.cookies}</Link></li>
-                    <li><Link href={`/${lang}/legal#terms`} className="hover:text-orange-400 transition-colors">{content?.links?.terms}</Link></li>
+                    <li><Link href={`/${lang}/privacy-policy`} className="hover:text-orange-400 transition-colors">{content?.links?.privacy}</Link></li>
+                    <li><Link href={`/${lang}/cookies`} className="hover:text-orange-400 transition-colors">{content?.links?.cookies}</Link></li>
+                    <li><Link href={`/${lang}/terms-of-service`} className="hover:text-orange-400 transition-colors">{content?.links?.terms}</Link></li>
                     <li><Link href={`/${lang}/legal`} className="hover:text-orange-400 transition-colors">{content?.links?.legalMentions}</Link></li>
                 </ul>
             </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left text-gray-600 text-sm">
-            <div>{content?.copyright?.replace('{{year}}', new Date().getFullYear()) || `© ${new Date().getFullYear()} Scaliente. Tous droits réservés.`}</div>
+            <div>{content?.copyright?.replace('{{year}}', new Date().getFullYear()) || `© ${new Date().getFullYear()} Scaliente. All rights reserved.`}</div>
             <LanguageSelector currentLang={lang} position="top" />
         </div>
     </footer>

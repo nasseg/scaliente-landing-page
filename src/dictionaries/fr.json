@@ -45,7 +45,8 @@
                 "profit": "Bénéfice",
                 "inbox": "Inbox",
                 "settings": "Paramètres",
-                "logout": "Se déconnecter"
+                "logout": "Se déconnecter",
+                "store": "Boutique"
             }
         }
     },

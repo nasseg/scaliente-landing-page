@@ -74,7 +74,7 @@ export default async function RootLayout({ children, params }) {
         >
           {children}
         </main>
-        <CookieConsent content={dict.cookieConsent} />
+        <CookieConsent content={dict.cookieConsent} lang={lang} />
       </body>
     </html>
   );

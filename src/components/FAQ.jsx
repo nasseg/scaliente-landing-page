@@ -83,8 +83,8 @@ const FAQ = ({ content }) => {
     })) : [
         // Fallback
         {
-            question: "Est-ce que Scaliente va ralentir mon site Shopify ?",
-            answer: "Absolument pas. Scaliente fonctionne via l'API officielle de Shopify et se connecte en arrière-plan. Aucun script n'est injecté sur votre vitrine (storefront), donc aucun impact sur vos temps de chargement ou vos Core Web Vitals."
+            question: "Will Scaliente slow down my Shopify site?",
+            answer: "Absolutely not. Scaliente works via the official Shopify API and connects in the background. No scripts are injected onto your storefront, so there is no impact on your loading times or Core Web Vitals."
         }
     ];
 

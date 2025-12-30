@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const CookieConsent = ({ content }) => {
+const CookieConsent = ({ content, lang }) => {
     const [showBanner, setShowBanner] = useState(false);
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const CookieConsent = ({ content }) => {
                         <h3 className="text-lg font-bold text-white mb-2">{content?.title}</h3>
                         <p className="text-gray-400 text-xs md:text-sm leading-relaxed">
                             {content?.text}{' '}
-                            <Link href="/legal#cookies" className="text-orange-400 hover:underline">
+                            <Link href={`/${lang}/cookies`} className="text-orange-400 hover:underline">
                                 {content?.learnMore}
                             </Link>
                         </p>

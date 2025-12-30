@@ -102,7 +102,7 @@ const Testimonials = ({ content }) => {
                     className="text-center mb-16"
                 >
                     <span className="inline-block px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-400 bg-orange-500/10 border border-orange-500/20 rounded-full mb-6">
-                        {content?.badge || "Témoignages"}
+                        {content?.badge || "Testimonials"}
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
                         {content?.title?.main} <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-500">{content?.title?.highlight}</span>
@@ -127,15 +127,15 @@ const Testimonials = ({ content }) => {
                 >
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span>{content?.stats?.activeUsers || "+200 e-commerçants actifs"}</span>
+                        <span>{content?.stats?.activeUsers || "+200 active e-merchants"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-orange-500" />
-                        <span>{content?.stats?.satisfaction || "4.9/5 de satisfaction"}</span>
+                        <span>{content?.stats?.satisfaction || "4.9/5 satisfaction"}</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-blue-500" />
-                        <span>{content?.stats?.support || "Support en moins de 2h"}</span>
+                        <span>{content?.stats?.support || "Support in under 2h"}</span>
                     </div>
                 </motion.div>
             </div>

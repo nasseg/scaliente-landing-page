@@ -101,8 +101,8 @@ const Hero = ({ content, common }) => {
                                 <div className="hidden md:block"></div>
                                 <div className="flex items-center gap-4">
                                     <div className="flex items-center gap-2 bg-[#1A1D24] border border-white/10 px-3 py-1.5 rounded-lg">
-                                        <div className="w-5 h-5 bg-green-500 rounded text-[10px] flex items-center justify-center text-black font-bold">M</div>
-                                        <span className="text-sm font-medium text-gray-300 hidden sm:block">Mynela</span>
+                                        <div className="w-5 h-5 bg-gradient-to-br from-orange-500 to-pink-600 rounded text-[10px] flex items-center justify-center text-white font-bold">S</div>
+                                        <span className="text-sm font-medium text-gray-300 hidden sm:block">{content?.dashboard?.menu?.store || 'Store'}</span>
                                         <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                                     </div>
                                     <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold ring-2 ring-white/10">N</div>
@@ -149,7 +149,7 @@ const Hero = ({ content, common }) => {
                                         <div className="absolute right-0 top-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
 
                                         <div className="flex justify-between items-start mb-6 relative z-10">
-                                            <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">Bénéfice Net</div>
+                                            <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">{content?.dashboard?.netProfit || "Bénéfice Net"}</div>
                                             <div className="p-3 bg-white/5 rounded-full">
                                                 <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                             </div>
@@ -159,7 +159,7 @@ const Hero = ({ content, common }) => {
                                             <span className="text-4xl md:text-6xl font-bold text-white tracking-tight whitespace-nowrap">21,450.90 €</span>
                                         </div>
                                         <div className="mb-8 flex items-center gap-2 relative z-10">
-                                            <span className="text-gray-400 font-medium">Marge nette:</span>
+                                            <span className="text-gray-400 font-medium">{content?.dashboard?.netMargin || "Marge nette:"}</span>
                                             <span className="text-green-400 font-bold bg-green-500/10 px-2 py-0.5 rounded text-sm">34.2%</span>
                                         </div>
 
@@ -179,11 +179,11 @@ const Hero = ({ content, common }) => {
 
                                         <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 relative z-10 mt-auto pt-8">
                                             <div>
-                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">Coûts Fournisseur</div>
+                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">{content?.dashboard?.supplierCosts || "Coûts Fournisseur"}</div>
                                                 <div className="text-lg md:text-xl font-bold text-white">12,120.45 €</div>
                                             </div>
                                             <div>
-                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">Dépenses Ads</div>
+                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">{content?.dashboard?.adSpend || "Dépenses Ads"}</div>
                                                 <div className="text-lg md:text-xl font-bold text-white">8,340.20 €</div>
                                             </div>
                                         </div>
@@ -193,7 +193,7 @@ const Hero = ({ content, common }) => {
                                     <div className="col-span-12 lg:col-span-5 flex flex-col gap-4 md:gap-6">
                                         <div className="bg-[#15181E] border border-white/5 rounded-3xl p-6 flex flex-col justify-between flex-1 min-h-[160px]">
                                             <div className="flex justify-between items-start">
-                                                <div className="text-purple-400 text-xs font-bold uppercase">Panier Moyen</div>
+                                                <div className="text-purple-400 text-xs font-bold uppercase">{content?.dashboard?.avgOrderValue || "Panier Moyen"}</div>
                                                 <div className="p-2 bg-purple-500/10 rounded-lg">
                                                     <svg className="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
                                                 </div>
@@ -203,7 +203,7 @@ const Hero = ({ content, common }) => {
 
                                         <div className="bg-[#15181E] border border-white/5 rounded-3xl p-6 flex flex-col justify-between flex-1 min-h-[160px]">
                                             <div className="flex justify-between items-start">
-                                                <div className="text-orange-400 text-xs font-bold uppercase">En Attente</div>
+                                                <div className="text-orange-400 text-xs font-bold uppercase">{content?.dashboard?.pending || "En Attente"}</div>
                                                 <div className="p-2 bg-orange-500/10 rounded-lg">
                                                     <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                                                 </div>

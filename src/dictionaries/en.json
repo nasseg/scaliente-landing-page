@@ -37,7 +37,7 @@
             "netMargin": "Net Margin:",
             "supplierCosts": "Supplier Costs",
             "adSpend": "Ad Spend",
-            "avgOrderValue": "AOV",
+            "avgOrderValue": "Avg Order Value",
             "pending": "Pending",
             "menu": {
                 "dashboard": "Dashboard",
@@ -45,7 +45,8 @@
                 "profit": "Profit",
                 "inbox": "Inbox",
                 "settings": "Settings",
-                "logout": "Log out"
+                "logout": "Log out",
+                "store": "Store"
             }
         }
     },

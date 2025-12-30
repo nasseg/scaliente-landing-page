@@ -17,17 +17,17 @@ const Navbar = ({ content, lang }) => (
                 </a>
             </div>
             <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href={`/${lang}/#features`} className="hover:text-white transition-colors">{content?.features || "Fonctionnalités"}</a>
-                <a href={`/${lang}/#pricing`} className="hover:text-white transition-colors">{content?.pricing || "Tarifs"}</a>
-                <a href={`/${lang}/#comparison`} className="hover:text-white transition-colors">{content?.comparison || "Avant/Après"}</a>
+                <a href={`/${lang}/#features`} className="hover:text-white transition-colors">{content?.features || "Features"}</a>
+                <a href={`/${lang}/#pricing`} className="hover:text-white transition-colors">{content?.pricing || "Pricing"}</a>
+                <a href={`/${lang}/#comparison`} className="hover:text-white transition-colors">{content?.comparison || "Before/After"}</a>
             </div>
             <div className="flex items-center gap-4">
                 <LanguageSelector currentLang={lang} position="bottom" />
                 <a href="https://app.scaliente.com" className="hidden md:block text-sm text-gray-300 hover:text-white transition-colors">
-                    {content?.login || "Connexion"}
+                    {content?.login || "Login"}
                 </a>
                 <a href="https://app.scaliente.com" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    {content?.freeTrial || "Essai Gratuit"}
+                    {content?.freeTrial || "Free Trial"}
                 </a>
             </div>
         </div>

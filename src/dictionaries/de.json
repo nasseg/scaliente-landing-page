@@ -33,19 +33,20 @@
             "today": "Heute",
             "yesterday": "Gestern",
             "totalRevenue": "Gesamtumsatz",
-            "netProfit": "Reingewinn",
+            "netProfit": "NETTOGEWINN",
             "netMargin": "Nettomarge:",
             "supplierCosts": "Lieferantenkosten",
             "adSpend": "Werbeausgaben",
-            "avgOrderValue": "Warenkorbwert",
+            "avgOrderValue": "Durchschnittl. Bestellwert",
             "pending": "Ausstehend",
             "menu": {
                 "dashboard": "Dashboard",
-                "adsInsights": "Ads Insights",
+                "adsInsights": "Anzeigen-Insights",
                 "profit": "Gewinn",
                 "inbox": "Posteingang",
                 "settings": "Einstellungen",
-                "logout": "Abmelden"
+                "logout": "Abmelden",
+                "store": "Shop"
             }
         }
     },
@@ -315,68 +316,5 @@
         "ogDescription": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
         "twitterTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
         "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit."
-    },
-    "legalPage": {
-        "title": "Rechtszentrum",
-        "subtitle": "Transparenz gehört zu unseren Grundwerten. Unten finden Sie unser Impressum, unsere Datenschutzrichtlinie und AGB.",
-        "updated": "Zuletzt aktualisiert:",
-        "nav": {
-            "mentions": "Impressum",
-            "privacy": "Datenschutz",
-            "cookies": "Cookies",
-            "cgv": "AGB (Verkauf)",
-            "terms": "Nutzungsbedingungen",
-            "deletion": "Datenlöschung"
-        },
-        "sections": {
-            "mentions": {
-                "title": "Impressum",
-                "editor": "Herausgeber der Website",
-                "hosting": "Hosting",
-                "ip": "Geistiges Eigentum",
-                "ip_text": "Alle Rechte vorbehalten. Vervielfältigung ohne Genehmigung untersagt."
-            },
-            "privacy": {
-                "title": "Datenschutzrichtlinie",
-                "intro": "Diese Datenschutzrichtlinie erklärt, wie SCALIENTE LLC Informationen über Sie sammelt, verwendet und offenlegt.",
-                "collect": "Gesammelte Informationen",
-                "collect_text": "Wir sammeln Informationen, die Sie uns direkt zur Verfügung stellen (Kontodaten, Plattformverbindungen).",
-                "use": "Datennutzung",
-                "use_text": "Bereitstellung, Wartung und Verbesserung unseres einheitlichen Analyse-Dashboards.",
-                "sharing": "Datenweitergabe",
-                "sharing_text": "Wir verkaufen Ihre persönlichen Daten nicht."
-            },
-            "cookies": {
-                "title": "Cookie-Richtlinie",
-                "intro": "Ein Cookie ist eine kleine Textdatei, die in Ihrem Browser gespeichert wird.",
-                "types": "Arten von Cookies",
-                "essential": "Essenzielle Cookies: Notwendig.",
-                "analytics": "Analyse-Cookies: Anonyme Statistiken.",
-                "manage": "Verwaltung Ihrer Einstellungen",
-                "manage_text": "Über Browsereinstellungen oder unser Banner."
-            },
-            "cgv": {
-                "title": "Allgemeine Verkaufsbedingungen (AGB)",
-                "b2b": "Nur für gewerbliche Nutzung (B2B)",
-                "price": "Preis und Zahlung",
-                "termination": "Laufzeit und Kündigung",
-                "termination_text": "Jederzeit kündbar.",
-                "retraction": "Verzicht auf Widerrufsrecht",
-                "retraction_text": "Verzicht aufgrund der sofortigen Bereitstellung der digitalen Dienstleistung."
-            },
-            "terms": {
-                "title": "Nutzungsbedingungen",
-                "acceptance": "Annahme der Bedingungen",
-                "description": "Leistungsbeschreibung",
-                "responsibilities": "Verantwortlichkeiten des Nutzers"
-            },
-            "deletion": {
-                "title": "Anweisungen zur Datenlöschung",
-                "intro": "Wenn Sie Ihr Konto und alle zugehörigen Daten löschen möchten:",
-                "option1": "Option 1: Automatisch (Einstellungen)",
-                "option2": "Option 2: Per E-Mail",
-                "process": "Was passiert als Nächstes?"
-            }
-        }
     }
 }
