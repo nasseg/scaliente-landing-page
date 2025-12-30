@@ -316,5 +316,127 @@
         "ogDescription": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
         "twitterTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
         "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit."
+    },
+    "legalPage": {
+        "title": "Rechtliche Informationen",
+        "subtitle": "Transparenz steht im Mittelpunkt unserer Werte. Unten finden Sie unser Impressum, unsere Datenschutzerklärung und unsere AGB.",
+        "updated": "Zuletzt aktualisiert:",
+        "nav": {
+            "mentions": "Impressum",
+            "privacy": "Datenschutz",
+            "cookies": "Cookies",
+            "cgv": "Verkaufsbedingungen",
+            "terms": "Nutzungsbedingungen",
+            "deletion": "Datenlöschung"
+        },
+        "sections": {
+            "mentions": {
+                "title": "Impressum",
+                "editor": "Webseitenbetreiber",
+                "editor_text": "Die Webseite <strong>Scaliente</strong> (erreichbar unter www.scaliente.com und app.scaliente.com) wird von <strong>SCALIENTE LLC</strong> betrieben.",
+                "legal_form_label": "Rechtsform:",
+                "legal_form_value": "Limited Liability Company (LLC)",
+                "headquarters_label": "Hauptsitz:",
+                "headquarters_value": "1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, USA",
+                "email_label": "Kontakt-E-Mail:",
+                "hosting": "Hosting",
+                "ip": "Geistiges Eigentum",
+                "ip_text": "Die gesamte Website unterliegt der internationalen Gesetzgebung zum Urheberrecht, Markenrecht und allgemein zum geistigen Eigentum. Jede Vervielfältigung oder Darstellung, ganz oder teilweise, der Seiten, Daten und aller anderen Elemente, die die Website bilden, durch welches Verfahren oder Medium auch immer, ist ohne Genehmigung des Herausgebers untersagt und stellt eine Verletzung dar."
+            },
+            "privacy": {
+                "title": "Datenschutzerklärung",
+                "intro": "Bei SCALIENTE LLC nehmen wir den Schutz Ihrer Daten sehr ernst. Diese Datenschutzerklärung erläutert, wie wir Ihre personenbezogenen Daten erfassen, verwenden und schützen, wenn Sie unsere Scaliente-Anwendung nutzen.",
+                "items": [
+                    {
+                        "title": "1. Datenerfassung",
+                        "content": "Wir erfassen die folgenden Arten von Informationen, um unseren Service anzubieten:<br/><br/><strong>a) Kontoinformationen:</strong> Wenn Sie ein Konto erstellen, erfassen wir Ihren Namen, Ihre E-Mail-Adresse und Ihr verschlüsseltes Passwort.<br/><strong>b) Daten verbundener Plattformen:</strong> Mit Ihrer ausdrücklichen Autorisierung (via OAuth) greifen wir auf Daten Ihrer Shopify-Shops (Bestellungen, Produkte) und Ihrer Werbekonten (Meta Ads, Google Ads, TikTok Ads, Snapchat Ads, Pinterest Ads) zu, um Ihre Rentabilitätskennzahlen zu berechnen. Wir erfassen nur die unbedingt erforderlichen Daten (Werbeausgaben, Umsatz, Kosten)."
+                    },
+                    {
+                        "title": "2. Datennutzung",
+                        "content": "Ihre Daten werden ausschließlich verwendet, um:<br/>- Ihnen Rentabilitäts-Dashboards und Analysen in Echtzeit bereitzustellen.<br/>- Unsere Dienstleistungen zu verbessern und neue Funktionen zu entwickeln.<br/>- Die Sicherheit Ihres Kontos zu gewährleisten und Betrug zu verhindern.<br/>- Mit Ihnen bezüglich Ihres Abonnements oder wichtiger Aktualisierungen zu kommunizieren."
+                    },
+                    {
+                        "title": "3. Datenweitergabe",
+                        "content": "<strong>Wir verkaufen Ihre personenbezogenen Daten niemals.</strong> Wir teilen Ihre Informationen nur mit den folgenden Dritten, die für den Betrieb des Dienstes erforderlich sind:<br/>- <strong>Vercel & Supabase:</strong> Für Hosting und Datenbank (sicher und DSGVO/CCPA-konform).<br/>- <strong>Stripe:</strong> Für die sichere Zahlungsabwicklung.<br/>- <strong>Crisp:</strong> Für den Kundensupport (Chat).<br/><br/>Wir verlangen von allen unseren Auftragsverarbeitern, dass sie strenge Sicherheits- und Vertraulichkeitsstandards einhalten."
+                    },
+                    {
+                        "title": "4. Google Limited Use Disclosure",
+                        "content": "Die Nutzung und Übertragung von Informationen durch Scaliente von Google-APIs an andere Apps erfolgt gemäß der <a href='https://developers.google.com/terms/api-services-user-data-policy' target='_blank' class='underline hover:text-rose-600'>Google API Services User Data Policy</a>, einschließlich der Limited Use-Anforderungen."
+                    },
+                    {
+                        "title": "5. Einhaltung der Meta-Plattform-Bedingungen",
+                        "content": "Gemäß den Meta-Plattform-Bedingungen:<br/>- Wir verwenden Meta Ads-Daten nur, um dem Nutzer aggregierte Analysen bereitzustellen.<br/>- Wir übertragen, verkaufen oder nutzen diese Daten nicht für Überwachung oder Profiling außerhalb des Scaliente-Dienstes.<br/>- Sie können den Zugriff von Scaliente auf Ihre Meta-Daten jederzeit über Ihre Facebook-Kontoeinstellungen widerrufen."
+                    },
+                    {
+                        "title": "6. Datensicherheit",
+                        "content": "Wir setzen robuste technische und organisatorische Sicherheitsmaßnahmen ein, um Ihre Daten zu schützen: Verschlüsselung während der Übertragung (TLS/SSL) und im Ruhezustand (AES-256), strenge Zugriffskontrollen und regelmäßige Sicherheitsaudits."
+                    },
+                    {
+                        "title": "7. Ihre Rechte",
+                        "content": "Gemäß der DSGVO haben Sie das Recht auf Auskunft, Berichtigung, Löschung und Portabilität Ihrer Daten. Um diese Rechte auszuüben, kontaktieren Sie uns unter <a href='mailto:scalientesolutions@gmail.com' class='underline hover:text-rose-600'>scalientesolutions@gmail.com</a>."
+                    },
+                    {
+                        "title": "8. Datenspeicherung",
+                        "content": "Wir speichern Ihre Daten, solange Ihr Konto aktiv ist. Wenn Sie Ihr Konto löschen, werden Ihre Daten sofort von unseren aktiven Servern und innerhalb von 30 Tagen aus unseren Backups gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht."
+                    }
+                ]
+            },
+            "cookies": {
+                "title": "Cookie-Richtlinie",
+                "intro": "Ein Cookie ist eine kleine Textdatei, die beim Besuch unserer Website auf Ihrem Gerät gespeichert wird.",
+                "types": "Arten der verwendeten Cookies",
+                "essential": "Essentielle Cookies: Notwendig für das Funktionieren der Website (Authentifizierung, Sicherheit). Sie können nicht deaktiviert werden.",
+                "analytics": "Analyse-Cookies: Helfen uns zu verstehen, wie die Website genutzt wird, um sie zu verbessern. Wir verwenden datenschutzfreundliche Tools.",
+                "manage": "Verwaltung Ihrer Präferenzen",
+                "manage_text": "Sie können Ihren Browser so konfigurieren, dass er alle Cookies ablehnt oder Sie benachrichtigt, wenn ein Cookie gesendet wird. Einige Website-Funktionen funktionieren jedoch ohne essentielle Cookies möglicherweise nicht korrekt."
+            },
+            "cgv": {
+                "title": "Allgemeine Verkaufsbedingungen",
+                "b2b": "Nur für gewerbliche Nutzung (B2B)",
+                "price": "Preis und Zahlung",
+                "termination": "Dauer und Kündigung",
+                "termination_text": "Das Abonnement ist unverbindlich. Sie können es jederzeit über Ihr Dashboard kündigen. Die Kündigung wird zum Ende des aktuellen Abrechnungszeitraums wirksam.",
+                "retraction": "Verzicht auf das Widerrufsrecht",
+                "retraction_text": "Gesetzgemäß stimmen Sie mit dem Abonnieren von Scaliente der sofortigen Bereitstellung des digitalen Dienstes zu und verzichten ausdrücklich auf Ihr 14-tägiges Widerrufsrecht. Wir bieten jedoch unter Bedingungen eine 'Geld-zurück-Garantie' an (siehe Preisseite)."
+            },
+            "terms": {
+                "title": "Nutzungsbedingungen",
+                "intro": "Willkommen bei Scaliente. Durch den Zugriff auf unsere Website und die Nutzung unserer Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
+                "items": [
+                    {
+                        "title": "1. Leistungsbeschreibung",
+                        "content": "Scaliente ist eine SaaS-Lösung (Software as a Service) zur Datenanalyse für E-Händler. Sie aggregiert Verkaufs- und Werbedaten zur Berechnung der Rentabilität. Der Dienst wird 'wie besehen' bereitgestellt."
+                    },
+                    {
+                        "title": "2. Benutzerkonto",
+                        "content": "Sie sind für die Wahrung der Vertraulichkeit Ihres Kontos und Passworts verantwortlich. Alle Aktivitäten unter Ihrem Konto liegen in Ihrer Verantwortung. Sie verpflichten sich, bei der Registrierung genaue und vollständige Angaben zu machen."
+                    },
+                    {
+                        "title": "3. Finanzielle Bedingungen",
+                        "content": "Der Zugriff auf die vollständigen Dienste von Scaliente erfordert ein kostenpflichtiges Abonnement (monatlich oder jährlich). Zahlungen werden über Stripe gesichert. Die angezeigten Preise sind in Euro oder Dollar und verstehen sich zzgl. Steuern, sofern nicht anders angegeben. Nichtzahlung kann zur Kontosperrung führen."
+                    },
+                    {
+                        "title": "4. Geistiges Eigentum (Nutzer)",
+                        "content": "Sie behalten alle Rechte an den Daten, die Sie in Scaliente importieren. Sie gewähren uns eine weltweite, nicht exklusive, gebührenfreie Lizenz zur Nutzung, Speicherung und Analyse dieser Daten zum alleinigen Zweck der Bereitstellung des Dienstes für Sie."
+                    },
+                    {
+                        "title": "5. Haftungsbeschränkung",
+                        "content": "Soweit gesetzlich zulässig, haftet SCALIENTE LLC nicht für indirekte, zufällige, spezielle oder Folgeschäden, einschließlich Gewinn- oder Datenverlusten, die sich aus der Nutzung oder Unfähigkeit zur Nutzung des Dienstes ergeben."
+                    },
+                    {
+                        "title": "6. Anwendbares Recht und Gerichtsstand",
+                        "content": "Diese Bedingungen unterliegen den Gesetzen des Staates Wyoming, USA. Alle Streitigkeiten im Zusammenhang mit diesen Bedingungen unterliegen der ausschließlichen Zuständigkeit der Gerichte von Wyoming."
+                    }
+                ]
+            },
+            "deletion": {
+                "title": "Anweisungen zur Datenlöschung",
+                "intro": "Sie haben die volle Kontrolle über Ihre Daten. So beantragen Sie die dauerhafte Löschung:",
+                "option1": "Option 1: Automatisiert (Empfohlen)",
+                "option2": "Option 2: Anfrage per E-Mail",
+                "process": "Was passiert als Nächstes?",
+                "process_text": "Sobald die Anfrage eingegangen ist (oder die Aktion über das Dashboard durchgeführt wurde), löschen wir sofort Ihre API-Schlüssel und Zugriffstoken. Ihre historischen Daten werden innerhalb von 24 Stunden aus unseren aktiven Datenbanken und innerhalb von 30 Tagen aus unseren Backups gelöscht."
+            }
+        }
     }
 }
