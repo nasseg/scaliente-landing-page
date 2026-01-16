@@ -26,6 +26,7 @@ const Footer = ({ content, lang }) => (
                     <li><a href={`/${lang}/#features`} className="hover:text-orange-400 transition-colors">{content?.links?.features}</a></li>
                     <li><a href={`/${lang}/#pricing`} className="hover:text-orange-400 transition-colors">{content?.links?.pricing}</a></li>
                     <li><a href="https://app.scaliente.com" className="hover:text-orange-400 transition-colors">{content?.links?.login}</a></li>
+                    <li><a href={`/${lang}/affiliate`} className="hover:text-orange-400 transition-colors">{content?.links?.affiliate}</a></li>
                 </ul>
             </div>
             <div>

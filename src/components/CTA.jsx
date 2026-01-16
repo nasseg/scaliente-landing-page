@@ -7,7 +7,7 @@ const CTA = ({ content }) => (
             <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <a
                     href="https://app.scaliente.com"
-                    className="px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold rounded-xl hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all text-center"
+                    className="cta-animated-border px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 text-white font-bold rounded-xl hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all text-center"
                 >
                     {content?.button}
                 </a>

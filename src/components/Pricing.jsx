@@ -9,56 +9,80 @@ const Pricing = ({ content, common }) => {
     // Reconstruct plans from dictionary content if available, otherwise use defaults/placeholders to prevent crashes
     const plans = [
         {
+            name: content?.plans?.discovery?.name || 'Discovery',
+            color: 'gray',
+            badge: content?.plans?.discovery?.badge || '✨ Gratuit',
+            desc: content?.plans?.discovery?.desc || "Testez gratuitement avec 20 commandes/mois",
+            price: { monthly: 0, annual: 0 },
+            features: [
+                { text: content?.plans?.discovery?.features?.orders || "20 commandes/mois", included: true },
+                { text: content?.plans?.discovery?.features?.shop || "1 boutique", included: true },
+                { text: content?.plans?.discovery?.features?.history || "Historique 30 jours", included: true },
+                { text: content?.plans?.discovery?.features?.adPlatform || "1 plateforme ads", included: true },
+                { text: content?.plans?.discovery?.features?.comparison || "Comparaison périodes", included: false },
+                { text: content?.plans?.discovery?.features?.export || "Export CSV", included: false },
+            ],
+            cta: content?.plans?.discovery?.cta || "Commencer Gratuitement"
+        },
+        {
             name: content?.plans?.starter?.name || 'Starter',
             color: 'green',
             badge: null,
             desc: content?.plans?.starter?.desc || "Savoir enfin si tu gagnes de l'argent",
-            price: { monthly: 99, annual: 950 },
+            price: { monthly: 89, annual: 854 },
             features: [
-                { text: content?.plans?.starter?.features?.["1shop"], included: true },
-                { text: content?.plans?.starter?.features?.dailyProfit, included: true },
-                { text: content?.plans?.starter?.features?.allCosts, included: true },
-                { text: content?.plans?.starter?.features?.alert, included: true },
-                { text: content?.plans?.starter?.features?.consolidation, included: false },
-                { text: content?.plans?.starter?.features?.comparison, included: false },
+                { text: content?.plans?.starter?.features?.orders || "300 commandes/mois", included: true },
+                { text: content?.plans?.starter?.features?.shop || "1 boutique", included: true },
+                { text: content?.plans?.starter?.features?.history || "Historique illimité", included: true },
+                { text: content?.plans?.starter?.features?.adPlatforms || "5 plateformes ads", included: true },
+                { text: content?.plans?.starter?.features?.comparison || "Comparaison périodes", included: true },
+                { text: content?.plans?.starter?.features?.export || "Export CSV", included: true },
             ],
             cta: content?.plans?.starter?.cta || "Commencer avec Starter"
         },
         {
-            name: content?.plans?.pro?.name || 'Pro',
+            name: content?.plans?.growth?.name || 'Growth',
             color: 'blue',
-            badge: content?.plans?.pro?.badge || '⭐️ Le + Populaire',
-            desc: content?.plans?.pro?.desc || "Piloter plusieurs shops sans approximation",
+            badge: content?.plans?.growth?.badge || '⭐️ Recommandé',
+            desc: content?.plans?.growth?.desc || "Piloter plusieurs shops sans approximation",
             price: { monthly: 149, annual: 1430 },
             features: [
-                { text: content?.plans?.pro?.features?.["3shops"], included: true, highlight: true },
-                { text: content?.plans?.pro?.features?.consolidatedView, included: true },
-                { text: content?.plans?.pro?.features?.comparison, included: true },
-                { text: content?.plans?.pro?.features?.decisions, included: true },
-                { text: content?.plans?.pro?.features?.analysis, included: true },
-                { text: content?.plans?.pro?.features?.support, included: true },
+                { text: content?.plans?.growth?.features?.orders || "1,500 commandes/mois", included: true },
+                { text: content?.plans?.growth?.features?.shops || "Jusqu'à 3 boutiques", included: true, highlight: true },
+                { text: content?.plans?.growth?.features?.history || "Historique illimité", included: true },
+                { text: content?.plans?.growth?.features?.adPlatforms || "5 plateformes ads", included: true },
+                { text: content?.plans?.growth?.features?.multiShop || "Vue consolidée multi-boutique", included: true },
+                { text: content?.plans?.growth?.features?.comparison || "Comparaison avancée", included: true },
             ],
-            cta: content?.plans?.pro?.cta || "Passer au Pro"
+            cta: content?.plans?.growth?.cta || "Passer au Growth"
         },
         {
-            name: content?.plans?.max?.name || 'Max',
+            name: content?.plans?.scale?.name || 'Scale',
             color: 'orange',
-            badge: content?.plans?.max?.badge || 'Ultimate',
-            desc: content?.plans?.max?.desc || "Maîtrise totale de la rentabilité multi-shops",
-            price: { monthly: 299, annual: 2870 },
+            badge: content?.plans?.scale?.badge || '🚀 Ultimate',
+            desc: content?.plans?.scale?.desc || "Maîtrise totale sans limite",
+            price: { monthly: 249, annual: 2390 },
             features: [
-                { text: content?.plans?.max?.features?.["7shops"], included: true, highlight: true },
-                { text: content?.plans?.max?.features?.multiBrand, included: true },
-                { text: content?.plans?.max?.features?.history, included: true },
-                { text: content?.plans?.max?.features?.advancedComparison, included: true },
-                { text: content?.plans?.max?.features?.earlyAccess, included: true },
-                { text: content?.plans?.max?.features?.dedicatedSupport, included: true },
+                { text: content?.plans?.scale?.features?.orders || "Commandes illimitées", included: true, highlight: true },
+                { text: content?.plans?.scale?.features?.shops || "Boutiques illimitées", included: true, highlight: true },
+                { text: content?.plans?.scale?.features?.history || "Historique illimité", included: true },
+                { text: content?.plans?.scale?.features?.adPlatforms || "5 plateformes ads", included: true },
+                { text: content?.plans?.scale?.features?.slackSupport || "Support Slack dédié", included: true },
+                { text: content?.plans?.scale?.features?.priority || "Support prioritaire", included: true },
             ],
-            cta: content?.plans?.max?.cta || "Passer au Max"
+            cta: content?.plans?.scale?.cta || "Passer au Scale"
         }
     ];
 
     const colorClasses = {
+        gray: {
+            bg: 'bg-white/5',
+            border: 'border-white/10',
+            text: 'text-gray-300',
+            badge: 'bg-gradient-to-r from-emerald-500 to-teal-500',
+            button: 'hover:bg-white hover:text-black border-white/20 text-white',
+            glow: 'group-hover:shadow-[0_0_30px_rgba(255,255,255,0.08)]'
+        },
         green: {
             bg: 'bg-green-500/10',
             border: 'border-green-500/20',
@@ -136,7 +160,7 @@ const Pricing = ({ content, common }) => {
                 </div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
                     {plans.map((plan, idx) => {
                         const colors = colorClasses[plan.color];
                         const monthlyEquivalent = Math.round(plan.price.annual / 12);
@@ -151,9 +175,9 @@ const Pricing = ({ content, common }) => {
                                 viewport={{ once: true }}
                                 transition={{ delay: idx * 0.1 }}
                                 className={`
-                                    relative flex flex-col p-8 rounded-3xl border transition-all duration-300 group
+                                    relative flex flex-col p-6 lg:p-8 rounded-3xl border transition-all duration-300 group
                                     ${colors.bg} ${colors.border} ${colors.glow}
-                                    ${plan.name === 'Control' ? 'scale-105 z-10 shadow-2xl bg-[#0F1115] border-blue-500/30' : 'hover:scale-[1.02] bg-[#0F1115]/50 backdrop-blur-sm'}
+                                    ${plan.color === 'blue' ? 'lg:scale-105 z-10 shadow-2xl bg-[#0F1115] border-blue-500/30' : 'hover:scale-[1.02] bg-[#0F1115]/50 backdrop-blur-sm'}
                                 `}
                             >
                                 {plan.badge && (
@@ -171,19 +195,24 @@ const Pricing = ({ content, common }) => {
 
                                 <div className="mb-8">
                                     <div className="flex items-baseline gap-2 flex-wrap">
-                                        {isAnnual && (
+                                        {isAnnual && plan.price.monthly > 0 && (
                                             <span className="text-xl text-gray-500 line-through decoration-red-500/50 decoration-2">
                                                 {plan.price.monthly}€
                                             </span>
                                         )}
                                         <span className="text-4xl md:text-5xl font-bold text-white transition-all duration-300">
-                                            {displayPrice}€
+                                            {displayPrice === 0 ? (common?.free || 'Gratuit') : `${displayPrice}€`}
                                         </span>
-                                        <span className="text-gray-500">{period}</span>
+                                        {displayPrice > 0 && <span className="text-gray-500">{period}</span>}
                                     </div>
-                                    {isAnnual && (
+                                    {isAnnual && plan.price.annual > 0 && (
                                         <p className={`text-sm mt-2 font-medium ${colors.text}`}>
                                             {common?.billed || 'Facturé'} {plan.price.annual}€ /{common?.year || 'an'}
+                                        </p>
+                                    )}
+                                    {plan.price.monthly === 0 && (
+                                        <p className="text-sm mt-2 font-medium text-emerald-400">
+                                            {common?.noCard || 'Aucune carte requise'}
                                         </p>
                                     )}
                                 </div>
@@ -214,10 +243,10 @@ const Pricing = ({ content, common }) => {
                                 </a>
 
                                 {/* Anti-objection for this plan */}
-                                {plan.name === (content?.plans?.pro?.name || 'Pro') && (
+                                {plan.name === (content?.plans?.growth?.name || 'Growth') && (
                                     <div className="mt-4 text-center">
                                         <p className="text-xs text-gray-500">
-                                            {content?.plans?.pro?.socialProof}
+                                            {content?.plans?.growth?.socialProof}
                                         </p>
                                     </div>
                                 )}

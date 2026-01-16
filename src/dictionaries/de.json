@@ -2,16 +2,18 @@
     "common": {
         "loading": "Lädt...",
         "error": "Ein Fehler ist aufgetreten",
-        "getStarted": "Jetzt starten",
+        "getStarted": "Kostenlos starten",
         "viewDemo": "Demo ansehen",
         "login": "Anmelden",
-        "freeTrial": "Kostenlos testen",
-        "24hTrial": "24h kostenlos testen",
+        "freeTrial": "Kostenlos starten",
+        "24hTrial": "Kostenlos starten",
         "month": "Monat",
         "year": "Jahr",
         "monthly": "Monatlich",
         "annual": "Jährlich",
-        "billed": "Abgerechnet"
+        "billed": "Abgerechnet",
+        "free": "Kostenlos",
+        "noCard": "Keine Kreditkarte erforderlich"
     },
     "navbar": {
         "features": "Funktionen",
@@ -61,8 +63,8 @@
         "description": "Scaliente verbindet sich mit einem Klick mit all Ihren Tools. Keine Excel-Tabellen und manuellen Berechnungen um 2 Uhr morgens mehr.",
         "cards": {
             "ads": {
-                "title": "Alle Ihre Anzeigen an einem Ort",
-                "desc": "Schluss mit dem Wechsel zwischen Business Manager, Google Ads und TikTok. Alle Kampagnen zentralisiert mit einem Klick."
+                "title": "5 Werbeplattformen",
+                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Alle Kampagnen in einem Dashboard zentralisiert."
             },
             "profit": {
                 "title": "Echter Reingewinn (POAS)",
@@ -71,6 +73,18 @@
             "realtime": {
                 "title": "Echtzeit",
                 "desc": "Ihre Daten werden alle 5 Minuten aktualisiert. Treffen Sie Entscheidungen basierend auf dem jetzigen Moment, nicht auf gestern."
+            },
+            "expenses": {
+                "title": "Ausgabenverfolgung",
+                "desc": "Kategorisieren Sie Ihre Ausgaben, planen Sie wiederkehrende. Kalenderansicht und Monatsbericht inklusive."
+            },
+            "wizard": {
+                "title": "Geführte Einrichtung",
+                "desc": "4-Schritte-Assistent zur Konfiguration Ihrer Kosten. Keine Expertise erforderlich, in 5 Minuten einsatzbereit."
+            },
+            "adsPage": {
+                "title": "Detaillierte Ads-Seite",
+                "desc": "ROAS, CTR, CPM pro Kampagne. Nach Plattform filtern, Leistung in Echtzeit vergleichen."
             }
         },
         "howItWorks": "Wie es funktioniert",
@@ -146,47 +160,61 @@
             "discount": "-20%"
         },
         "plans": {
+            "discovery": {
+                "name": "Discovery",
+                "badge": "✨ Kostenlos",
+                "desc": "Testen Sie kostenlos mit 20 Bestellungen/Monat",
+                "features": {
+                    "orders": "20 Bestellungen/Monat",
+                    "shop": "1 Shop",
+                    "history": "30 Tage Historie",
+                    "adPlatform": "1 Werbeplattform",
+                    "comparison": "Periodenvergleich",
+                    "export": "CSV-Export"
+                },
+                "cta": "Kostenlos starten"
+            },
             "starter": {
                 "name": "Starter",
-                "desc": "Endlich wissen, ob Sie Geld verdienen",
+                "desc": "Für wachsende Shops",
                 "features": {
-                    "1shop": "1 Shop",
-                    "dailyProfit": "Täglicher echter Gewinn",
-                    "allCosts": "Ads + Versand + Gebühren + Tools",
-                    "alert": "Warnung bei unrentablem Tag",
-                    "consolidation": "Multi-Shop-Konsolidierung",
-                    "comparison": "Shop-Vergleich"
+                    "orders": "300 Bestellungen/Monat",
+                    "shop": "1 Shop",
+                    "history": "Unbegrenzte Historie",
+                    "adPlatforms": "5 Werbeplattformen",
+                    "comparison": "Periodenvergleich",
+                    "export": "CSV-Export"
                 },
                 "cta": "Mit Starter beginnen"
             },
-            "pro": {
-                "name": "Pro",
-                "badge": "⭐️ Beliebteste",
-                "desc": "Mehrere Shops ohne Schätzung steuern",
+            "growth": {
+                "name": "Growth",
+                "badge": "⭐️ Empfohlen",
+                "desc": "Mehrere Shops präzise steuern",
                 "features": {
-                    "3shops": "Bis zu 3 Shops",
-                    "consolidatedView": "Konsolidierte Ansicht",
-                    "comparison": "Shop-Vergleich",
-                    "decisions": "Schnelle Entscheidungen (Cut / Scale)",
-                    "analysis": "Präzise tägliche Analyse",
-                    "support": "Prioritäts-Support"
+                    "orders": "1.500 Bestellungen/Monat",
+                    "shops": "Bis zu 3 Shops",
+                    "history": "Unbegrenzte Historie",
+                    "adPlatforms": "5 Werbeplattformen",
+                    "multiShop": "Multi-Shop konsolidierte Ansicht",
+                    "comparison": "Erweiterter Vergleich"
                 },
-                "cta": "Auf Pro wechseln",
+                "cta": "Auf Growth wechseln",
                 "socialProof": "Die Wahl von 70% der E-Händler"
             },
-            "max": {
-                "name": "Max",
-                "badge": "Ultimativ",
-                "desc": "Totale Beherrschung der Multi-Shop-Rentabilität",
+            "scale": {
+                "name": "Scale",
+                "badge": "🚀 Ultimate",
+                "desc": "Totale Kontrolle ohne Limits",
                 "features": {
-                    "7shops": "Bis zu 7 Shops",
-                    "multiBrand": "Multi-Marke / Multi-Land",
-                    "history": "Langzeithistorie",
-                    "advancedComparison": "Erweiterter Vergleich",
-                    "earlyAccess": "Early Access Funktionen",
-                    "dedicatedSupport": "Onboarding + dedizierter Support"
+                    "orders": "Unbegrenzte Bestellungen",
+                    "shops": "Unbegrenzte Shops",
+                    "history": "Unbegrenzte Historie",
+                    "adPlatforms": "5 Werbeplattformen",
+                    "slackSupport": "Dedizierter Slack-Support",
+                    "priority": "Prioritäts-Support"
                 },
-                "cta": "Auf Max wechseln"
+                "cta": "Auf Scale wechseln"
             }
         },
         "enterprise": {
@@ -278,14 +306,88 @@
             "commitment": {
                 "q": "Bin ich langfristig gebunden?",
                 "a": "Nein, es gibt keine Bindung. Sie können Ihr Abonnement jederzeit mit einem Klick in Ihrem Dashboard kündigen. Der Zugriff endet einfach am Ende Ihres aktuellen Abrechnungszeitraums."
+            },
+            "freePlan": {
+                "q": "Gibt es einen kostenlosen Plan?",
+                "a": "Ja! Unser Discovery-Plan ist 100% kostenlos mit 20 Bestellungen/Monat, perfekt zum Testen oder für kleine Shops. Keine Kreditkarte erforderlich."
+            },
+            "adPlatforms": {
+                "q": "Wie viele Werbeplattformen werden unterstützt?",
+                "a": "5 Plattformen: Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads und Snapchat Ads. Alle Kampagnen in einem Dashboard zentralisiert."
+            },
+            "affiliate": {
+                "q": "Wie funktioniert das Partnerprogramm?",
+                "a": "Verdienen Sie 15% lebenslange Provision auf alle Zahlungen Ihrer Empfehlungen. Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat. Monatliche PayPal-Auszahlungen (mindestens 50€). Bewerben Sie sich auf unserer Partnerseite."
             }
         }
     },
     "cta": {
         "title": "Bereit, die Wahrheit zu sehen?",
         "subtitle": "Schließen Sie sich den E-Händlern an, die aufgehört haben, mit unscharfen Daten Geld zu verlieren.",
-        "button": "24h kostenlos testen",
+        "button": "Kostenlos starten",
         "noCard": "Keine Kreditkarte erforderlich."
+    },
+    "affiliate": {
+        "hero": {
+            "badge": "Partnerprogramm",
+            "title": "Werden Sie Scaliente-Partner",
+            "subtitle": "Verdienen Sie 15% lebenslange Provision für jeden vermittelten Kunden",
+            "cta": "Bewerbung einreichen"
+        },
+        "benefits": {
+            "title": "Programmvorteile",
+            "items": {
+                "commission": {
+                    "title": "15% lebenslang",
+                    "desc": "Provision auf alle Zahlungen Ihrer Empfehlungen, für immer"
+                },
+                "discount": {
+                    "title": "50% für Empfehlungen",
+                    "desc": "Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat"
+                },
+                "validation": {
+                    "title": "30 Tage Validierung",
+                    "desc": "Validierungszeitraum vor Provisionsgenehmigung"
+                },
+                "payment": {
+                    "title": "PayPal-Zahlungen",
+                    "desc": "Monatliche Zahlungen am 5. (mindestens 50€)"
+                }
+            }
+        },
+        "features": {
+            "title": "Was Sie erhalten",
+            "items": [
+                "Dediziertes Affiliate-Dashboard",
+                "Echtzeit-Empfehlungsverfolgung",
+                "Detaillierte Provisionshistorie",
+                "Einzigartiger personalisierter Empfehlungslink",
+                "Statusverfolgung (ausstehend → genehmigt → ausgezahlt)"
+            ]
+        },
+        "form": {
+            "title": "Bewerbungsformular",
+            "fields": {
+                "firstName": "Vorname",
+                "lastName": "Nachname",
+                "email": "E-Mail",
+                "website": "Website / Social Media",
+                "audience": "Geschätzte Reichweite",
+                "promotion": "Wie planen Sie, Scaliente zu bewerben?",
+                "motivation": "Warum möchten Sie Partner werden?"
+            },
+            "placeholders": {
+                "firstName": "Max",
+                "lastName": "Mustermann",
+                "email": "max@beispiel.de",
+                "website": "https://ihreseite.de",
+                "audience": "Z.B. 10.000 Instagram-Follower",
+                "promotion": "Beschreiben Sie Ihre Werbestrategie...",
+                "motivation": "Erklären Sie Ihre Motivation..."
+            },
+            "submit": "Bewerbung einreichen",
+            "disclaimer": "Wir prüfen Ihre Bewerbung und antworten innerhalb von 48 Stunden."
+        }
     },
     "footer": {
         "tagline": "Der ultimative Profit-Tracker für ambitionierte E-Händler.",
@@ -295,6 +397,7 @@
             "features": "Funktionen",
             "pricing": "Preise",
             "login": "Anmelden",
+            "affiliate": "Partnerprogramm",
             "privacy": "Datenschutzerklärung",
             "cookies": "Cookies",
             "terms": "Nutzungsbedingungen",

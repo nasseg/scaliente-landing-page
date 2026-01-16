@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Layers, DollarSign, Activity } from 'lucide-react';
+import { Layers, DollarSign, Activity, Wallet, Settings, BarChart3 } from 'lucide-react';
 import FeatureCard from './ui/FeatureCard';
 
 const FeatureSection = ({ content }) => {
@@ -28,7 +28,7 @@ const FeatureSection = ({ content }) => {
                 </div>
 
                 {/* Feature Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                     <FeatureCard
                         icon={<Layers className="text-purple-400" />}
                         title={content?.cards?.ads?.title}
@@ -43,6 +43,21 @@ const FeatureSection = ({ content }) => {
                         icon={<Activity className="text-orange-400" />}
                         title={content?.cards?.realtime?.title}
                         desc={content?.cards?.realtime?.desc}
+                    />
+                    <FeatureCard
+                        icon={<Wallet className="text-cyan-400" />}
+                        title={content?.cards?.expenses?.title}
+                        desc={content?.cards?.expenses?.desc}
+                    />
+                    <FeatureCard
+                        icon={<Settings className="text-pink-400" />}
+                        title={content?.cards?.wizard?.title}
+                        desc={content?.cards?.wizard?.desc}
+                    />
+                    <FeatureCard
+                        icon={<BarChart3 className="text-yellow-400" />}
+                        title={content?.cards?.adsPage?.title}
+                        desc={content?.cards?.adsPage?.desc}
                     />
                 </div>
 

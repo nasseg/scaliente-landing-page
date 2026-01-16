@@ -2,16 +2,18 @@
     "common": {
         "loading": "Loading...",
         "error": "An error occurred",
-        "getStarted": "Get Started Now",
+        "getStarted": "Start Free",
         "viewDemo": "View Demo",
         "login": "Login",
-        "freeTrial": "Free Trial",
-        "24hTrial": "24h Free Trial",
+        "freeTrial": "Start Free",
+        "24hTrial": "Start Free",
         "month": "month",
         "year": "year",
         "monthly": "Monthly",
         "annual": "Annual",
-        "billed": "Billed"
+        "billed": "Billed",
+        "free": "Free",
+        "noCard": "No credit card required"
     },
     "navbar": {
         "features": "Features",
@@ -61,8 +63,8 @@
         "description": "Scaliente connects to all your tools in one click. No more Excel spreadsheets and manual calculations at 2 AM.",
         "cards": {
             "ads": {
-                "title": "All your ads in one place",
-                "desc": "Stop switching between Business Manager, Google Ads, and TikTok. All your campaigns centralized in one click."
+                "title": "5 Ad Platforms",
+                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - All your campaigns centralized in one dashboard."
             },
             "profit": {
                 "title": "Real Net Profit (POAS)",
@@ -71,6 +73,18 @@
             "realtime": {
                 "title": "Real Time",
                 "desc": "Your data refreshes every 5 minutes. Make decisions based on the present moment, not yesterday."
+            },
+            "expenses": {
+                "title": "Expense Tracking",
+                "desc": "Categorize your expenses, schedule recurring ones. Calendar view and monthly report included."
+            },
+            "wizard": {
+                "title": "Guided Setup",
+                "desc": "4-step wizard to configure your costs. Zero expertise required, operational in 5 minutes."
+            },
+            "adsPage": {
+                "title": "Detailed Ads Page",
+                "desc": "ROAS, CTR, CPM per campaign. Filter by platform, compare performance in real-time."
             }
         },
         "howItWorks": "How it works",
@@ -146,47 +160,61 @@
             "discount": "-20%"
         },
         "plans": {
+            "discovery": {
+                "name": "Discovery",
+                "badge": "✨ Free",
+                "desc": "Try free with 20 orders/month",
+                "features": {
+                    "orders": "20 orders/month",
+                    "shop": "1 store",
+                    "history": "30-day history",
+                    "adPlatform": "1 ad platform",
+                    "comparison": "Period comparison",
+                    "export": "CSV export"
+                },
+                "cta": "Start Free"
+            },
             "starter": {
                 "name": "Starter",
-                "desc": "Finally know if you're making money",
+                "desc": "For growing stores",
                 "features": {
-                    "1shop": "1 Shop",
-                    "dailyProfit": "Daily real profit",
-                    "allCosts": "Ads + shipping + fees + tools",
-                    "alert": "Non-profitable day alert",
-                    "consolidation": "Multi-shop consolidation",
-                    "comparison": "Shop comparison"
+                    "orders": "300 orders/month",
+                    "shop": "1 store",
+                    "history": "Unlimited history",
+                    "adPlatforms": "5 ad platforms",
+                    "comparison": "Period comparison",
+                    "export": "CSV export"
                 },
                 "cta": "Start with Starter"
             },
-            "pro": {
-                "name": "Pro",
-                "badge": "⭐️ Most Popular",
-                "desc": "Drive multiple shops without approximation",
+            "growth": {
+                "name": "Growth",
+                "badge": "⭐️ Recommended",
+                "desc": "Drive multiple stores with precision",
                 "features": {
-                    "3shops": "Up to 3 Shops",
-                    "consolidatedView": "Consolidated view",
-                    "comparison": "Shop comparison",
-                    "decisions": "Fast decisions (cut / scale)",
-                    "analysis": "Precise daily analysis",
-                    "support": "Priority support"
+                    "orders": "1,500 orders/month",
+                    "shops": "Up to 3 stores",
+                    "history": "Unlimited history",
+                    "adPlatforms": "5 ad platforms",
+                    "multiShop": "Multi-store consolidated view",
+                    "comparison": "Advanced comparison"
                 },
-                "cta": "Switch to Pro",
+                "cta": "Switch to Growth",
                 "socialProof": "The choice of 70% of e-merchants"
             },
-            "max": {
-                "name": "Max",
-                "badge": "Ultimate",
-                "desc": "Total mastery of multi-shop profitability",
+            "scale": {
+                "name": "Scale",
+                "badge": "🚀 Ultimate",
+                "desc": "Total mastery with no limits",
                 "features": {
-                    "7shops": "Up to 7 Shops",
-                    "multiBrand": "Multi-brand / multi-country",
-                    "history": "Long-term history",
-                    "advancedComparison": "Advanced comparison",
-                    "earlyAccess": "Early access features",
-                    "dedicatedSupport": "Onboarding + dedicated support"
+                    "orders": "Unlimited orders",
+                    "shops": "Unlimited stores",
+                    "history": "Unlimited history",
+                    "adPlatforms": "5 ad platforms",
+                    "slackSupport": "Dedicated Slack support",
+                    "priority": "Priority support"
                 },
-                "cta": "Switch to Max"
+                "cta": "Switch to Scale"
             }
         },
         "enterprise": {
@@ -278,14 +306,88 @@
             "commitment": {
                 "q": "Am I locked in?",
                 "a": "No, there's no commitment. You can cancel your subscription at any time from your dashboard in one click. Access will simply stop at the end of your current billing period."
+            },
+            "freePlan": {
+                "q": "Is there a free plan?",
+                "a": "Yes! Our Discovery plan is 100% free with 20 orders/month, perfect for testing or small stores. No credit card required."
+            },
+            "adPlatforms": {
+                "q": "How many ad platforms are supported?",
+                "a": "5 platforms: Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads, and Snapchat Ads. All your campaigns centralized in one dashboard."
+            },
+            "affiliate": {
+                "q": "How does the affiliate program work?",
+                "a": "Earn 15% lifetime commission on all payments from your referrals. Your referrals get 50% off their first month. Monthly PayPal payouts (minimum €50). Apply on our partners page."
             }
         }
     },
     "cta": {
         "title": "Ready to see the truth?",
         "subtitle": "Join the e-merchants who stopped losing money with blurry data.",
-        "button": "24h Free Trial",
+        "button": "Start Free",
         "noCard": "No credit card required."
+    },
+    "affiliate": {
+        "hero": {
+            "badge": "Partner Program",
+            "title": "Become a Scaliente Partner",
+            "subtitle": "Earn 15% lifetime commission on every customer you refer",
+            "cta": "Submit Application"
+        },
+        "benefits": {
+            "title": "Program Benefits",
+            "items": {
+                "commission": {
+                    "title": "15% Lifetime",
+                    "desc": "Commission on all payments from your referrals, forever"
+                },
+                "discount": {
+                    "title": "50% for Referrals",
+                    "desc": "Your referrals get 50% off their first month"
+                },
+                "validation": {
+                    "title": "30-Day Validation",
+                    "desc": "Validation period before commission approval"
+                },
+                "payment": {
+                    "title": "PayPal Payments",
+                    "desc": "Monthly payments on the 5th (minimum €50)"
+                }
+            }
+        },
+        "features": {
+            "title": "What You Get",
+            "items": [
+                "Dedicated affiliate dashboard",
+                "Real-time referral tracking",
+                "Detailed commission history",
+                "Unique personalized referral link",
+                "Status tracking (pending → approved → paid)"
+            ]
+        },
+        "form": {
+            "title": "Application Form",
+            "fields": {
+                "firstName": "First Name",
+                "lastName": "Last Name",
+                "email": "Email",
+                "website": "Website / Social Media",
+                "audience": "Estimated Audience",
+                "promotion": "How do you plan to promote Scaliente?",
+                "motivation": "Why do you want to become a partner?"
+            },
+            "placeholders": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "john@example.com",
+                "website": "https://yoursite.com",
+                "audience": "E.g., 10,000 Instagram followers",
+                "promotion": "Describe your promotion strategy...",
+                "motivation": "Explain your motivations..."
+            },
+            "submit": "Submit Application",
+            "disclaimer": "We will review your application and respond within 48h."
+        }
     },
     "footer": {
         "tagline": "The ultimate profit tracker for ambitious e-merchants.",
@@ -295,6 +397,7 @@
             "features": "Features",
             "pricing": "Pricing",
             "login": "Login",
+            "affiliate": "Partner Program",
             "privacy": "Privacy Policy",
             "cookies": "Cookies",
             "terms": "Terms of Service",
