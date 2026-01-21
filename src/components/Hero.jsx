@@ -1,251 +1,338 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, LayoutDashboard, BarChart3, Package, Layers, CreditCard } from 'lucide-react';
-import AnimatedGrid from './ui/AnimatedGrid';
-import Image from 'next/image';
+import { ArrowRight, LayoutDashboard, TrendingUp, Wallet, FileText, Settings, DollarSign, Clock, RotateCcw, Percent, Users, Target, BarChart3 } from 'lucide-react';
 
 const Hero = ({ content, common }) => {
     const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
+    const y1 = useTransform(scrollY, [0, 800], [0, 150]);
+    const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
     return (
-        <section className="relative pt-32 pb-20 overflow-hidden min-h-screen flex flex-col items-center justify-center">
-            <AnimatedGrid />
+        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+            {/* Grain Texture Only - WebGL background shows through */}
+            <div className="absolute inset-0 grain pointer-events-none" />
 
-            <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-400 text-xs font-medium mb-6">
-                    <span className="relative flex h-2 w-2">
-                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                        <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                    </span>
-                    {content?.pill}
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
+
+                {/* Badge - Minimal */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex justify-center mb-8"
+                >
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+                        <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                        </span>
+                        <span className="text-sm text-zinc-400 font-medium">{content?.pill}</span>
+                    </div>
                 </motion.div>
 
-                <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6 leading-tight">
-                    {content?.title} <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-pink-500 to-purple-600">
-                        {content?.subtitle}
-                    </span>
-                </motion.h1>
+                {/* Main Headline */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-center mb-8"
+                >
+                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-4">
+                        {content?.title}
+                    </h1>
+                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]">
+                        <span className="text-gradient-orange">{content?.subtitle}</span>
+                    </h1>
+                </motion.div>
 
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                {/* Description */}
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-lg md:text-xl text-zinc-300 text-center max-w-2xl mx-auto mb-12 leading-relaxed"
+                >
                     {content?.description}
                 </motion.p>
 
-                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex flex-col items-center gap-4 mb-20">
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <a href="https://app.scaliente.com" className="cta-animated-border w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-orange-500 to-pink-600 rounded-xl text-white font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.4)] transition-all flex items-center justify-center gap-2 group">
-                            {common?.getStarted || content?.ctaStart}
-                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a href="/#comparison" className="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 rounded-xl text-white font-medium hover:bg-white/10 transition-all backdrop-blur-sm text-center">
-                            {content?.ctaDemo}
-                        </a>
-                    </div>
-                    {/* Free Badge */}
-                    <div className="flex items-center gap-2 text-sm text-gray-400">
-                        <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {/* CTA Buttons */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+                >
+                    <a
+                        href="https://app.scaliente.com"
+                        className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-orange-500 to-orange-600 rounded-2xl text-white font-semibold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(249,115,22,0.35)] hover:-translate-y-0.5 flex items-center justify-center gap-3"
+                    >
+                        {common?.getStarted || content?.ctaStart}
+                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </a>
+                    <a
+                        href="/#comparison"
+                        className="w-full sm:w-auto px-8 py-4 rounded-2xl text-white font-medium border border-white/10 hover:bg-white/5 transition-all duration-300 text-center"
+                    >
+                        {content?.ctaDemo}
+                    </a>
+                </motion.div>
+
+                {/* Trust Indicators */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                    className="flex items-center justify-center gap-6 text-sm text-zinc-500 mb-20"
+                >
+                    <div className="flex items-center gap-2">
+                        <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                         <span>{common?.free || 'Gratuit'}</span>
-                        <span className="text-gray-600">•</span>
+                    </div>
+                    <div className="w-1 h-1 rounded-full bg-zinc-700" />
+                    <div className="flex items-center gap-2">
+                        <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
                         <span>{common?.noCard || 'Aucune carte requise'}</span>
                     </div>
                 </motion.div>
 
-                {/* Dashboard Visualization with Beam Effect */}
-                <motion.div style={{ y: y1, rotateX: 10 }} className="relative mx-auto w-full max-w-6xl perspective-1000 block">
-                    {/* Glow Effect behind dashboard */}
-                    <div className="absolute -inset-1 bg-gradient-to-r from-orange-500 to-purple-600 rounded-2xl blur opacity-20 animate-pulse"></div>
+                {/* Dashboard Preview - Matching actual Scaliente app (light theme) */}
+                <motion.div
+                    style={{ y: y1, perspective: '2000px', perspectiveOrigin: 'center center' }}
+                    initial={{ opacity: 0, y: 60 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative mx-auto w-full max-w-5xl"
+                >
+                    {/* Glow Effect */}
+                    <div className="absolute -inset-4 bg-gradient-to-b from-orange-500/20 via-orange-500/5 to-transparent rounded-[2.5rem] blur-3xl opacity-60 animate-pulse-glow" />
 
-                    {/* Main Container - Consistent Dark Theme */}
-                    <div className="relative bg-[#0F1115] border border-white/10 rounded-[2rem] md:rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl flex flex-col md:flex-row text-left font-sans h-[650px] md:h-auto">
+                    {/* Main Dashboard Card - Light Theme like actual app */}
+                    <div
+                        className="relative bg-[#fafafa] border border-zinc-200/50 rounded-[1.5rem] overflow-hidden shadow-2xl shadow-black/20"
+                    >
+                        {/* Window Controls */}
+                        <div className="flex items-center gap-2 px-5 py-3 bg-zinc-100/80 border-b border-zinc-200/50">
+                            <div className="flex gap-2">
+                                <div className="w-3 h-3 rounded-full bg-[#ff5f57]" />
+                                <div className="w-3 h-3 rounded-full bg-[#febc2e]" />
+                                <div className="w-3 h-3 rounded-full bg-[#28c840]" />
+                            </div>
+                            <div className="flex-1 flex justify-center">
+                                <div className="px-4 py-1 bg-white rounded-lg text-xs text-zinc-500 font-medium border border-zinc-200/50">
+                                    app.scaliente.com
+                                </div>
+                            </div>
+                            <div className="w-16" />
+                        </div>
 
-                        {/* Sidebar (Desktop Only) */}
-                        <div className="hidden md:flex w-20 lg:w-64 border-r border-white/5 bg-[#0F1115] flex-col justify-between py-6">
-                            <div className="space-y-6 px-4">
-                                {/* Logo Area */}
-                                <div className="flex items-center px-2 mb-8">
-                                    <Image
-                                        src="/scaliente_horizontale.png"
-                                        alt="Scaliente"
-                                        width={160}
-                                        height={40}
-                                        className="h-10 w-auto hidden lg:block"
-                                    />
-                                    <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-pink-600 rounded-lg flex items-center justify-center shrink-0 lg:hidden">
-                                        <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5 text-white" stroke="currentColor" strokeWidth="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
-                                    </div>
+                        {/* App Layout */}
+                        <div className="flex">
+                            {/* Sidebar */}
+                            <div className="w-44 bg-white border-r border-zinc-100 p-4 hidden md:block">
+                                {/* Logo */}
+                                <div className="mb-6">
+                                    <span className="font-brand font-bold text-lg text-zinc-900">Scaliente</span>
                                 </div>
 
-                                {/* Menu Items */}
+                                {/* Navigation */}
                                 <nav className="space-y-1">
-                                    {[
-                                        { icon: LayoutDashboard, label: content?.dashboard?.menu?.dashboard || 'Dashboard', active: true },
-                                        { icon: BarChart3, label: content?.dashboard?.menu?.adsInsights || 'Ads Insights', active: false },
-                                        { icon: CreditCard, label: content?.dashboard?.menu?.profit || 'Bénéfice', active: false },
-                                        { icon: Package, label: content?.dashboard?.menu?.inbox || 'Inbox', active: false },
-                                        { icon: Layers, label: content?.dashboard?.menu?.settings || 'Paramètres', active: false },
-                                    ].map((item, i) => (
-                                        <div key={i} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors ${item.active ? 'bg-orange-500/10 text-orange-500 border-l-2 border-orange-500' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}>
-                                            <item.icon className="w-5 h-5" />
-                                            <span className="hidden lg:block text-sm font-medium">{item.label}</span>
-                                        </div>
-                                    ))}
+                                    <a className="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-orange-50 text-orange-600 font-medium text-sm border-l-2 border-orange-500">
+                                        <LayoutDashboard className="w-4 h-4" />
+                                        Dashboard
+                                    </a>
+                                    <a className="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-50 rounded-lg text-sm">
+                                        <TrendingUp className="w-4 h-4" />
+                                        Ads Insights
+                                    </a>
+                                    <a className="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-50 rounded-lg text-sm">
+                                        <DollarSign className="w-4 h-4" />
+                                        Profit
+                                    </a>
+                                    <a className="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-50 rounded-lg text-sm">
+                                        <Wallet className="w-4 h-4" />
+                                        Expenses
+                                    </a>
+                                    <a className="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-50 rounded-lg text-sm">
+                                        <FileText className="w-4 h-4" />
+                                        Report
+                                    </a>
+                                    <a className="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:bg-zinc-50 rounded-lg text-sm">
+                                        <Settings className="w-4 h-4" />
+                                        Settings
+                                    </a>
                                 </nav>
                             </div>
 
-                            <div className="px-6 py-4 border-t border-white/5">
-                                <div className="flex items-center gap-3 text-gray-400 hover:text-white cursor-pointer">
-                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
-                                    <span className="hidden lg:block text-sm">{content?.dashboard?.menu?.logout || 'Se déconnecter'}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Main Content */}
-                        <div className="flex-1 bg-[#0F1115] text-white relative w-full flex flex-col">
-                            {/* Top Header */}
-                            <div className="h-16 border-b border-white/5 flex items-center justify-between px-6 md:px-8 bg-[#0F1115]">
-                                <div className="block md:hidden text-lg font-bold text-white">{content?.dashboard?.menu?.dashboard || 'Dashboard'}</div>
-                                <div className="hidden md:block"></div>
-                                <div className="flex items-center gap-4">
-                                    <div className="flex items-center gap-2 bg-[#1A1D24] border border-white/10 px-3 py-1.5 rounded-lg">
-                                        <div className="w-5 h-5 bg-gradient-to-br from-orange-500 to-pink-600 rounded text-[10px] flex items-center justify-center text-white font-bold">S</div>
-                                        <span className="text-sm font-medium text-gray-300 hidden sm:block">{content?.dashboard?.menu?.store || 'Store'}</span>
-                                        <svg className="w-4 h-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                                    </div>
-                                    <div className="w-8 h-8 rounded-full bg-purple-600 flex items-center justify-center text-xs font-bold ring-2 ring-white/10">N</div>
-                                </div>
-                            </div>
-
-                            {/* Mobile Date Filter (Dark) */}
-                            <div className="md:hidden px-6 pt-6 pb-2">
-                                <div className="bg-[#1A1D24] border border-white/10 rounded-2xl p-4 flex justify-between items-center">
-                                    <div className="flex items-center gap-3 text-gray-300 font-medium">
-                                        <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-                                        {content?.dashboard?.today || "Aujourd'hui"}
-                                    </div>
-                                    <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
-                                </div>
-                            </div>
-
-                            {/* Scrollable Dashboard Area - Unified */}
-                            <div className="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1 pb-28 md:pb-8">
-                                <div className="hidden md:flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4">
+                            {/* Main Content */}
+                            <div className="flex-1 p-5 bg-[#fafafa]">
+                                {/* Header */}
+                                <div className="flex items-center justify-between mb-5">
                                     <div>
-                                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-1">{content?.dashboard?.overview || "Vue d'ensemble"}</h2>
-                                        <p className="text-gray-400 text-sm md:text-base">{content?.dashboard?.performance || "Vos performances en temps réel"}</p>
+                                        <h2 className="font-brand text-2xl font-bold text-zinc-900 relative inline-block">
+                                            Overview
+                                            <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full" style={{ transform: 'rotate(-2deg)' }}></span>
+                                        </h2>
                                     </div>
-                                    <div className="flex items-center gap-2 bg-[#1A1D24] border border-white/10 rounded-lg p-1 self-start sm:self-auto">
-                                        <button className="px-3 md:px-4 py-1.5 bg-white text-black rounded text-xs md:text-sm font-bold shadow-sm">{content?.dashboard?.today || "Aujourd'hui"}</button>
-                                        <button className="px-3 md:px-4 py-1.5 text-gray-400 hover:text-white text-xs md:text-sm font-medium transition-colors">{content?.dashboard?.yesterday || "Hier"}</button>
+                                    <div className="flex items-center gap-3">
+                                        <div className="flex items-center gap-2 bg-white border border-zinc-200 rounded-lg px-3 py-1.5 text-sm text-zinc-600">
+                                            <Clock className="w-4 h-4" />
+                                            Last 30 days
+                                        </div>
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-pink-500 flex items-center justify-center text-white text-xs font-bold">
+                                            N
+                                        </div>
                                     </div>
                                 </div>
 
-                                {/* Cards Grid - Unified */}
-                                <div className="grid grid-cols-12 gap-4 md:gap-6">
-
-                                    {/* CA TOTAL - Top Row, Full Width */}
-                                    <div className="col-span-12 bg-[#15181E] border border-white/5 rounded-3xl p-6 flex justify-between items-center">
-                                        <div>
-                                            <div className="text-blue-400 text-xs font-bold uppercase mb-2">{content?.dashboard?.totalRevenue || "CA Total"}</div>
-                                            <div className="text-3xl md:text-4xl font-bold text-white">68,540.20 €</div>
-                                        </div>
-                                    </div>
-
-                                    {/* BÉNÉFICE NET - Left Column of Bottom Section */}
-                                    <div className="col-span-12 lg:col-span-7 bg-[#15181E] border border-white/5 rounded-3xl p-6 md:p-8 relative overflow-hidden group flex flex-col justify-between">
-                                        <div className="absolute right-0 top-0 w-64 h-64 bg-green-500/5 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"></div>
-
-                                        <div className="flex justify-between items-start mb-6 relative z-10">
-                                            <div className="bg-green-500/10 text-green-400 px-3 py-1 rounded text-xs font-bold uppercase tracking-wider">{content?.dashboard?.netProfit || "Bénéfice Net"}</div>
-                                            <div className="p-3 bg-white/5 rounded-full">
-                                                <svg className="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                            </div>
-                                        </div>
-
-                                        <div className="mb-2 relative z-10">
-                                            <span className="text-4xl md:text-6xl font-bold text-white tracking-tight whitespace-nowrap">21,450.90 €</span>
-                                        </div>
-                                        <div className="mb-8 flex items-center gap-2 relative z-10">
-                                            <span className="text-gray-400 font-medium">{content?.dashboard?.netMargin || "Marge nette:"}</span>
-                                            <span className="text-green-400 font-bold bg-green-500/10 px-2 py-0.5 rounded text-sm">34.2%</span>
-                                        </div>
-
-                                        {/* Graph Curve */}
-                                        <div className="absolute bottom-0 left-0 right-0 h-32 opacity-30 pointer-events-none">
-                                            <svg className="w-full h-full" preserveAspectRatio="none">
-                                                <path d="M0,80 C100,70 200,90 300,50 S500,20 600,60 S800,40 1000,10 L1000,120 L0,120 Z" fill="url(#greenGradient)" />
-                                                <path d="M0,80 C100,70 200,90 300,50 S500,20 600,60 S800,40 1000,10" fill="none" stroke="#4ade80" strokeWidth="3" />
-                                                <defs>
-                                                    <linearGradient id="greenGradient" x1="0" y1="0" x2="0" y2="1">
-                                                        <stop offset="0%" stopColor="#4ade8050" />
-                                                        <stop offset="100%" stopColor="#4ade8000" />
-                                                    </linearGradient>
-                                                </defs>
-                                            </svg>
-                                        </div>
-
-                                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 relative z-10 mt-auto pt-8">
-                                            <div>
-                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">{content?.dashboard?.supplierCosts || "Coûts Fournisseur"}</div>
-                                                <div className="text-lg md:text-xl font-bold text-white">12,120.45 €</div>
-                                            </div>
-                                            <div>
-                                                <div className="text-gray-500 text-xs font-bold uppercase mb-1">{content?.dashboard?.adSpend || "Dépenses Ads"}</div>
-                                                <div className="text-lg md:text-xl font-bold text-white">8,340.20 €</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* RIGHT COLUMN - Panier & En Attente */}
-                                    <div className="col-span-12 lg:col-span-5 flex flex-col gap-4 md:gap-6">
-                                        <div className="bg-[#15181E] border border-white/5 rounded-3xl p-6 flex flex-col justify-between flex-1 min-h-[160px]">
-                                            <div className="flex justify-between items-start">
-                                                <div className="text-purple-400 text-xs font-bold uppercase">{content?.dashboard?.avgOrderValue || "Panier Moyen"}</div>
-                                                <div className="p-2 bg-purple-500/10 rounded-lg">
-                                                    <svg className="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>
+                                {/* Metrics Grid - Matching actual app layout */}
+                                <div className="grid grid-cols-12 gap-3">
+                                    {/* NET PROFIT - Main Card with green gradient (like actual app) */}
+                                    <div className="col-span-12 md:col-span-7 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 border border-emerald-100 rounded-xl p-4 relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-emerald-200/30 to-transparent rounded-bl-full" />
+                                        <div className="relative">
+                                            <span className="inline-block px-2 py-0.5 bg-emerald-500 text-white text-[9px] font-bold rounded uppercase tracking-wide mb-2">
+                                                Net Profit
+                                            </span>
+                                            <div className="flex items-end gap-2 mb-1">
+                                                <span className="text-3xl md:text-4xl font-sans font-bold text-zinc-900">3 954,66 €</span>
+                                                <div className="w-7 h-7 bg-emerald-100 rounded-lg flex items-center justify-center mb-1">
+                                                    <TrendingUp className="w-3.5 h-3.5 text-emerald-600" />
                                                 </div>
                                             </div>
-                                            <div className="text-3xl font-bold text-white">55.27 €</div>
-                                        </div>
+                                            <p className="text-xs text-zinc-600 mb-3">Marge nette: <span className="text-emerald-600 font-semibold">20.8%</span></p>
 
-                                        <div className="bg-[#15181E] border border-white/5 rounded-3xl p-6 flex flex-col justify-between flex-1 min-h-[160px]">
-                                            <div className="flex justify-between items-start">
-                                                <div className="text-orange-400 text-xs font-bold uppercase">{content?.dashboard?.pending || "En Attente"}</div>
-                                                <div className="p-2 bg-orange-500/10 rounded-lg">
-                                                    <svg className="w-4 h-4 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                            {/* Mini Chart */}
+                                            <div className="h-10 flex items-end gap-0.5">
+                                                {[30, 45, 35, 60, 40, 55, 50, 70, 45, 65, 55, 75].map((h, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="flex-1 bg-gradient-to-t from-emerald-400/50 to-emerald-300/30 rounded-t"
+                                                        style={{ height: `${h}%` }}
+                                                    />
+                                                ))}
+                                            </div>
+
+                                            {/* Bottom Stats */}
+                                            <div className="flex gap-6 mt-3 pt-2 border-t border-emerald-100/50">
+                                                <div>
+                                                    <p className="text-[9px] text-zinc-500 uppercase tracking-wide">Supplier Costs</p>
+                                                    <p className="text-xs font-semibold text-zinc-800">5 115,28 €</p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-[9px] text-zinc-500 uppercase tracking-wide">Ad Spend</p>
+                                                    <p className="text-xs font-semibold text-zinc-800">9 233,25 €</p>
                                                 </div>
                                             </div>
-                                            <div className="text-3xl font-bold text-white">42</div>
                                         </div>
                                     </div>
 
+                                    {/* Right column */}
+                                    <div className="col-span-12 md:col-span-5 grid grid-rows-2 gap-3">
+                                        {/* TOTAL REVENUE */}
+                                        <div className="bg-white border border-zinc-100 rounded-xl p-4">
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <div className="w-5 h-5 bg-blue-50 rounded flex items-center justify-center">
+                                                    <DollarSign className="w-3 h-3 text-blue-500" />
+                                                </div>
+                                                <span className="text-[9px] text-zinc-500 uppercase tracking-wide font-medium">Total Revenue</span>
+                                            </div>
+                                            <p className="text-2xl font-sans font-bold text-zinc-900 mb-0.5">19 011,90 €</p>
+                                            <p className="text-[10px] text-emerald-500 font-medium">470 orders</p>
+                                        </div>
+
+                                        {/* AVG ORDER + PENDING row */}
+                                        <div className="grid grid-cols-2 gap-3">
+                                            {/* AVG ORDER VALUE */}
+                                            <div className="bg-white border border-zinc-100 rounded-xl p-3">
+                                                <div className="flex items-center gap-1.5 mb-1">
+                                                    <div className="w-5 h-5 bg-violet-50 rounded flex items-center justify-center">
+                                                        <BarChart3 className="w-3 h-3 text-violet-500" />
+                                                    </div>
+                                                    <span className="text-[8px] text-zinc-500 uppercase tracking-wide font-medium">Avg Order</span>
+                                                </div>
+                                                <p className="text-lg font-sans font-bold text-zinc-900">40,45 €</p>
+                                                <p className="text-[9px] text-zinc-400">From 470 orders</p>
+                                            </div>
+
+                                            {/* PENDING - Orange gradient */}
+                                            <div className="bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 border border-orange-100 rounded-xl p-3">
+                                                <div className="flex items-center gap-1.5 mb-1">
+                                                    <div className="w-5 h-5 bg-orange-100 rounded flex items-center justify-center">
+                                                        <Clock className="w-3 h-3 text-orange-500" />
+                                                    </div>
+                                                    <span className="text-[8px] text-orange-600 uppercase tracking-wide font-medium">Pending</span>
+                                                </div>
+                                                <p className="text-lg font-sans font-bold text-zinc-900">23</p>
+                                                <p className="text-[9px] text-orange-500">5% of total</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* Bottom Row - 4 cards */}
+                                    {/* REFUNDED - Pink gradient */}
+                                    <div className="col-span-6 md:col-span-3 bg-gradient-to-br from-pink-50 to-rose-50 border border-pink-100 rounded-xl p-3">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <RotateCcw className="w-3 h-3 text-pink-500" />
+                                            <span className="text-[8px] text-pink-600 uppercase tracking-wide font-medium">Refunded</span>
+                                        </div>
+                                        <p className="text-base font-sans font-bold text-zinc-900">0,00 €</p>
+                                        <p className="text-[9px] text-pink-400">0.0% of revenue</p>
+                                    </div>
+
+                                    {/* TRANSACTION FEES */}
+                                    <div className="col-span-6 md:col-span-3 bg-white border border-zinc-100 rounded-xl p-3">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <Percent className="w-3 h-3 text-zinc-400" />
+                                            <span className="text-[8px] text-zinc-500 uppercase tracking-wide font-medium">Fees</span>
+                                        </div>
+                                        <p className="text-base font-sans font-bold text-zinc-900">708,71 €</p>
+                                        <p className="text-[9px] text-zinc-400">3.7% of revenue</p>
+                                    </div>
+
+                                    {/* CUSTOMER LTV */}
+                                    <div className="col-span-6 md:col-span-3 bg-white border border-zinc-100 rounded-xl p-3">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <Users className="w-3 h-3 text-zinc-400" />
+                                            <span className="text-[8px] text-zinc-500 uppercase tracking-wide font-medium">Customer LTV</span>
+                                        </div>
+                                        <p className="text-base font-sans font-bold text-zinc-900">0 €</p>
+                                        <p className="text-[9px] text-zinc-400">No data yet</p>
+                                    </div>
+
+                                    {/* BREAKEVEN ROAS - Green gradient */}
+                                    <div className="col-span-6 md:col-span-3 bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-100 rounded-xl p-3">
+                                        <div className="flex items-center gap-1.5 mb-1">
+                                            <Target className="w-3 h-3 text-emerald-500" />
+                                            <span className="text-[8px] text-emerald-600 uppercase tracking-wide font-medium">Breakeven</span>
+                                        </div>
+                                        <p className="text-base font-sans font-bold text-zinc-900">1.37x</p>
+                                        <p className="text-[9px] text-emerald-500">ROAS: 2.06x ✓</p>
+                                    </div>
                                 </div>
                             </div>
-
-                            {/* Mobile Bottom Navigation */}
-                            <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 bg-[#1A1D24] px-6 py-3 rounded-full flex gap-8 items-center shadow-2xl z-20 border border-white/10">
-                                <div className="p-2 bg-white/20 rounded-lg text-white">
-                                    <LayoutDashboard className="w-5 h-5" />
-                                </div>
-                                <div className="text-gray-500">
-                                    <BarChart3 className="w-5 h-5" />
-                                </div>
-                                <div className="text-gray-500">
-                                    <CreditCard className="w-5 h-5" />
-                                </div>
-                                <div className="text-gray-500">
-                                    <Layers className="w-5 h-5" />
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </motion.div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                style={{ opacity }}
+                className="absolute bottom-8 left-1/2 -translate-x-1/2"
+            >
+                <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="w-1.5 h-1.5 bg-white/40 rounded-full"
+                    />
+                </div>
+            </motion.div>
         </section>
     );
 };

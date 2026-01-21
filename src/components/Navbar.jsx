@@ -1,37 +1,188 @@
+'use client';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { Menu, X } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
-const Navbar = ({ content, lang }) => (
-    <nav className="fixed top-0 w-full z-50 liquid-glass border-b-0 border-white/5">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div className="flex items-center">
-                <a href={`/${lang}`}>
-                    <Image
-                        src="/scaliente_horizontale.png"
-                        alt="Scaliente"
-                        width={180}
-                        height={48}
-                        className="h-12 w-auto"
-                        priority
-                    />
-                </a>
-            </div>
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-                <a href={`/${lang}/#features`} className="hover:text-white transition-colors">{content?.features || "Features"}</a>
-                <a href={`/${lang}/#pricing`} className="hover:text-white transition-colors">{content?.pricing || "Pricing"}</a>
-                <a href={`/${lang}/#comparison`} className="hover:text-white transition-colors">{content?.comparison || "Before/After"}</a>
-            </div>
-            <div className="flex items-center gap-4">
-                <LanguageSelector currentLang={lang} position="bottom" />
-                <a href="https://app.scaliente.com" className="hidden md:block text-sm text-gray-300 hover:text-white transition-colors">
-                    {content?.login || "Login"}
-                </a>
-                <a href="https://app.scaliente.com" className="bg-white text-black px-4 py-2 rounded-lg text-sm font-bold hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                    {content?.freeTrial || "Free Trial"}
-                </a>
-            </div>
-        </div>
-    </nav>
-);
+const Navbar = ({ content, lang }) => {
+    const [scrolled, setScrolled] = useState(false);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 20);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Prevent body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [mobileMenuOpen]);
+
+    const navLinks = [
+        { href: `/${lang}/#features`, label: content?.features || "Fonctionnalités" },
+        { href: `/${lang}/#pricing`, label: content?.pricing || "Tarifs" },
+        { href: `/${lang}/#comparison`, label: content?.comparison || "Avant/Après" },
+    ];
+
+    return (
+        <>
+            <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+                scrolled
+                    ? 'bg-[#09090b]/80 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.08]'
+                    : 'bg-transparent'
+            }`}>
+                <div className="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div className="h-16 sm:h-18 flex items-center justify-between">
+                        {/* Logo */}
+                        <a href={`/${lang}`} className="flex items-center shrink-0">
+                            <Image
+                                src="/scaliente_horizontale.png"
+                                alt="Scaliente"
+                                width={140}
+                                height={36}
+                                className="h-7 sm:h-8 w-auto"
+                                priority
+                            />
+                        </a>
+
+                        {/* Desktop Navigation Links - Center */}
+                        <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
+                            <div className="flex items-center gap-1 p-1 rounded-full bg-white/[0.05] border border-white/[0.08]">
+                                {navLinks.map((link, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={link.href}
+                                        className="px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.08] rounded-full transition-all duration-200"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Desktop Right Side - Actions */}
+                        <div className="hidden lg:flex items-center gap-3 shrink-0">
+                            <LanguageSelector currentLang={lang} position="bottom" />
+
+                            <a
+                                href="https://app.scaliente.com"
+                                className="text-sm text-zinc-400 hover:text-white transition-colors duration-200 px-4 py-2"
+                            >
+                                {content?.login || "Connexion"}
+                            </a>
+
+                            <a
+                                href="https://app.scaliente.com"
+                                className="group relative px-5 py-2.5 rounded-xl text-sm font-semibold text-white overflow-hidden transition-all duration-300"
+                            >
+                                {/* Button gradient background */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-orange-600 transition-all duration-300" />
+                                {/* Hover glow */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-orange-400 to-orange-500" />
+                                <span className="relative z-10">{content?.freeTrial || "Essai Gratuit"}</span>
+                            </a>
+                        </div>
+
+                        {/* Mobile Right Side */}
+                        <div className="flex lg:hidden items-center gap-2">
+                            <LanguageSelector currentLang={lang} position="bottom" />
+
+                            {/* Mobile Menu Button */}
+                            <button
+                                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                                className="p-2 rounded-xl bg-white/[0.05] border border-white/[0.08] text-white hover:bg-white/[0.1] transition-all duration-200"
+                                aria-label="Toggle menu"
+                            >
+                                {mobileMenuOpen ? (
+                                    <X className="w-5 h-5" />
+                                ) : (
+                                    <Menu className="w-5 h-5" />
+                                )}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {/* Mobile Menu Overlay */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <>
+                        {/* Backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+                            onClick={() => setMobileMenuOpen(false)}
+                        />
+
+                        {/* Mobile Menu Panel */}
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                            className="fixed top-16 left-4 right-4 z-50 lg:hidden"
+                        >
+                            <div className="bg-[#18181b]/95 backdrop-blur-2xl rounded-2xl border border-white/[0.1] shadow-2xl shadow-black/50 overflow-hidden">
+                                {/* Navigation Links */}
+                                <div className="p-4 space-y-1">
+                                    {navLinks.map((link, idx) => (
+                                        <motion.a
+                                            key={idx}
+                                            href={link.href}
+                                            onClick={() => setMobileMenuOpen(false)}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            transition={{ delay: idx * 0.05 }}
+                                            className="block px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
+                                        >
+                                            {link.label}
+                                        </motion.a>
+                                    ))}
+                                </div>
+
+                                {/* Divider */}
+                                <div className="h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent mx-4" />
+
+                                {/* CTA Section */}
+                                <div className="p-4 space-y-3">
+                                    <a
+                                        href="https://app.scaliente.com"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="block w-full text-center px-4 py-3 text-zinc-400 hover:text-white transition-colors duration-200 rounded-xl hover:bg-white/[0.05]"
+                                    >
+                                        {content?.login || "Connexion"}
+                                    </a>
+
+                                    <a
+                                        href="https://app.scaliente.com"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="block w-full text-center px-6 py-3.5 bg-gradient-to-b from-orange-500 to-orange-600 rounded-xl text-base font-semibold text-white hover:shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all duration-300"
+                                    >
+                                        {content?.freeTrial || "Essai Gratuit"}
+                                    </a>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </>
+                )}
+            </AnimatePresence>
+        </>
+    );
+};
 
 export default Navbar;
