@@ -25,7 +25,7 @@ export default async function Home({ params }) {
         <div className="absolute bottom-0 left-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
         <div className="absolute bottom-0 right-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
         {/* Frosted hero */}
-        <div className="relative text-white bg-[#09090b]/70 backdrop-blur-2xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem]">
+        <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem]">
           <Hero content={dict.hero} common={dict.common} />
           <LogoMarquee content={dict.logoMarquee} />
         </div>
@@ -58,7 +58,7 @@ export default async function Home({ params }) {
             <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             {/* Frosted card */}
-            <div className="relative bg-[#09090b]/70 backdrop-blur-2xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
+            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
               <BeforeAfter content={dict.beforeAfter} />
             </div>
           </div>
@@ -84,7 +84,7 @@ export default async function Home({ params }) {
             <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             {/* Frosted card */}
-            <div className="relative bg-[#09090b]/70 backdrop-blur-2xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
+            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
               <Testimonials content={dict.testimonials} />
             </div>
           </div>
@@ -110,7 +110,7 @@ export default async function Home({ params }) {
             <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
             {/* Frosted card */}
-            <div className="relative bg-[#09090b]/70 backdrop-blur-2xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
+            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
               <CTA content={dict.cta} />
             </div>
           </div>

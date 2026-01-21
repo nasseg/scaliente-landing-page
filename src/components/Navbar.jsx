@@ -54,7 +54,7 @@ const Navbar = ({ content, lang }) => {
         <>
             <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
                 scrolled
-                    ? 'bg-[#09090b]/80 backdrop-blur-2xl backdrop-saturate-150 border-b border-white/[0.08]'
+                    ? 'bg-[#09090b]/60 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.08]'
                     : 'bg-transparent'
             }`}>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -152,7 +152,7 @@ const Navbar = ({ content, lang }) => {
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             className="fixed top-16 left-4 right-4 z-50 lg:hidden"
                         >
-                            <div className="bg-[#18181b]/95 backdrop-blur-2xl rounded-2xl border border-white/[0.1] shadow-2xl shadow-black/50 overflow-hidden">
+                            <div className="bg-[#18181b]/90 backdrop-blur-xl rounded-2xl border border-white/[0.1] shadow-2xl shadow-black/50 overflow-hidden">
                                 {/* Navigation Links */}
                                 <div className="p-4 space-y-1">
                                     {navLinks.map((link, idx) => (
