@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
@@ -29,10 +29,25 @@ const Navbar = ({ content, lang }) => {
         };
     }, [mobileMenuOpen]);
 
+    // Smooth scroll to section
+    const scrollToSection = useCallback((e, sectionId) => {
+        e.preventDefault();
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const navbarHeight = 80; // Account for fixed navbar
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+                top: elementPosition - navbarHeight,
+                behavior: 'smooth'
+            });
+        }
+        setMobileMenuOpen(false);
+    }, []);
+
     const navLinks = [
-        { href: `/${lang}/#features`, label: content?.features || "Fonctionnalités" },
-        { href: `/${lang}/#pricing`, label: content?.pricing || "Tarifs" },
-        { href: `/${lang}/#comparison`, label: content?.comparison || "Avant/Après" },
+        { sectionId: 'features', label: content?.features || "Fonctionnalités" },
+        { sectionId: 'pricing', label: content?.pricing || "Tarifs" },
+        { sectionId: 'comparison', label: content?.comparison || "Avant/Après" },
     ];
 
     return (
@@ -60,13 +75,13 @@ const Navbar = ({ content, lang }) => {
                         <div className="hidden lg:flex items-center justify-center flex-1 mx-8">
                             <div className="flex items-center gap-1 p-1 rounded-full bg-white/[0.05] border border-white/[0.08]">
                                 {navLinks.map((link, idx) => (
-                                    <a
+                                    <button
                                         key={idx}
-                                        href={link.href}
-                                        className="px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.08] rounded-full transition-all duration-200"
+                                        onClick={(e) => scrollToSection(e, link.sectionId)}
+                                        className="px-4 py-2 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.08] rounded-full transition-all duration-200 cursor-pointer"
                                     >
                                         {link.label}
-                                    </a>
+                                    </button>
                                 ))}
                             </div>
                         </div>
@@ -141,17 +156,16 @@ const Navbar = ({ content, lang }) => {
                                 {/* Navigation Links */}
                                 <div className="p-4 space-y-1">
                                     {navLinks.map((link, idx) => (
-                                        <motion.a
+                                        <motion.button
                                             key={idx}
-                                            href={link.href}
-                                            onClick={() => setMobileMenuOpen(false)}
+                                            onClick={(e) => scrollToSection(e, link.sectionId)}
                                             initial={{ opacity: 0, x: -10 }}
                                             animate={{ opacity: 1, x: 0 }}
                                             transition={{ delay: idx * 0.05 }}
-                                            className="block px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
+                                            className="block w-full text-left px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
                                         >
                                             {link.label}
-                                        </motion.a>
+                                        </motion.button>
                                     ))}
                                 </div>
 

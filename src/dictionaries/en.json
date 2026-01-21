@@ -55,6 +55,68 @@
     "logoMarquee": {
         "title": "Native integrations with"
     },
+    "howItWorks": {
+        "badge": "Simple setup",
+        "title": {
+            "part1": "Operational in",
+            "part2": "5 minutes"
+        },
+        "description": "Connect your tools, configure your costs, and start seeing your true profit. No technical expertise required.",
+        "steps": {
+            "shopify": {
+                "title": "Connect Shopify",
+                "desc": "One-click OAuth connection. Your orders, products, and revenue sync automatically.",
+                "time": "30 seconds"
+            },
+            "ads": {
+                "title": "Link your Ads",
+                "desc": "Connect Meta, Google, TikTok, Pinterest, and Snapchat via OAuth. All your ad spend centralized.",
+                "time": "2 minutes"
+            },
+            "mode": {
+                "title": "Choose your Mode",
+                "desc": "Dropshipping or Classic - configure how your costs are calculated.",
+                "time": "1 minute"
+            },
+            "expenses": {
+                "title": "Add your Expenses",
+                "desc": "Subscriptions, salaries, fixed costs. Generate reports with your real profit after all charges.",
+                "time": "Optional"
+            }
+        },
+        "modes": {
+            "title": "Two calculation modes",
+            "subtitle": "Choose the one that matches your business model",
+            "dropshipping": {
+                "title": "Dropshipping Mode",
+                "badge": "Print-on-demand, AliExpress...",
+                "desc": "COGS calculated based on the number of products sold per order.",
+                "example": "Example",
+                "product": "Product",
+                "shipping1": "Shipping 1 product",
+                "shipping2": "Shipping 2 products"
+            },
+            "classic": {
+                "title": "Classic Mode",
+                "badge": "E-commerce with inventory",
+                "desc": "Shipping price based on package weight. Configure by weight ranges.",
+                "example": "Example",
+                "weight1": "0 - 500g",
+                "weight2": "500g - 1kg",
+                "weight3": "1kg - 2kg"
+            }
+        },
+        "result": {
+            "title": "Result: Your Complete Analytics",
+            "subtitle": "Everything you need to drive your profitability",
+            "metrics": {
+                "profit": "Net Profit",
+                "roas": "ROAS & POAS",
+                "breakeven": "Breakeven ROAS",
+                "reports": "Monthly Reports"
+            }
+        }
+    },
     "features": {
         "title": {
             "part1": "Centralize. Analyze.",
@@ -189,7 +251,7 @@
             },
             "growth": {
                 "name": "Growth",
-                "badge": "⭐️ Recommended",
+                "badge": "Recommended",
                 "desc": "Drive multiple stores with precision",
                 "features": {
                     "orders": "1,500 orders/month",
@@ -204,7 +266,7 @@
             },
             "scale": {
                 "name": "Scale",
-                "badge": "🚀 Ultimate",
+                "badge": "Ultimate",
                 "desc": "Total mastery with no limits",
                 "features": {
                     "orders": "Unlimited orders",

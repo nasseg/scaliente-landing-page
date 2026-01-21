@@ -2,6 +2,7 @@ import { getDictionary } from '../i18n';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LogoMarquee from '@/components/LogoMarquee';
+import HowItWorks from '@/components/HowItWorks';
 import FeatureSection from '@/components/Features';
 import BeforeAfter from '@/components/BeforeAfter';
 import Pricing from '@/components/Pricing';
@@ -32,6 +33,11 @@ export default async function Home({ params }) {
 
       {/* Content sections - each with its own background */}
       <div className="relative">
+        {/* HowItWorks - light background */}
+        <div className="bg-[#fafafa] text-zinc-900">
+          <HowItWorks content={dict.howItWorks} />
+        </div>
+
         {/* Features - light background */}
         <div className="bg-[#fafafa] text-zinc-900">
           <FeatureSection content={dict.features} />

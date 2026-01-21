@@ -55,6 +55,68 @@
     "logoMarquee": {
         "title": "Intégrations natives avec"
     },
+    "howItWorks": {
+        "badge": "Configuration simple",
+        "title": {
+            "part1": "Opérationnel en",
+            "part2": "5 minutes"
+        },
+        "description": "Connectez vos outils, configurez vos coûts, et commencez à voir votre vrai profit. Aucune expertise technique requise.",
+        "steps": {
+            "shopify": {
+                "title": "Connectez Shopify",
+                "desc": "Connexion OAuth en un clic. Vos commandes, produits et revenus sont synchronisés automatiquement.",
+                "time": "30 secondes"
+            },
+            "ads": {
+                "title": "Liez vos Ads",
+                "desc": "Connectez Meta, Google, TikTok, Pinterest et Snapchat en OAuth. Toutes vos dépenses ads centralisées.",
+                "time": "2 minutes"
+            },
+            "mode": {
+                "title": "Choisissez votre Mode",
+                "desc": "Dropshipping ou Classic - configurez comment vos coûts sont calculés.",
+                "time": "1 minute"
+            },
+            "expenses": {
+                "title": "Ajoutez vos Frais",
+                "desc": "Abonnements, salaires, charges fixes. Générez des rapports avec votre bénéfice réel après toutes charges.",
+                "time": "Optionnel"
+            }
+        },
+        "modes": {
+            "title": "Deux modes de calcul",
+            "subtitle": "Choisissez celui qui correspond à votre business model",
+            "dropshipping": {
+                "title": "Mode Dropshipping",
+                "badge": "Print-on-demand, AliExpress...",
+                "desc": "COGS calculés en fonction du nombre de produits vendus par commande.",
+                "example": "Exemple",
+                "product": "Produit",
+                "shipping1": "Livraison 1 produit",
+                "shipping2": "Livraison 2 produits"
+            },
+            "classic": {
+                "title": "Mode Classic",
+                "badge": "E-commerce avec stock",
+                "desc": "Prix de livraison basé sur le poids du colis. Configuration par tranches.",
+                "example": "Exemple",
+                "weight1": "0 - 500g",
+                "weight2": "500g - 1kg",
+                "weight3": "1kg - 2kg"
+            }
+        },
+        "result": {
+            "title": "Résultat : Vos Analytics Complètes",
+            "subtitle": "Tout ce dont vous avez besoin pour piloter votre rentabilité",
+            "metrics": {
+                "profit": "Net Profit",
+                "roas": "ROAS & POAS",
+                "breakeven": "Breakeven ROAS",
+                "reports": "Rapports Mensuels"
+            }
+        }
+    },
     "features": {
         "title": {
             "part1": "Centralisez. Analysez.",
@@ -189,7 +251,7 @@
             },
             "growth": {
                 "name": "Growth",
-                "badge": "⭐️ Recommandé",
+                "badge": "Recommandé",
                 "desc": "Piloter plusieurs boutiques avec précision",
                 "features": {
                     "orders": "1,500 commandes/mois",
@@ -204,7 +266,7 @@
             },
             "scale": {
                 "name": "Scale",
-                "badge": "🚀 Ultimate",
+                "badge": "Ultimate",
                 "desc": "Maîtrise totale sans aucune limite",
                 "features": {
                     "orders": "Commandes illimitées",
