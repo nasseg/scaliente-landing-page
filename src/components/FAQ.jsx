@@ -59,7 +59,7 @@ const FAQ = ({ content }) => {
     })) : [];
 
     return (
-        <section className="py-20 relative z-10">
+        <section className="py-24 relative z-10">
             <div className="max-w-3xl mx-auto px-6">
                 {/* Header */}
                 <motion.div
@@ -69,15 +69,15 @@ const FAQ = ({ content }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 bg-zinc-100 text-zinc-600 text-sm font-medium mb-6">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-zinc-200 bg-zinc-50 text-zinc-600 text-sm font-medium mb-6">
                         {content?.badge || "FAQ"}
                     </span>
 
-                    <h2 className="font-brand text-4xl md:text-5xl font-bold text-zinc-900 mb-6 tracking-tight">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-zinc-900 mb-6 tracking-[-0.025em]">
                         {content?.title}
                     </h2>
 
-                    <p className="text-lg text-zinc-600">
+                    <p className="text-lg text-zinc-500 leading-relaxed">
                         {content?.subtitle}
                     </p>
                 </motion.div>

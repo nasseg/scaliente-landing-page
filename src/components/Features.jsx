@@ -43,16 +43,76 @@ const FeatureSection = ({ content }) => {
     ];
 
     const colorMap = {
-        purple: { bg: 'bg-purple-100', text: 'text-purple-600', border: 'group-hover:border-purple-200' },
-        green: { bg: 'bg-green-100', text: 'text-green-600', border: 'group-hover:border-green-200' },
-        orange: { bg: 'bg-orange-100', text: 'text-orange-600', border: 'group-hover:border-orange-200' },
-        cyan: { bg: 'bg-cyan-100', text: 'text-cyan-600', border: 'group-hover:border-cyan-200' },
-        pink: { bg: 'bg-pink-100', text: 'text-pink-600', border: 'group-hover:border-pink-200' },
-        amber: { bg: 'bg-amber-100', text: 'text-amber-600', border: 'group-hover:border-amber-200' },
+        purple: {
+            bg: 'bg-purple-50',
+            iconBg: 'bg-purple-100',
+            text: 'text-purple-600',
+            border: 'group-hover:border-purple-200',
+            glow: 'group-hover:shadow-purple-100/50'
+        },
+        green: {
+            bg: 'bg-emerald-50',
+            iconBg: 'bg-emerald-100',
+            text: 'text-emerald-600',
+            border: 'group-hover:border-emerald-200',
+            glow: 'group-hover:shadow-emerald-100/50'
+        },
+        orange: {
+            bg: 'bg-orange-50',
+            iconBg: 'bg-orange-100',
+            text: 'text-orange-600',
+            border: 'group-hover:border-orange-200',
+            glow: 'group-hover:shadow-orange-100/50'
+        },
+        cyan: {
+            bg: 'bg-cyan-50',
+            iconBg: 'bg-cyan-100',
+            text: 'text-cyan-600',
+            border: 'group-hover:border-cyan-200',
+            glow: 'group-hover:shadow-cyan-100/50'
+        },
+        pink: {
+            bg: 'bg-pink-50',
+            iconBg: 'bg-pink-100',
+            text: 'text-pink-600',
+            border: 'group-hover:border-pink-200',
+            glow: 'group-hover:shadow-pink-100/50'
+        },
+        amber: {
+            bg: 'bg-amber-50',
+            iconBg: 'bg-amber-100',
+            text: 'text-amber-600',
+            border: 'group-hover:border-amber-200',
+            glow: 'group-hover:shadow-amber-100/50'
+        },
+    };
+
+    // Stagger animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.08,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5,
+                ease: [0.22, 1, 0.36, 1]
+            }
+        }
     };
 
     return (
-        <section id="features" className="py-20 relative overflow-hidden">
+        <section id="features" className="py-24 relative overflow-hidden">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Header */}
                 <motion.div
@@ -62,41 +122,49 @@ const FeatureSection = ({ content }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-20"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 tracking-tight">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 tracking-[-0.025em]">
                         {content?.title?.part1}{' '}
                         <span className="text-orange-500">{content?.title?.part2}</span>
                     </h2>
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed">
                         {content?.description}
                     </p>
                 </motion.div>
 
-                {/* Feature Grid - Bento Style */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-20">
+                {/* Feature Grid - Enhanced Bento Style */}
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-24"
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                >
                     {features.map((feature, idx) => {
                         const colors = colorMap[feature.color];
                         return (
                             <motion.div
                                 key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                                className={`group relative p-6 rounded-2xl bg-white border border-zinc-200 hover:shadow-lg hover:shadow-zinc-200/50 transition-all duration-300 ${colors.border}`}
+                                variants={itemVariants}
+                                className={`group relative p-7 rounded-2xl bg-white border border-zinc-100 hover:border-zinc-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border}`}
                             >
-                                <div className={`w-12 h-12 rounded-xl ${colors.bg} flex items-center justify-center mb-5`}>
-                                    <feature.icon className={`w-6 h-6 ${colors.text}`} />
+                                {/* Subtle gradient overlay on hover */}
+                                <div className={`absolute inset-0 rounded-2xl ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
+
+                                <div className="relative">
+                                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}>
+                                        <feature.icon className={`w-6 h-6 ${colors.text}`} />
+                                    </div>
+                                    <h3 className="font-brand text-xl font-semibold text-zinc-900 mb-3 tracking-[-0.01em]">
+                                        {feature.title}
+                                    </h3>
+                                    <p className="text-zinc-500 text-sm leading-relaxed">
+                                        {feature.desc}
+                                    </p>
                                 </div>
-                                <h3 className="font-brand text-xl font-semibold text-zinc-900 mb-3">
-                                    {feature.title}
-                                </h3>
-                                <p className="text-zinc-600 text-sm leading-relaxed">
-                                    {feature.desc}
-                                </p>
                             </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
 
                 {/* Profit Calculator - Premium Bento Grid */}
                 <motion.div

@@ -1,102 +1,140 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, LayoutDashboard, TrendingUp, Wallet, FileText, Settings, DollarSign, Clock, RotateCcw, Percent, Users, Target, BarChart3 } from 'lucide-react';
+import { ArrowRight, LayoutDashboard, TrendingUp, Wallet, FileText, Settings, DollarSign, Clock, RotateCcw, Percent, Users, Target, BarChart3, Sparkles } from 'lucide-react';
 
 const Hero = ({ content, common }) => {
     const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 800], [0, 150]);
+    const y1 = useTransform(scrollY, [0, 800], [0, 120]);
     const opacity = useTransform(scrollY, [0, 400], [1, 0]);
+    const scale = useTransform(scrollY, [0, 400], [1, 0.95]);
+
+    // Stagger animation variants
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.12,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 25 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.7,
+                ease: [0.22, 1, 0.36, 1]
+            }
+        }
+    };
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
             {/* Grain Texture Only - WebGL background shows through */}
             <div className="absolute inset-0 grain pointer-events-none" />
 
-            {/* Content */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20">
+            {/* Subtle radial gradient overlay for depth */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(249,115,22,0.03)_0%,transparent_70%)] pointer-events-none" />
 
-                {/* Badge - Minimal */}
+            {/* Content */}
+            <motion.div
+                className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-32 pb-20"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+            >
+
+                {/* Badge - Enhanced */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex justify-center mb-8"
+                    variants={itemVariants}
+                    className="flex justify-center mb-10"
                 >
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/[0.03] backdrop-blur-sm">
+                    <div className="group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full border border-orange-500/20 bg-orange-500/[0.05] backdrop-blur-sm hover:border-orange-500/30 hover:bg-orange-500/[0.08] transition-all duration-300 cursor-default">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                         </span>
-                        <span className="text-sm text-zinc-400 font-medium">{content?.pill}</span>
+                        <span className="text-sm text-orange-200/90 font-medium tracking-wide">{content?.pill}</span>
+                        <Sparkles className="w-3.5 h-3.5 text-orange-400/70 group-hover:text-orange-400 transition-colors" />
                     </div>
                 </motion.div>
 
-                {/* Main Headline */}
+                {/* Main Headline - Enhanced typography */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+                    variants={itemVariants}
                     className="text-center mb-8"
                 >
-                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white leading-[1.05] mb-4">
+                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-[-0.025em] text-white leading-[1.08] mb-3">
                         {content?.title}
                     </h1>
-                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05]">
+                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-[-0.025em] leading-[1.08]">
                         <span className="text-gradient-orange">{content?.subtitle}</span>
                     </h1>
                 </motion.div>
 
-                {/* Description */}
+                {/* Description - Refined */}
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-lg md:text-xl text-zinc-300 text-center max-w-2xl mx-auto mb-12 leading-relaxed"
+                    variants={itemVariants}
+                    className="text-lg md:text-xl text-zinc-400 text-center max-w-2xl mx-auto mb-14 leading-relaxed font-light"
                 >
                     {content?.description}
                 </motion.p>
 
-                {/* CTA Buttons */}
+                {/* CTA Buttons - Enhanced with better hover effects */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+                    variants={itemVariants}
+                    className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
                 >
                     <a
                         href="https://app.scaliente.com"
-                        className="group relative w-full sm:w-auto px-8 py-4 bg-gradient-to-b from-orange-500 to-orange-600 rounded-2xl text-white font-semibold text-lg transition-all duration-300 hover:shadow-[0_0_40px_rgba(249,115,22,0.35)] hover:-translate-y-0.5 flex items-center justify-center gap-3"
+                        className="group relative w-full sm:w-auto px-8 py-4 rounded-2xl text-white font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden"
                     >
-                        {common?.getStarted || content?.ctaStart}
-                        <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        {/* Gradient background */}
+                        <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-orange-600 transition-all duration-300" />
+                        {/* Hover glow effect */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-b from-orange-400 to-orange-500" />
+                        {/* Shine effect on hover */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                        </div>
+                        {/* Shadow */}
+                        <div className="absolute inset-0 rounded-2xl shadow-[0_8px_32px_rgba(249,115,22,0.25)] group-hover:shadow-[0_12px_40px_rgba(249,115,22,0.4)] transition-shadow duration-300" />
+                        <span className="relative z-10">{common?.getStarted || content?.ctaStart}</span>
+                        <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
                         href="/#comparison"
-                        className="w-full sm:w-auto px-8 py-4 rounded-2xl text-white font-medium border border-white/10 hover:bg-white/5 transition-all duration-300 text-center"
+                        className="group w-full sm:w-auto px-8 py-4 rounded-2xl text-white/90 font-medium border border-white/10 hover:border-white/20 hover:bg-white/[0.03] transition-all duration-300 text-center relative overflow-hidden"
                     >
-                        {content?.ctaDemo}
+                        <span className="relative z-10">{content?.ctaDemo}</span>
                     </a>
                 </motion.div>
 
-                {/* Trust Indicators */}
+                {/* Trust Indicators - Enhanced */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="flex items-center justify-center gap-6 text-sm text-zinc-500 mb-20"
+                    variants={itemVariants}
+                    className="flex items-center justify-center gap-8 text-sm text-zinc-500 mb-20"
                 >
-                    <div className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{common?.free || 'Gratuit'}</span>
+                    <div className="flex items-center gap-2.5 group">
+                        <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                            <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span className="text-zinc-400">{common?.free || 'Gratuit'}</span>
                     </div>
                     <div className="w-1 h-1 rounded-full bg-zinc-700" />
-                    <div className="flex items-center gap-2">
-                        <svg className="w-4 h-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                        <span>{common?.noCard || 'Aucune carte requise'}</span>
+                    <div className="flex items-center gap-2.5 group">
+                        <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                            <svg className="w-3 h-3 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <span className="text-zinc-400">{common?.noCard || 'Aucune carte requise'}</span>
                     </div>
                 </motion.div>
 
@@ -318,7 +356,7 @@ const Hero = ({ content, common }) => {
                         </div>
                     </div>
                 </motion.div>
-            </div>
+            </motion.div>
 
             {/* Scroll Indicator */}
             <motion.div

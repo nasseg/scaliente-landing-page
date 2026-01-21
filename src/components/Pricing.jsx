@@ -78,7 +78,7 @@ const Pricing = ({ content, common }) => {
     ];
 
     return (
-        <section id="pricing" className="py-20 relative overflow-hidden">
+        <section id="pricing" className="py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 relative z-10">
                 {/* Header */}
                 <motion.div
@@ -88,17 +88,17 @@ const Pricing = ({ content, common }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl font-bold text-zinc-900 mb-6 tracking-tight">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 tracking-[-0.025em]">
                         {content?.header?.title?.main}{' '}
                         <span className="text-orange-500">{content?.header?.title?.highlight}</span>
                     </h2>
 
-                    <p className="text-lg text-zinc-600 max-w-2xl mx-auto mb-12">
+                    <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-12 leading-relaxed">
                         {content?.header?.quote}
                     </p>
 
-                    {/* Toggle - Light theme */}
-                    <div className="inline-flex items-center p-1 bg-zinc-100 border border-zinc-200 rounded-full">
+                    {/* Toggle - Enhanced design */}
+                    <div className="inline-flex items-center p-1.5 bg-zinc-100 border border-zinc-200/80 rounded-full shadow-sm">
                         <button
                             onClick={() => setIsAnnual(false)}
                             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
@@ -110,8 +110,8 @@ const Pricing = ({ content, common }) => {
                             {!isAnnual && (
                                 <motion.div
                                     layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-zinc-900 rounded-full"
-                                    transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                                    className="absolute inset-0 bg-zinc-900 rounded-full shadow-lg"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                                 />
                             )}
                             <span className="relative z-10">{content?.toggle?.monthly}</span>
@@ -127,13 +127,13 @@ const Pricing = ({ content, common }) => {
                             {isAnnual && (
                                 <motion.div
                                     layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-zinc-900 rounded-full"
-                                    transition={{ type: "spring", bounce: 0.15, duration: 0.5 }}
+                                    className="absolute inset-0 bg-zinc-900 rounded-full shadow-lg"
+                                    transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                                 />
                             )}
                             <span className="relative z-10 flex items-center gap-2">
                                 {content?.toggle?.annual}
-                                <span className="px-2 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full">
+                                <span className="px-2 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full shadow-sm">
                                     {content?.toggle?.discount}
                                 </span>
                             </span>
@@ -142,7 +142,7 @@ const Pricing = ({ content, common }) => {
                 </motion.div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-24">
                     {plans.map((plan, idx) => {
                         const monthlyEquivalent = Math.round(plan.price.annual / 12);
                         const displayPrice = isAnnual ? monthlyEquivalent : plan.price.monthly;
@@ -156,20 +156,20 @@ const Pricing = ({ content, common }) => {
                                 transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
                                 className={`group relative flex flex-col rounded-2xl transition-all duration-500 ${
                                     plan.featured
-                                        ? 'lg:-mt-4 lg:mb-4'
-                                        : ''
+                                        ? 'lg:-mt-6 lg:mb-6 lg:scale-[1.02]'
+                                        : 'hover:-translate-y-1'
                                 }`}
                             >
                                 {/* Card Background */}
                                 <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
                                     plan.featured
-                                        ? 'bg-gradient-to-b from-orange-100 via-orange-50 to-white border-2 border-orange-300 shadow-xl shadow-orange-200/30'
-                                        : 'bg-white border border-zinc-200 group-hover:border-zinc-300 group-hover:shadow-lg'
+                                        ? 'bg-gradient-to-b from-orange-50 via-white to-white border-2 border-orange-300/80 shadow-2xl shadow-orange-200/40'
+                                        : 'bg-white border border-zinc-100 group-hover:border-zinc-200 group-hover:shadow-xl group-hover:shadow-zinc-100'
                                 }`} />
 
                                 {/* Glow effect for featured */}
                                 {plan.featured && (
-                                    <div className="absolute -inset-px rounded-2xl bg-gradient-to-b from-orange-200/50 to-transparent blur-xl opacity-50" />
+                                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-orange-300/30 via-orange-200/20 to-transparent blur-2xl opacity-60" />
                                 )}
 
                                 {/* Content */}

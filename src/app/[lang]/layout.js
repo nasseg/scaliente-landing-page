@@ -1,30 +1,16 @@
-import { Outfit, Syne, Poppins } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "../globals.css";
 import BackgroundEffect from "@/components/BackgroundEffect";
 import CookieConsent from "@/components/CookieConsent";
 import { getDictionary } from "../i18n";
 
-// Body font - Clean, modern, highly legible
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-// Display font - Bold, distinctive for headlines
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  weight: ["400", "500", "600", "700", "800"],
-});
-
-// Brand font - Poppins (matches Scaliente app)
+// Unified font system - Poppins for everything
+// Beautiful geometric sans-serif with excellent readability
 const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-brand",
+  variable: "--font-poppins",
   display: "swap",
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
 export async function generateMetadata({ params }) {
@@ -83,7 +69,7 @@ export default async function RootLayout({ children, params }) {
   const dict = await getDictionary(lang);
 
   return (
-    <html lang={lang} className={`${outfit.variable} ${syne.variable} ${poppins.variable}`} suppressHydrationWarning>
+    <html lang={lang} className={poppins.variable} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <BackgroundEffect />
         <main

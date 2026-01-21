@@ -93,7 +93,7 @@ const BeforeAfter = ({ content }) => {
             {/* Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2" />
-                <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-green-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             </div>
             <div className="absolute inset-0 grain pointer-events-none" />
 
@@ -106,11 +106,11 @@ const BeforeAfter = ({ content }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 tracking-[-0.025em]">
                         {content?.title?.main}{' '}
                         <span className="text-gradient-orange">{content?.title?.highlight}</span>
                     </h2>
-                    <p className="text-lg text-zinc-400 max-w-xl mx-auto">
+                    <p className="text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed">
                         {content?.subtitle}
                     </p>
                 </motion.div>

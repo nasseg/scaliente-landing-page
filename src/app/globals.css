@@ -42,17 +42,11 @@
   --gradient-glow: radial-gradient(ellipse at center, var(--color-accent-glow) 0%, transparent 70%);
 }
 
-/* Font System */
-.font-sans {
-  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-}
-
-.font-display {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
-}
-
+/* Font System - Unified Poppins */
+.font-sans,
+.font-display,
 .font-brand {
-  font-family: var(--font-brand), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Base Styles */
@@ -66,7 +60,7 @@ body {
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Selection Style */
@@ -151,12 +145,19 @@ body {
     pointer-events: none;
   }
 
-  /* Text Gradient - Orange/Scaliente */
+  /* Text Gradient - Orange/Scaliente - Enhanced */
   .text-gradient-orange {
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-text 8s ease infinite;
+  }
+
+  @keyframes gradient-text {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   /* Text Gradient - Warm */
@@ -169,7 +170,15 @@ body {
 
   /* Text Gradient - Subtle White */
   .text-gradient-white {
-    background: linear-gradient(180deg, #ffffff 0%, #a1a1aa 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Text Gradient - Static Orange (no animation) */
+  .text-gradient-orange-static {
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -212,45 +221,78 @@ body {
     opacity: 1;
   }
 
-  /* Card Styles */
+  /* Card Styles - Refined */
   .card-elevated {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   .card-elevated:hover {
     border-color: var(--color-border-hover);
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     box-shadow:
-      0 20px 40px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(255, 255, 255, 0.05);
+      0 24px 48px rgba(0, 0, 0, 0.4),
+      0 12px 24px rgba(0, 0, 0, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.06);
   }
 
-  /* Interactive Elements */
+  /* Card for light backgrounds */
+  .card-light {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 1.25rem;
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-light:hover {
+    border-color: rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Interactive Elements - Enhanced */
   .btn-primary {
     @apply relative overflow-hidden font-semibold transition-all duration-300;
-    background: var(--gradient-accent);
-    color: var(--color-bg-primary);
-    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
+    background: linear-gradient(to bottom, #f97316, #ea580c);
+    color: white;
+    box-shadow:
+      0 4px 16px rgba(249, 115, 22, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
+    box-shadow:
+      0 8px 24px rgba(249, 115, 22, 0.4),
+      0 16px 48px rgba(249, 115, 22, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
   }
 
   .btn-secondary {
-    @apply font-semibold transition-all duration-300;
+    @apply font-medium transition-all duration-300;
     background: transparent;
     border: 1px solid var(--color-border);
     color: var(--color-text-primary);
   }
 
   .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
     border-color: var(--color-border-hover);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary:active {
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.02);
   }
 
   /* Perspective for 3D effects */
@@ -521,23 +563,52 @@ body {
 }
 
 /* ============================================
-   TYPOGRAPHY UTILITIES
+   TYPOGRAPHY UTILITIES - Optimized for Poppins
    ============================================ */
 
 .heading-display {
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
 }
 
 .heading-section {
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
+.heading-card {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.text-body {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.7;
+}
+
+.text-body-tight {
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.text-label {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
 .text-balance {
   text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
 }
 
 /* ============================================
