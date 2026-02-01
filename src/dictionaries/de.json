@@ -26,8 +26,8 @@
         "pill": "Präzision auf den Cent genau",
         "title": "Ihr echter Gewinn.",
         "subtitle": "Ohne Überraschungen.",
-        "description": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und zieht automatisch Ihre Ausgaben (Ads, COGS, Versand, Steuern) ab, um Ihren wahren Gewinn zu enthüllen. Die leistungsstarke Alternative zum Festpreis.",
-        "ctaStart": "Jetzt starten",
+        "description": "Verbinden Sie Ihre Konten mit 1 Klick und sehen Sie Ihren echten Gewinn in unter 2 Minuten. Scaliente zentralisiert Ihre Einnahmen und zieht automatisch Ausgaben ab (Ads, COGS, Versand, Steuern).",
+        "ctaStart": "Meinen Nettogewinn berechnen",
         "ctaDemo": "Demo ansehen",
         "dashboard": {
             "overview": "Übersicht",
@@ -53,7 +53,7 @@
         }
     },
     "logoMarquee": {
-        "title": "Native Integrationen mit"
+        "title": "Geprüft und Validiert von"
     },
     "howItWorks": {
         "badge": "Einfache Einrichtung",
@@ -111,7 +111,7 @@
             "subtitle": "Alles, was Sie brauchen, um Ihre Rentabilität zu steuern",
             "metrics": {
                 "profit": "Nettogewinn",
-                "roas": "ROAS & POAS",
+                "roas": "ROAS & ROI",
                 "breakeven": "Breakeven ROAS",
                 "reports": "Monatsberichte"
             }
@@ -125,7 +125,7 @@
         "description": "Scaliente verbindet sich mit einem Klick mit all Ihren Tools. Keine Excel-Tabellen und manuellen Berechnungen um 2 Uhr morgens mehr.",
         "cards": {
             "ads": {
-                "title": "5 Werbeplattformen",
+                "title": "Alle Ihre Ads zentralisiert",
                 "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Alle Kampagnen in einem Dashboard zentralisiert."
             },
             "profit": {
@@ -214,7 +214,7 @@
                 "main": "Investieren Sie in Ihre",
                 "highlight": "Kontrolle"
             },
-            "quote": "\"Wir tracken keine Verkäufe. Wir tracken, was Sie wirklich behalten.\""
+            "quote": "\"Shopify zeigt Ihren Umsatz. Scaliente zeigt, was Sie wirklich behalten.\""
         },
         "toggle": {
             "monthly": "Monatlich",
@@ -224,10 +224,10 @@
         "plans": {
             "discovery": {
                 "name": "Discovery",
-                "badge": "✨ Kostenlos",
-                "desc": "Testen Sie kostenlos mit 20 Bestellungen/Monat",
+                "badge": "✨ Für immer kostenlos",
+                "desc": "Ideal für den Start (Empfehlungen & neue Shops)",
                 "features": {
-                    "orders": "20 Bestellungen/Monat",
+                    "orders": "Bis zu 20 Bestellungen/Monat",
                     "shop": "1 Shop",
                     "history": "30 Tage Historie",
                     "adPlatform": "1 Werbeplattform",
@@ -240,21 +240,21 @@
                 "name": "Starter",
                 "desc": "Für wachsende Shops",
                 "features": {
-                    "orders": "300 Bestellungen/Monat",
+                    "orders": "Bis zu 300 Bestellungen/Monat",
                     "shop": "1 Shop",
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
                     "comparison": "Periodenvergleich",
                     "export": "CSV-Export"
                 },
-                "cta": "Mit Starter beginnen"
+                "cta": "Starter-Modus freischalten"
             },
             "growth": {
                 "name": "Growth",
                 "badge": "Empfohlen",
                 "desc": "Mehrere Shops präzise steuern",
                 "features": {
-                    "orders": "1.500 Bestellungen/Monat",
+                    "orders": "Bis zu 1.500 Bestellungen/Monat",
                     "shops": "Bis zu 3 Shops",
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
@@ -320,13 +320,13 @@
         "reviews": [
             {
                 "text": "Ich habe 4 Jahre lang einen Premium-Konkurrenten genutzt. Viel zu komplex für das, was ich wirklich tat. Scaliente gibt mir genau das, was ich brauche: meine echte Rentabilität in Sekunden. Und vor allem explodiert der Preis nicht mit meinem Umsatz.",
-                "role": "Gründer, 7-stellig/Jahr",
+                "role": "7-stellig/Jahr",
                 "author": "Mark D."
             },
             {
                 "text": "Mein altes Tool war zu teuer und führte mich in die Irre. Ich traf Entscheidungen auf Basis nutzloser Metriken. Seit ich bei Scaliente bin, sind meine Entscheidungen klar und der Support ist extrem reaktionsschnell.",
-                "role": "E-Händlerin, Multi-Shops",
-                "author": "Sophie L."
+                "role": "Multi-Shops",
+                "author": "Ines S."
             },
             {
                 "text": "Ich postete meine 'Wins' auf X, während es in Wirklichkeit katastrophale Tage waren. Mit Scaliente entdeckte ich, dass mein 1K/Tag-Produkt nur 8% profitabel war. Ich konnte meine verlustbringenden Tests stoppen und meine wahren Gewinner identifizieren.",
@@ -367,7 +367,11 @@
             },
             "commitment": {
                 "q": "Bin ich langfristig gebunden?",
-                "a": "Nein, es gibt keine Bindung. Sie können Ihr Abonnement jederzeit mit einem Klick in Ihrem Dashboard kündigen. Der Zugriff endet einfach am Ende Ihres aktuellen Abrechnungszeitraums."
+                "a": "Nein, es gibt keine Bindung. Sie können Ihr Abonnement mit einem Klick in Ihrem Dashboard jederzeit kündigen. Der Zugriff endet einfach am Ende Ihres aktuellen Abrechnungszeitraums."
+            },
+            "story": {
+                "q": "Warum habe ich noch nie von Scaliente gehört?",
+                "a": "Wir sind im Verborgenen gewachsen, ausschließlich durch Mundpropaganda. Ursprünglich für Agenturen und Großkunden reserviert, hat Scaliente über 2.500 Kunden privat überzeugt. Aufgrund der wachsenden Nachfrage haben wir unsere Technologie automatisiert, um sie endlich der Öffentlichkeit zugänglich zu machen."
             },
             "freePlan": {
                 "q": "Gibt es einen kostenlosen Plan?",
@@ -452,7 +456,7 @@
         }
     },
     "footer": {
-        "tagline": "Der ultimative Profit-Tracker für ambitionierte E-Händler.",
+        "tagline": "Das finanzielle Betriebssystem für E-Händler. Zertifiziert vom Shopify App Store.",
         "product": "Produkt",
         "legal": "Rechtliches",
         "links": {
@@ -475,11 +479,11 @@
         "essentialOnly": "Nur wesentliche Cookies"
     },
     "metadata": {
-        "title": "Scaliente - Ihr echter E-Commerce-Gewinn",
-        "description": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben (Ads, COGS, Versand), um Ihren wahren Gewinn zu enthüllen. 24h kostenlos testen.",
-        "ogTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
-        "ogDescription": "Hören Sie auf, Ihre Rentabilität zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
-        "twitterTitle": "Scaliente - Ihr echter E-Commerce-Gewinn",
+        "title": "Scaliente | Nettogewinn & Echter Gewinn Tracker für Shopify",
+        "description": "Berechnen Sie Ihren wahren Gewinn in Echtzeit. Scaliente zieht automatisch Ads, COGS und Versand von Ihrem Shopify-Umsatz ab. Kostenlos testen ohne Kreditkarte.",
+        "ogTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
+        "ogDescription": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
+        "twitterTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
         "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit."
     },
     "legalPage": {
@@ -543,54 +547,6 @@
                     {
                         "title": "8. Datenspeicherung",
                         "content": "Wir speichern Ihre Daten, solange Ihr Konto aktiv ist. Wenn Sie Ihr Konto löschen, werden Ihre Daten sofort von unseren aktiven Servern und innerhalb von 30 Tagen aus unseren Backups gelöscht, sofern keine gesetzliche Aufbewahrungspflicht besteht."
-                    }
-                ]
-            },
-            "cookies": {
-                "title": "Cookie-Richtlinie",
-                "intro": "Ein Cookie ist eine kleine Textdatei, die beim Besuch unserer Website auf Ihrem Gerät gespeichert wird.",
-                "types": "Arten der verwendeten Cookies",
-                "essential": "Essentielle Cookies: Notwendig für das Funktionieren der Website (Authentifizierung, Sicherheit). Sie können nicht deaktiviert werden.",
-                "analytics": "Analyse-Cookies: Helfen uns zu verstehen, wie die Website genutzt wird, um sie zu verbessern. Wir verwenden datenschutzfreundliche Tools.",
-                "manage": "Verwaltung Ihrer Präferenzen",
-                "manage_text": "Sie können Ihren Browser so konfigurieren, dass er alle Cookies ablehnt oder Sie benachrichtigt, wenn ein Cookie gesendet wird. Einige Website-Funktionen funktionieren jedoch ohne essentielle Cookies möglicherweise nicht korrekt."
-            },
-            "cgv": {
-                "title": "Allgemeine Verkaufsbedingungen",
-                "b2b": "Nur für gewerbliche Nutzung (B2B)",
-                "price": "Preis und Zahlung",
-                "termination": "Dauer und Kündigung",
-                "termination_text": "Das Abonnement ist unverbindlich. Sie können es jederzeit über Ihr Dashboard kündigen. Die Kündigung wird zum Ende des aktuellen Abrechnungszeitraums wirksam.",
-                "retraction": "Verzicht auf das Widerrufsrecht",
-                "retraction_text": "Gesetzgemäß stimmen Sie mit dem Abonnieren von Scaliente der sofortigen Bereitstellung des digitalen Dienstes zu und verzichten ausdrücklich auf Ihr 14-tägiges Widerrufsrecht. Wir bieten jedoch unter Bedingungen eine 'Geld-zurück-Garantie' an (siehe Preisseite)."
-            },
-            "terms": {
-                "title": "Nutzungsbedingungen",
-                "intro": "Willkommen bei Scaliente. Durch den Zugriff auf unsere Website und die Nutzung unserer Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
-                "items": [
-                    {
-                        "title": "1. Leistungsbeschreibung",
-                        "content": "Scaliente ist eine SaaS-Lösung (Software as a Service) zur Datenanalyse für E-Händler. Sie aggregiert Verkaufs- und Werbedaten zur Berechnung der Rentabilität. Der Dienst wird 'wie besehen' bereitgestellt."
-                    },
-                    {
-                        "title": "2. Benutzerkonto",
-                        "content": "Sie sind für die Wahrung der Vertraulichkeit Ihres Kontos und Passworts verantwortlich. Alle Aktivitäten unter Ihrem Konto liegen in Ihrer Verantwortung. Sie verpflichten sich, bei der Registrierung genaue und vollständige Angaben zu machen."
-                    },
-                    {
-                        "title": "3. Finanzielle Bedingungen",
-                        "content": "Der Zugriff auf die vollständigen Dienste von Scaliente erfordert ein kostenpflichtiges Abonnement (monatlich oder jährlich). Zahlungen werden über Stripe gesichert. Die angezeigten Preise sind in Euro oder Dollar und verstehen sich zzgl. Steuern, sofern nicht anders angegeben. Nichtzahlung kann zur Kontosperrung führen."
-                    },
-                    {
-                        "title": "4. Geistiges Eigentum (Nutzer)",
-                        "content": "Sie behalten alle Rechte an den Daten, die Sie in Scaliente importieren. Sie gewähren uns eine weltweite, nicht exklusive, gebührenfreie Lizenz zur Nutzung, Speicherung und Analyse dieser Daten zum alleinigen Zweck der Bereitstellung des Dienstes für Sie."
-                    },
-                    {
-                        "title": "5. Haftungsbeschränkung",
-                        "content": "Soweit gesetzlich zulässig, haftet SCALIENTE LLC nicht für indirekte, zufällige, spezielle oder Folgeschäden, einschließlich Gewinn- oder Datenverlusten, die sich aus der Nutzung oder Unfähigkeit zur Nutzung des Dienstes ergeben."
-                    },
-                    {
-                        "title": "6. Anwendbares Recht und Gerichtsstand",
-                        "content": "Diese Bedingungen unterliegen den Gesetzen des Staates Wyoming, USA. Alle Streitigkeiten im Zusammenhang mit diesen Bedingungen unterliegen der ausschließlichen Zuständigkeit der Gerichte von Wyoming."
                     }
                 ]
             },

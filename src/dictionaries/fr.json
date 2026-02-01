@@ -26,8 +26,8 @@
         "pill": "La précision au centime près",
         "title": "Votre Profit Réel.",
         "subtitle": "Sans Surprises.",
-        "description": "Arrêtez de deviner. Scaliente centralise vos revenus et déduit automatiquement vos dépenses (Ads, COGS, Shipping, Taxes) pour révéler votre vrai profit. L'alternative puissante à prix fixe.",
-        "ctaStart": "Commencer Maintenant",
+        "description": "Connectez vos comptes en 1 clic et voyez votre profit réel en moins de 2 minutes. Scaliente centralise vos revenus et déduit automatiquement vos dépenses (Ads, COGS, Shipping, Taxes).",
+        "ctaStart": "Calculer mon Profit Net",
         "ctaDemo": "Voir la démo",
         "dashboard": {
             "overview": "Vue d'ensemble",
@@ -53,7 +53,7 @@
         }
     },
     "logoMarquee": {
-        "title": "Intégrations natives avec"
+        "title": "Auditée et Validée par"
     },
     "howItWorks": {
         "badge": "Configuration simple",
@@ -125,15 +125,15 @@
         "description": "Scaliente se connecte à tous vos outils en un clic. Fini les tableurs Excel et les calculs manuels à 2h du matin.",
         "cards": {
             "ads": {
-                "title": "5 plateformes publicitaires",
-                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Toutes vos campagnes centralisées en un seul dashboard."
+                "title": "Toutes vos Ads centralisées",
+                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Fini les onglets multiples, tout est là."
             },
             "profit": {
-                "title": "Profit Net Réel (POAS)",
+                "title": "Profit Net & Rentabilité",
                 "desc": "Nous déduisons tout : Coût produit (COGS), frais de port, frais de transaction Stripe/PayPal et taxes."
             },
             "realtime": {
-                "title": "Temps Réel",
+                "title": "Vos chiffres, à la minute près",
                 "desc": "Vos données sont rafraîchies toutes les 5 minutes. Prenez des décisions basées sur l'instant présent, pas sur hier."
             },
             "expenses": {
@@ -214,7 +214,7 @@
                 "main": "Investissez dans votre",
                 "highlight": "contrôle"
             },
-            "quote": "\"On ne track pas des ventes. On track ce que tu gardes vraiment.\""
+            "quote": "\"Shopify te montre ton CA. Scaliente te montre ce qu'il te reste.\""
         },
         "toggle": {
             "monthly": "Mensuel",
@@ -224,37 +224,37 @@
         "plans": {
             "discovery": {
                 "name": "Discovery",
-                "badge": "✨ Gratuit",
-                "desc": "Testez gratuitement avec 20 commandes/mois",
+                "badge": "✨ Gratuit à vie",
+                "desc": "Idéal pour débuter (Filleuls & Nouveaux shops)",
                 "features": {
-                    "orders": "20 commandes/mois",
+                    "orders": "Jusqu'à 20 commandes/mois",
                     "shop": "1 boutique",
                     "history": "Historique 30 jours",
                     "adPlatform": "1 plateforme ads",
                     "comparison": "Comparaison périodes",
                     "export": "Export CSV"
                 },
-                "cta": "Commencer Gratuitement"
+                "cta": "Créer un compte Gratuit"
             },
             "starter": {
                 "name": "Starter",
                 "desc": "Pour les boutiques en croissance",
                 "features": {
-                    "orders": "300 commandes/mois",
+                    "orders": "Jusqu'à 300 commandes/mois",
                     "shop": "1 boutique",
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
                     "comparison": "Comparaison périodes",
                     "export": "Export CSV"
                 },
-                "cta": "Commencer avec Starter"
+                "cta": "Débloquer le mode Starter"
             },
             "growth": {
                 "name": "Growth",
                 "badge": "Recommandé",
                 "desc": "Piloter plusieurs boutiques avec précision",
                 "features": {
-                    "orders": "1,500 commandes/mois",
+                    "orders": "Jusqu'à 1 500 commandes/mois",
                     "shops": "Jusqu'à 3 boutiques",
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
@@ -320,19 +320,19 @@
         "subtitle": "Des e-commerçants comme vous qui ont arrêté de piloter à l'aveugle.",
         "reviews": [
             {
-                "text": "J'ai utilisé un concurrent premium pendant 4 ans. Beaucoup trop complexe pour ce que j'en faisais réellement. Scaliente me donne exactement ce dont j'ai besoin : ma rentabilité réelle, en quelques secondes. Et surtout, le prix n'explose pas avec mon chiffre d'affaires.",
-                "role": "Fondateur, 7 figures/an",
-                "author": "Marc D."
+                "text": "Honnêtement, je payais près de $300/mois pour une 'usine à gaz' dont j'utilisais 10% des features. Scaliente va droit au but. Pas de metric vanity, juste mon Net Profit en temps réel. J'ai économisé 3k$/an juste en switchant.",
+                "role": "7 figures/an",
+                "author": "Bennett R."
             },
             {
-                "text": "Mon ancien outil était trop cher et m'induisait en erreur. Je prenais des décisions basées sur des métriques inutiles. Depuis que je suis sur Scaliente, mes décisions sont claires et le support est ultra réactif. Ils ajoutent des features en continu !",
-                "role": "E-commerçante, Multi-shops",
-                "author": "Sophie L."
+                "text": "J'étais sceptique car j'avais déjà des dashboards partout. Mais le calcul du POAS change tout. On a coupé une campagne Meta qui affichait un ROAS 3 mais qui perdait de l'argent à cause du shipping. Et le support répond vraiment en moins de 10min.",
+                "role": "Multi-shops",
+                "author": "Hanna K."
             },
             {
-                "text": "Je postais mes \"wins\" sur X alors qu'en réalité, c'était des journées catastrophiques. Avec Scaliente, j'ai découvert que mon produit à 1K/jour n'était rentable qu'à 8%. J'ai pu couper mes tests perdants et identifier mes vrais winners.",
-                "role": "Dropshipper, Testing intensif",
-                "author": "Thomas B."
+                "text": "Tout le monde montre des screens Shopify verts sur Twitter, mais personne n'ose montrer ce qui reste après les Ads. Scaliente m'a ouvert les yeux : je brassais du vent. J'ai réduit mon CA de 20% mais doublé mon bénéfice net. C'est la seule métrique qui compte.",
+                "role": "Testing intensif",
+                "author": "Jonas W."
             }
         ],
         "stats": {
@@ -368,7 +368,11 @@
             },
             "commitment": {
                 "q": "Suis-je engagé sur la durée ?",
-                "a": "Non, c'est sans engagement. Vous pouvez annuler votre abonnement à tout moment depuis votre dashboard en un clic. L'accès s'arrêtera simplement à la fin de votre période de facturation en cours."
+                "a": "Zéro engagement. Vous pouvez annuler votre abonnement en 1 clic depuis votre dashboard, à tout moment."
+            },
+            "story": {
+                "q": "Pourquoi je n'ai jamais entendu parler de Scaliente avant ?",
+                "a": "Nous avons grandi dans l'ombre, exclusivement par le bouche-à-oreille. Initialement réservé aux agences et aux grands comptes, Scaliente a convaincu plus de 2 500 clients en privé. Face à la demande croissante, nous avons automatisé notre technologie pour l'ouvrir enfin au grand public."
             },
             "freePlan": {
                 "q": "Y a-t-il un plan gratuit ?",
@@ -453,7 +457,7 @@
         }
     },
     "footer": {
-        "tagline": "Le tracker de profit ultime pour les e-commerçants ambitieux.",
+        "tagline": "Le système d'exploitation financier des e-commerçants. Certifié Shopify App Store.",
         "product": "Produit",
         "legal": "Légal",
         "links": {
@@ -476,8 +480,8 @@
         "essentialOnly": "Cookies essentiels uniquement"
     },
     "metadata": {
-        "title": "Scaliente - Votre Profit E-commerce Réel",
-        "description": "Arrêtez de deviner votre rentabilité. Scaliente centralise vos revenus et dépenses (Ads, COGS, Shipping) pour révéler votre vrai profit. Essai gratuit 24h.",
+        "title": "Scaliente | Tracker de Profit Net & Rentabilité Réelle pour Shopify",
+        "description": "Calculez votre Vrai Profit en temps réel. Scaliente déduit automatiquement Ads, COGS et Shipping de votre CA Shopify. Essayez gratuitement sans CB.",
         "ogTitle": "Scaliente - Votre Profit E-commerce Réel",
         "ogDescription": "Arrêtez de deviner votre rentabilité. Scaliente centralise vos revenus et dépenses pour révéler votre vrai profit.",
         "twitterTitle": "Scaliente - Votre Profit E-commerce Réel",
