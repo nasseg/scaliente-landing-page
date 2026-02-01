@@ -550,6 +550,54 @@
                     }
                 ]
             },
+            "cookies": {
+                "title": "Cookie-Richtlinie",
+                "intro": "Ein Cookie ist eine kleine Textdatei, die auf Ihrem Gerät gespeichert wird, wenn Sie unsere Website besuchen.",
+                "types": "Arten der verwendeten Cookies",
+                "essential": "Essentielle Cookies: Notwendig für das Funktionieren der Website (Authentifizierung, Sicherheit). Sie können nicht deaktiviert werden.",
+                "analytics": "Analyse-Cookies: Helfen uns zu verstehen, wie die Website genutzt wird, um sie zu verbessern. Wir verwenden datenschutzfreundliche Tools.",
+                "manage": "Verwaltung Ihrer Einstellungen",
+                "manage_text": "Sie können Ihren Browser so konfigurieren, dass alle Cookies abgelehnt oder Sie benachrichtigt werden, wenn ein Cookie gesendet wird. Einige Funktionen der Website funktionieren jedoch möglicherweise ohne essentielle Cookies nicht ordnungsgemäß."
+            },
+            "cgv": {
+                "title": "Allgemeine Geschäftsbedingungen",
+                "b2b": "Nur für gewerbliche Nutzung (B2B)",
+                "price": "Preis und Zahlung",
+                "termination": "Laufzeit und Kündigung",
+                "termination_text": "Das Abonnement ist unverbindlich. Sie können es jederzeit über Ihr Dashboard kündigen. Die Kündigung wird zum Ende des aktuellen Abrechnungszeitraums wirksam.",
+                "retraction": "Verzicht auf das Widerrufsrecht",
+                "retraction_text": "Gemäß den gesetzlichen Bestimmungen stimmen Sie mit dem Abschluss eines Scaliente-Abonnements der sofortigen Bereitstellung des digitalen Dienstes zu und verzichten ausdrücklich auf Ihr 14-tägiges Widerrufsrecht. Wir bieten jedoch eine 'Geld-zurück-Garantie' unter bestimmten Bedingungen an (siehe Preisseite)."
+            },
+            "terms": {
+                "title": "Nutzungsbedingungen",
+                "intro": "Willkommen bei Scaliente. Durch den Zugriff auf unsere Website und die Nutzung unserer Dienste erklären Sie sich mit diesen Nutzungsbedingungen einverstanden.",
+                "items": [
+                    {
+                        "title": "1. Dienstbeschreibung",
+                        "content": "Scaliente ist eine SaaS-Datenanalyselösung (Software as a Service) für E-Commerce-Händler. Sie aggregiert Verkaufs- und Werbedaten zur Berechnung der Rentabilität. Der Dienst wird 'wie besehen' bereitgestellt."
+                    },
+                    {
+                        "title": "2. Benutzerkonto",
+                        "content": "Sie sind für die Vertraulichkeit Ihres Kontos und Passworts verantwortlich. Alle Aktivitäten unter Ihrem Konto liegen in Ihrer Verantwortung. Sie verpflichten sich, bei der Registrierung genaue und vollständige Angaben zu machen."
+                    },
+                    {
+                        "title": "3. Finanzielle Bedingungen",
+                        "content": "Der Zugang zu den vollständigen Diensten von Scaliente erfordert ein kostenpflichtiges Abonnement (monatlich oder jährlich). Zahlungen werden über Stripe gesichert. Die angezeigten Preise verstehen sich in Euro oder Dollar und ohne Steuern, sofern nicht anders angegeben. Bei Nichtzahlung kann das Konto gesperrt werden."
+                    },
+                    {
+                        "title": "4. Geistiges Eigentum (Nutzer)",
+                        "content": "Sie behalten alle Rechte an den Daten, die Sie in Scaliente importieren. Sie gewähren uns eine weltweite, nicht-exklusive, gebührenfreie Lizenz zur Nutzung, zum Hosting und zur Analyse dieser Daten ausschließlich zum Zweck der Bereitstellung des Dienstes für Sie."
+                    },
+                    {
+                        "title": "5. Haftungsbeschränkung",
+                        "content": "Im größtmöglichen gesetzlich zulässigen Umfang haftet SCALIENTE LLC nicht für indirekte, zufällige, besondere oder Folgeschäden, einschließlich entgangener Gewinne oder Datenverlust, die sich aus der Nutzung oder der Unmöglichkeit der Nutzung des Dienstes ergeben."
+                    },
+                    {
+                        "title": "6. Anwendbares Recht und Gerichtsstand",
+                        "content": "Diese Bedingungen unterliegen dem Recht des Staates Wyoming, USA. Alle Streitigkeiten im Zusammenhang mit diesen Bedingungen unterliegen der ausschließlichen Zuständigkeit der Gerichte von Wyoming."
+                    }
+                ]
+            },
             "deletion": {
                 "title": "Anweisungen zur Datenlöschung",
                 "intro": "Sie haben die volle Kontrolle über Ihre Daten. So beantragen Sie die dauerhafte Löschung:",
