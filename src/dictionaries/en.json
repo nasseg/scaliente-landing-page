@@ -355,23 +355,23 @@
             },
             "installation": {
                 "q": "Is it complicated to install? I'm not a dev.",
-                "a": "It's child's play. Installation takes 1 click via the Shopify App Store. Then, you connect your ad accounts (Facebook, Google, etc.) via a standard secure connection. In 2 minutes flat, your dashboard is ready."
+                "a": "Scaliente installs in 3 steps: (1) Add the app from the Shopify App Store with one click, (2) Authorize read-only OAuth access to your Shopify store, (3) Connect your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) via secure OAuth. Your profit dashboard populates with data in under 2 minutes. No coding or technical expertise required."
             },
             "security": {
                 "q": "Is my data safe?",
-                "a": "Security is our top priority. We only use read-only access to analyze your ads. Your sales data is encrypted (AES-256) and we never sell your information to third parties."
+                "a": "Scaliente uses read-only API access to Shopify and ad platforms — it cannot modify your store or ad accounts. All data is encrypted with AES-256 at rest and TLS 1.3 in transit. Scaliente does not sell, share, or transfer your data to third parties. The app is hosted on Vercel's SOC 2 compliant infrastructure."
             },
             "shopifyAnalytics": {
                 "q": "Why not just use Shopify Analytics?",
-                "a": "Shopify gives you your Revenue, not your real profit. It doesn't deduct your ad costs, transaction fees (Stripe/PayPal), or product costs (COGS) in real-time. Scaliente shows you what really stays in your pocket."
+                "a": "Shopify Analytics displays gross revenue but does not calculate net profit. For example, if your Shopify store generates €10,000 in revenue but you spent €3,000 on Meta Ads, €2,000 on COGS, €800 on shipping, and €400 on Stripe fees, Shopify shows €10,000 while your real profit is only €3,800. Scaliente deducts all these costs automatically and updates every 5 minutes."
             },
             "commitment": {
                 "q": "Am I locked in?",
-                "a": "Zero commitment. You can cancel your subscription in 1 click from your dashboard, at any time."
+                "a": "Zero commitment. You can cancel your Scaliente subscription in one click from your dashboard at any time. Your access continues until the end of your current billing period. No cancellation fees, no hidden charges."
             },
             "story": {
                 "q": "Why have I never heard of Scaliente before?",
-                "a": "We grew in the shadows, exclusively through word-of-mouth. Originally reserved for agencies and enterprise accounts, Scaliente convinced over 2,500 clients privately. Facing growing demand, we automated our technology to finally open it to the public."
+                "a": "Scaliente launched in 2024 as a private profit-tracking tool for e-commerce agencies managing multi-store Shopify portfolios. After reaching 2,500 active users through word-of-mouth referrals, Scaliente opened to the public with self-serve plans starting at €0/month (Discovery plan, 20 orders/month included)."
             },
             "freePlan": {
                 "q": "Is there a free plan?",

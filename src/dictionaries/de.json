@@ -355,23 +355,23 @@
             },
             "installation": {
                 "q": "Ist die Installation kompliziert? Ich bin kein Entwickler.",
-                "a": "Es ist ein Kinderspiel. Die Installation erfolgt mit 1 Klick über den Shopify App Store. Dann verbinden Sie Ihre Werbekonten (Facebook, Google usw.) über eine sichere Standardverbindung. In 2 Minuten ist Ihr Dashboard bereit."
+                "a": "Scaliente wird in 3 Schritten installiert: (1) App aus dem Shopify App Store mit einem Klick hinzufügen, (2) Nur-Lese-OAuth-Zugriff für Ihren Shopify-Shop autorisieren, (3) Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) über sicheres OAuth verbinden. Ihr Gewinn-Dashboard wird in unter 2 Minuten mit Daten gefüllt. Keine Programmierkenntnisse oder technisches Wissen erforderlich."
             },
             "security": {
                 "q": "Sind meine Daten sicher?",
-                "a": "Sicherheit ist unsere oberste Priorität. Wir verwenden nur Lesezugriff (Read-Only), um Ihre Anzeigen zu analysieren. Ihre Verkaufsdaten werden verschlüsselt (AES-256) und wir verkaufen Ihre Informationen niemals an Dritte."
+                "a": "Scaliente nutzt ausschließlich Nur-Lese-API-Zugriff auf Shopify und Werbeplattformen — es kann Ihren Shop oder Ihre Werbekonten nicht verändern. Alle Daten werden mit AES-256 im Ruhezustand und TLS 1.3 bei der Übertragung verschlüsselt. Scaliente verkauft, teilt oder überträgt Ihre Daten nicht an Dritte. Die App wird auf der SOC-2-konformen Infrastruktur von Vercel gehostet."
             },
             "shopifyAnalytics": {
                 "q": "Warum nicht einfach Shopify Analytics nutzen?",
-                "a": "Shopify zeigt Ihnen Ihren Umsatz, nicht Ihren echten Gewinn. Es zieht Ihre Werbekosten, Transaktionsgebühren (Stripe/PayPal) oder Produktkosten (COGS) nicht in Echtzeit ab. Scaliente zeigt Ihnen, was wirklich in Ihrer Tasche bleibt."
+                "a": "Shopify Analytics zeigt den Bruttoumsatz an, berechnet aber nicht den Nettogewinn. Beispiel: Wenn Ihr Shopify-Shop 10.000€ Umsatz generiert, Sie aber 3.000€ für Meta Ads, 2.000€ für COGS, 800€ für Versand und 400€ für Stripe-Gebühren ausgegeben haben, zeigt Shopify 10.000€ an, während Ihr tatsächlicher Gewinn nur 3.800€ beträgt. Scaliente zieht all diese Kosten automatisch ab und aktualisiert alle 5 Minuten."
             },
             "commitment": {
                 "q": "Bin ich langfristig gebunden?",
-                "a": "Nein, es gibt keine Bindung. Sie können Ihr Abonnement mit einem Klick in Ihrem Dashboard jederzeit kündigen. Der Zugriff endet einfach am Ende Ihres aktuellen Abrechnungszeitraums."
+                "a": "Keine Bindung. Sie können Ihr Scaliente-Abonnement mit einem Klick in Ihrem Dashboard jederzeit kündigen. Ihr Zugang bleibt bis zum Ende Ihres aktuellen Abrechnungszeitraums bestehen. Keine Kündigungsgebühren, keine versteckten Kosten."
             },
             "story": {
                 "q": "Warum habe ich noch nie von Scaliente gehört?",
-                "a": "Wir sind im Verborgenen gewachsen, ausschließlich durch Mundpropaganda. Ursprünglich für Agenturen und Großkunden reserviert, hat Scaliente über 2.500 Kunden privat überzeugt. Aufgrund der wachsenden Nachfrage haben wir unsere Technologie automatisiert, um sie endlich der Öffentlichkeit zugänglich zu machen."
+                "a": "Scaliente wurde 2024 als privates Gewinnverfolgungs-Tool für E-Commerce-Agenturen gestartet, die Multi-Store-Shopify-Portfolios verwalten. Nachdem 2.500 aktive Nutzer ausschließlich durch Mundpropaganda erreicht wurden, öffnete sich Scaliente der Öffentlichkeit mit Self-Service-Plänen ab 0€/Monat (Discovery-Plan, 20 Bestellungen/Monat inklusive)."
             },
             "freePlan": {
                 "q": "Gibt es einen kostenlosen Plan?",
