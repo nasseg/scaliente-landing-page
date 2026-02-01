@@ -15,8 +15,69 @@ export default async function Home({ params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
+  const faqQuestions = dict.faq?.questions ? Object.values(dict.faq.questions) : [];
+
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Scaliente",
+    description: dict.metadata.description,
+    url: `https://scaliente.com/${lang}`,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    inLanguage: lang,
+    offers: [
+      {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "EUR",
+        name: "Discovery",
+      },
+      {
+        "@type": "Offer",
+        price: "89",
+        priceCurrency: "EUR",
+        name: "Starter",
+      },
+      {
+        "@type": "Offer",
+        price: "149",
+        priceCurrency: "EUR",
+        name: "Growth",
+      },
+      {
+        "@type": "Offer",
+        price: "249",
+        priceCurrency: "EUR",
+        name: "Scale",
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    inLanguage: lang,
+    mainEntity: faqQuestions.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen selection:bg-orange-500/30 font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Navbar content={dict.navbar} common={dict.common} lang={lang} />
 
       {/* Hero + LogoMarquee - Frosted glass with rounded bottom */}

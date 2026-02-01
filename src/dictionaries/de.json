@@ -394,6 +394,24 @@
         "noCard": "Keine Kreditkarte erforderlich."
     },
     "affiliate": {
+        "metadata": {
+            "title": "Scaliente Partnerprogramm | 15% Lebenslange Provision",
+            "description": "Treten Sie dem Scaliente-Partnerprogramm bei. Verdienen Sie 15% lebenslange Provision auf jeden vermittelten Kunden. Ihre Empfehlungen erhalten 50% Rabatt."
+        },
+        "stats": {
+            "commissionLabel": "Provision",
+            "discountLabel": "Rabatt",
+            "durationValue": "Lebenslang",
+            "durationLabel": "Dauer"
+        },
+        "dashboard": {
+            "title": "Affiliate-Dashboard",
+            "live": "Live",
+            "referrals": "Empfehlungen",
+            "referralsChange": "+3 diesen Monat",
+            "commissions": "Provisionen",
+            "commissionsChange": "+156€ diesen Monat"
+        },
         "hero": {
             "badge": "Partnerprogramm",
             "title": "Werden Sie Scaliente-Partner",
@@ -484,7 +502,8 @@
         "ogTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
         "ogDescription": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
         "twitterTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
-        "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit."
+        "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit.",
+        "keywords": ["E-Commerce Gewinn Tracker", "Shopify Gewinnrechner", "Nettogewinn Dashboard", "Werbeausgaben Tracking", "E-Commerce Marge Tracker", "Shopify Analyse Tool", "Echtzeit Gewinnverfolgung", "Dropshipping Gewinnrechner"]
     },
     "legalPage": {
         "title": "Rechtliche Informationen",

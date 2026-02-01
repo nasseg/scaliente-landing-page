@@ -394,6 +394,24 @@
         "noCard": "No credit card required."
     },
     "affiliate": {
+        "metadata": {
+            "title": "Scaliente Partner Program | 15% Lifetime Commission",
+            "description": "Join the Scaliente affiliate program. Earn 15% lifetime commission on every customer you refer. Your referrals get 50% off their first month."
+        },
+        "stats": {
+            "commissionLabel": "Commission",
+            "discountLabel": "Discount",
+            "durationValue": "Lifetime",
+            "durationLabel": "Duration"
+        },
+        "dashboard": {
+            "title": "Affiliate Dashboard",
+            "live": "Live",
+            "referrals": "Referrals",
+            "referralsChange": "+3 this month",
+            "commissions": "Commissions",
+            "commissionsChange": "+€156 this month"
+        },
         "hero": {
             "badge": "Partner Program",
             "title": "Become a Scaliente Partner",
@@ -484,7 +502,8 @@
         "ogTitle": "Scaliente | Net Profit & Real Profitability Tracker",
         "ogDescription": "Stop guessing your profitability. Scaliente centralizes your revenue and expenses to reveal your true profit.",
         "twitterTitle": "Scaliente | Net Profit & Real Profitability Tracker",
-        "twitterDescription": "Stop guessing. See your real profit in real-time."
+        "twitterDescription": "Stop guessing. See your real profit in real-time.",
+        "keywords": ["ecommerce profit tracker", "shopify profit calculator", "net profit dashboard", "ad spend tracking", "ecommerce margin tracker", "shopify analytics tool", "real profit tracking", "dropshipping profit calculator"]
     },
     "legalPage": {
         "title": "Legal Information",

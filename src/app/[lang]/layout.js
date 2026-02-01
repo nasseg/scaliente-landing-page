@@ -20,10 +20,19 @@ export async function generateMetadata({ params }) {
   return {
     title: dict.metadata.title,
     description: dict.metadata.description,
-    keywords: ["profit e-commerce", "tracker profit", "rentabilité shopify", "suivi dépenses ads", "marge e-commerce", "dropshipping profit"],
+    keywords: dict.metadata.keywords || [],
     authors: [{ name: "Scaliente" }],
     creator: "Scaliente",
     metadataBase: new URL('https://scaliente.com'),
+    alternates: {
+      canonical: `https://scaliente.com/${lang}`,
+      languages: {
+        'fr': 'https://scaliente.com/fr',
+        'en': 'https://scaliente.com/en',
+        'de': 'https://scaliente.com/de',
+        'x-default': 'https://scaliente.com/fr',
+      },
+    },
     openGraph: {
       title: dict.metadata.ogTitle,
       description: dict.metadata.ogDescription,
@@ -68,9 +77,27 @@ export default async function RootLayout({ children, params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Scaliente",
+    url: "https://scaliente.com",
+    logo: "https://scaliente.com/scalienteog.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      email: "contact@scaliente.com",
+      contactType: "customer service",
+    },
+    sameAs: [],
+  };
+
   return (
     <html lang={lang} className={poppins.variable} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <BackgroundEffect />
         <main
           className="relative w-full min-h-screen"

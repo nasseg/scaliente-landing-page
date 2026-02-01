@@ -395,6 +395,24 @@
         "noCard": "Pas de carte bancaire requise."
     },
     "affiliate": {
+        "metadata": {
+            "title": "Programme Partenaires Scaliente | 15% de Commission à Vie",
+            "description": "Rejoignez le programme d'affiliation Scaliente. Gagnez 15% de commission à vie sur chaque client parrainé. Vos filleuls obtiennent 50% de réduction."
+        },
+        "stats": {
+            "commissionLabel": "Commission",
+            "discountLabel": "Réduction",
+            "durationValue": "À vie",
+            "durationLabel": "Durée"
+        },
+        "dashboard": {
+            "title": "Dashboard Affilié",
+            "live": "Live",
+            "referrals": "Parrainages",
+            "referralsChange": "+3 ce mois",
+            "commissions": "Commissions",
+            "commissionsChange": "+156€ ce mois"
+        },
         "hero": {
             "badge": "Programme Partenaires",
             "title": "Devenez Partenaire Scaliente",
@@ -485,7 +503,8 @@
         "ogTitle": "Scaliente - Votre Profit E-commerce Réel",
         "ogDescription": "Arrêtez de deviner votre rentabilité. Scaliente centralise vos revenus et dépenses pour révéler votre vrai profit.",
         "twitterTitle": "Scaliente - Votre Profit E-commerce Réel",
-        "twitterDescription": "Arrêtez de deviner. Voyez votre vrai profit en temps réel."
+        "twitterDescription": "Arrêtez de deviner. Voyez votre vrai profit en temps réel.",
+        "keywords": ["profit e-commerce", "tracker profit shopify", "rentabilité shopify", "suivi dépenses ads", "marge e-commerce", "dropshipping profit", "calcul profit net", "tracker rentabilité boutique en ligne"]
     },
     "legalPage": {
         "title": "Centre Juridique",

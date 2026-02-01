@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import LanguageSelector from './LanguageSelector';
 
 const Footer = ({ content, lang }) => (
@@ -32,14 +33,14 @@ const Footer = ({ content, lang }) => (
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href={`/${lang}/#features`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <Link href={`/${lang}/#features`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
                                     {content?.links?.features || "Fonctionnalités"}
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href={`/${lang}/#pricing`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <Link href={`/${lang}/#pricing`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
                                     {content?.links?.pricing || "Tarifs"}
-                                </a>
+                                </Link>
                             </li>
                             <li>
                                 <a href="https://app.scaliente.com" className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
@@ -47,9 +48,9 @@ const Footer = ({ content, lang }) => (
                                 </a>
                             </li>
                             <li>
-                                <a href={`/${lang}/affiliate`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <Link href={`/${lang}/affiliate`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
                                     {content?.links?.affiliate || "Affiliation"}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -61,14 +62,14 @@ const Footer = ({ content, lang }) => (
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href={`/${lang}/privacy-policy`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <Link href={`/${lang}/privacy-policy`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
                                     {content?.links?.privacy || "Confidentialité"}
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a href={`/${lang}/terms-of-service`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
+                                <Link href={`/${lang}/terms-of-service`} className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors">
                                     {content?.links?.terms || "CGU"}
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

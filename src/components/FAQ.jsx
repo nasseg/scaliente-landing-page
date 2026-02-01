@@ -3,52 +3,60 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
-const FAQItem = ({ question, answer, isOpen, onClick, index }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.4, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-        className="border-b border-zinc-200 last:border-0"
-    >
-        <button
-            onClick={onClick}
-            className="w-full py-6 flex items-center justify-between gap-4 text-left group"
+const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
+    const answerId = `faq-answer-${index}`;
+
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+            className="border-b border-zinc-200 last:border-0"
         >
-            <span className={`text-lg font-medium transition-colors duration-200 ${
-                isOpen ? 'text-zinc-900' : 'text-zinc-700 group-hover:text-zinc-900'
-            }`}>
-                {question}
-            </span>
-            <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                isOpen
-                    ? 'bg-orange-100 border border-orange-200'
-                    : 'bg-zinc-100 border border-zinc-200 group-hover:border-zinc-300'
-            }`}>
-                {isOpen ? (
-                    <Minus className="w-4 h-4 text-orange-600" />
-                ) : (
-                    <Plus className="w-4 h-4 text-zinc-500 group-hover:text-zinc-700" />
+            <button
+                onClick={onClick}
+                aria-expanded={isOpen}
+                aria-controls={answerId}
+                className="w-full py-6 flex items-center justify-between gap-4 text-left group"
+            >
+                <span className={`text-lg font-medium transition-colors duration-200 ${
+                    isOpen ? 'text-zinc-900' : 'text-zinc-700 group-hover:text-zinc-900'
+                }`}>
+                    {question}
+                </span>
+                <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                    isOpen
+                        ? 'bg-orange-100 border border-orange-200'
+                        : 'bg-zinc-100 border border-zinc-200 group-hover:border-zinc-300'
+                }`}>
+                    {isOpen ? (
+                        <Minus className="w-4 h-4 text-orange-600" />
+                    ) : (
+                        <Plus className="w-4 h-4 text-zinc-500 group-hover:text-zinc-700" />
+                    )}
+                </div>
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        id={answerId}
+                        role="region"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                    >
+                        <p className="pb-6 text-zinc-600 leading-relaxed pl-0 pr-12">
+                            {answer}
+                        </p>
+                    </motion.div>
                 )}
-            </div>
-        </button>
-        <AnimatePresence>
-            {isOpen && (
-                <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                >
-                    <p className="pb-6 text-zinc-600 leading-relaxed pl-0 pr-12">
-                        {answer}
-                    </p>
-                </motion.div>
-            )}
-        </AnimatePresence>
-    </motion.div>
-);
+            </AnimatePresence>
+        </motion.div>
+    );
+};
 
 const FAQ = ({ content }) => {
     const [openIndex, setOpenIndex] = useState(0);
