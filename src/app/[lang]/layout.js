@@ -91,7 +91,7 @@ export default async function RootLayout({ children, params }) {
       email: "contact@scaliente.com",
       contactType: "customer service",
     },
-    sameAs: ["https://x.com/scaliente", "https://linkedin.com/company/scaliente"],
+    sameAs: [],
   };
 
   return (
