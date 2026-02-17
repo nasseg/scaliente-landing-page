@@ -31,11 +31,7 @@ export default async function AffiliatePage({ params }) {
     return (
         <div className="min-h-screen bg-[#0A0B0D] text-white selection:bg-orange-500/30">
             <Navbar content={dict.navbar} common={dict.common} lang={lang} isHomePage={false} />
-            <AffiliateContent
-                content={content}
-                stats={content?.stats}
-                dashboard={content?.dashboard}
-            />
+            <AffiliateContent content={content} lang={lang} />
             <Footer content={dict.footer} lang={lang} />
         </div>
     );

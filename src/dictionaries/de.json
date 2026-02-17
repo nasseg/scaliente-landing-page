@@ -436,13 +436,15 @@
     "affiliate": {
         "metadata": {
             "title": "Scaliente Partnerprogramm | 15% Lebenslange Provision",
-            "description": "Treten Sie dem Scaliente-Partnerprogramm bei. Verdienen Sie 15% lebenslange Provision auf jeden vermittelten Kunden. Ihre Empfehlungen erhalten 50% Rabatt."
+            "description": "Treten Sie dem Scaliente-Partnerprogramm bei. Verdienen Sie 15% lebenslange wiederkehrende Provision. 90-Tage-Cookie. Monatliche PayPal-Auszahlungen."
         },
         "stats": {
-            "commissionLabel": "Provision",
-            "discountLabel": "Rabatt",
+            "commissionLabel": "Lebenslange Provision",
+            "discountLabel": "F\u00fcr Ihre Empfehlungen",
+            "cookieValue": "90T",
+            "cookieLabel": "Cookie-Dauer",
             "durationValue": "Lebenslang",
-            "durationLabel": "Dauer"
+            "durationLabel": "Wiederkehrend"
         },
         "dashboard": {
             "title": "Affiliate-Dashboard",
@@ -450,32 +452,76 @@
             "referrals": "Empfehlungen",
             "referralsChange": "+3 diesen Monat",
             "commissions": "Provisionen",
-            "commissionsChange": "+156€ diesen Monat"
+            "commissionsChange": "+156\u20ac diesen Monat"
         },
         "hero": {
             "badge": "Partnerprogramm",
-            "title": "Werden Sie Scaliente-Partner",
-            "subtitle": "Verdienen Sie 15% lebenslange Provision für jeden vermittelten Kunden",
-            "cta": "Bewerbung einreichen"
+            "titleWhite": "Verwandeln Sie Ihr Publikum in",
+            "titleOrange": "wiederkehrende Einnahmen",
+            "subtitle": "Verdienen Sie 15% lebenslange Provision auf jeden Scaliente-Kunden, den Sie vermitteln. Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat.",
+            "cta": "Jetzt bewerben"
         },
         "benefits": {
             "title": "Programmvorteile",
             "items": {
                 "commission": {
                     "title": "15% lebenslang",
-                    "desc": "Provision auf alle Zahlungen Ihrer Empfehlungen, für immer"
+                    "desc": "Wiederkehrende Provision auf jede Zahlung Ihrer Empfehlungen \u2014 nicht nur im ersten Monat, f\u00fcr immer."
                 },
                 "discount": {
-                    "title": "50% für Empfehlungen",
-                    "desc": "Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat"
+                    "title": "50% f\u00fcr Empfehlungen",
+                    "desc": "Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat. Macht Ihre Empfehlung zum einfachen Verk aufsargument."
                 },
-                "validation": {
-                    "title": "30 Tage Validierung",
-                    "desc": "Validierungszeitraum vor Provisionsgenehmigung"
+                "cookie": {
+                    "title": "90-Tage-Cookie",
+                    "desc": "Ihr Empfehlungslink bleibt 90 Tage aktiv. Wenn sie sich in diesem Zeitraum anmelden, verdienen Sie."
                 },
                 "payment": {
-                    "title": "PayPal-Zahlungen",
-                    "desc": "Monatliche Zahlungen am 5. (mindestens 50€)"
+                    "title": "Monatlich per PayPal",
+                    "desc": "Auszahlungen am 5. jedes Monats. Mindestschwelle von 50\u20ac."
+                }
+            }
+        },
+        "howItWorks": {
+            "title": "So funktioniert's",
+            "steps": [
+                { "step": "Schritt 1", "title": "Bewerben", "desc": "F\u00fcllen Sie das Formular unten aus. Wir pr\u00fcfen Bewerbungen innerhalb von 48 Stunden." },
+                { "step": "Schritt 2", "title": "Teilen", "desc": "Erhalten Sie Ihren einzigartigen Empfehlungslink und teilen Sie ihn mit Ihrem Publikum." },
+                { "step": "Schritt 3", "title": "Verdienen", "desc": "Verdienen Sie 15% auf jede Zahlung Ihrer Empfehlungen, lebenslang." }
+            ]
+        },
+        "earnings": {
+            "title": "Ihr Verdienstpotenzial",
+            "subtitle": "Sehen Sie, wie sich Provisionen mit dem wiederkehrenden Modell von Scaliente summieren.",
+            "colReferrals": "Empfehlungen",
+            "colPlan": "Durchschn. Plan",
+            "colMonthly": "Monatlich",
+            "colYearly": "J\u00e4hrlich",
+            "rows": [
+                { "referrals": "5 Kunden", "plan": "Starter (89\u20ac)", "monthly": "66,75\u20ac", "yearly": "801\u20ac" },
+                { "referrals": "10 Kunden", "plan": "Growth (149\u20ac)", "monthly": "223,50\u20ac", "yearly": "2.682\u20ac" },
+                { "referrals": "20 Kunden", "plan": "Scale (249\u20ac)", "monthly": "747\u20ac", "yearly": "8.964\u20ac" }
+            ],
+            "disclaimer": "Sch\u00e4tzungen basierend auf 15% wiederkehrender Provision. Die tats\u00e4chlichen Einnahmen h\u00e4ngen vom gew\u00e4hlten Plan und der Kundenbindung ab."
+        },
+        "audiences": {
+            "title": "Wer sollte beitreten",
+            "items": {
+                "creators": {
+                    "title": "Content Creator",
+                    "desc": "YouTube, TikTok, Instagram \u2014 monetarisieren Sie Ihr E-Commerce-Publikum."
+                },
+                "bloggers": {
+                    "title": "Blogger & Autoren",
+                    "desc": "Sie schreiben \u00fcber Shopify, E-Commerce oder Profit-Tracking? Perfekte Passung."
+                },
+                "agencies": {
+                    "title": "E-Commerce-Agenturen",
+                    "desc": "Empfehlen Sie Scaliente Ihren Kunden und verdienen Sie an jedem Abonnement."
+                },
+                "merchants": {
+                    "title": "Shopify-H\u00e4ndler",
+                    "desc": "Sie lieben Scaliente? Teilen Sie es mit anderen H\u00e4ndlern und werden Sie daf\u00fcr bezahlt."
                 }
             }
         },
@@ -486,31 +532,40 @@
                 "Echtzeit-Empfehlungsverfolgung",
                 "Detaillierte Provisionshistorie",
                 "Einzigartiger personalisierter Empfehlungslink",
-                "Statusverfolgung (ausstehend → genehmigt → ausgezahlt)"
+                "Statusverfolgung (ausstehend \u2192 genehmigt \u2192 ausgezahlt)"
+            ]
+        },
+        "faq": {
+            "title": "H\u00e4ufig gestellte Fragen",
+            "items": [
+                { "q": "Wie funktioniert die 15% lebenslange Provision?", "a": "Sie verdienen 15% von jeder Zahlung, die Ihre Empfehlungen an Scaliente leisten \u2014 nicht nur im ersten Monat. Solange sie abonniert bleiben, verdienen Sie. Wenn sie auf einen h\u00f6heren Plan upgraden, steigt auch Ihre Provision." },
+                { "q": "Was erh\u00e4lt meine Empfehlung?", "a": "Ihre Empfehlungen erhalten 50% Rabatt auf ihren ersten Monat, unabh\u00e4ngig vom gew\u00e4hlten Plan. Das macht Ihre Empfehlung zu einem einfachen Verkaufsargument." },
+                { "q": "Wie funktioniert der 90-Tage-Cookie?", "a": "Wenn jemand auf Ihren Empfehlungslink klickt, wird ein 90-Tage-Tracking-Cookie gesetzt. Wenn sie sich innerhalb dieser 90 Tage anmelden, auch wenn sie direkt zur\u00fcckkehren, wird die Empfehlung Ihnen zugeschrieben." },
+                { "q": "Wann und wie werde ich bezahlt?", "a": "Provisionen werden nach einer 30-t\u00e4gigen Clearing-Periode validiert. Auszahlungen erfolgen per PayPal am 5. jedes Monats, mit einer Mindestschwelle von 50\u20ac." },
+                { "q": "Kostet die Teilnahme etwas?", "a": "Nein. Das Partnerprogramm ist v\u00f6llig kostenlos. Keine versteckten Geb\u00fchren, keine Voraussetzungen." },
+                { "q": "Kann ich Scaliente mit bezahlter Werbung bewerben?", "a": "Ja, solange Sie nicht auf den Markennamen Scaliente bieten. Alle anderen Werbestrategien sind willkommen." }
             ]
         },
         "form": {
-            "title": "Bewerbungsformular",
+            "title": "Jetzt bewerben",
             "fields": {
                 "firstName": "Vorname",
                 "lastName": "Nachname",
                 "email": "E-Mail",
                 "website": "Website / Social Media",
-                "audience": "Geschätzte Reichweite",
-                "promotion": "Wie planen Sie, Scaliente zu bewerben?",
-                "motivation": "Warum möchten Sie Partner werden?"
+                "promotion": "Wie planen Sie, Scaliente zu bewerben?"
             },
             "placeholders": {
                 "firstName": "Max",
                 "lastName": "Mustermann",
                 "email": "max@beispiel.de",
                 "website": "https://ihreseite.de",
-                "audience": "Z.B. 10.000 Instagram-Follower",
-                "promotion": "Beschreiben Sie Ihre Werbestrategie...",
-                "motivation": "Erklären Sie Ihre Motivation..."
+                "promotion": "Beschreiben Sie Ihre Werbestrategie..."
             },
             "submit": "Bewerbung einreichen",
-            "disclaimer": "Wir prüfen Ihre Bewerbung und antworten innerhalb von 48 Stunden."
+            "disclaimer": "Kostenlos. Wir pr\u00fcfen Bewerbungen innerhalb von 48 Stunden.",
+            "successTitle": "Bewerbung eingereicht!",
+            "successMessage": "Vielen Dank! Wir werden Ihre Bewerbung pr\u00fcfen und uns innerhalb von 48 Stunden bei Ihnen melden."
         }
     },
     "footer": {

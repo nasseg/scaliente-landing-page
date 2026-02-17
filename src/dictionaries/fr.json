@@ -435,82 +435,137 @@
     },
     "affiliate": {
         "metadata": {
-            "title": "Programme Partenaires Scaliente | 15% de Commission à Vie",
-            "description": "Rejoignez le programme d'affiliation Scaliente. Gagnez 15% de commission à vie sur chaque client parrainé. Vos filleuls obtiennent 50% de réduction."
+            "title": "Programme Partenaires Scaliente | 15% de Commission \u00e0 Vie",
+            "description": "Rejoignez le programme partenaire Scaliente. Gagnez 15% de commission r\u00e9currente \u00e0 vie. Cookie 90 jours. Paiements mensuels PayPal."
         },
         "stats": {
-            "commissionLabel": "Commission",
-            "discountLabel": "Réduction",
-            "durationValue": "À vie",
-            "durationLabel": "Durée"
+            "commissionLabel": "Commission \u00e0 vie",
+            "discountLabel": "Pour vos filleuls",
+            "cookieValue": "90j",
+            "cookieLabel": "Dur\u00e9e du cookie",
+            "durationValue": "\u00c0 vie",
+            "durationLabel": "R\u00e9current"
         },
         "dashboard": {
-            "title": "Dashboard Affilié",
+            "title": "Dashboard Affili\u00e9",
             "live": "Live",
             "referrals": "Parrainages",
             "referralsChange": "+3 ce mois",
             "commissions": "Commissions",
-            "commissionsChange": "+156€ ce mois"
+            "commissionsChange": "+156\u20ac ce mois"
         },
         "hero": {
             "badge": "Programme Partenaires",
-            "title": "Devenez Partenaire Scaliente",
-            "subtitle": "Gagnez 15% de commission à vie sur chaque client que vous parrainez",
-            "cta": "Soumettre ma candidature"
+            "titleWhite": "Transformez votre audience en",
+            "titleOrange": "revenus r\u00e9currents",
+            "subtitle": "Gagnez 15% de commission \u00e0 vie sur chaque client Scaliente que vous parrainez. Vos filleuls obtiennent 50% de r\u00e9duction le premier mois.",
+            "cta": "Postuler maintenant"
         },
         "benefits": {
             "title": "Avantages du Programme",
             "items": {
                 "commission": {
-                    "title": "15% à vie",
-                    "desc": "Commission sur tous les paiements de vos filleuls, pour toujours"
+                    "title": "15% \u00e0 vie",
+                    "desc": "Commission r\u00e9currente sur chaque paiement de vos filleuls \u2014 pas seulement le premier mois, pour toujours."
                 },
                 "discount": {
                     "title": "50% pour vos filleuls",
-                    "desc": "Vos filleuls bénéficient de 50% de réduction le premier mois"
+                    "desc": "Vos filleuls obtiennent 50% de r\u00e9duction le premier mois. Votre recommandation devient facile \u00e0 vendre."
                 },
-                "validation": {
-                    "title": "30 jours de validation",
-                    "desc": "Période de validation avant approbation de la commission"
+                "cookie": {
+                    "title": "Cookie 90 jours",
+                    "desc": "Votre lien de parrainage reste actif 90 jours. S'ils s'inscrivent dans ce d\u00e9lai, vous gagnez."
                 },
                 "payment": {
-                    "title": "Paiements PayPal",
-                    "desc": "Paiements mensuels le 5 du mois (minimum 50€)"
+                    "title": "Paiement PayPal mensuel",
+                    "desc": "Versements le 5 de chaque mois. Seuil minimum de 50\u20ac."
+                }
+            }
+        },
+        "howItWorks": {
+            "title": "Comment \u00e7a marche",
+            "steps": [
+                { "step": "\u00c9tape 1", "title": "Postulez", "desc": "Remplissez le formulaire ci-dessous. Nous examinons les candidatures sous 48h." },
+                { "step": "\u00c9tape 2", "title": "Partagez", "desc": "Recevez votre lien de parrainage unique et partagez-le avec votre audience." },
+                { "step": "\u00c9tape 3", "title": "Gagnez", "desc": "Touchez 15% sur chaque paiement de vos filleuls, \u00e0 vie." }
+            ]
+        },
+        "earnings": {
+            "title": "Votre potentiel de gains",
+            "subtitle": "D\u00e9couvrez comment les commissions s'accumulent avec le mod\u00e8le r\u00e9current de Scaliente.",
+            "colReferrals": "Filleuls",
+            "colPlan": "Plan moyen",
+            "colMonthly": "Mensuel",
+            "colYearly": "Annuel",
+            "rows": [
+                { "referrals": "5 clients", "plan": "Starter (89\u20ac)", "monthly": "66,75\u20ac", "yearly": "801\u20ac" },
+                { "referrals": "10 clients", "plan": "Growth (149\u20ac)", "monthly": "223,50\u20ac", "yearly": "2 682\u20ac" },
+                { "referrals": "20 clients", "plan": "Scale (249\u20ac)", "monthly": "747\u20ac", "yearly": "8 964\u20ac" }
+            ],
+            "disclaimer": "Estimations bas\u00e9es sur 15% de commission r\u00e9currente. Les gains r\u00e9els d\u00e9pendent du plan choisi et de la r\u00e9tention."
+        },
+        "audiences": {
+            "title": "Qui devrait rejoindre",
+            "items": {
+                "creators": {
+                    "title": "Cr\u00e9ateurs de contenu",
+                    "desc": "YouTube, TikTok, Instagram \u2014 mon\u00e9tisez votre audience e-commerce."
+                },
+                "bloggers": {
+                    "title": "Blogueurs & R\u00e9dacteurs",
+                    "desc": "Vous \u00e9crivez sur Shopify, l'e-commerce ou le profit tracking ? Profil id\u00e9al."
+                },
+                "agencies": {
+                    "title": "Agences e-commerce",
+                    "desc": "Recommandez Scaliente \u00e0 vos clients et touchez une commission sur chaque abonnement."
+                },
+                "merchants": {
+                    "title": "Marchands Shopify",
+                    "desc": "Vous adorez Scaliente ? Partagez-le avec vos coll\u00e8gues e-commer\u00e7ants et soyez r\u00e9mun\u00e9r\u00e9."
                 }
             }
         },
         "features": {
             "title": "Ce que vous obtenez",
             "items": [
-                "Dashboard affilié dédié",
-                "Suivi des parrainages en temps réel",
-                "Historique des commissions détaillé",
-                "Lien de parrainage unique personnalisé",
-                "Suivi du statut (en attente → approuvé → payé)"
+                "Dashboard affili\u00e9 d\u00e9di\u00e9",
+                "Suivi des parrainages en temps r\u00e9el",
+                "Historique des commissions d\u00e9taill\u00e9",
+                "Lien de parrainage unique personnalis\u00e9",
+                "Suivi du statut (en attente \u2192 approuv\u00e9 \u2192 pay\u00e9)"
+            ]
+        },
+        "faq": {
+            "title": "Questions fr\u00e9quentes",
+            "items": [
+                { "q": "Comment fonctionne la commission 15% \u00e0 vie ?", "a": "Vous touchez 15% de chaque paiement effectu\u00e9 par vos filleuls \u00e0 Scaliente \u2014 pas seulement le premier mois. Tant qu'ils restent abonn\u00e9s, vous gagnez. S'ils passent \u00e0 un plan sup\u00e9rieur, votre commission augmente aussi." },
+                { "q": "Que re\u00e7oit mon filleul ?", "a": "Vos filleuls b\u00e9n\u00e9ficient de 50% de r\u00e9duction sur leur premier mois, quel que soit le plan choisi. Cela rend votre recommandation facile \u00e0 vendre." },
+                { "q": "Comment fonctionne le cookie 90 jours ?", "a": "Quand quelqu'un clique sur votre lien, un cookie de suivi de 90 jours est d\u00e9pos\u00e9. S'il s'inscrit dans ce d\u00e9lai, m\u00eame en revenant directement, le parrainage vous est attribu\u00e9." },
+                { "q": "Quand et comment suis-je pay\u00e9 ?", "a": "Les commissions sont valid\u00e9es apr\u00e8s une p\u00e9riode de clearing de 30 jours. Les paiements sont effectu\u00e9s par PayPal le 5 de chaque mois, avec un seuil minimum de 50\u20ac." },
+                { "q": "Est-ce gratuit de rejoindre le programme ?", "a": "Oui. Le programme partenaire est enti\u00e8rement gratuit. Aucun frais cach\u00e9, aucune condition pr\u00e9alable." },
+                { "q": "Puis-je promouvoir Scaliente via des publicit\u00e9s payantes ?", "a": "Oui, tant que vous n'ench\u00e9rissez pas sur le nom de marque Scaliente. Toutes les autres strat\u00e9gies de promotion sont les bienvenues." }
             ]
         },
         "form": {
-            "title": "Formulaire de Candidature",
+            "title": "Postuler maintenant",
             "fields": {
-                "firstName": "Prénom",
+                "firstName": "Pr\u00e9nom",
                 "lastName": "Nom",
                 "email": "Email",
-                "website": "Site web / Réseaux sociaux",
-                "audience": "Audience estimée",
-                "promotion": "Comment comptez-vous promouvoir Scaliente ?",
-                "motivation": "Pourquoi souhaitez-vous devenir partenaire ?"
+                "website": "Site web / R\u00e9seaux sociaux",
+                "promotion": "Comment comptez-vous promouvoir Scaliente ?"
             },
             "placeholders": {
                 "firstName": "Jean",
                 "lastName": "Dupont",
                 "email": "jean@exemple.com",
                 "website": "https://votresite.com",
-                "audience": "Ex: 10,000 abonnés Instagram",
-                "promotion": "Décrivez votre stratégie de promotion...",
-                "motivation": "Expliquez vos motivations..."
+                "promotion": "D\u00e9crivez votre strat\u00e9gie de promotion..."
             },
             "submit": "Soumettre ma candidature",
-            "disclaimer": "Nous examinerons votre candidature et vous répondrons sous 48h."
+            "disclaimer": "Gratuit. Nous examinons les candidatures sous 48 heures.",
+            "successTitle": "Candidature envoy\u00e9e !",
+            "successMessage": "Merci ! Nous examinerons votre candidature et vous recontacterons sous 48 heures."
         }
     },
     "footer": {
