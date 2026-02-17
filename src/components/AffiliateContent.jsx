@@ -77,11 +77,6 @@ const AffiliateContent = ({ content, lang = 'fr' }) => {
         <>
             {/* Hero Section */}
             <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-20 left-1/4 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/15 via-amber-500/10 to-transparent rounded-full blur-3xl" />
-                    <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-gradient-to-tl from-orange-500/10 via-amber-500/5 to-transparent rounded-full blur-3xl" />
-                </div>
-
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
