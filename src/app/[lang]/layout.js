@@ -1,4 +1,5 @@
 import { Poppins } from "next/font/google";
+import Script from "next/script";
 import "../globals.css";
 import BackgroundEffect from "@/components/BackgroundEffect";
 import CookieConsent from "@/components/CookieConsent";
@@ -83,12 +84,14 @@ export default async function RootLayout({ children, params }) {
     name: "Scaliente",
     url: "https://scaliente.com",
     logo: "https://scaliente.com/scalienteog.png",
+    description: "Scaliente is a real-time profit tracking SaaS for Shopify e-commerce merchants. It automatically deducts ads, COGS, and shipping to show your true net profit.",
+    foundingDate: "2024",
     contactPoint: {
       "@type": "ContactPoint",
       email: "contact@scaliente.com",
       contactType: "customer service",
     },
-    sameAs: [],
+    sameAs: ["https://x.com/scaliente", "https://linkedin.com/company/scaliente"],
   };
 
   return (
@@ -98,6 +101,24 @@ export default async function RootLayout({ children, params }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        {/* GA4 */}
+        {process.env.NEXT_PUBLIC_GA4_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA4_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA4_ID}');`}
+            </Script>
+          </>
+        )}
+        {/* Microsoft Clarity */}
+        {process.env.NEXT_PUBLIC_CLARITY_ID && (
+          <Script id="clarity-init" strategy="lazyOnload">
+            {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID}");`}
+          </Script>
+        )}
         <BackgroundEffect />
         <main
           className="relative w-full min-h-screen"

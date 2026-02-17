@@ -106,11 +106,11 @@ const BeforeAfter = ({ content }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 tracking-[-0.025em]">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
                         {content?.title?.main}{' '}
                         <span className="text-gradient-orange">{content?.title?.highlight}</span>
                     </h2>
-                    <p className="text-lg text-zinc-400 max-w-xl mx-auto leading-relaxed">
+                    <p className="text-lg text-[var(--text-secondary)] max-w-xl mx-auto leading-relaxed">
                         {content?.subtitle}
                     </p>
                 </motion.div>
@@ -134,7 +134,7 @@ const BeforeAfter = ({ content }) => {
                             url="docs.google.com/spreadsheets/..."
                             activeTabIndex={0}
                             compact={true}
-                            className="h-[380px]"
+                            className="h-[320px] md:h-[380px] lg:h-[420px]"
                             tabs={[
                                 { name: 'Profit Calc', icon: <FileSpreadsheet className="w-4 h-4 text-green-600" /> },
                                 { name: 'Meta', icon: <BrandIcons.Meta /> },
@@ -179,15 +179,15 @@ const BeforeAfter = ({ content }) => {
                                 </div>
                             </div>
                         </BrowserWindow>
-                        <p className="mt-4 text-center text-zinc-500 text-sm italic">
+                        <p className="mt-4 text-center text-[var(--text-muted)] text-sm italic">
                             {content?.before?.quote}
                         </p>
                     </motion.div>
 
                     {/* Arrow for Mobile */}
                     <div className="flex justify-center lg:hidden -my-4 z-20 relative">
-                        <div className="bg-zinc-900 border border-white/10 p-2 rounded-full">
-                            <ArrowRight className="w-6 h-6 text-zinc-500 rotate-90" />
+                        <div className="bg-zinc-900 border border-[var(--card-border)] p-2 rounded-full">
+                            <ArrowRight className="w-6 h-6 text-[var(--text-muted)] rotate-90" />
                         </div>
                     </div>
 
@@ -207,13 +207,13 @@ const BeforeAfter = ({ content }) => {
                         <BrowserWindow
                             url="app.scaliente.com/dashboard"
                             activeTabIndex={0}
-                            className="h-[380px] ring-1 ring-orange-500/20"
+                            className="h-[320px] md:h-[380px] lg:h-[420px] ring-1 ring-orange-500/20"
                             tabs={[
                                 { name: content?.after?.tabs?.scaliente || 'Scaliente', color: 'bg-orange-500' },
                             ]}
                         >
                             {/* Light Theme Dashboard - Matching actual Scaliente app */}
-                            <div className="bg-[#fafafa] h-full w-full flex">
+                            <div className="bg-[#fafafa] h-full w-full flex shadow-xl border border-[var(--card-border)]">
                                 {/* Mini Sidebar */}
                                 <div className="w-12 bg-white border-r border-zinc-100 py-3 hidden sm:flex flex-col items-center gap-3">
                                     <div className="w-7 h-7 rounded-lg bg-orange-50 flex items-center justify-center">
@@ -311,7 +311,7 @@ const BeforeAfter = ({ content }) => {
                                 </div>
                             </div>
                         </BrowserWindow>
-                        <p className="mt-4 text-center text-zinc-500 text-sm">
+                        <p className="mt-4 text-center text-[var(--text-muted)] text-sm">
                             {content?.after?.quote}
                         </p>
                     </motion.div>

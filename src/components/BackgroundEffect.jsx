@@ -1,20 +1,40 @@
 "use client";
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BackgroundEffect = React.memo(() => {
+    const [showWebGL, setShowWebGL] = useState(false);
+
+    useEffect(() => {
+        // Skip WebGL on mobile and when reduced motion is preferred
+        const isMobile = window.innerWidth < 768;
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!isMobile && !prefersReducedMotion) {
+            setShowWebGL(true);
+        }
+    }, []);
+
     return (
         <>
-            {/* WebGL Background Animation */}
-            <iframe
-                src="/bg_effect.html"
-                title="Background Effect"
-                className="fixed inset-0 w-full h-full border-0 pointer-events-none"
-                style={{
-                    zIndex: 0,
-                }}
-            />
-            {/* Frosted Glass / Liquid Glass Overlay for readability */}
+            {showWebGL ? (
+                <iframe
+                    src="/bg_effect.html"
+                    title="Background Effect"
+                    loading="lazy"
+                    className="fixed inset-0 w-full h-full border-0 pointer-events-none"
+                    style={{ zIndex: 0 }}
+                />
+            ) : (
+                /* CSS gradient fallback for mobile & reduced motion */
+                <div
+                    className="fixed inset-0 pointer-events-none"
+                    style={{
+                        zIndex: 0,
+                        background: 'radial-gradient(ellipse at 30% 20%, rgba(249,115,22,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(59,130,246,0.05) 0%, transparent 50%), #09090b',
+                    }}
+                />
+            )}
+            {/* Frosted Glass Overlay */}
             <div
                 className="fixed inset-0 pointer-events-none"
                 style={{
@@ -24,18 +44,9 @@ const BackgroundEffect = React.memo(() => {
                     backgroundColor: 'rgba(9, 9, 11, 0.4)',
                 }}
             />
-            {/* Noise Overlay */}
-            <div
-                className="fixed inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
-                style={{
-                    zIndex: 2,
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E")`
-                }}
-            />
         </>
     );
 });
 
 BackgroundEffect.displayName = 'BackgroundEffect';
-
 export default BackgroundEffect;

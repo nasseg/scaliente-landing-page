@@ -2,14 +2,18 @@ import { getDictionary } from '../i18n';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import LogoMarquee from '@/components/LogoMarquee';
-import HowItWorks from '@/components/HowItWorks';
-import FeatureSection from '@/components/Features';
 import BeforeAfter from '@/components/BeforeAfter';
-import Pricing from '@/components/Pricing';
+import FeatureSection from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
+import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
+import CTAButton from '@/components/ui/CTAButton';
+import Section from '@/components/ui/Section';
+import StickyMobileCTA from '@/components/StickyMobileCTA';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 
 export default async function Home({ params }) {
   const { lang } = await params;
@@ -26,31 +30,14 @@ export default async function Home({ params }) {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     inLanguage: lang,
+    author: { "@type": "Organization", "name": "Scaliente" },
+    datePublished: "2024-01-01",
     offers: [
-      {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "EUR",
-        name: "Discovery",
-      },
-      {
-        "@type": "Offer",
-        price: "89",
-        priceCurrency: "EUR",
-        name: "Starter",
-      },
-      {
-        "@type": "Offer",
-        price: "149",
-        priceCurrency: "EUR",
-        name: "Growth",
-      },
-      {
-        "@type": "Offer",
-        price: "249",
-        priceCurrency: "EUR",
-        name: "Scale",
-      },
+      { "@type": "Offer", price: "0", priceCurrency: "EUR", name: "Discovery" },
+      { "@type": "Offer", price: "39", priceCurrency: "EUR", name: "Lite" },
+      { "@type": "Offer", price: "89", priceCurrency: "EUR", name: "Starter" },
+      { "@type": "Offer", price: "149", priceCurrency: "EUR", name: "Growth" },
+      { "@type": "Offer", price: "249", priceCurrency: "EUR", name: "Scale" },
     ],
   };
 
@@ -61,10 +48,7 @@ export default async function Home({ params }) {
     mainEntity: faqQuestions.map((item) => ({
       "@type": "Question",
       name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
-      },
+      acceptedAnswer: { "@type": "Answer", text: item.a },
     })),
   };
 
@@ -80,106 +64,57 @@ export default async function Home({ params }) {
       />
       <Navbar content={dict.navbar} common={dict.common} lang={lang} />
 
-      {/* Hero + LogoMarquee - Frosted glass with rounded bottom */}
+      {/* Hero + LogoMarquee - Frosted glass with rounded bottom (outside alternation) */}
       <div className="relative z-10">
-        {/* White corner fills for bottom rounded corners */}
-        <div className="absolute bottom-0 left-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
-        <div className="absolute bottom-0 right-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
-        {/* Frosted hero */}
-        <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem]">
+        <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa]" style={{ clipPath: 'inset(0 -3rem -3rem -3rem)' }}>
           <Hero content={dict.hero} common={dict.common} />
           <LogoMarquee content={dict.logoMarquee} />
+          <div data-hero-end />
         </div>
       </div>
 
-      {/* Content sections - each with its own background */}
-      <div className="relative">
-        {/* HowItWorks - light background */}
-        <div className="bg-[#fafafa] text-zinc-900">
-          <HowItWorks content={dict.howItWorks} />
-        </div>
+      {/* Auto-alternating sections: odd=light, even=dark */}
+      <div className="alternating-sections">
+        {/* 1 = odd = LIGHT */}
+        <Section id="before-after">
+          <BeforeAfter content={dict.beforeAfter} />
+        </Section>
 
-        {/* Features - light background */}
-        <div className="bg-[#fafafa] text-zinc-900">
+        {/* 2 = even = DARK */}
+        <Section id="features" frosted>
           <FeatureSection content={dict.features} />
-        </div>
+        </Section>
 
-        {/* BeforeAfter - Frosted glass with WebGL visible through */}
-        <div className="relative py-3">
-          {/* White frame edges - only covers borders, center is transparent for WebGL */}
-          <div className="absolute top-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute bottom-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 left-0 w-3 md:w-4 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 right-0 w-3 md:w-4 bg-[#fafafa]" />
-          {/* Frosted card wrapper with corner fills */}
-          <div className="relative mx-3 md:mx-4">
-            {/* White corner fills - behind the card to fill rounded corner gaps */}
-            <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            {/* Frosted card */}
-            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
-              <BeforeAfter content={dict.beforeAfter} />
-            </div>
-          </div>
-        </div>
+        {/* 3 = odd = LIGHT — Testimonials early for trust */}
+        <Section id="testimonials">
+          <Testimonials content={dict.testimonials} founderStory={dict.founderStory} />
+        </Section>
 
-        {/* Pricing - light background */}
-        <div className="bg-[#fafafa] text-zinc-900">
+        {/* 4 = even = DARK */}
+        <Section id="how-it-works" frosted>
+          <HowItWorks content={dict.howItWorks} />
+        </Section>
+
+        {/* 5 = odd = LIGHT */}
+        <Section id="pricing">
           <Pricing content={dict.pricing} common={dict.common} />
-        </div>
+        </Section>
 
-        {/* Testimonials - Frosted glass with WebGL visible through */}
-        <div className="relative py-3">
-          {/* White frame edges */}
-          <div className="absolute top-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute bottom-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 left-0 w-3 md:w-4 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 right-0 w-3 md:w-4 bg-[#fafafa]" />
-          {/* Frosted card wrapper with corner fills */}
-          <div className="relative mx-3 md:mx-4">
-            {/* White corner fills */}
-            <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            {/* Frosted card */}
-            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
-              <Testimonials content={dict.testimonials} />
-            </div>
-          </div>
-        </div>
-
-        {/* FAQ - light background */}
-        <div className="bg-[#fafafa] text-zinc-900">
+        {/* 6 = even = DARK */}
+        <Section id="faq" frosted>
           <FAQ content={dict.faq} />
-        </div>
+        </Section>
 
-        {/* CTA - Frosted glass with WebGL visible through */}
-        <div className="relative py-3">
-          {/* White frame edges */}
-          <div className="absolute top-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute bottom-0 left-0 right-0 h-3 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 left-0 w-3 md:w-4 bg-[#fafafa]" />
-          <div className="absolute top-0 bottom-0 right-0 w-3 md:w-4 bg-[#fafafa]" />
-          {/* Frosted card wrapper with corner fills */}
-          <div className="relative mx-3 md:mx-4">
-            {/* White corner fills */}
-            <div className="absolute top-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute top-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 left-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            <div className="absolute bottom-0 right-0 w-6 h-6 md:w-8 md:h-8 bg-[#fafafa]" />
-            {/* Frosted card */}
-            <div className="relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] text-white overflow-hidden border border-white/5">
-              <CTA content={dict.cta} />
-            </div>
-          </div>
-        </div>
+        {/* 7 = odd = LIGHT */}
+        <Section data-cta-final="">
+          <CTA content={dict.cta} />
+        </Section>
       </div>
 
-      {/* Footer - white background */}
+      {/* Footer */}
       <Footer content={dict.footer} lang={lang} />
+      <StickyMobileCTA label={dict.common?.getStarted || 'Commencer Gratuitement'} />
+      <ExitIntentPopup content={dict.exitPopup} />
     </div>
   );
 }

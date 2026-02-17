@@ -1,6 +1,14 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ArrowRight, Sparkles } from 'lucide-react';
+
+const AVATAR_URLS = [
+    'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face',
+    'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face',
+];
 
 const CTA = ({ content }) => (
     <section className="py-32 relative overflow-hidden">
@@ -24,23 +32,23 @@ const CTA = ({ content }) => (
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/[0.05] text-orange-300 text-sm font-medium mb-8"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-500/20 bg-orange-500/[0.05] text-orange-600 text-sm font-medium mb-8"
                 >
                     <Sparkles className="w-4 h-4" />
                     {content?.badge || "Commencez gratuitement"}
                 </motion.div>
 
-                <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 tracking-[-0.025em]">
+                <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
                     {content?.title}
                 </h2>
 
-                <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-2xl mx-auto leading-relaxed">
                     {content?.subtitle}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a
-                        href="https://app.scaliente.com"
+                        href="https://apps.shopify.com/scaliente"
                         className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-2xl text-white font-semibold text-lg transition-all duration-300 overflow-hidden"
                     >
                         {/* Gradient background */}
@@ -58,9 +66,28 @@ const CTA = ({ content }) => (
                     </a>
                 </div>
 
-                <p className="mt-8 text-sm text-zinc-500">
+                <p className="mt-8 text-sm text-[var(--text-muted)]">
                     {content?.noCard}
                 </p>
+
+                {/* Micro social proof */}
+                <div className="mt-6 flex items-center justify-center gap-3">
+                    <div className="flex -space-x-2">
+                        {AVATAR_URLS.map((url, i) => (
+                            <Image
+                                key={i}
+                                src={url}
+                                alt=""
+                                width={32}
+                                height={32}
+                                className="w-8 h-8 rounded-full border-2 border-[var(--section-bg)] object-cover"
+                            />
+                        ))}
+                    </div>
+                    <p className="text-sm text-[var(--text-secondary)]">
+                        {content?.socialProof || "Rejoint par 200+ e-commercants"}
+                    </p>
+                </div>
             </motion.div>
         </div>
     </section>

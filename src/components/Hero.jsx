@@ -58,7 +58,7 @@ const Hero = ({ content, common }) => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-500 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                         </span>
-                        <span className="text-sm text-orange-200/90 font-medium tracking-wide">{content?.pill}</span>
+                        <span className="text-sm text-orange-300 font-medium tracking-wide">{content?.pill}</span>
                         <Sparkles className="w-3.5 h-3.5 text-orange-400/70 group-hover:text-orange-400 transition-colors" />
                     </div>
                 </motion.div>
@@ -70,8 +70,7 @@ const Hero = ({ content, common }) => {
                 >
                     <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-[-0.025em] text-white leading-[1.08] mb-3">
                         {content?.title}
-                    </h1>
-                    <h1 className="font-brand text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-bold tracking-[-0.025em] leading-[1.08]">
+                        <br />
                         <span className="text-gradient-orange">{content?.subtitle}</span>
                     </h1>
                 </motion.div>
@@ -90,7 +89,7 @@ const Hero = ({ content, common }) => {
                     className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
                 >
                     <a
-                        href="https://app.scaliente.com"
+                        href="https://apps.shopify.com/scaliente"
                         className="group relative w-full sm:w-auto px-8 py-4 rounded-2xl text-white font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden"
                     >
                         {/* Gradient background */}
@@ -103,16 +102,20 @@ const Hero = ({ content, common }) => {
                         </div>
                         {/* Shadow */}
                         <div className="absolute inset-0 rounded-2xl shadow-[0_8px_32px_rgba(249,115,22,0.25)] group-hover:shadow-[0_12px_40px_rgba(249,115,22,0.4)] transition-shadow duration-300" />
-                        <span className="relative z-10">{common?.getStarted || content?.ctaStart}</span>
+                        <span className="relative z-10">{content?.ctaStart || common?.getStarted}</span>
                         <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
-                        href="/#comparison"
+                        href="#before-after"
                         className="group w-full sm:w-auto px-8 py-4 rounded-2xl text-white/90 font-medium border border-white/10 hover:border-white/20 hover:bg-white/[0.03] transition-all duration-300 text-center relative overflow-hidden"
                     >
                         <span className="relative z-10">{content?.ctaDemo}</span>
                     </a>
                 </motion.div>
+
+                <motion.p variants={itemVariants} className="text-sm text-zinc-500 text-center mb-8">
+                    {content?.microText}
+                </motion.p>
 
                 {/* Trust Indicators - Enhanced */}
                 <motion.div

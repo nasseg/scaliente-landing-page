@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, ArrowRight, Sparkles, Zap } from 'lucide-react';
+import { Check, X, ArrowRight, Sparkles, Zap, Shield, Lock } from 'lucide-react';
 
 const Pricing = ({ content, common }) => {
     const [isAnnual, setIsAnnual] = useState(true);
@@ -9,7 +9,7 @@ const Pricing = ({ content, common }) => {
     const plans = [
         {
             name: content?.plans?.discovery?.name || 'Discovery',
-            badge: null,
+            badge: content?.plans?.discovery?.badge,
             desc: content?.plans?.discovery?.desc || "Testez gratuitement",
             price: { monthly: 0, annual: 0 },
             featured: false,
@@ -23,6 +23,23 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.discovery?.features?.export || "Export CSV", included: false },
             ],
             cta: content?.plans?.discovery?.cta || "Commencer Gratuitement"
+        },
+        {
+            name: content?.plans?.lite?.name || 'Lite',
+            badge: null,
+            desc: content?.plans?.lite?.desc || "Validez votre rentabilité",
+            price: { monthly: 39, annual: 374 },
+            featured: false,
+            tier: 'lite',
+            features: [
+                { text: content?.plans?.lite?.features?.orders || "100 commandes/mois", included: true },
+                { text: content?.plans?.lite?.features?.shop || "1 boutique", included: true },
+                { text: content?.plans?.lite?.features?.history || "Historique 90 jours", included: true },
+                { text: content?.plans?.lite?.features?.adPlatforms || "2 plateformes ads", included: true },
+                { text: content?.plans?.lite?.features?.comparison || "Comparaison périodes", included: true },
+                { text: content?.plans?.lite?.features?.export || "Export CSV", included: true },
+            ],
+            cta: content?.plans?.lite?.cta || "Débloquer Lite"
         },
         {
             name: content?.plans?.starter?.name || 'Starter',
@@ -88,23 +105,23 @@ const Pricing = ({ content, common }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 tracking-[-0.025em]">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
                         {content?.header?.title?.main}{' '}
                         <span className="text-orange-500">{content?.header?.title?.highlight}</span>
                     </h2>
 
-                    <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-12 leading-relaxed">
                         {content?.header?.quote}
                     </p>
 
                     {/* Toggle - Enhanced design */}
-                    <div className="inline-flex items-center p-1.5 bg-zinc-100 border border-zinc-200/80 rounded-full shadow-sm">
+                    <div className="inline-flex items-center p-1.5 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-full shadow-sm">
                         <button
                             onClick={() => setIsAnnual(false)}
                             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
                                 !isAnnual
                                     ? 'text-white'
-                                    : 'text-zinc-500 hover:text-zinc-700'
+                                    : 'text-[var(--text-secondary)] hover:text-[var(--text-muted)]'
                             }`}
                         >
                             {!isAnnual && (
@@ -121,7 +138,7 @@ const Pricing = ({ content, common }) => {
                             className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
                                 isAnnual
                                     ? 'text-white'
-                                    : 'text-zinc-500 hover:text-zinc-700'
+                                    : 'text-[var(--text-secondary)] hover:text-[var(--text-muted)]'
                             }`}
                         >
                             {isAnnual && (
@@ -142,7 +159,7 @@ const Pricing = ({ content, common }) => {
                 </motion.div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6 mb-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-4 mb-24">
                     {plans.map((plan, idx) => {
                         const monthlyEquivalent = Math.round(plan.price.annual / 12);
                         const displayPrice = isAnnual ? monthlyEquivalent : plan.price.monthly;
@@ -163,8 +180,8 @@ const Pricing = ({ content, common }) => {
                                 {/* Card Background */}
                                 <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
                                     plan.featured
-                                        ? 'bg-gradient-to-b from-orange-50 via-white to-white border-2 border-orange-300/80 shadow-2xl shadow-orange-200/40'
-                                        : 'bg-white border border-zinc-100 group-hover:border-zinc-200 group-hover:shadow-xl group-hover:shadow-zinc-100'
+                                        ? 'bg-gradient-to-b from-orange-50 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-orange-300/80 shadow-2xl shadow-orange-200/40'
+                                        : 'bg-[var(--card-bg)] border border-[var(--card-border)] group-hover:border-[var(--card-border-hover)] group-hover:shadow-xl group-hover:shadow-zinc-100'
                                 }`} />
 
                                 {/* Glow effect for featured */}
@@ -184,7 +201,7 @@ const Pricing = ({ content, common }) => {
                                                 className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg ${
                                                     plan.featured
                                                         ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white'
-                                                        : 'bg-zinc-800 text-zinc-200'
+                                                        : 'bg-zinc-800 text-[var(--text-secondary)]'
                                                 }`}
                                             >
                                                 {plan.featured ? <Sparkles className="w-3.5 h-3.5" /> : <Zap className="w-3 h-3" />}
@@ -196,11 +213,11 @@ const Pricing = ({ content, common }) => {
                                     {/* Plan Name & Description */}
                                     <div className="mb-5 pt-3">
                                         <h3 className={`font-brand text-xl font-semibold mb-1.5 ${
-                                            plan.featured ? 'text-orange-600' : 'text-zinc-900'
+                                            plan.featured ? 'text-orange-600' : 'text-[var(--text-primary)]'
                                         }`}>
                                             {plan.name}
                                         </h3>
-                                        <p className="text-zinc-500 text-sm leading-relaxed">{plan.desc}</p>
+                                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{plan.desc}</p>
                                     </div>
 
                                     {/* Price */}
@@ -280,7 +297,7 @@ const Pricing = ({ content, common }) => {
 
                                     {/* CTA Button */}
                                     <a
-                                        href="https://app.scaliente.com"
+                                        href="https://apps.shopify.com/scaliente"
                                         className={`w-full py-3.5 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
                                             plan.featured
                                                 ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-[0_8px_30px_rgba(249,115,22,0.35)] hover:-translate-y-0.5'
@@ -290,6 +307,11 @@ const Pricing = ({ content, common }) => {
                                         {plan.cta}
                                         {plan.featured && <ArrowRight className="w-4 h-4" />}
                                     </a>
+                                    {plan.featured && content?.plans?.growth?.socialProof && (
+                                        <p className="mt-3 text-xs text-center text-orange-500/80 font-medium">
+                                            {content.plans.growth.socialProof}
+                                        </p>
+                                    )}
                                 </div>
                             </motion.div>
                         );
@@ -337,14 +359,47 @@ const Pricing = ({ content, common }) => {
                                     {content?.enterprise?.price?.range}
                                     <span className="text-base font-normal text-zinc-500 ml-1">/{common?.month || 'mois'}</span>
                                 </p>
-                                <button className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-zinc-900 font-semibold rounded-xl hover:bg-zinc-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                                <a href="mailto:contact@scaliente.com?subject=Enterprise%20Plan%20-%20Scaliente" className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-zinc-900 font-semibold rounded-xl hover:bg-zinc-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                                     {content?.enterprise?.cta}
                                     <ArrowRight className="w-4 h-4" />
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Anti-Objection / Guarantee */}
+                {content?.antiObjection && (
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                        className="max-w-3xl mx-auto mt-16 text-center"
+                    >
+                        <div className="p-8 rounded-2xl bg-blue-50 border border-blue-200">
+                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mb-4">
+                                <Lock className="w-7 h-7" />
+                            </div>
+                            <h3 className="font-brand text-2xl font-bold text-zinc-900 mb-3">
+                                {content.antiObjection.title}
+                            </h3>
+                            <p className="text-zinc-600 leading-relaxed max-w-xl mx-auto">
+                                {content.antiObjection.description}
+                            </p>
+                        </div>
+
+                        {/* Trust Badges */}
+                        <div className="flex flex-wrap justify-center gap-6 mt-8">
+                            {['AES-256', 'GDPR', content?.antiObjection?.readOnly || 'Lecture seule', 'SOC 2 Hosting'].map((badge, i) => (
+                                <div key={i} className="flex items-center gap-2 text-sm text-zinc-500">
+                                    <Shield className="w-4 h-4 text-emerald-500" />
+                                    <span>{badge}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
 
                 {/* Final Quote */}
                 <motion.p

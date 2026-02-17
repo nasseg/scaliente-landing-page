@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Layers, DollarSign, Activity, Wallet, Settings, BarChart3 } from 'lucide-react';
+import { Layers, DollarSign, Activity, Globe, Users, BarChart3 } from 'lucide-react';
 
 const FeatureSection = ({ content }) => {
     const features = [
@@ -23,16 +23,16 @@ const FeatureSection = ({ content }) => {
             desc: content?.cards?.realtime?.desc,
         },
         {
-            icon: Wallet,
+            icon: Globe,
             color: 'cyan',
-            title: content?.cards?.expenses?.title,
-            desc: content?.cards?.expenses?.desc,
+            title: content?.cards?.multiCurrency?.title,
+            desc: content?.cards?.multiCurrency?.desc,
         },
         {
-            icon: Settings,
+            icon: Users,
             color: 'pink',
-            title: content?.cards?.wizard?.title,
-            desc: content?.cards?.wizard?.desc,
+            title: content?.cards?.customerLtv?.title,
+            desc: content?.cards?.customerLtv?.desc,
         },
         {
             icon: BarChart3,
@@ -122,11 +122,11 @@ const FeatureSection = ({ content }) => {
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-20"
                 >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-zinc-900 mb-6 tracking-[-0.025em]">
+                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
                         {content?.title?.part1}{' '}
                         <span className="text-orange-500">{content?.title?.part2}</span>
                     </h2>
-                    <p className="text-lg text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed">
                         {content?.description}
                     </p>
                 </motion.div>
@@ -145,7 +145,7 @@ const FeatureSection = ({ content }) => {
                             <motion.div
                                 key={idx}
                                 variants={itemVariants}
-                                className={`group relative p-7 rounded-2xl bg-white border border-zinc-100 hover:border-zinc-200 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border}`}
+                                className={`group relative p-7 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border}`}
                             >
                                 {/* Subtle gradient overlay on hover */}
                                 <div className={`absolute inset-0 rounded-2xl ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
@@ -154,10 +154,10 @@ const FeatureSection = ({ content }) => {
                                     <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}>
                                         <feature.icon className={`w-6 h-6 ${colors.text}`} />
                                     </div>
-                                    <h3 className="font-brand text-xl font-semibold text-zinc-900 mb-3 tracking-[-0.01em]">
+                                    <h3 className="font-brand text-xl font-semibold text-[var(--text-primary)] mb-3 tracking-[-0.01em]">
                                         {feature.title}
                                     </h3>
-                                    <p className="text-zinc-500 text-sm leading-relaxed">
+                                    <p className="text-[var(--text-muted)] text-sm leading-relaxed">
                                         {feature.desc}
                                     </p>
                                 </div>
@@ -190,23 +190,23 @@ const FeatureSection = ({ content }) => {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: 0.1 }}
-                            className="col-span-12 bg-gradient-to-r from-blue-50 to-blue-100/50 border border-blue-200 rounded-2xl p-5 flex items-center justify-between"
+                            className="col-span-12 bg-gradient-to-r from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-5 flex items-center justify-between"
                         >
                             <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
-                                    <span className="text-blue-600 font-brand font-bold text-sm">CA</span>
+                                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                                    <span className="text-blue-400 font-brand font-bold text-sm">CA</span>
                                 </div>
-                                <span className="text-zinc-800 font-medium">{content?.bento?.totalRevenue || "Chiffre d'affaires Total"}</span>
+                                <span className="text-[var(--text-primary)] font-medium">{content?.bento?.totalRevenue || "Chiffre d'affaires Total"}</span>
                             </div>
-                            <span className="text-2xl md:text-3xl font-sans font-bold text-zinc-900 number-display">68,540 €</span>
+                            <span className="text-2xl md:text-3xl font-sans font-bold text-[var(--text-primary)] number-display">68,540 €</span>
                         </motion.div>
 
                         {/* Expenses Row */}
                         {[
-                            { label: content?.bento?.ads || "Ads", value: "8,340 €", bgClass: 'bg-red-50', borderClass: 'border-red-200', text: 'text-red-600' },
-                            { label: content?.bento?.cogs || "COGS", value: "12,120 €", bgClass: 'bg-orange-50', borderClass: 'border-orange-200', text: 'text-orange-600' },
-                            { label: content?.bento?.shipping || "Shipping", value: "18,750 €", bgClass: 'bg-amber-50', borderClass: 'border-amber-200', text: 'text-amber-600' },
-                            { label: content?.bento?.fees || "Fees", value: "2,878 €", bgClass: 'bg-purple-50', borderClass: 'border-purple-200', text: 'text-purple-600' },
+                            { label: content?.bento?.ads || "Ads", value: "8,340 €", bgClass: 'bg-red-500/10', borderClass: 'border-red-500/20', text: 'text-red-400' },
+                            { label: content?.bento?.cogs || "COGS", value: "12,120 €", bgClass: 'bg-orange-500/10', borderClass: 'border-orange-500/20', text: 'text-orange-400' },
+                            { label: content?.bento?.shipping || "Shipping", value: "18,750 €", bgClass: 'bg-amber-500/10', borderClass: 'border-amber-500/20', text: 'text-amber-400' },
+                            { label: content?.bento?.fees || "Fees", value: "2,878 €", bgClass: 'bg-purple-500/10', borderClass: 'border-purple-500/20', text: 'text-purple-400' },
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
@@ -217,7 +217,7 @@ const FeatureSection = ({ content }) => {
                                 className={`col-span-6 md:col-span-3 rounded-2xl p-4 border ${item.bgClass} ${item.borderClass}`}
                             >
                                 <div className="flex items-center gap-1 mb-2">
-                                    <span className="text-lg text-zinc-400">−</span>
+                                    <span className="text-lg text-[var(--text-secondary)]">−</span>
                                     <span className={`text-xs font-semibold uppercase tracking-wider ${item.text}`}>{item.label}</span>
                                 </div>
                                 <span className={`text-xl font-sans font-bold ${item.text} number-display`}>{item.value}</span>

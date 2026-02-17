@@ -63,7 +63,7 @@ const LogoMarquee = ({ content }) => {
     return (
         <section className="py-10 relative overflow-hidden">
             <div className="text-center mb-6">
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-widest">{content?.title}</p>
+                <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest">{content?.title}</p>
             </div>
 
             <div className="flex relative w-full overflow-hidden mask-linear-fade">
@@ -76,28 +76,28 @@ const LogoMarquee = ({ content }) => {
                     {/* First Set */}
                     {logos.map((logo, idx) => (
                         <div key={`logo-1-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-gray-500 group-hover:text-white transition-colors duration-300">
+                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
                                 <logo.Component />
                             </div>
-                            <span className="text-lg font-bold text-gray-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
+                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
                         </div>
                     ))}
                     {/* Second Set */}
                     {logos.map((logo, idx) => (
                         <div key={`logo-2-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-gray-500 group-hover:text-white transition-colors duration-300">
+                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
                                 <logo.Component />
                             </div>
-                            <span className="text-lg font-bold text-gray-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
+                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
                         </div>
                     ))}
                     {/* Third Set */}
                     {logos.map((logo, idx) => (
                         <div key={`logo-3-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-gray-500 group-hover:text-white transition-colors duration-300">
+                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
                                 <logo.Component />
                             </div>
-                            <span className="text-lg font-bold text-gray-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
+                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
                         </div>
                     ))}
                 </motion.div>

@@ -1,9 +1,61 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Percent, Gift, Clock, CreditCard, Check, Users, TrendingUp, Zap, ArrowRight } from 'lucide-react';
+import { Percent, Gift, Clock, CreditCard, Check, Users, TrendingUp, Zap, ArrowRight, Loader2 } from 'lucide-react';
 
 const AffiliateContent = ({ content, stats, dashboard }) => {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        website: '',
+        audience: '',
+        promotion: '',
+        motivation: '',
+    });
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+        setSuccess(false);
+
+        try {
+            const res = await fetch('/api/affiliate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) {
+                const data = await res.json();
+                throw new Error(data.error || 'Something went wrong');
+            }
+
+            setSuccess(true);
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                website: '',
+                audience: '',
+                promotion: '',
+                motivation: '',
+            });
+        } catch (err) {
+            setError(err.message || 'Something went wrong. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
     const benefits = [
         { icon: Percent, ...content?.benefits?.items?.commission },
         { icon: Gift, ...content?.benefits?.items?.discount },
@@ -250,21 +302,47 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                         <p className="text-gray-400">{content?.form?.disclaimer}</p>
                     </motion.div>
 
+                    {success ? (
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            className="relative"
+                        >
+                            <div className="absolute -inset-1 bg-gradient-to-r from-green-500/30 via-emerald-500/30 to-green-500/30 rounded-3xl blur-xl opacity-50" />
+                            <div className="relative bg-[#12141A] border border-green-500/20 rounded-2xl p-8 md:p-10 text-center">
+                                <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6">
+                                    <Check className="w-8 h-8 text-green-400" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-white mb-3">{content?.form?.successTitle || 'Application Submitted!'}</h3>
+                                <p className="text-gray-400">{content?.form?.successMessage || 'Thank you! We will review your application and get back to you within 48h.'}</p>
+                            </div>
+                        </motion.div>
+                    ) : (
                     <motion.form
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         className="relative"
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSubmit}
                     >
                         <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/30 via-pink-500/30 to-purple-500/30 rounded-3xl blur-xl opacity-50" />
                         <div className="relative bg-[#12141A] border border-white/10 rounded-2xl p-8 md:p-10">
+                            {error && (
+                                <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
+                                    {error}
+                                </div>
+                            )}
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                                 {/* First Name */}
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.firstName}</label>
                                     <input
                                         type="text"
+                                        name="firstName"
+                                        required
+                                        value={formData.firstName}
+                                        onChange={handleChange}
                                         placeholder={content?.form?.placeholders?.firstName}
                                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                                     />
@@ -274,6 +352,10 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                     <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.lastName}</label>
                                     <input
                                         type="text"
+                                        name="lastName"
+                                        required
+                                        value={formData.lastName}
+                                        onChange={handleChange}
                                         placeholder={content?.form?.placeholders?.lastName}
                                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                                     />
@@ -285,6 +367,10 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.email}</label>
                                 <input
                                     type="email"
+                                    name="email"
+                                    required
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     placeholder={content?.form?.placeholders?.email}
                                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                                 />
@@ -295,6 +381,9 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.website}</label>
                                 <input
                                     type="url"
+                                    name="website"
+                                    value={formData.website}
+                                    onChange={handleChange}
                                     placeholder={content?.form?.placeholders?.website}
                                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                                 />
@@ -305,6 +394,9 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.audience}</label>
                                 <input
                                     type="text"
+                                    name="audience"
+                                    value={formData.audience}
+                                    onChange={handleChange}
                                     placeholder={content?.form?.placeholders?.audience}
                                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
                                 />
@@ -315,6 +407,9 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.promotion}</label>
                                 <textarea
                                     rows={3}
+                                    name="promotion"
+                                    value={formData.promotion}
+                                    onChange={handleChange}
                                     placeholder={content?.form?.placeholders?.promotion}
                                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none"
                                 />
@@ -325,6 +420,9 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">{content?.form?.fields?.motivation}</label>
                                 <textarea
                                     rows={3}
+                                    name="motivation"
+                                    value={formData.motivation}
+                                    onChange={handleChange}
                                     placeholder={content?.form?.placeholders?.motivation}
                                     className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none"
                                 />
@@ -333,13 +431,21 @@ const AffiliateContent = ({ content, stats, dashboard }) => {
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full py-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3"
+                                disabled={loading}
+                                className="w-full py-4 bg-gradient-to-r from-orange-500 to-pink-500 rounded-xl font-bold text-lg hover:shadow-[0_0_40px_rgba(249,115,22,0.3)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 disabled:opacity-60 disabled:hover:scale-100"
                             >
-                                {content?.form?.submit}
-                                <ArrowRight className="w-5 h-5" />
+                                {loading ? (
+                                    <Loader2 className="w-5 h-5 animate-spin" />
+                                ) : (
+                                    <>
+                                        {content?.form?.submit}
+                                        <ArrowRight className="w-5 h-5" />
+                                    </>
+                                )}
                             </button>
                         </div>
                     </motion.form>
+                    )}
                 </div>
             </section>
         </>
