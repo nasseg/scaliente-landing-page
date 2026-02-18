@@ -1,10 +1,11 @@
 'use client';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, ChevronDown, Shield, Globe, Zap } from 'lucide-react';
+import Link from 'next/link';
 
-const ComparisonContent = ({ content, competitorName = 'TrueProfit' }) => {
-    const [showTable, setShowTable] = useState(false);
+const ComparisonContent = ({ content, competitorName = 'TrueProfit', lang, slug }) => {
+    const [showTable, setShowTable] = useState(true);
 
     const differentiators = [
         {
@@ -90,49 +91,52 @@ const ComparisonContent = ({ content, competitorName = 'TrueProfit' }) => {
                         animate={{ opacity: 1, height: 'auto' }}
                         className="bg-white rounded-2xl border border-zinc-200 overflow-hidden mb-16"
                     >
-                        <div className="grid grid-cols-3 gap-0">
-                            {/* Header */}
-                            <div className="p-4 bg-zinc-50 border-b border-zinc-200 font-medium text-zinc-500 text-sm">
-                                {content?.table?.feature || 'Fonctionnalite'}
-                            </div>
-                            <div className="p-4 bg-orange-50 border-b border-zinc-200 font-semibold text-orange-600 text-center text-sm">
-                                Scaliente
-                            </div>
-                            <div className="p-4 bg-zinc-50 border-b border-zinc-200 font-medium text-zinc-600 text-center text-sm">
-                                {competitorName}
-                            </div>
-
-                            {/* Rows */}
-                            {comparisonRows.map((row, i) => (
-                                <React.Fragment key={i}>
-                                    <div className="p-4 border-b border-zinc-100 text-sm text-zinc-700">
-                                        {row.feature}
-                                    </div>
-                                    <div className="p-4 border-b border-zinc-100 text-center">
-                                        {typeof row.scaliente === 'boolean' ? (
-                                            row.scaliente ? (
-                                                <Check className="w-5 h-5 text-emerald-500 mx-auto" />
+                        <table className="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th className="p-4 bg-zinc-50 border-b border-zinc-200 text-left font-medium text-zinc-500 text-sm">
+                                        {content?.table?.feature || 'Fonctionnalite'}
+                                    </th>
+                                    <th className="p-4 bg-orange-50 border-b border-zinc-200 text-center font-semibold text-orange-600 text-sm">
+                                        Scaliente
+                                    </th>
+                                    <th className="p-4 bg-zinc-50 border-b border-zinc-200 text-center font-medium text-zinc-600 text-sm">
+                                        {competitorName}
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {comparisonRows.map((row, i) => (
+                                    <tr key={i} className="border-b border-zinc-100 last:border-0">
+                                        <td className="p-4 text-sm text-zinc-700">
+                                            {row.feature}
+                                        </td>
+                                        <td className="p-4 text-center">
+                                            {typeof row.scaliente === 'boolean' ? (
+                                                row.scaliente ? (
+                                                    <Check className="w-5 h-5 text-emerald-500 mx-auto" />
+                                                ) : (
+                                                    <X className="w-5 h-5 text-zinc-300 mx-auto" />
+                                                )
                                             ) : (
-                                                <X className="w-5 h-5 text-zinc-300 mx-auto" />
-                                            )
-                                        ) : (
-                                            <span className="text-sm font-semibold text-orange-600">{row.scaliente}</span>
-                                        )}
-                                    </div>
-                                    <div className="p-4 border-b border-zinc-100 text-center">
-                                        {typeof row.competitor === 'boolean' ? (
-                                            row.competitor ? (
-                                                <Check className="w-5 h-5 text-emerald-500 mx-auto" />
+                                                <span className="text-sm font-semibold text-orange-600">{row.scaliente}</span>
+                                            )}
+                                        </td>
+                                        <td className="p-4 text-center">
+                                            {typeof row.competitor === 'boolean' ? (
+                                                row.competitor ? (
+                                                    <Check className="w-5 h-5 text-emerald-500 mx-auto" />
+                                                ) : (
+                                                    <X className="w-5 h-5 text-zinc-300 mx-auto" />
+                                                )
                                             ) : (
-                                                <X className="w-5 h-5 text-zinc-300 mx-auto" />
-                                            )
-                                        ) : (
-                                            <span className="text-sm font-medium text-zinc-600">{row.competitor}</span>
-                                        )}
-                                    </div>
-                                </React.Fragment>
-                            ))}
-                        </div>
+                                                <span className="text-sm font-medium text-zinc-600">{row.competitor}</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </motion.div>
                 )}
 
@@ -147,6 +151,49 @@ const ComparisonContent = ({ content, competitorName = 'TrueProfit' }) => {
                     <p className="text-lg text-zinc-600 leading-relaxed">
                         {content?.whyScaliente?.p2}
                     </p>
+                    <div className="flex flex-wrap gap-2 justify-center mt-6">
+                        {[
+                            { slug: 'profit-dashboard', label: 'Profit Dashboard' },
+                            { slug: 'ad-tracking', label: 'Ad Tracking' },
+                            { slug: 'product-analytics', label: 'Product Analytics' },
+                            { slug: 'multi-shop', label: 'Multi-Store' },
+                            { slug: 'multi-currency', label: 'Multi-Currency' },
+                            { slug: 'reports', label: 'Reports' },
+                        ].map(f => (
+                            <Link
+                                key={f.slug}
+                                href={`/${lang}/features/${f.slug}`}
+                                className="px-3 py-1.5 rounded-full bg-orange-50 border border-orange-200 text-xs font-medium text-orange-600 hover:bg-orange-100 transition-all"
+                            >
+                                {f.label}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+
+                {/* See Also */}
+                <div className="max-w-3xl mx-auto mb-16">
+                    <h3 className="font-brand text-xl font-bold text-zinc-900 mb-4 text-center">
+                        {content?.seeAlso || 'See also'}
+                    </h3>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        {[
+                            { slug: 'scaliente-vs-trueprofit', label: 'Scaliente vs TrueProfit' },
+                            { slug: 'scaliente-vs-triple-whale', label: 'Scaliente vs Triple Whale' },
+                            { slug: 'scaliente-vs-lifetimely', label: 'Scaliente vs Lifetimely' },
+                        ]
+                            .filter(c => c.slug !== slug)
+                            .map(c => (
+                                <Link
+                                    key={c.slug}
+                                    href={`/${lang}/compare/${c.slug}`}
+                                    className="px-6 py-3 rounded-xl bg-zinc-50 border border-zinc-200 text-center hover:border-orange-200 hover:bg-orange-50 transition-all text-sm font-medium text-zinc-700 hover:text-orange-600"
+                                >
+                                    {c.label}
+                                </Link>
+                            ))
+                        }
+                    </div>
                 </div>
 
             </div>

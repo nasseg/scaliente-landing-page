@@ -8,6 +8,15 @@ export async function generateMetadata({ params }) {
     return {
         title: `${dict.legalPage.sections.cgv.title} - Scaliente`,
         description: dict.legalPage.sections.cgv.b2b,
+        alternates: {
+            canonical: `https://scaliente.com/${lang}/terms-of-sale`,
+            languages: {
+                'fr': 'https://scaliente.com/fr/terms-of-sale',
+                'en': 'https://scaliente.com/en/terms-of-sale',
+                'de': 'https://scaliente.com/de/terms-of-sale',
+                'x-default': 'https://scaliente.com/fr/terms-of-sale',
+            },
+        },
     };
 }
 

@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
 const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
@@ -37,23 +37,18 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
                     )}
                 </div>
             </button>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        id={answerId}
-                        role="region"
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden"
-                    >
-                        <p className="pb-6 text-[var(--text-muted)] leading-relaxed pl-0 pr-12">
-                            {answer}
-                        </p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+            <motion.div
+                id={answerId}
+                role="region"
+                initial={false}
+                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="overflow-hidden"
+            >
+                <p className="pb-6 text-[var(--text-muted)] leading-relaxed pl-0 pr-12">
+                    {answer}
+                </p>
+            </motion.div>
         </motion.div>
     );
 };

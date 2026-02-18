@@ -24,6 +24,20 @@ export async function generateMetadata({ params }) {
                 'x-default': `https://scaliente.com/fr/features/${slug}`,
             },
         },
+        openGraph: {
+            title: page?.meta?.title,
+            description: page?.meta?.description,
+            url: `https://scaliente.com/${lang}/features/${slug}`,
+            siteName: "Scaliente",
+            type: "article",
+            images: [{ url: "/scalienteog.png", width: 1200, height: 630 }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: page?.meta?.title,
+            description: page?.meta?.description,
+            images: ["/scalienteog.png"],
+        },
     };
 }
 
@@ -49,16 +63,30 @@ export default async function FeaturePage({ params }) {
     }
 
     return (
-        <ContentPageLayout
-            lang={lang}
-            navContent={dict.navbar}
-            footerContent={dict.footer}
-            common={dict.common}
-            heroTitle={page.hero?.title || page.title}
-            heroSubtitle={page.hero?.subtitle || page.subtitle}
-            showCTA={false}
-        >
-            <FeaturePageContent page={page} common={dict.common} />
-        </ContentPageLayout>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                        { "@type": "ListItem", position: 1, name: "Home", item: `https://scaliente.com/${lang}` },
+                        { "@type": "ListItem", position: 2, name: "Features", item: `https://scaliente.com/${lang}` },
+                        { "@type": "ListItem", position: 3, name: page?.meta?.title || slug },
+                    ],
+                }) }}
+            />
+            <ContentPageLayout
+                lang={lang}
+                navContent={dict.navbar}
+                footerContent={dict.footer}
+                common={dict.common}
+                heroTitle={page.hero?.title || page.title}
+                heroSubtitle={page.hero?.subtitle || page.subtitle}
+                showCTA={false}
+            >
+                <FeaturePageContent page={page} common={dict.common} lang={lang} slug={slug} />
+            </ContentPageLayout>
+        </>
     );
 }

@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { containerVariants, itemVariants, fadeInUp } from '@/lib/animations';
 import CTAButton from '@/components/ui/CTAButton';
+import Link from 'next/link';
 
 const ICON_MAP = {
     TrendingUp, Percent, CalendarRange, LayoutGrid, Zap, PieChart,
@@ -30,7 +31,7 @@ function getIcon(name) {
     return ICON_MAP[name] || Zap;
 }
 
-export default function FeaturePageContent({ page, common }) {
+export default function FeaturePageContent({ page, common, lang, slug }) {
     const problem = page.problem;
     const solution = page.solution;
     const features = Array.isArray(page.features) ? page.features : [];
@@ -195,6 +196,36 @@ export default function FeaturePageContent({ page, common }) {
                     </div>
                 </section>
             )}
+
+            {/* Related Features */}
+            <section className="py-16 bg-white border-t border-zinc-100">
+                <div className="max-w-5xl mx-auto px-6">
+                    <h2 className="font-brand text-2xl font-bold text-zinc-900 mb-8 text-center">
+                        {common?.relatedFeatures || 'Explore More Features'}
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {[
+                            { key: 'profit-dashboard', label: common?.featureLabels?.profitDashboard || 'Profit Dashboard' },
+                            { key: 'ad-tracking', label: common?.featureLabels?.adTracking || 'Ad Tracking' },
+                            { key: 'product-analytics', label: common?.featureLabels?.productAnalytics || 'Product Analytics' },
+                            { key: 'multi-shop', label: common?.featureLabels?.multiShop || 'Multi-Store' },
+                            { key: 'multi-currency', label: common?.featureLabels?.multiCurrency || 'Multi-Currency' },
+                            { key: 'reports', label: common?.featureLabels?.reports || 'Reports' },
+                        ]
+                            .filter(f => f.key !== slug)
+                            .map(f => (
+                                <Link
+                                    key={f.key}
+                                    href={`/${lang}/features/${f.key}`}
+                                    className="p-4 rounded-xl bg-zinc-50 border border-zinc-200 text-center hover:border-orange-200 hover:bg-orange-50 transition-all text-sm font-medium text-zinc-700 hover:text-orange-600"
+                                >
+                                    {f.label}
+                                </Link>
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
         </>
     );
 }

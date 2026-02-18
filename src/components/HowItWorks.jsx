@@ -119,8 +119,8 @@ const HowItWorks = ({ content }) => {
                 </motion.div>
 
                 {/* Steps Grid */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16"
+                <motion.ol
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-16 list-none p-0 m-0"
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
@@ -129,7 +129,7 @@ const HowItWorks = ({ content }) => {
                     {steps.map((step, idx) => {
                         const colors = colorMap[step.color];
                         return (
-                            <motion.div
+                            <motion.li
                                 key={idx}
                                 variants={itemVariants}
                                 className={`group relative p-6 rounded-2xl bg-[var(--card-bg)] border ${colors.border} hover:shadow-lg transition-all duration-500 hover:-translate-y-1`}
@@ -154,10 +154,10 @@ const HowItWorks = ({ content }) => {
                                 <span className={`inline-flex items-center text-xs font-medium ${colors.text}`}>
                                     {step.time}
                                 </span>
-                            </motion.div>
+                            </motion.li>
                         );
                     })}
-                </motion.div>
+                </motion.ol>
 
                 {/* CTA */}
                 <motion.div

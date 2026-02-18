@@ -8,6 +8,15 @@ export async function generateMetadata({ params }) {
     return {
         title: `${dict.legalPage.sections.cookies.title} - Scaliente`,
         description: dict.legalPage.sections.cookies.intro,
+        alternates: {
+            canonical: `https://scaliente.com/${lang}/cookies`,
+            languages: {
+                'fr': 'https://scaliente.com/fr/cookies',
+                'en': 'https://scaliente.com/en/cookies',
+                'de': 'https://scaliente.com/de/cookies',
+                'x-default': 'https://scaliente.com/fr/cookies',
+            },
+        },
     };
 }
 

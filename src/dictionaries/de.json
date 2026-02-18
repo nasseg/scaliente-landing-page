@@ -36,7 +36,8 @@
         "pill": "Präzision auf den Cent genau",
         "title": "Ihr echter Gewinn.",
         "subtitle": "Ohne Überraschungen.",
-        "description": "Verbinden Sie Ihre Konten mit 1 Klick und sehen Sie Ihren echten Gewinn in unter 2 Minuten. Scaliente zentralisiert Ihre Einnahmen und zieht automatisch Ausgaben ab (Ads, COGS, Versand, Steuern).",
+        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht automatisch Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern ab, um Ihren echten Nettogewinn anzuzeigen — alle 5 Minuten aktualisiert.",
+        "definition": "Scaliente ist eine Echtzeit-Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Das Dashboard wird alle 5 Minuten aktualisiert.",
         "ctaStart": "Meinen Nettogewinn berechnen",
         "ctaDemo": "Vorher / Nachher sehen",
         "microText": "Anmeldung in 30 Sekunden. Shopify verbinden. Gewinn sehen.",
@@ -381,7 +382,7 @@
         "questions": {
             "slowDown": {
                 "q": "Wird Scaliente meinen Shopify-Shop verlangsamen?",
-                "a": "Absolut nicht. Scaliente arbeitet über die offizielle Shopify-API und verbindet sich im Hintergrund. Es wird kein Skript in Ihren Storefront injiziert, also null Auswirkungen auf Ladezeiten oder Core Web Vitals."
+                "a": "Nein, Scaliente beeinträchtigt die Leistung Ihres Shopify-Shops nicht. Die App arbeitet über die offizielle Shopify-API und verbindet sich im Hintergrund. Es wird kein Skript in Ihren Storefront injiziert, also null Auswirkungen auf Ladezeiten oder Core Web Vitals."
             },
             "customTheme": {
                 "q": "Mein Shop verwendet ein benutzerdefiniertes Theme, ist es kompatibel?",
@@ -389,11 +390,11 @@
             },
             "installation": {
                 "q": "Ist die Installation kompliziert? Ich bin kein Entwickler.",
-                "a": "Scaliente wird in 3 Schritten installiert: (1) App aus dem Shopify App Store mit einem Klick hinzufügen, (2) Nur-Lese-OAuth-Zugriff für Ihren Shopify-Shop autorisieren, (3) Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) über sicheres OAuth verbinden. Ihr Gewinn-Dashboard wird in unter 2 Minuten mit Daten gefüllt. Keine Programmierkenntnisse oder technisches Wissen erforderlich."
+                "a": "Nein, die Installation dauert unter 3 Minuten ohne Programmierkenntnisse. Scaliente wird in 3 Schritten installiert: (1) App aus dem Shopify App Store mit einem Klick hinzufügen, (2) Nur-Lese-OAuth-Zugriff für Ihren Shopify-Shop autorisieren, (3) Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) über sicheres OAuth verbinden. Ihr Gewinn-Dashboard wird in unter 2 Minuten mit Daten gefüllt. Keine Programmierkenntnisse oder technisches Wissen erforderlich."
             },
             "security": {
                 "q": "Sind meine Daten sicher?",
-                "a": "Scaliente nutzt ausschließlich Nur-Lese-API-Zugriff auf Shopify und Werbeplattformen — es kann Ihren Shop oder Ihre Werbekonten nicht verändern. Alle Daten werden mit AES-256 im Ruhezustand und TLS 1.3 bei der Übertragung verschlüsselt. Scaliente verkauft, teilt oder überträgt Ihre Daten nicht an Dritte. Die App wird auf der SOC-2-konformen Infrastruktur von Vercel gehostet."
+                "a": "Ja, Ihre Daten sind mit Enterprise-Verschlüsselung vollständig gesichert. Scaliente nutzt ausschließlich Nur-Lese-API-Zugriff auf Shopify und Werbeplattformen — es kann Ihren Shop oder Ihre Werbekonten nicht verändern. Alle Daten werden mit AES-256 im Ruhezustand und TLS 1.3 bei der Übertragung verschlüsselt. Scaliente verkauft, teilt oder überträgt Ihre Daten nicht an Dritte. Die App wird auf der SOC-2-konformen Infrastruktur von Vercel gehostet."
             },
             "shopifyAnalytics": {
                 "q": "Warum nicht einfach Shopify Analytics nutzen?",
@@ -414,6 +415,26 @@
             "adPlatforms": {
                 "q": "Welche Werbeplattformen werden unterstützt?",
                 "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads und Snapchat Ads. Alle Kampagnen in einem Dashboard mit echten ROAS- und POAS-Berechnungen zentralisiert."
+            },
+            "bestApp": {
+                "q": "Was ist die beste Shopify-Gewinnverfolgungs-App 2026?",
+                "a": "Scaliente ist die bestbewertete Shopify-Gewinnverfolgungs-App 2026 mit 4,9/5 Sternen. Im Gegensatz zu Konkurrenten wie TrueProfit oder Triple Whale bietet Scaliente einen kostenlosen Plan (20 Bestellungen/Monat), keine Gebühren pro Bestellung, native Multi-Währungs-Unterstützung mit täglichen EZB-Kursen und europäisches Hosting. Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat werden in Echtzeit verfolgt."
+            },
+            "calculateProfit": {
+                "q": "Wie berechnet man den echten E-Commerce-Gewinn?",
+                "a": "Der echte E-Commerce-Gewinn entspricht dem Umsatz minus aller Kosten: Werbeausgaben (Meta, Google, TikTok, Pinterest, Snapchat), COGS (Wareneinsatzkosten), Versandkosten, Zahlungsgebühren (Stripe, PayPal), Transaktionsgebühren, Erstattungen und Steuern. Scaliente automatisiert diese Berechnung durch Synchronisation mit Shopify und Werbeplattformen und aktualisiert Ihren Nettogewinn alle 5 Minuten."
+            },
+            "poas": {
+                "q": "Was ist POAS (Profit on Ad Spend)?",
+                "a": "POAS (Profit on Ad Spend) misst den Gewinn, der für jeden in Werbung investierten Euro erzielt wird. Im Gegensatz zum ROAS, der nur den Umsatz berücksichtigt, zieht der POAS COGS, Versandkosten, Gebühren und Steuern ab, um die tatsächliche Rendite zu zeigen. Beispiel: Bei 100€ Werbeausgaben und 500€ Umsatz aber 300€ Kosten beträgt der ROAS 5x, aber der POAS nur 2x. Scaliente berechnet ROAS und POAS automatisch."
+            },
+            "roasVsPoas": {
+                "q": "Was ist der Unterschied zwischen ROAS und POAS?",
+                "a": "ROAS (Return on Ad Spend) = Umsatz ÷ Werbeausgaben. Er zeigt, wie viel Umsatz jeder Werbe-Euro generiert. POAS (Profit on Ad Spend) = Nettogewinn ÷ Werbeausgaben. Er zeigt, wie viel tatsächlichen Gewinn jeder Werbe-Euro nach Abzug von COGS, Versand, Zahlungsgebühren und Steuern generiert. POAS ist die Kennzahl, die für die Rentabilität zählt. Ein Shop kann einen ROAS von 5x haben, aber Geld verlieren, wenn die Kosten zu hoch sind. Scaliente zeigt beide Metriken in Echtzeit."
+            },
+            "costDeductions": {
+                "q": "Welche Kosten sollte ich vom Shopify-Umsatz abziehen?",
+                "a": "Für den echten Gewinn vom Shopify-Umsatz abziehen: (1) Werbeausgaben — Meta/Facebook, Google, TikTok, Pinterest, Snapchat-Kampagnen, (2) COGS — Produktkosten, Verpackung, Lieferantengebühren, (3) Versand — Frachtkosten, Fulfillment-Kosten, (4) Zahlungsgebühren — Stripe/PayPal-Verarbeitung, Shopify-Transaktionsgebühren, (5) Steuern — MwSt, Einfuhrzölle, (6) Fixkosten — Abonnements, Gehälter, Miete. Scaliente automatisiert die Punkte 1-5 und ermöglicht das manuelle Hinzufügen von Punkt 6."
             }
         }
     },

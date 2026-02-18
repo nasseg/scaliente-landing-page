@@ -8,6 +8,15 @@ export async function generateMetadata({ params }) {
     return {
         title: `${dict.legalPage.sections.privacy.title} - Scaliente`,
         description: dict.legalPage.sections.privacy.intro,
+        alternates: {
+            canonical: `https://scaliente.com/${lang}/privacy-policy`,
+            languages: {
+                'fr': 'https://scaliente.com/fr/privacy-policy',
+                'en': 'https://scaliente.com/en/privacy-policy',
+                'de': 'https://scaliente.com/de/privacy-policy',
+                'x-default': 'https://scaliente.com/fr/privacy-policy',
+            },
+        },
     };
 }
 

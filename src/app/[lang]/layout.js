@@ -59,6 +59,13 @@ export async function generateMetadata({ params }) {
     robots: {
       index: true,
       follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
     icons: {
       icon: [
@@ -91,7 +98,23 @@ export default async function RootLayout({ children, params }) {
       email: "contact@scaliente.com",
       contactType: "customer service",
     },
-    sameAs: [],
+    sameAs: ["https://apps.shopify.com/scaliente"],
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "1309 Coffeen Avenue STE 1200",
+      addressLocality: "Sheridan",
+      addressRegion: "Wyoming",
+      postalCode: "82801",
+      addressCountry: "US",
+    },
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Scaliente",
+    url: "https://scaliente.com",
+    inLanguage: ["fr", "en", "de"],
   };
 
   return (
@@ -100,6 +123,10 @@ export default async function RootLayout({ children, params }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         {/* GA4 */}
         {process.env.NEXT_PUBLIC_GA4_ID && (

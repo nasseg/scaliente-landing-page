@@ -12,7 +12,7 @@ const Footer = ({ content, lang }) => (
                         <div className="mb-4">
                             <Image
                                 src="/scaliente_horizontale.png"
-                                alt="Scaliente"
+                                alt="Scaliente - Profit Tracker Shopify"
                                 width={140}
                                 height={36}
                                 className="h-8 w-auto"

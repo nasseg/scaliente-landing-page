@@ -77,7 +77,7 @@ const CTA = ({ content }) => (
                             <Image
                                 key={i}
                                 src={url}
-                                alt=""
+                                alt="Scaliente user"
                                 width={32}
                                 height={32}
                                 className="w-8 h-8 rounded-full border-2 border-[var(--section-bg)] object-cover"

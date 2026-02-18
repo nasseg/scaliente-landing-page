@@ -14,10 +14,25 @@ export async function generateMetadata({ params }) {
         alternates: {
             canonical: `https://scaliente.com/${lang}/tools/roas-calculator`,
             languages: {
-                fr: '/fr/tools/roas-calculator',
-                en: '/en/tools/roas-calculator',
-                de: '/de/tools/roas-calculator',
+                'fr': 'https://scaliente.com/fr/tools/roas-calculator',
+                'en': 'https://scaliente.com/en/tools/roas-calculator',
+                'de': 'https://scaliente.com/de/tools/roas-calculator',
+                'x-default': 'https://scaliente.com/fr/tools/roas-calculator',
             },
+        },
+        openGraph: {
+            title: calc?.meta?.title,
+            description: calc?.meta?.description,
+            url: `https://scaliente.com/${lang}/tools/roas-calculator`,
+            siteName: "Scaliente",
+            type: "website",
+            images: [{ url: "/scalienteog.png", width: 1200, height: 630 }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: calc?.meta?.title,
+            description: calc?.meta?.description,
+            images: ["/scalienteog.png"],
         },
     };
 }
@@ -41,11 +56,27 @@ export default async function RoasCalculatorPage({ params }) {
         },
     };
 
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: "How to Calculate ROAS",
+        step: [
+            { "@type": "HowToStep", position: 1, name: "Enter your revenue", text: "Enter your total revenue from sales." },
+            { "@type": "HowToStep", position: 2, name: "Enter your ad spend", text: "Enter your total advertising spend across all platforms." },
+            { "@type": "HowToStep", position: 3, name: "Enter your costs", text: "Enter COGS, shipping, and other costs." },
+            { "@type": "HowToStep", position: 4, name: "View your results", text: "See your ROAS, breakeven ROAS, and net profit instantly." },
+        ],
+    };
+
     return (
         <div className="min-h-screen selection:bg-orange-500/30 font-sans">
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(calculatorSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
             />
             <Navbar content={dict.navbar} lang={lang} isHomePage={false} />
 

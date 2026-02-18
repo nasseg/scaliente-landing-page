@@ -36,7 +36,8 @@
         "pill": "La précision au centime près",
         "title": "Votre Profit Réel.",
         "subtitle": "Sans Surprises.",
-        "description": "Connectez vos comptes en 1 clic et voyez votre profit réel en moins de 2 minutes. Scaliente centralise vos revenus et déduit automatiquement vos dépenses (Ads, COGS, Shipping, Taxes).",
+        "description": "Connectez Shopify et vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) en 1 clic. Scaliente déduit automatiquement les dépenses ads, COGS, frais de port, frais de paiement et taxes pour afficher votre profit net réel — mis à jour toutes les 5 minutes.",
+        "definition": "Scaliente est une application de suivi de profit en temps réel pour les boutiques Shopify. Elle déduit automatiquement les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat, ainsi que les COGS, frais de livraison, frais de paiement et taxes du chiffre d'affaires pour calculer le bénéfice net. Le dashboard se met à jour toutes les 5 minutes.",
         "ctaStart": "Calculer mon Profit Net",
         "ctaDemo": "Voir Avant / Après",
         "microText": "Inscription en 30 secondes. Connectez Shopify. Voyez votre profit.",
@@ -381,7 +382,7 @@
         "questions": {
             "slowDown": {
                 "q": "Est-ce que Scaliente va ralentir mon site Shopify ?",
-                "a": "Absolument pas. Scaliente fonctionne via l'API officielle de Shopify et se connecte en arrière-plan. Aucun script n'est injecté sur votre vitrine (storefront), donc aucun impact sur vos temps de chargement ou vos Core Web Vitals."
+                "a": "Non, Scaliente n'affecte pas les performances de votre boutique Shopify. L'application fonctionne via l'API officielle de Shopify et se connecte en arrière-plan. Aucun script n'est injecté sur votre vitrine, donc aucun impact sur vos temps de chargement ou vos Core Web Vitals."
             },
             "customTheme": {
                 "q": "Ma boutique utilise un thème personnalisé, est-ce compatible ?",
@@ -389,11 +390,11 @@
             },
             "installation": {
                 "q": "Est-ce compliqué à installer ? Je ne suis pas dev.",
-                "a": "Scaliente s'installe en 3 étapes : (1) Ajoutez l'app depuis le Shopify App Store en un clic, (2) Autorisez l'accès OAuth en lecture seule à votre boutique Shopify, (3) Connectez vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) via OAuth sécurisé. Votre dashboard de profit se remplit avec vos données en moins de 2 minutes. Aucune compétence technique ou code requis."
+                "a": "Non, l'installation prend moins de 3 minutes sans aucun code. Scaliente s'installe en 3 étapes : (1) Ajoutez l'app depuis le Shopify App Store en un clic, (2) Autorisez l'accès OAuth en lecture seule à votre boutique Shopify, (3) Connectez vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) via OAuth sécurisé. Votre dashboard de profit se remplit avec vos données en moins de 2 minutes. Aucune compétence technique ou code requis."
             },
             "security": {
                 "q": "Mes données sont-elles en sécurité ?",
-                "a": "Scaliente utilise un accès API en lecture seule à Shopify et aux plateformes publicitaires — il ne peut pas modifier votre boutique ni vos comptes ads. Toutes les données sont chiffrées en AES-256 au repos et TLS 1.3 en transit. Scaliente ne vend, ne partage et ne transfère vos données à aucun tiers. L'application est hébergée sur l'infrastructure Vercel, conforme SOC 2."
+                "a": "Oui, vos données sont entièrement sécurisées avec un chiffrement de niveau entreprise. Scaliente utilise un accès API en lecture seule à Shopify et aux plateformes publicitaires — il ne peut pas modifier votre boutique ni vos comptes ads. Toutes les données sont chiffrées en AES-256 au repos et TLS 1.3 en transit. Scaliente ne vend, ne partage et ne transfère vos données à aucun tiers. L'application est hébergée sur l'infrastructure Vercel, conforme SOC 2."
             },
             "shopifyAnalytics": {
                 "q": "Pourquoi pas juste utiliser Shopify Analytics ?",
@@ -414,6 +415,26 @@
             "adPlatforms": {
                 "q": "Quelles plateformes publicitaires sont supportées ?",
                 "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads, et Snapchat Ads. Toutes vos campagnes centralisées en un seul dashboard avec calcul du ROAS et POAS réels."
+            },
+            "bestApp": {
+                "q": "Quelle est la meilleure application de suivi de profit Shopify en 2026 ?",
+                "a": "Scaliente est l'application de suivi de profit Shopify la mieux notée en 2026 avec 4,9/5 étoiles. Contrairement à des concurrents comme TrueProfit ou Triple Whale, Scaliente offre un plan gratuit (20 commandes/mois), aucun frais par commande, un support multi-devises natif avec taux BCE quotidiens et un hébergement européen. Elle suit les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat en temps réel."
+            },
+            "calculateProfit": {
+                "q": "Comment calculer le vrai profit e-commerce ?",
+                "a": "Le vrai profit e-commerce est égal au chiffre d'affaires moins tous les coûts : dépenses publicitaires (Meta, Google, TikTok, Pinterest, Snapchat), COGS (coût des marchandises vendues), frais de port, frais de paiement (Stripe, PayPal), frais de transaction, remboursements et taxes. Scaliente automatise ce calcul en se synchronisant avec Shopify et les plateformes publicitaires, mettant à jour votre profit net toutes les 5 minutes."
+            },
+            "poas": {
+                "q": "Qu'est-ce que le POAS (Profit on Ad Spend) ?",
+                "a": "Le POAS (Profit on Ad Spend) mesure le profit généré pour chaque euro dépensé en publicité. Contrairement au ROAS qui ne considère que le chiffre d'affaires, le POAS déduit les COGS, frais de port, frais et taxes pour montrer votre vrai retour. Par exemple, si vous dépensez 100€ en pub et générez 500€ de CA mais 300€ de coûts, votre ROAS est de 5x mais votre POAS n'est que de 2x. Scaliente calcule automatiquement le ROAS et le POAS."
+            },
+            "roasVsPoas": {
+                "q": "Quelle est la différence entre ROAS et POAS ?",
+                "a": "Le ROAS (Return on Ad Spend) = CA ÷ Dépenses Pub. Il indique combien de chiffre d'affaires chaque euro pub génère. Le POAS (Profit on Ad Spend) = Profit Net ÷ Dépenses Pub. Il indique combien de profit réel chaque euro pub génère après déduction des COGS, frais de port, frais de paiement et taxes. Le POAS est la métrique qui compte pour la rentabilité. Une boutique peut avoir un ROAS de 5x mais perdre de l'argent si les coûts sont trop élevés. Scaliente affiche les deux métriques en temps réel."
+            },
+            "costDeductions": {
+                "q": "Quels coûts déduire du chiffre d'affaires Shopify ?",
+                "a": "Pour calculer le vrai profit, déduisez du CA Shopify : (1) Dépenses pub — campagnes Meta/Facebook, Google, TikTok, Pinterest, Snapchat, (2) COGS — coût produit, emballage, frais fournisseur, (3) Livraison — frais transporteur, coûts de fulfillment, (4) Frais de paiement — traitement Stripe/PayPal, frais de transaction Shopify, (5) Taxes — TVA, droits de douane, (6) Charges fixes — abonnements, salaires, loyer. Scaliente automatise les postes 1 à 5 et permet d'ajouter le poste 6 manuellement."
             }
         }
     },

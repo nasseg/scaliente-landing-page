@@ -8,6 +8,15 @@ export async function generateMetadata({ params }) {
     return {
         title: `${dict.legalPage.title} - Scaliente`,
         description: dict.legalPage.subtitle,
+        alternates: {
+            canonical: `https://scaliente.com/${lang}/legal`,
+            languages: {
+                'fr': 'https://scaliente.com/fr/legal',
+                'en': 'https://scaliente.com/en/legal',
+                'de': 'https://scaliente.com/de/legal',
+                'x-default': 'https://scaliente.com/fr/legal',
+            },
+        },
     };
 }
 

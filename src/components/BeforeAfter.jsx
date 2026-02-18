@@ -232,10 +232,10 @@ const BeforeAfter = ({ content }) => {
                                     {/* Header */}
                                     <div className="flex items-center justify-between mb-4">
                                         <div>
-                                            <h3 className="font-sans font-bold text-zinc-900 text-base relative inline-block">
+                                            <div className="font-sans font-bold text-zinc-900 text-base relative inline-block">
                                                 {content?.after?.dashboard?.title || 'Dashboard'}
                                                 <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full" style={{ transform: 'rotate(-2deg)' }}></span>
-                                            </h3>
+                                            </div>
                                             <p className="text-zinc-400 text-[10px]">{content?.after?.dashboard?.lastUpdate}</p>
                                         </div>
                                         <div className="flex items-center gap-1.5 px-2 py-1 bg-green-50 rounded-full border border-green-100">

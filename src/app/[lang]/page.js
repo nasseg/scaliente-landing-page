@@ -32,12 +32,70 @@ export default async function Home({ params }) {
     inLanguage: lang,
     author: { "@type": "Organization", "name": "Scaliente" },
     datePublished: "2024-01-01",
+    dateModified: new Date().toISOString().split('T')[0],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "2500",
+      bestRating: "5",
+    },
+    review: [
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Lucas M." },
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Sophie D." },
+      },
+      {
+        "@type": "Review",
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        author: { "@type": "Person", name: "Max K." },
+      },
+    ],
     offers: [
       { "@type": "Offer", price: "0", priceCurrency: "EUR", name: "Discovery" },
       { "@type": "Offer", price: "39", priceCurrency: "EUR", name: "Lite" },
       { "@type": "Offer", price: "89", priceCurrency: "EUR", name: "Starter" },
       { "@type": "Offer", price: "149", priceCurrency: "EUR", name: "Growth" },
       { "@type": "Offer", price: "249", priceCurrency: "EUR", name: "Scale" },
+    ],
+  };
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: dict.howItWorks?.title?.part1 + " " + dict.howItWorks?.title?.part2,
+    description: dict.howItWorks?.description,
+    totalTime: "PT5M",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: dict.howItWorks?.steps?.shopify?.title,
+        text: dict.howItWorks?.steps?.shopify?.desc,
+      },
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: dict.howItWorks?.steps?.ads?.title,
+        text: dict.howItWorks?.steps?.ads?.desc,
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: dict.howItWorks?.steps?.mode?.title,
+        text: dict.howItWorks?.steps?.mode?.desc,
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: dict.howItWorks?.steps?.expenses?.title,
+        text: dict.howItWorks?.steps?.expenses?.desc,
+      },
     ],
   };
 
@@ -61,6 +119,10 @@ export default async function Home({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <Navbar content={dict.navbar} common={dict.common} lang={lang} />
 

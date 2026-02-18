@@ -2,6 +2,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Menu, X, ChevronDown, Calculator } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
 
@@ -73,16 +74,16 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">
                     <div className="h-16 sm:h-18 flex items-center justify-between">
                         {/* Logo */}
-                        <a href={`/${lang}`} className="flex items-center shrink-0">
+                        <Link href={`/${lang}`} className="flex items-center shrink-0">
                             <Image
                                 src="/scaliente_horizontale.png"
-                                alt="Scaliente"
+                                alt="Scaliente - Profit Tracker Shopify"
                                 width={140}
                                 height={36}
                                 className="h-7 sm:h-8 w-auto"
                                 priority
                             />
-                        </a>
+                        </Link>
 
                         {/* Desktop Navigation */}
                         <div className="hidden lg:flex items-center justify-center flex-1 mx-8 gap-4">
@@ -109,13 +110,13 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                                                 className="absolute top-full left-0 mt-2 w-56 py-2 bg-[#18181b]/95 backdrop-blur-xl rounded-xl border border-white/[0.1] shadow-2xl shadow-black/50"
                                             >
                                                 {featureLinks.map((item, i) => (
-                                                    <a
+                                                    <Link
                                                         key={i}
                                                         href={item.href}
                                                         className="block px-4 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.06] transition-colors duration-150"
                                                     >
                                                         {item.label}
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </motion.div>
                                         )}
@@ -123,12 +124,12 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                                 </div>
 
                                 {/* Comparaison - page link */}
-                                <a
+                                <Link
                                     href={`/${lang}/compare/scaliente-vs-trueprofit`}
                                     className={pillClass}
                                 >
                                     {content?.comparison || "Comparaison"}
-                                </a>
+                                </Link>
 
                                 {/* Tarifs - anchor */}
                                 <button
@@ -148,13 +149,13 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                             </div>
 
                             {/* ROAS Calculator pill */}
-                            <a
+                            <Link
                                 href={calculatorLink.href}
                                 className="bg-orange-500/10 border border-orange-500/20 text-orange-400 hover:bg-orange-500/15 px-3 py-1.5 rounded-full text-sm font-medium transition-colors flex items-center gap-1.5"
                             >
                                 <Calculator className="w-3.5 h-3.5" />
                                 {calculatorLink.label}
-                            </a>
+                            </Link>
                         </div>
 
                         {/* Desktop Right Side */}

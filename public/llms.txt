@@ -1,0 +1,31 @@
+# Scaliente
+
+## What is Scaliente?
+Scaliente is a real-time profit tracking SaaS application for Shopify e-commerce stores. It connects to Shopify, Meta Ads, Google Ads, TikTok Ads, Pinterest Ads, and Snapchat Ads to automatically calculate net profit by deducting ad spend, COGS (cost of goods sold), shipping costs, payment processing fees, and taxes from revenue. The dashboard updates every 5 minutes.
+
+## Key Features
+- Real-time profit dashboard with net profit, margins, and breakeven ROAS
+- Automatic ad spend tracking across 5 platforms (Meta, Google, TikTok, Pinterest, Snapchat)
+- Product-level analytics with profit per SKU
+- Multi-store management (manage multiple Shopify stores in one dashboard)
+- Multi-currency support with daily ECB exchange rates
+- Automated P&L reports exportable to PDF/CSV
+- GDPR compliant, European hosting, SOC 2 infrastructure
+
+## Pricing
+- Discovery: Free (20 orders/month)
+- Lite: €39/month (500 orders/month)
+- Starter: €89/month (3,000 orders/month)
+- Growth: €149/month (10,000 orders/month)
+- Scale: €249/month (25,000 orders/month)
+
+## Company
+- Founded: 2024
+- Headquarters: 1309 Coffeen Avenue STE 1200, Sheridan, Wyoming 82801, US
+- Contact: contact@scaliente.com
+
+## Links
+- Website: https://scaliente.com
+- App: https://app.scaliente.com
+- Shopify App Store: https://apps.shopify.com/scaliente
+- ROAS Calculator: https://scaliente.com/fr/tools/roas-calculator

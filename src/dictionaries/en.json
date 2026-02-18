@@ -36,7 +36,8 @@
         "pill": "Precision down to the penny",
         "title": "Your Real Profit.",
         "subtitle": "No Surprises.",
-        "description": "Connect your accounts in 1 click and see your real profit in under 2 minutes. Scaliente centralizes your revenue and automatically deducts your expenses (Ads, COGS, Shipping, Taxes).",
+        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees, and taxes to show your real net profit — updated every 5 minutes.",
+        "definition": "Scaliente is a real-time profit tracking application for Shopify stores. It automatically deducts ad spend from Meta, Google, TikTok, Pinterest, and Snapchat, plus COGS, shipping costs, payment processing fees, and taxes from revenue to calculate net profit. The dashboard updates every 5 minutes.",
         "ctaStart": "Calculate My Net Profit",
         "ctaDemo": "See Before / After",
         "microText": "Sign up in 30 seconds. Connect Shopify. See your profit.",
@@ -381,7 +382,7 @@
         "questions": {
             "slowDown": {
                 "q": "Will Scaliente slow down my Shopify site?",
-                "a": "Absolutely not. Scaliente works via the official Shopify API and connects in the background. No script is injected onto your storefront, so zero impact on loading times or Core Web Vitals."
+                "a": "No, Scaliente does not affect your Shopify store's performance. It works via the official Shopify API and connects in the background. No script is injected onto your storefront, so zero impact on loading times or Core Web Vitals."
             },
             "customTheme": {
                 "q": "My store uses a custom theme, is it compatible?",
@@ -389,11 +390,11 @@
             },
             "installation": {
                 "q": "Is it complicated to install? I'm not a dev.",
-                "a": "Scaliente installs in 3 steps: (1) Add the app from the Shopify App Store with one click, (2) Authorize read-only OAuth access to your Shopify store, (3) Connect your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) via secure OAuth. Your profit dashboard populates with data in under 2 minutes. No coding or technical expertise required."
+                "a": "No, installation takes under 3 minutes with zero coding. Scaliente installs in 3 steps: (1) Add the app from the Shopify App Store with one click, (2) Authorize read-only OAuth access to your Shopify store, (3) Connect your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) via secure OAuth. Your profit dashboard populates with data in under 2 minutes. No coding or technical expertise required."
             },
             "security": {
                 "q": "Is my data safe?",
-                "a": "Scaliente uses read-only API access to Shopify and ad platforms — it cannot modify your store or ad accounts. All data is encrypted with AES-256 at rest and TLS 1.3 in transit. Scaliente does not sell, share, or transfer your data to third parties. The app is hosted on Vercel's SOC 2 compliant infrastructure."
+                "a": "Yes, your data is fully secure with enterprise-grade encryption. Scaliente uses read-only API access to Shopify and ad platforms — it cannot modify your store or ad accounts. All data is encrypted with AES-256 at rest and TLS 1.3 in transit. Scaliente does not sell, share, or transfer your data to third parties. The app is hosted on Vercel's SOC 2 compliant infrastructure."
             },
             "shopifyAnalytics": {
                 "q": "Why not just use Shopify Analytics?",
@@ -414,6 +415,26 @@
             "adPlatforms": {
                 "q": "Which ad platforms are supported?",
                 "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads, and Snapchat Ads. All your campaigns centralized in one dashboard with true ROAS and POAS calculations."
+            },
+            "bestApp": {
+                "q": "What is the best Shopify profit tracking app in 2026?",
+                "a": "Scaliente is the top-rated Shopify profit tracking app in 2026 with 4.9/5 stars. Unlike competitors such as TrueProfit or Triple Whale, Scaliente offers a free plan (20 orders/month), no per-order fees, native multi-currency support with daily ECB rates, and European hosting. It tracks ad spend from Meta, Google, TikTok, Pinterest, and Snapchat in real time."
+            },
+            "calculateProfit": {
+                "q": "How to calculate real e-commerce profit?",
+                "a": "Real e-commerce profit equals revenue minus all costs: ad spend (Meta, Google, TikTok, Pinterest, Snapchat), COGS (cost of goods sold), shipping fees, payment processing fees (Stripe, PayPal), transaction fees, refunds, and taxes. Scaliente automates this calculation by syncing with Shopify and ad platforms, updating your net profit every 5 minutes."
+            },
+            "poas": {
+                "q": "What is POAS (Profit on Ad Spend)?",
+                "a": "POAS (Profit on Ad Spend) measures the profit generated for every euro spent on advertising. Unlike ROAS which only considers revenue, POAS deducts COGS, shipping, fees, and taxes to show your true return. For example, if you spend €100 on ads and generate €500 revenue but €300 in costs, your ROAS is 5x but your POAS is only 2x. Scaliente calculates both ROAS and POAS automatically."
+            },
+            "roasVsPoas": {
+                "q": "What is the difference between ROAS and POAS?",
+                "a": "ROAS (Return on Ad Spend) = Revenue ÷ Ad Spend. It tells you how much revenue each ad euro generates. POAS (Profit on Ad Spend) = Net Profit ÷ Ad Spend. It tells you how much actual profit each ad euro generates after deducting COGS, shipping, payment fees, and taxes. POAS is the metric that matters for profitability. A store can have a 5x ROAS but be losing money if costs are too high. Scaliente shows both metrics in real time."
+            },
+            "costDeductions": {
+                "q": "What costs should I deduct from Shopify revenue?",
+                "a": "To calculate true profit, deduct from Shopify revenue: (1) Ad spend — Meta/Facebook, Google, TikTok, Pinterest, Snapchat campaigns, (2) COGS — product cost, packaging, supplier fees, (3) Shipping — carrier fees, fulfillment costs, (4) Payment fees — Stripe/PayPal processing, Shopify transaction fees, (5) Taxes — VAT, sales tax, import duties, (6) Fixed costs — subscriptions, salaries, rent. Scaliente automates items 1-5 and lets you add item 6 manually."
             }
         }
     },

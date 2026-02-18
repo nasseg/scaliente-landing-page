@@ -6,6 +6,8 @@ const pages = [
   { path: '/affiliate', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/tools/roas-calculator', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/compare/scaliente-vs-trueprofit', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/compare/scaliente-vs-triple-whale', priority: 0.7, changeFrequency: 'monthly' },
+  { path: '/compare/scaliente-vs-lifetimely', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/features/profit-dashboard', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/features/ad-tracking', priority: 0.7, changeFrequency: 'monthly' },
   { path: '/features/product-analytics', priority: 0.7, changeFrequency: 'monthly' },
@@ -35,7 +37,7 @@ export default function sitemap() {
 
       entries.push({
         url,
-        lastModified: new Date('2026-02-16'),
+        lastModified: new Date(),
         changeFrequency: page.changeFrequency,
         priority: page.priority,
         alternates: {

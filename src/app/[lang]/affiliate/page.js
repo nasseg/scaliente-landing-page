@@ -28,6 +28,20 @@ export async function generateMetadata({ params }) {
                 'x-default': 'https://scaliente.com/fr/affiliate',
             },
         },
+        openGraph: {
+            title: affiliate?.metadata?.title,
+            description: affiliate?.metadata?.description,
+            url: `https://scaliente.com/${lang}/affiliate`,
+            siteName: "Scaliente",
+            type: "website",
+            images: [{ url: "/scalienteog.png", width: 1200, height: 630 }],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: affiliate?.metadata?.title,
+            description: affiliate?.metadata?.description,
+            images: ["/scalienteog.png"],
+        },
     };
 }
 
@@ -38,6 +52,18 @@ export default async function AffiliatePage({ params }) {
 
     return (
         <div className="min-h-screen selection:bg-orange-500/30 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: (content?.faq?.items || []).map(item => ({
+                        "@type": "Question",
+                        name: item.q,
+                        acceptedAnswer: { "@type": "Answer", text: item.a },
+                    })),
+                }) }}
+            />
             <Navbar content={dict.navbar} common={dict.common} lang={lang} isHomePage={false} />
 
             {/* Hero — frosted glass over WebGL */}

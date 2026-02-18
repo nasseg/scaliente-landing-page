@@ -214,10 +214,10 @@ const Hero = ({ content, common }) => {
                                 {/* Header */}
                                 <div className="flex items-center justify-between mb-5">
                                     <div>
-                                        <h2 className="font-brand text-2xl font-bold text-zinc-900 relative inline-block">
+                                        <div className="font-brand text-2xl font-bold text-zinc-900 relative inline-block">
                                             Overview
                                             <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full" style={{ transform: 'rotate(-2deg)' }}></span>
-                                        </h2>
+                                        </div>
                                     </div>
                                     <div className="flex items-center gap-3">
                                         <div className="flex items-center gap-2 bg-white border border-zinc-200 rounded-lg px-3 py-1.5 text-sm text-zinc-600">
