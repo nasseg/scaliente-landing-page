@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { affiliateLimiter } from '@/lib/rate-limit';
 
 const CONFIRMATION_COPY = {
     fr: {
@@ -92,14 +93,54 @@ function buildConfirmationHtml(lang, firstName) {
 </html>`;
 }
 
+// Escape HTML entities to prevent XSS in emails
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
+}
+
 export async function POST(request) {
     try {
+        const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+        if (!affiliateLimiter.check(ip)) {
+            return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+        }
+
         const body = await request.json();
-        const { firstName, lastName, email, website, promotion, lang } = body;
+        const { lang } = body;
+
+        // Sanitize all user inputs
+        const firstName = escapeHtml(body.firstName?.trim());
+        const lastName = escapeHtml(body.lastName?.trim());
+        const email = body.email?.trim()?.toLowerCase();
+        const website = escapeHtml(body.website?.trim());
+        const promotion = escapeHtml(body.promotion?.trim());
 
         if (!firstName || !lastName || !email) {
             return NextResponse.json(
-                { error: 'Missing required fields: firstName, lastName, email' },
+                { error: 'Missing required fields' },
+                { status: 400 }
+            );
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            return NextResponse.json(
+                { error: 'Invalid email address' },
+                { status: 400 }
+            );
+        }
+
+        // Validate field lengths
+        if (firstName.length > 100 || lastName.length > 100 || email.length > 254) {
+            return NextResponse.json(
+                { error: 'Field too long' },
                 { status: 400 }
             );
         }

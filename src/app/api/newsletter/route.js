@@ -1,10 +1,32 @@
 import { NextResponse } from 'next/server';
+import { newsletterLimiter } from '@/lib/rate-limit';
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#x27;');
+}
 
 export async function POST(request) {
     try {
-        const { email, source } = await request.json();
+        const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown';
+        if (!newsletterLimiter.check(ip)) {
+            return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+        }
+
+        const body = await request.json();
+        const email = body.email?.trim()?.toLowerCase();
+        const source = escapeHtml(body.source?.trim());
 
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
+        }
+
+        if (email.length > 254) {
             return NextResponse.json({ error: 'Invalid email' }, { status: 400 });
         }
 

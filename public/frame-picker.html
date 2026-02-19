@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frame Picker</title>
+    <style>
+        * { margin: 0; box-sizing: border-box; }
+        body { background: #111; color: #fff; font-family: system-ui; display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 16px; }
+        video { max-height: 50vh; border: 2px solid #333; border-radius: 8px; }
+        .controls { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+        button { padding: 8px 16px; border: none; border-radius: 6px; background: #333; color: #fff; cursor: pointer; font-size: 14px; }
+        button:hover { background: #555; }
+        button.active { background: #f97316; }
+        .info { font-family: monospace; font-size: 14px; background: #222; padding: 12px 20px; border-radius: 8px; text-align: center; }
+        .info span { color: #f97316; }
+        .markers { display: flex; gap: 20px; font-family: monospace; font-size: 13px; }
+        .markers div { background: #222; padding: 8px 16px; border-radius: 6px; }
+        .markers .set { color: #22c55e; }
+        kbd { background: #333; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h2>Frame Picker - bg_effect_mobile.mp4</h2>
+    <video id="vid" src="/bg_effect_mobile.mp4" muted></video>
+    <div class="info">
+        Frame: <span id="frame">0</span> / <span id="total">-</span>
+        &nbsp;|&nbsp; Time: <span id="time">0.000</span>s
+    </div>
+    <div class="controls">
+        <button onclick="step(-10)">-10 frames</button>
+        <button onclick="step(-1)">-1 frame (<kbd>&larr;</kbd>)</button>
+        <button onclick="togglePlay()">Play/Pause (<kbd>Space</kbd>)</button>
+        <button onclick="step(1)">+1 frame (<kbd>&rarr;</kbd>)</button>
+        <button onclick="step(10)">+10 frames</button>
+    </div>
+    <div class="controls">
+        <button onclick="setMark('in')" style="background:#166534">Set IN (<kbd>I</kbd>)</button>
+        <button onclick="setMark('out')" style="background:#991b1b">Set OUT (<kbd>O</kbd>)</button>
+        <button onclick="previewLoop()">Preview Loop (<kbd>L</kbd>)</button>
+        <button onclick="copyCommand()">Copy ffmpeg command (<kbd>C</kbd>)</button>
+    </div>
+    <div class="markers">
+        <div>IN: <span id="markIn" class="set">not set</span></div>
+        <div>OUT: <span id="markOut" class="set">not set</span></div>
+    </div>
+    <div id="cmd" style="display:none; background:#222; padding:12px; border-radius:8px; font-family:monospace; font-size:11px; word-break:break-all; max-width:600px;"></div>
+
+    <script>
+        const vid = document.getElementById('vid');
+        const FPS = 60;
+        let marks = { in: null, out: null };
+        let looping = false;
+
+        vid.addEventListener('loadedmetadata', () => {
+            document.getElementById('total').textContent = Math.round(vid.duration * FPS);
+            vid.pause();
+            vid.currentTime = 0;
+            update();
+        });
+
+        function update() {
+            document.getElementById('frame').textContent = Math.round(vid.currentTime * FPS);
+            document.getElementById('time').textContent = vid.currentTime.toFixed(3);
+        }
+
+        function step(n) {
+            vid.pause();
+            looping = false;
+            vid.currentTime = Math.max(0, Math.min(vid.duration, vid.currentTime + n / FPS));
+            update();
+        }
+
+        function togglePlay() {
+            if (vid.paused) { vid.play(); vid.addEventListener('timeupdate', update); }
+            else { vid.pause(); update(); }
+        }
+
+        function setMark(type) {
+            marks[type] = vid.currentTime;
+            document.getElementById(type === 'in' ? 'markIn' : 'markOut').textContent =
+                `${vid.currentTime.toFixed(3)}s (frame ${Math.round(vid.currentTime * FPS)})`;
+            updateCmd();
+        }
+
+        function updateCmd() {
+            if (marks.in !== null && marks.out !== null) {
+                const cmd = `ffmpeg -y -ss ${marks.in.toFixed(3)} -to ${marks.out.toFixed(3)} -i public/bg_effect_mobile.mp4 -c:v libx264 -crf 26 -preset slow -an -movflags +faststart public/bg_effect_mobile_trimmed.mp4 && mv public/bg_effect_mobile_trimmed.mp4 public/bg_effect_mobile.mp4`;
+                document.getElementById('cmd').style.display = 'block';
+                document.getElementById('cmd').textContent = cmd;
+            }
+        }
+
+        function previewLoop() {
+            if (marks.in === null || marks.out === null) return;
+            looping = true;
+            vid.currentTime = marks.in;
+            vid.play();
+            const check = () => {
+                if (!looping) return;
+                if (vid.currentTime >= marks.out) vid.currentTime = marks.in;
+                requestAnimationFrame(check);
+            };
+            check();
+        }
+
+        function copyCommand() {
+            const cmd = document.getElementById('cmd').textContent;
+            if (cmd) navigator.clipboard.writeText(cmd);
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+            if (e.key === ' ') { e.preventDefault(); togglePlay(); }
+            if (e.key === 'i' || e.key === 'I') setMark('in');
+            if (e.key === 'o' || e.key === 'O') setMark('out');
+            if (e.key === 'l' || e.key === 'L') previewLoop();
+            if (e.key === 'c' || e.key === 'C') copyCommand();
+        });
+    </script>
+</body>
+</html>

@@ -21,6 +21,15 @@ function getLocale(request) {
 export function middleware(request) {
     const { pathname } = request.nextUrl;
 
+    // Block dev-only tools in production (record-animation, frame-picker, convert-video)
+    const isDevTool = pathname.includes('/record-animation') ||
+        pathname === '/frame-picker.html' ||
+        pathname.startsWith('/api/convert-video');
+
+    if (isDevTool && process.env.NODE_ENV === 'production') {
+        return new NextResponse(null, { status: 404 });
+    }
+
     // Check if there is any supported locale in the pathname
     const pathnameHasLocale = locales.some(
         (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
@@ -39,8 +48,9 @@ export function middleware(request) {
 export const config = {
     matcher: [
         // Skip all internal paths (_next)
-        '/((?!_next|api|favicon.ico|.*\\..*).*)',
-        // Optional: only run on root (/)
-        // '/'
+        '/((?!_next|favicon.ico|.*\\..*).*)',
+        // Dev tools — matched so middleware can block in production
+        '/frame-picker.html',
+        '/api/convert-video',
     ],
 };
