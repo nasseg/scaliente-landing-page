@@ -36,7 +36,7 @@ export default async function Home({ params }) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      ratingCount: "2500",
+      ratingCount: "150",
       bestRating: "5",
     },
     review: [

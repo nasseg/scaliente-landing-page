@@ -370,7 +370,7 @@
             }
         ],
         "stats": {
-            "activeUsers": "+2500 aktive E-Händler",
+            "activeUsers": "Weltweit von E-Händlern genutzt",
             "satisfaction": "4.9/5 Zufriedenheit",
             "support": "Support in weniger als 2h"
         }
@@ -406,7 +406,7 @@
             },
             "story": {
                 "q": "Warum habe ich noch nie von Scaliente gehört?",
-                "a": "Scaliente wurde 2024 als privates Gewinnverfolgungs-Tool für E-Commerce-Agenturen gestartet, die Multi-Store-Shopify-Portfolios verwalten. Nachdem 2.500 aktive Nutzer ausschließlich durch Mundpropaganda erreicht wurden, öffnete sich Scaliente der Öffentlichkeit mit Self-Service-Plänen ab 0€/Monat (Discovery-Plan, 20 Bestellungen/Monat inklusive)."
+                "a": "Scaliente wurde 2024 als privates Gewinnverfolgungs-Tool für E-Commerce-Agenturen gestartet, die Multi-Store-Shopify-Portfolios verwalten. Nachdem eine große Nutzerbasis ausschließlich durch Mundpropaganda aufgebaut wurde, öffnete sich Scaliente der Öffentlichkeit mit Self-Service-Plänen ab 0€/Monat (Discovery-Plan, 20 Bestellungen/Monat inklusive)."
             },
             "freePlan": {
                 "q": "Gibt es einen kostenlosen Plan?",

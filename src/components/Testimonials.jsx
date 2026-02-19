@@ -116,7 +116,7 @@ const Testimonials = ({ content, founderStory }) => {
                 >
                     <div className="flex items-center gap-2 text-[var(--text-secondary)]">
                         <div className="w-2 h-2 rounded-full bg-green-500" />
-                        <span>{content?.stats?.activeUsers || "+2500 e-marchands actifs"}</span>
+                        <span>{content?.stats?.activeUsers || "De nombreux e-commerçants dans le monde"}</span>
                     </div>
                     <div className="flex items-center gap-2 text-[var(--text-secondary)]">
                         <div className="w-2 h-2 rounded-full bg-orange-500" />
