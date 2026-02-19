@@ -1,7 +1,31 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calculator, ChevronDown, ChevronUp, TrendingUp, Target, BarChart3, ShoppingCart, Globe } from 'lucide-react';
+import { Calculator, ChevronDown, ChevronUp, Target, BarChart3, ShoppingCart, Globe, DollarSign, Copy, ArrowDown } from 'lucide-react';
+
+const Tooltip = ({ text }) => {
+    const [open, setOpen] = useState(false);
+    return (
+        <span className="relative inline-flex ml-1">
+            <button
+                type="button"
+                onClick={() => setOpen(!open)}
+                onMouseEnter={() => setOpen(true)}
+                onMouseLeave={() => setOpen(false)}
+                className="w-4 h-4 rounded-full bg-zinc-200 text-zinc-500 inline-flex items-center justify-center text-[10px] font-bold hover:bg-zinc-300 transition-colors"
+                aria-label="Help"
+            >
+                ?
+            </button>
+            {open && (
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-2 bg-zinc-800 text-white text-xs rounded-lg shadow-lg whitespace-normal w-56 z-50 text-center">
+                    {text}
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-zinc-800" />
+                </span>
+            )}
+        </span>
+    );
+};
 
 const CURRENCIES = [
     { code: 'EUR', symbol: '€' },
@@ -67,6 +91,9 @@ const RoasCalculator = ({ content, common, lang }) => {
     const [currency, setCurrency] = useState('EUR');
     const [selectedPreset, setSelectedPreset] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState('');
+    const [showStickyBar, setShowStickyBar] = useState(false);
+    const [copied, setCopied] = useState(false);
+    const resultsRef = useRef(null);
 
     // Basic fields
     const [sellingPrice, setSellingPrice] = useState('');
@@ -101,6 +128,7 @@ const RoasCalculator = ({ content, common, lang }) => {
             if (group) {
                 setCurrency(group.presets[0].currency);
             }
+            if (countryKey) setShowTaxSection(true);
         }
     };
 
@@ -161,9 +189,6 @@ const RoasCalculator = ({ content, common, lang }) => {
     // 7. ROAS Breakeven
     const roasBreakeven = profitPerOrder > 0 ? price / profitPerOrder : 0;
 
-    // POAS Breakeven = 1
-    const poasBreakeven = 1;
-
     // 8. Orders needed (including fixed costs)
     const ordersNeeded = profitPerOrder > 0 ? Math.ceil((adBudget + fixedCosts) / profitPerOrder) : 0;
 
@@ -175,6 +200,36 @@ const RoasCalculator = ({ content, common, lang }) => {
 
     const fmt = (v) => `${v.toFixed(2)} ${sym}`;
     const fmtInt = (v) => `${v.toFixed(0)} ${sym}`;
+
+    useEffect(() => {
+        if (!hasResults) { setShowStickyBar(false); return; }
+        const observer = new IntersectionObserver(
+            ([entry]) => setShowStickyBar(!entry.isIntersecting),
+            { threshold: 0.1 }
+        );
+        if (resultsRef.current) observer.observe(resultsRef.current);
+        return () => observer.disconnect();
+    }, [hasResults]);
+
+    const handleCopyResults = () => {
+        const text = [
+            `${content?.results?.revenue || 'Selling price'}: ${fmt(price)}`,
+            `${content?.results?.productCost || 'Product cost'}: -${fmt(cost)}`,
+            `${content?.results?.shipping || 'Shipping'}: -${fmt(shipping + supplierShip)}`,
+            `${content?.results?.fees || 'Payment fees'}: -${fmt(paymentFee)}`,
+            vatAmount > 0 ? `${content?.results?.vatDeducted || 'VAT'}: -${fmt(vatAmount)}` : '',
+            socialChargesAmount > 0 ? `${content?.results?.socialCharges || 'Social Charges'}: -${fmt(socialChargesAmount)}` : '',
+            `---`,
+            `${content?.results?.profitPerOrder || 'Net profit / order'}: ${fmt(profitPerOrder)}`,
+            `${content?.results?.margin || 'Net margin'}: ${marginPercent.toFixed(1)}%`,
+            `ROAS Breakeven: ${roasBreakeven > 0 ? roasBreakeven.toFixed(2) + 'x' : '\u2014'}`,
+            ``,
+            `scaliente.com/${lang}/tools/roas-calculator`,
+        ].filter(Boolean).join('\n');
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
 
     const inputClass = "w-full px-4 py-3 rounded-xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500/50 transition-all text-sm";
     const labelClass = "block text-sm font-medium text-zinc-700 mb-1.5";
@@ -218,13 +273,16 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         <button
                                             key={preset.key}
                                             onClick={() => handlePresetSelect(preset)}
-                                            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                                            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all text-left ${
                                                 selectedPreset === preset.key
                                                     ? 'bg-orange-100 text-orange-700 border border-orange-200'
                                                     : 'bg-zinc-100 text-zinc-600 border border-zinc-200 hover:bg-zinc-200'
                                             }`}
                                         >
-                                            {content?.presets?.[preset.key] || preset.key}
+                                            <span className="block">{content?.presets?.[preset.key] || preset.key}</span>
+                                            {content?.presets?.[`${preset.key}_hint`] && (
+                                                <span className="block text-[10px] font-normal opacity-70 mt-0.5">{content?.presets?.[`${preset.key}_hint`]}</span>
+                                            )}
                                         </button>
                                     ))}
                                 </div>
@@ -262,7 +320,11 @@ const RoasCalculator = ({ content, common, lang }) => {
                                 <select
                                     value={CURRENCIES.slice(0, 6).some(c => c.code === currency) ? '' : currency}
                                     onChange={(e) => { if (e.target.value) setCurrency(e.target.value); }}
-                                    className="px-3 py-2 rounded-lg text-sm font-medium bg-zinc-100 text-zinc-600 border border-zinc-200 hover:bg-zinc-200 transition-all cursor-pointer"
+                                    className={`px-3 py-2 rounded-lg text-sm font-medium transition-all cursor-pointer ${
+                                        !CURRENCIES.slice(0, 6).some(c => c.code === currency)
+                                            ? 'bg-orange-100 text-orange-700 border border-orange-200'
+                                            : 'bg-zinc-100 text-zinc-600 border border-zinc-200 hover:bg-zinc-200'
+                                    }`}
                                 >
                                     <option value="">{content?.fields?.otherCurrency || 'Other...'}</option>
                                     {CURRENCIES.slice(6).map((c) => (
@@ -323,7 +385,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                 <label className={labelClass}>
                                     {content?.fields?.paymentFee || 'Payment fee rate (%)'}
                                 </label>
-                                <div className="flex gap-2">
+                                <div className="grid grid-cols-3 gap-1.5">
                                     {[
                                         { label: 'Stripe', value: '2.9' },
                                         { label: 'PayPal', value: '3.4' },
@@ -332,13 +394,14 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         <button
                                             key={preset.label}
                                             onClick={() => setPaymentFeeRate(preset.value)}
-                                            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+                                            className={`px-2 py-2 rounded-lg text-xs font-medium transition-all text-center ${
                                                 paymentFeeRate === preset.value
                                                     ? 'bg-orange-100 text-orange-700 border border-orange-200'
                                                     : 'bg-zinc-100 text-zinc-600 border border-zinc-200 hover:bg-zinc-200'
                                             }`}
                                         >
-                                            {preset.label} ({preset.value}%)
+                                            <span className="block">{preset.label}</span>
+                                            <span className="block text-[10px] opacity-70">{preset.value}%</span>
                                         </button>
                                     ))}
                                 </div>
@@ -451,6 +514,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                 <div className="flex items-center justify-between">
                                     <label className="text-sm font-medium text-zinc-700">
                                         {content?.fields?.vatIncluded || 'VAT included in price'}
+                                        <Tooltip text={content?.tooltips?.vatIncluded || 'If your selling price already includes VAT, enable this to deduct it from revenue before calculating profit.'} />
                                     </label>
                                     <button
                                         type="button"
@@ -465,6 +529,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                 <div>
                                     <label className={labelClass}>
                                         {content?.fields?.socialCharges || 'Social Charges (%)'}
+                                        <Tooltip text={content?.tooltips?.socialBase || 'Social charges can be calculated on revenue (micro-enterprises) or on profit (companies). Select the base that matches your legal status.'} />
                                         {socialRate > 0 && (
                                             <span className="ml-2 text-xs text-zinc-400 font-normal">
                                                 ({socialBase === 'revenue'
@@ -529,6 +594,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                 <div>
                                     <label className={labelClass}>
                                         {content?.fields?.returnRate || 'Return Rate (%)'}
+                                        <Tooltip text={content?.tooltips?.returnRate || 'Percentage of orders that get returned. This reduces your effective revenue per order.'} />
                                     </label>
                                     <input
                                         type="number"
@@ -546,7 +612,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                     </div>
 
                     {/* Results */}
-                    <div>
+                    <div ref={resultsRef}>
                         {hasResults ? (
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
@@ -627,6 +693,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         <div className="flex items-center gap-2 mb-2">
                                             <Target className="w-4 h-4 text-orange-500" />
                                             <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.roasBreakeven || 'ROAS Breakeven'}</span>
+                                            <Tooltip text={content?.tooltips?.roasBreakeven || 'Minimum ROAS your ads must achieve to break even. Below this, you lose money on every ad-driven sale.'} />
                                         </div>
                                         <p className="text-2xl font-bold text-zinc-900">
                                             {roasBreakeven > 0 ? `${roasBreakeven.toFixed(2)}x` : '\u2014'}
@@ -635,17 +702,17 @@ const RoasCalculator = ({ content, common, lang }) => {
 
                                     <div className="bg-white rounded-xl border border-zinc-200 p-4">
                                         <div className="flex items-center gap-2 mb-2">
-                                            <TrendingUp className="w-4 h-4 text-emerald-500" />
-                                            <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.poasBreakeven || 'POAS Breakeven'}</span>
+                                            <DollarSign className="w-4 h-4 text-emerald-500" />
+                                            <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.maxCPA || 'Max CPA'}</span>
                                         </div>
-                                        <p className="text-2xl font-bold text-zinc-900">{poasBreakeven.toFixed(2)}x</p>
+                                        <p className="text-2xl font-bold text-zinc-900">{profitPerOrder > 0 ? fmt(profitPerOrder) : '\u2014'}</p>
                                     </div>
 
                                     {(adBudget > 0 || fixedCosts > 0) && (
                                         <div className="bg-white rounded-xl border border-zinc-200 p-4">
                                             <div className="flex items-center gap-2 mb-2">
                                                 <ShoppingCart className="w-4 h-4 text-purple-500" />
-                                                <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.salesNeeded || 'Sales needed'}</span>
+                                                <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.breakEvenOrders || 'Break-even orders'}</span>
                                             </div>
                                             <p className="text-2xl font-bold text-zinc-900">
                                                 {profitPerOrder > 0 ? ordersNeeded : '\u221e'}
@@ -687,18 +754,73 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         </div>
                                     </div>
                                 )}
+
+                                <button onClick={handleCopyResults} className="flex items-center gap-2 mx-auto mt-4 px-4 py-2 text-sm text-zinc-500 hover:text-zinc-700 transition-colors">
+                                    <Copy className="w-4 h-4" />
+                                    {copied ? (content?.results?.copied || 'Copied!') : (content?.results?.copy || 'Copy results')}
+                                </button>
                             </motion.div>
                         ) : (
-                            <div className="flex items-center justify-center h-64 bg-white rounded-2xl border border-zinc-200 border-dashed">
-                                <div className="text-center">
-                                    <Calculator className="w-12 h-12 text-zinc-300 mx-auto mb-3" />
-                                    <p className="text-zinc-400 text-sm">{content?.results?.empty || 'Fill in the fields to see your results'}</p>
+                            <div className="opacity-40 pointer-events-none select-none">
+                                <div className="space-y-4 sticky top-24">
+                                    <h3 className="font-brand text-lg font-semibold text-zinc-900 mb-6 flex items-center gap-2">
+                                        <Calculator className="w-5 h-5 text-orange-500" />
+                                        {content?.results?.title || 'Results'}
+                                    </h3>
+                                    <div className="bg-white rounded-2xl border border-zinc-200 p-6 space-y-3">
+                                        <div className="flex justify-between items-center">
+                                            <span className="text-sm text-zinc-600">{content?.results?.revenue || 'Selling price'}</span>
+                                            <span className="font-semibold text-zinc-900">29.90 {sym}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-red-600">
+                                            <span className="text-sm">- {content?.results?.productCost || 'Product cost'}</span>
+                                            <span className="font-semibold">8.50 {sym}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-red-600">
+                                            <span className="text-sm">- {content?.results?.shipping || 'Shipping'}</span>
+                                            <span className="font-semibold">4.90 {sym}</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-red-600">
+                                            <span className="text-sm">- {content?.results?.fees || 'Payment fees'}</span>
+                                            <span className="font-semibold">1.12 {sym}</span>
+                                        </div>
+                                        <div className="h-px bg-zinc-200 my-2" />
+                                        <div className="flex justify-between items-center">
+                                            <span className="font-semibold text-zinc-900">{content?.results?.profitPerOrder || 'Net profit / order'}</span>
+                                            <span className="text-xl font-bold text-emerald-600">15.38 {sym}</span>
+                                        </div>
+                                    </div>
+                                    <p className="text-center text-sm text-zinc-400 mt-4">{content?.results?.empty || 'Fill in the fields to see your results'}</p>
                                 </div>
                             </div>
                         )}
                     </div>
                 </div>
             </div>
+
+            {showStickyBar && hasResults && (
+                <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-white/95 backdrop-blur-md border-t border-zinc-200 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-3">
+                    <div className="flex items-center justify-between max-w-lg mx-auto">
+                        <div className="flex gap-4">
+                            <div>
+                                <p className="text-[10px] text-zinc-400 uppercase font-medium">{content?.results?.profitPerOrder || 'Net profit'}</p>
+                                <p className={`text-lg font-bold ${profitPerOrder >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>{fmt(profitPerOrder)}</p>
+                            </div>
+                            <div>
+                                <p className="text-[10px] text-zinc-400 uppercase font-medium">ROAS BE</p>
+                                <p className="text-lg font-bold text-zinc-900">{roasBreakeven > 0 ? `${roasBreakeven.toFixed(2)}x` : '\u2014'}</p>
+                            </div>
+                        </div>
+                        <button
+                            onClick={() => resultsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                            className="flex items-center gap-1.5 px-4 py-2 bg-orange-500 text-white text-sm font-medium rounded-xl hover:bg-orange-600 transition-colors"
+                        >
+                            <ArrowDown className="w-3.5 h-3.5" />
+                            {content?.results?.seeDetails || 'Details'}
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

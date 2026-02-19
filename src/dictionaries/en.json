@@ -673,7 +673,8 @@
             "fees": "Payment fees",
             "profitPerOrder": "Net profit / order",
             "margin": "Net margin",
-            "salesNeeded": "Sales needed",
+            "breakEvenOrders": "Break-even orders",
+            "maxCPA": "Max CPA",
             "empty": "Fill in the fields to see your results",
             "monthlyTitle": "Monthly simulation",
             "monthlyRevenue": "Revenue needed",
@@ -684,7 +685,15 @@
             "returnsImpact": "Returns Impact",
             "monthlyFixedCosts": "Fixed Costs",
             "roasBreakeven": "ROAS Breakeven",
-            "poasBreakeven": "POAS Breakeven"
+            "seeDetails": "Details",
+            "copy": "Copy results",
+            "copied": "Copied!"
+        },
+        "tooltips": {
+            "vatIncluded": "Enable if your selling price already includes VAT. The calculator will deduct VAT to find your net revenue.",
+            "socialBase": "Choose whether social charges apply to your net revenue (e.g. micro-enterprise) or to your net profit (e.g. SAS, Ltd).",
+            "returnRate": "Average percentage of orders returned. Reduces your effective revenue per order.",
+            "roasBreakeven": "The minimum ROAS needed for each sale to cover all costs. Below this, you lose money on every order."
         },
         "presets": {
             "countryLabel": "Country / Region",
@@ -711,7 +720,22 @@
             "usa_llc": "LLC",
             "usa_corp": "S-Corp",
             "uae_freezone": "Free Zone LLC",
-            "uae_mainland": "Mainland License"
+            "uae_mainland": "Mainland License",
+            "france_micro_hint": "No VAT, flat social charges",
+            "france_micro_vat_hint": "With VAT, flat social charges",
+            "france_sas_hint": "Corporate, charges on profit",
+            "france_sarl_hint": "Corporate, charges on profit",
+            "germany_klein_hint": "VAT exempt, no social charges",
+            "germany_einzelunternehmen_hint": "With VAT, no social charges",
+            "germany_gmbh_hint": "Corporate, charges on profit",
+            "uk_sole_hint": "Personal business, NI on profit",
+            "uk_ltd_hint": "Limited company, NI on profit",
+            "uk_llp_hint": "Partnership, NI on profit",
+            "usa_sole_hint": "Personal business, self-employment tax",
+            "usa_llc_hint": "Pass-through entity, SE tax",
+            "usa_corp_hint": "Corporate, employer FICA",
+            "uae_freezone_hint": "5% VAT, no income tax",
+            "uae_mainland_hint": "5% VAT, no income tax"
         },
         "seo": {
             "title": "How to use the ROAS calculator",

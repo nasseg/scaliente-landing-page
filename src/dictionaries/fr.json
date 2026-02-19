@@ -673,7 +673,7 @@
             "fees": "Frais paiement",
             "profitPerOrder": "Profit net / commande",
             "margin": "Marge nette",
-            "salesNeeded": "Ventes requises",
+            "breakEvenOrders": "Seuil de rentabilité",
             "empty": "Remplissez les champs pour voir vos r\u00e9sultats",
             "monthlyTitle": "Simulation mensuelle",
             "monthlyRevenue": "CA n\u00e9cessaire",
@@ -684,7 +684,16 @@
             "returnsImpact": "Impact retours",
             "monthlyFixedCosts": "Charges fixes",
             "roasBreakeven": "ROAS Breakeven",
-            "poasBreakeven": "POAS Breakeven"
+            "maxCPA": "CPA Max",
+            "seeDetails": "Détails",
+            "copy": "Copier les résultats",
+            "copied": "Copié !"
+        },
+        "tooltips": {
+            "vatIncluded": "Activez si votre prix de vente inclut déjà la TVA. Le calculateur déduira la TVA pour trouver votre CA HT.",
+            "socialBase": "Choisissez si les charges sociales s'appliquent sur le CA HT (ex : micro-entreprise) ou sur le bénéfice net (ex : SAS, SARL).",
+            "returnRate": "Pourcentage moyen de commandes retournées. Réduit votre revenu effectif par commande.",
+            "roasBreakeven": "Le ROAS minimum pour que chaque vente couvre tous les coûts. En dessous, vous perdez de l'argent sur chaque commande."
         },
         "presets": {
             "countryLabel": "Pays / R\u00e9gion",
@@ -711,7 +720,22 @@
             "usa_llc": "LLC",
             "usa_corp": "S-Corp",
             "uae_freezone": "Free Zone LLC",
-            "uae_mainland": "Mainland License"
+            "uae_mainland": "Mainland License",
+            "france_micro_hint": "Sans TVA, cotisations forfaitaires",
+            "france_micro_vat_hint": "Avec TVA, cotisations forfaitaires",
+            "france_sas_hint": "Société, charges sur bénéfice",
+            "france_sarl_hint": "Société, charges sur bénéfice",
+            "germany_klein_hint": "Exonéré TVA, sans charges",
+            "germany_einzelunternehmen_hint": "Avec TVA, sans charges sociales",
+            "germany_gmbh_hint": "Société, charges sur bénéfice",
+            "uk_sole_hint": "Auto-entrepreneur, NI sur bénéfice",
+            "uk_ltd_hint": "Société limitée, NI sur bénéfice",
+            "uk_llp_hint": "Partenariat, NI sur bénéfice",
+            "usa_sole_hint": "Auto-entrepreneur, taxe SE",
+            "usa_llc_hint": "Entité pass-through, taxe SE",
+            "usa_corp_hint": "Société, FICA employeur",
+            "uae_freezone_hint": "5% TVA, pas d'impôt",
+            "uae_mainland_hint": "5% TVA, pas d'impôt"
         },
         "seo": {
             "title": "Comment utiliser le calculateur ROAS",

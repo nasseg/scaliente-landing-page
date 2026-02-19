@@ -673,7 +673,7 @@
             "fees": "Zahlungsgeb\u00fchren",
             "profitPerOrder": "Nettogewinn / Bestellung",
             "margin": "Nettomarge",
-            "salesNeeded": "Ben\u00f6tigte Verk\u00e4ufe",
+            "breakEvenOrders": "Break-even Bestellungen",
             "empty": "F\u00fcllen Sie die Felder aus, um Ihre Ergebnisse zu sehen",
             "monthlyTitle": "Monatliche Simulation",
             "monthlyRevenue": "Ben\u00f6tigter Umsatz",
@@ -684,7 +684,16 @@
             "returnsImpact": "Retouren-Auswirkung",
             "monthlyFixedCosts": "Fixkosten",
             "roasBreakeven": "ROAS Breakeven",
-            "poasBreakeven": "POAS Breakeven"
+            "maxCPA": "Max CPA",
+            "seeDetails": "Details",
+            "copy": "Ergebnisse kopieren",
+            "copied": "Kopiert!"
+        },
+        "tooltips": {
+            "vatIncluded": "Aktivieren Sie dies, wenn Ihr Verkaufspreis bereits die MwSt enthält. Der Rechner zieht die MwSt ab, um Ihren Nettoumsatz zu ermitteln.",
+            "socialBase": "Wählen Sie, ob Sozialabgaben auf den Nettoumsatz (z.B. Kleinunternehmer) oder auf den Nettogewinn (z.B. GmbH) anfallen.",
+            "returnRate": "Durchschnittlicher Prozentsatz der retournierten Bestellungen. Reduziert Ihren effektiven Umsatz pro Bestellung.",
+            "roasBreakeven": "Der minimale ROAS, damit jeder Verkauf alle Kosten deckt. Darunter verlieren Sie bei jeder Bestellung Geld."
         },
         "presets": {
             "countryLabel": "Land / Region",
@@ -711,7 +720,22 @@
             "usa_llc": "LLC",
             "usa_corp": "S-Corp",
             "uae_freezone": "Free Zone LLC",
-            "uae_mainland": "Mainland License"
+            "uae_mainland": "Mainland License",
+            "france_micro_hint": "Ohne MwSt, Pauschalabgaben",
+            "france_micro_vat_hint": "Mit MwSt, Pauschalabgaben",
+            "france_sas_hint": "Kapitalgesellschaft, Abgaben auf Gewinn",
+            "france_sarl_hint": "Kapitalgesellschaft, Abgaben auf Gewinn",
+            "germany_klein_hint": "MwSt-befreit, keine Sozialabgaben",
+            "germany_einzelunternehmen_hint": "Mit MwSt, keine Sozialabgaben",
+            "germany_gmbh_hint": "Kapitalgesellschaft, Abgaben auf Gewinn",
+            "uk_sole_hint": "Einzelunternehmer, NI auf Gewinn",
+            "uk_ltd_hint": "Gesellschaft, NI auf Gewinn",
+            "uk_llp_hint": "Partnerschaft, NI auf Gewinn",
+            "usa_sole_hint": "Einzelunternehmer, SE-Steuer",
+            "usa_llc_hint": "Durchleitungseinheit, SE-Steuer",
+            "usa_corp_hint": "Kapitalgesellschaft, Arbeitgeber-FICA",
+            "uae_freezone_hint": "5% MwSt, keine Einkommensteuer",
+            "uae_mainland_hint": "5% MwSt, keine Einkommensteuer"
         },
         "seo": {
             "title": "So verwenden Sie den ROAS-Rechner",
