@@ -20,9 +20,7 @@ const ContentPageLayout = ({
 
         {/* Hero Section */}
         <div className="relative z-10">
-            <div className="absolute bottom-0 left-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
-            <div className="absolute bottom-0 right-0 w-12 h-12 md:w-14 md:h-14 bg-[#fafafa]" />
-            <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem]">
+            <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa]" style={{ clipPath: 'inset(0 -3rem -3rem -3rem)' }}>
                 <div className="absolute inset-0 grain pointer-events-none" />
                 <div className="max-w-4xl mx-auto px-6 pt-32 pb-20 text-center relative z-10">
                     <h1 className="font-brand text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-[-0.025em]">
