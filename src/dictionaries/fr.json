@@ -657,7 +657,10 @@
             "onProfit": "sur le profit net",
             "monthlyFixedCosts": "Charges fixes mensuelles",
             "fixedCostsHint": "Shopify, apps, domaine...",
-            "returnRate": "Taux de retours (%)"
+            "returnRate": "Taux de retours (%)",
+            "packagingCost": "Coût emballage par commande",
+            "customsDuty": "Droits de douane / import par unité",
+            "discountRate": "Taux moyen de remise / coupon (%)"
         },
         "advanced": {
             "toggle": "Plus d'options"
@@ -684,6 +687,9 @@
             "returnsImpact": "Impact retours",
             "monthlyFixedCosts": "Charges fixes",
             "roasBreakeven": "ROAS Breakeven",
+            "discountImpact": "Remises",
+            "packaging": "Emballage",
+            "customs": "Droits de douane",
             "maxCPA": "CPA Max",
             "seeDetails": "Détails",
             "copy": "Copier les résultats",
@@ -693,7 +699,10 @@
             "vatIncluded": "Activez si votre prix de vente inclut déjà la TVA. Le calculateur déduira la TVA pour trouver votre CA HT.",
             "socialBase": "Choisissez si les charges sociales s'appliquent sur le CA HT (ex : micro-entreprise) ou sur le bénéfice net (ex : SAS, SARL).",
             "returnRate": "Pourcentage moyen de commandes retournées. Réduit votre revenu effectif par commande.",
-            "roasBreakeven": "Le ROAS minimum pour que chaque vente couvre tous les coûts. En dessous, vous perdez de l'argent sur chaque commande."
+            "roasBreakeven": "Le ROAS minimum pour que chaque vente couvre tous les coûts. En dessous, vous perdez de l'argent sur chaque commande.",
+            "packagingCost": "Coût de l'emballage, étiquettes et matériaux d'expédition par commande. Inclut boîtes, papier bulle, inserts, etc.",
+            "customsDuty": "Droits de douane, taxes d'importation ou frais de courtage par unité. Applicable si vous importez vos produits.",
+            "discountRate": "Pourcentage moyen de remise accordé via codes promo, soldes ou coupons. Réduit votre revenu effectif par commande."
         },
         "presets": {
             "countryLabel": "Pays / R\u00e9gion",

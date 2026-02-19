@@ -17,6 +17,9 @@ export function computeRoas({
     returns = 0,
     adBudget = 0,
     fixedCosts = 0,
+    packaging = 0,
+    customs = 0,
+    discount = 0,
 }) {
     // 1. VAT deduction
     const netRevenue = vatIncluded && vat > 0 ? price / (1 + vat / 100) : price;
@@ -26,17 +29,21 @@ export function computeRoas({
     const effectiveRevenue = returns > 0 ? netRevenue * (1 - returns / 100) : netRevenue;
     const returnsAmount = netRevenue - effectiveRevenue;
 
+    // 2b. Discount impact (coupons, promos — reduces effective revenue)
+    const revenueAfterDiscount = discount > 0 ? effectiveRevenue * (1 - discount / 100) : effectiveRevenue;
+    const discountAmount = effectiveRevenue - revenueAfterDiscount;
+
     // 3. Variable costs (payment fee on original price since that's what gateway charges)
     const paymentFee = (price * feeRate / 100) + fixedFee;
-    const totalVariableCosts = cost + shipping + paymentFee + supplierShip;
+    const totalVariableCosts = cost + shipping + paymentFee + supplierShip + packaging + customs;
 
     // 4. Gross profit
-    const grossProfit = effectiveRevenue - totalVariableCosts;
+    const grossProfit = revenueAfterDiscount - totalVariableCosts;
 
     // 5. Social charges
     const socialChargesAmount = socialRate > 0
         ? socialBase === 'revenue'
-            ? effectiveRevenue * socialRate / 100
+            ? revenueAfterDiscount * socialRate / 100
             : Math.max(0, grossProfit) * socialRate / 100
         : 0;
 
@@ -59,6 +66,8 @@ export function computeRoas({
         vatAmount,
         effectiveRevenue,
         returnsAmount,
+        revenueAfterDiscount,
+        discountAmount,
         paymentFee,
         totalVariableCosts,
         grossProfit,

@@ -657,7 +657,10 @@
             "onProfit": "auf den Nettogewinn",
             "monthlyFixedCosts": "Monatliche Fixkosten",
             "fixedCostsHint": "Shopify, Apps, Domain...",
-            "returnRate": "Retourenquote (%)"
+            "returnRate": "Retourenquote (%)",
+            "packagingCost": "Verpackungskosten pro Bestellung",
+            "customsDuty": "Zoll- / Importgebühren pro Einheit",
+            "discountRate": "Durchschnittlicher Rabatt / Coupon-Satz (%)"
         },
         "advanced": {
             "toggle": "Weitere Optionen"
@@ -684,6 +687,9 @@
             "returnsImpact": "Retouren-Auswirkung",
             "monthlyFixedCosts": "Fixkosten",
             "roasBreakeven": "ROAS Breakeven",
+            "discountImpact": "Rabatte",
+            "packaging": "Verpackung",
+            "customs": "Zoll / Abgaben",
             "maxCPA": "Max CPA",
             "seeDetails": "Details",
             "copy": "Ergebnisse kopieren",
@@ -693,7 +699,10 @@
             "vatIncluded": "Aktivieren Sie dies, wenn Ihr Verkaufspreis bereits die MwSt enthält. Der Rechner zieht die MwSt ab, um Ihren Nettoumsatz zu ermitteln.",
             "socialBase": "Wählen Sie, ob Sozialabgaben auf den Nettoumsatz (z.B. Kleinunternehmer) oder auf den Nettogewinn (z.B. GmbH) anfallen.",
             "returnRate": "Durchschnittlicher Prozentsatz der retournierten Bestellungen. Reduziert Ihren effektiven Umsatz pro Bestellung.",
-            "roasBreakeven": "Der minimale ROAS, damit jeder Verkauf alle Kosten deckt. Darunter verlieren Sie bei jeder Bestellung Geld."
+            "roasBreakeven": "Der minimale ROAS, damit jeder Verkauf alle Kosten deckt. Darunter verlieren Sie bei jeder Bestellung Geld.",
+            "packagingCost": "Kosten für Verpackung, Etiketten und Versandmaterial pro Bestellung. Inkl. Kartons, Polstermaterial, Beilagen usw.",
+            "customsDuty": "Zollgebühren, Einfuhrsteuern oder Maklergebühren pro Einheit. Relevant, wenn Sie Produkte importieren.",
+            "discountRate": "Durchschnittlicher Rabatt über Gutscheincodes, Aktionen oder Coupons. Reduziert Ihren effektiven Umsatz pro Bestellung."
         },
         "presets": {
             "countryLabel": "Land / Region",

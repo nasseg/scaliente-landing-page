@@ -657,7 +657,10 @@
             "onProfit": "on net profit",
             "monthlyFixedCosts": "Monthly Fixed Costs",
             "fixedCostsHint": "Shopify, apps, domain...",
-            "returnRate": "Return Rate (%)"
+            "returnRate": "Return Rate (%)",
+            "packagingCost": "Packaging cost per order",
+            "customsDuty": "Customs / import duty per unit",
+            "discountRate": "Average discount / coupon rate (%)"
         },
         "advanced": {
             "toggle": "More options"
@@ -685,6 +688,9 @@
             "returnsImpact": "Returns Impact",
             "monthlyFixedCosts": "Fixed Costs",
             "roasBreakeven": "ROAS Breakeven",
+            "discountImpact": "Discounts",
+            "packaging": "Packaging",
+            "customs": "Customs / duties",
             "seeDetails": "Details",
             "copy": "Copy results",
             "copied": "Copied!"
@@ -693,7 +699,10 @@
             "vatIncluded": "Enable if your selling price already includes VAT. The calculator will deduct VAT to find your net revenue.",
             "socialBase": "Choose whether social charges apply to your net revenue (e.g. micro-enterprise) or to your net profit (e.g. SAS, Ltd).",
             "returnRate": "Average percentage of orders returned. Reduces your effective revenue per order.",
-            "roasBreakeven": "The minimum ROAS needed for each sale to cover all costs. Below this, you lose money on every order."
+            "roasBreakeven": "The minimum ROAS needed for each sale to cover all costs. Below this, you lose money on every order.",
+            "packagingCost": "Cost of packaging materials per order (box, bubble wrap, tape, inserts).",
+            "customsDuty": "Import duties, customs fees, or tariffs per unit. Typically 5-30% of product cost for international sourcing.",
+            "discountRate": "Average discount given via coupons or promotions. Reduces your effective revenue per order."
         },
         "presets": {
             "countryLabel": "Country / Region",

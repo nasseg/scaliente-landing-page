@@ -105,6 +105,9 @@ const RoasCalculator = ({ content, common, lang }) => {
     // Advanced fields
     const [supplierShipping, setSupplierShipping] = useState('');
     const [fixedPaymentFee, setFixedPaymentFee] = useState('0.25');
+    const [packagingCost, setPackagingCost] = useState('');
+    const [customsDuty, setCustomsDuty] = useState('');
+    const [discountRate, setDiscountRate] = useState('');
 
     // Tax fields
     const [vatRate, setVatRate] = useState('');
@@ -159,6 +162,9 @@ const RoasCalculator = ({ content, common, lang }) => {
     const socialRate = parseFloat(socialChargesRate) || 0;
     const fixedCosts = parseFloat(monthlyFixedCosts) || 0;
     const returns = parseFloat(returnRate) || 0;
+    const packaging = parseFloat(packagingCost) || 0;
+    const customs = parseFloat(customsDuty) || 0;
+    const discount = parseFloat(discountRate) || 0;
 
     // 1. VAT deduction
     const netRevenue = vatIncluded && vat > 0 ? price / (1 + vat / 100) : price;
@@ -168,17 +174,21 @@ const RoasCalculator = ({ content, common, lang }) => {
     const effectiveRevenue = returns > 0 ? netRevenue * (1 - returns / 100) : netRevenue;
     const returnsAmount = netRevenue - effectiveRevenue;
 
+    // 2b. Discount impact (coupons, promos — reduces effective revenue)
+    const revenueAfterDiscount = discount > 0 ? effectiveRevenue * (1 - discount / 100) : effectiveRevenue;
+    const discountAmount = effectiveRevenue - revenueAfterDiscount;
+
     // 3. Variable costs (payment fee on original price since that's what gateway charges)
     const paymentFee = (price * feeRate / 100) + fixedFee;
-    const totalVariableCosts = cost + shipping + paymentFee + supplierShip;
+    const totalVariableCosts = cost + shipping + paymentFee + supplierShip + packaging + customs;
 
     // 4. Gross profit
-    const grossProfit = effectiveRevenue - totalVariableCosts;
+    const grossProfit = revenueAfterDiscount - totalVariableCosts;
 
     // 5. Social charges
     const socialChargesAmount = socialRate > 0
         ? socialBase === 'revenue'
-            ? effectiveRevenue * socialRate / 100
+            ? revenueAfterDiscount * socialRate / 100
             : Math.max(0, grossProfit) * socialRate / 100
         : 0;
 
@@ -214,10 +224,14 @@ const RoasCalculator = ({ content, common, lang }) => {
     const handleCopyResults = () => {
         const text = [
             `${content?.results?.revenue || 'Selling price'}: ${fmt(price)}`,
+            vatAmount > 0 ? `${content?.results?.vatDeducted || 'VAT'}: -${fmt(vatAmount)}` : '',
+            returnsAmount > 0 ? `${content?.results?.returnsImpact || 'Returns'}: -${fmt(returnsAmount)}` : '',
+            discountAmount > 0 ? `${content?.results?.discountImpact || 'Discounts'}: -${fmt(discountAmount)}` : '',
             `${content?.results?.productCost || 'Product cost'}: -${fmt(cost)}`,
             `${content?.results?.shipping || 'Shipping'}: -${fmt(shipping + supplierShip)}`,
+            packaging > 0 ? `${content?.results?.packaging || 'Packaging'}: -${fmt(packaging)}` : '',
+            customs > 0 ? `${content?.results?.customs || 'Customs'}: -${fmt(customs)}` : '',
             `${content?.results?.fees || 'Payment fees'}: -${fmt(paymentFee)}`,
-            vatAmount > 0 ? `${content?.results?.vatDeducted || 'VAT'}: -${fmt(vatAmount)}` : '',
             socialChargesAmount > 0 ? `${content?.results?.socialCharges || 'Social Charges'}: -${fmt(socialChargesAmount)}` : '',
             `---`,
             `${content?.results?.profitPerOrder || 'Net profit / order'}: ${fmt(profitPerOrder)}`,
@@ -475,6 +489,52 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         step="0.01"
                                     />
                                 </div>
+                                <div>
+                                    <label className={labelClass}>
+                                        {content?.fields?.packagingCost || 'Packaging cost per order'} ({sym})
+                                        <Tooltip text={content?.tooltips?.packagingCost || 'Cost of packaging materials per order (box, bubble wrap, tape, inserts).'} />
+                                    </label>
+                                    <input
+                                        type="number"
+                                        value={packagingCost}
+                                        onChange={(e) => setPackagingCost(e.target.value)}
+                                        placeholder="1.50"
+                                        className={inputClass}
+                                        min="0"
+                                        step="0.01"
+                                    />
+                                </div>
+                                <div>
+                                    <label className={labelClass}>
+                                        {content?.fields?.customsDuty || 'Customs / import duty per unit'} ({sym})
+                                        <Tooltip text={content?.tooltips?.customsDuty || 'Import duties, customs fees, or tariffs per unit. Typically 5-30% of product cost for international sourcing.'} />
+                                    </label>
+                                    <input
+                                        type="number"
+                                        value={customsDuty}
+                                        onChange={(e) => setCustomsDuty(e.target.value)}
+                                        placeholder="2.00"
+                                        className={inputClass}
+                                        min="0"
+                                        step="0.01"
+                                    />
+                                </div>
+                                <div>
+                                    <label className={labelClass}>
+                                        {content?.fields?.discountRate || 'Average discount / coupon rate (%)'}
+                                        <Tooltip text={content?.tooltips?.discountRate || 'Average discount given via coupons or promotions. Reduces your effective revenue per order.'} />
+                                    </label>
+                                    <input
+                                        type="number"
+                                        value={discountRate}
+                                        onChange={(e) => setDiscountRate(e.target.value)}
+                                        placeholder="10"
+                                        className={inputClass}
+                                        min="0"
+                                        max="100"
+                                        step="0.1"
+                                    />
+                                </div>
                             </motion.div>
                         )}
 
@@ -647,6 +707,14 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         </div>
                                     )}
 
+                                    {/* Discount line (conditional) */}
+                                    {discountAmount > 0 && (
+                                        <div className="flex justify-between items-center text-amber-600">
+                                            <span className="text-sm">- {content?.results?.discountImpact || 'Discounts'} ({discount}%)</span>
+                                            <span className="font-semibold">{fmt(discountAmount)}</span>
+                                        </div>
+                                    )}
+
                                     <div className="flex justify-between items-center text-red-600">
                                         <span className="text-sm">- {content?.results?.productCost || 'Product cost'}</span>
                                         <span className="font-semibold">{fmt(cost)}</span>
@@ -655,6 +723,18 @@ const RoasCalculator = ({ content, common, lang }) => {
                                         <span className="text-sm">- {content?.results?.shipping || 'Shipping'}</span>
                                         <span className="font-semibold">{fmt(shipping + supplierShip)}</span>
                                     </div>
+                                    {packaging > 0 && (
+                                        <div className="flex justify-between items-center text-red-600">
+                                            <span className="text-sm">- {content?.results?.packaging || 'Packaging'}</span>
+                                            <span className="font-semibold">{fmt(packaging)}</span>
+                                        </div>
+                                    )}
+                                    {customs > 0 && (
+                                        <div className="flex justify-between items-center text-red-600">
+                                            <span className="text-sm">- {content?.results?.customs || 'Customs / duties'}</span>
+                                            <span className="font-semibold">{fmt(customs)}</span>
+                                        </div>
+                                    )}
                                     <div className="flex justify-between items-center text-red-600">
                                         <span className="text-sm">- {content?.results?.fees || 'Payment fees'}</span>
                                         <span className="font-semibold">{fmt(paymentFee)}</span>

@@ -136,6 +136,145 @@ describe('computeRoas', () => {
         });
     });
 
+    // ─── Discount ────────────────────────────────────────────────
+    describe('discount / coupon rate', () => {
+        it('does not apply discount when rate is 0', () => {
+            const r = computeRoas({ price: 100, cost: 30, discount: 0 });
+            expect(r.discountAmount).toBe(0);
+            expect(r.revenueAfterDiscount).toBeCloseTo(100, 2);
+        });
+
+        it('reduces effective revenue by discount rate', () => {
+            const r = computeRoas({ price: 100, cost: 30, discount: 15 });
+            // revenueAfterDiscount = 100 * 0.85 = 85
+            expect(r.revenueAfterDiscount).toBeCloseTo(85, 2);
+            expect(r.discountAmount).toBeCloseTo(15, 2);
+        });
+
+        it('applies discount after returns', () => {
+            const r = computeRoas({ price: 100, cost: 30, returns: 10, discount: 20 });
+            // effectiveRevenue = 100 * 0.9 = 90
+            // revenueAfterDiscount = 90 * 0.8 = 72
+            expect(r.effectiveRevenue).toBeCloseTo(90, 2);
+            expect(r.revenueAfterDiscount).toBeCloseTo(72, 2);
+            expect(r.discountAmount).toBeCloseTo(18, 2);
+        });
+
+        it('applies discount after VAT + returns', () => {
+            const r = computeRoas({ price: 120, cost: 30, vat: 20, vatIncluded: true, returns: 10, discount: 10 });
+            // netRevenue = 120 / 1.20 = 100
+            // effectiveRevenue = 100 * 0.9 = 90
+            // revenueAfterDiscount = 90 * 0.9 = 81
+            expect(r.revenueAfterDiscount).toBeCloseTo(81, 2);
+            expect(r.discountAmount).toBeCloseTo(9, 2);
+        });
+
+        it('reduces profit and increases ROAS breakeven', () => {
+            const noDiscount = computeRoas({ price: 100, cost: 30 });
+            const withDiscount = computeRoas({ price: 100, cost: 30, discount: 20 });
+            expect(withDiscount.profitPerOrder).toBeLessThan(noDiscount.profitPerOrder);
+            expect(withDiscount.roasBreakeven).toBeGreaterThan(noDiscount.roasBreakeven);
+        });
+
+        it('social charges on revenue use revenueAfterDiscount', () => {
+            const r = computeRoas({ price: 100, cost: 30, discount: 10, socialRate: 13.8, socialBase: 'revenue' });
+            // revenueAfterDiscount = 90
+            // socialCharges = 90 * 13.8% = 12.42
+            expect(r.socialChargesAmount).toBeCloseTo(12.42, 2);
+        });
+    });
+
+    // ─── Packaging cost ─────────────────────────────────────────
+    describe('packaging cost', () => {
+        it('does not add packaging when 0', () => {
+            const r = computeRoas({ price: 100, cost: 30, packaging: 0 });
+            expect(r.totalVariableCosts).toBeCloseTo(30, 2);
+        });
+
+        it('adds packaging to variable costs', () => {
+            const r = computeRoas({ price: 100, cost: 30, shipping: 5, packaging: 3 });
+            // totalVariableCosts = 30 + 5 + 0 (fee) + 0 (supplier) + 3 = 38
+            expect(r.totalVariableCosts).toBeCloseTo(38, 2);
+        });
+
+        it('reduces profit per order', () => {
+            const without = computeRoas({ price: 100, cost: 30 });
+            const with_ = computeRoas({ price: 100, cost: 30, packaging: 4 });
+            expect(with_.profitPerOrder).toBeCloseTo(without.profitPerOrder - 4, 2);
+        });
+    });
+
+    // ─── Customs / import duty ──────────────────────────────────
+    describe('customs / import duty', () => {
+        it('does not add customs when 0', () => {
+            const r = computeRoas({ price: 100, cost: 30, customs: 0 });
+            expect(r.totalVariableCosts).toBeCloseTo(30, 2);
+        });
+
+        it('adds customs to variable costs', () => {
+            const r = computeRoas({ price: 100, cost: 30, customs: 2.50 });
+            // totalVariableCosts = 30 + 0 + 0 + 0 + 0 + 2.50 = 32.50
+            expect(r.totalVariableCosts).toBeCloseTo(32.50, 2);
+        });
+
+        it('reduces profit per order', () => {
+            const without = computeRoas({ price: 100, cost: 30 });
+            const with_ = computeRoas({ price: 100, cost: 30, customs: 5 });
+            expect(with_.profitPerOrder).toBeCloseTo(without.profitPerOrder - 5, 2);
+        });
+    });
+
+    // ─── Combined new fields ────────────────────────────────────
+    describe('packaging + customs + discount combined', () => {
+        it('all three reduce profit correctly', () => {
+            const r = computeRoas({ price: 100, cost: 30, packaging: 3, customs: 2, discount: 10 });
+            // revenueAfterDiscount = 100 * 0.9 = 90
+            // totalVariableCosts = 30 + 0 + 0 + 0 + 3 + 2 = 35
+            // grossProfit = 90 - 35 = 55
+            expect(r.revenueAfterDiscount).toBeCloseTo(90, 2);
+            expect(r.totalVariableCosts).toBeCloseTo(35, 2);
+            expect(r.grossProfit).toBeCloseTo(55, 2);
+            expect(r.profitPerOrder).toBeCloseTo(55, 2);
+        });
+
+        it('full scenario with all fields', () => {
+            const r = computeRoas({
+                price: 49.90, cost: 12, shipping: 4.90,
+                feeRate: 2.9, fixedFee: 0.25, supplierShip: 1.50,
+                vat: 20, vatIncluded: true,
+                socialRate: 13.8, socialBase: 'revenue',
+                returns: 5, discount: 8,
+                packaging: 2, customs: 1.50,
+                adBudget: 500, fixedCosts: 50,
+            });
+            // netRevenue = 49.90 / 1.20 = 41.5833
+            expect(r.netRevenue).toBeCloseTo(41.583, 1);
+            // effectiveRevenue = 41.583 * 0.95 = 39.504
+            expect(r.effectiveRevenue).toBeCloseTo(39.504, 1);
+            // revenueAfterDiscount = 39.504 * 0.92 = 36.344
+            expect(r.revenueAfterDiscount).toBeCloseTo(36.344, 0);
+            // paymentFee = (49.90 * 2.9%) + 0.25 = 1.6971
+            expect(r.paymentFee).toBeCloseTo(1.697, 2);
+            // totalVarCosts = 12 + 4.90 + 1.697 + 1.50 + 2 + 1.50 = 23.597
+            expect(r.totalVariableCosts).toBeCloseTo(23.597, 1);
+            // grossProfit = 36.344 - 23.597 = 12.747
+            expect(r.grossProfit).toBeCloseTo(12.747, 0);
+            // socialCharges = 36.344 * 13.8% = 5.015
+            expect(r.socialChargesAmount).toBeCloseTo(5.015, 0);
+            // profitPerOrder > 0
+            expect(r.profitPerOrder).toBeGreaterThan(0);
+            expect(r.roasBreakeven).toBeGreaterThan(1);
+            expect(r.ordersNeeded).toBeGreaterThan(0);
+        });
+
+        it('100% discount zeroes revenue and kills profit', () => {
+            const r = computeRoas({ price: 100, cost: 30, discount: 100 });
+            expect(r.revenueAfterDiscount).toBe(0);
+            expect(r.profitPerOrder).toBeLessThan(0);
+            expect(r.roasBreakeven).toBe(0);
+        });
+    });
+
     // ─── ROAS Breakeven ──────────────────────────────────────────
     describe('ROAS breakeven', () => {
         it('computes ROAS breakeven correctly', () => {
