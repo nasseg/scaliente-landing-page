@@ -426,11 +426,11 @@
             },
             "poas": {
                 "q": "Qu'est-ce que le POAS (Profit on Ad Spend) ?",
-                "a": "Le POAS (Profit on Ad Spend) mesure le profit généré pour chaque euro dépensé en publicité. Contrairement au ROAS qui ne considère que le chiffre d'affaires, le POAS déduit les COGS, frais de port, frais et taxes pour montrer votre vrai retour. Par exemple, si vous dépensez 100€ en pub et générez 500€ de CA mais 300€ de coûts, votre ROAS est de 5x mais votre POAS n'est que de 2x. Scaliente calcule automatiquement le ROAS et le POAS."
+                "a": "Le POAS (Profit on Ad Spend) mesure le profit généré pour chaque unité dépensée en publicité. Contrairement au ROAS qui ne considère que le chiffre d'affaires, le POAS déduit les COGS, frais de port, frais et taxes pour montrer votre vrai retour. Par exemple, si vous dépensez 100 en pub et générez 500 de CA mais 300 de coûts, votre ROAS est de 5x mais votre POAS n'est que de 2x. Scaliente calcule automatiquement le ROAS et le POAS."
             },
             "roasVsPoas": {
                 "q": "Quelle est la différence entre ROAS et POAS ?",
-                "a": "Le ROAS (Return on Ad Spend) = CA ÷ Dépenses Pub. Il indique combien de chiffre d'affaires chaque euro pub génère. Le POAS (Profit on Ad Spend) = Profit Net ÷ Dépenses Pub. Il indique combien de profit réel chaque euro pub génère après déduction des COGS, frais de port, frais de paiement et taxes. Le POAS est la métrique qui compte pour la rentabilité. Une boutique peut avoir un ROAS de 5x mais perdre de l'argent si les coûts sont trop élevés. Scaliente affiche les deux métriques en temps réel."
+                "a": "Le ROAS (Return on Ad Spend) = CA ÷ Dépenses Pub. Il indique combien de chiffre d'affaires chaque unité pub génère. Le POAS (Profit on Ad Spend) = Profit Net ÷ Dépenses Pub. Il indique combien de profit réel chaque unité pub génère après déduction des COGS, frais de port, frais de paiement et taxes. Le POAS est la métrique qui compte pour la rentabilité. Une boutique peut avoir un ROAS de 5x mais perdre de l'argent si les coûts sont trop élevés. Scaliente affiche les deux métriques en temps réel."
             },
             "costDeductions": {
                 "q": "Quels coûts déduire du chiffre d'affaires Shopify ?",
@@ -682,7 +682,9 @@
             "vatDeducted": "TVA revers\u00e9e",
             "socialCharges": "Charges sociales",
             "returnsImpact": "Impact retours",
-            "monthlyFixedCosts": "Charges fixes"
+            "monthlyFixedCosts": "Charges fixes",
+            "roasBreakeven": "ROAS Breakeven",
+            "poasBreakeven": "POAS Breakeven"
         },
         "presets": {
             "countryLabel": "Pays / R\u00e9gion",
@@ -713,7 +715,7 @@
         },
         "seo": {
             "title": "Comment utiliser le calculateur ROAS",
-            "p1": "Le ROAS (Return on Ad Spend) mesure le revenu g\u00e9n\u00e9r\u00e9 pour chaque euro d\u00e9pens\u00e9 en publicit\u00e9. Un ROAS de 3x signifie que pour 1\u20ac investi en pub, vous g\u00e9n\u00e9rez 3\u20ac de chiffre d'affaires.",
+            "p1": "Le ROAS (Return on Ad Spend) mesure le revenu g\u00e9n\u00e9r\u00e9 pour chaque unit\u00e9 mon\u00e9taire d\u00e9pens\u00e9e en publicit\u00e9. Un ROAS de 3x signifie que pour 1 d\u00e9pens\u00e9 en pub, vous g\u00e9n\u00e9rez 3x en chiffre d'affaires.",
             "p2": "Le ROAS breakeven est le ROAS minimum n\u00e9cessaire pour couvrir tous vos co\u00fbts (produit, livraison, frais de paiement) et atteindre le point de rentabilit\u00e9. En dessous de ce seuil, chaque vente vous fait perdre de l'argent.",
             "p3": "Le POAS (Profit on Ad Spend) va plus loin en mesurant le profit r\u00e9el par rapport aux d\u00e9penses publicitaires. Un POAS de 1x signifie que votre profit couvre exactement vos d\u00e9penses ads."
         },

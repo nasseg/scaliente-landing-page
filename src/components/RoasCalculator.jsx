@@ -626,7 +626,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                     <div className="bg-white rounded-xl border border-zinc-200 p-4">
                                         <div className="flex items-center gap-2 mb-2">
                                             <Target className="w-4 h-4 text-orange-500" />
-                                            <span className="text-xs text-zinc-500 uppercase font-medium">ROAS Breakeven</span>
+                                            <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.roasBreakeven || 'ROAS Breakeven'}</span>
                                         </div>
                                         <p className="text-2xl font-bold text-zinc-900">
                                             {roasBreakeven > 0 ? `${roasBreakeven.toFixed(2)}x` : '\u2014'}
@@ -636,7 +636,7 @@ const RoasCalculator = ({ content, common, lang }) => {
                                     <div className="bg-white rounded-xl border border-zinc-200 p-4">
                                         <div className="flex items-center gap-2 mb-2">
                                             <TrendingUp className="w-4 h-4 text-emerald-500" />
-                                            <span className="text-xs text-zinc-500 uppercase font-medium">POAS Breakeven</span>
+                                            <span className="text-xs text-zinc-500 uppercase font-medium">{content?.results?.poasBreakeven || 'POAS Breakeven'}</span>
                                         </div>
                                         <p className="text-2xl font-bold text-zinc-900">{poasBreakeven.toFixed(2)}x</p>
                                     </div>

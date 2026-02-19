@@ -426,11 +426,11 @@
             },
             "poas": {
                 "q": "What is POAS (Profit on Ad Spend)?",
-                "a": "POAS (Profit on Ad Spend) measures the profit generated for every euro spent on advertising. Unlike ROAS which only considers revenue, POAS deducts COGS, shipping, fees, and taxes to show your true return. For example, if you spend €100 on ads and generate €500 revenue but €300 in costs, your ROAS is 5x but your POAS is only 2x. Scaliente calculates both ROAS and POAS automatically."
+                "a": "POAS (Profit on Ad Spend) measures the profit generated for every unit spent on advertising. Unlike ROAS which only considers revenue, POAS deducts COGS, shipping, fees, and taxes to show your true return. For example, if you spend 100 on ads and generate 500 in revenue but 300 in costs, your ROAS is 5x but your POAS is only 2x. Scaliente calculates both ROAS and POAS automatically."
             },
             "roasVsPoas": {
                 "q": "What is the difference between ROAS and POAS?",
-                "a": "ROAS (Return on Ad Spend) = Revenue ÷ Ad Spend. It tells you how much revenue each ad euro generates. POAS (Profit on Ad Spend) = Net Profit ÷ Ad Spend. It tells you how much actual profit each ad euro generates after deducting COGS, shipping, payment fees, and taxes. POAS is the metric that matters for profitability. A store can have a 5x ROAS but be losing money if costs are too high. Scaliente shows both metrics in real time."
+                "a": "ROAS (Return on Ad Spend) = Revenue ÷ Ad Spend. It tells you how much revenue each ad dollar generates. POAS (Profit on Ad Spend) = Net Profit ÷ Ad Spend. It tells you how much actual profit each ad dollar generates after deducting COGS, shipping, payment fees, and taxes. POAS is the metric that matters for profitability. A store can have a 5x ROAS but be losing money if costs are too high. Scaliente shows both metrics in real time."
             },
             "costDeductions": {
                 "q": "What costs should I deduct from Shopify revenue?",
@@ -682,7 +682,9 @@
             "vatDeducted": "VAT Deducted",
             "socialCharges": "Social Charges",
             "returnsImpact": "Returns Impact",
-            "monthlyFixedCosts": "Fixed Costs"
+            "monthlyFixedCosts": "Fixed Costs",
+            "roasBreakeven": "ROAS Breakeven",
+            "poasBreakeven": "POAS Breakeven"
         },
         "presets": {
             "countryLabel": "Country / Region",
@@ -713,7 +715,7 @@
         },
         "seo": {
             "title": "How to use the ROAS calculator",
-            "p1": "ROAS (Return on Ad Spend) measures the revenue generated for every euro spent on advertising. A ROAS of 3x means that for every \u20ac1 invested in ads, you generate \u20ac3 in revenue.",
+            "p1": "ROAS (Return on Ad Spend) measures the revenue generated for every unit of currency spent on advertising. A ROAS of 3x means that for every 1 invested in ads, you generate 3 in revenue.",
             "p2": "The breakeven ROAS is the minimum ROAS needed to cover all your costs (product, shipping, payment fees) and reach the breakeven point. Below this threshold, every sale loses you money.",
             "p3": "POAS (Profit on Ad Spend) goes further by measuring actual profit relative to ad spend. A POAS of 1x means your profit exactly covers your ad spend."
         },
