@@ -40,7 +40,7 @@ const Testimonials = ({ content, founderStory }) => {
         color: idx === 0 ? "from-orange-500 to-amber-500" :
                idx === 1 ? "from-blue-500 to-indigo-500" :
                "from-emerald-500 to-teal-500",
-        rating: 5,
+        rating: idx === 1 ? 4 : 5,
         text: review.text
     })) || [];
 
@@ -100,9 +100,11 @@ const Testimonials = ({ content, founderStory }) => {
                 )}
 
                 {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:items-start">
                     {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={index} testimonial={testimonial} index={index} />
+                        <div key={index} className={index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''}>
+                            <TestimonialCard testimonial={testimonial} index={index} />
+                        </div>
                     ))}
                 </div>
 

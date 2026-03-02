@@ -33,7 +33,7 @@ const Hero = ({ content, common }) => {
     };
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        <section className="relative min-h-[100dvh] flex flex-col items-center justify-center overflow-hidden">
             {/* Grain Texture Only - WebGL background shows through */}
             <div className="absolute inset-0 grain pointer-events-none" />
 

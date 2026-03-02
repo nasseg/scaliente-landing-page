@@ -44,46 +44,46 @@ const FeatureSection = ({ content }) => {
 
     const colorMap = {
         purple: {
-            bg: 'bg-purple-50',
-            iconBg: 'bg-purple-100',
-            text: 'text-purple-600',
-            border: 'group-hover:border-purple-200',
-            glow: 'group-hover:shadow-purple-100/50'
+            bg: 'bg-purple-500/10',
+            iconBg: 'bg-purple-500/15',
+            text: 'text-purple-400',
+            border: 'group-hover:border-purple-500/30',
+            glow: 'group-hover:shadow-purple-500/10'
         },
         green: {
-            bg: 'bg-emerald-50',
-            iconBg: 'bg-emerald-100',
-            text: 'text-emerald-600',
-            border: 'group-hover:border-emerald-200',
-            glow: 'group-hover:shadow-emerald-100/50'
+            bg: 'bg-emerald-500/10',
+            iconBg: 'bg-emerald-500/15',
+            text: 'text-emerald-400',
+            border: 'group-hover:border-emerald-500/30',
+            glow: 'group-hover:shadow-emerald-500/10'
         },
         orange: {
-            bg: 'bg-orange-50',
-            iconBg: 'bg-orange-100',
-            text: 'text-orange-600',
-            border: 'group-hover:border-orange-200',
-            glow: 'group-hover:shadow-orange-100/50'
+            bg: 'bg-orange-500/10',
+            iconBg: 'bg-orange-500/15',
+            text: 'text-orange-400',
+            border: 'group-hover:border-orange-500/30',
+            glow: 'group-hover:shadow-orange-500/10'
         },
         cyan: {
-            bg: 'bg-cyan-50',
-            iconBg: 'bg-cyan-100',
-            text: 'text-cyan-600',
-            border: 'group-hover:border-cyan-200',
-            glow: 'group-hover:shadow-cyan-100/50'
+            bg: 'bg-cyan-500/10',
+            iconBg: 'bg-cyan-500/15',
+            text: 'text-cyan-400',
+            border: 'group-hover:border-cyan-500/30',
+            glow: 'group-hover:shadow-cyan-500/10'
         },
         pink: {
-            bg: 'bg-pink-50',
-            iconBg: 'bg-pink-100',
-            text: 'text-pink-600',
-            border: 'group-hover:border-pink-200',
-            glow: 'group-hover:shadow-pink-100/50'
+            bg: 'bg-pink-500/10',
+            iconBg: 'bg-pink-500/15',
+            text: 'text-pink-400',
+            border: 'group-hover:border-pink-500/30',
+            glow: 'group-hover:shadow-pink-500/10'
         },
         amber: {
-            bg: 'bg-amber-50',
-            iconBg: 'bg-amber-100',
-            text: 'text-amber-600',
-            border: 'group-hover:border-amber-200',
-            glow: 'group-hover:shadow-amber-100/50'
+            bg: 'bg-amber-500/10',
+            iconBg: 'bg-amber-500/15',
+            text: 'text-amber-400',
+            border: 'group-hover:border-amber-500/30',
+            glow: 'group-hover:shadow-amber-500/10'
         },
     };
 
@@ -141,25 +141,29 @@ const FeatureSection = ({ content }) => {
                 >
                     {features.map((feature, idx) => {
                         const colors = colorMap[feature.color];
+                        const isWide = idx === 0 || idx === 5;
+                        const spanClass = idx === 0 ? 'lg:col-span-2' : idx === 5 ? 'lg:col-span-3' : '';
                         return (
                             <motion.div
                                 key={idx}
                                 variants={itemVariants}
-                                className={`group relative p-7 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border}`}
+                                className={`group relative p-7 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border} ${spanClass}`}
                             >
                                 {/* Subtle gradient overlay on hover */}
                                 <div className={`absolute inset-0 rounded-2xl ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
 
-                                <div className="relative">
-                                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110`}>
+                                <div className={`relative ${isWide ? 'lg:flex lg:items-start lg:gap-6' : ''}`}>
+                                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center shrink-0 ${isWide ? 'mb-5 lg:mb-0' : 'mb-5'} transition-transform duration-300 group-hover:scale-110`}>
                                         <feature.icon className={`w-6 h-6 ${colors.text}`} />
                                     </div>
-                                    <h3 className="font-brand text-xl font-semibold text-[var(--text-primary)] mb-3 tracking-[-0.01em]">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-[var(--text-muted)] text-sm leading-relaxed">
-                                        {feature.desc}
-                                    </p>
+                                    <div>
+                                        <h3 className="font-brand text-xl font-semibold text-[var(--text-primary)] mb-3 tracking-[-0.01em]">
+                                            {feature.title}
+                                        </h3>
+                                        <p className="text-[var(--text-muted)] text-sm leading-relaxed">
+                                            {feature.desc}
+                                        </p>
+                                    </div>
                                 </div>
                             </motion.div>
                         );

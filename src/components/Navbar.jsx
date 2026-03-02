@@ -171,7 +171,7 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
 
                             <a
                                 href="https://apps.shopify.com/scaliente"
-                                className="group relative px-5 py-2.5 rounded-xl text-sm font-semibold text-white overflow-hidden transition-all duration-300"
+                                className="group relative px-5 py-2.5 rounded-xl text-sm font-semibold text-white overflow-hidden transition-all duration-300 active:scale-[0.98]"
                             >
                                 <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-orange-600 transition-all duration-300" />
                                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-orange-400 to-orange-500" />

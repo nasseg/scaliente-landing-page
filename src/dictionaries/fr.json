@@ -201,7 +201,7 @@
                 ],
                 "error": "Erreur de calcul"
             },
-            "quote": "\"J'ai oublié de noter les dépenses TikTok d'hier...\" 🤯"
+            "quote": "\"J'ai oublié de noter les dépenses TikTok d'hier...\""
         },
         "after": {
             "label": "La Clarté Scaliente",
@@ -218,7 +218,7 @@
                 "stable": "Stable",
                 "synced": "Données synchronisées"
             },
-            "quote": "Tout est là. Automatique. En temps réel. 🧘‍♂️"
+            "quote": "Tout est là. Automatique. En temps réel."
         }
     },
     "pricing": {
@@ -237,7 +237,7 @@
         "plans": {
             "discovery": {
                 "name": "Discovery",
-                "badge": "✨ Gratuit à vie",
+                "badge": "Gratuit à vie",
                 "desc": "Idéal pour débuter (Filleuls & Nouveaux shops)",
                 "features": {
                     "orders": "Jusqu'à 20 commandes/mois",
@@ -614,7 +614,7 @@
         "copyright": "© {{year}} Scaliente. Tous droits réservés."
     },
     "cookieConsent": {
-        "title": "🍪 Nous utilisons des cookies",
+        "title": "Nous utilisons des cookies",
         "text": "Ce site utilise des cookies essentiels au fonctionnement du site et des cookies d'analyse pour améliorer votre expérience. En cliquant sur \"Accepter\", vous consentez à l'utilisation de tous les cookies. Vous pouvez modifier vos préférences à tout moment.",
         "learnMore": "En savoir plus",
         "acceptAll": "Accepter tous les cookies",

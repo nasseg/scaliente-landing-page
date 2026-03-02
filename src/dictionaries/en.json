@@ -201,7 +201,7 @@
                 ],
                 "error": "Calculation Error"
             },
-            "quote": "\"I forgot to log yesterday's TikTok spend...\" 🤯"
+            "quote": "\"I forgot to log yesterday's TikTok spend...\""
         },
         "after": {
             "label": "Scaliente Clarity",
@@ -218,7 +218,7 @@
                 "stable": "Stable",
                 "synced": "Data synced"
             },
-            "quote": "Everything is there. Automatic. Real-time. 🧘‍♂️"
+            "quote": "Everything is there. Automatic. Real-time."
         }
     },
     "pricing": {
@@ -237,7 +237,7 @@
         "plans": {
             "discovery": {
                 "name": "Discovery",
-                "badge": "✨ Free Forever",
+                "badge": "Free Forever",
                 "desc": "Ideal to start (Referrals & New shops)",
                 "features": {
                     "orders": "Up to 20 orders/month",
@@ -614,7 +614,7 @@
         "copyright": "© {{year}} Scaliente. All rights reserved."
     },
     "cookieConsent": {
-        "title": "🍪 We use cookies",
+        "title": "We use cookies",
         "text": "This site uses essential cookies for site operation and analytics cookies to improve your experience. By clicking \"Accept\", you consent to the use of all cookies. You can modify your preferences at any time.",
         "learnMore": "Learn more",
         "acceptAll": "Accept all cookies",

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import LanguageSelector from './LanguageSelector';
 
 const Footer = ({ content, lang }) => (
-    <footer className="bg-[#09090b] relative z-20">
+    <footer className="bg-[#09090b] relative z-20" style={{'--text-primary':'#fff','--text-secondary':'#a1a1aa','--text-muted':'#71717a','--divider':'rgba(255,255,255,0.08)'}}>
         <div className="max-w-6xl mx-auto px-6 py-16">
             <nav aria-label="Footer navigation">
                 <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
@@ -18,10 +18,10 @@ const Footer = ({ content, lang }) => (
                                 className="h-8 w-auto"
                             />
                         </div>
-                        <p className="text-zinc-400 text-sm leading-relaxed mb-4">
+                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
                             {content?.tagline}
                         </p>
-                        <div className="flex items-center gap-2 text-xs text-zinc-500">
+                        <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
                             <span>🇺🇸</span>
                             <span>{content?.madeInUsa || 'Made in USA'}</span>
                         </div>
@@ -29,22 +29,22 @@ const Footer = ({ content, lang }) => (
 
                     {/* Product */}
                     <div>
-                        <h4 className="font-brand text-white font-semibold mb-4 text-sm">
+                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
                             {content?.product || "Produit"}
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href={`/${lang}/#features`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/#features`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.features || "Fonctionnalites"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/#pricing`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/#pricing`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.pricing || "Tarifs"}
                                 </Link>
                             </li>
                             <li>
-                                <a href="https://app.scaliente.com" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <a href="https://app.scaliente.com" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.login || "Connexion"}
                                 </a>
                             </li>
@@ -53,32 +53,32 @@ const Footer = ({ content, lang }) => (
 
                     {/* Resources */}
                     <div>
-                        <h4 className="font-brand text-white font-semibold mb-4 text-sm">
+                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
                             {content?.resources || "Ressources"}
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href={`/${lang}/tools/roas-calculator`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/tools/roas-calculator`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.calculator || "Calculateur ROAS"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-trueprofit`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/compare/scaliente-vs-trueprofit`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.compare || "Scaliente vs TrueProfit"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-triple-whale`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/compare/scaliente-vs-triple-whale`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.compareTripleWhale || "Scaliente vs Triple Whale"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-lifetimely`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/compare/scaliente-vs-lifetimely`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.compareLifetimely || "Scaliente vs Lifetimely"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/affiliate`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/affiliate`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.affiliate || "Programme affilie"}
                                 </Link>
                             </li>
@@ -87,32 +87,32 @@ const Footer = ({ content, lang }) => (
 
                     {/* Legal */}
                     <div>
-                        <h4 className="font-brand text-white font-semibold mb-4 text-sm">
+                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
                             {content?.legal || "Legal"}
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <Link href={`/${lang}/privacy-policy`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/privacy-policy`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.privacy || "Vie privee"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/terms-of-service`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/terms-of-service`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.terms || "CGU"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/terms-of-sale`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/terms-of-sale`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.termsOfSale || "CGV"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/cookies`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/cookies`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.cookies || "Cookies"}
                                 </Link>
                             </li>
                             <li>
-                                <Link href={`/${lang}/legal-mentions`} className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <Link href={`/${lang}/legal-mentions`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     {content?.links?.legalMentions || "Mentions legales"}
                                 </Link>
                             </li>
@@ -121,12 +121,12 @@ const Footer = ({ content, lang }) => (
 
                     {/* Company */}
                     <div>
-                        <h4 className="font-brand text-white font-semibold mb-4 text-sm">
+                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
                             {content?.company || "Entreprise"}
                         </h4>
                         <ul className="space-y-3">
                             <li>
-                                <a href="mailto:contact@scaliente.com" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                                <a href="mailto:contact@scaliente.com" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
                                     Contact
                                 </a>
                             </li>
@@ -138,9 +138,9 @@ const Footer = ({ content, lang }) => (
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10">
+        <div className="border-t border-[var(--divider)]">
             <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-zinc-500 text-sm">
+                <p className="text-[var(--text-muted)] text-sm">
                     &copy; {new Date().getFullYear()} Scaliente. All rights reserved.
                 </p>
                 <div className="flex items-center gap-6">

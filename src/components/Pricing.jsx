@@ -127,7 +127,7 @@ const Pricing = ({ content, common }) => {
                             {!isAnnual && (
                                 <motion.div
                                     layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-zinc-900 rounded-full shadow-lg"
+                                    className="absolute inset-0 bg-[var(--text-primary)] rounded-full shadow-lg"
                                     transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                                 />
                             )}
@@ -144,7 +144,7 @@ const Pricing = ({ content, common }) => {
                             {isAnnual && (
                                 <motion.div
                                     layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-zinc-900 rounded-full shadow-lg"
+                                    className="absolute inset-0 bg-[var(--text-primary)] rounded-full shadow-lg"
                                     transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
                                 />
                             )}
@@ -201,7 +201,7 @@ const Pricing = ({ content, common }) => {
                                                 className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg ${
                                                     plan.featured
                                                         ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white'
-                                                        : 'bg-zinc-800 text-[var(--text-secondary)]'
+                                                        : 'bg-zinc-800 text-zinc-300'
                                                 }`}
                                             >
                                                 {plan.featured ? <Sparkles className="w-3.5 h-3.5" /> : <Zap className="w-3 h-3" />}
@@ -224,7 +224,7 @@ const Pricing = ({ content, common }) => {
                                     <div className="mb-6">
                                         <div className="flex items-baseline gap-2">
                                             {isAnnual && plan.price.monthly > 0 && (
-                                                <span className="text-base text-zinc-400 line-through font-medium">
+                                                <span className="text-base text-[var(--text-secondary)] line-through font-medium">
                                                     {plan.price.monthly}€
                                                 </span>
                                             )}
@@ -235,17 +235,17 @@ const Pricing = ({ content, common }) => {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: 10 }}
                                                     transition={{ duration: 0.2 }}
-                                                    className="text-4xl font-sans font-bold text-zinc-900 tracking-tight"
+                                                    className="text-4xl font-sans font-bold text-[var(--text-primary)] tracking-tight"
                                                 >
                                                     {displayPrice === 0 ? (common?.free || 'Gratuit') : `${displayPrice}€`}
                                                 </motion.span>
                                             </AnimatePresence>
                                             {displayPrice > 0 && (
-                                                <span className="text-zinc-500 text-sm font-medium">/{common?.month || 'mois'}</span>
+                                                <span className="text-[var(--text-muted)] text-sm font-medium">/{common?.month || 'mois'}</span>
                                             )}
                                         </div>
                                         {isAnnual && plan.price.annual > 0 && (
-                                            <p className="text-xs text-zinc-500 mt-1.5">
+                                            <p className="text-xs text-[var(--text-muted)] mt-1.5">
                                                 {common?.billed || 'Facturé'} {plan.price.annual}€/{common?.year || 'an'}
                                             </p>
                                         )}
@@ -260,7 +260,7 @@ const Pricing = ({ content, common }) => {
                                     <div className={`h-px mb-5 ${
                                         plan.featured
                                             ? 'bg-gradient-to-r from-transparent via-orange-300 to-transparent'
-                                            : 'bg-zinc-200'
+                                            : 'bg-[var(--divider)]'
                                     }`} />
 
                                     {/* Features */}
@@ -280,14 +280,14 @@ const Pricing = ({ content, common }) => {
                                                         }`} />
                                                     </div>
                                                 ) : (
-                                                    <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-zinc-100">
-                                                        <X className="w-3 h-3 text-zinc-400" />
+                                                    <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[var(--card-bg-alt)]">
+                                                        <X className="w-3 h-3 text-[var(--text-muted)]" />
                                                     </div>
                                                 )}
                                                 <span className={
                                                     feature.highlight && feature.included
-                                                        ? 'text-zinc-900 font-medium'
-                                                        : 'text-zinc-600'
+                                                        ? 'text-[var(--text-primary)] font-medium'
+                                                        : 'text-[var(--text-secondary)]'
                                                 }>
                                                     {feature.text}
                                                 </span>
@@ -301,7 +301,7 @@ const Pricing = ({ content, common }) => {
                                         className={`w-full py-3.5 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
                                             plan.featured
                                                 ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-[0_8px_30px_rgba(249,115,22,0.35)] hover:-translate-y-0.5'
-                                                : 'bg-zinc-900 text-white hover:bg-zinc-800'
+                                                : 'bg-[var(--text-primary)] text-white hover:opacity-90'
                                         }`}
                                     >
                                         {plan.cta}
@@ -377,14 +377,14 @@ const Pricing = ({ content, common }) => {
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="max-w-3xl mx-auto mt-16 text-center"
                     >
-                        <div className="p-8 rounded-2xl bg-blue-50 border border-blue-200">
-                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-blue-100 text-blue-600 mb-4">
+                        <div className="p-8 rounded-2xl bg-orange-50 border border-orange-200">
+                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-orange-100 text-orange-600 mb-4">
                                 <Lock className="w-7 h-7" />
                             </div>
-                            <h3 className="font-brand text-2xl font-bold text-zinc-900 mb-3">
+                            <h3 className="font-brand text-2xl font-bold text-[var(--text-primary)] mb-3">
                                 {content.antiObjection.title}
                             </h3>
-                            <p className="text-zinc-600 leading-relaxed max-w-xl mx-auto">
+                            <p className="text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto">
                                 {content.antiObjection.description}
                             </p>
                         </div>
@@ -392,7 +392,7 @@ const Pricing = ({ content, common }) => {
                         {/* Trust Badges */}
                         <div className="flex flex-wrap justify-center gap-6 mt-8">
                             {['AES-256', 'GDPR', content?.antiObjection?.readOnly || 'Lecture seule', 'SOC 2 Hosting'].map((badge, i) => (
-                                <div key={i} className="flex items-center gap-2 text-sm text-zinc-500">
+                                <div key={i} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
                                     <Shield className="w-4 h-4 text-emerald-500" />
                                     <span>{badge}</span>
                                 </div>
@@ -407,7 +407,7 @@ const Pricing = ({ content, common }) => {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-center mt-16 text-zinc-500 italic max-w-xl mx-auto"
+                    className="text-center mt-16 text-[var(--text-muted)] italic max-w-xl mx-auto"
                 >
                     {content?.finalQuote}
                 </motion.p>
