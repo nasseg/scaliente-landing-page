@@ -9,7 +9,7 @@ const Section = ({ id, className, frosted, children, ...props }) => {
         <div className="absolute top-0 bottom-0 right-0 w-3 md:w-4 bg-[#fafafa]" />
         {/* Card wrapper */}
         <div className="relative mx-3 md:mx-4">
-          <div className={`relative bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden border border-white/5 shadow-[0_0_0_1.25rem_#fafafa] md:shadow-[0_0_0_1.5rem_#fafafa] ${className || ''}`}>
+          <div className={`relative bg-[#09090b]/95 md:bg-[#09090b]/50 md:backdrop-blur-xl md:backdrop-saturate-150 rounded-[1.25rem] md:rounded-[1.5rem] overflow-hidden border border-white/5 shadow-[0_0_0_1.25rem_#fafafa] md:shadow-[0_0_0_1.5rem_#fafafa] ${className || ''}`}>
             {children}
           </div>
         </div>

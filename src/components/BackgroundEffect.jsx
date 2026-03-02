@@ -23,7 +23,7 @@ const BackgroundEffect = React.memo(() => {
                     title="Background Effect"
                     loading="lazy"
                     className="fixed inset-0 w-full h-full border-0 pointer-events-none"
-                    style={{ zIndex: 0, willChange: 'transform' }}
+                    style={{ zIndex: 0 }}
                 />
             ) : mode === 'video' ? (
                 <video
@@ -32,7 +32,7 @@ const BackgroundEffect = React.memo(() => {
                     muted
                     playsInline
                     className="fixed inset-0 w-full h-full object-cover pointer-events-none"
-                    style={{ zIndex: 0, willChange: 'transform' }}
+                    style={{ zIndex: 0 }}
                 >
                     <source src="/bg_effect_mobile.mp4" type="video/mp4" />
                 </video>
@@ -45,7 +45,6 @@ const BackgroundEffect = React.memo(() => {
                     backdropFilter: mode === 'video' ? 'none' : 'blur(20px) saturate(1.3)',
                     WebkitBackdropFilter: mode === 'video' ? 'none' : 'blur(20px) saturate(1.3)',
                     backgroundColor: mode === 'video' ? 'rgba(9, 9, 11, 0.45)' : 'rgba(9, 9, 11, 0.4)',
-                    willChange: 'transform',
                 }}
             />
         </>

@@ -16,7 +16,7 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
@@ -66,7 +66,7 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
 
     return (
         <>
-            <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+            <nav className={`fixed top-0 w-full z-50 transition-colors duration-500 ${
                 scrolled
                     ? 'bg-[#09090b]/85 md:bg-[#09090b]/60 md:backdrop-blur-xl md:backdrop-saturate-150 border-b border-white/[0.08]'
                     : 'bg-transparent'
@@ -203,7 +203,7 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+                            className="fixed inset-0 bg-black/70 z-40 lg:hidden"
                             onClick={() => setMobileMenuOpen(false)}
                         />
 
@@ -214,91 +214,68 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
                             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                             className="fixed top-16 left-4 right-4 z-50 lg:hidden"
                         >
-                            <div className="bg-[#18181b]/90 backdrop-blur-xl rounded-2xl border border-white/[0.1] shadow-2xl shadow-black/50 overflow-hidden">
+                            <div className="bg-[#18181b] rounded-2xl border border-white/[0.1] shadow-2xl shadow-black/50 overflow-hidden">
                                 <div className="p-4 space-y-1">
                                     {/* Features accordion */}
-                                    <motion.button
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0 }}
+                                    <button
                                         onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
                                         className="flex items-center justify-between w-full text-left px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
                                     >
                                         {content?.features || "Fonctionnalités"}
                                         <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileDropdownOpen ? 'rotate-180' : ''}`} />
-                                    </motion.button>
+                                    </button>
 
-                                    <AnimatePresence>
-                                        {mobileDropdownOpen && (
-                                            <motion.div
-                                                initial={{ height: 0, opacity: 0 }}
-                                                animate={{ height: 'auto', opacity: 1 }}
-                                                exit={{ height: 0, opacity: 0 }}
-                                                transition={{ duration: 0.2 }}
-                                                className="overflow-hidden"
-                                            >
-                                                <div className="pl-4 space-y-0.5">
-                                                    {featureLinks.map((item, i) => (
-                                                        <a
-                                                            key={i}
-                                                            href={item.href}
-                                                            onClick={() => setMobileMenuOpen(false)}
-                                                            className="block px-4 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors duration-150"
-                                                        >
-                                                            {item.label}
-                                                        </a>
-                                                    ))}
-                                                </div>
-                                            </motion.div>
-                                        )}
-                                    </AnimatePresence>
+                                    <div className={`grid transition-[grid-template-rows,opacity] duration-300 ${mobileDropdownOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                        <div className="overflow-hidden">
+                                            <div className="pl-4 space-y-0.5">
+                                                {featureLinks.map((item, i) => (
+                                                    <a
+                                                        key={i}
+                                                        href={item.href}
+                                                        onClick={() => setMobileMenuOpen(false)}
+                                                        className="block px-4 py-2.5 text-sm text-zinc-400 hover:text-white hover:bg-white/[0.05] rounded-lg transition-colors duration-150"
+                                                    >
+                                                        {item.label}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     {/* ROAS Calculator */}
-                                    <motion.a
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.05 }}
+                                    <a
                                         href={calculatorLink.href}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="flex items-center gap-2 w-full text-left px-4 py-3 text-base font-medium text-orange-400 hover:text-orange-300 bg-orange-500/5 hover:bg-orange-500/10 border border-orange-500/10 rounded-xl transition-all duration-200"
                                     >
                                         <Calculator className="w-4 h-4" />
                                         {calculatorLink.label}
-                                    </motion.a>
+                                    </a>
 
                                     {/* Comparaison */}
-                                    <motion.a
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.1 }}
+                                    <a
                                         href={`/${lang}/compare/scaliente-vs-trueprofit`}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="block w-full text-left px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
                                     >
                                         {content?.comparison || "Comparaison"}
-                                    </motion.a>
+                                    </a>
 
                                     {/* Tarifs */}
-                                    <motion.button
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.15 }}
+                                    <button
                                         onClick={(e) => navigateToSection(e, 'pricing')}
                                         className="block w-full text-left px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
                                     >
                                         {content?.pricing || "Tarifs"}
-                                    </motion.button>
+                                    </button>
 
                                     {/* FAQ */}
-                                    <motion.button
-                                        initial={{ opacity: 0, x: -10 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: 0.2 }}
+                                    <button
                                         onClick={(e) => navigateToSection(e, 'faq')}
                                         className="block w-full text-left px-4 py-3 text-base text-zinc-300 hover:text-white hover:bg-white/[0.05] rounded-xl transition-all duration-200"
                                     >
                                         {content?.faq || "FAQ"}
-                                    </motion.button>
+                                    </button>
                                 </div>
 
                                 <div className="h-px bg-gradient-to-r from-transparent via-white/[0.1] to-transparent mx-4" />

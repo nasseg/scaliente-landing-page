@@ -3,15 +3,17 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
+};
+
 const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
     const answerId = `faq-answer-${index}`;
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+            variants={itemVariants}
             className="border-b border-[var(--divider)] last:border-0"
         >
             <button
@@ -37,18 +39,17 @@ const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
                     )}
                 </div>
             </button>
-            <motion.div
+            <div
                 id={answerId}
                 role="region"
-                initial={false}
-                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                className="overflow-hidden"
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
             >
-                <p className="pb-6 text-[var(--text-muted)] leading-relaxed pl-0 pr-12">
-                    {answer}
-                </p>
-            </motion.div>
+                <div className="overflow-hidden">
+                    <p className="pb-6 text-[var(--text-muted)] leading-relaxed pl-0 pr-12">
+                        {answer}
+                    </p>
+                </div>
+            </div>
         </motion.div>
     );
 };
@@ -86,7 +87,13 @@ const FAQ = ({ content }) => {
                 </motion.div>
 
                 {/* FAQ List */}
-                <div className="rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] p-6 md:p-8 shadow-sm">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
+                    className="rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] p-6 md:p-8 shadow-sm"
+                >
                     {faqs.map((faq, index) => (
                         <FAQItem
                             key={index}
@@ -97,7 +104,7 @@ const FAQ = ({ content }) => {
                             onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
                         />
                     ))}
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -92,8 +92,8 @@ const BeforeAfter = ({ content }) => {
         <section id="comparison" className="py-32 relative overflow-hidden">
             {/* Background */}
             <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2" />
-                <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+                <div className="hidden md:block absolute top-1/2 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2" />
+                <div className="hidden md:block absolute top-1/2 right-0 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
             </div>
             <div className="absolute inset-0 grain pointer-events-none" />
 
@@ -102,7 +102,7 @@ const BeforeAfter = ({ content }) => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
@@ -121,7 +121,7 @@ const BeforeAfter = ({ content }) => {
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="relative"
                     >
@@ -195,7 +195,7 @@ const BeforeAfter = ({ content }) => {
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
                         className="relative"
                     >
@@ -302,6 +302,7 @@ const BeforeAfter = ({ content }) => {
                                     <motion.div
                                         initial={{ y: 10, opacity: 0 }}
                                         whileInView={{ y: 0, opacity: 1 }}
+                                        viewport={{ once: true, amount: 0.3 }}
                                         transition={{ delay: 1 }}
                                         className="absolute bottom-3 right-3 bg-white text-zinc-700 text-[10px] px-2 py-1.5 rounded-lg shadow-lg border border-zinc-200 flex items-center gap-1.5"
                                     >

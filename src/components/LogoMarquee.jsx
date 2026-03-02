@@ -1,6 +1,5 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 // --- LOGOS SVG ---
 const Logos = {
@@ -74,11 +73,9 @@ const LogoMarquee = ({ content }) => {
             </div>
 
             <div className="flex relative w-full overflow-hidden mask-linear-fade">
-                <motion.div
-                    className="flex gap-16 items-center whitespace-nowrap px-8"
-                    animate={reducedMotion ? {} : { x: "-50%" }}
-                    transition={reducedMotion ? {} : { duration: 40, ease: "linear", repeat: Infinity }}
-                    style={{ width: "max-content" }}
+                <div
+                    className={`flex gap-16 items-center whitespace-nowrap px-8 ${!reducedMotion ? 'animate-[marquee-scroll_40s_linear_infinite]' : ''}`}
+                    style={{ width: "max-content", willChange: "transform" }}
                 >
                     {/* First Set */}
                     {logos.map((logo, idx) => (
@@ -107,7 +104,7 @@ const LogoMarquee = ({ content }) => {
                             <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
                         </div>
                     ))}
-                </motion.div>
+                </div>
 
             </div>
         </section>

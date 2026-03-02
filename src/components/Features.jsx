@@ -118,7 +118,7 @@ const FeatureSection = ({ content }) => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-20"
                 >
@@ -137,7 +137,7 @@ const FeatureSection = ({ content }) => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                 >
                     {features.map((feature, idx) => {
                         const colors = colorMap[feature.color];
@@ -172,28 +172,25 @@ const FeatureSection = ({ content }) => {
 
                 {/* Profit Calculator - Premium Bento Grid */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
                     className="max-w-4xl mx-auto"
                 >
                     {/* Section Label */}
-                    <div className="text-center mb-10">
+                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="text-center mb-10">
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-200 bg-orange-50 text-orange-600 text-sm font-medium">
                             <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
                             {content?.howItWorks}
                         </span>
-                    </div>
+                    </motion.div>
 
                     {/* Calculator Grid */}
                     <div className="grid grid-cols-12 gap-3">
                         {/* Revenue - Full Width */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: 0.1 }}
+                            variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } } }}
                             className="col-span-12 bg-gradient-to-r from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-5 flex items-center justify-between"
                         >
                             <div className="flex items-center gap-4">
@@ -214,10 +211,7 @@ const FeatureSection = ({ content }) => {
                         ].map((item, i) => (
                             <motion.div
                                 key={i}
-                                initial={{ opacity: 0, scale: 0.98 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.4, delay: 0.15 + i * 0.05 }}
+                                variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } } }}
                                 className={`col-span-6 md:col-span-3 rounded-2xl p-4 border ${item.bgClass} ${item.borderClass}`}
                             >
                                 <div className="flex items-center gap-1 mb-2">
@@ -230,10 +224,7 @@ const FeatureSection = ({ content }) => {
 
                         {/* Result - Full Width with Premium Styling */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: 0.35 }}
+                            variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }}
                             className="col-span-12 relative group"
                         >
                             {/* Glow Effect */}

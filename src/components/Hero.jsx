@@ -1,12 +1,15 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, LayoutDashboard, TrendingUp, Wallet, FileText, Settings, DollarSign, Clock, RotateCcw, Percent, Users, Target, BarChart3, Sparkles } from 'lucide-react';
 
 const Hero = ({ content, common }) => {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => { setIsMobile(window.innerWidth < 768); }, []);
+
     const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 800], [0, 120]);
-    const opacity = useTransform(scrollY, [0, 400], [1, 0]);
-    const scale = useTransform(scrollY, [0, 400], [1, 0.95]);
+    const y1 = useTransform(scrollY, [0, 800], isMobile ? [0, 0] : [0, 120]);
+    const opacity = useTransform(scrollY, [0, 400], isMobile ? [1, 1] : [1, 0]);
 
     // Stagger animation variants
     const containerVariants = {
@@ -367,11 +370,7 @@ const Hero = ({ content, common }) => {
                 className="absolute bottom-8 left-1/2 -translate-x-1/2"
             >
                 <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
-                    <motion.div
-                        animate={{ y: [0, 8, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="w-1.5 h-1.5 bg-white/40 rounded-full"
-                    />
+                    <div className="w-1.5 h-1.5 bg-white/40 rounded-full animate-bounce" />
                 </div>
             </motion.div>
         </section>

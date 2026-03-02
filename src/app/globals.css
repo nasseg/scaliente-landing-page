@@ -83,11 +83,16 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
     pointer-events: none;
     z-index: 1000;
-    mix-blend-mode: overlay;
+  }
+
+  @media (min-width: 768px) {
+    .grain::before {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      mix-blend-mode: overlay;
+    }
   }
 
   /* Glass Effect 2.0 - More refined */
@@ -115,7 +120,6 @@ body {
     isolation: isolate;
     backface-visibility: hidden;
     transform: translateZ(0);
-    will-change: backdrop-filter;
   }
 
   /* Mask for fade edges */
@@ -555,11 +559,13 @@ body {
    GPU ISOLATION FOR BACKDROP FILTERS
    ============================================ */
 
-[class*="backdrop-blur"] {
-  isolation: isolate;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-  -webkit-transform: translateZ(0);
+@media (min-width: 768px) {
+  [class*="backdrop-blur"] {
+    isolation: isolate;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
 }
 
 /* ============================================
@@ -698,6 +704,11 @@ textarea:focus-visible {
    odd = light, even = dark
    ============================================ */
 
+.alternating-sections > * {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+}
+
 .alternating-sections > *:nth-child(odd) {
   --section-bg: #fafafa;
   --text-primary: #18181b;
@@ -748,6 +759,23 @@ textarea:focus-visible {
   --card-border-hover: #d4d4d8;
   --card-hover: #f4f4f5;
   --divider: #e4e4e7;
+}
+
+/* Disable pulse-glow on mobile */
+@media (max-width: 767px) {
+    .animate-pulse-glow { animation: none !important; }
+}
+
+/* CSS marquee keyframes */
+@keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Hover guard for touch devices */
+@media (hover: none) {
+    [class*="hover\\:-translate-y"] { transform: none !important; }
+    [class*="hover\\:shadow"] { box-shadow: none !important; }
 }
 
 /* Reduced motion preferences */

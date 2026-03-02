@@ -101,7 +101,7 @@ const Pricing = ({ content, common }) => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
@@ -159,7 +159,13 @@ const Pricing = ({ content, common }) => {
                 </motion.div>
 
                 {/* Pricing Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-4 mb-24">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-4 mb-24"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+                >
                     {plans.map((plan, idx) => {
                         const monthlyEquivalent = Math.round(plan.price.annual / 12);
                         const displayPrice = isAnnual ? monthlyEquivalent : plan.price.monthly;
@@ -167,10 +173,7 @@ const Pricing = ({ content, common }) => {
                         return (
                             <motion.div
                                 key={plan.name}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
                                 className={`group relative flex flex-col rounded-2xl transition-all duration-500 ${
                                     plan.featured
                                         ? 'lg:-mt-6 lg:mb-6 lg:scale-[1.02]'
@@ -180,14 +183,11 @@ const Pricing = ({ content, common }) => {
                                 {/* Card Background */}
                                 <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
                                     plan.featured
-                                        ? 'bg-gradient-to-b from-orange-50 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-orange-300/80 shadow-2xl shadow-orange-200/40'
+                                        ? 'bg-gradient-to-b from-orange-50 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-orange-300/80 shadow-[0_0_40px_rgba(251,146,60,0.2)]'
                                         : 'bg-[var(--card-bg)] border border-[var(--card-border)] group-hover:border-[var(--card-border-hover)] group-hover:shadow-xl group-hover:shadow-zinc-100'
                                 }`} />
 
-                                {/* Glow effect for featured */}
-                                {plan.featured && (
-                                    <div className="absolute -inset-1 rounded-3xl bg-gradient-to-b from-orange-300/30 via-orange-200/20 to-transparent blur-2xl opacity-60" />
-                                )}
+                                {/* Glow effect for featured — rendered as box-shadow on card background instead */}
 
                                 {/* Content */}
                                 <div className="relative p-6 flex flex-col flex-1">
@@ -196,7 +196,7 @@ const Pricing = ({ content, common }) => {
                                         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                                             <motion.span
                                                 initial={{ scale: 0.8, opacity: 0 }}
-                                                whileInView={{ scale: 1, opacity: 1 }}
+                                                animate={{ scale: 1, opacity: 1 }}
                                                 transition={{ delay: 0.3 + idx * 0.1 }}
                                                 className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg ${
                                                     plan.featured
@@ -316,13 +316,13 @@ const Pricing = ({ content, common }) => {
                             </motion.div>
                         );
                     })}
-                </div>
+                </motion.div>
 
                 {/* Enterprise Section */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="max-w-4xl mx-auto"
                 >
@@ -373,7 +373,7 @@ const Pricing = ({ content, common }) => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                         className="max-w-3xl mx-auto mt-16 text-center"
                     >
@@ -405,7 +405,7 @@ const Pricing = ({ content, common }) => {
                 <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-center mt-16 text-[var(--text-muted)] italic max-w-xl mx-auto"
                 >

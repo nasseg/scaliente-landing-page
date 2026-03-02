@@ -2,13 +2,10 @@
 import { motion } from 'framer-motion';
 import { Star, Quote } from 'lucide-react';
 
-const TestimonialCard = ({ testimonial, index }) => (
+const TestimonialCard = ({ testimonial }) => (
     <article>
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
             className="group relative p-6 md:p-8 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-all duration-300"
         >
             <div className="flex gap-1 mb-5">
@@ -51,7 +48,7 @@ const Testimonials = ({ content, founderStory }) => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                     className="text-center mb-16"
                 >
@@ -75,7 +72,7 @@ const Testimonials = ({ content, founderStory }) => {
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6 }}
                         className="max-w-3xl mx-auto mb-12"
                     >
@@ -100,19 +97,25 @@ const Testimonials = ({ content, founderStory }) => {
                 )}
 
                 {/* Testimonials Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:items-start">
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-3 gap-5 md:items-start"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+                >
                     {testimonials.map((testimonial, index) => (
                         <div key={index} className={index === 1 ? 'md:mt-10' : index === 2 ? 'md:mt-4' : ''}>
-                            <TestimonialCard testimonial={testimonial} index={index} />
+                            <TestimonialCard testimonial={testimonial} />
                         </div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Stats */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mt-16 flex flex-wrap justify-center items-center gap-8 text-sm"
                 >
