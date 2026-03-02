@@ -68,7 +68,7 @@ const Navbar = ({ content, lang, isHomePage = true }) => {
         <>
             <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
                 scrolled
-                    ? 'bg-[#09090b]/60 backdrop-blur-xl backdrop-saturate-150 border-b border-white/[0.08]'
+                    ? 'bg-[#09090b]/85 md:bg-[#09090b]/60 md:backdrop-blur-xl md:backdrop-saturate-150 border-b border-white/[0.08]'
                     : 'bg-transparent'
             }`}>
                 <div className="max-w-6xl mx-auto px-4 sm:px-6">

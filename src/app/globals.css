@@ -563,6 +563,27 @@ body {
 }
 
 /* ============================================
+   HERO CLIP — clipPath only on desktop (perf)
+   ============================================ */
+
+.hero-clip {
+  clip-path: inset(0 -2.5rem -2.5rem -2.5rem);
+}
+
+@media (min-width: 768px) {
+  .hero-clip {
+    clip-path: inset(0 -3rem -3rem -3rem);
+  }
+}
+
+/* Mobile: reduce clip spread to match smaller shadow */
+@media (max-width: 767px) {
+  .hero-clip {
+    clip-path: inset(0 -2.5rem -2.5rem -2.5rem);
+  }
+}
+
+/* ============================================
    TYPOGRAPHY UTILITIES - Optimized for Poppins
    ============================================ */
 

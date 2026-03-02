@@ -1,4 +1,5 @@
 'use client';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // --- LOGOS SVG ---
@@ -49,6 +50,12 @@ const Logos = {
 };
 
 const LogoMarquee = ({ content }) => {
+    const [reducedMotion, setReducedMotion] = useState(false);
+
+    useEffect(() => {
+        setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    }, []);
+
     const logos = [
         { name: "Shopify", Component: Logos.Shopify },
         { name: "Google", Component: Logos.Google },
@@ -69,8 +76,8 @@ const LogoMarquee = ({ content }) => {
             <div className="flex relative w-full overflow-hidden mask-linear-fade">
                 <motion.div
                     className="flex gap-16 items-center whitespace-nowrap px-8"
-                    animate={{ x: "-50%" }}
-                    transition={{ duration: 40, ease: "linear", repeat: Infinity }}
+                    animate={reducedMotion ? {} : { x: "-50%" }}
+                    transition={reducedMotion ? {} : { duration: 40, ease: "linear", repeat: Infinity }}
                     style={{ width: "max-content" }}
                 >
                     {/* First Set */}

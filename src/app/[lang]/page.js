@@ -128,7 +128,7 @@ export default async function Home({ params }) {
 
       {/* Hero + LogoMarquee - Frosted glass with rounded bottom (outside alternation) */}
       <div className="relative z-10">
-        <div className="relative text-white bg-[#09090b]/50 backdrop-blur-xl backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa]" style={{ clipPath: 'inset(0 -3rem -3rem -3rem)' }}>
+        <div className="relative text-white bg-[#09090b]/85 md:bg-[#09090b]/50 md:backdrop-blur-xl md:backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa] hero-clip">
           <Hero content={dict.hero} common={dict.common} />
           <LogoMarquee content={dict.logoMarquee} />
           <div data-hero-end />

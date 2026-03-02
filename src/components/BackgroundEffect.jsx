@@ -23,7 +23,7 @@ const BackgroundEffect = React.memo(() => {
                     title="Background Effect"
                     loading="lazy"
                     className="fixed inset-0 w-full h-full border-0 pointer-events-none"
-                    style={{ zIndex: 0 }}
+                    style={{ zIndex: 0, willChange: 'transform' }}
                 />
             ) : mode === 'video' ? (
                 <video
@@ -32,19 +32,20 @@ const BackgroundEffect = React.memo(() => {
                     muted
                     playsInline
                     className="fixed inset-0 w-full h-full object-cover pointer-events-none"
-                    style={{ zIndex: 0 }}
+                    style={{ zIndex: 0, willChange: 'transform' }}
                 >
                     <source src="/bg_effect_mobile.mp4" type="video/mp4" />
                 </video>
             ) : null}
-            {/* Frosted Glass Overlay — lighter on mobile to preserve video edge glow */}
+            {/* Frosted Glass Overlay — no blur on mobile (video is pre-processed), blur only on desktop */}
             <div
                 className="fixed inset-0 pointer-events-none"
                 style={{
                     zIndex: 1,
-                    backdropFilter: mode === 'video' ? 'blur(12px) saturate(1.2)' : 'blur(20px) saturate(1.3)',
-                    WebkitBackdropFilter: mode === 'video' ? 'blur(12px) saturate(1.2)' : 'blur(20px) saturate(1.3)',
-                    backgroundColor: mode === 'video' ? 'rgba(9, 9, 11, 0.25)' : 'rgba(9, 9, 11, 0.4)',
+                    backdropFilter: mode === 'video' ? 'none' : 'blur(20px) saturate(1.3)',
+                    WebkitBackdropFilter: mode === 'video' ? 'none' : 'blur(20px) saturate(1.3)',
+                    backgroundColor: mode === 'video' ? 'rgba(9, 9, 11, 0.45)' : 'rgba(9, 9, 11, 0.4)',
+                    willChange: 'transform',
                 }}
             />
         </>

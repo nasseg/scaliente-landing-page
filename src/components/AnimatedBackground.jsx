@@ -8,6 +8,9 @@ const AnimatedBackground = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        // Respect reduced motion preference — draw static frame only
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
         const ctx = canvas.getContext('2d');
         let animationFrameId;
         let particles = [];
@@ -141,6 +144,24 @@ const AnimatedBackground = () => {
 
             animationFrameId = requestAnimationFrame(animate);
         };
+
+        if (prefersReducedMotion) {
+            // Draw a single static frame, no animation loop
+            ctx.fillStyle = 'rgba(9, 9, 11, 1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            orbs.forEach((orb) => {
+                const gradient = ctx.createRadialGradient(
+                    orb.x * canvas.width, orb.y * canvas.height, 0,
+                    orb.x * canvas.width, orb.y * canvas.height,
+                    orb.radius * Math.max(canvas.width, canvas.height)
+                );
+                gradient.addColorStop(0, orb.color);
+                gradient.addColorStop(1, 'rgba(9, 9, 11, 0)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            });
+            return () => window.removeEventListener('resize', resize);
+        }
 
         animate();
 
