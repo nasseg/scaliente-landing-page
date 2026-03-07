@@ -39,7 +39,7 @@
         "description": "Connectez Shopify et vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) en 1 clic. Scaliente déduit automatiquement les dépenses ads, COGS, frais de port, frais de paiement et taxes pour afficher votre profit net réel — mis à jour toutes les 5 minutes.",
         "definition": "Scaliente est une application de suivi de profit en temps réel pour les boutiques Shopify. Elle déduit automatiquement les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat, ainsi que les COGS, frais de livraison, frais de paiement et taxes du chiffre d'affaires pour calculer le bénéfice net. Le dashboard se met à jour toutes les 5 minutes.",
         "ctaStart": "Calculer mon Profit Net",
-        "ctaDemo": "Voir Avant / Après",
+        "ctaLogin": "Déjà inscrit ? Ouvrir l'app",
         "microText": "Inscription en 30 secondes. Connectez Shopify. Voyez votre profit.",
         "dashboard": {
             "overview": "Vue d'ensemble",

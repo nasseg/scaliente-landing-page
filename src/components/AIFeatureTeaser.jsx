@@ -22,7 +22,7 @@ const AIFeatureTeaser = ({ content }) => {
     const icons = [Mail, Sparkles, MessageSquare, Shield];
 
     return (
-        <section className="py-32 relative overflow-hidden bg-[#09090b]/50 backdrop-blur-sm">
+        <section className="py-32 relative overflow-x-hidden bg-[#09090b]/50 backdrop-blur-sm">
             {/* Background gradient */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orange-500/[0.02] to-transparent pointer-events-none" />
             <div className="absolute inset-0 grain pointer-events-none" />

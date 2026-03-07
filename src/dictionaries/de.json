@@ -39,7 +39,7 @@
         "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht automatisch Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern ab, um Ihren echten Nettogewinn anzuzeigen — alle 5 Minuten aktualisiert.",
         "definition": "Scaliente ist eine Echtzeit-Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Das Dashboard wird alle 5 Minuten aktualisiert.",
         "ctaStart": "Meinen Nettogewinn berechnen",
-        "ctaDemo": "Vorher / Nachher sehen",
+        "ctaLogin": "Bereits registriert? App öffnen",
         "microText": "Anmeldung in 30 Sekunden. Shopify verbinden. Gewinn sehen.",
         "dashboard": {
             "overview": "Übersicht",

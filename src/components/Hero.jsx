@@ -109,10 +109,10 @@ const Hero = ({ content, common }) => {
                         <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />
                     </a>
                     <a
-                        href="#before-after"
+                        href="https://app.scaliente.com"
                         className="group w-full sm:w-auto px-8 py-4 rounded-2xl text-white/90 font-medium border border-white/10 hover:border-white/20 hover:bg-white/[0.03] transition-all duration-300 text-center relative overflow-hidden"
                     >
-                        <span className="relative z-10">{content?.ctaDemo}</span>
+                        <span className="relative z-10">{content?.ctaLogin}</span>
                     </a>
                 </motion.div>
 

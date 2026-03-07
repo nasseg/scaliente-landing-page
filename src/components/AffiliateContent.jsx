@@ -76,7 +76,7 @@ const AffiliateContent = ({ content, lang = 'fr' }) => {
     return (
         <>
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
+            <section className="relative pt-32 pb-20 overflow-x-hidden">
                 <div className="max-w-6xl mx-auto px-6 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}

@@ -22,7 +22,7 @@ const FounderStory = ({ content }) => {
     const icons = [Users, Clock, TrendingDown];
 
     return (
-        <section className="py-32 relative overflow-hidden">
+        <section className="py-32 relative overflow-x-hidden">
             {/* Background */}
             <div className="absolute inset-0 grain pointer-events-none" />
 

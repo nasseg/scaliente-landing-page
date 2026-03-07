@@ -11,7 +11,7 @@ const AVATAR_URLS = [
 ];
 
 const CTA = ({ content }) => (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-32 relative overflow-x-hidden">
         {/* Background Glow */}
         <div className="absolute inset-0">
             <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/10 rounded-full blur-[150px]" />

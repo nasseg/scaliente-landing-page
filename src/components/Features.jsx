@@ -112,7 +112,7 @@ const FeatureSection = ({ content }) => {
     };
 
     return (
-        <section id="features" className="py-24 relative overflow-hidden">
+        <section id="features" className="py-24 relative overflow-x-hidden">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Header */}
                 <motion.div

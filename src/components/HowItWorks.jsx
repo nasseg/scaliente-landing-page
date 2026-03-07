@@ -93,7 +93,7 @@ const HowItWorks = ({ content }) => {
     };
 
     return (
-        <section id="how-it-works" className="py-24 relative overflow-hidden">
+        <section id="how-it-works" className="py-24 relative overflow-x-hidden">
             <div className="max-w-6xl mx-auto px-6">
                 {/* Header */}
                 <motion.div

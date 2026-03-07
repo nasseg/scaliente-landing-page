@@ -12,7 +12,15 @@ const StickyMobileCTA = ({ label, href = 'https://apps.shopify.com/scaliente' })
         if (!heroEnd) return;
 
         const heroObserver = new IntersectionObserver(
-            ([entry]) => { setHeroGone(!entry.isIntersecting); },
+            ([entry]) => {
+                // Only show sticky CTA when hero-end scrolled PAST (above viewport),
+                // not when it's simply below the fold on initial load
+                if (!entry.isIntersecting && entry.boundingClientRect.top < 0) {
+                    setHeroGone(true);
+                } else if (entry.isIntersecting) {
+                    setHeroGone(false);
+                }
+            },
             { threshold: 0 }
         );
         heroObserver.observe(heroEnd);

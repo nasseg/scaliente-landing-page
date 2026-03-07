@@ -89,7 +89,7 @@ const BrowserWindow = ({ children, url, tabs = [], activeTabIndex = 0, className
 
 const BeforeAfter = ({ content }) => {
     return (
-        <section id="comparison" className="py-32 relative overflow-hidden">
+        <section id="comparison" className="py-32 relative overflow-x-hidden">
             {/* Background */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="hidden md:block absolute top-1/2 left-0 w-[500px] h-[500px] bg-red-500/5 rounded-full blur-[120px] -translate-y-1/2 -translate-x-1/2" />

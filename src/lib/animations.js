@@ -15,7 +15,7 @@ export const containerVariants = {
 
 // Item fade-in-up
 export const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
+    hidden: { opacity: 0, y: 16 },
     visible: {
         opacity: 1,
         y: 0,
