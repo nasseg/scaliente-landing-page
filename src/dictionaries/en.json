@@ -240,7 +240,7 @@
                 "badge": "Free Forever",
                 "desc": "Ideal to start (Referrals & New shops)",
                 "features": {
-                    "orders": "Up to 20 orders/month",
+                    "orders": "Up to 50 orders/month",
                     "shop": "1 store",
                     "history": "30-day history",
                     "adPlatform": "1 ad platform",
@@ -299,7 +299,7 @@
                     "shops": "Unlimited stores",
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
-                    "slackSupport": "Dedicated Slack support",
+                    "slackSupport": "Unlimited collaborators",
                     "priority": "Priority support"
                 },
                 "cta": "Switch to Scale"
@@ -382,7 +382,7 @@
         "questions": {
             "slowDown": {
                 "q": "Will Scaliente slow down my Shopify site?",
-                "a": "No, Scaliente does not affect your Shopify store's performance. It works via the official Shopify API and connects in the background. No script is injected onto your storefront, so zero impact on loading times or Core Web Vitals."
+                "a": "No. Scaliente works through Shopify's official API and never modifies your theme code. Attribution tracking uses Shopify's official Web Pixel extension, which runs in the isolated sandbox Shopify provides: it has no access to your theme and no measurable impact on your loading times or Core Web Vitals."
             },
             "customTheme": {
                 "q": "My store uses a custom theme, is it compatible?",
@@ -406,11 +406,11 @@
             },
             "story": {
                 "q": "Why have I never heard of Scaliente before?",
-                "a": "Scaliente launched in 2024 as a private profit-tracking tool for e-commerce agencies managing multi-store Shopify portfolios. After growing a large user base through word-of-mouth referrals alone, Scaliente opened to the public with self-serve plans starting at €0/month (Discovery plan, 20 orders/month included)."
+                "a": "Scaliente launched in 2024 as a private profit-tracking tool for e-commerce agencies managing multi-store Shopify portfolios. After growing a large user base through word-of-mouth referrals alone, Scaliente opened to the public with self-serve plans starting at €0/month (Discovery plan, 50 orders/month included)."
             },
             "freePlan": {
                 "q": "Is there a free plan?",
-                "a": "Yes! Our Discovery plan is 100% free with 20 orders/month, perfect for testing or small stores. No credit card required."
+                "a": "Yes! Our Discovery plan is 100% free with 50 orders/month, perfect for testing or small stores. No credit card required."
             },
             "adPlatforms": {
                 "q": "Which ad platforms are supported?",
@@ -418,7 +418,7 @@
             },
             "bestApp": {
                 "q": "What is the best Shopify profit tracking app in 2026?",
-                "a": "Scaliente is the top-rated Shopify profit tracking app in 2026 with 4.9/5 stars. Unlike competitors such as TrueProfit or Triple Whale, Scaliente offers a free plan (20 orders/month), no per-order fees, native multi-currency support with daily ECB rates, and European hosting. It tracks ad spend from Meta, Google, TikTok, Pinterest, and Snapchat in real time."
+                "a": "Scaliente is the top-rated Shopify profit tracking app in 2026 with 4.9/5 stars. Unlike competitors such as TrueProfit or Triple Whale, Scaliente offers a free plan (50 orders/month), no per-order fees, native multi-currency support with daily ECB rates, and your data hosted in Europe. It tracks ad spend from Meta, Google, TikTok, Pinterest, and Snapchat in real time."
             },
             "calculateProfit": {
                 "q": "How to calculate real e-commerce profit?",
@@ -456,16 +456,16 @@
     },
     "affiliate": {
         "metadata": {
-            "title": "Scaliente Partner Program | 15% Lifetime Commission",
-            "description": "Join the Scaliente partner program. Earn 15% lifetime recurring commission on every customer you refer. 90-day cookie. Monthly PayPal payouts."
+            "title": "Scaliente Partner Program | 20% Commission for 12 Months",
+            "description": "Join the Scaliente partner program. Earn 20% recurring commission for 12 months on every customer you refer. 90-day cookie. Monthly PayPal payouts."
         },
         "stats": {
-            "commissionLabel": "Lifetime commission",
+            "commissionLabel": "Recurring commission",
             "discountLabel": "For your referrals",
             "cookieValue": "90d",
             "cookieLabel": "Cookie duration",
-            "durationValue": "Lifetime",
-            "durationLabel": "Recurring"
+            "durationValue": "12 months",
+            "durationLabel": "Commission duration"
         },
         "dashboard": {
             "title": "Affiliate Dashboard",
@@ -479,19 +479,19 @@
             "badge": "Partner Program",
             "titleWhite": "Turn your audience into",
             "titleOrange": "recurring income",
-            "subtitle": "Earn 15% lifetime commission on every Scaliente customer you refer. Your referrals get 50% off their first month.",
+            "subtitle": "Earn 20% recurring commission for 12 months on every Scaliente customer you refer. Your referrals get 20% off their first month.",
             "cta": "Apply Now"
         },
         "benefits": {
             "title": "Program Benefits",
             "items": {
                 "commission": {
-                    "title": "15% Lifetime",
-                    "desc": "Recurring commission on every payment from your referrals — not just the first month, forever."
+                    "title": "20% for 12 months",
+                    "desc": "Recurring commission on every payment your referrals make, every month for 12 months — not just the first month."
                 },
                 "discount": {
-                    "title": "50% for Referrals",
-                    "desc": "Your referrals get 50% off their first month. Makes your recommendation an easy sell."
+                    "title": "20% for your referrals",
+                    "desc": "Your referrals get 20% off their first month. Makes your recommendation easier to sell."
                 },
                 "cookie": {
                     "title": "90-Day Cookie",
@@ -519,7 +519,7 @@
                 {
                     "step": "Step 3",
                     "title": "Earn",
-                    "desc": "Earn 15% on every payment your referrals make, for life."
+                    "desc": "Earn 20% on every payment your referrals make, for 12 months."
                 }
             ]
         },
@@ -529,28 +529,28 @@
             "colReferrals": "Referrals",
             "colPlan": "Avg. Plan",
             "colMonthly": "Monthly",
-            "colYearly": "Yearly",
+            "colYearly": "Over 12 months",
             "rows": [
                 {
                     "referrals": "5 customers",
                     "plan": "Starter (€89)",
-                    "monthly": "€66.75",
-                    "yearly": "€801"
+                    "monthly": "€86.42",
+                    "yearly": "€1,037"
                 },
                 {
                     "referrals": "10 customers",
                     "plan": "Growth (€149)",
-                    "monthly": "€223.50",
-                    "yearly": "€2,682"
+                    "monthly": "€289.36",
+                    "yearly": "€3,472"
                 },
                 {
                     "referrals": "20 customers",
                     "plan": "Scale (€249)",
-                    "monthly": "€747",
-                    "yearly": "€8,964"
+                    "monthly": "€967.12",
+                    "yearly": "€11,605"
                 }
             ],
-            "disclaimer": "Estimates based on 15% recurring commission. Actual earnings depend on referral plan and retention."
+            "disclaimer": "Estimates based on 20% recurring commission for 12 months, after processing fees (2.9%) are deducted. Actual earnings depend on referral plan and retention."
         },
         "audiences": {
             "title": "Who Should Join",
@@ -587,12 +587,12 @@
             "title": "Frequently Asked Questions",
             "items": [
                 {
-                    "q": "How does the 15% lifetime commission work?",
-                    "a": "You earn 15% of every payment your referrals make to Scaliente — not just the first month. As long as they stay subscribed, you earn. If they upgrade plans, your commission increases too."
+                    "q": "How does the 20% commission work?",
+                    "a": "You earn 20% of every payment your referrals make to Scaliente, for 12 months from their first payment — not just the first month. If they upgrade plans, your commission increases too."
                 },
                 {
                     "q": "What does my referral get?",
-                    "a": "Your referrals receive 50% off their first month on any paid plan. This makes it easy for you to pitch — they save money, you earn commission."
+                    "a": "Your referrals receive 20% off their first month on any paid plan. This makes it easier for you to pitch — they save money, you earn commission."
                 },
                 {
                     "q": "How long does the 90-day cookie last?",
@@ -1351,7 +1351,7 @@
     "compare": {
         "meta": {
             "title": "Scaliente vs TrueProfit — 2026 Comparison | Scaliente",
-            "description": "Detailed comparison between Scaliente and TrueProfit for Shopify profit tracking. Free plan, multi-currency, European hosting."
+            "description": "Detailed comparison between Scaliente and TrueProfit for Shopify profit tracking. Free plan, multi-currency, your data hosted in Europe."
         },
         "hero": {
             "title": "Scaliente vs TrueProfit",
@@ -1360,7 +1360,7 @@
         "differentiators": {
             "freePlan": {
                 "title": "Generous free plan",
-                "desc": "Test without time limits with 20 orders/month. TrueProfit does not offer a permanent free plan."
+                "desc": "Test with no time limit at 50 orders/month, no credit card. Our free plan is permanent — not a trial that expires."
             },
             "noSurcharge": {
                 "title": "No per-order surcharge",
@@ -1382,38 +1382,38 @@
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
             "scalinetPrice": "€0/month",
             "competitorPrice": "$49/month"
         },
         "whyScaliente": {
             "title": "Why European merchants choose Scaliente",
-            "p1": "Scaliente was built specifically for European e-commerce merchants. European hosting, native GDPR compliance, multi-currency support with European Central Bank rates.",
-            "p2": "We acknowledge TrueProfit's strengths, including its market seniority. But Scaliente matches its features — including a mobile app (PWA) — while offering European hosting, transparent pricing, and no hidden fees."
+            "p1": "Scaliente was built specifically for European e-commerce merchants. Your data is hosted in Europe, with native GDPR compliance and multi-currency support using European Central Bank rates.",
+            "p2": "We acknowledge TrueProfit's strengths, including its market seniority. Scaliente covers the same ground — including a mobile app (PWA) — with your data hosted in Europe, publicly listed pricing, and no per-order fees."
         }
     },
     "compareTripleWhale": {
         "meta": {
             "title": "Scaliente vs Triple Whale — 2026 Comparison | Scaliente",
-            "description": "Detailed comparison between Scaliente and Triple Whale. Free plan, transparent pricing, European hosting vs US premium solution."
+            "description": "Detailed comparison between Scaliente and Triple Whale. Free plan, transparent pricing, your data hosted in Europe vs US premium solution."
         },
         "hero": {
             "title": "Scaliente vs Triple Whale",
-            "subtitle": "All the essential profit tracking — with transparent pricing and European DNA."
+            "subtitle": "All the essential profit tracking — with public pricing and your data hosted in Europe."
         },
         "differentiators": {
             "freePlan": {
                 "title": "Free plan available",
-                "desc": "Scaliente offers a permanent free plan with 20 orders/month. Triple Whale starts at $100+/month with no free option."
+                "desc": "Scaliente offers a permanent free plan with 50 orders/month. Triple Whale starts at $100+/month with no free option."
             },
             "noSurcharge": {
                 "title": "Transparent, predictable pricing",
-                "desc": "Scaliente starts free, then €39/month — no hidden fees. Triple Whale starts at $100/month and can exceed $800/month, with additional per-order charges on certain plans."
+                "desc": "Scaliente starts free, then €39/month, with flat pricing and no per-order fees: your bill doesn't climb as your volume grows. Triple Whale does not publish its pricing on its site."
             },
             "multiCurrency": {
                 "title": "Native multi-currency (ECB)",
-                "desc": "Automatic conversion with daily ECB rates for EUR, GBP, CZK and more. Triple Whale is built for the US market — Scaliente is built for European merchants."
+                "desc": "Automatic conversion at daily ECB rates for EUR, GBP, CZK and more, with your data hosted in Europe."
             }
         },
         "tableToggle": "See detailed comparison",
@@ -1423,11 +1423,11 @@
             "perOrderFee": "No per-order fee",
             "multiCurrency": "Native multi-currency",
             "multiShop": "Multi-store",
-            "adPlatforms": "5+ ad platforms",
+            "adPlatforms": "5 ad platforms",
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
             "scalinetPrice": "€0/month",
             "competitorFreePlan": false,
@@ -1439,12 +1439,12 @@
             "competitorMobileApp": true,
             "competitorGdpr": false,
             "competitorEuropeanHosting": false,
-            "competitorPrice": "$100+/month"
+            "competitorPrice": "Not published"
         },
         "whyScaliente": {
             "title": "Why choose Scaliente over Triple Whale",
-            "p1": "Triple Whale is an established tool on the US market. However, with pricing from $100 to over $800/month — plus per-order fees on some plans — total costs can add up quickly. Its US-centric approach also means limited support for European currencies, regulations, and hosting.",
-            "p2": "Scaliente delivers the same core value — real-time profit dashboard, 5 ad platforms, multi-store — with predictable pricing starting at €0/month. European hosting, native GDPR compliance, and automatic multi-currency conversion with ECB rates."
+            "p1": "Triple Whale is an established tool on the US market. Its pricing is not published publicly — you have to go through a sales rep to get it. Scaliente lists its prices, starts at €0/month, and charges a flat rate with no per-order fees.",
+            "p2": "Scaliente delivers the same core value — real-time profit dashboard, 5 ad platforms, multi-store — with predictable pricing starting at €0/month. Your data is hosted in Europe, with native GDPR compliance and automatic multi-currency conversion at ECB rates."
         }
     },
     "compareLifetimely": {
@@ -1459,15 +1459,15 @@
         "differentiators": {
             "freePlan": {
                 "title": "Permanent free plan",
-                "desc": "Test Scaliente with no time limit at 20 orders/month. Lifetimely only offers a 14-day free trial."
+                "desc": "Test Scaliente with no time limit at 50 orders/month. Lifetimely only offers a 14-day free trial."
             },
             "noSurcharge": {
                 "title": "5 ad platforms integrated",
-                "desc": "Meta, Google, TikTok, Pinterest and Snapchat Ads. Lifetimely mainly focuses on Facebook Ads."
+                "desc": "Meta, Google, TikTok, Pinterest and Snapchat Ads: all five platforms connected natively and reconciled against your Shopify sales in a single dashboard."
             },
             "multiCurrency": {
                 "title": "Native multi-currency",
-                "desc": "Daily ECB rates for multi-currency stores. Lifetimely doesn't offer automatic currency conversion."
+                "desc": "Automatic conversion at daily ECB rates, applied on the exact date of each transaction — not a monthly average."
             }
         },
         "tableToggle": "See detailed comparison",
@@ -1477,11 +1477,11 @@
             "perOrderFee": "No per-order fee",
             "multiCurrency": "Native multi-currency",
             "multiShop": "Multi-store",
-            "adPlatforms": "5+ ad platforms",
+            "adPlatforms": "5 ad platforms",
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
             "scalinetPrice": "€0/month",
             "competitorFreePlan": false,
@@ -1498,7 +1498,7 @@
         "whyScaliente": {
             "title": "Why choose Scaliente over Lifetimely",
             "p1": "Lifetimely excels at customer lifetime value (LTV) analysis and cohorts. If that's your primary need, it's an excellent choice. But for complete profit tracking with multi-platform ads, Scaliente offers more.",
-            "p2": "Scaliente natively integrates 5 ad platforms, supports multi-currency with ECB rates, and offers a permanent free plan. All with European hosting and native GDPR compliance."
+            "p2": "Scaliente natively integrates 5 ad platforms, supports multi-currency with ECB rates, and offers a permanent free plan. All with your data hosted in Europe and native GDPR compliance."
         }
     },
     "legalPage": {

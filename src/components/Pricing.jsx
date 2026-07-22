@@ -15,7 +15,7 @@ const Pricing = ({ content, common }) => {
             featured: false,
             tier: 'free',
             features: [
-                { text: content?.plans?.discovery?.features?.orders || "20 commandes/mois", included: true },
+                { text: content?.plans?.discovery?.features?.orders || "50 commandes/mois", included: true },
                 { text: content?.plans?.discovery?.features?.shop || "1 boutique", included: true },
                 { text: content?.plans?.discovery?.features?.history || "Historique 30 jours", included: true },
                 { text: content?.plans?.discovery?.features?.adPlatform || "1 plateforme ads", included: true },
@@ -36,7 +36,7 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.lite?.features?.shop || "1 boutique", included: true },
                 { text: content?.plans?.lite?.features?.history || "Historique 90 jours", included: true },
                 { text: content?.plans?.lite?.features?.adPlatforms || "2 plateformes ads", included: true },
-                { text: content?.plans?.lite?.features?.comparison || "Comparaison périodes", included: true },
+                { text: content?.plans?.lite?.features?.comparison || "Comparaison périodes", included: false },
                 { text: content?.plans?.lite?.features?.export || "Export CSV", included: true },
             ],
             cta: content?.plans?.lite?.cta || "Débloquer Lite"
