@@ -332,17 +332,17 @@
             }
         },
         "antiObjection": {
-            "title": "Ihre Daten geh\u00f6ren Ihnen",
-            "description": "Ihre Finanzdaten sind Ende-zu-Ende verschl\u00fcsselt (AES-256) und werden niemals geteilt, verkauft oder f\u00fcr kommerzielle Zwecke genutzt. Scaliente nutzt nur Lesezugriff auf APIs \u2014 wir k\u00f6nnen Ihren Shop oder Ihre Werbekonten nicht ver\u00e4ndern.",
+            "title": "Ihre Daten gehören Ihnen",
+            "description": "Ihre Finanzdaten sind Ende-zu-Ende verschlüsselt (AES-256) und werden niemals geteilt, verkauft oder für kommerzielle Zwecke genutzt. Scaliente nutzt nur Lesezugriff auf APIs — wir können Ihren Shop oder Ihre Werbekonten nicht verändern.",
             "readOnly": "Nur Lesen"
         },
         "finalQuote": "\"Ein einziger schlecht gesteuerter Tag kostet mehr als ein Monatsabonnement. Shopify-Zahlen zeigen nicht, was Sie behalten.\""
     },
     "founderStory": {
         "founderStory": {
-            "quote": "Wir haben mit Excel-Tabellen angefangen, um die Rentabilit\u00e4t der Shopify-Shops unserer Agentur zu verfolgen. Wir haben jedes Tool auf dem Markt gepr\u00fcft \u2014 nichts entsprach unseren Anforderungen. Also haben wir unser eigenes gebaut. Zuerst als privates Tool f\u00fcr unsere Agentur, dann mit einigen Kunden geteilt, und heute ist Scaliente f\u00fcr alle im Shopify App Store verf\u00fcgbar.",
+            "quote": "Wir haben mit Excel-Tabellen angefangen, um die Rentabilität der Shopify-Shops unserer Agentur zu verfolgen. Wir haben jedes Tool auf dem Markt geprüft — nichts entsprach unseren Anforderungen. Also haben wir unser eigenes gebaut. Zuerst als privates Tool für unsere Agentur, dann mit einigen Kunden geteilt, und heute ist Scaliente für alle im Shopify App Store verfügbar.",
             "author": "Das Scaliente Team",
-            "role": "Gr\u00fcnderteam"
+            "role": "Gründerteam"
         }
     },
     "testimonials": {
@@ -461,7 +461,7 @@
         },
         "stats": {
             "commissionLabel": "Lebenslange Provision",
-            "discountLabel": "F\u00fcr Ihre Empfehlungen",
+            "discountLabel": "Für Ihre Empfehlungen",
             "cookieValue": "90T",
             "cookieLabel": "Cookie-Dauer",
             "durationValue": "Lebenslang",
@@ -473,7 +473,7 @@
             "referrals": "Empfehlungen",
             "referralsChange": "+3 diesen Monat",
             "commissions": "Provisionen",
-            "commissionsChange": "+156\u20ac diesen Monat"
+            "commissionsChange": "+156€ diesen Monat"
         },
         "hero": {
             "badge": "Partnerprogramm",
@@ -487,10 +487,10 @@
             "items": {
                 "commission": {
                     "title": "15% lebenslang",
-                    "desc": "Wiederkehrende Provision auf jede Zahlung Ihrer Empfehlungen \u2014 nicht nur im ersten Monat, f\u00fcr immer."
+                    "desc": "Wiederkehrende Provision auf jede Zahlung Ihrer Empfehlungen — nicht nur im ersten Monat, für immer."
                 },
                 "discount": {
-                    "title": "50% f\u00fcr Empfehlungen",
+                    "title": "50% für Empfehlungen",
                     "desc": "Ihre Empfehlungen erhalten 50% Rabatt im ersten Monat. Macht Ihre Empfehlung zum einfachen Verk aufsargument."
                 },
                 "cookie": {
@@ -499,16 +499,28 @@
                 },
                 "payment": {
                     "title": "Monatlich per PayPal",
-                    "desc": "Auszahlungen am 5. jedes Monats. Mindestschwelle von 50\u20ac."
+                    "desc": "Auszahlungen am 5. jedes Monats. Mindestschwelle von 50€."
                 }
             }
         },
         "howItWorks": {
             "title": "So funktioniert's",
             "steps": [
-                { "step": "Schritt 1", "title": "Bewerben", "desc": "F\u00fcllen Sie das Formular unten aus. Wir pr\u00fcfen Bewerbungen innerhalb von 48 Stunden." },
-                { "step": "Schritt 2", "title": "Teilen", "desc": "Erhalten Sie Ihren einzigartigen Empfehlungslink und teilen Sie ihn mit Ihrem Publikum." },
-                { "step": "Schritt 3", "title": "Verdienen", "desc": "Verdienen Sie 15% auf jede Zahlung Ihrer Empfehlungen, lebenslang." }
+                {
+                    "step": "Schritt 1",
+                    "title": "Bewerben",
+                    "desc": "Füllen Sie das Formular unten aus. Wir prüfen Bewerbungen innerhalb von 48 Stunden."
+                },
+                {
+                    "step": "Schritt 2",
+                    "title": "Teilen",
+                    "desc": "Erhalten Sie Ihren einzigartigen Empfehlungslink und teilen Sie ihn mit Ihrem Publikum."
+                },
+                {
+                    "step": "Schritt 3",
+                    "title": "Verdienen",
+                    "desc": "Verdienen Sie 15% auf jede Zahlung Ihrer Empfehlungen, lebenslang."
+                }
             ]
         },
         "earnings": {
@@ -517,32 +529,47 @@
             "colReferrals": "Empfehlungen",
             "colPlan": "Durchschn. Plan",
             "colMonthly": "Monatlich",
-            "colYearly": "J\u00e4hrlich",
+            "colYearly": "Jährlich",
             "rows": [
-                { "referrals": "5 Kunden", "plan": "Starter (89\u20ac)", "monthly": "66,75\u20ac", "yearly": "801\u20ac" },
-                { "referrals": "10 Kunden", "plan": "Growth (149\u20ac)", "monthly": "223,50\u20ac", "yearly": "2.682\u20ac" },
-                { "referrals": "20 Kunden", "plan": "Scale (249\u20ac)", "monthly": "747\u20ac", "yearly": "8.964\u20ac" }
+                {
+                    "referrals": "5 Kunden",
+                    "plan": "Starter (89€)",
+                    "monthly": "66,75€",
+                    "yearly": "801€"
+                },
+                {
+                    "referrals": "10 Kunden",
+                    "plan": "Growth (149€)",
+                    "monthly": "223,50€",
+                    "yearly": "2.682€"
+                },
+                {
+                    "referrals": "20 Kunden",
+                    "plan": "Scale (249€)",
+                    "monthly": "747€",
+                    "yearly": "8.964€"
+                }
             ],
-            "disclaimer": "Sch\u00e4tzungen basierend auf 15% wiederkehrender Provision. Die tats\u00e4chlichen Einnahmen h\u00e4ngen vom gew\u00e4hlten Plan und der Kundenbindung ab."
+            "disclaimer": "Schätzungen basierend auf 15% wiederkehrender Provision. Die tatsächlichen Einnahmen hängen vom gewählten Plan und der Kundenbindung ab."
         },
         "audiences": {
             "title": "Wer sollte beitreten",
             "items": {
                 "creators": {
                     "title": "Content Creator",
-                    "desc": "YouTube, TikTok, Instagram \u2014 monetarisieren Sie Ihr E-Commerce-Publikum."
+                    "desc": "YouTube, TikTok, Instagram — monetarisieren Sie Ihr E-Commerce-Publikum."
                 },
                 "bloggers": {
                     "title": "Blogger & Autoren",
-                    "desc": "Sie schreiben \u00fcber Shopify, E-Commerce oder Profit-Tracking? Perfekte Passung."
+                    "desc": "Sie schreiben über Shopify, E-Commerce oder Profit-Tracking? Perfekte Passung."
                 },
                 "agencies": {
                     "title": "E-Commerce-Agenturen",
                     "desc": "Empfehlen Sie Scaliente Ihren Kunden und verdienen Sie an jedem Abonnement."
                 },
                 "merchants": {
-                    "title": "Shopify-H\u00e4ndler",
-                    "desc": "Sie lieben Scaliente? Teilen Sie es mit anderen H\u00e4ndlern und werden Sie daf\u00fcr bezahlt."
+                    "title": "Shopify-Händler",
+                    "desc": "Sie lieben Scaliente? Teilen Sie es mit anderen Händlern und werden Sie dafür bezahlt."
                 }
             }
         },
@@ -553,18 +580,36 @@
                 "Echtzeit-Empfehlungsverfolgung",
                 "Detaillierte Provisionshistorie",
                 "Einzigartiger personalisierter Empfehlungslink",
-                "Statusverfolgung (ausstehend \u2192 genehmigt \u2192 ausgezahlt)"
+                "Statusverfolgung (ausstehend → genehmigt → ausgezahlt)"
             ]
         },
         "faq": {
-            "title": "H\u00e4ufig gestellte Fragen",
+            "title": "Häufig gestellte Fragen",
             "items": [
-                { "q": "Wie funktioniert die 15% lebenslange Provision?", "a": "Sie verdienen 15% von jeder Zahlung, die Ihre Empfehlungen an Scaliente leisten \u2014 nicht nur im ersten Monat. Solange sie abonniert bleiben, verdienen Sie. Wenn sie auf einen h\u00f6heren Plan upgraden, steigt auch Ihre Provision." },
-                { "q": "Was erh\u00e4lt meine Empfehlung?", "a": "Ihre Empfehlungen erhalten 50% Rabatt auf ihren ersten Monat, unabh\u00e4ngig vom gew\u00e4hlten Plan. Das macht Ihre Empfehlung zu einem einfachen Verkaufsargument." },
-                { "q": "Wie funktioniert der 90-Tage-Cookie?", "a": "Wenn jemand auf Ihren Empfehlungslink klickt, wird ein 90-Tage-Tracking-Cookie gesetzt. Wenn sie sich innerhalb dieser 90 Tage anmelden, auch wenn sie direkt zur\u00fcckkehren, wird die Empfehlung Ihnen zugeschrieben." },
-                { "q": "Wann und wie werde ich bezahlt?", "a": "Provisionen werden nach einer 30-t\u00e4gigen Clearing-Periode validiert. Auszahlungen erfolgen per PayPal am 5. jedes Monats, mit einer Mindestschwelle von 50\u20ac." },
-                { "q": "Kostet die Teilnahme etwas?", "a": "Nein. Das Partnerprogramm ist v\u00f6llig kostenlos. Keine versteckten Geb\u00fchren, keine Voraussetzungen." },
-                { "q": "Kann ich Scaliente mit bezahlter Werbung bewerben?", "a": "Ja, solange Sie nicht auf den Markennamen Scaliente bieten. Alle anderen Werbestrategien sind willkommen." }
+                {
+                    "q": "Wie funktioniert die 15% lebenslange Provision?",
+                    "a": "Sie verdienen 15% von jeder Zahlung, die Ihre Empfehlungen an Scaliente leisten — nicht nur im ersten Monat. Solange sie abonniert bleiben, verdienen Sie. Wenn sie auf einen höheren Plan upgraden, steigt auch Ihre Provision."
+                },
+                {
+                    "q": "Was erhält meine Empfehlung?",
+                    "a": "Ihre Empfehlungen erhalten 50% Rabatt auf ihren ersten Monat, unabhängig vom gewählten Plan. Das macht Ihre Empfehlung zu einem einfachen Verkaufsargument."
+                },
+                {
+                    "q": "Wie funktioniert der 90-Tage-Cookie?",
+                    "a": "Wenn jemand auf Ihren Empfehlungslink klickt, wird ein 90-Tage-Tracking-Cookie gesetzt. Wenn sie sich innerhalb dieser 90 Tage anmelden, auch wenn sie direkt zurückkehren, wird die Empfehlung Ihnen zugeschrieben."
+                },
+                {
+                    "q": "Wann und wie werde ich bezahlt?",
+                    "a": "Provisionen werden nach einer 30-tägigen Clearing-Periode validiert. Auszahlungen erfolgen per PayPal am 5. jedes Monats, mit einer Mindestschwelle von 50€."
+                },
+                {
+                    "q": "Kostet die Teilnahme etwas?",
+                    "a": "Nein. Das Partnerprogramm ist völlig kostenlos. Keine versteckten Gebühren, keine Voraussetzungen."
+                },
+                {
+                    "q": "Kann ich Scaliente mit bezahlter Werbung bewerben?",
+                    "a": "Ja, solange Sie nicht auf den Markennamen Scaliente bieten. Alle anderen Werbestrategien sind willkommen."
+                }
             ]
         },
         "form": {
@@ -584,9 +629,9 @@
                 "promotion": "Beschreiben Sie Ihre Werbestrategie..."
             },
             "submit": "Bewerbung einreichen",
-            "disclaimer": "Kostenlos. Wir pr\u00fcfen Bewerbungen innerhalb von 48 Stunden.",
+            "disclaimer": "Kostenlos. Wir prüfen Bewerbungen innerhalb von 48 Stunden.",
             "successTitle": "Bewerbung eingereicht!",
-            "successMessage": "Vielen Dank! Wir werden Ihre Bewerbung pr\u00fcfen und uns innerhalb von 48 Stunden bei Ihnen melden."
+            "successMessage": "Vielen Dank! Wir werden Ihre Bewerbung prüfen und uns innerhalb von 48 Stunden bei Ihnen melden."
         }
     },
     "footer": {
@@ -627,29 +672,38 @@
         "ogDescription": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
         "twitterTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
         "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit.",
-        "keywords": ["E-Commerce Gewinn Tracker", "Shopify Gewinnrechner", "Nettogewinn Dashboard", "Werbeausgaben Tracking", "E-Commerce Marge Tracker", "Shopify Analyse Tool", "Echtzeit Gewinnverfolgung", "Dropshipping Gewinnrechner"]
+        "keywords": [
+            "E-Commerce Gewinn Tracker",
+            "Shopify Gewinnrechner",
+            "Nettogewinn Dashboard",
+            "Werbeausgaben Tracking",
+            "E-Commerce Marge Tracker",
+            "Shopify Analyse Tool",
+            "Echtzeit Gewinnverfolgung",
+            "Dropshipping Gewinnrechner"
+        ]
     },
     "calculator": {
         "meta": {
             "title": "Kostenloser ROAS & Breakeven Rechner | Scaliente",
-            "description": "Berechnen Sie Ihren Breakeven-ROAS, Nettomarge und Gewinn pro Bestellung. Kostenloses Tool f\u00fcr Shopify-Shop-Betreiber."
+            "description": "Berechnen Sie Ihren Breakeven-ROAS, Nettomarge und Gewinn pro Bestellung. Kostenloses Tool für Shopify-Shop-Betreiber."
         },
         "hero": {
             "title": "ROAS & Breakeven Rechner",
             "subtitle": "Berechnen Sie Ihren Breakeven-Punkt in Sekunden. Kostenlos, ohne Anmeldung."
         },
         "fields": {
-            "currency": "W\u00e4hrung",
+            "currency": "Währung",
             "otherCurrency": "Andere...",
             "sellingPrice": "Verkaufspreis des Produkts",
             "productCost": "Produktkosten",
-            "shippingCost": "Versandkosten f\u00fcr Kunden",
-            "paymentFee": "Zahlungsgeb\u00fchren (%)",
+            "shippingCost": "Versandkosten für Kunden",
+            "paymentFee": "Zahlungsgebühren (%)",
             "adBudget": "Monatliches Werbebudget",
             "supplierShipping": "Lieferantenversand",
-            "fixedFee": "Feste Geb\u00fchr pro Transaktion",
+            "fixedFee": "Feste Gebühr pro Transaktion",
             "country": "Land / Status",
-            "countryHint": "F\u00fcllt MwSt und Abgaben vor",
+            "countryHint": "Füllt MwSt und Abgaben vor",
             "vatRate": "MwSt-Satz (%)",
             "vatIncluded": "MwSt im Preis enthalten",
             "socialCharges": "Sozialabgaben (%)",
@@ -673,16 +727,16 @@
             "revenue": "Verkaufspreis",
             "productCost": "Produktkosten",
             "shipping": "Versand",
-            "fees": "Zahlungsgeb\u00fchren",
+            "fees": "Zahlungsgebühren",
             "profitPerOrder": "Nettogewinn / Bestellung",
             "margin": "Nettomarge",
             "breakEvenOrders": "Break-even Bestellungen",
-            "empty": "F\u00fcllen Sie die Felder aus, um Ihre Ergebnisse zu sehen",
+            "empty": "Füllen Sie die Felder aus, um Ihre Ergebnisse zu sehen",
             "monthlyTitle": "Monatliche Simulation",
-            "monthlyRevenue": "Ben\u00f6tigter Umsatz",
+            "monthlyRevenue": "Benötigter Umsatz",
             "monthlyAds": "Werbebudget",
             "monthlyProfit": "Gewinn nach Werbung",
-            "vatDeducted": "Abgef\u00fchrte MwSt",
+            "vatDeducted": "Abgeführte MwSt",
             "socialCharges": "Sozialabgaben",
             "returnsImpact": "Retouren-Auswirkung",
             "monthlyFixedCosts": "Fixkosten",
@@ -707,11 +761,11 @@
         "presets": {
             "countryLabel": "Land / Region",
             "statusLabel": "Rechtsform",
-            "selectCountry": "Land w\u00e4hlen",
+            "selectCountry": "Land wählen",
             "customHint": "Konfigurieren Sie MwSt und Abgaben manuell unten.",
             "france": "Frankreich",
             "germany": "Deutschland",
-            "uk": "Vereinigtes K\u00f6nigreich",
+            "uk": "Vereinigtes Königreich",
             "usa": "Vereinigte Staaten",
             "uae": "Dubai / VAE",
             "custom": "Benutzerdefiniert",
@@ -748,186 +802,366 @@
         },
         "seo": {
             "title": "So verwenden Sie den ROAS-Rechner",
-            "p1": "ROAS (Return on Ad Spend) misst den Umsatz, der f\u00fcr jede in Werbung investierte W\u00e4hrungseinheit generiert wird. Ein ROAS von 3x bedeutet, dass Sie f\u00fcr jede investierte Einheit den 3-fachen Umsatz erzielen.",
-            "p2": "Der Breakeven-ROAS ist der minimale ROAS, der erforderlich ist, um alle Ihre Kosten (Produkt, Versand, Zahlungsgeb\u00fchren) zu decken. Unter diesem Schwellenwert verlieren Sie bei jedem Verkauf Geld.",
-            "p3": "POAS (Profit on Ad Spend) geht weiter und misst den tats\u00e4chlichen Gewinn im Verh\u00e4ltnis zu den Werbeausgaben. Ein POAS von 1x bedeutet, dass Ihr Gewinn genau Ihre Werbeausgaben deckt."
+            "p1": "ROAS (Return on Ad Spend) misst den Umsatz, der für jede in Werbung investierte Währungseinheit generiert wird. Ein ROAS von 3x bedeutet, dass Sie für jede investierte Einheit den 3-fachen Umsatz erzielen.",
+            "p2": "Der Breakeven-ROAS ist der minimale ROAS, der erforderlich ist, um alle Ihre Kosten (Produkt, Versand, Zahlungsgebühren) zu decken. Unter diesem Schwellenwert verlieren Sie bei jedem Verkauf Geld.",
+            "p3": "POAS (Profit on Ad Spend) geht weiter und misst den tatsächlichen Gewinn im Verhältnis zu den Werbeausgaben. Ein POAS von 1x bedeutet, dass Ihr Gewinn genau Ihre Werbeausgaben deckt."
         },
         "cta": {
-            "title": "M\u00f6chten Sie diese Metriken in Echtzeit?",
-            "subtitle": "Scaliente berechnet automatisch Ihren ROAS, POAS und Nettogewinn f\u00fcr jede Bestellung.",
+            "title": "Möchten Sie diese Metriken in Echtzeit?",
+            "subtitle": "Scaliente berechnet automatisch Ihren ROAS, POAS und Nettogewinn für jede Bestellung.",
             "button": "Scaliente kostenlos testen"
         }
     },
     "featurePages": {
         "profitDashboard": {
-            "meta": { "title": "Nettogewinn-Dashboard f\u00fcr Shopify | Scaliente", "description": "Sehen Sie Ihren echten Shopify-Gewinn in Echtzeit. Scaliente zieht COGS, Ads, Versand und Geb\u00fchren automatisch ab." },
+            "meta": {
+                "title": "Nettogewinn-Dashboard für Shopify | Scaliente",
+                "description": "Sehen Sie Ihren echten Shopify-Gewinn in Echtzeit. Scaliente zieht COGS, Ads, Versand und Gebühren automatisch ab."
+            },
             "hero": {
                 "title": "Ihr echter Gewinn, nicht der Shopify-Umsatz",
-                "subtitle": "Sehen Sie genau, was nach allen Kosten \u00fcbrig bleibt. Alle 5 Minuten aktualisiert."
+                "subtitle": "Sehen Sie genau, was nach allen Kosten übrig bleibt. Alle 5 Minuten aktualisiert."
             },
             "problem": {
                 "badge": "Das Problem",
                 "title": "Umsatz ist nicht Gewinn",
                 "subtitle": "Shopify zeigt, was reinkommt. Nicht was bleibt.",
                 "points": [
-                    { "title": "Umsatz sieht toll aus, Gewinn nicht", "description": "Shopify zeigt den Bruttoumsatz. Es zieht nie Ihre Werbeausgaben, Produktkosten, Versand oder Zahlungsgeb\u00fchren ab. Sie denken, Sie sind profitabel, bis Sie Ihr Bankkonto pr\u00fcfen." },
-                    { "title": "Versteckte Geb\u00fchren fressen Ihre Margen", "description": "Stripe nimmt 2,9%, PayPal 3,49%, Klarna 5%. Diese Geb\u00fchren summieren sich still \u00fcber Hunderte von Bestellungen und niemand verfolgt sie pro Transaktion." },
-                    { "title": "Tabellen versagen bei Wachstum", "description": "Manuelle Erfassung funktioniert bei 10 Bestellungen pro Woche. Bei 100+ Bestellungen pro Monat \u00fcber mehrere Werbeplattformen bedeutet eine fehlende Zeile falsche Entscheidungen f\u00fcr den gesamten Monat." }
+                    {
+                        "title": "Umsatz sieht toll aus, Gewinn nicht",
+                        "description": "Shopify zeigt den Bruttoumsatz. Es zieht nie Ihre Werbeausgaben, Produktkosten, Versand oder Zahlungsgebühren ab. Sie denken, Sie sind profitabel, bis Sie Ihr Bankkonto prüfen."
+                    },
+                    {
+                        "title": "Versteckte Gebühren fressen Ihre Margen",
+                        "description": "Stripe nimmt 2,9%, PayPal 3,49%, Klarna 5%. Diese Gebühren summieren sich still über Hunderte von Bestellungen und niemand verfolgt sie pro Transaktion."
+                    },
+                    {
+                        "title": "Tabellen versagen bei Wachstum",
+                        "description": "Manuelle Erfassung funktioniert bei 10 Bestellungen pro Woche. Bei 100+ Bestellungen pro Monat über mehrere Werbeplattformen bedeutet eine fehlende Zeile falsche Entscheidungen für den gesamten Monat."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
+                "badge": "Die Lösung",
                 "title": "Ein Dashboard, das zeigt,",
                 "titleHighlight": "was Sie wirklich behalten",
-                "description": "Scaliente verbindet sich mit Shopify und Ihren Werbekonten und zieht dann automatisch alle Kosten ab: Produktkosten, Versand, Zahlungsgeb\u00fchren, Werbeausgaben und Steuern. Ihr Nettogewinn wird alle 5 Minuten aktualisiert."
+                "description": "Scaliente verbindet sich mit Shopify und Ihren Werbekonten und zieht dann automatisch alle Kosten ab: Produktkosten, Versand, Zahlungsgebühren, Werbeausgaben und Steuern. Ihr Nettogewinn wird alle 5 Minuten aktualisiert."
             },
             "features": [
-                { "icon": "TrendingUp", "title": "Nettogewinn in Echtzeit", "description": "F\u00fcr jede Bestellung berechnet, sobald sie eingeht. Tages-, Wochen- und Monatsansichten mit automatischem Kostenabzug." },
-                { "icon": "Percent", "title": "Echte Nettomarge", "description": "Ihre Marge nach ALLEN Kosten, nicht nur COGS. Sehen Sie genau, welchen Prozentsatz des Umsatzes Sie behalten." },
-                { "icon": "CalendarRange", "title": "Periodenvergleich", "description": "Vergleichen Sie beliebige Zeitr\u00e4ume miteinander. Erkennen Sie Trends, messen Sie Wachstum und entdecken Sie Margenr\u00fcckg\u00e4nge, bevor sie schaden." },
-                { "icon": "LayoutGrid", "title": "Konsolidierte Multi-Shop-Ansicht", "description": "Mehrere Shopify-Shops? Sehen Sie den aggregierten Gewinn aller Shops in einem einzigen Dashboard." },
-                { "icon": "Zap", "title": "Auto-Aktualisierung alle 5 Min", "description": "Keine manuelle Synchronisation. Ihre Daten werden automatisch aktualisiert, damit Sie immer die neuesten Zahlen sehen." },
-                { "icon": "PieChart", "title": "Kostenaufschl\u00fcsselung", "description": "Sehen Sie genau, wohin Ihr Geld geht: COGS, Versand, Werbeausgaben, Zahlungsgeb\u00fchren und Steuern in einer visuellen \u00dcbersicht." }
+                {
+                    "icon": "TrendingUp",
+                    "title": "Nettogewinn in Echtzeit",
+                    "description": "Für jede Bestellung berechnet, sobald sie eingeht. Tages-, Wochen- und Monatsansichten mit automatischem Kostenabzug."
+                },
+                {
+                    "icon": "Percent",
+                    "title": "Echte Nettomarge",
+                    "description": "Ihre Marge nach ALLEN Kosten, nicht nur COGS. Sehen Sie genau, welchen Prozentsatz des Umsatzes Sie behalten."
+                },
+                {
+                    "icon": "CalendarRange",
+                    "title": "Periodenvergleich",
+                    "description": "Vergleichen Sie beliebige Zeiträume miteinander. Erkennen Sie Trends, messen Sie Wachstum und entdecken Sie Margenrückgänge, bevor sie schaden."
+                },
+                {
+                    "icon": "LayoutGrid",
+                    "title": "Konsolidierte Multi-Shop-Ansicht",
+                    "description": "Mehrere Shopify-Shops? Sehen Sie den aggregierten Gewinn aller Shops in einem einzigen Dashboard."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Auto-Aktualisierung alle 5 Min",
+                    "description": "Keine manuelle Synchronisation. Ihre Daten werden automatisch aktualisiert, damit Sie immer die neuesten Zahlen sehen."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Kostenaufschlüsselung",
+                    "description": "Sehen Sie genau, wohin Ihr Geld geht: COGS, Versand, Werbeausgaben, Zahlungsgebühren und Steuern in einer visuellen Übersicht."
+                }
             ],
             "howItWorks": {
                 "title": "Ihr Gewinn in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Shopify verbinden", "description": "Ein-Klick OAuth. Ihre Bestellungen, Produkte und Ums\u00e4tze synchronisieren automatisch in unter 2 Minuten." },
-                    { "title": "Kosten konfigurieren", "description": "Produktkosten und Versandtarife hinzuf\u00fcgen. Scaliente erkennt Ihre Zahlungs-Gateways automatisch." },
-                    { "title": "Echten Gewinn sehen", "description": "Ihr Dashboard f\u00fcllt sich sofort. Nettogewinn, Margen und Trends werden alle 5 Minuten aktualisiert." }
+                    {
+                        "title": "Shopify verbinden",
+                        "description": "Ein-Klick OAuth. Ihre Bestellungen, Produkte und Umsätze synchronisieren automatisch in unter 2 Minuten."
+                    },
+                    {
+                        "title": "Kosten konfigurieren",
+                        "description": "Produktkosten und Versandtarife hinzufügen. Scaliente erkennt Ihre Zahlungs-Gateways automatisch."
+                    },
+                    {
+                        "title": "Echten Gewinn sehen",
+                        "description": "Ihr Dashboard füllt sich sofort. Nettogewinn, Margen und Trends werden alle 5 Minuten aktualisiert."
+                    }
                 ]
             },
             "finalCta": {
-                "title": "H\u00f6ren Sie auf, Ihren Gewinn zu raten",
+                "title": "Hören Sie auf, Ihren Gewinn zu raten",
                 "subtitle": "Verbinden Sie Shopify und sehen Sie Ihre echten Zahlen in unter 2 Minuten."
             }
         },
         "adTracking": {
-            "meta": { "title": "Multi-Plattform Ads-Tracking f\u00fcr Shopify | Scaliente", "description": "Zentralisieren Sie Meta, Google, TikTok, Pinterest und Snapchat. Sehen Sie echten ROAS und POAS in einem Dashboard." },
+            "meta": {
+                "title": "Multi-Plattform Ads-Tracking für Shopify | Scaliente",
+                "description": "Zentralisieren Sie Meta, Google, TikTok, Pinterest und Snapchat. Sehen Sie echten ROAS und POAS in einem Dashboard."
+            },
             "hero": {
                 "title": "5 Werbeplattformen. 1 Gewinn-Dashboard.",
                 "subtitle": "Verbinden Sie Meta, Google, TikTok, Pinterest und Snapchat. Sehen Sie Ihren echten ROAS und POAS."
             },
             "problem": {
                 "badge": "Das Problem",
-                "title": "Werbeplattformen l\u00fcgen \u00fcber Ihren ROAS",
-                "subtitle": "Jede Plattform beansprucht den Verdienst. Keine zeigt das vollst\u00e4ndige Bild.",
+                "title": "Werbeplattformen lügen über Ihren ROAS",
+                "subtitle": "Jede Plattform beansprucht den Verdienst. Keine zeigt das vollständige Bild.",
                 "points": [
-                    { "title": "5 Dashboards, 5 verschiedene Geschichten", "description": "Meta sagt ROAS 4x, Google behauptet 3x, TikTok zeigt 5x. Keines ber\u00fccksichtigt Produktkosten, Versand oder Geb\u00fchren. Ihr echter ROAS k\u00f6nnte unter der Gewinnschwelle liegen." },
-                    { "title": "Plattform-Attribution ist aufgebl\u00e4ht", "description": "Jede Werbeplattform z\u00e4hlt Conversions auf ihre Weise. Alle beanspruchen denselben Verkauf f\u00fcr sich. Sie denken, Sie drucken Geld, w\u00e4hrend Sie es verlieren." },
-                    { "title": "Kein fairer Plattformvergleich m\u00f6glich", "description": "Ohne eine einzige Wahrheitsquelle, die Werbeausgaben mit dem tats\u00e4chlichen Gewinn abgleicht, k\u00f6nnen Sie nicht entscheiden, wo Sie das Budget erh\u00f6hen und wo Sie k\u00fcrzen." }
+                    {
+                        "title": "5 Dashboards, 5 verschiedene Geschichten",
+                        "description": "Meta sagt ROAS 4x, Google behauptet 3x, TikTok zeigt 5x. Keines berücksichtigt Produktkosten, Versand oder Gebühren. Ihr echter ROAS könnte unter der Gewinnschwelle liegen."
+                    },
+                    {
+                        "title": "Plattform-Attribution ist aufgebläht",
+                        "description": "Jede Werbeplattform zählt Conversions auf ihre Weise. Alle beanspruchen denselben Verkauf für sich. Sie denken, Sie drucken Geld, während Sie es verlieren."
+                    },
+                    {
+                        "title": "Kein fairer Plattformvergleich möglich",
+                        "description": "Ohne eine einzige Wahrheitsquelle, die Werbeausgaben mit dem tatsächlichen Gewinn abgleicht, können Sie nicht entscheiden, wo Sie das Budget erhöhen und wo Sie kürzen."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
+                "badge": "Die Lösung",
                 "title": "Alle Werbeausgaben abgeglichen mit dem",
                 "titleHighlight": "echten Gewinn",
-                "description": "Scaliente zieht die Werbeausgaben aller 5 Plattformen heran und gleicht sie mit Ihrem Shopify-Umsatz abz\u00fcglich aller Kosten ab. Sie sehen den echten ROAS (umsatzbasiert) und POAS (gewinnbasiert) f\u00fcr jede Plattform, jede Kampagne."
+                "description": "Scaliente zieht die Werbeausgaben aller 5 Plattformen heran und gleicht sie mit Ihrem Shopify-Umsatz abzüglich aller Kosten ab. Sie sehen den echten ROAS (umsatzbasiert) und POAS (gewinnbasiert) für jede Plattform, jede Kampagne."
             },
             "features": [
-                { "icon": "Layers", "title": "5 Plattformen in einer Ansicht", "description": "Meta, Google, TikTok, Pinterest, Snapchat. Alle per sicherer OAuth in Minuten verbunden. Ein einheitliches Dashboard." },
-                { "icon": "Target", "title": "Echter ROAS & POAS", "description": "ROAS basierend auf echtem Umsatz, POAS basierend auf tats\u00e4chlichem Gewinn nach allen Kosten. Keine aufgebl\u00e4hten Plattform-Metriken mehr." },
-                { "icon": "Activity", "title": "Breakeven ROAS", "description": "Kennen Sie die genaue ROAS-Schwelle, unter der Sie Geld verlieren. Unterschiedlich f\u00fcr jedes Produkt basierend auf seiner Kostenstruktur." },
-                { "icon": "BarChart3", "title": "Kampagnen-Einblicke", "description": "Drill-Down in einzelne Kampagnen. Sehen Sie Ausgaben, Umsatz, Gewinn, ROAS und POAS pro Kampagne und Plattform." },
-                { "icon": "ArrowLeftRight", "title": "Cross-Plattform-Vergleich", "description": "Vergleichen Sie Meta vs Google vs TikTok Seite an Seite. Identifizieren Sie, welche Plattform den besten Gewinn pro investiertem Euro liefert." },
-                { "icon": "DollarSign", "title": "T\u00e4gliche Ausgabenverfolgung", "description": "Sehen Sie Ihre t\u00e4glichen Werbeausgaben \u00fcber alle Plattformen und deren direkten Einfluss auf Ihre t\u00e4gliche Gewinnmarge." }
+                {
+                    "icon": "Layers",
+                    "title": "5 Plattformen in einer Ansicht",
+                    "description": "Meta, Google, TikTok, Pinterest, Snapchat. Alle per sicherer OAuth in Minuten verbunden. Ein einheitliches Dashboard."
+                },
+                {
+                    "icon": "Target",
+                    "title": "Echter ROAS & POAS",
+                    "description": "ROAS basierend auf echtem Umsatz, POAS basierend auf tatsächlichem Gewinn nach allen Kosten. Keine aufgeblähten Plattform-Metriken mehr."
+                },
+                {
+                    "icon": "Activity",
+                    "title": "Breakeven ROAS",
+                    "description": "Kennen Sie die genaue ROAS-Schwelle, unter der Sie Geld verlieren. Unterschiedlich für jedes Produkt basierend auf seiner Kostenstruktur."
+                },
+                {
+                    "icon": "BarChart3",
+                    "title": "Kampagnen-Einblicke",
+                    "description": "Drill-Down in einzelne Kampagnen. Sehen Sie Ausgaben, Umsatz, Gewinn, ROAS und POAS pro Kampagne und Plattform."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Cross-Plattform-Vergleich",
+                    "description": "Vergleichen Sie Meta vs Google vs TikTok Seite an Seite. Identifizieren Sie, welche Plattform den besten Gewinn pro investiertem Euro liefert."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Tägliche Ausgabenverfolgung",
+                    "description": "Sehen Sie Ihre täglichen Werbeausgaben über alle Plattformen und deren direkten Einfluss auf Ihre tägliche Gewinnmarge."
+                }
             ],
             "howItWorks": {
                 "title": "Vereinheitlichen Sie Ihre Ads in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Werbekonten verbinden", "description": "Sichere OAuth f\u00fcr jede Plattform. Keine API-Schl\u00fcssel, keine manuelle Einrichtung. 2 Minuten f\u00fcr alle 5." },
-                    { "title": "Automatischer Abgleich", "description": "Scaliente ordnet Werbeausgaben den Shopify-Verk\u00e4ufen zu und zieht alle Kosten ab, um die echte Rentabilit\u00e4t zu berechnen." },
-                    { "title": "Bessere Entscheidungen treffen", "description": "Sehen Sie, welche Kampagnen Gewinn bringen und welche Geld verbrennen. Budget auf Basis realer Daten umverteilen." }
+                    {
+                        "title": "Werbekonten verbinden",
+                        "description": "Sichere OAuth für jede Plattform. Keine API-Schlüssel, keine manuelle Einrichtung. 2 Minuten für alle 5."
+                    },
+                    {
+                        "title": "Automatischer Abgleich",
+                        "description": "Scaliente ordnet Werbeausgaben den Shopify-Verkäufen zu und zieht alle Kosten ab, um die echte Rentabilität zu berechnen."
+                    },
+                    {
+                        "title": "Bessere Entscheidungen treffen",
+                        "description": "Sehen Sie, welche Kampagnen Gewinn bringen und welche Geld verbrennen. Budget auf Basis realer Daten umverteilen."
+                    }
                 ]
             },
             "finalCta": {
-                "title": "H\u00f6ren Sie auf, bei Werbeausgaben blind zu fliegen",
+                "title": "Hören Sie auf, bei Werbeausgaben blind zu fliegen",
                 "subtitle": "Verbinden Sie Ihre Werbekonten und sehen Sie, welche Kampagnen wirklich Geld verdienen."
             }
         },
         "productAnalytics": {
-            "meta": { "title": "Produkt-Rentabilit\u00e4ts-Analytics | Scaliente", "description": "Analysieren Sie den Nettogewinn jedes Produkts. Identifizieren Sie Top-Performer und Verlustbringer in Ihrem Katalog." },
+            "meta": {
+                "title": "Produkt-Rentabilitäts-Analytics | Scaliente",
+                "description": "Analysieren Sie den Nettogewinn jedes Produkts. Identifizieren Sie Top-Performer und Verlustbringer in Ihrem Katalog."
+            },
             "hero": {
                 "title": "Wissen Sie, welche Produkte Geld verdienen?",
                 "subtitle": "Identifizieren Sie Ihre Starprodukte und eliminieren Sie die Verlierer."
             },
             "problem": {
                 "badge": "Das Problem",
-                "title": "Ihr Bestseller verliert m\u00f6glicherweise Geld",
+                "title": "Ihr Bestseller verliert möglicherweise Geld",
                 "subtitle": "Hoher Umsatz bedeutet nicht hohen Gewinn.",
                 "points": [
-                    { "title": "Umsatz verschleiert die Wahrheit", "description": "Ein Produkt, das 500 Einheiten/Monat verkauft, sieht gro\u00dfartig aus. Aber wenn die Marge nach COGS, Versand und Geb\u00fchren nur 5% betr\u00e4gt, machen Sie Wohlt\u00e4tigkeit. Ohne Gewinn-pro-Produkt-Daten wissen Sie es nicht." },
-                    { "title": "Werbeausgaben werden nicht pro Produkt zugeordnet", "description": "Sie geben Tausende f\u00fcr Werbung aus, wissen aber nicht, welche Produkte diese Werbung tats\u00e4chlich antreibt. Sie optimieren f\u00fcr Umsatz, nicht f\u00fcr die profitabelsten Produkte." },
-                    { "title": "Katalog-Entscheidungen basieren auf Bauchgef\u00fchl", "description": "Welche Produkte bewerben, welche einstellen, welche nachbestellen? Ohne Gewinn-pro-Produkt-Daten ist jede Entscheidung ein Ratespiel." }
+                    {
+                        "title": "Umsatz verschleiert die Wahrheit",
+                        "description": "Ein Produkt, das 500 Einheiten/Monat verkauft, sieht großartig aus. Aber wenn die Marge nach COGS, Versand und Gebühren nur 5% beträgt, machen Sie Wohltätigkeit. Ohne Gewinn-pro-Produkt-Daten wissen Sie es nicht."
+                    },
+                    {
+                        "title": "Werbeausgaben werden nicht pro Produkt zugeordnet",
+                        "description": "Sie geben Tausende für Werbung aus, wissen aber nicht, welche Produkte diese Werbung tatsächlich antreibt. Sie optimieren für Umsatz, nicht für die profitabelsten Produkte."
+                    },
+                    {
+                        "title": "Katalog-Entscheidungen basieren auf Bauchgefühl",
+                        "description": "Welche Produkte bewerben, welche einstellen, welche nachbestellen? Ohne Gewinn-pro-Produkt-Daten ist jede Entscheidung ein Ratespiel."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
+                "badge": "Die Lösung",
                 "title": "Nettomarge pro Produkt,",
                 "titleHighlight": "automatisch berechnet",
-                "description": "Scaliente berechnet den echten Gewinn jedes Produkts, indem es Kosten, zugeordneten Versand und Zahlungsgeb\u00fchren abzieht. Sehen Sie genau, welche SKUs Ihr Ergebnis tragen und welche es belasten."
+                "description": "Scaliente berechnet den echten Gewinn jedes Produkts, indem es Kosten, zugeordneten Versand und Zahlungsgebühren abzieht. Sehen Sie genau, welche SKUs Ihr Ergebnis tragen und welche es belasten."
             },
             "features": [
-                { "icon": "Package", "title": "Nettomarge pro Produkt", "description": "Jedes Produkt zeigt Umsatz, Kosten, Versandzuordnung, Geb\u00fchren und resultierende Nettomarge. Keine manuelle Berechnung n\u00f6tig." },
-                { "icon": "TrendingUp", "title": "Top- & Flop-Ranking", "description": "Produkte nach Rentabilit\u00e4t sortiert. Sehen Sie sofort Ihre Top-Performer und die Verlustbringer." },
-                { "icon": "DollarSign", "title": "Kostenverwaltung", "description": "Produktkosten pro Variante und Menge festlegen. Unterst\u00fctzt Dropshipping (pro Einheit) und klassische (gewichtsbasierte) Modelle." },
-                { "icon": "PieChart", "title": "Margenverteilung", "description": "Visualisieren Sie, wie sich der Gewinn \u00fcber Ihren Katalog verteilt. Identifizieren Sie Konzentrationsrisiken und Diversifizierungsm\u00f6glichkeiten." },
-                { "icon": "Layers", "title": "Multi-Varianten-Support", "description": "Verschiedene Kosten pro Gr\u00f6\u00dfe, Farbe oder Variante? Scaliente handhabt es. Jede Variante verfolgt ihre eigenen Kosten und Marge." },
-                { "icon": "Target", "title": "Datengest\u00fctzte Katalog-Entscheidungen", "description": "H\u00f6ren Sie auf zu raten, welche Produkte Sie bewerben oder einstellen sollen. Lassen Sie Gewinndaten Ihre Katalogstrategie leiten." }
+                {
+                    "icon": "Package",
+                    "title": "Nettomarge pro Produkt",
+                    "description": "Jedes Produkt zeigt Umsatz, Kosten, Versandzuordnung, Gebühren und resultierende Nettomarge. Keine manuelle Berechnung nötig."
+                },
+                {
+                    "icon": "TrendingUp",
+                    "title": "Top- & Flop-Ranking",
+                    "description": "Produkte nach Rentabilität sortiert. Sehen Sie sofort Ihre Top-Performer und die Verlustbringer."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Kostenverwaltung",
+                    "description": "Produktkosten pro Variante und Menge festlegen. Unterstützt Dropshipping (pro Einheit) und klassische (gewichtsbasierte) Modelle."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Margenverteilung",
+                    "description": "Visualisieren Sie, wie sich der Gewinn über Ihren Katalog verteilt. Identifizieren Sie Konzentrationsrisiken und Diversifizierungsmöglichkeiten."
+                },
+                {
+                    "icon": "Layers",
+                    "title": "Multi-Varianten-Support",
+                    "description": "Verschiedene Kosten pro Größe, Farbe oder Variante? Scaliente handhabt es. Jede Variante verfolgt ihre eigenen Kosten und Marge."
+                },
+                {
+                    "icon": "Target",
+                    "title": "Datengestützte Katalog-Entscheidungen",
+                    "description": "Hören Sie auf zu raten, welche Produkte Sie bewerben oder einstellen sollen. Lassen Sie Gewinndaten Ihre Katalogstrategie leiten."
+                }
             ],
             "howItWorks": {
                 "title": "Analysieren Sie Ihre Produkte in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Katalog synchronisieren", "description": "Shopify-Produkte und Varianten werden beim Setup automatisch importiert. Keine manuelle Dateneingabe." },
-                    { "title": "Produktkosten festlegen", "description": "COGS pro Produkt oder Variante hinzuf\u00fcgen. Unterst\u00fctzt Einzelpreise f\u00fcr Dropshipper und Mengenpreise." },
-                    { "title": "Gewinn pro Produkt sehen", "description": "Jedes Produkt zeigt seine echte Marge nach allen Kosten. Sortieren, filtern und Katalog optimieren." }
+                    {
+                        "title": "Katalog synchronisieren",
+                        "description": "Shopify-Produkte und Varianten werden beim Setup automatisch importiert. Keine manuelle Dateneingabe."
+                    },
+                    {
+                        "title": "Produktkosten festlegen",
+                        "description": "COGS pro Produkt oder Variante hinzufügen. Unterstützt Einzelpreise für Dropshipper und Mengenpreise."
+                    },
+                    {
+                        "title": "Gewinn pro Produkt sehen",
+                        "description": "Jedes Produkt zeigt seine echte Marge nach allen Kosten. Sortieren, filtern und Katalog optimieren."
+                    }
                 ]
             },
             "finalCta": {
                 "title": "Finden Sie heraus, welche Produkte wirklich Geld verdienen",
-                "subtitle": "Verbinden Sie Shopify und sehen Sie die Rentabilit\u00e4t pro Produkt in Minuten."
+                "subtitle": "Verbinden Sie Shopify und sehen Sie die Rentabilität pro Produkt in Minuten."
             }
         },
         "multiShop": {
-            "meta": { "title": "Multi-Shop-Verwaltung f\u00fcr Shopify | Scaliente", "description": "Verwalten Sie bis zu 3 Shopify-Shops \u00fcber ein einziges Scaliente-Konto. Konsolidierte Ansicht, sofortiger Wechsel." },
+            "meta": {
+                "title": "Multi-Shop-Verwaltung für Shopify | Scaliente",
+                "description": "Verwalten Sie bis zu 3 Shopify-Shops über ein einziges Scaliente-Konto. Konsolidierte Ansicht, sofortiger Wechsel."
+            },
             "hero": {
                 "title": "Mehrere Shops. Ein Dashboard.",
-                "subtitle": "Verwalten Sie alle Ihre Shopify-Shops \u00fcber ein einziges Konto."
+                "subtitle": "Verwalten Sie alle Ihre Shopify-Shops über ein einziges Konto."
             },
             "problem": {
                 "badge": "Das Problem",
                 "title": "Mehrere Shops vervielfachen das Chaos",
                 "subtitle": "Mehr Shops bedeutet mehr Tabs, mehr Tabellen, mehr Verwirrung.",
                 "points": [
-                    { "title": "Separate Tools f\u00fcr jeden Shop", "description": "Jeder Shop braucht seinen eigenen Analytics-Login, seine eigene Tabelle, sein eigenes Ads-Tracking. 3 Shops verwalten bedeutet 3x so viel Arbeit und 3x so viele Fehlerquellen." },
-                    { "title": "Keine konsolidierte Ansicht", "description": "Sie k\u00f6nnen den Gesamtgewinn aller Shops nicht sehen, ohne Daten manuell zu exportieren und zusammenzuf\u00fchren. Wenn ein Shop Geld verliert, bemerken Sie es m\u00f6glicherweise erst am Monatsende." },
-                    { "title": "Shops vergleichen ist m\u00fchsam", "description": "Ist Shop A profitabler als Shop B? Nach Ber\u00fccksichtigung verschiedener W\u00e4hrungen, Werbekonten und Kostenstrukturen? Viel Gl\u00fcck in einer Tabelle." }
+                    {
+                        "title": "Separate Tools für jeden Shop",
+                        "description": "Jeder Shop braucht seinen eigenen Analytics-Login, seine eigene Tabelle, sein eigenes Ads-Tracking. 3 Shops verwalten bedeutet 3x so viel Arbeit und 3x so viele Fehlerquellen."
+                    },
+                    {
+                        "title": "Keine konsolidierte Ansicht",
+                        "description": "Sie können den Gesamtgewinn aller Shops nicht sehen, ohne Daten manuell zu exportieren und zusammenzuführen. Wenn ein Shop Geld verliert, bemerken Sie es möglicherweise erst am Monatsende."
+                    },
+                    {
+                        "title": "Shops vergleichen ist mühsam",
+                        "description": "Ist Shop A profitabler als Shop B? Nach Berücksichtigung verschiedener Währungen, Werbekonten und Kostenstrukturen? Viel Glück in einer Tabelle."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
+                "badge": "Die Lösung",
                 "title": "Alle Ihre Shops in",
                 "titleHighlight": "einem Konto",
                 "description": "Verbinden Sie bis zu 3 Shopify-Shops mit einem einzigen Scaliente-Konto. Sehen Sie den konsolidierten Gewinn aller Shops oder gehen Sie in jeden einzelnen Shop. Sofortiger Wechsel zwischen ihnen."
             },
             "features": [
-                { "icon": "LayoutGrid", "title": "Konsolidierte 'Alle Shops'-Ansicht", "description": "Sehen Sie Gesamtumsatz, Gewinn, Margen und Werbeausgaben aggregiert \u00fcber alle Ihre Shops in einem Dashboard." },
-                { "icon": "RefreshCw", "title": "Sofortiger Shop-Wechsel", "description": "Wechseln Sie zwischen Shops mit einem Klick. Kein Abmelden, keine separaten Konten, kein Warten." },
-                { "icon": "BarChart3", "title": "Shop-\u00fcbergreifender Vergleich", "description": "Vergleichen Sie Leistungskennzahlen zwischen Shops. Identifizieren Sie, welcher Shop den meisten Gewinn pro investiertem Euro bringt." },
-                { "icon": "Shield", "title": "Separate Kostenkonfigurationen", "description": "Jeder Shop beh\u00e4lt seine eigenen Produktkosten, Versandtarife und Gateway-Geb\u00fchren. Die konsolidierte Ansicht \u00fcbernimmt die Berechnung." },
-                { "icon": "ArrowLeftRight", "title": "Multi-W\u00e4hrungs-Normalisierung", "description": "Shops in verschiedenen W\u00e4hrungen? Scaliente rechnet alles vor der Konsolidierung mit t\u00e4glichen EZB-Kursen in Ihre Hauptw\u00e4hrung um." },
-                { "icon": "FileText", "title": "Einzel- und Gesamtberichte", "description": "Gewinnberichte f\u00fcr einzelne Shops oder \u00fcber alle Shops kombiniert erstellen. Export als CSV f\u00fcr die Buchhaltung." }
+                {
+                    "icon": "LayoutGrid",
+                    "title": "Konsolidierte 'Alle Shops'-Ansicht",
+                    "description": "Sehen Sie Gesamtumsatz, Gewinn, Margen und Werbeausgaben aggregiert über alle Ihre Shops in einem Dashboard."
+                },
+                {
+                    "icon": "RefreshCw",
+                    "title": "Sofortiger Shop-Wechsel",
+                    "description": "Wechseln Sie zwischen Shops mit einem Klick. Kein Abmelden, keine separaten Konten, kein Warten."
+                },
+                {
+                    "icon": "BarChart3",
+                    "title": "Shop-übergreifender Vergleich",
+                    "description": "Vergleichen Sie Leistungskennzahlen zwischen Shops. Identifizieren Sie, welcher Shop den meisten Gewinn pro investiertem Euro bringt."
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Separate Kostenkonfigurationen",
+                    "description": "Jeder Shop behält seine eigenen Produktkosten, Versandtarife und Gateway-Gebühren. Die konsolidierte Ansicht übernimmt die Berechnung."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Multi-Währungs-Normalisierung",
+                    "description": "Shops in verschiedenen Währungen? Scaliente rechnet alles vor der Konsolidierung mit täglichen EZB-Kursen in Ihre Hauptwährung um."
+                },
+                {
+                    "icon": "FileText",
+                    "title": "Einzel- und Gesamtberichte",
+                    "description": "Gewinnberichte für einzelne Shops oder über alle Shops kombiniert erstellen. Export als CSV für die Buchhaltung."
+                }
             ],
             "howItWorks": {
                 "title": "Konsolidieren Sie Ihre Shops in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Shops verbinden", "description": "F\u00fcgen Sie jeden Shopify-Shop per OAuth hinzu. Jeder Shop synchronisiert seine Daten unabh\u00e4ngig." },
-                    { "title": "Kosten pro Shop konfigurieren", "description": "Produktkosten, Versandtarife und Zahlungsgeb\u00fchren f\u00fcr jeden Shop festlegen. Sie werden separat verwaltet." },
-                    { "title": "Konsolidiert oder einzeln ansehen", "description": "Wechseln Sie zwischen 'Alle Shops' f\u00fcr das Gesamtbild oder gehen Sie in jeden einzelnen Shop." }
+                    {
+                        "title": "Shops verbinden",
+                        "description": "Fügen Sie jeden Shopify-Shop per OAuth hinzu. Jeder Shop synchronisiert seine Daten unabhängig."
+                    },
+                    {
+                        "title": "Kosten pro Shop konfigurieren",
+                        "description": "Produktkosten, Versandtarife und Zahlungsgebühren für jeden Shop festlegen. Sie werden separat verwaltet."
+                    },
+                    {
+                        "title": "Konsolidiert oder einzeln ansehen",
+                        "description": "Wechseln Sie zwischen 'Alle Shops' für das Gesamtbild oder gehen Sie in jeden einzelnen Shop."
+                    }
                 ]
             },
             "finalCta": {
@@ -936,86 +1170,176 @@
             }
         },
         "multiCurrency": {
-            "meta": { "title": "Multi-W\u00e4hrungs-Gewinnverfolgung | Scaliente", "description": "Automatische W\u00e4hrungsumrechnung mit t\u00e4glichen EZB-Kursen. Verfolgen Sie Ihren Gewinn \u00fcber mehrere W\u00e4hrungen pr\u00e4zise." },
+            "meta": {
+                "title": "Multi-Währungs-Gewinnverfolgung | Scaliente",
+                "description": "Automatische Währungsumrechnung mit täglichen EZB-Kursen. Verfolgen Sie Ihren Gewinn über mehrere Währungen präzise."
+            },
             "hero": {
-                "title": "Multi-W\u00e4hrung, null Kopfschmerzen",
+                "title": "Multi-Währung, null Kopfschmerzen",
                 "subtitle": "Ausgaben in USD, Verkauf in EUR? Scaliente konvertiert alles automatisch."
             },
             "problem": {
                 "badge": "Das Problem",
-                "title": "W\u00e4hrungsunterschiede verf\u00e4lschen Ihre Daten",
-                "subtitle": "Wenn Werbeausgaben und Umsatz in verschiedenen W\u00e4hrungen sind, l\u00fcgen Ihre Gewinnzahlen.",
+                "title": "Währungsunterschiede verfälschen Ihre Daten",
+                "subtitle": "Wenn Werbeausgaben und Umsatz in verschiedenen Währungen sind, lügen Ihre Gewinnzahlen.",
                 "points": [
-                    { "title": "Werbung in USD, Verk\u00e4ufe in EUR", "description": "Ihr Meta-Werbekonto rechnet in US-Dollar ab, aber Ihr Shopify-Shop verkauft in Euro. Wenn Sie die Rohzahlen vergleichen, sieht Ihr ROAS 10% besser aus als er tats\u00e4chlich ist." },
-                    { "title": "Manuelle Umrechnung ist immer falsch", "description": "Die Verwendung eines festen Wechselkurses oder Monatsdurchschnitts f\u00fchrt zu Fehlern bei jeder einzelnen Transaktion. Kurse schwanken t\u00e4glich, und kleine Unterschiede summieren sich \u00fcber Hunderte von Bestellungen." },
-                    { "title": "Multi-Shop, Multi-W\u00e4hrung: der Albtraum", "description": "Shop A verkauft in EUR, Shop B in GBP, Werbung l\u00e4uft in USD. Den Gewinn \u00fcber Shops ohne ordentliche Umrechnung zu konsolidieren, ist manuell unm\u00f6glich." }
+                    {
+                        "title": "Werbung in USD, Verkäufe in EUR",
+                        "description": "Ihr Meta-Werbekonto rechnet in US-Dollar ab, aber Ihr Shopify-Shop verkauft in Euro. Wenn Sie die Rohzahlen vergleichen, sieht Ihr ROAS 10% besser aus als er tatsächlich ist."
+                    },
+                    {
+                        "title": "Manuelle Umrechnung ist immer falsch",
+                        "description": "Die Verwendung eines festen Wechselkurses oder Monatsdurchschnitts führt zu Fehlern bei jeder einzelnen Transaktion. Kurse schwanken täglich, und kleine Unterschiede summieren sich über Hunderte von Bestellungen."
+                    },
+                    {
+                        "title": "Multi-Shop, Multi-Währung: der Albtraum",
+                        "description": "Shop A verkauft in EUR, Shop B in GBP, Werbung läuft in USD. Den Gewinn über Shops ohne ordentliche Umrechnung zu konsolidieren, ist manuell unmöglich."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
-                "title": "Pr\u00e4zise Umrechnung mit",
-                "titleHighlight": "t\u00e4glichen EZB-Kursen",
-                "description": "Scaliente nutzt offizielle Wechselkurse der Europ\u00e4ischen Zentralbank, die t\u00e4glich aktualisiert werden. Jede Transaktion wird einzeln am Datum ihres Auftretens umgerechnet und dann aggregiert. Keine Sch\u00e4tzungen, keine manuelle Arbeit."
+                "badge": "Die Lösung",
+                "title": "Präzise Umrechnung mit",
+                "titleHighlight": "täglichen EZB-Kursen",
+                "description": "Scaliente nutzt offizielle Wechselkurse der Europäischen Zentralbank, die täglich aktualisiert werden. Jede Transaktion wird einzeln am Datum ihres Auftretens umgerechnet und dann aggregiert. Keine Schätzungen, keine manuelle Arbeit."
             },
             "features": [
-                { "icon": "Globe", "title": "30+ unterst\u00fctzte W\u00e4hrungen", "description": "EUR, USD, GBP, CZK, PLN, SEK, CHF und mehr. Welche W\u00e4hrung auch immer Ihre Shops und Werbekonten verwenden, Scaliente handhabt es." },
-                { "icon": "ArrowLeftRight", "title": "Umrechnung pro Transaktion", "description": "Jede Bestellung und jeder Werbeausgabeneintrag wird mit dem Wechselkurs dieses spezifischen Datums umgerechnet. Kein Monatsdurchschnitt." },
-                { "icon": "Coins", "title": "Offizielle EZB-Kurse", "description": "Kurse von der Europ\u00e4ischen Zentralbank, die Referenz f\u00fcr Transaktionen im Euroraum. Automatische Aktualisierung an jedem Werktag." },
-                { "icon": "Zap", "title": "Automatische Erkennung", "description": "Scaliente erkennt Ihre Shop-W\u00e4hrung von Shopify und die W\u00e4hrungen Ihrer Werbekonten von jeder Plattform. Keine manuelle Konfiguration." },
-                { "icon": "Clock", "title": "Historische Genauigkeit", "description": "Vergangene Transaktionen verwenden den historischen Kurs ihres Datums, nicht den heutigen. Ihre alten Berichte bleiben genau, auch wenn sich die Kurse \u00e4ndern." },
-                { "icon": "Layers", "title": "Konsolidierte Multi-W\u00e4hrungs-Ansicht", "description": "Shops in verschiedenen W\u00e4hrungen? Die 'Alle Shops'-Ansicht rechnet alles in Ihre Hauptw\u00e4hrung um, bevor aggregiert wird." }
+                {
+                    "icon": "Globe",
+                    "title": "30+ unterstützte Währungen",
+                    "description": "EUR, USD, GBP, CZK, PLN, SEK, CHF und mehr. Welche Währung auch immer Ihre Shops und Werbekonten verwenden, Scaliente handhabt es."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Umrechnung pro Transaktion",
+                    "description": "Jede Bestellung und jeder Werbeausgabeneintrag wird mit dem Wechselkurs dieses spezifischen Datums umgerechnet. Kein Monatsdurchschnitt."
+                },
+                {
+                    "icon": "Coins",
+                    "title": "Offizielle EZB-Kurse",
+                    "description": "Kurse von der Europäischen Zentralbank, die Referenz für Transaktionen im Euroraum. Automatische Aktualisierung an jedem Werktag."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Automatische Erkennung",
+                    "description": "Scaliente erkennt Ihre Shop-Währung von Shopify und die Währungen Ihrer Werbekonten von jeder Plattform. Keine manuelle Konfiguration."
+                },
+                {
+                    "icon": "Clock",
+                    "title": "Historische Genauigkeit",
+                    "description": "Vergangene Transaktionen verwenden den historischen Kurs ihres Datums, nicht den heutigen. Ihre alten Berichte bleiben genau, auch wenn sich die Kurse ändern."
+                },
+                {
+                    "icon": "Layers",
+                    "title": "Konsolidierte Multi-Währungs-Ansicht",
+                    "description": "Shops in verschiedenen Währungen? Die 'Alle Shops'-Ansicht rechnet alles in Ihre Hauptwährung um, bevor aggregiert wird."
+                }
             ],
             "howItWorks": {
-                "title": "Multi-W\u00e4hrung in",
+                "title": "Multi-Währung in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Konten verbinden", "description": "Scaliente erkennt automatisch W\u00e4hrungen aus Ihrem Shopify-Shop und Ihren Werbekonten." },
-                    { "title": "Automatische t\u00e4gliche Umrechnung", "description": "EZB-Kurse werden an jedem Werktag aktualisiert. Jede Transaktion wird mit dem Kurs ihres Datums umgerechnet." },
-                    { "title": "Genauen Gewinn sehen", "description": "Alle Betr\u00e4ge in Ihrer Hauptw\u00e4hrung angezeigt. Keine manuelle Umrechnung, keine Sch\u00e4tzungsfehler." }
+                    {
+                        "title": "Konten verbinden",
+                        "description": "Scaliente erkennt automatisch Währungen aus Ihrem Shopify-Shop und Ihren Werbekonten."
+                    },
+                    {
+                        "title": "Automatische tägliche Umrechnung",
+                        "description": "EZB-Kurse werden an jedem Werktag aktualisiert. Jede Transaktion wird mit dem Kurs ihres Datums umgerechnet."
+                    },
+                    {
+                        "title": "Genauen Gewinn sehen",
+                        "description": "Alle Beträge in Ihrer Hauptwährung angezeigt. Keine manuelle Umrechnung, keine Schätzungsfehler."
+                    }
                 ]
             },
             "finalCta": {
-                "title": "Genauer Gewinn \u00fcber jede W\u00e4hrung hinweg",
+                "title": "Genauer Gewinn über jede Währung hinweg",
                 "subtitle": "Verbinden Sie Ihre Konten und lassen Sie Scaliente die Umrechnung automatisch erledigen."
             }
         },
         "reports": {
-            "meta": { "title": "Gewinnberichte f\u00fcr Shopify | Scaliente", "description": "Erstellen Sie detaillierte Gewinnberichte mit allen Kennzahlen. Export als CSV. Periodenvergleich." },
+            "meta": {
+                "title": "Gewinnberichte für Shopify | Scaliente",
+                "description": "Erstellen Sie detaillierte Gewinnberichte mit allen Kennzahlen. Export als CSV. Periodenvergleich."
+            },
             "hero": {
                 "title": "Gewinnberichte, die wirklich helfen",
-                "subtitle": "Erstellen Sie detaillierte Berichte mit jeder ben\u00f6tigten Kennzahl. Jederzeit exportieren."
+                "subtitle": "Erstellen Sie detaillierte Berichte mit jeder benötigten Kennzahl. Jederzeit exportieren."
             },
             "problem": {
                 "badge": "Das Problem",
                 "title": "Manuelle Berichte verschwenden Stunden",
-                "subtitle": "Jeden Monat das gleiche m\u00fchsame Ritual aus Exportieren, Zusammenf\u00fchren und Berechnen.",
+                "subtitle": "Jeden Monat das gleiche mühsame Ritual aus Exportieren, Zusammenführen und Berechnen.",
                 "points": [
-                    { "title": "Exportieren, zusammenf\u00fchren, hoffen", "description": "Shopify-Daten herunterladen, Werbeausgaben von 5 Plattformen abrufen, in Excel zusammenf\u00fchren, Margen manuell berechnen. Eine falsche Formel und die gesamte Monatsanalyse ist falsch." },
-                    { "title": "Kein standardisiertes Format", "description": "Jeden Monat erstellen Sie denselben Bericht von Grund auf neu. Es gibt keine Vorlage, die automatisch alle Daten zieht. Und wenn jemand fragt 'Was war unsere Marge im M\u00e4rz?', brauchen Sie 30 Minuten f\u00fcr die Antwort." },
-                    { "title": "Periodenvergleich ist manuell", "description": "Diesen Monat vs letzten Monat vergleichen bedeutet zwei separate Exporte, manuelles Ausrichten von Datumsbereichen und hoffen, dass man die Spalten nicht verwechselt hat." }
+                    {
+                        "title": "Exportieren, zusammenführen, hoffen",
+                        "description": "Shopify-Daten herunterladen, Werbeausgaben von 5 Plattformen abrufen, in Excel zusammenführen, Margen manuell berechnen. Eine falsche Formel und die gesamte Monatsanalyse ist falsch."
+                    },
+                    {
+                        "title": "Kein standardisiertes Format",
+                        "description": "Jeden Monat erstellen Sie denselben Bericht von Grund auf neu. Es gibt keine Vorlage, die automatisch alle Daten zieht. Und wenn jemand fragt 'Was war unsere Marge im März?', brauchen Sie 30 Minuten für die Antwort."
+                    },
+                    {
+                        "title": "Periodenvergleich ist manuell",
+                        "description": "Diesen Monat vs letzten Monat vergleichen bedeutet zwei separate Exporte, manuelles Ausrichten von Datumsbereichen und hoffen, dass man die Spalten nicht verwechselt hat."
+                    }
                 ]
             },
             "solution": {
-                "badge": "Die L\u00f6sung",
+                "badge": "Die Lösung",
                 "title": "Automatisierte Berichte,",
                 "titleHighlight": "immer aktuell",
-                "description": "Scaliente erstellt Ihre Gewinnberichte automatisch mit allen Kennzahlen: Umsatz, Kosten, Margen, ROAS und Werbeausgaben. W\u00e4hlen Sie einen beliebigen Zeitraum, vergleichen Sie Perioden und exportieren Sie als CSV mit einem Klick."
+                "description": "Scaliente erstellt Ihre Gewinnberichte automatisch mit allen Kennzahlen: Umsatz, Kosten, Margen, ROAS und Werbeausgaben. Wählen Sie einen beliebigen Zeitraum, vergleichen Sie Perioden und exportieren Sie als CSV mit einem Klick."
             },
             "features": [
-                { "icon": "Download", "title": "CSV-Export mit einem Klick", "description": "Exportieren Sie Ihren vollst\u00e4ndigen Bericht mit allen Kennzahlen im CSV-Format. Bereit f\u00fcr Ihren Buchhalter, Ihren Partner oder Ihre eigene Analyse." },
-                { "icon": "FileText", "title": "Umfassende Kennzahlen", "description": "Umsatz, COGS, Versand, Geb\u00fchren, Werbeausgaben, Nettogewinn, Nettomarge, ROAS, POAS. Alles in einem Bericht." },
-                { "icon": "CalendarRange", "title": "Flexible Zeitr\u00e4ume", "description": "Heute, gestern, letzte 7 Tage, dieser Monat, letzter Monat oder ein beliebiger Zeitraum. Ihr Bericht passt sich sofort an." },
-                { "icon": "PieChart", "title": "Visuelle Aufschl\u00fcsselungen", "description": "Diagramme mit Kostenverteilung, Gewinntrends und Margenentwicklung. Sehen Sie die Geschichte hinter den Zahlen." },
-                { "icon": "Clock", "title": "Perioden\u00fcbergreifender Vergleich", "description": "Vergleichen Sie jede Periode mit der vorherigen. Sehen Sie Wachstum, erkennen Sie R\u00fcckg\u00e4nge und messen Sie die Auswirkung Ihrer \u00c4nderungen." },
-                { "icon": "Users", "title": "Teilbare Einblicke", "description": "Exportieren Sie Berichte f\u00fcr Ihr Team, Ihre Investoren oder Ihren Buchhalter. Jedes Mal ein standardisiertes Format." }
+                {
+                    "icon": "Download",
+                    "title": "CSV-Export mit einem Klick",
+                    "description": "Exportieren Sie Ihren vollständigen Bericht mit allen Kennzahlen im CSV-Format. Bereit für Ihren Buchhalter, Ihren Partner oder Ihre eigene Analyse."
+                },
+                {
+                    "icon": "FileText",
+                    "title": "Umfassende Kennzahlen",
+                    "description": "Umsatz, COGS, Versand, Gebühren, Werbeausgaben, Nettogewinn, Nettomarge, ROAS, POAS. Alles in einem Bericht."
+                },
+                {
+                    "icon": "CalendarRange",
+                    "title": "Flexible Zeiträume",
+                    "description": "Heute, gestern, letzte 7 Tage, dieser Monat, letzter Monat oder ein beliebiger Zeitraum. Ihr Bericht passt sich sofort an."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Visuelle Aufschlüsselungen",
+                    "description": "Diagramme mit Kostenverteilung, Gewinntrends und Margenentwicklung. Sehen Sie die Geschichte hinter den Zahlen."
+                },
+                {
+                    "icon": "Clock",
+                    "title": "Periodenübergreifender Vergleich",
+                    "description": "Vergleichen Sie jede Periode mit der vorherigen. Sehen Sie Wachstum, erkennen Sie Rückgänge und messen Sie die Auswirkung Ihrer Änderungen."
+                },
+                {
+                    "icon": "Users",
+                    "title": "Teilbare Einblicke",
+                    "description": "Exportieren Sie Berichte für Ihr Team, Ihre Investoren oder Ihren Buchhalter. Jedes Mal ein standardisiertes Format."
+                }
             ],
             "howItWorks": {
                 "title": "Berichte erstellen in",
                 "titleHighlight": "3 Schritten",
                 "steps": [
-                    { "title": "Zeitraum w\u00e4hlen", "description": "W\u00e4hlen Sie aus Voreinstellungen oder einen beliebigen benutzerdefinierten Zeitraum. Berichte werden sofort erstellt." },
-                    { "title": "Kennzahlen pr\u00fcfen", "description": "Umsatz, Kosten, Margen, ROAS und mehr. Alles automatisch aus Ihren synchronisierten Daten berechnet." },
-                    { "title": "Exportieren oder vergleichen", "description": "Als CSV herunterladen oder mit einer anderen Periode vergleichen, um Wachstum zu messen und Trends zu erkennen." }
+                    {
+                        "title": "Zeitraum wählen",
+                        "description": "Wählen Sie aus Voreinstellungen oder einen beliebigen benutzerdefinierten Zeitraum. Berichte werden sofort erstellt."
+                    },
+                    {
+                        "title": "Kennzahlen prüfen",
+                        "description": "Umsatz, Kosten, Margen, ROAS und mehr. Alles automatisch aus Ihren synchronisierten Daten berechnet."
+                    },
+                    {
+                        "title": "Exportieren oder vergleichen",
+                        "description": "Als CSV herunterladen oder mit einer anderen Periode vergleichen, um Wachstum zu messen und Trends zu erkennen."
+                    }
                 ]
             },
             "finalCta": {
@@ -1026,38 +1350,47 @@
     },
     "compare": {
         "meta": {
-            "title": "Scaliente vs TrueProfit \u2014 Vergleich 2026 | Scaliente",
-            "description": "Detaillierter Vergleich zwischen Scaliente und TrueProfit f\u00fcr Shopify-Gewinnverfolgung. Kostenloser Plan, Multi-W\u00e4hrung, europ\u00e4isches Hosting."
+            "title": "Scaliente vs TrueProfit — Vergleich 2026 | Scaliente",
+            "description": "Detaillierter Vergleich zwischen Scaliente und TrueProfit für Shopify-Gewinnverfolgung. Kostenloser Plan, Multi-Währung, europäisches Hosting."
         },
         "hero": {
             "title": "Scaliente vs TrueProfit",
-            "subtitle": "Welche L\u00f6sung f\u00fcr Ihren Shopify-Gewinn? Ein sachlicher und transparenter Vergleich."
+            "subtitle": "Welche Lösung für Ihren Shopify-Gewinn? Ein sachlicher und transparenter Vergleich."
         },
         "differentiators": {
-            "freePlan": { "title": "Gro\u00dfz\u00fcgiger kostenloser Plan", "desc": "Testen Sie ohne Zeitlimit mit 20 Bestellungen/Monat. TrueProfit bietet keinen dauerhaft kostenlosen Plan." },
-            "noSurcharge": { "title": "Kein Aufpreis pro Bestellung", "desc": "Ein einziger, vorhersehbarer Preis. Keine Aufschl\u00e4ge pro Bestellung, die Ihre Rechnung mit wachsendem Volumen still in die H\u00f6he treiben \u2014 Sie wissen immer genau, was Sie zahlen." },
-            "multiCurrency": { "title": "Native Multi-W\u00e4hrung", "desc": "Automatische Umrechnung mit t\u00e4glichen EZB-Kursen. Verwalten Sie Shops in EUR, USD, GBP, CZK und mehr." }
+            "freePlan": {
+                "title": "Großzügiger kostenloser Plan",
+                "desc": "Testen Sie ohne Zeitlimit mit 20 Bestellungen/Monat. TrueProfit bietet keinen dauerhaft kostenlosen Plan."
+            },
+            "noSurcharge": {
+                "title": "Kein Aufpreis pro Bestellung",
+                "desc": "Ein einziger, vorhersehbarer Preis. Keine Aufschläge pro Bestellung, die Ihre Rechnung mit wachsendem Volumen still in die Höhe treiben — Sie wissen immer genau, was Sie zahlen."
+            },
+            "multiCurrency": {
+                "title": "Native Multi-Währung",
+                "desc": "Automatische Umrechnung mit täglichen EZB-Kursen. Verwalten Sie Shops in EUR, USD, GBP, CZK und mehr."
+            }
         },
         "tableToggle": "Detaillierten Vergleich anzeigen",
         "table": {
             "feature": "Funktion",
             "freePlan": "Kostenloser Plan",
-            "perOrderFee": "Keine Geb\u00fchr pro Bestellung",
-            "multiCurrency": "Native Multi-W\u00e4hrung",
+            "perOrderFee": "Keine Gebühr pro Bestellung",
+            "multiCurrency": "Native Multi-Währung",
             "multiShop": "Multi-Shop",
             "adPlatforms": "5 Werbeplattformen",
             "realtime": "Echtzeitdaten",
             "mobileApp": "Mobile App (PWA)",
             "gdpr": "DSGVO-konform",
-            "europeanHosting": "Europ\u00e4isches Hosting",
+            "europeanHosting": "Europäisches Hosting",
             "startingPrice": "Ab",
-            "scalinetPrice": "0\u20ac/Monat",
+            "scalinetPrice": "0€/Monat",
             "competitorPrice": "$49/Monat"
         },
         "whyScaliente": {
-            "title": "Warum europ\u00e4ische E-H\u00e4ndler Scaliente w\u00e4hlen",
-            "p1": "Scaliente wurde speziell f\u00fcr europ\u00e4ische E-Commerce-H\u00e4ndler entwickelt. Europ\u00e4isches Hosting, native DSGVO-Konformit\u00e4t, Multi-W\u00e4hrungsunterst\u00fctzung mit Kursen der Europ\u00e4ischen Zentralbank.",
-            "p2": "Wir erkennen die St\u00e4rken von TrueProfit an, insbesondere die Markterfahrung. Aber Scaliente bietet die gleichen Funktionen — einschlie\u00dflich einer mobilen App (PWA) — mit europ\u00e4ischem Hosting, transparenter Preisgestaltung und ohne versteckte Geb\u00fchren."
+            "title": "Warum europäische E-Händler Scaliente wählen",
+            "p1": "Scaliente wurde speziell für europäische E-Commerce-Händler entwickelt. Europäisches Hosting, native DSGVO-Konformität, Multi-Währungsunterstützung mit Kursen der Europäischen Zentralbank.",
+            "p2": "Wir erkennen die Stärken von TrueProfit an, insbesondere die Markterfahrung. Aber Scaliente bietet die gleichen Funktionen — einschließlich einer mobilen App (PWA) — mit europäischem Hosting, transparenter Preisgestaltung und ohne versteckte Gebühren."
         }
     },
     "compareTripleWhale": {
@@ -1070,9 +1403,18 @@
             "subtitle": "Alles Wesentliche für Ihr Profit-Tracking — mit transparenter Preisgestaltung und europäischer DNA."
         },
         "differentiators": {
-            "freePlan": { "title": "Kostenloser Plan verfügbar", "desc": "Scaliente bietet einen dauerhaft kostenlosen Plan mit 20 Bestellungen/Monat. Triple Whale startet bei $100+/Monat ohne kostenlose Option." },
-            "noSurcharge": { "title": "Transparente, vorhersehbare Preise", "desc": "Scaliente startet kostenlos, dann 39€/Monat — ohne versteckte Kosten. Triple Whale beginnt bei $100/Monat und kann $800/Monat übersteigen, mit zusätzlichen Gebühren pro Bestellung bei einigen Plänen." },
-            "multiCurrency": { "title": "Native Multi-Währung (EZB)", "desc": "Automatische Umrechnung mit täglichen EZB-Kursen für EUR, GBP, CZK und mehr. Triple Whale wurde für den US-Markt entwickelt — Scaliente wurde für europäische Händler entwickelt." }
+            "freePlan": {
+                "title": "Kostenloser Plan verfügbar",
+                "desc": "Scaliente bietet einen dauerhaft kostenlosen Plan mit 20 Bestellungen/Monat. Triple Whale startet bei $100+/Monat ohne kostenlose Option."
+            },
+            "noSurcharge": {
+                "title": "Transparente, vorhersehbare Preise",
+                "desc": "Scaliente startet kostenlos, dann 39€/Monat — ohne versteckte Kosten. Triple Whale beginnt bei $100/Monat und kann $800/Monat übersteigen, mit zusätzlichen Gebühren pro Bestellung bei einigen Plänen."
+            },
+            "multiCurrency": {
+                "title": "Native Multi-Währung (EZB)",
+                "desc": "Automatische Umrechnung mit täglichen EZB-Kursen für EUR, GBP, CZK und mehr. Triple Whale wurde für den US-Markt entwickelt — Scaliente wurde für europäische Händler entwickelt."
+            }
         },
         "tableToggle": "Detaillierten Vergleich anzeigen",
         "table": {
@@ -1115,9 +1457,18 @@
             "subtitle": "Vollständige Gewinnverfolgung vs LTV-Analytics. Welche Lösung passt zu Ihren Bedürfnissen?"
         },
         "differentiators": {
-            "freePlan": { "title": "Dauerhaft kostenloser Plan", "desc": "Testen Sie Scaliente ohne Zeitlimit mit 20 Bestellungen/Monat. Lifetimely bietet nur eine 14-tägige kostenlose Testversion." },
-            "noSurcharge": { "title": "5 Werbeplattformen integriert", "desc": "Meta, Google, TikTok, Pinterest und Snapchat Ads. Lifetimely konzentriert sich hauptsächlich auf Facebook Ads." },
-            "multiCurrency": { "title": "Native Multi-Währung", "desc": "Tägliche EZB-Kurse für Multi-Währungs-Shops. Lifetimely bietet keine automatische Währungsumrechnung." }
+            "freePlan": {
+                "title": "Dauerhaft kostenloser Plan",
+                "desc": "Testen Sie Scaliente ohne Zeitlimit mit 20 Bestellungen/Monat. Lifetimely bietet nur eine 14-tägige kostenlose Testversion."
+            },
+            "noSurcharge": {
+                "title": "5 Werbeplattformen integriert",
+                "desc": "Meta, Google, TikTok, Pinterest und Snapchat Ads. Lifetimely konzentriert sich hauptsächlich auf Facebook Ads."
+            },
+            "multiCurrency": {
+                "title": "Native Multi-Währung",
+                "desc": "Tägliche EZB-Kurse für Multi-Währungs-Shops. Lifetimely bietet keine automatische Währungsumrechnung."
+            }
         },
         "tableToggle": "Detaillierten Vergleich anzeigen",
         "table": {
