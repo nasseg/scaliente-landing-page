@@ -36,8 +36,8 @@
         "pill": "Präzision auf den Cent genau",
         "title": "Ihr echter Gewinn.",
         "subtitle": "Ohne Überraschungen.",
-        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht automatisch Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern ab, um Ihren echten Nettogewinn anzuzeigen — alle 5 Minuten aktualisiert.",
-        "definition": "Scaliente ist eine Echtzeit-Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Das Dashboard wird alle 5 Minuten aktualisiert.",
+        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht automatisch Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern ab, um Ihren echten Nettogewinn anzuzeigen — Bestellungen in Echtzeit, Werbeausgaben täglich aktualisiert.",
+        "definition": "Scaliente ist eine Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Bestellungen laufen in Echtzeit über Shopify-Webhooks ein; Werbeausgaben werden täglich aktualisiert.",
         "ctaStart": "Meinen Nettogewinn berechnen",
         "ctaLogin": "Bereits registriert? App öffnen",
         "microText": "Anmeldung in 30 Sekunden. Shopify verbinden. Gewinn sehen.",
@@ -146,8 +146,8 @@
                 "desc": "Wir ziehen alles ab: Produktkosten (COGS), Versandkosten, Stripe/PayPal-Transaktionsgebühren und Steuern."
             },
             "realtime": {
-                "title": "Echtzeit",
-                "desc": "Ihre Daten werden alle 5 Minuten aktualisiert. Treffen Sie Entscheidungen basierend auf dem jetzigen Moment, nicht auf gestern."
+                "title": "Ihre Zahlen, in Echtzeit",
+                "desc": "Ihre Bestellungen laufen in Echtzeit über Shopify-Webhooks ein, Ihre Werbeausgaben werden täglich aktualisiert. Entscheiden Sie auf Basis der Zahlen von heute, nicht von gestern."
             },
             "multiCurrency": {
                 "title": "Native Multi-Wahrung",
@@ -398,7 +398,7 @@
             },
             "shopifyAnalytics": {
                 "q": "Warum nicht einfach Shopify Analytics nutzen?",
-                "a": "Shopify Analytics zeigt den Bruttoumsatz an, berechnet aber nicht den Nettogewinn. Beispiel: Wenn Ihr Shopify-Shop 10.000€ Umsatz generiert, Sie aber 3.000€ für Meta Ads, 2.000€ für COGS, 800€ für Versand und 400€ für Stripe-Gebühren ausgegeben haben, zeigt Shopify 10.000€ an, während Ihr tatsächlicher Gewinn nur 3.800€ beträgt. Scaliente zieht all diese Kosten automatisch ab und aktualisiert alle 5 Minuten."
+                "a": "Shopify Analytics zeigt den Bruttoumsatz an, berechnet aber nicht den Nettogewinn. Beispiel: Wenn Ihr Shopify-Shop 10.000€ Umsatz generiert, Sie aber 3.000€ für Meta Ads, 2.000€ für COGS, 800€ für Versand und 400€ für Stripe-Gebühren ausgegeben haben, zeigt Shopify 10.000€ an, während Ihr tatsächlicher Gewinn nur 3.800€ beträgt. Scaliente zieht all diese Kosten automatisch ab: Bestellungen laufen in Echtzeit ein, Werbeausgaben werden täglich aktualisiert."
             },
             "commitment": {
                 "q": "Bin ich langfristig gebunden?",
@@ -422,7 +422,7 @@
             },
             "calculateProfit": {
                 "q": "Wie berechnet man den echten E-Commerce-Gewinn?",
-                "a": "Der echte E-Commerce-Gewinn entspricht dem Umsatz minus aller Kosten: Werbeausgaben (Meta, Google, TikTok, Pinterest, Snapchat), COGS (Wareneinsatzkosten), Versandkosten, Zahlungsgebühren (Stripe, PayPal), Transaktionsgebühren, Erstattungen und Steuern. Scaliente automatisiert diese Berechnung durch Synchronisation mit Shopify und Werbeplattformen und aktualisiert Ihren Nettogewinn alle 5 Minuten."
+                "a": "Der echte E-Commerce-Gewinn entspricht dem Umsatz minus aller Kosten: Werbeausgaben (Meta, Google, TikTok, Pinterest, Snapchat), COGS (Wareneinsatzkosten), Versandkosten, Zahlungsgebühren (Stripe, PayPal), Transaktionsgebühren, Erstattungen und Steuern. Scaliente automatisiert diese Berechnung durch Synchronisation mit Shopify in Echtzeit und mit den Werbeplattformen täglich."
             },
             "poas": {
                 "q": "Was ist POAS (Profit on Ad Spend)?",
@@ -820,7 +820,7 @@
             },
             "hero": {
                 "title": "Ihr echter Gewinn, nicht der Shopify-Umsatz",
-                "subtitle": "Sehen Sie genau, was nach allen Kosten übrig bleibt. Alle 5 Minuten aktualisiert."
+                "subtitle": "Sehen Sie genau, was nach allen Kosten übrig bleibt. Bestellungen in Echtzeit, Werbeausgaben täglich aktualisiert."
             },
             "problem": {
                 "badge": "Das Problem",
@@ -845,7 +845,7 @@
                 "badge": "Die Lösung",
                 "title": "Ein Dashboard, das zeigt,",
                 "titleHighlight": "was Sie wirklich behalten",
-                "description": "Scaliente verbindet sich mit Shopify und Ihren Werbekonten und zieht dann automatisch alle Kosten ab: Produktkosten, Versand, Zahlungsgebühren, Werbeausgaben und Steuern. Ihr Nettogewinn wird alle 5 Minuten aktualisiert."
+                "description": "Scaliente verbindet sich mit Shopify und Ihren Werbekonten und zieht dann automatisch alle Kosten ab: Produktkosten, Versand, Zahlungsgebühren, Werbeausgaben und Steuern. Ihr Nettogewinn wird bei jeder Bestellung neu berechnet; Werbeausgaben werden täglich aktualisiert."
             },
             "features": [
                 {
@@ -893,7 +893,7 @@
                     },
                     {
                         "title": "Echten Gewinn sehen",
-                        "description": "Ihr Dashboard füllt sich sofort. Nettogewinn, Margen und Trends werden alle 5 Minuten aktualisiert."
+                        "description": "Ihr Dashboard füllt sich ab der ersten Synchronisation. Nettogewinn, Margen und Trends werden bei jeder neuen Bestellung neu berechnet."
                     }
                 ]
             },

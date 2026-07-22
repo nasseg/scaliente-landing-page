@@ -36,8 +36,8 @@
         "pill": "Precision down to the penny",
         "title": "Your Real Profit.",
         "subtitle": "No Surprises.",
-        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees, and taxes to show your real net profit — updated every 5 minutes.",
-        "definition": "Scaliente is a real-time profit tracking application for Shopify stores. It automatically deducts ad spend from Meta, Google, TikTok, Pinterest, and Snapchat, plus COGS, shipping costs, payment processing fees, and taxes from revenue to calculate net profit. The dashboard updates every 5 minutes.",
+        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees, and taxes to show your real net profit — orders in real time, ad spend refreshed daily.",
+        "definition": "Scaliente is a profit tracking application for Shopify stores. It automatically deducts ad spend from Meta, Google, TikTok, Pinterest, and Snapchat, plus COGS, shipping costs, payment processing fees, and taxes from revenue to calculate net profit. Orders arrive in real time through Shopify webhooks; ad spend is refreshed daily.",
         "ctaStart": "Calculate My Net Profit",
         "ctaLogin": "Already signed up? Open app",
         "microText": "Sign up in 30 seconds. Connect Shopify. See your profit.",
@@ -146,8 +146,8 @@
                 "desc": "We deduct everything: Product cost (COGS), shipping fees, Stripe/PayPal transaction fees, and taxes."
             },
             "realtime": {
-                "title": "Your numbers, to the minute",
-                "desc": "Your data refreshes every 5 minutes. Make decisions based on the present moment, not yesterday."
+                "title": "Your numbers, in real time",
+                "desc": "Your orders arrive in real time through Shopify webhooks, and your ad spend is refreshed daily. Decide on today's numbers, not yesterday's."
             },
             "multiCurrency": {
                 "title": "Native Multi-Currency",
@@ -398,7 +398,7 @@
             },
             "shopifyAnalytics": {
                 "q": "Why not just use Shopify Analytics?",
-                "a": "Shopify Analytics displays gross revenue but does not calculate net profit. For example, if your Shopify store generates €10,000 in revenue but you spent €3,000 on Meta Ads, €2,000 on COGS, €800 on shipping, and €400 on Stripe fees, Shopify shows €10,000 while your real profit is only €3,800. Scaliente deducts all these costs automatically and updates every 5 minutes."
+                "a": "Shopify Analytics displays gross revenue but does not calculate net profit. For example, if your Shopify store generates €10,000 in revenue but you spent €3,000 on Meta Ads, €2,000 on COGS, €800 on shipping, and €400 on Stripe fees, Shopify shows €10,000 while your real profit is only €3,800. Scaliente deducts all these costs automatically: orders arrive in real time and ad spend is refreshed daily."
             },
             "commitment": {
                 "q": "Am I locked in?",
@@ -422,7 +422,7 @@
             },
             "calculateProfit": {
                 "q": "How to calculate real e-commerce profit?",
-                "a": "Real e-commerce profit equals revenue minus all costs: ad spend (Meta, Google, TikTok, Pinterest, Snapchat), COGS (cost of goods sold), shipping fees, payment processing fees (Stripe, PayPal), transaction fees, refunds, and taxes. Scaliente automates this calculation by syncing with Shopify and ad platforms, updating your net profit every 5 minutes."
+                "a": "Real e-commerce profit equals revenue minus all costs: ad spend (Meta, Google, TikTok, Pinterest, Snapchat), COGS (cost of goods sold), shipping fees, payment processing fees (Stripe, PayPal), transaction fees, refunds, and taxes. Scaliente automates this calculation by syncing with Shopify in real time and with the ad platforms every day."
             },
             "poas": {
                 "q": "What is POAS (Profit on Ad Spend)?",
@@ -820,7 +820,7 @@
             },
             "hero": {
                 "title": "Your Real Profit, Not Shopify Revenue",
-                "subtitle": "See exactly what you keep after every cost. Updated every 5 minutes."
+                "subtitle": "See exactly what you keep after every cost. Orders in real time, ad spend refreshed daily."
             },
             "problem": {
                 "badge": "The Problem",
@@ -845,7 +845,7 @@
                 "badge": "The Solution",
                 "title": "One dashboard that shows",
                 "titleHighlight": "what you actually keep",
-                "description": "Scaliente connects to Shopify and your ad accounts, then automatically deducts every cost: product costs, shipping, payment gateway fees, ad spend, and taxes. Your net profit updates every 5 minutes."
+                "description": "Scaliente connects to Shopify and your ad accounts, then automatically deducts every cost: product costs, shipping, payment gateway fees, ad spend, and taxes. Your net profit is recalculated on every order; ad spend is refreshed daily."
             },
             "features": [
                 {
@@ -893,7 +893,7 @@
                     },
                     {
                         "title": "See your real profit",
-                        "description": "Your dashboard populates instantly. Net profit, margins, and trends updated every 5 minutes."
+                        "description": "Your dashboard fills up from the first sync. Net profit, margins, and trends are recalculated on every new order."
                     }
                 ]
             },
