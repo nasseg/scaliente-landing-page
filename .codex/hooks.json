@@ -1,0 +1,39 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/nelgazzah/Developer/Business/Ecom/LandingPageScaliente/.codex/hooks/guard-bash.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/nelgazzah/Developer/Business/Ecom/LandingPageScaliente/.codex/hooks/check-dictionaries.sh'",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "'/Users/nelgazzah/Developer/Business/Ecom/LandingPageScaliente/.codex/hooks/session-context.sh'",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

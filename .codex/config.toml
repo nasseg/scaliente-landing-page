@@ -1,0 +1,7 @@
+# Codex configuration — Scaliente landing page
+# Instructions live in AGENTS.md (shared with Claude Code via the CLAUDE.md symlink).
+# Skills live in .agents/skills/ and are read natively.
+# Hooks are a symlink to .claude/hooks/, so both agents enforce identical rules.
+
+[shell_environment_policy]
+inherit = "core"
