@@ -20,13 +20,31 @@ and sections silently invert or the WebGL background bleeds through.
 | odd (1, 3, 5, 7) | LIGHT | `#fafafa` |
 | even (2, 4, 6) | DARK | `#09090b` |
 
-Current order: 1 BeforeAfter (light) · 2 Features + InlineCTA (dark, frosted) ·
-3 HowItWorks (light) · 4 Testimonials (dark, frosted) · 5 Pricing (light) ·
-6 FAQ (dark, frosted) · 7 CTA (light).
+Current order in `src/app/[lang]/page.js` (verify there, not here, before relying on it):
 
-**Inserting a section shifts everything after it** — the alternation recomputes
-itself. After any insertion or reordering, check each following section's
-`frosted` prop still matches its new parity.
+| # | Section | Theme | `frosted` |
+|---|---|---|---|
+| 1 | before-after | light | no |
+| 2 | features | dark | yes |
+| 3 | operations | light | no |
+| 4 | teamwork | dark | yes |
+| 5 | testimonials | light | no |
+| 6 | how-it-works | dark | yes |
+| 7 | pricing | light | no |
+| 8 | faq | dark | yes |
+| 9 | cta | light | no |
+
+## Insert sections in PAIRS
+
+**Inserting a section shifts the parity of every section below it** — each one
+flips light↔dark, and its `frosted` prop becomes wrong.
+
+**Adding an even number of sections preserves every downstream parity.** This is
+why `operations` and `teamwork` were introduced together at positions 3-4:
+everything below simply shifted by two and kept its theme.
+
+If you must add an odd number, you have to flip the `frosted` prop on every
+section below the insertion point, and re-check them all visually. Prefer pairs.
 
 ## The 10 CSS variables
 

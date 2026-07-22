@@ -34,9 +34,9 @@
     },
     "hero": {
         "pill": "Precision down to the penny",
-        "title": "Your Real Profit.",
-        "subtitle": "No Surprises.",
-        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees, and taxes to show your real net profit — orders in real time, ad spend refreshed daily.",
+        "title": "Your real profit.",
+        "subtitle": "Costs, currencies and disputes included.",
+        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees and taxes from your sales, converts your currencies at ECB rates and tracks your Shopify Payments disputes. Orders in real time, ad spend refreshed daily.",
         "definition": "Scaliente is a profit tracking application for Shopify stores. It automatically deducts ad spend from Meta, Google, TikTok, Pinterest, and Snapchat, plus COGS, shipping costs, payment processing fees, and taxes from revenue to calculate net profit. Orders arrive in real time through Shopify webhooks; ad spend is refreshed daily.",
         "ctaStart": "Calculate My Net Profit",
         "ctaLogin": "Already signed up? Open app",
@@ -245,7 +245,9 @@
                     "history": "30-day history",
                     "adPlatform": "1 ad platform",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "1 user",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Create Free Account"
             },
@@ -258,7 +260,9 @@
                     "history": "90-day history",
                     "adPlatforms": "2 ad platforms",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "1 user",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Unlock Lite Mode"
             },
@@ -271,7 +275,9 @@
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "2 users",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Unlock Starter Mode"
             },
@@ -285,7 +291,9 @@
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
                     "multiShop": "Multi-store consolidated view",
-                    "comparison": "Advanced comparison"
+                    "comparison": "Advanced comparison",
+                    "collaborators": "5 users",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Switch to Growth",
                 "socialProof": "Chosen by 7 out of 10 Scaliente users"
@@ -300,7 +308,9 @@
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
                     "slackSupport": "Unlimited collaborators",
-                    "priority": "Priority support"
+                    "priority": "Priority support",
+                    "collaborators": "Unlimited users",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Switch to Scale"
             }
@@ -336,7 +346,8 @@
             "description": "Your financial data is encrypted end-to-end (AES-256) and never shared, sold, or used for commercial purposes. Scaliente uses read-only API access — we cannot modify your store or ad accounts.",
             "readOnly": "Read-only"
         },
-        "finalQuote": "\"A single poorly managed day costs more than a month's subscription. Shopify numbers don't show what you keep.\""
+        "finalQuote": "\"A single poorly managed day costs more than a month's subscription. Shopify numbers don't show what you keep.\"",
+        "trial": "7-day trial, cancel anytime"
     },
     "founderStory": {
         "founderStory": {
@@ -1620,6 +1631,50 @@
                 "option2": "Option 2: Email Request",
                 "process": "What happens next?",
                 "process_text": "Once the request is received (or action taken via dashboard), we instantly delete your API keys and access tokens. Your historical data is purged from our active databases within 24h and from our backups within 30 days."
+            }
+        }
+    },
+    "operations": {
+        "badge": "Beyond revenue",
+        "title": {
+            "main": "What quietly eats",
+            "highlight": "your margin"
+        },
+        "subtitle": "The line items ordinary dashboards leave out.",
+        "cards": {
+            "disputes": {
+                "title": "Disputes and chargebacks",
+                "desc": "Track your Shopify Payments disputes from your dashboard: amount at risk, won, lost, and the ones waiting on you before their deadline."
+            },
+            "expenses": {
+                "title": "Declared expenses",
+                "desc": "Subscriptions, salaries, contractors, fixed costs. Add them once, on a recurring schedule if you need, and see what is left after every charge — not just after product costs."
+            },
+            "reports": {
+                "title": "Monthly report",
+                "desc": "The waterfall from revenue down to net profit, your cost breakdown, and the comparison with the previous period. Exportable as CSV for your accountant."
+            }
+        }
+    },
+    "teamwork": {
+        "badge": "Together",
+        "title": {
+            "main": "Run it",
+            "highlight": "as a team"
+        },
+        "subtitle": "Your co-founder, your media buyer and your accountant do not look at the same numbers.",
+        "cards": {
+            "roles": {
+                "title": "Team and roles",
+                "desc": "Invite anyone with the right level of access: read-only, editor, admin or owner. Everyone sees what concerns them, nobody breaks your setup."
+            },
+            "multiShop": {
+                "title": "Consolidated multi-store view",
+                "desc": "Several Shopify stores? Switch between them in one click, or look at the aggregated profit of all of them, converted into your main currency."
+            },
+            "export": {
+                "title": "CSV export",
+                "desc": "Pull your data whenever you want, over whichever period you want. Your numbers stay yours."
             }
         }
     }

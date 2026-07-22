@@ -21,6 +21,8 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.discovery?.features?.adPlatform || "1 plateforme ads", included: true },
                 { text: content?.plans?.discovery?.features?.comparison || "Comparaison périodes", included: false },
                 { text: content?.plans?.discovery?.features?.export || "Export CSV", included: false },
+                { text: content?.plans?.discovery?.features?.collaborators || "1 utilisateur", included: true },
+                { text: content?.plans?.discovery?.features?.aiInsights || "Analyses IA", included: false },
             ],
             cta: content?.plans?.discovery?.cta || "Commencer Gratuitement"
         },
@@ -38,6 +40,8 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.lite?.features?.adPlatforms || "2 plateformes ads", included: true },
                 { text: content?.plans?.lite?.features?.comparison || "Comparaison périodes", included: false },
                 { text: content?.plans?.lite?.features?.export || "Export CSV", included: true },
+                { text: content?.plans?.lite?.features?.collaborators || "1 utilisateur", included: true },
+                { text: content?.plans?.lite?.features?.aiInsights || "Analyses IA", included: true },
             ],
             cta: content?.plans?.lite?.cta || "Débloquer Lite"
         },
@@ -55,6 +59,8 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.starter?.features?.adPlatforms || "5 plateformes ads", included: true },
                 { text: content?.plans?.starter?.features?.comparison || "Comparaison périodes", included: true },
                 { text: content?.plans?.starter?.features?.export || "Export CSV", included: true },
+                { text: content?.plans?.starter?.features?.collaborators || "2 utilisateurs", included: true },
+                { text: content?.plans?.starter?.features?.aiInsights || "Analyses IA", included: true },
             ],
             cta: content?.plans?.starter?.cta || "Choisir Starter"
         },
@@ -72,6 +78,8 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.growth?.features?.adPlatforms || "5 plateformes ads", included: true },
                 { text: content?.plans?.growth?.features?.multiShop || "Vue consolidée", included: true },
                 { text: content?.plans?.growth?.features?.comparison || "Comparaison avancée", included: true },
+                { text: content?.plans?.growth?.features?.collaborators || "5 utilisateurs", included: true },
+                { text: content?.plans?.growth?.features?.aiInsights || "Analyses IA", included: true },
             ],
             cta: content?.plans?.growth?.cta || "Choisir Growth"
         },
@@ -89,6 +97,8 @@ const Pricing = ({ content, common }) => {
                 { text: content?.plans?.scale?.features?.adPlatforms || "5 plateformes ads", included: true },
                 { text: content?.plans?.scale?.features?.slackSupport || "Support Slack dédié", included: true },
                 { text: content?.plans?.scale?.features?.priority || "Support prioritaire", included: true },
+                { text: content?.plans?.scale?.features?.collaborators || "Utilisateurs illimités", included: true },
+                { text: content?.plans?.scale?.features?.aiInsights || "Analyses IA", included: true },
             ],
             cta: content?.plans?.scale?.cta || "Choisir Scale"
         }
@@ -310,6 +320,12 @@ const Pricing = ({ content, common }) => {
                                     {plan.featured && content?.plans?.growth?.socialProof && (
                                         <p className="mt-3 text-xs text-center text-orange-500/80 font-medium">
                                             {content.plans.growth.socialProof}
+                                        </p>
+                                    )}
+                                    {/* trialDays = 7 on every paid tier (config/plans.js); free has none */}
+                                    {plan.tier !== 'free' && content?.trial && (
+                                        <p className="mt-3 text-xs text-center text-[var(--text-muted)]">
+                                            {content.trial}
                                         </p>
                                     )}
                                 </div>

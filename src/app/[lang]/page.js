@@ -4,6 +4,7 @@ import Hero from '@/components/Hero';
 import LogoMarquee from '@/components/LogoMarquee';
 import BeforeAfter from '@/components/BeforeAfter';
 import FeatureSection from '@/components/Features';
+import CapabilitySection from '@/components/CapabilitySection';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
@@ -147,27 +148,46 @@ export default async function Home({ params }) {
           <FeatureSection content={dict.features} />
         </Section>
 
-        {/* 3 = odd = LIGHT — Testimonials early for trust */}
+        {/* 3 + 4 — inserted as a PAIR on purpose: `.alternating-sections` themes
+            by :nth-child, so adding an even number of sections keeps the parity
+            (and the `frosted` prop) of every section below unchanged. */}
+        <Section id="operations">
+          <CapabilitySection
+            content={dict.operations}
+            theme="light"
+            cards={['disputes', 'expenses', 'reports']}
+          />
+        </Section>
+
+        <Section id="teamwork" frosted>
+          <CapabilitySection
+            content={dict.teamwork}
+            theme="dark"
+            cards={['roles', 'multiShop', 'export']}
+          />
+        </Section>
+
+        {/* 5 = odd = LIGHT */}
         <Section id="testimonials">
           <Testimonials content={dict.testimonials} founderStory={dict.founderStory} />
         </Section>
 
-        {/* 4 = even = DARK */}
+        {/* 6 = even = DARK */}
         <Section id="how-it-works" frosted>
           <HowItWorks content={dict.howItWorks} />
         </Section>
 
-        {/* 5 = odd = LIGHT */}
+        {/* 7 = odd = LIGHT */}
         <Section id="pricing">
           <Pricing content={dict.pricing} common={dict.common} />
         </Section>
 
-        {/* 6 = even = DARK */}
+        {/* 8 = even = DARK */}
         <Section id="faq" frosted>
           <FAQ content={dict.faq} />
         </Section>
 
-        {/* 7 = odd = LIGHT */}
+        {/* 9 = odd = LIGHT */}
         <Section data-cta-final="">
           <CTA content={dict.cta} />
         </Section>

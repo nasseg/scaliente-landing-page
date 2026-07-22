@@ -139,4 +139,86 @@ describe('pricing copy matches the app', () => {
             expect(String(name).toLowerCase()).not.toBe('free');
         }
     });
+
+    // collaboratorsPerShop in customerPro/src/config/plans.js:
+    // free 1 · lite 1 · starter 2 · growth 5 · scale Infinity
+    const EXPECTED_COLLABORATORS = {
+        discovery: '1',
+        lite: '1',
+        starter: '2',
+        growth: '5',
+    };
+
+    Object.entries(EXPECTED_COLLABORATORS).forEach(([plan, count]) => {
+        test.each(LANGS)(`${plan} states ${count} collaborator seat(s) in %s`, (lang) => {
+            const copy = flat[lang][`pricing.plans.${plan}.features.collaborators`];
+            expect(typeof copy).toBe('string');
+            expect(copy).toContain(count);
+        });
+    });
+
+    test.each(LANGS)('scale advertises unlimited collaborators in %s', (lang) => {
+        const copy = flat[lang]['pricing.plans.scale.features.collaborators'];
+        expect(typeof copy).toBe('string');
+        expect(copy).toMatch(/illimit|unlimited|unbegrenzt/i);
+    });
+
+    // aiInsights is false on free, true from lite upwards.
+    test.each(['discovery', 'lite', 'starter', 'growth', 'scale'])(
+        '%s has an AI Insights label (Pricing.jsx marks Discovery as excluded)',
+        (plan) => {
+            LANGS.forEach((lang) => {
+                expect(typeof flat[lang][`pricing.plans.${plan}.features.aiInsights`]).toBe('string');
+            });
+        },
+    );
+
+    test.each(LANGS)('the 7-day trial is stated in %s', (lang) => {
+        const copy = flat[lang]['pricing.trial'];
+        expect(typeof copy).toBe('string');
+        expect(copy).toContain('7');
+    });
+
+    test.each(LANGS)('pricing never advertises AI email quotas in %s (Inbox is closed beta)', (lang) => {
+        const pricingStrings = Object.entries(flat[lang])
+            .filter(([key]) => key.startsWith('pricing.'))
+            .map(([, value]) => value)
+            .filter((value) => typeof value === 'string');
+        const offenders = pricingStrings.filter((value) =>
+            /(e-?mails?|Mails?)\s*(IA|AI|KI)|IA\s*e-?mails?|AI\s*e-?mails?/i.test(value),
+        );
+        expect(offenders).toEqual([]);
+    });
+});
+
+describe('the new capability sections are complete', () => {
+    const SECTIONS = {
+        operations: ['disputes', 'expenses', 'reports'],
+        teamwork: ['roles', 'multiShop', 'export'],
+    };
+
+    Object.entries(SECTIONS).forEach(([section, cards]) => {
+        test.each(LANGS)(`${section} has a heading in %s`, (lang) => {
+            expect(typeof flat[lang][`${section}.title.main`]).toBe('string');
+            expect(typeof flat[lang][`${section}.subtitle`]).toBe('string');
+        });
+
+        cards.forEach((card) => {
+            test.each(LANGS)(`${section}.${card} has a title and description in %s`, (lang) => {
+                expect(typeof flat[lang][`${section}.cards.${card}.title`]).toBe('string');
+                expect(typeof flat[lang][`${section}.cards.${card}.desc`]).toBe('string');
+            });
+        });
+    });
+
+    // Disputes are surfaced on the dashboard and are NOT part of the profit
+    // formula (no reference to them anywhere in customerPro/src/lib/profit/).
+    // Saying otherwise would be a false claim about how the product computes profit.
+    test.each(LANGS)('the disputes card never claims disputes are deducted from profit in %s', (lang) => {
+        const copy = [
+            flat[lang]['operations.cards.disputes.title'],
+            flat[lang]['operations.cards.disputes.desc'],
+        ].join(' ');
+        expect(copy).not.toMatch(/déduit|deducted|abgezogen/i);
+    });
 });

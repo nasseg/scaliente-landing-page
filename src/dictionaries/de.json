@@ -35,8 +35,8 @@
     "hero": {
         "pill": "Präzision auf den Cent genau",
         "title": "Ihr echter Gewinn.",
-        "subtitle": "Ohne Überraschungen.",
-        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht automatisch Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern ab, um Ihren echten Nettogewinn anzuzeigen — Bestellungen in Echtzeit, Werbeausgaben täglich aktualisiert.",
+        "subtitle": "Kosten, Währungen und Streitfälle inklusive.",
+        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern automatisch von Ihren Verkäufen ab, rechnet Ihre Währungen zu EZB-Kursen um und verfolgt Ihre Shopify-Payments-Streitfälle. Bestellungen in Echtzeit, Werbeausgaben täglich aktualisiert.",
         "definition": "Scaliente ist eine Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Bestellungen laufen in Echtzeit über Shopify-Webhooks ein; Werbeausgaben werden täglich aktualisiert.",
         "ctaStart": "Meinen Nettogewinn berechnen",
         "ctaLogin": "Bereits registriert? App öffnen",
@@ -245,7 +245,9 @@
                     "history": "30 Tage Historie",
                     "adPlatform": "1 Werbeplattform",
                     "comparison": "Periodenvergleich",
-                    "export": "CSV-Export"
+                    "export": "CSV-Export",
+                    "collaborators": "1 Nutzer",
+                    "aiInsights": "KI-Analysen"
                 },
                 "cta": "Kostenlos starten"
             },
@@ -258,7 +260,9 @@
                     "history": "90 Tage Historie",
                     "adPlatforms": "2 Werbeplattformen",
                     "comparison": "Periodenvergleich",
-                    "export": "CSV-Export"
+                    "export": "CSV-Export",
+                    "collaborators": "1 Nutzer",
+                    "aiInsights": "KI-Analysen"
                 },
                 "cta": "Lite-Modus freischalten"
             },
@@ -271,7 +275,9 @@
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
                     "comparison": "Periodenvergleich",
-                    "export": "CSV-Export"
+                    "export": "CSV-Export",
+                    "collaborators": "2 Nutzer",
+                    "aiInsights": "KI-Analysen"
                 },
                 "cta": "Starter-Modus freischalten"
             },
@@ -285,7 +291,9 @@
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
                     "multiShop": "Multi-Shop konsolidierte Ansicht",
-                    "comparison": "Erweiterter Vergleich"
+                    "comparison": "Erweiterter Vergleich",
+                    "collaborators": "5 Nutzer",
+                    "aiInsights": "KI-Analysen"
                 },
                 "cta": "Auf Growth wechseln",
                 "socialProof": "Von 7 von 10 Scaliente-Nutzern gewählt"
@@ -300,7 +308,9 @@
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
                     "slackSupport": "Unbegrenzte Mitarbeiter",
-                    "priority": "Prioritäts-Support"
+                    "priority": "Prioritäts-Support",
+                    "collaborators": "Unbegrenzte Nutzer",
+                    "aiInsights": "KI-Analysen"
                 },
                 "cta": "Auf Scale wechseln"
             }
@@ -336,7 +346,8 @@
             "description": "Ihre Finanzdaten sind Ende-zu-Ende verschlüsselt (AES-256) und werden niemals geteilt, verkauft oder für kommerzielle Zwecke genutzt. Scaliente nutzt nur Lesezugriff auf APIs — wir können Ihren Shop oder Ihre Werbekonten nicht verändern.",
             "readOnly": "Nur Lesen"
         },
-        "finalQuote": "\"Ein einziger schlecht gesteuerter Tag kostet mehr als ein Monatsabonnement. Shopify-Zahlen zeigen nicht, was Sie behalten.\""
+        "finalQuote": "\"Ein einziger schlecht gesteuerter Tag kostet mehr als ein Monatsabonnement. Shopify-Zahlen zeigen nicht, was Sie behalten.\"",
+        "trial": "7 Tage testen, jederzeit kündbar"
     },
     "founderStory": {
         "founderStory": {
@@ -1620,6 +1631,50 @@
                 "option2": "Option 2: Anfrage per E-Mail",
                 "process": "Was passiert als Nächstes?",
                 "process_text": "Sobald die Anfrage eingegangen ist (oder die Aktion über das Dashboard durchgeführt wurde), löschen wir sofort Ihre API-Schlüssel und Zugriffstoken. Ihre historischen Daten werden innerhalb von 24 Stunden aus unseren aktiven Datenbanken und innerhalb von 30 Tagen aus unseren Backups gelöscht."
+            }
+        }
+    },
+    "operations": {
+        "badge": "Mehr als Umsatz",
+        "title": {
+            "main": "Was Ihre Marge",
+            "highlight": "still auffrisst"
+        },
+        "subtitle": "Die Posten, die gewöhnliche Dashboards weglassen.",
+        "cards": {
+            "disputes": {
+                "title": "Streitfälle und Rückbuchungen",
+                "desc": "Verfolgen Sie Ihre Shopify-Payments-Streitfälle direkt im Dashboard: Betrag im Risiko, gewonnen, verloren, und welche vor Fristablauf auf Sie warten."
+            },
+            "expenses": {
+                "title": "Erfasste Ausgaben",
+                "desc": "Abos, Gehälter, Dienstleister, Fixkosten. Einmal eintragen, bei Bedarf wiederkehrend, und sehen, was nach allen Belastungen übrig bleibt — nicht nur nach den Produktkosten."
+            },
+            "reports": {
+                "title": "Monatsbericht",
+                "desc": "Der Wasserfall vom Umsatz bis zum Nettogewinn, Ihre Kostenaufteilung und der Vergleich mit der Vorperiode. Als CSV exportierbar für Ihre Buchhaltung."
+            }
+        }
+    },
+    "teamwork": {
+        "badge": "Gemeinsam",
+        "title": {
+            "main": "Im Team",
+            "highlight": "steuern"
+        },
+        "subtitle": "Ihr Mitgründer, Ihr Media-Buyer und Ihre Buchhaltung schauen nicht auf dieselben Zahlen.",
+        "cards": {
+            "roles": {
+                "title": "Team und Rollen",
+                "desc": "Laden Sie jeden mit der passenden Zugriffsstufe ein: nur lesen, Bearbeiter, Admin oder Inhaber. Jeder sieht, was ihn betrifft, niemand zerschießt Ihre Konfiguration."
+            },
+            "multiShop": {
+                "title": "Konsolidierte Multi-Shop-Ansicht",
+                "desc": "Mehrere Shopify-Shops? Wechseln Sie mit einem Klick, oder sehen Sie den aggregierten Gewinn aller Shops, umgerechnet in Ihre Hauptwährung."
+            },
+            "export": {
+                "title": "CSV-Export",
+                "desc": "Ziehen Sie Ihre Daten, wann Sie wollen, über den Zeitraum, den Sie wollen. Ihre Zahlen bleiben Ihre."
             }
         }
     }

@@ -34,9 +34,9 @@
     },
     "hero": {
         "pill": "La précision au centime près",
-        "title": "Votre Profit Réel.",
-        "subtitle": "Sans Surprises.",
-        "description": "Connectez Shopify et vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) en 1 clic. Scaliente déduit automatiquement les dépenses ads, COGS, frais de port, frais de paiement et taxes pour afficher votre profit net réel — commandes en temps réel, dépenses publicitaires actualisées chaque jour.",
+        "title": "Votre vrai profit.",
+        "subtitle": "Coûts, devises et litiges compris.",
+        "description": "Connectez Shopify et vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) en 1 clic. Scaliente déduit automatiquement les dépenses ads, COGS, frais de port, frais de paiement et taxes de vos ventes, convertit vos devises aux taux BCE et suit vos litiges Shopify Payments. Commandes en temps réel, dépenses publicitaires actualisées chaque jour.",
         "definition": "Scaliente est une application de suivi de profit pour les boutiques Shopify. Elle déduit automatiquement les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat, ainsi que les COGS, frais de livraison, frais de paiement et taxes du chiffre d'affaires pour calculer le bénéfice net. Les commandes remontent en temps réel via les webhooks Shopify ; les dépenses publicitaires sont actualisées chaque jour.",
         "ctaStart": "Calculer mon Profit Net",
         "ctaLogin": "Déjà inscrit ? Ouvrir l'app",
@@ -245,7 +245,9 @@
                     "history": "Historique 30 jours",
                     "adPlatform": "1 plateforme ads",
                     "comparison": "Comparaison périodes",
-                    "export": "Export CSV"
+                    "export": "Export CSV",
+                    "collaborators": "1 utilisateur",
+                    "aiInsights": "Analyses IA"
                 },
                 "cta": "Créer un compte Gratuit"
             },
@@ -258,7 +260,9 @@
                     "history": "Historique 90 jours",
                     "adPlatforms": "2 plateformes ads",
                     "comparison": "Comparaison périodes",
-                    "export": "Export CSV"
+                    "export": "Export CSV",
+                    "collaborators": "1 utilisateur",
+                    "aiInsights": "Analyses IA"
                 },
                 "cta": "Débloquer le mode Lite"
             },
@@ -271,7 +275,9 @@
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
                     "comparison": "Comparaison périodes",
-                    "export": "Export CSV"
+                    "export": "Export CSV",
+                    "collaborators": "2 utilisateurs",
+                    "aiInsights": "Analyses IA"
                 },
                 "cta": "Débloquer le mode Starter"
             },
@@ -285,7 +291,9 @@
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
                     "multiShop": "Vue consolidée multi-boutique",
-                    "comparison": "Comparaison avancée"
+                    "comparison": "Comparaison avancée",
+                    "collaborators": "5 utilisateurs",
+                    "aiInsights": "Analyses IA"
                 },
                 "cta": "Passer au Growth",
                 "socialProof": "Choisi par 7 utilisateurs Scaliente sur 10"
@@ -300,7 +308,9 @@
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
                     "slackSupport": "Collaborateurs illimités",
-                    "priority": "Support prioritaire"
+                    "priority": "Support prioritaire",
+                    "collaborators": "Utilisateurs illimités",
+                    "aiInsights": "Analyses IA"
                 },
                 "cta": "Passer au Scale"
             }
@@ -336,7 +346,8 @@
             "description": "Vos données financières sont chiffrées de bout en bout (AES-256) et ne sont jamais partagées, vendues ou utilisées à des fins commerciales. Scaliente utilise un accès API en lecture seule — nous ne pouvons pas modifier votre boutique ni vos comptes publicitaires.",
             "readOnly": "Lecture seule"
         },
-        "finalQuote": "\"Une seule journée mal pilotée coûte plus cher qu'un mois d'abonnement. Les chiffres Shopify ne montrent pas ce que vous gardez.\""
+        "finalQuote": "\"Une seule journée mal pilotée coûte plus cher qu'un mois d'abonnement. Les chiffres Shopify ne montrent pas ce que vous gardez.\"",
+        "trial": "Essai 7 jours, sans engagement"
     },
     "founderStory": {
         "founderStory": {
@@ -1620,6 +1631,50 @@
                 "option2": "Option 2 : Demande par Email",
                 "process": "Que se passe-t-il ensuite ?",
                 "process_text": "Une fois la demande reçue (ou l'action effectuée via le dashboard), nous supprimons instantanément vos clés API et tokens d'accès. Vos données historiques sont purgées de nos bases de données actives sous 24h et de nos sauvegardes sous 30 jours."
+            }
+        }
+    },
+    "operations": {
+        "badge": "Au-delà du chiffre d'affaires",
+        "title": {
+            "main": "Ce qui grignote",
+            "highlight": "votre marge"
+        },
+        "subtitle": "Les postes que les tableaux de bord classiques laissent de côté.",
+        "cards": {
+            "disputes": {
+                "title": "Litiges et chargebacks",
+                "desc": "Suivez vos litiges Shopify Payments depuis votre dashboard : montant en jeu, gagnés, perdus, et ceux qui attendent une action de votre part avant la date limite."
+            },
+            "expenses": {
+                "title": "Dépenses déclarées",
+                "desc": "Abonnements, salaires, prestataires, frais fixes. Ajoutez-les une fois, en récurrent si besoin, et voyez ce qu'il reste après toutes vos charges — pas seulement après les coûts produit."
+            },
+            "reports": {
+                "title": "Rapport mensuel",
+                "desc": "La cascade du chiffre d'affaires jusqu'au profit net, la répartition de vos coûts et la comparaison avec la période précédente. Exportable en CSV pour votre comptable."
+            }
+        }
+    },
+    "teamwork": {
+        "badge": "À plusieurs",
+        "title": {
+            "main": "Piloter à",
+            "highlight": "plusieurs"
+        },
+        "subtitle": "Votre associé, votre média-buyer et votre comptable ne regardent pas les mêmes chiffres.",
+        "cards": {
+            "roles": {
+                "title": "Équipe et rôles",
+                "desc": "Invitez qui vous voulez avec le bon niveau d'accès : lecture seule, éditeur, admin ou propriétaire. Chacun voit ce qui le concerne, personne ne casse votre configuration."
+            },
+            "multiShop": {
+                "title": "Vue consolidée multi-boutiques",
+                "desc": "Plusieurs boutiques Shopify ? Basculez de l'une à l'autre en un clic, ou regardez le profit agrégé de toutes, converti dans votre devise principale."
+            },
+            "export": {
+                "title": "Export CSV",
+                "desc": "Sortez vos données quand vous voulez, sur la période que vous voulez. Vos chiffres restent les vôtres."
             }
         }
     }
