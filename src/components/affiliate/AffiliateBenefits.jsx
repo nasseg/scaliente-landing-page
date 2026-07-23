@@ -1,49 +1,27 @@
-'use client';
+import { BadgePercent, CalendarClock, Cookie, WalletCards } from 'lucide-react';
 
-import { motion } from 'framer-motion';
-import { Percent, Gift, Clock, CreditCard } from 'lucide-react';
+const ICONS = [BadgePercent, CalendarClock, Cookie, WalletCards];
 
-const AffiliateBenefits = ({ content }) => {
-    const benefits = [
-        { icon: Percent, ...content?.benefits?.items?.commission },
-        { icon: Gift, ...content?.benefits?.items?.discount },
-        { icon: Clock, ...content?.benefits?.items?.cookie },
-        { icon: CreditCard, ...content?.benefits?.items?.payment },
-    ];
-
+export default function AffiliateBenefits({ content }) {
+    const items = Object.values(content?.benefits?.items || {});
     return (
-        <div className="py-20">
-            <div className="max-w-6xl mx-auto px-6">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="font-brand text-3xl md:text-4xl font-bold text-[var(--text-primary)] text-center mb-16"
-                >
-                    {content?.benefits?.title}
-                </motion.h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {benefits.map((benefit, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.1 }}
-                            className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 hover:border-orange-500/30 transition-colors"
-                        >
-                            <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
-                                <benefit.icon className="w-6 h-6 text-orange-500" />
-                            </div>
-                            <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{benefit.title}</h3>
-                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{benefit.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 sm:py-28">
+            <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-600">01 / Programme</p>
+                <h2 className="max-w-4xl text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl">{content?.benefits?.title}</h2>
+            </div>
+            <div className="mt-16 border-t border-zinc-200">
+                {items.map((item, index) => {
+                    const Icon = ICONS[index] || BadgePercent;
+                    return (
+                        <article key={item.title} className="grid gap-5 border-b border-zinc-200 py-8 md:grid-cols-[4rem_0.8fr_1.2fr] md:items-baseline md:gap-8">
+                            <Icon className="h-5 w-5 text-orange-600" strokeWidth={1.5} aria-hidden="true" />
+                            <h3 className="font-brand text-2xl font-semibold tracking-[-0.035em]">{item.title}</h3>
+                            <p className="max-w-xl text-sm leading-6 text-zinc-600">{item.desc}</p>
+                        </article>
+                    );
+                })}
             </div>
         </div>
     );
-};
-
-export default AffiliateBenefits;
+}

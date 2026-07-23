@@ -1,159 +1,83 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Check, ArrowRight, Loader2 } from 'lucide-react';
+import { ArrowRight, Check, Loader2 } from 'lucide-react';
 
-const AffiliateForm = ({ content, lang = 'fr' }) => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        website: '',
-        promotion: '',
-    });
-    const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
+const EMPTY_FORM = { firstName: '', lastName: '', email: '', website: '', promotion: '' };
+
+function Field({ label, name, value, placeholder, onChange, type = 'text', textarea = false, required = false }) {
+    const className = 'mt-2 min-h-12 w-full rounded-[10px] border border-zinc-200 bg-white px-4 text-base text-zinc-950 outline-none transition-[border-color,box-shadow] placeholder:text-zinc-300 focus:border-orange-500 focus:ring-4 focus:ring-orange-500/10';
+    return (
+        <label className="block text-sm font-medium text-zinc-800">
+            {label}
+            {textarea
+                ? <textarea name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} rows={5} className={`${className} resize-y py-3`} />
+                : <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} required={required} className={className} />}
+        </label>
+    );
+}
+
+export default function AffiliateForm({ content, lang = 'fr' }) {
+    const [formData, setFormData] = useState(EMPTY_FORM);
+    const [status, setStatus] = useState('idle');
     const [error, setError] = useState('');
 
-    const handleChange = (e) => {
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (status === 'loading') return;
+        setStatus('loading');
         setError('');
 
         try {
-            const res = await fetch('/api/affiliate', {
+            const response = await fetch('/api/affiliate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...formData, lang }),
             });
-
-            if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error || 'Something went wrong');
-            }
-
-            setSuccess(true);
-            setFormData({ firstName: '', lastName: '', email: '', website: '', promotion: '' });
-        } catch (err) {
-            setError(err.message || 'Something went wrong. Please try again.');
-        } finally {
-            setLoading(false);
+            const result = await response.json();
+            if (!response.ok) throw new Error(result.error || 'Unable to submit application');
+            setStatus('success');
+            setFormData(EMPTY_FORM);
+        } catch (submissionError) {
+            setError(submissionError.message || 'Unable to submit application');
+            setStatus('error');
         }
     };
 
-    return (
-        <div className="py-20">
-            <div className="max-w-3xl mx-auto px-6">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="font-brand text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-4">{content?.form?.title}</h2>
-                    <p className="text-[var(--text-secondary)]">{content?.form?.disclaimer}</p>
-                </motion.div>
-
-                {success ? (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        className="bg-[var(--card-bg)] border border-emerald-500/20 rounded-2xl p-8 md:p-10 text-center"
-                    >
-                        <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-6">
-                            <Check className="w-8 h-8 text-emerald-500" />
-                        </div>
-                        <h3 className="text-2xl font-bold text-[var(--text-primary)] mb-3">{content?.form?.successTitle}</h3>
-                        <p className="text-[var(--text-secondary)]">{content?.form?.successMessage}</p>
-                    </motion.div>
-                ) : (
-                    <motion.form
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-8 md:p-10"
-                        onSubmit={handleSubmit}
-                    >
-                        {error && (
-                            <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm">
-                                {error}
-                            </div>
-                        )}
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">{content?.form?.fields?.firstName}</label>
-                                <input
-                                    type="text" name="firstName" required
-                                    value={formData.firstName} onChange={handleChange}
-                                    placeholder={content?.form?.placeholders?.firstName}
-                                    className="w-full px-4 py-3 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">{content?.form?.fields?.lastName}</label>
-                                <input
-                                    type="text" name="lastName" required
-                                    value={formData.lastName} onChange={handleChange}
-                                    placeholder={content?.form?.placeholders?.lastName}
-                                    className="w-full px-4 py-3 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
-                                />
-                            </div>
-                        </div>
-
-                        <div className="mb-6">
-                            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">{content?.form?.fields?.email}</label>
-                            <input
-                                type="email" name="email" required
-                                value={formData.email} onChange={handleChange}
-                                placeholder={content?.form?.placeholders?.email}
-                                className="w-full px-4 py-3 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
-                            />
-                        </div>
-
-                        <div className="mb-6">
-                            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">{content?.form?.fields?.website}</label>
-                            <input
-                                type="url" name="website"
-                                value={formData.website} onChange={handleChange}
-                                placeholder={content?.form?.placeholders?.website}
-                                className="w-full px-4 py-3 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all"
-                            />
-                        </div>
-
-                        <div className="mb-8">
-                            <label className="block text-sm font-medium text-[var(--text-primary)] mb-2">{content?.form?.fields?.promotion}</label>
-                            <textarea
-                                rows={3} name="promotion"
-                                value={formData.promotion} onChange={handleChange}
-                                placeholder={content?.form?.placeholders?.promotion}
-                                className="w-full px-4 py-3 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-xl text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-orange-500/50 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none"
-                            />
-                        </div>
-
-                        <button
-                            type="submit" disabled={loading}
-                            className="w-full py-4 bg-gradient-to-b from-orange-500 to-orange-600 rounded-xl font-bold text-lg text-white hover:shadow-[0_8px_30px_rgba(249,115,22,0.3)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 disabled:opacity-60 disabled:hover:scale-100 cursor-pointer"
-                        >
-                            {loading ? (
-                                <Loader2 className="w-5 h-5 animate-spin" />
-                            ) : (
-                                <>
-                                    {content?.form?.submit}
-                                    <ArrowRight className="w-5 h-5" />
-                                </>
-                            )}
-                        </button>
-                    </motion.form>
-                )}
+    if (status === 'success') {
+        return (
+            <div className="mx-auto max-w-3xl px-5 py-20 text-center sm:px-8 sm:py-28">
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 text-emerald-600"><Check className="h-6 w-6" aria-hidden="true" /></span>
+                <h2 className="mt-7 font-brand text-4xl font-semibold tracking-[-0.045em]">{content?.form?.successTitle}</h2>
+                <p className="mt-4 text-zinc-600">{content?.form?.successMessage}</p>
             </div>
+        );
+    }
+
+    const fields = content?.form?.fields || {};
+    const placeholders = content?.form?.placeholders || {};
+    const change = (event) => setFormData((current) => ({ ...current, [event.target.name]: event.target.value }));
+
+    return (
+        <div className="mx-auto grid max-w-[1120px] gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-orange-600">05 / Candidature</p>
+                <h2 className="mt-6 text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl">{content?.form?.title}</h2>
+                <p className="mt-6 text-sm leading-6 text-zinc-600">{content?.form?.disclaimer}</p>
+            </div>
+            <form onSubmit={handleSubmit} className="space-y-5 rounded-[20px] border border-zinc-200 bg-white p-5 sm:p-8">
+                {error && <p role="alert" className="rounded-[10px] border border-red-200 bg-red-50 p-4 text-sm text-red-700">{error}</p>}
+                <div className="grid gap-5 sm:grid-cols-2">
+                    <Field label={fields.firstName} name="firstName" value={formData.firstName} placeholder={placeholders.firstName} onChange={change} required />
+                    <Field label={fields.lastName} name="lastName" value={formData.lastName} placeholder={placeholders.lastName} onChange={change} required />
+                </div>
+                <Field label={fields.email} name="email" type="email" value={formData.email} placeholder={placeholders.email} onChange={change} required />
+                <Field label={fields.website} name="website" type="url" value={formData.website} placeholder={placeholders.website} onChange={change} />
+                <Field label={fields.promotion} name="promotion" value={formData.promotion} placeholder={placeholders.promotion} onChange={change} textarea />
+                <button type="submit" disabled={status === 'loading'} className="inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-full bg-orange-500 px-5 text-sm font-semibold text-white transition-colors hover:bg-orange-400 disabled:cursor-wait disabled:opacity-60">
+                    {status === 'loading' ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" /> : <ArrowRight className="h-4 w-4" aria-hidden="true" />}{content?.form?.submit}
+                </button>
+            </form>
         </div>
     );
-};
-
-export default AffiliateForm;
+}

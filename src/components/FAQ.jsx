@@ -1,110 +1,47 @@
 'use client';
+
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } },
-};
-
-const FAQItem = ({ question, answer, isOpen, onClick, index }) => {
-    const answerId = `faq-answer-${index}`;
-
-    return (
-        <motion.div
-            variants={itemVariants}
-            className="border-b border-[var(--divider)] last:border-0"
-        >
-            <button
-                onClick={onClick}
-                aria-expanded={isOpen}
-                aria-controls={answerId}
-                className="w-full py-6 flex items-center justify-between gap-4 text-left group"
-            >
-                <span className={`text-lg font-medium transition-colors duration-200 ${
-                    isOpen ? 'text-[var(--text-primary)]' : 'text-[var(--text-muted)] group-hover:text-[var(--text-primary)]'
-                }`}>
-                    {question}
-                </span>
-                <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
-                    isOpen
-                        ? 'bg-orange-100 border border-orange-200'
-                        : 'bg-[var(--card-bg-alt)] border border-[var(--card-border)] group-hover:border-[var(--card-border-hover)]'
-                }`}>
-                    {isOpen ? (
-                        <Minus className="w-4 h-4 text-orange-600" />
-                    ) : (
-                        <Plus className="w-4 h-4 text-[var(--text-secondary)] group-hover:text-[var(--text-muted)]" />
-                    )}
-                </div>
-            </button>
-            <div
-                id={answerId}
-                role="region"
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}
-            >
-                <div className="overflow-hidden">
-                    <p className="pb-6 text-[var(--text-muted)] leading-relaxed pl-0 pr-12">
-                        {answer}
-                    </p>
-                </div>
-            </div>
-        </motion.div>
-    );
-};
+import { Minus, Plus } from 'lucide-react';
 
 const FAQ = ({ content }) => {
     const [openIndex, setOpenIndex] = useState(0);
-
-    const faqs = content?.questions ? Object.values(content.questions).map(q => ({
-        question: q.q,
-        answer: q.a
-    })) : [];
+    const faqs = Object.values(content?.questions || {});
 
     return (
-        <section id="faq" className="py-24 relative z-10">
-            <div className="max-w-3xl mx-auto px-6">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-center mb-16"
-                >
-                    <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--card-border)] bg-[var(--card-bg-alt)] text-[var(--text-muted)] text-sm font-medium mb-6">
-                        {content?.badge || "FAQ"}
-                    </span>
+        <section className="py-24 text-[var(--text-primary)] sm:py-32">
+            <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
+                <div className="lg:sticky lg:top-28 lg:self-start">
+                    <h2 className="max-w-[11ch] text-balance font-brand text-[clamp(2.7rem,5vw,4.8rem)] font-bold leading-[0.98] tracking-[-0.04em]">{content?.title}</h2>
+                    <p className="mt-6 max-w-md text-pretty text-lg leading-8 text-[var(--text-secondary)]">{content?.subtitle}</p>
+                </div>
 
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.25rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
-                        {content?.title}
-                    </h2>
-
-                    <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
-                        {content?.subtitle}
-                    </p>
-                </motion.div>
-
-                {/* FAQ List */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-                    className="rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] p-6 md:p-8 shadow-sm"
-                >
-                    {faqs.map((faq, index) => (
-                        <FAQItem
-                            key={index}
-                            index={index}
-                            question={faq.question}
-                            answer={faq.answer}
-                            isOpen={openIndex === index}
-                            onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
-                        />
-                    ))}
-                </motion.div>
+                <div className="border-b border-[var(--divider)]">
+                    {faqs.map((faq, index) => {
+                        const isOpen = openIndex === index;
+                        const answerId = `faq-answer-${index}`;
+                        return (
+                            <article key={faq.q} className="border-t border-[var(--divider)]">
+                                <button
+                                    type="button"
+                                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                                    aria-expanded={isOpen}
+                                    aria-controls={answerId}
+                                    className="flex min-h-16 w-full items-center justify-between gap-5 py-6 text-left"
+                                >
+                                    <span className="max-w-[60ch] font-brand text-lg font-semibold tracking-[-0.02em]">{faq.q}</span>
+                                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full transition-colors ${isOpen ? 'bg-orange-500 text-white' : 'border border-[var(--card-border)] text-[var(--text-secondary)]'}`}>
+                                        {isOpen ? <Minus className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                                    </span>
+                                </button>
+                                <div id={answerId} role="region" className={`grid transition-[grid-template-rows,opacity] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                                    <div className="overflow-hidden">
+                                        <p className="max-w-[70ch] pb-7 pr-10 text-pretty leading-7 text-[var(--text-secondary)]">{faq.a}</p>
+                                    </div>
+                                </div>
+                            </article>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );

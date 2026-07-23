@@ -1,233 +1,37 @@
-import Link from 'next/link';
-import { Shield, Lock, FileText, Trash2, Mail, Scale } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { getDictionary } from '../../i18n';
+import LegalPageLayout, { LegalArticle } from '@/components/legal/LegalPageLayout';
+import { buildLocalizedAlternates } from '@/lib/localized-metadata';
 
 export async function generateMetadata({ params }) {
     const { lang } = await params;
-    const dict = await getDictionary(lang);
+    const { legalPage } = await getDictionary(lang);
     return {
-        title: `${dict.legalPage.title} - Scaliente`,
-        description: dict.legalPage.subtitle,
-        alternates: {
-            canonical: `https://scaliente.com/${lang}/legal`,
-            languages: {
-                'fr': 'https://scaliente.com/fr/legal',
-                'en': 'https://scaliente.com/en/legal',
-                'de': 'https://scaliente.com/de/legal',
-                'x-default': 'https://scaliente.com/fr/legal',
-            },
-        },
+        title: `${legalPage.title} - Scaliente`,
+        description: legalPage.subtitle,
+        alternates: buildLocalizedAlternates(lang, '/legal'),
+        robots: { index: false, follow: true },
     };
 }
 
-export default async function LegalPage({ params }) {
+function Heading({ children }) {
+    return <h2 className="font-brand text-3xl font-semibold tracking-[-0.04em] text-zinc-950">{children}</h2>;
+}
+
+export default async function Page({ params }) {
     const { lang } = await params;
-    const dict = await getDictionary(lang);
-    const content = dict.legalPage;
-
-    const currentDate = new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : lang === 'de' ? 'de-DE' : 'en-US', {
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric',
-    });
-
+    const { legalPage: content } = await getDictionary(lang);
+    const { mentions, privacy, cookies, cgv, terms, deletion } = content.sections;
     return (
-        <main className="min-h-screen bg-neutral-50 text-neutral-900 font-sans selection:bg-rose-100 selection:text-rose-900">
-            {/* Header */}
-            <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200">
-                <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link href={`/${lang}`} className="font-bold text-xl tracking-tight hover:opacity-70 transition-opacity">
-                        Scaliente
-                    </Link>
-                    <nav className="hidden sm:flex gap-6 text-sm font-medium text-neutral-600">
-                        <a href="#mentions" className="hover:text-rose-600 transition-colors">{content.nav.mentions}</a>
-                        <a href="#privacy" className="hover:text-rose-600 transition-colors">{content.nav.privacy}</a>
-                        <a href="#cookies" className="hover:text-rose-600 transition-colors">{content.nav.cookies}</a>
-                        <a href="#cgv" className="hover:text-rose-600 transition-colors">{content.nav.cgv}</a>
-                        <a href="#terms" className="hover:text-rose-600 transition-colors">{content.nav.terms}</a>
-                        <a href="#deletion" className="hover:text-rose-600 transition-colors">{content.nav.deletion}</a>
-                    </nav>
-                </div>
-            </header>
-
-            <div className="max-w-4xl mx-auto px-6 py-12 sm:py-20">
-
-                {/* Intro */}
-                <div className="mb-16">
-                    <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-neutral-900 to-neutral-600 bg-clip-text text-transparent">
-                        {content?.title}
-                    </h1>
-                    <p className="text-lg text-neutral-600 max-w-2xl leading-relaxed">
-                        {content?.subtitle}
-                    </p>
-                    <div className="mt-4 text-sm text-neutral-500">
-                        {content.updated} {currentDate}
-                    </div>
-                </div>
-
-                {/* Legal Content Container */}
-                <div className="space-y-16">
-
-                    {/* MENTIONS LEGALES SECTION */}
-                    <section id="mentions" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <Scale size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.mentions?.title}</h2>
-                        </div>
-
-                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <h3>1. {content?.sections?.mentions?.editor}</h3>
-                            <p>
-                                <span dangerouslySetInnerHTML={{ __html: content?.sections?.mentions?.editor_text }} />
-                                <br />
-                                <strong>{content?.sections?.mentions?.legal_form_label}</strong> {content?.sections?.mentions?.legal_form_value}
-                                <br />
-                                <strong>{content?.sections?.mentions?.headquarters_label}</strong> {content?.sections?.mentions?.headquarters_value}
-                                <br />
-                                <strong>{content?.sections?.mentions?.email_label}</strong> <a href="mailto:scalientesolutions@gmail.com">scalientesolutions@gmail.com</a>
-                            </p>
-
-                            <h3>2. {content?.sections?.mentions?.hosting}</h3>
-                            <p>
-                                Vercel Inc.
-                                <br />
-                                340 S Lemon Ave #4133 Walnut, CA 91789, USA
-                            </p>
-
-                            <h3>3. {content?.sections?.mentions?.ip}</h3>
-                            <p>
-                                {content?.sections?.mentions?.ip_text}
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* PRIVACY POLICY SECTION */}
-                    <section id="privacy" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <Lock size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.privacy?.title}</h2>
-                        </div>
-
-                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p className="mb-6">{content?.sections?.privacy?.intro}</p>
-
-                            {content?.sections?.privacy?.items?.map((item, index) => (
-                                <div key={index} className="mb-6">
-                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                    <div className="text-neutral-600" dangerouslySetInnerHTML={{ __html: item.content }} />
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* COOKIES SECTION */}
-                    <section id="cookies" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <Shield size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.cookies?.title}</h2>
-                        </div>
-
-                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p>{content?.sections?.cookies?.intro}</p>
-                            <h3>{content?.sections?.cookies?.types}</h3>
-                            <ul className="list-disc pl-5 space-y-2">
-                                <li>{content?.sections?.cookies?.essential}</li>
-                                <li>{content?.sections?.cookies?.analytics}</li>
-                            </ul>
-                            <h3>{content?.sections?.cookies?.manage}</h3>
-                            <p>{content?.sections?.cookies?.manage_text}</p>
-                        </div>
-                    </section>
-
-                    {/* CGV SECTION */}
-                    <section id="cgv" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <FileText size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.cgv?.title}</h2>
-                        </div>
-
-                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6">
-                                <p className="text-amber-800 text-sm">
-                                    <strong>{content?.sections?.cgv?.b2b}</strong>
-                                </p>
-                            </div>
-                            <h3>{content?.sections?.cgv?.price}</h3>
-                            <p>Stripe (Euros/Dollars).</p>
-                            <h3>{content?.sections?.cgv?.termination}</h3>
-                            <p>{content?.sections?.cgv?.termination_text}</p>
-                            <h3>{content?.sections?.cgv?.retraction}</h3>
-                            <p>{content?.sections?.cgv?.retraction_text}</p>
-                        </div>
-                    </section>
-
-                    {/* TERMS SECTION */}
-                    <section id="terms" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <FileText size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.terms?.title}</h2>
-                        </div>
-                        <div className="prose prose-neutral max-w-none bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p className="mb-6">{content?.sections?.terms?.intro}</p>
-
-                            {content?.sections?.terms?.items?.map((item, index) => (
-                                <div key={index} className="mb-6">
-                                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                                    <div className="text-neutral-600" dangerouslySetInnerHTML={{ __html: item.content }} />
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* DATA DELETION SECTION */}
-                    <section id="deletion" className="scroll-mt-24">
-                        <div className="flex items-center gap-3 mb-6">
-                            <div className="p-2 bg-rose-100 rounded-lg text-rose-600">
-                                <Trash2 size={24} />
-                            </div>
-                            <h2 className="text-3xl font-bold">{content?.sections?.deletion?.title}</h2>
-                        </div>
-
-                        <div className="bg-white p-8 rounded-2xl border border-neutral-200 shadow-sm">
-                            <p className="text-neutral-600 mb-6">{content?.sections?.deletion?.intro}</p>
-
-                            <div className="grid gap-6 md:grid-cols-2 mb-6">
-                                <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
-                                    <h4 className="font-bold text-lg mb-2">{content?.sections?.deletion?.option1}</h4>
-                                </div>
-                                <div className="p-6 bg-neutral-50 rounded-xl border border-neutral-100">
-                                    <h4 className="font-bold text-lg mb-2">{content?.sections?.deletion?.option2}</h4>
-                                    <a href="mailto:scalientesolutions@gmail.com" className="inline-flex items-center gap-2 text-rose-600 font-medium hover:underline">
-                                        <Mail size={16} /> scalientesolutions@gmail.com
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="bg-rose-50 p-6 rounded-xl text-sm text-neutral-700">
-                                <h4 className="font-bold mb-2">{content?.sections?.deletion?.process}</h4>
-                                <p>{content?.sections?.deletion?.process_text}</p>
-                            </div>
-                        </div>
-                    </section>
-
-                </div>
-
-                {/* Footer */}
-                <footer className="mt-24 pt-12 border-t border-neutral-200 text-center text-neutral-500 text-sm">
-                    <p className="mb-2">© {new Date().getFullYear()} SCALIENTE LLC. All rights reserved.</p>
-                </footer>
-
+        <LegalPageLayout lang={lang} content={content} title={content.title} intro={content.subtitle}>
+            <div className="space-y-4">
+                <section id="mentions" className="scroll-mt-24"><LegalArticle><Heading>{mentions.title}</Heading><div className="mt-8 space-y-6"><div><h3>{mentions.editor}</h3><div dangerouslySetInnerHTML={{ __html: mentions.editor_text }} /></div><div><h3>{mentions.hosting}</h3><p>Vercel Inc.<br />340 S Lemon Ave #4133 Walnut, CA 91789, USA</p></div><div><h3>{mentions.ip}</h3><p>{mentions.ip_text}</p></div></div></LegalArticle></section>
+                <section id="privacy" className="scroll-mt-24"><LegalArticle><Heading>{privacy.title}</Heading><p className="mt-5">{privacy.intro}</p><div className="mt-8 space-y-8">{privacy.items?.map((item) => <div key={item.title}><h3>{item.title}</h3><div dangerouslySetInnerHTML={{ __html: item.content }} /></div>)}</div></LegalArticle></section>
+                <section id="cookies" className="scroll-mt-24"><LegalArticle><Heading>{cookies.title}</Heading><p className="mt-5">{cookies.intro}</p><div className="mt-8"><h3>{cookies.types}</h3><ul><li>{cookies.essential}</li><li>{cookies.analytics}</li></ul><h3>{cookies.manage}</h3><p>{cookies.manage_text}</p></div></LegalArticle></section>
+                <section id="cgv" className="scroll-mt-24"><LegalArticle><Heading>{cgv.title}</Heading><p className="mt-5 rounded-[10px] border border-amber-200 bg-amber-50 p-4 text-amber-900">{cgv.b2b}</p><div className="mt-8"><h3>{cgv.price}</h3><p>Stripe (Euros/Dollars).</p><h3>{cgv.termination}</h3><p>{cgv.termination_text}</p><h3>{cgv.retraction}</h3><p>{cgv.retraction_text}</p></div></LegalArticle></section>
+                <section id="terms" className="scroll-mt-24"><LegalArticle><Heading>{terms.title}</Heading><p className="mt-5">{terms.intro}</p><div className="mt-8 space-y-8">{terms.items?.map((item) => <div key={item.title}><h3>{item.title}</h3><div dangerouslySetInnerHTML={{ __html: item.content }} /></div>)}</div></LegalArticle></section>
+                <section id="deletion" className="scroll-mt-24"><LegalArticle><Heading>{deletion.title}</Heading><p className="mt-5">{deletion.intro}</p><div className="mt-8 grid gap-4 sm:grid-cols-2"><div className="rounded-[12px] bg-zinc-50 p-5"><h3>{deletion.option1}</h3></div><div className="rounded-[12px] bg-zinc-50 p-5"><h3>{deletion.option2}</h3><a href="mailto:scalientesolutions@gmail.com" className="mt-4 inline-flex items-center gap-2 font-semibold text-orange-600"><Mail className="h-4 w-4" />scalientesolutions@gmail.com</a></div></div><div className="mt-6"><h3>{deletion.process}</h3><p>{deletion.process_text}</p></div></LegalArticle></section>
             </div>
-        </main>
+        </LegalPageLayout>
     );
 }

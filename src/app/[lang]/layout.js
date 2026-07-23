@@ -1,17 +1,23 @@
-import { Poppins } from "next/font/google";
+import { Geist, Poppins } from "next/font/google";
 import Script from "next/script";
 import "../globals.css";
-import BackgroundEffect from "@/components/BackgroundEffect";
 import CookieConsent from "@/components/CookieConsent";
+import AnalyticsEvents from "@/components/AnalyticsEvents";
 import { getDictionary } from "../i18n";
+import { buildLocalizedAlternates } from "@/lib/localized-metadata";
+import { SITE_URL, localizedUrl } from "@/lib/site";
 
-// Unified font system - Poppins for everything
-// Beautiful geometric sans-serif with excellent readability
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700"],
 });
 
 export async function generateMetadata({ params }) {
@@ -24,20 +30,12 @@ export async function generateMetadata({ params }) {
     keywords: dict.metadata.keywords || [],
     authors: [{ name: "Scaliente" }],
     creator: "Scaliente",
-    metadataBase: new URL('https://scaliente.com'),
-    alternates: {
-      canonical: `https://scaliente.com/${lang}`,
-      languages: {
-        'fr': 'https://scaliente.com/fr',
-        'en': 'https://scaliente.com/en',
-        'de': 'https://scaliente.com/de',
-        'x-default': 'https://scaliente.com/fr',
-      },
-    },
+    metadataBase: new URL(SITE_URL),
+    alternates: buildLocalizedAlternates(lang, ''),
     openGraph: {
       title: dict.metadata.ogTitle,
       description: dict.metadata.ogDescription,
-      url: `https://scaliente.com/${lang}`,
+      url: localizedUrl(lang),
       siteName: "Scaliente",
       locale: lang === 'fr' ? 'fr_FR' : (lang === 'de' ? 'de_DE' : 'en_US'),
       type: "website",
@@ -69,10 +67,18 @@ export async function generateMetadata({ params }) {
     },
     icons: {
       icon: [
-        { url: '/mini.png', sizes: '32x32', type: 'image/png' },
-        { url: '/mini.png', sizes: '192x192', type: 'image/png' },
+        { url: '/mini-32.png', sizes: '32x32', type: 'image/png' },
+        { url: '/mini-192.png', sizes: '192x192', type: 'image/png' },
       ],
-      apple: '/mini.png',
+      apple: '/mini-192.png',
+    },
+    verification: {
+      ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+        ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+        : {}),
+      ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+        ? { other: { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } }
+        : {}),
     },
   };
 }
@@ -89,9 +95,10 @@ export default async function RootLayout({ children, params }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Scaliente",
-    url: "https://scaliente.com",
-    logo: "https://scaliente.com/scalienteog.png",
-    description: "Scaliente is a real-time profit tracking SaaS for Shopify e-commerce merchants. It automatically deducts ads, COGS, and shipping to show your true net profit.",
+    "@id": `${SITE_URL}/#organization`,
+    url: SITE_URL,
+    logo: `${SITE_URL}/scalienteog.png`,
+    description: "Scaliente is a profit tracking application for Shopify merchants. It reconciles orders, ad spend, product costs, shipping, fees and taxes in one dashboard.",
     foundingDate: "2024",
     contactPoint: {
       "@type": "ContactPoint",
@@ -113,12 +120,14 @@ export default async function RootLayout({ children, params }) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Scaliente",
-    url: "https://scaliente.com",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    publisher: { "@id": `${SITE_URL}/#organization` },
     inLanguage: ["fr", "en", "de"],
   };
 
   return (
-    <html lang={lang} className={poppins.variable} suppressHydrationWarning>
+    <html lang={lang} className={`${geist.variable} ${poppins.variable}`} suppressHydrationWarning>
       <body className="font-sans antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
@@ -146,17 +155,13 @@ export default async function RootLayout({ children, params }) {
             {`(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${process.env.NEXT_PUBLIC_CLARITY_ID}");`}
           </Script>
         )}
-        <BackgroundEffect />
         <main
-          className="relative w-full min-h-screen"
-          style={{
-            position: 'relative',
-            zIndex: 2,
-          }}
+          className="relative min-h-screen w-full bg-[#09090b]"
         >
           {children}
         </main>
         <CookieConsent content={dict.cookieConsent} lang={lang} />
+        <AnalyticsEvents />
       </body>
     </html>
   );

@@ -6,10 +6,12 @@ import AffiliateBenefits from '@/components/affiliate/AffiliateBenefits';
 import AffiliateHowItWorks from '@/components/affiliate/AffiliateHowItWorks';
 import AffiliateEarnings from '@/components/affiliate/AffiliateEarnings';
 import AffiliateAudiences from '@/components/affiliate/AffiliateAudiences';
-import AffiliateDashboard from '@/components/affiliate/AffiliateDashboard';
+import AffiliateTerms from '@/components/affiliate/AffiliateTerms';
 import AffiliateFAQ from '@/components/affiliate/AffiliateFAQ';
 import AffiliateForm from '@/components/affiliate/AffiliateForm';
 import { getDictionary } from '../../i18n';
+import { buildLocalizedAlternates } from '@/lib/localized-metadata';
+import { localizedUrl } from '@/lib/site';
 
 export async function generateMetadata({ params }) {
     const { lang } = await params;
@@ -19,19 +21,11 @@ export async function generateMetadata({ params }) {
     return {
         title: affiliate?.metadata?.title || `${affiliate?.hero?.title} - Scaliente`,
         description: affiliate?.metadata?.description || affiliate?.hero?.subtitle,
-        alternates: {
-            canonical: `https://scaliente.com/${lang}/affiliate`,
-            languages: {
-                'fr': 'https://scaliente.com/fr/affiliate',
-                'en': 'https://scaliente.com/en/affiliate',
-                'de': 'https://scaliente.com/de/affiliate',
-                'x-default': 'https://scaliente.com/fr/affiliate',
-            },
-        },
+        alternates: buildLocalizedAlternates(lang, '/affiliate'),
         openGraph: {
             title: affiliate?.metadata?.title,
             description: affiliate?.metadata?.description,
-            url: `https://scaliente.com/${lang}/affiliate`,
+            url: localizedUrl(lang, '/affiliate'),
             siteName: "Scaliente",
             type: "website",
             images: [{ url: "/scalienteog.png", width: 1200, height: 630 }],
@@ -66,13 +60,7 @@ export default async function AffiliatePage({ params }) {
             />
             <Navbar content={dict.navbar} common={dict.common} lang={lang} isHomePage={false} />
 
-            {/* Hero — frosted glass over WebGL */}
-            <div className="relative z-10">
-                <div className="relative text-white bg-[#09090b]/85 md:bg-[#09090b]/50 md:backdrop-blur-xl md:backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa] hero-clip">
-                    <div className="absolute inset-0 grain pointer-events-none" />
-                    <AffiliateHero content={content} />
-                </div>
-            </div>
+            <AffiliateHero content={content} />
 
             {/* Alternating sections: light / frosted dark */}
             <div className="alternating-sections">
@@ -97,8 +85,8 @@ export default async function AffiliatePage({ params }) {
                 </Section>
 
                 {/* 5 = LIGHT */}
-                <Section id="dashboard">
-                    <AffiliateDashboard content={content} />
+                <Section id="terms">
+                    <AffiliateTerms content={content} />
                 </Section>
 
                 {/* 6 = DARK (frosted) */}

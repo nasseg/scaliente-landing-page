@@ -78,8 +78,12 @@ const RETIRED_CLAIMS = [
         pattern: /\b20 (commandes|orders|Bestellungen)\/(mois|month|Monat)/i,
     },
     {
-        why: 'affiliate commission is 20% capped at 12 months, not 15% lifetime (config/affiliate.js)',
+        why: 'the public affiliate offer is tiered from 10% to 20% for 12 months, never lifetime',
         pattern: /commission (à vie|lifetime)|lebenslange Provision|15\s?%\s?(à vie|lifetime|lebenslang)/i,
+    },
+    {
+        why: 'the referred-customer discount is 20%, never 50% (config/affiliate.js)',
+        pattern: /50\s?% (de réduction|discount|Rabatt)/i,
     },
     {
         why: 'the Web Pixel extension does run on the storefront (lib/shopify/webPixel.js)',
@@ -112,6 +116,28 @@ describe('retired claims never come back', () => {
             }
             expect(offenders).toEqual([]);
         });
+    });
+});
+
+describe('retired affiliate promises never escape the dictionary guard', () => {
+    const publicSources = [
+        path.join(__dirname, '..', '..', 'app', 'api', 'affiliate', 'route.js'),
+        path.join(__dirname, '..', '..', 'components', 'affiliate', 'AffiliateHero.jsx'),
+    ];
+
+    test('rendered pages and confirmation emails contain no retired affiliate promise', () => {
+        const source = publicSources.map((file) => fs.readFileSync(file, 'utf8')).join('\n');
+        expect(source).not.toMatch(/15% (de commission à vie|lifetime commission|lebenslange Provision)/i);
+        expect(source).not.toMatch(/50% (de réduction|discount|Rabatt)/i);
+        expect(source).not.toMatch(/10% (à|to|bis) 30%/i);
+    });
+
+    test.each(LANGS)('the public affiliate offer stops at 20% in %s', (lang) => {
+        const affiliateStrings = Object.entries(flat[lang])
+            .filter(([key]) => key.startsWith('affiliate.'))
+            .map(([, value]) => value)
+            .filter((value) => typeof value === 'string');
+        expect(affiliateStrings.join('\n')).not.toMatch(/30%|Platinum|Platin/i);
     });
 });
 
@@ -163,6 +189,12 @@ describe('pricing copy matches the app', () => {
         expect(copy).toMatch(/illimit|unlimited|unbegrenzt/i);
     });
 
+    test.each(LANGS)('scale states that seven stores are included in %s', (lang) => {
+        const copy = flat[lang]['pricing.plans.scale.features.shops'];
+        expect(typeof copy).toBe('string');
+        expect(copy).toContain('7');
+    });
+
     // aiInsights is false on free, true from lite upwards.
     test.each(['discovery', 'lite', 'starter', 'growth', 'scale'])(
         '%s has an AI Insights label (Pricing.jsx marks Discovery as excluded)',
@@ -191,34 +223,28 @@ describe('pricing copy matches the app', () => {
     });
 });
 
-describe('the new capability sections are complete', () => {
-    const SECTIONS = {
-        operations: ['disputes', 'expenses', 'reports'],
-        teamwork: ['roles', 'multiShop', 'export'],
-    };
+describe('the homepage narrative is complete', () => {
+    const SECTIONS = ['profitStory', 'attributionStory', 'decisionStory', 'inboxStory'];
 
-    Object.entries(SECTIONS).forEach(([section, cards]) => {
-        test.each(LANGS)(`${section} has a heading in %s`, (lang) => {
+    test.each(LANGS)('all four narrative sections have complete headings in %s', (lang) => {
+        SECTIONS.forEach((section) => {
+            expect(typeof flat[lang][`${section}.eyebrow`]).toBe('string');
             expect(typeof flat[lang][`${section}.title.main`]).toBe('string');
-            expect(typeof flat[lang][`${section}.subtitle`]).toBe('string');
-        });
-
-        cards.forEach((card) => {
-            test.each(LANGS)(`${section}.${card} has a title and description in %s`, (lang) => {
-                expect(typeof flat[lang][`${section}.cards.${card}.title`]).toBe('string');
-                expect(typeof flat[lang][`${section}.cards.${card}.desc`]).toBe('string');
-            });
+            expect(typeof flat[lang][`${section}.title.highlight`]).toBe('string');
+            expect(typeof flat[lang][`${section}.description`]).toBe('string');
         });
     });
 
-    // Disputes are surfaced on the dashboard and are NOT part of the profit
-    // formula (no reference to them anywhere in customerPro/src/lib/profit/).
-    // Saying otherwise would be a false claim about how the product computes profit.
-    test.each(LANGS)('the disputes card never claims disputes are deducted from profit in %s', (lang) => {
-        const copy = [
-            flat[lang]['operations.cards.disputes.title'],
-            flat[lang]['operations.cards.disputes.desc'],
-        ].join(' ');
-        expect(copy).not.toMatch(/déduit|deducted|abgezogen/i);
+    test.each(LANGS)('AI Inbox is explicitly labelled closed beta in %s', (lang) => {
+        expect(flat[lang]['inboxStory.beta']).toMatch(/bêta fermée|closed beta|geschlossene beta/i);
+    });
+
+    // Disputes are surfaced on the dashboard and are NOT part of the profit formula.
+    test.each(LANGS)('the decision story never claims disputes are deducted from profit in %s', (lang) => {
+        const copy = Object.entries(flat[lang])
+            .filter(([key]) => key.startsWith('decisionStory.'))
+            .map(([, value]) => value)
+            .join(' ');
+        expect(copy).not.toMatch(/litiges? (compris|déduits?)|disputes? (included|deducted)|Disputes? (enthalten|abgezogen)/i);
     });
 });

@@ -20,29 +20,52 @@
         "pricing": "Tarifs",
         "comparison": "Comparaison",
         "faq": "FAQ",
+        "guides": "Guides",
         "login": "Connexion",
         "freeTrial": "Essai Gratuit",
+        "navigationLabel": "Navigation principale",
+        "mobileMenuLabel": "Menu principal",
+        "openMenu": "Ouvrir le menu",
+        "closeMenu": "Fermer le menu",
         "dropdown": {
+            "overviewGroup": "Pilotage",
+            "acquisitionGroup": "Acquisition",
+            "operationsGroup": "Opérations",
             "profitDashboard": "Dashboard Profit",
+            "profitDashboardDescription": "Revenus, coûts et profit net au même endroit.",
             "adTracking": "Suivi Ads",
+            "adTrackingDescription": "Vos dépenses publicitaires rapprochées des ventes.",
             "productAnalytics": "Analyse Produits",
+            "productAnalyticsDescription": "Marge et performance par produit.",
             "multiShop": "Multi-Boutiques",
+            "multiShopDescription": "Pilotez plusieurs boutiques dans une seule vue.",
             "multiCurrency": "Multi-Devises",
+            "multiCurrencyDescription": "Une lecture cohérente dans votre devise principale.",
             "reports": "Rapports",
-            "roasCalculator": "Calculateur ROAS"
+            "reportsDescription": "Analysez, comparez et exportez vos données.",
+            "pixelAttribution": "Pixel & attribution",
+            "pixelAttributionDescription": "Suivez le parcours Shopify jusqu’à la commande.",
+            "aiCustomerService": "Service client IA",
+            "aiCustomerServiceDescription": "Réponses contextualisées, contrôle humain.",
+            "closedBeta": "Bêta fermée",
+            "roasCalculator": "Calculateur ROAS",
+            "roasCalculatorDescription": "Simulez votre seuil de rentabilité publicitaire."
         }
     },
     "hero": {
-        "pill": "La précision au centime près",
-        "title": "Votre vrai profit.",
-        "subtitle": "Coûts, devises et litiges compris.",
-        "description": "Connectez Shopify et vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) en 1 clic. Scaliente déduit automatiquement les dépenses ads, COGS, frais de port, frais de paiement et taxes de vos ventes, convertit vos devises aux taux BCE et suit vos litiges Shopify Payments. Commandes en temps réel, dépenses publicitaires actualisées chaque jour.",
-        "definition": "Scaliente est une application de suivi de profit pour les boutiques Shopify. Elle déduit automatiquement les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat, ainsi que les COGS, frais de livraison, frais de paiement et taxes du chiffre d'affaires pour calculer le bénéfice net. Les commandes remontent en temps réel via les webhooks Shopify ; les dépenses publicitaires sont actualisées chaque jour.",
-        "ctaStart": "Calculer mon Profit Net",
-        "ctaLogin": "Déjà inscrit ? Ouvrir l'app",
-        "microText": "Inscription en 30 secondes. Connectez Shopify. Voyez votre profit.",
+        "pill": "Tracker de profit Shopify",
+        "title": "Shopify montre vos ventes.",
+        "subtitle": "Scaliente montre ce qu’il vous reste.",
+        "description": "Scaliente réunit vos commandes Shopify, coûts et dépenses publicitaires pour calculer votre bénéfice net et repérer les pertes de marge.",
+        "definition": "Scaliente est une application de suivi de profit pour les boutiques Shopify. Elle rassemble les commandes, les coûts produits, la livraison, les frais, les taxes et les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat. Les commandes remontent via les webhooks Shopify ; les dépenses publicitaires sont actualisées une à deux fois par jour et peuvent être rafraîchies manuellement.",
+        "ctaStart": "Ajouter Scaliente à Shopify",
+        "ctaLogin": "Accéder à mon espace",
+        "microText": "Plan Discovery à 0 € · sans carte bancaire.",
         "dashboard": {
             "overview": "Vue d'ensemble",
+            "profit": "Dashboard Bénéfice réel Scaliente anonymisé avec profit net, marge et répartition des coûts",
+            "report": "Rapport mensuel Scaliente anonymisé avec bénéfice net, chiffre d’affaires et coûts",
+            "inbox": "Service client IA Scaliente avec conversation, contexte Shopify et brouillon de réponse anonymisés",
             "performance": "Vos performances en temps réel",
             "today": "Aujourd'hui",
             "yesterday": "Hier",
@@ -62,178 +85,79 @@
                 "logout": "Se déconnecter",
                 "store": "Boutique"
             }
+        },
+        "publicLaunch": {
+            "descriptionSegments": {
+                "before": "Scaliente réunit profit, attribution publicitaire et ",
+                "link": "service client IA",
+                "after": " dans un espace relié à vos données Shopify."
+            }
         }
     },
     "logoMarquee": {
-        "title": "Intégrations officielles"
+        "title": "Shopify, Meta, Google, TikTok, Pinterest et Snapchat, réunis"
     },
     "howItWorks": {
-        "badge": "Configuration simple",
+        "badge": "Configuration guidée",
         "title": {
-            "part1": "Opérationnel en",
-            "part2": "5 minutes"
+            "part1": "Une mise en place",
+            "part2": "sans code"
         },
-        "description": "Connectez vos outils, configurez vos coûts, et commencez à voir votre vrai profit. Aucune expertise technique requise.",
+        "description": "Connectez vos sources, configurez vos coûts, puis vérifiez la qualité des données avant de prendre une décision.",
         "steps": {
             "shopify": {
                 "title": "Connectez Shopify",
-                "desc": "Connexion OAuth en un clic. Vos commandes, produits et revenus sont synchronisés automatiquement.",
-                "time": "30 secondes"
+                "desc": "Autorisez l’application et laissez les commandes, produits et revenus remonter dans votre espace.",
+                "time": "01"
             },
             "ads": {
-                "title": "Liez vos Ads",
-                "desc": "Connectez Meta, Google, TikTok, Pinterest et Snapchat en OAuth. Toutes vos dépenses ads centralisées.",
-                "time": "2 minutes"
+                "title": "Liez vos comptes publicitaires",
+                "desc": "Connectez les plateformes dont vous avez besoin via leurs parcours OAuth.",
+                "time": "02"
             },
             "mode": {
-                "title": "Choisissez votre Mode",
-                "desc": "Dropshipping ou Classic - configurez comment vos coûts sont calculés.",
-                "time": "1 minute"
+                "title": "Configurez vos coûts",
+                "desc": "Choisissez le mode de calcul adapté et renseignez COGS, livraison et frais.",
+                "time": "03"
             },
             "expenses": {
-                "title": "Ajoutez vos Frais",
-                "desc": "Abonnements, salaires, charges fixes. Générez des rapports avec votre bénéfice réel après toutes charges.",
-                "time": "Optionnel"
+                "title": "Contrôlez puis pilotez",
+                "desc": "Ajoutez vos dépenses récurrentes, vérifiez les écarts et utilisez vos rapports pour décider.",
+                "time": "04"
             }
         },
-        "modes": {
-            "title": "Deux modes de calcul",
-            "subtitle": "Choisissez celui qui correspond à votre business model",
-            "dropshipping": {
-                "title": "Mode Dropshipping",
-                "badge": "Print-on-demand, AliExpress...",
-                "desc": "COGS calculés en fonction du nombre de produits vendus par commande.",
-                "example": "Exemple",
-                "product": "Produit",
-                "shipping1": "Livraison 1 produit",
-                "shipping2": "Livraison 2 produits"
-            },
-            "classic": {
-                "title": "Mode Classic",
-                "badge": "E-commerce avec stock",
-                "desc": "Prix de livraison basé sur le poids du colis. Configuration par tranches.",
-                "example": "Exemple",
-                "weight1": "0 - 500g",
-                "weight2": "500g - 1kg",
-                "weight3": "1kg - 2kg"
-            }
-        },
-        "result": {
-            "title": "Résultat : Vos Analytics Complètes",
-            "subtitle": "Tout ce dont vous avez besoin pour piloter votre rentabilité",
-            "metrics": {
-                "profit": "Net Profit",
-                "roas": "ROAS & POAS",
-                "breakeven": "Breakeven ROAS",
-                "reports": "Rapports Mensuels"
-            }
-        },
-        "cta": "Commencer Gratuitement"
-    },
-    "features": {
-        "title": {
-            "part1": "Centralisez. Analysez.",
-            "part2": "Scalez."
-        },
-        "description": "Scaliente se connecte à tous vos outils en un clic. Fini les tableurs Excel et les calculs manuels à 2h du matin.",
-        "cards": {
-            "ads": {
-                "title": "Toutes vos Ads centralisées",
-                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Fini les onglets multiples, tout est là."
-            },
-            "profit": {
-                "title": "Profit Net & Rentabilité",
-                "desc": "Nous déduisons tout : Coût produit (COGS), frais de port, frais de transaction Stripe/PayPal et taxes."
-            },
-            "realtime": {
-                "title": "Vos chiffres, en temps réel",
-                "desc": "Vos commandes remontent en temps réel via les webhooks Shopify, vos dépenses publicitaires sont actualisées chaque jour. Décidez sur les chiffres d'aujourd'hui, pas sur ceux d'hier."
-            },
-            "multiCurrency": {
-                "title": "Multi-Devises Natif",
-                "desc": "Vos ads en USD, vos ventes en EUR ? Scaliente convertit automatiquement avec les taux ECB quotidiens."
-            },
-            "customerLtv": {
-                "title": "Customer LTV",
-                "desc": "Suivez la valeur vie client et identifiez vos segments les plus rentables pour optimiser votre acquisition."
-            },
-            "adsPage": {
-                "title": "Page Ads Détaillée",
-                "desc": "ROAS, CTR, CPM par campagne. Filtrez par plateforme, comparez les performances en temps réel."
-            }
-        },
-        "howItWorks": "Comment ça marche",
-        "bento": {
-            "totalRevenue": "Chiffre d'affaires Total",
-            "ads": "Ads",
-            "cogs": "COGS",
-            "shipping": "Shipping",
-            "fees": "Fees",
-            "trueProfit": "Votre Vrai Profit",
-            "margin": "Marge:"
-        }
-    },
-    "beforeAfter": {
-        "title": {
-            "main": "Un avant/après",
-            "highlight": "radical"
-        },
-        "subtitle": "Arrêtez de jongler avec 10 onglets. Centralisez tout.",
-        "before": {
-            "label": "Le Chaos Actuel",
-            "tabs": {
-                "profitCalc": "Profit Calc v3",
-                "businessManager": "Business Manager",
-                "googleAds": "Google Ads",
-                "tiktokAds": "TikTok Ads",
-                "snapchatAds": "Snapchat Ads",
-                "pinterest": "Pinterest",
-                "shopifyAdmin": "Shopify Admin"
-            },
-            "excel": {
-                "filename": "Suivi_Profit_Decembre_v3_FINAL.xlsx",
-                "columns": [
-                    "Date",
-                    "Rev",
-                    "Ads",
-                    "COGS",
-                    "Net"
-                ],
-                "error": "Erreur de calcul"
-            },
-            "quote": "\"J'ai oublié de noter les dépenses TikTok d'hier...\""
-        },
-        "after": {
-            "label": "La Clarté Scaliente",
-            "tabs": {
-                "scaliente": "Scaliente"
-            },
-            "dashboard": {
-                "title": "Dashboard",
-                "lastUpdate": "Dernière maj: il y a 2 min",
-                "live": "LIVE",
-                "netProfit": "Profit Net",
-                "vsYesterday": "+12% vs hier",
-                "margin": "Marge",
-                "stable": "Stable",
-                "synced": "Données synchronisées"
-            },
-            "quote": "Tout est là. Automatique. En temps réel."
-        }
+        "cta": "Commencer avec Discovery"
     },
     "pricing": {
         "header": {
             "title": {
-                "main": "Investissez dans votre",
-                "highlight": "contrôle"
+                "main": "Payez selon",
+                "highlight": "votre volume"
             },
-            "quote": "\"Shopify vous montre votre CA. Scaliente vous montre ce qu'il vous reste.\""
+            "quote": "Cinq plans publics, du premier shop au portefeuille multi-boutiques."
         },
         "toggle": {
             "monthly": "Mensuel",
             "annual": "Annuel",
             "discount": "-20%"
         },
+        "volume": {
+            "label": "Commandes mensuelles",
+            "options": {
+                "discovery": "50",
+                "lite": "100",
+                "starter": "300",
+                "growth": "1 500",
+                "scale": "Illimité"
+            },
+            "recommendation": "Adapté à votre volume",
+            "selected": "Plan sélectionné"
+        },
+        "antiObjection": {
+            "title": "Commencez par vos besoins réels",
+            "description": "Le plan recommandé dépend uniquement du volume choisi. Vous pouvez commencer avec Discovery, puis changer de plan depuis l’application."
+        },
+        "trial": "Essai de 7 jours sur les plans payants, sans engagement",
         "plans": {
             "discovery": {
                 "name": "Discovery",
@@ -283,7 +207,6 @@
             },
             "growth": {
                 "name": "Growth",
-                "badge": "Recommandé",
                 "desc": "Piloter plusieurs boutiques avec précision",
                 "features": {
                     "orders": "Jusqu'à 1 500 commandes/mois",
@@ -295,16 +218,15 @@
                     "collaborators": "5 utilisateurs",
                     "aiInsights": "Analyses IA"
                 },
-                "cta": "Passer au Growth",
-                "socialProof": "Choisi par 7 utilisateurs Scaliente sur 10"
+                "cta": "Passer au Growth"
             },
             "scale": {
                 "name": "Scale",
                 "badge": "Ultimate",
-                "desc": "Maîtrise totale sans aucune limite",
+                "desc": "Pour les volumes élevés et les équipes multi-boutiques",
                 "features": {
                     "orders": "Commandes illimitées",
-                    "shops": "Boutiques illimitées",
+                    "shops": "7 boutiques incluses",
                     "history": "Historique illimité",
                     "adPlatforms": "5 plateformes ads",
                     "slackSupport": "Collaborateurs illimités",
@@ -314,40 +236,7 @@
                 },
                 "cta": "Passer au Scale"
             }
-        },
-        "enterprise": {
-            "title": "Enterprise / Agency",
-            "desc": "Pour les agences et groupes e-commerce qui gèrent du gros volume. Shops illimités, accès équipe et permissions avancées.",
-            "features": {
-                "unlimitedShops": "Shops illimités",
-                "clientReporting": "Reporting client",
-                "slaSupport": "SLA Support"
-            },
-            "price": {
-                "custom": "Sur devis",
-                "range": "500€ - 2000€"
-            },
-            "cta": "Contacter l'équipe Sales"
-        },
-        "monthlyEquivalent": "Reviens à {{price}}€/mois",
-        "comparison": {
-            "title": "Comparatif Détaillé",
-            "features": {
-                "dataSources": "Connecteurs (Shopify, Ads, Stripe)",
-                "updateFreq": "Fréquence de mise à jour",
-                "history": "Historique de données",
-                "support": "Support client",
-                "apiAccess": "Accès API",
-                "teams": "Gestion d'équipe"
-            }
-        },
-        "antiObjection": {
-            "title": "Vos données restent les vôtres",
-            "description": "Vos données financières sont chiffrées de bout en bout (AES-256) et ne sont jamais partagées, vendues ou utilisées à des fins commerciales. Scaliente utilise un accès API en lecture seule — nous ne pouvons pas modifier votre boutique ni vos comptes publicitaires.",
-            "readOnly": "Lecture seule"
-        },
-        "finalQuote": "\"Une seule journée mal pilotée coûte plus cher qu'un mois d'abonnement. Les chiffres Shopify ne montrent pas ce que vous gardez.\"",
-        "trial": "Essai 7 jours, sans engagement"
+        }
     },
     "founderStory": {
         "founderStory": {
@@ -387,74 +276,53 @@
         }
     },
     "faq": {
-        "badge": "Support & Questions",
-        "title": "Tout savoir avant de commencer",
-        "subtitle": "Tout ce que vous devez savoir avant de reprendre le contrôle.",
+        "badge": "Questions utiles",
+        "title": "Avant de connecter vos données",
+        "subtitle": "Des réponses précises sur le calcul, l’attribution et la mise en place.",
         "questions": {
-            "slowDown": {
-                "q": "Est-ce que Scaliente va ralentir mon site Shopify ?",
-                "a": "Non. Scaliente fonctionne via l'API officielle de Shopify et ne modifie jamais le code de votre thème. Le suivi d'attribution s'appuie sur l'extension Web Pixel officielle de Shopify, qui s'exécute dans l'environnement isolé prévu par Shopify : elle n'a pas accès à votre thème et n'a pas d'impact mesurable sur vos temps de chargement ni sur vos Core Web Vitals."
+            "profit": {
+                "q": "Comment Scaliente calcule-t-il le profit net ?",
+                "a": "Scaliente part du chiffre d’affaires et rapproche les dépenses publicitaires, les coûts produits, la livraison, les frais de paiement, les taxes et les dépenses que vous déclarez. Chaque poste reste visible pour que vous puissiez vérifier le calcul."
             },
-            "customTheme": {
-                "q": "Ma boutique utilise un thème personnalisé, est-ce compatible ?",
-                "a": "Oui, Scaliente est compatible avec 100% des thèmes Shopify (2.0 et anciens). Comme nous n'altérons pas le code de votre thème, tout fonctionne parfaitement quelle que soit votre configuration visuelle."
+            "freshness": {
+                "q": "À quelle fréquence les données sont-elles mises à jour ?",
+                "a": "Les commandes remontent via les webhooks Shopify. Les dépenses publicitaires sont synchronisées une à deux fois par jour et peuvent aussi être rafraîchies manuellement."
             },
-            "installation": {
-                "q": "Est-ce compliqué à installer ? Je ne suis pas dev.",
-                "a": "Non, l'installation prend moins de 3 minutes sans aucun code. Scaliente s'installe en 3 étapes : (1) Ajoutez l'app depuis le Shopify App Store en un clic, (2) Autorisez l'accès OAuth en lecture seule à votre boutique Shopify, (3) Connectez vos comptes publicitaires (Meta, Google, TikTok, Pinterest, Snapchat) via OAuth sécurisé. Votre dashboard de profit se remplit avec vos données en moins de 2 minutes. Aucune compétence technique ou code requis."
+            "attribution": {
+                "q": "Pourquoi l’attribution diffère-t-elle parfois des plateformes publicitaires ?",
+                "a": "Chaque plateforme applique ses propres fenêtres et modèles. Scaliente rapproche les signaux first-party de la commande et laisse visibles les ventes directes, non attribuées ou dont le signal est insuffisant."
             },
-            "security": {
-                "q": "Mes données sont-elles en sécurité ?",
-                "a": "Oui, vos données sont entièrement sécurisées avec un chiffrement de niveau entreprise. Scaliente utilise un accès API en lecture seule à Shopify et aux plateformes publicitaires — il ne peut pas modifier votre boutique ni vos comptes ads. Toutes les données sont chiffrées en AES-256 au repos et TLS 1.3 en transit. Scaliente ne vend, ne partage et ne transfère vos données à aucun tiers. L'application est hébergée sur l'infrastructure Vercel, conforme SOC 2."
-            },
-            "shopifyAnalytics": {
-                "q": "Pourquoi pas juste utiliser Shopify Analytics ?",
-                "a": "Shopify Analytics affiche le chiffre d'affaires brut mais ne calcule pas le profit net. Par exemple, si votre boutique Shopify génère 10 000€ de CA mais que vous avez dépensé 3 000€ en Meta Ads, 2 000€ en COGS, 800€ en frais de port et 400€ en frais Stripe, Shopify affiche 10 000€ alors que votre profit réel n'est que de 3 800€. Scaliente déduit automatiquement tous ces coûts : les commandes remontent en temps réel et les dépenses publicitaires sont actualisées chaque jour."
-            },
-            "commitment": {
-                "q": "Suis-je engagé sur la durée ?",
-                "a": "Zéro engagement. Vous pouvez annuler votre abonnement Scaliente en un clic depuis votre dashboard, à tout moment. Votre accès continue jusqu'à la fin de votre période de facturation en cours. Aucuns frais d'annulation, aucun frais cachés."
-            },
-            "story": {
-                "q": "Pourquoi je n'ai jamais entendu parler de Scaliente avant ?",
-                "a": "Scaliente a été lancé en 2024 comme outil privé de suivi de profit pour les agences e-commerce gérant des portefeuilles multi-boutiques Shopify. Après avoir conquis de très nombreux utilisateurs uniquement par le bouche-à-oreille, Scaliente s'est ouvert au public avec des plans en libre-service à partir de 0€/mois (plan Discovery, 50 commandes/mois incluses)."
+            "pixel": {
+                "q": "Le pixel modifie-t-il mon thème Shopify ?",
+                "a": "Le suivi s’appuie sur l’extension Web Pixel officielle de Shopify, exécutée dans l’environnement isolé prévu par Shopify. Il n’injecte pas de modification dans votre thème."
             },
             "freePlan": {
-                "q": "Y a-t-il un plan gratuit ?",
-                "a": "Oui ! Notre plan Discovery est 100% gratuit avec 50 commandes/mois, parfait pour tester ou pour les petites boutiques. Aucune carte bancaire requise."
+                "q": "Puis-je commencer gratuitement ?",
+                "a": "Oui. Discovery inclut jusqu’à 50 commandes par mois, une boutique et une plateforme publicitaire, sans carte bancaire."
             },
             "adPlatforms": {
-                "q": "Quelles plateformes publicitaires sont supportées ?",
-                "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads, et Snapchat Ads. Toutes vos campagnes centralisées en un seul dashboard avec calcul du ROAS et POAS réels."
+                "q": "Quelles plateformes publicitaires sont prises en charge ?",
+                "a": "Meta, Google Ads, TikTok Ads, Pinterest Ads et Snapchat Ads sont disponibles dans le registre de plateformes de Scaliente."
             },
-            "bestApp": {
-                "q": "Quelle est la meilleure application de suivi de profit Shopify en 2026 ?",
-                "a": "Scaliente est l'application de suivi de profit Shopify la mieux notée en 2026 avec 4,9/5 étoiles. Contrairement à des concurrents comme TrueProfit ou Triple Whale, Scaliente offre un plan gratuit (50 commandes/mois), aucun frais par commande, un support multi-devises natif avec taux BCE quotidiens et vos données hébergées en Europe. Elle suit les dépenses publicitaires de Meta, Google, TikTok, Pinterest et Snapchat en temps réel."
-            },
-            "calculateProfit": {
-                "q": "Comment calculer le vrai profit e-commerce ?",
-                "a": "Le vrai profit e-commerce est égal au chiffre d'affaires moins tous les coûts : dépenses publicitaires (Meta, Google, TikTok, Pinterest, Snapchat), COGS (coût des marchandises vendues), frais de port, frais de paiement (Stripe, PayPal), frais de transaction, remboursements et taxes. Scaliente automatise ce calcul en se synchronisant en temps réel avec Shopify et chaque jour avec les plateformes publicitaires."
-            },
-            "poas": {
-                "q": "Qu'est-ce que le POAS (Profit on Ad Spend) ?",
-                "a": "Le POAS (Profit on Ad Spend) mesure le profit généré pour chaque unité dépensée en publicité. Contrairement au ROAS qui ne considère que le chiffre d'affaires, le POAS déduit les COGS, frais de port, frais et taxes pour montrer votre vrai retour. Par exemple, si vous dépensez 100 en pub et générez 500 de CA mais 300 de coûts, votre ROAS est de 5x mais votre POAS n'est que de 2x. Scaliente calcule automatiquement le ROAS et le POAS."
-            },
-            "roasVsPoas": {
-                "q": "Quelle est la différence entre ROAS et POAS ?",
-                "a": "Le ROAS (Return on Ad Spend) = CA ÷ Dépenses Pub. Il indique combien de chiffre d'affaires chaque unité pub génère. Le POAS (Profit on Ad Spend) = Profit Net ÷ Dépenses Pub. Il indique combien de profit réel chaque unité pub génère après déduction des COGS, frais de port, frais de paiement et taxes. Le POAS est la métrique qui compte pour la rentabilité. Une boutique peut avoir un ROAS de 5x mais perdre de l'argent si les coûts sont trop élevés. Scaliente affiche les deux métriques en temps réel."
-            },
-            "costDeductions": {
-                "q": "Quels coûts déduire du chiffre d'affaires Shopify ?",
-                "a": "Pour calculer le vrai profit, déduisez du CA Shopify : (1) Dépenses pub — campagnes Meta/Facebook, Google, TikTok, Pinterest, Snapchat, (2) COGS — coût produit, emballage, frais fournisseur, (3) Livraison — frais transporteur, coûts de fulfillment, (4) Frais de paiement — traitement Stripe/PayPal, frais de transaction Shopify, (5) Taxes — TVA, droits de douane, (6) Charges fixes — abonnements, salaires, loyer. Scaliente automatise les postes 1 à 5 et permet d'ajouter le poste 6 manuellement."
+            "inbox": {
+                "q": "Le service client IA est-il inclus dans les plans ?",
+                "a": "Pas encore. L’Inbox IA est en bêta fermée. Elle est présentée séparément et aucune capacité ou quota n’est inclus dans les plans publics actuels."
+            }
+        },
+        "publicLaunch": {
+            "questions": {
+                "inbox": {
+                    "a": "L’Inbox IA est un module séparé à 39 € par mois et par boutique activée. Elle nécessite un abonnement Scaliente payant et inclut 200 brouillons IA mensuels par boutique."
+                }
             }
         }
     },
     "cta": {
-        "badge": "Commencez gratuitement",
-        "title": "Prêt à voir la vérité ?",
-        "subtitle": "Rejoignez les e-commerçants qui ont arrêté de perdre de l'argent avec des données floues.",
-        "button": "Commencer Gratuitement",
-        "noCard": "Pas de carte bancaire requise.",
+        "badge": "Commencez avec vos propres données",
+        "title": "Votre chiffre d’affaires est connu. Voyez maintenant ce qu’il reste.",
+        "subtitle": "Connectez Shopify, configurez vos coûts et vérifiez votre profit dans une interface conçue pour décider.",
+        "button": "Commencer gratuitement",
+        "noCard": "Plan Discovery sans carte bancaire.",
         "socialProof": "Rejoint par 200+ e-commerçants"
     },
     "exitPopup": {
@@ -467,8 +335,8 @@
     },
     "affiliate": {
         "metadata": {
-            "title": "Programme Partenaires Scaliente | 20% de commission pendant 12 mois",
-            "description": "Rejoignez le programme partenaire Scaliente. Gagnez 20% de commission récurrente pendant 12 mois sur chaque client parrainé. Cookie 90 jours. Paiements mensuels PayPal."
+            "title": "Programme Partenaires Scaliente | 10% à 20% pendant 12 mois",
+            "description": "Rejoignez le programme partenaire Scaliente. Gagnez de 10% à 20% de commission selon votre palier pendant 12 mois. Cookie 90 jours et paiements traités mensuellement."
         },
         "stats": {
             "commissionLabel": "Commission récurrente",
@@ -482,23 +350,23 @@
             "title": "Dashboard Affilié",
             "live": "Live",
             "referrals": "Parrainages",
-            "referralsChange": "+3 ce mois",
+            "referralsChange": "Suivi détaillé",
             "commissions": "Commissions",
-            "commissionsChange": "+156€ ce mois"
+            "commissionsChange": "Historique vérifiable"
         },
         "hero": {
             "badge": "Programme Partenaires",
             "titleWhite": "Transformez votre audience en",
             "titleOrange": "revenus récurrents",
-            "subtitle": "Gagnez 20% de commission récurrente pendant 12 mois sur chaque client Scaliente que vous parrainez. Vos filleuls obtiennent 20% de réduction sur leur premier mois.",
+            "subtitle": "Gagnez de 10% à 20% de commission selon votre palier pendant 12 mois. Vos filleuls obtiennent 20% de réduction sur leur premier mois.",
             "cta": "Postuler maintenant"
         },
         "benefits": {
             "title": "Avantages du Programme",
             "items": {
                 "commission": {
-                    "title": "20% pendant 12 mois",
-                    "desc": "Commission récurrente sur chaque paiement de vos filleuls, chaque mois pendant 12 mois — pas seulement le premier mois."
+                    "title": "10% à 20% pendant 12 mois",
+                    "desc": "Votre taux de commission dépend du palier attribué. Les commissions récurrentes sont générées pendant 12 mois."
                 },
                 "discount": {
                     "title": "20% pour vos filleuls",
@@ -509,7 +377,7 @@
                     "desc": "Votre lien de parrainage reste actif 90 jours. S'ils s'inscrivent dans ce délai, vous gagnez."
                 },
                 "payment": {
-                    "title": "Paiement PayPal mensuel",
+                    "title": "Traitement mensuel",
                     "desc": "Versements le 5 de chaque mois. Seuil minimum de 50€."
                 }
             }
@@ -520,7 +388,7 @@
                 {
                     "step": "Étape 1",
                     "title": "Postulez",
-                    "desc": "Remplissez le formulaire ci-dessous. Nous examinons les candidatures sous 48h."
+                    "desc": "Remplissez le formulaire ci-dessous. Notre équipe examine chaque candidature."
                 },
                 {
                     "step": "Étape 2",
@@ -530,45 +398,45 @@
                 {
                     "step": "Étape 3",
                     "title": "Gagnez",
-                    "desc": "Touchez 20% sur chaque paiement de vos filleuls, pendant 12 mois."
+                    "desc": "Touchez la commission correspondant à votre palier pendant 12 mois."
                 }
             ]
         },
         "earnings": {
-            "title": "Votre potentiel de gains",
-            "subtitle": "Découvrez comment les commissions s'accumulent avec le modèle récurrent de Scaliente.",
-            "colReferrals": "Filleuls",
-            "colPlan": "Plan moyen",
-            "colMonthly": "Mensuel",
-            "colYearly": "Sur 12 mois",
+            "title": "Une progression par paliers",
+            "subtitle": "Le programme applique trois taux de commission clairement définis. Le palier Bronze est le niveau par défaut.",
+            "colReferrals": "Palier",
+            "colPlan": "Statut",
+            "colMonthly": "Commission",
+            "colYearly": "Durée",
             "rows": [
                 {
-                    "referrals": "5 clients",
-                    "plan": "Starter (89€)",
-                    "monthly": "86,42€",
-                    "yearly": "1 037€"
+                    "referrals": "Bronze",
+                    "plan": "Palier par défaut",
+                    "monthly": "10%",
+                    "yearly": "12 mois"
                 },
                 {
-                    "referrals": "10 clients",
-                    "plan": "Growth (149€)",
-                    "monthly": "289,36€",
-                    "yearly": "3 472€"
+                    "referrals": "Silver",
+                    "plan": "Palier attribué",
+                    "monthly": "15%",
+                    "yearly": "12 mois"
                 },
                 {
-                    "referrals": "20 clients",
-                    "plan": "Scale (249€)",
-                    "monthly": "967,12€",
-                    "yearly": "11 605€"
+                    "referrals": "Gold",
+                    "plan": "Palier attribué",
+                    "monthly": "20%",
+                    "yearly": "12 mois"
                 }
             ],
-            "disclaimer": "Estimations basées sur 20% de commission récurrente pendant 12 mois, après déduction des frais de traitement (2,9%). Les gains réels dépendent du plan choisi et de la rétention."
+            "disclaimer": "La commission est calculée après déduction des frais de plateforme de 2,9%. Les taux indiqués sont ceux du programme partenaire public."
         },
         "audiences": {
             "title": "Qui devrait rejoindre",
             "items": {
                 "creators": {
                     "title": "Créateurs de contenu",
-                    "desc": "YouTube, TikTok, Instagram — monétisez votre audience e-commerce."
+                    "desc": "YouTube, TikTok, Instagram : monétisez votre audience e-commerce."
                 },
                 "bloggers": {
                     "title": "Blogueurs & Rédacteurs",
@@ -598,8 +466,8 @@
             "title": "Questions fréquentes",
             "items": [
                 {
-                    "q": "Comment fonctionne la commission de 20% ?",
-                    "a": "Vous touchez 20% de chaque paiement effectué par vos filleuls à Scaliente, pendant 12 mois à compter de leur premier paiement — pas seulement le premier mois. S'ils passent à un plan supérieur, votre commission augmente aussi."
+                    "q": "Comment fonctionne la commission par palier ?",
+                    "a": "Le palier Bronze démarre à 10%, Silver à 15% et Gold à 20%. Les commissions récurrentes sont générées pendant 12 mois à compter de la conversion."
                 },
                 {
                     "q": "Que reçoit mon filleul ?",
@@ -611,7 +479,7 @@
                 },
                 {
                     "q": "Quand et comment suis-je payé ?",
-                    "a": "Les commissions sont validées après une période de clearing de 30 jours. Les paiements sont effectués par PayPal le 5 de chaque mois, avec un seuil minimum de 50€."
+                    "a": "Les commissions sont validées après une période de clearing de 30 jours. Les paiements sont traités le 5 de chaque mois, avec un seuil minimum de 50€."
                 },
                 {
                     "q": "Est-ce gratuit de rejoindre le programme ?",
@@ -640,9 +508,9 @@
                 "promotion": "Décrivez votre stratégie de promotion..."
             },
             "submit": "Soumettre ma candidature",
-            "disclaimer": "Gratuit. Nous examinons les candidatures sous 48 heures.",
+            "disclaimer": "Candidature gratuite. Notre équipe examine chaque demande.",
             "successTitle": "Candidature envoyée !",
-            "successMessage": "Merci ! Nous examinerons votre candidature et vous recontacterons sous 48 heures."
+            "successMessage": "Merci ! Notre équipe va examiner votre candidature et vous recontactera ensuite."
         }
     },
     "footer": {
@@ -662,6 +530,7 @@
             "terms": "Conditions Générales d'Utilisation",
             "legalMentions": "Mentions Légales",
             "calculator": "Calculateur ROAS",
+            "guides": "Guides Profit Shopify",
             "compare": "Scaliente vs TrueProfit",
             "compareTripleWhale": "Scaliente vs Triple Whale",
             "compareLifetimely": "Scaliente vs Lifetimely",
@@ -678,11 +547,11 @@
     },
     "metadata": {
         "title": "Scaliente | Tracker de Profit Net & Rentabilité Réelle pour Shopify",
-        "description": "Calculez votre Vrai Profit en temps réel. Scaliente déduit automatiquement Ads, COGS et Shipping de votre CA Shopify. Essayez gratuitement sans CB.",
+        "description": "Rapprochez commandes Shopify, dépenses publicitaires, coûts produits, livraison, frais et taxes. Analysez votre profit net et votre attribution dans une même interface.",
         "ogTitle": "Scaliente - Votre Profit E-commerce Réel",
         "ogDescription": "Arrêtez de deviner votre rentabilité. Scaliente centralise vos revenus et dépenses pour révéler votre vrai profit.",
         "twitterTitle": "Scaliente - Votre Profit E-commerce Réel",
-        "twitterDescription": "Arrêtez de deviner. Voyez votre vrai profit en temps réel.",
+        "twitterDescription": "Commandes, coûts et dépenses publicitaires rapprochés pour lire votre profit net et votre attribution.",
         "keywords": [
             "profit e-commerce",
             "tracker profit shopify",
@@ -827,7 +696,7 @@
         "profitDashboard": {
             "meta": {
                 "title": "Dashboard Profit Net Shopify | Scaliente",
-                "description": "Voyez votre vrai profit Shopify en temps réel. Scaliente déduit COGS, ads, livraison et frais automatiquement."
+                "description": "Suivez votre profit Shopify : chaque commande recalcule le bénéfice net, tandis que les dépenses publicitaires sont synchronisées une à deux fois par jour."
             },
             "hero": {
                 "title": "Votre Vrai Profit, Pas le Chiffre d'Affaires",
@@ -844,7 +713,7 @@
                     },
                     {
                         "title": "Les frais cachés grignotent vos marges",
-                        "description": "Stripe prend 2,9%, PayPal 3,49%, Klarna 5%. Ces frais s'accumulent silencieusement sur des centaines de commandes et personne ne les suit par transaction."
+                        "description": "Les frais de paiement varient selon la passerelle et la transaction. Sans rapprochement commande par commande, ils érodent la marge sans apparaître dans le chiffre d'affaires Shopify."
                     },
                     {
                         "title": "Les tableurs craquent à grande échelle",
@@ -881,8 +750,8 @@
                 },
                 {
                     "icon": "Zap",
-                    "title": "Actualisation auto toutes les 5 min",
-                    "description": "Pas de synchronisation manuelle. Vos données se rafraîchissent automatiquement pour toujours voir les derniers chiffres."
+                    "title": "Cadence affichée sans ambiguïté",
+                    "description": "Les commandes arrivent via les webhooks Shopify. Les dépenses publicitaires sont synchronisées une à deux fois par jour et peuvent être rafraîchies manuellement."
                 },
                 {
                     "icon": "PieChart",
@@ -896,7 +765,7 @@
                 "steps": [
                     {
                         "title": "Connectez Shopify",
-                        "description": "OAuth en un clic. Vos commandes, produits et revenus se synchronisent automatiquement en moins de 2 minutes."
+                        "description": "Autorisez la connexion à votre boutique. Scaliente lance ensuite la première synchronisation de vos commandes, produits et revenus."
                     },
                     {
                         "title": "Configurez vos coûts",
@@ -910,7 +779,7 @@
             },
             "finalCta": {
                 "title": "Arrêtez de deviner votre profit",
-                "subtitle": "Connectez Shopify et voyez vos vrais chiffres en moins de 2 minutes."
+                "subtitle": "Connectez Shopify et rassemblez revenus, coûts et dépenses publicitaires dans une même lecture."
             }
         },
         "adTracking": {
@@ -1357,6 +1226,530 @@
                 "title": "Arrêtez de perdre des heures sur des rapports manuels",
                 "subtitle": "Connectez Shopify et générez des rapports de profit en quelques secondes."
             }
+        },
+        "pixelAttribution": {
+            "meta": {
+                "title": "Pixel Shopify et attribution multi-touch | Scaliente",
+                "description": "Installez un Web Pixel Shopify, reliez les parcours aux commandes et analysez l’attribution, le ROAS et le profit dans Scaliente.",
+                "keywords": [
+                    "pixel Shopify",
+                    "attribution Shopify",
+                    "tracking Shopify",
+                    "pixel Meta Shopify",
+                    "attribution multi-touch e-commerce"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Web Pixel Shopify · Attribution multi-touch",
+                "title": "Le pixel Shopify qui relie chaque vente à votre profit.",
+                "subtitle": "Suivez le parcours, rattachez la commande à sa source et confrontez le revenu aux dépenses publicitaires et aux coûts réels.",
+                "note": "La collecte commence à l’activation du Pixel. Scaliente n’invente pas l’historique antérieur.",
+                "offer": "Inclus sans surcoût dans tous les abonnements, y compris Discovery à 0 €.",
+                "primaryCta": "Installer Scaliente",
+                "secondaryCta": "Voir le fonctionnement",
+                "visualAlt": "Dashboard d’attribution publicitaire Scaliente anonymisé",
+                "visualLabel": "Attribution",
+                "statusLabel": "Shopify Web Pixel actif",
+                "proof": [
+                    {
+                        "value": "Shopify Web Pixel",
+                        "label": "Extension installée depuis Scaliente"
+                    },
+                    {
+                        "value": "Parcours complet",
+                        "label": "De la page vue à la commande"
+                    },
+                    {
+                        "value": "6 modèles",
+                        "label": "Règles d’attribution déterministes"
+                    },
+                    {
+                        "value": "5 plateformes ads",
+                        "label": "Réunies dans la vue d’acquisition"
+                    }
+                ]
+            },
+            "architecture": {
+                "eyebrow": "Une chaîne de preuve",
+                "title": "Du clic au profit, sans boîte noire.",
+                "description": "Scaliente conserve les signaux utiles du parcours, les rapproche de la commande Shopify, puis les remet dans le contexte économique de la boutique.",
+                "steps": [
+                    {
+                        "icon": "MousePointerClick",
+                        "title": "Clic et campagne",
+                        "description": "Les paramètres UTM, identifiants de clic et cookies publicitaires disponibles sont captés avec l’événement."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Parcours Shopify",
+                        "description": "Le Web Pixel suit les événements standard du storefront, du panier et du checkout."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Commande rapprochée",
+                        "description": "L’identifiant client Shopify relie les points de contact à la commande finalisée."
+                    },
+                    {
+                        "icon": "CircleDollarSign",
+                        "title": "Décision rentable",
+                        "description": "Le revenu attribué est lu avec les dépenses ads, coûts produits, frais, livraison et taxes."
+                    }
+                ]
+            },
+            "events": {
+                "eyebrow": "Funnel observé",
+                "title": "Un pixel pensé pour le parcours Shopify complet.",
+                "description": "Les événements standard sont collectés dans une structure cohérente, exploitable pour reconstruire le chemin qui précède l’achat.",
+                "items": [
+                    "Page consultée",
+                    "Produit consulté",
+                    "Ajout au panier",
+                    "Retrait du panier",
+                    "Collection consultée",
+                    "Recherche effectuée",
+                    "Panier consulté",
+                    "Checkout démarré",
+                    "Paiement renseigné",
+                    "Commande finalisée"
+                ],
+                "privacyNote": "Le Pixel s’exécute comme une extension Shopify en environnement isolé. Les réglages de transmission côté serveur intègrent un contrôle du consentement ; le marchand conserve la responsabilité de sa configuration légale."
+            },
+            "models": {
+                "eyebrow": "Attribution explicable",
+                "title": "Changez de modèle. Gardez le même historique.",
+                "description": "Les modèles sont des règles déterministes appliquées au parcours collecté. Vous pouvez comparer leurs lectures sans remplacer le Pixel.",
+                "items": [
+                    {
+                        "title": "Dernier clic",
+                        "description": "Le dernier point de contact reçoit le crédit de la conversion."
+                    },
+                    {
+                        "title": "Dernier clic non direct",
+                        "description": "Le dernier canal connu reçoit le crédit quand la dernière visite est directe."
+                    },
+                    {
+                        "title": "Premier clic",
+                        "description": "Le premier point de contact observé reçoit le crédit."
+                    },
+                    {
+                        "title": "Linéaire",
+                        "description": "Le crédit est réparti à parts égales entre les points de contact."
+                    },
+                    {
+                        "title": "Décroissance temporelle",
+                        "description": "Les interactions proches de la commande reçoivent davantage de crédit."
+                    },
+                    {
+                        "title": "Basé sur la position",
+                        "description": "Le premier et le dernier contact sont davantage pondérés que les étapes intermédiaires."
+                    }
+                ],
+                "coverageTitle": "La couverture reste visible",
+                "coverageDescription": "Scaliente considère la lecture par canal comme exploitable à partir de 60 % de revenu attribué. En dessous de ce seuil, l’interface signale la couverture partielle et conserve une lecture prudente."
+            },
+            "difference": {
+                "eyebrow": "Le différenciateur Scaliente",
+                "title": "Le pixel ne s’arrête pas à la conversion.",
+                "description": "Un événement d’achat dit qu’une vente a eu lieu. Scaliente le rapproche de l’ensemble des données nécessaires pour savoir si cette vente a réellement créé de la marge.",
+                "inputLabel": "Données rapprochées",
+                "inputs": [
+                    "Parcours et source publicitaire",
+                    "Commandes et remboursements Shopify",
+                    "Dépenses publicitaires consolidées",
+                    "Coûts produits, livraison, frais et taxes"
+                ],
+                "outputLabel": "Lecture obtenue",
+                "outputs": [
+                    "Revenu attribué par canal",
+                    "ROAS plateforme comparé au ROAS observé",
+                    "Profit et contribution par canal",
+                    "Couverture et santé du tracking"
+                ],
+                "platforms": [
+                    "Shopify",
+                    "Meta",
+                    "Google",
+                    "TikTok",
+                    "Pinterest",
+                    "Snapchat"
+                ]
+            },
+            "setup": {
+                "eyebrow": "Mise en place",
+                "title": "Installé depuis votre espace Scaliente.",
+                "steps": [
+                    {
+                        "title": "Connectez Shopify",
+                        "description": "Autorisez Scaliente à lire les événements clients et à créer le Web Pixel."
+                    },
+                    {
+                        "title": "Activez le Pixel",
+                        "description": "Scaliente crée ou met à jour l’extension de façon idempotente depuis les réglages."
+                    },
+                    {
+                        "title": "Contrôlez la santé",
+                        "description": "Le volume d’événements, la couverture des commandes et les transmissions configurées restent visibles."
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "Réponses directes",
+                "title": "Pixel Shopify : les questions utiles.",
+                "items": [
+                    {
+                        "question": "Qu’est-ce qu’un pixel d’attribution Shopify ?",
+                        "answer": "C’est une extension qui écoute les événements du parcours Shopify, conserve les signaux de campagne disponibles et les relie aux commandes afin d’analyser les sources de vente."
+                    },
+                    {
+                        "question": "Le Pixel Scaliente remplace-t-il les pixels Meta, Google ou TikTok ?",
+                        "answer": "Non. Il complète les intégrations publicitaires : Scaliente construit sa propre lecture du parcours et centralise les performances des cinq plateformes prises en charge."
+                    },
+                    {
+                        "question": "Le Pixel ralentit-il la boutique ?",
+                        "answer": "Il fonctionne comme une extension Web Pixel Shopify dans un environnement isolé. L’envoi vers le collecteur Scaliente est asynchrone et conçu pour ne pas bloquer le storefront."
+                    },
+                    {
+                        "question": "Quand les données deviennent-elles exploitables ?",
+                        "answer": "La collecte commence après l’installation, sans recréer le passé. Scaliente affiche la couverture et considère la lecture par canal exploitable à partir de 60 % de revenu attribué."
+                    },
+                    {
+                        "question": "Quels modèles d’attribution sont disponibles ?",
+                        "answer": "Dernier clic, dernier clic non direct, premier clic, linéaire, décroissance temporelle et attribution basée sur la position."
+                    },
+                    {
+                        "question": "Quelles plateformes publicitaires sont réunies ?",
+                        "answer": "Meta, Google, TikTok, Pinterest et Snapchat sont consolidées dans la vue Ads Insights. Les transmissions server-side disponibles se configurent selon la plateforme."
+                    }
+                ]
+            },
+            "finalCta": {
+                "eyebrow": "Du signal à la décision",
+                "title": "Reliez vos ventes à leur source — puis à votre profit.",
+                "subtitle": "Connectez Shopify, activez le Pixel et laissez l’historique se construire dans Scaliente.",
+                "button": "Installer Scaliente",
+                "note": "Pixel inclus dans tous les abonnements, y compris Discovery à 0 €. La collecte débute après l’activation."
+            }
+        },
+        "aiCustomerService": {
+            "meta": {
+                "title": "Service Client IA pour Shopify — Bêta fermée | Scaliente",
+                "description": "Une Inbox IA Shopify qui réunit email, commande, livraison, historique et litiges pour préparer des réponses sous contrôle humain. Bêta fermée.",
+                "keywords": [
+                    "service client IA Shopify",
+                    "support client Shopify IA",
+                    "Inbox IA e-commerce",
+                    "assistant email Shopify",
+                    "automatisation SAV Shopify"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Bêta fermée · Email + Shopify",
+                "title": "Répondez avec le contexte. Gardez le contrôle.",
+                "subtitle": "Commande, livraison, historique et litiges réunis avant chaque brouillon. Votre équipe décide de l’envoi.",
+                "primaryCta": "Demander un accès",
+                "primaryHref": "mailto:contact@scaliente.com?subject=B%C3%AAta%20Inbox%20IA",
+                "secondaryCta": "Voir le fonctionnement",
+                "visualAlt": "Inbox IA Scaliente en mode démonstration anonymisé avec conversation client et brouillon proposé",
+                "visualLabel": "Démonstration anonymisée",
+                "proof": [
+                    {
+                        "value": "Commande",
+                        "label": "Association au bon achat Shopify"
+                    },
+                    {
+                        "value": "Livraison",
+                        "label": "Suivi disponible dans le contexte"
+                    },
+                    {
+                        "value": "Litige",
+                        "label": "Signalé avant une réponse sensible"
+                    },
+                    {
+                        "value": "Historique",
+                        "label": "Conversations et achats rapprochés"
+                    }
+                ]
+            },
+            "problem": {
+                "eyebrow": "Ce qui ralentit le support",
+                "title": "Le client attend. Votre équipe cherche encore le contexte.",
+                "description": "Le travail répétitif ne vient pas seulement de la rédaction. Il vient des recherches, des vérifications et des passages d’un outil à l’autre.",
+                "items": [
+                    {
+                        "icon": "Route",
+                        "title": "Changer d’onglet avant de répondre",
+                        "description": "Retrouver le client, la bonne commande, le statut de livraison et un éventuel remboursement fragmente chaque traitement."
+                    },
+                    {
+                        "icon": "Clock3",
+                        "title": "Répéter les mêmes recherches",
+                        "description": "Les demandes de suivi, d’annulation ou de retour mobilisent du temps même quand la donnée existe déjà dans Shopify."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Corriger une IA trop sûre d’elle",
+                        "description": "Une réponse plausible mais fausse sur un remboursement, une livraison ou un litige coûte plus cher qu’un brouillon à valider."
+                    }
+                ]
+            },
+            "workflow": {
+                "eyebrow": "Du message à la réponse",
+                "title": "Un flux court, avec une décision humaine au bon moment.",
+                "description": "Scaliente rassemble les faits avant la rédaction, puis garde les actions sensibles derrière une validation explicite.",
+                "steps": [
+                    {
+                        "icon": "Inbox",
+                        "title": "Le message arrive",
+                        "description": "La boîte support connectée alimente une Inbox conçue pour les demandes e-commerce."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Le contexte se rassemble",
+                        "description": "Client, commande, livraison, remboursements, litiges et historique sont rapprochés du fil."
+                    },
+                    {
+                        "icon": "BrainCircuit",
+                        "title": "Le brouillon se prépare",
+                        "description": "L’assistant propose une réponse dans la langue du dernier message et avec les règles connues."
+                    },
+                    {
+                        "icon": "UserCheck",
+                        "title": "L’équipe décide",
+                        "description": "Relire, modifier, demander une validation ou envoyer reste un choix humain."
+                    }
+                ]
+            },
+            "context": {
+                "eyebrow": "Contexte Shopify natif",
+                "title": "La réponse part des faits de la boutique.",
+                "description": "L’Inbox ne traite pas l’email comme un texte isolé. Elle construit un contexte commerce borné et vérifiable.",
+                "items": [
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Commande associée",
+                        "description": "Le numéro présent dans le message, l’email client ou une association manuelle permettent de retrouver la bonne commande."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Livraison et suivi",
+                        "description": "Le statut de préparation, le transporteur et le lien de suivi disponible peuvent guider la réponse sans inventer une date."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Remboursement et litige",
+                        "description": "Un remboursement existant ou un litige Shopify Payments ouvert remonte dans le contexte avant la rédaction."
+                    },
+                    {
+                        "icon": "History",
+                        "title": "Historique client",
+                        "description": "Les conversations précédentes et les commandes du client évitent de lui faire répéter ce que la boutique sait déjà."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Règles de la boutique",
+                        "description": "Ton, signature, politiques et précédents validés cadrent le brouillon proposé."
+                    }
+                ]
+            },
+            "control": {
+                "eyebrow": "Cas sensibles",
+                "title": "L’IA propose. Elle ne promet pas à votre place.",
+                "description": "Les demandes de remboursement, chargeback, commande introuvable ou suivi incohérent élèvent le niveau de risque et appellent une revue.",
+                "visualAlt": "Inbox IA Scaliente anonymisée montrant un brouillon de remboursement avec validation requise",
+                "visualLabel": "Validation requise",
+                "items": [
+                    "Aucun remboursement, annulation ou changement de commande n’est présenté comme effectué sans preuve dans le contexte.",
+                    "Les litiges, remboursements, chargebacks et incohérences de suivi déclenchent un niveau de risque déterministe.",
+                    "Un nouveau message ou un contexte modifié rend le brouillon obsolète au lieu de le laisser partir silencieusement.",
+                    "Les engagements sans précédent validé restent soumis à une revue humaine."
+                ]
+            },
+            "team": {
+                "eyebrow": "Délégation sans perte de contexte",
+                "title": "Une file de travail commune, pas une boîte mail partagée de plus.",
+                "description": "Les conversations gardent leur propriétaire, leur priorité, leurs tags et leur état de revue pour que chacun sache quoi traiter.",
+                "items": [
+                    {
+                        "icon": "Users",
+                        "title": "Attribution claire",
+                        "description": "Prendre une conversation, l’assigner à un membre ou la remettre dans la file non attribuée."
+                    },
+                    {
+                        "icon": "Inbox",
+                        "title": "Files opérationnelles",
+                        "description": "Voir l’ensemble, mes conversations, les non attribuées et celles qui attendent une revue."
+                    },
+                    {
+                        "icon": "Tags",
+                        "title": "Priorités et catégories",
+                        "description": "Urgence, risque, statut de commande, remboursement ou litige rendent la file lisible."
+                    },
+                    {
+                        "icon": "MessageSquareText",
+                        "title": "Notes internes",
+                        "description": "Transmettre une décision ou un contexte d’équipe sans l’envoyer au client."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Circuit de validation",
+                        "description": "Demander une revue, approuver le brouillon ou demander des changements avec une trace de décision."
+                    },
+                    {
+                        "icon": "ShieldCheck",
+                        "title": "Droits par rôle",
+                        "description": "Lecture, édition, attribution et approbation suivent le niveau d’accès du collaborateur."
+                    }
+                ]
+            },
+            "learning": {
+                "eyebrow": "Apprentissage supervisé",
+                "title": "Votre manière de répondre devient une base de travail explicite.",
+                "description": "Scaliente observe des réponses envoyées et des décisions validées pour proposer un ton et des précédents que vous pouvez relire et modifier.",
+                "inputLabel": "Ce qui alimente l’assistant",
+                "inputs": [
+                    "Réponses réellement envoyées depuis la boîte support",
+                    "Ton, signature et politiques définis par la boutique",
+                    "Corrections et décisions humaines après envoi",
+                    "Précédents approuvés pour les cas sensibles"
+                ],
+                "outputLabel": "Ce que l’équipe récupère",
+                "outputs": [
+                    "Brouillons adaptés à la langue du client",
+                    "Ton proposé visible et modifiable",
+                    "Précédents réutilisables avec leur provenance",
+                    "Cas non couverts signalés avant engagement"
+                ],
+                "note": "Les règles détectées ne deviennent pas silencieusement des vérités. Elles restent visibles, éditables et soumises à validation."
+            },
+            "availability": {
+                "eyebrow": "Tarification et accès",
+                "title": "Bêta fermée. Pas de tarif public avant l’ouverture.",
+                "description": "L’Inbox IA est encore validée avec un nombre limité de boutiques. Elle n’est ni activable ni facturée en libre-service aujourd’hui.",
+                "items": [
+                    {
+                        "label": "Disponibilité",
+                        "value": "Sur invitation"
+                    },
+                    {
+                        "label": "Canal actuel",
+                        "value": "Boîte email connectée"
+                    },
+                    {
+                        "label": "Facturation publique",
+                        "value": "Non disponible pendant la bêta"
+                    },
+                    {
+                        "label": "Activation autonome",
+                        "value": "Non disponible"
+                    }
+                ],
+                "button": "Présenter mon besoin",
+                "href": "mailto:contact@scaliente.com?subject=B%C3%AAta%20Inbox%20IA",
+                "note": "Les conditions commerciales seront publiées lorsque l’activation générale sera effectivement disponible."
+            },
+            "faq": {
+                "eyebrow": "Questions directes",
+                "title": "Ce qu’il faut savoir avant de déléguer à une IA.",
+                "items": [
+                    {
+                        "question": "Qu’est-ce qu’un service client IA pour Shopify ?",
+                        "answer": "C’est un espace de support qui utilise les données disponibles de la boutique pour assister le traitement des demandes. Dans Scaliente, l’assistant prépare un brouillon à partir de l’email, de la commande et du contexte associé."
+                    },
+                    {
+                        "question": "L’IA envoie-t-elle les réponses automatiquement ?",
+                        "answer": "Non dans le fonctionnement présenté ici. Le brouillon reste relisible, modifiable et soumis à la décision de l’équipe. Les cas sensibles peuvent exiger une validation supplémentaire."
+                    },
+                    {
+                        "question": "Quelles données Shopify sont utilisées ?",
+                        "answer": "Selon le cas disponible, le contexte peut inclure la commande associée, ses articles, son statut financier, son exécution, son suivi, ses remboursements et un litige Shopify Payments ouvert."
+                    },
+                    {
+                        "question": "Peut-on attribuer et déléguer les conversations ?",
+                        "answer": "Oui. Le workflow prévoit l’attribution, les files personnelles ou non attribuées, les priorités, les tags, les notes internes et la demande de revue selon les rôles."
+                    },
+                    {
+                        "question": "Comment l’IA apprend-elle le ton de la marque ?",
+                        "answer": "Le système peut analyser des réponses réellement envoyées, puis proposer un profil de ton et des règles visibles. L’équipe peut les relire, les modifier ou les écarter."
+                    },
+                    {
+                        "question": "Combien coûte l’Inbox IA Scaliente ?",
+                        "answer": "Aucun tarif public n’est proposé tant que l’Inbox reste en bêta fermée. Les conditions seront publiées lorsque l’activation générale et la facturation seront disponibles."
+                    },
+                    {
+                        "question": "Quels canaux sont pris en charge ?",
+                        "answer": "La version actuellement validée part d’une boîte email connectée. Les réseaux sociaux, le chat et la voix ne sont pas présentés comme disponibles sur cette page."
+                    }
+                ]
+            },
+            "finalCta": {
+                "href": "mailto:contact@scaliente.com?subject=B%C3%AAta%20Inbox%20IA",
+                "eyebrow": "Votre support, avec son contexte",
+                "title": "Montrez-nous les demandes qui font perdre du temps à votre équipe.",
+                "subtitle": "Volume, langues, cas sensibles et outils actuels nous aideront à évaluer votre accès à la bêta.",
+                "button": "Demander un accès",
+                "note": "Accès accordé progressivement selon les capacités et les cas d’usage de la bêta."
+            },
+            "publicLaunch": {
+                "meta": {
+                    "entityName": "Scaliente Inbox IA",
+                    "title": "Service client IA Shopify avec contexte client | Scaliente",
+                    "description": "Scaliente réunit emails, commandes, livraisons, historique et litiges Shopify pour préparer des réponses IA que votre équipe contrôle."
+                },
+                "hero": {
+                    "eyebrow": "Service client IA pour Shopify",
+                    "primaryCta": "Activer l’Inbox IA",
+                    "primaryHref": "https://app.scaliente.com/inbox/discover"
+                },
+                "availability": {
+                    "eyebrow": "Tarification",
+                    "title": "39 € par mois et par boutique activée.",
+                    "description": "L’Inbox IA s’ajoute à un abonnement Scaliente payant. Chaque boutique activée contribue au quota commun du compte.",
+                    "items": [
+                        {
+                            "label": "Tarif mensuel",
+                            "value": "39 € par boutique"
+                        },
+                        {
+                            "label": "Brouillons IA inclus",
+                            "value": "200 par boutique et par mois"
+                        },
+                        {
+                            "label": "Recharge",
+                            "value": "100 brouillons pour 10 €"
+                        },
+                        {
+                            "label": "Validité des recharges",
+                            "value": "90 jours"
+                        }
+                    ],
+                    "button": "Activer l’Inbox IA",
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "note": "Le quota des boutiques activées est regroupé au niveau du compte. Votre équipe garde la décision d’envoi."
+                },
+                "faq": {
+                    "items": [
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {
+                            "answer": "L’Inbox IA coûte 39 € par mois et par boutique activée. Elle inclut 200 brouillons IA mensuels par boutique. Une recharge de 100 brouillons coûte 10 € et reste valide pendant 90 jours."
+                        },
+                        {
+                            "answer": "L’Inbox prend en charge une boîte email connectée. Les réseaux sociaux, le chat et la voix ne sont pas annoncés comme disponibles."
+                        }
+                    ]
+                },
+                "finalCta": {
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "eyebrow": "Votre support, avec son contexte",
+                    "title": "Ouvrez une Inbox qui connaît vos commandes.",
+                    "subtitle": "Reliez votre boîte email à Shopify pour préparer des réponses avec le contexte client, livraison et litige disponible.",
+                    "button": "Activer l’Inbox IA",
+                    "note": "Module séparé disponible avec un abonnement Scaliente payant."
+                }
+            }
         }
     },
     "compare": {
@@ -1634,48 +2027,496 @@
             }
         }
     },
-    "operations": {
-        "badge": "Au-delà du chiffre d'affaires",
+    "profitStory": {
+        "eyebrow": "La vérité du profit",
         "title": {
-            "main": "Ce qui grignote",
-            "highlight": "votre marge"
+            "main": "Du chiffre d’affaires au",
+            "highlight": "profit net"
         },
-        "subtitle": "Les postes que les tableaux de bord classiques laissent de côté.",
-        "cards": {
-            "disputes": {
-                "title": "Litiges et chargebacks",
-                "desc": "Suivez vos litiges Shopify Payments depuis votre dashboard : montant en jeu, gagnés, perdus, et ceux qui attendent une action de votre part avant la date limite."
+        "description": "Le revenu ne dit pas ce qu’il reste. Scaliente rapproche les postes qui font réellement varier votre marge dans une seule lecture.",
+        "equation": {
+            "label": "La cascade de marge",
+            "revenue": "Chiffre d’affaires",
+            "resultLabel": "Résultat calculé",
+            "result": "Votre profit net"
+        },
+        "costs": {
+            "ads": "Dépenses publicitaires",
+            "cogs": "Coûts produits (COGS)",
+            "shipping": "Livraison",
+            "fees": "Frais de paiement et taxes",
+            "expenses": "Dépenses déclarées"
+        },
+        "imageAlt": "Dashboard Scaliente anonymisé montrant le bénéfice net et les coûts"
+    },
+    "attributionStory": {
+        "eyebrow": "Attribution first-party",
+        "title": {
+            "main": "Reliez chaque vente au",
+            "highlight": "bon signal"
+        },
+        "description": "Le pixel Shopify collecte les événements du parcours et leurs identifiants marketing. Scaliente les rapproche de la commande sans masquer les ventes directes ou non attribuées.",
+        "signal": {
+            "title": "Une attribution lisible, pas une boîte noire.",
+            "description": "Le canal, la campagne et le parcours restent consultables. Quand le signal manque, l’incertitude reste visible.",
+            "transparency": "Les attributions sous le seuil de fiabilité ne sont pas présentées comme certaines."
+        },
+        "journey": {
+            "click": "Clic",
+            "session": "Session",
+            "checkout": "Commande",
+            "channel": "Canal"
+        },
+        "screenLabel": "Ads Insights",
+        "screenNote": "Données anonymisées",
+        "imageAlt": "Vue Ads Insights anonymisée de Scaliente"
+    },
+    "decisionStory": {
+        "eyebrow": "De la mesure à l’action",
+        "title": {
+            "main": "Des chiffres qui indiquent",
+            "highlight": "quoi faire"
+        },
+        "description": "La valeur d’un dashboard n’est pas d’empiler des métriques, mais de rendre la prochaine décision plus nette.",
+        "aside": "Comparez le revenu attribué, les dépenses, le ROAS, le seuil de rentabilité et le profit sans changer d’outil.",
+        "decisions": {
+            "budgets": {
+                "title": "Ajuster les budgets",
+                "description": "Lisez dépenses, revenu attribué et ROAS par canal avant de renforcer ou couper une campagne."
             },
-            "expenses": {
-                "title": "Dépenses déclarées",
-                "desc": "Abonnements, salaires, prestataires, frais fixes. Ajoutez-les une fois, en récurrent si besoin, et voyez ce qu'il reste après toutes vos charges — pas seulement après les coûts produit."
+            "margin": {
+                "title": "Protéger la marge",
+                "description": "Suivez les coûts produits, les frais, la livraison et le ROAS breakeven dans le même contexte."
             },
-            "reports": {
-                "title": "Rapport mensuel",
-                "desc": "La cascade du chiffre d'affaires jusqu'au profit net, la répartition de vos coûts et la comparaison avec la période précédente. Exportable en CSV pour votre comptable."
+            "anomalies": {
+                "title": "Repérer les anomalies",
+                "description": "Remboursements, commandes en attente et litiges restent visibles séparément pour faciliter le suivi."
+            }
+        },
+        "imageAlt": "Analyse Meta Ads anonymisée dans Scaliente"
+    },
+    "guides": {
+        "common": {
+            "readArticle": "Lire le guide",
+            "backToGuides": "Tous les guides",
+            "updatedLabel": "Mis à jour",
+            "readTimeLabel": "Lecture",
+            "contentsLabel": "Dans ce guide",
+            "authorLabel": "Écrit par",
+            "author": "L’équipe produit Scaliente",
+            "directAnswerLabel": "Réponse courte",
+            "keyPointsLabel": "À retenir",
+            "sourcesLabel": "Sources et méthode",
+            "sourcesIntro": "Les définitions externes sont reliées à leurs sources primaires. Les explications sur Scaliente correspondent au fonctionnement vérifié dans le produit.",
+            "productEyebrow": "Passer de la théorie aux chiffres",
+            "relatedLabel": "Continuer la lecture"
+        },
+        "hub": {
+            "meta": {
+                "title": "Guides Profit Shopify, ROAS et Rentabilité | Scaliente",
+                "description": "Comprendre le bénéfice net Shopify, le ROAS, le POAS, les coûts et le seuil de rentabilité avec des méthodes transparentes."
+            },
+            "eyebrow": "Bibliothèque Profit Shopify",
+            "title": "Comprendre les chiffres qui pilotent votre marge.",
+            "subtitle": "Des réponses directes, des formules vérifiables et les limites à connaître avant de prendre une décision.",
+            "indexLabel": "Point de départ",
+            "intro": "Cette bibliothèque explique comment passer du chiffre d’affaires Shopify à une lecture exploitable du bénéfice net. Chaque guide sépare les faits, les hypothèses et les données encore manquantes.",
+            "ctaEyebrow": "Votre boutique, vos données",
+            "ctaTitle": "Appliquez la méthode à vos commandes.",
+            "ctaDescription": "Scaliente rassemble les revenus, coûts et dépenses publicitaires dans une même lecture de profit.",
+            "ctaButton": "Voir mon profit réel"
+        },
+        "pages": {
+            "profitTracker": {
+                "meta": {
+                    "title": "Tracker de Profit Shopify : Guide Complet 2026 | Scaliente",
+                    "description": "Qu’est-ce qu’un tracker de profit Shopify, quelles données doit-il réunir et comment choisir une lecture fiable de votre bénéfice net ?"
+                },
+                "eyebrow": "Guide pilier · Profit Shopify",
+                "title": "Qu’est-ce qu’un tracker de profit Shopify ?",
+                "summary": "Le guide pour comprendre ce qu’un tracker de profit calcule, ce qu’il ne peut pas deviner et comment l’utiliser sans confondre chiffre d’affaires et rentabilité.",
+                "answer": "Un tracker de profit Shopify rapproche les commandes avec les coûts produits, la livraison, les frais, les taxes et les dépenses publicitaires afin d’estimer le bénéfice net sur une période donnée.",
+                "updated": "23 juillet 2026",
+                "readTime": "8 min",
+                "keyPoints": [
+                    "Le chiffre d’affaires Shopify ne correspond pas au bénéfice net.",
+                    "La qualité du résultat dépend d’abord de la complétude des coûts.",
+                    "Une cadence de données claire vaut mieux qu’une promesse vague de temps réel."
+                ],
+                "sections": [
+                    {
+                        "id": "definition",
+                        "title": "Du chiffre d’affaires au bénéfice net",
+                        "paragraphs": [
+                            "Shopify enregistre les ventes, remboursements et paiements. Pour obtenir une lecture de profit, il faut rapprocher ce revenu des coûts variables et fixes réellement supportés par la boutique. Le tracker sert de couche de calcul et de contrôle entre ces sources.",
+                            "Le résultat doit toujours être lu avec sa période, sa devise et son niveau de couverture. Un coût produit absent ou une dépense publicitaire non connectée ne disparaît pas économiquement : il manque simplement au calcul."
+                        ],
+                        "bullets": [
+                            "Revenus nets après remises et remboursements.",
+                            "COGS, livraison, frais, taxes et dépenses publicitaires.",
+                            "Dépenses déclarées et hypothèses rendues visibles."
+                        ]
+                    },
+                    {
+                        "id": "selection",
+                        "title": "Comment évaluer un tracker de profit",
+                        "paragraphs": [
+                            "Un bon outil doit expliquer sa formule, la provenance de chaque donnée et sa fréquence d’actualisation. Vérifiez aussi comment il traite les remboursements, les devises, les commandes en attente et les ventes qui ne peuvent pas être attribuées à une campagne.",
+                            "Scaliente reçoit les commandes par webhooks Shopify. Les dépenses publicitaires des cinq plateformes prises en charge sont synchronisées une à deux fois par jour et peuvent être rafraîchies manuellement."
+                        ],
+                        "bullets": [
+                            "Demandez ce qui est calculé, exclu ou estimé.",
+                            "Contrôlez la date de dernière synchronisation de chaque source.",
+                            "Préférez une incertitude visible à une attribution forcée."
+                        ]
+                    },
+                    {
+                        "id": "usage",
+                        "title": "Transformer le dashboard en décisions",
+                        "paragraphs": [
+                            "Le tracker devient utile lorsque chaque métrique conduit à une question opérationnelle : la marge baisse-t-elle à cause du coût produit, de la livraison, d’une remise ou des ads ? Le ROAS reste-t-il au-dessus du seuil de rentabilité ? Quels produits contribuent réellement au résultat ?",
+                            "La bonne routine consiste à vérifier les données manquantes, comparer des périodes comparables, puis documenter la décision prise. Le dashboard n’est pas une vérité comptable : c’est un outil de pilotage fondé sur les données disponibles."
+                        ],
+                        "bullets": [
+                            "Diagnostiquer avant d’augmenter ou couper un budget.",
+                            "Comparer profit, marge et dépenses sur la même période.",
+                            "Partager la méthode de calcul avec l’équipe."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Shopify Help — Profit reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"
+                    },
+                    {
+                        "label": "Shopify Help — Finance reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"
+                    }
+                ],
+                "productTitle": "Lire votre profit dans une seule interface",
+                "productDescription": "Le dashboard Scaliente rapproche commandes, coûts, taxes, frais et dépenses publicitaires en gardant la cadence de chaque source visible.",
+                "productCta": "Découvrir le dashboard profit"
+            },
+            "methodology": {
+                "meta": {
+                    "title": "Méthode de Calcul du Profit Shopify | Scaliente",
+                    "description": "Découvrez la formule utilisée par Scaliente, la provenance des données, leur cadence et les limites d’un calcul de profit Shopify."
+                },
+                "eyebrow": "Méthodologie · Transparence",
+                "title": "Comment Scaliente calcule le profit Shopify.",
+                "summary": "Une méthode lisible pour savoir quelles données entrent dans le calcul, quand elles sont actualisées et ce qui reste à vérifier.",
+                "answer": "Scaliente calcule le profit en partant du revenu Shopify disponible sur la période, puis en déduisant les coûts produits, la livraison, les frais, les taxes, les dépenses publicitaires et les dépenses déclarées disponibles.",
+                "updated": "23 juillet 2026",
+                "readTime": "7 min",
+                "keyPoints": [
+                    "Chaque donnée conserve sa source et sa période.",
+                    "Les commandes et les dépenses publicitaires n’ont pas la même cadence.",
+                    "Une donnée absente doit être corrigée, pas remplacée par une certitude."
+                ],
+                "sections": [
+                    {
+                        "id": "formula",
+                        "title": "La formule de travail",
+                        "paragraphs": [
+                            "La lecture de pilotage part du revenu observé et soustrait les catégories de coûts disponibles. Les remboursements et statuts de commande doivent être traités séparément pour éviter de mélanger revenu encaissé, revenu remboursé et exposition au risque.",
+                            "Le résultat dépend des règles configurées dans la boutique. Il doit être rapproché de la comptabilité lorsque des décisions fiscales ou statutaires sont en jeu."
+                        ],
+                        "bullets": [
+                            "Revenu − COGS − livraison − frais − taxes − ads − dépenses.",
+                            "Même devise et même fenêtre de dates pour chaque terme.",
+                            "Remboursements et litiges gardés visibles séparément."
+                        ]
+                    },
+                    {
+                        "id": "freshness",
+                        "title": "Provenance, cadence et couverture",
+                        "paragraphs": [
+                            "Les commandes arrivent via les webhooks Shopify. Les dépenses publicitaires sont synchronisées une à deux fois par jour selon la source, avec un rafraîchissement manuel possible. Les taux de change proviennent de la Banque centrale européenne.",
+                            "Le Web Pixel commence à collecter au moment de son activation. Avant que sa couverture ne soit suffisante, Scaliente conserve les ventes directes ou non attribuées et peut s’appuyer sur le dernier clic Shopify disponible."
+                        ],
+                        "bullets": [
+                            "Ne jamais présenter un historique que le pixel n’a pas observé.",
+                            "Afficher la dernière actualisation et les intégrations manquantes.",
+                            "Conserver les ventes non attribuées dans le total."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Shopify Dev — Order object",
+                        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/Order"
+                    },
+                    {
+                        "label": "European Central Bank — Exchange rates",
+                        "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+                    }
+                ],
+                "productTitle": "Vérifier le calcul avec vos propres données",
+                "productDescription": "Scaliente expose les catégories de coûts et la cadence des intégrations afin que votre équipe puisse contrôler la lecture de profit.",
+                "productCta": "Voir le calcul dans le dashboard"
+            },
+            "revenueVsProfit": {
+                "meta": {
+                    "title": "Chiffre d’Affaires vs Bénéfice Net Shopify | Scaliente",
+                    "description": "Comprenez la différence entre chiffre d’affaires Shopify, marge brute et bénéfice net avant de décider où investir."
+                },
+                "eyebrow": "Fondamentaux · Rentabilité",
+                "title": "Chiffre d’affaires Shopify ou bénéfice net ?",
+                "summary": "Deux boutiques peuvent afficher le même chiffre d’affaires et conserver des bénéfices très différents.",
+                "answer": "Le chiffre d’affaires mesure les ventes. Le bénéfice net mesure ce qu’il reste après les coûts liés aux produits, à la livraison, aux paiements, aux taxes, à la publicité et aux autres dépenses prises en compte.",
+                "updated": "23 juillet 2026",
+                "readTime": "6 min",
+                "keyPoints": [
+                    "Le CA décrit le volume de ventes, pas la valeur conservée.",
+                    "La marge brute et le bénéfice net répondent à des questions différentes.",
+                    "La comparaison n’est valable qu’avec une période et une méthode identiques."
+                ],
+                "sections": [
+                    {
+                        "id": "levels",
+                        "title": "Les trois niveaux à ne pas confondre",
+                        "paragraphs": [
+                            "Le chiffre d’affaires part des ventes. La marge brute retire principalement le coût des marchandises. Le bénéfice net de pilotage va plus loin en intégrant les autres coûts observables de l’activité.",
+                            "Une hausse de CA peut donc coexister avec une baisse de profit si les remises, la publicité, la livraison ou les frais progressent plus vite que les ventes."
+                        ],
+                        "bullets": [
+                            "CA : montant des ventes sur la période.",
+                            "Marge brute : revenu moins coût des produits.",
+                            "Profit net : revenu moins l’ensemble des coûts retenus."
+                        ]
+                    },
+                    {
+                        "id": "reading",
+                        "title": "Lire une variation sans se tromper",
+                        "paragraphs": [
+                            "Comparez des périodes de durée équivalente et vérifiez que les intégrations couvrent toute la fenêtre. Ensuite, décomposez la variation par coût au lieu de conclure trop vite à un problème d’acquisition.",
+                            "Un indicateur devient actionnable lorsque son évolution peut être reliée à une cause vérifiable : remise, coût fournisseur, canal publicitaire, remboursement ou changement de mix produit."
+                        ],
+                        "bullets": [
+                            "Vérifier la couverture avant la comparaison.",
+                            "Décomposer la marge plutôt que regarder un total isolé.",
+                            "Documenter le changement qui explique l’écart."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Shopify Help — Profit reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"
+                    },
+                    {
+                        "label": "Shopify Help — Finance reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"
+                    }
+                ],
+                "productTitle": "Mettre le chiffre d’affaires en contexte",
+                "productDescription": "Le dashboard profit rassemble les postes qui expliquent ce qui reste réellement derrière les ventes Shopify.",
+                "productCta": "Voir le dashboard profit"
+            },
+            "roasVsPoas": {
+                "meta": {
+                    "title": "ROAS vs POAS : Quelle Métrique pour Shopify ? | Scaliente",
+                    "description": "Comparez ROAS et POAS, comprenez leurs formules et utilisez-les sans confondre revenu attribué et profit."
+                },
+                "eyebrow": "Acquisition · Profit publicitaire",
+                "title": "ROAS vs POAS : revenu ou profit ?",
+                "summary": "Le ROAS mesure le revenu attribué à la publicité. Le POAS replace la dépense publicitaire face au profit.",
+                "answer": "Le ROAS divise le revenu attribué par la dépense publicitaire. Le POAS divise le profit attribuable retenu par cette dépense. Ils sont complémentaires, mais ne répondent pas à la même question.",
+                "updated": "23 juillet 2026",
+                "readTime": "6 min",
+                "keyPoints": [
+                    "Un ROAS élevé ne garantit pas une marge positive.",
+                    "Le POAS dépend directement de la qualité des données de coûts.",
+                    "L’attribution utilisée doit être explicitée avant toute comparaison."
+                ],
+                "sections": [
+                    {
+                        "id": "formulas",
+                        "title": "Deux formules, deux lectures",
+                        "paragraphs": [
+                            "Le ROAS aide à comparer le revenu attribué à un budget. Il reste utile pour lire la performance média, mais ignore la structure économique des produits vendus.",
+                            "Le POAS ajoute la marge au raisonnement. Deux campagnes avec le même ROAS peuvent produire des résultats opposés si elles vendent des produits, remises ou modes de livraison différents."
+                        ],
+                        "bullets": [
+                            "ROAS = revenu attribué ÷ dépenses publicitaires.",
+                            "POAS = profit attribuable ÷ dépenses publicitaires.",
+                            "Toujours préciser le modèle et la fenêtre d’attribution."
+                        ]
+                    },
+                    {
+                        "id": "decisions",
+                        "title": "Choisir la métrique selon la décision",
+                        "paragraphs": [
+                            "Utilisez le ROAS pour analyser la capacité d’un canal à générer du revenu attribué. Ajoutez le POAS et le seuil de rentabilité lorsque la décision porte sur la marge ou l’augmentation d’un budget.",
+                            "Avant de couper une campagne, vérifiez les ventes directes, les signaux manquants et le délai de conversion. Une attribution imparfaite ne doit pas être transformée en certitude."
+                        ],
+                        "bullets": [
+                            "Lecture média : ROAS et revenu attribué.",
+                            "Lecture économique : POAS, marge et breakeven.",
+                            "Décision finale : croiser attribution, couverture et profit."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Google Ads Help — About target ROAS bidding",
+                        "url": "https://support.google.com/google-ads/answer/6268637"
+                    },
+                    {
+                        "label": "Shopify Help — Profit reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"
+                    }
+                ],
+                "productTitle": "Comparer acquisition et profit au même endroit",
+                "productDescription": "Ads Insights rapproche dépenses, revenu attribué, ROAS, marge et profit avec la provenance des signaux visible.",
+                "productCta": "Découvrir Ads Insights"
+            },
+            "breakevenRoas": {
+                "meta": {
+                    "title": "ROAS Breakeven : Formule et Calculateur Shopify | Scaliente",
+                    "description": "Calculez le ROAS minimum nécessaire pour couvrir vos coûts et comprendre quand une campagne Shopify devient rentable."
+                },
+                "eyebrow": "Calcul · Seuil de rentabilité",
+                "title": "Calculer votre ROAS breakeven.",
+                "summary": "Le ROAS breakeven est le seuil auquel le revenu couvre exactement les coûts retenus dans votre calcul.",
+                "answer": "Lorsque la marge contributive est exprimée en pourcentage du revenu, le ROAS breakeven peut être estimé par 1 divisé par cette marge. La formule doit utiliser une marge qui exclut déjà la dépense publicitaire.",
+                "updated": "23 juillet 2026",
+                "readTime": "6 min",
+                "keyPoints": [
+                    "La qualité du seuil dépend de la qualité des coûts saisis.",
+                    "Un seuil unique peut masquer des marges produit très différentes.",
+                    "Retours, remises et taxes peuvent déplacer le breakeven."
+                ],
+                "sections": [
+                    {
+                        "id": "formula",
+                        "title": "Construire le seuil correctement",
+                        "paragraphs": [
+                            "Commencez par le revenu net attendu par commande. Retirez les coûts variables hors publicité afin d’obtenir la marge disponible pour financer l’acquisition. Le rapport entre revenu et cette marge détermine le seuil.",
+                            "Si la structure de coûts varie fortement par produit ou pays, calculez plusieurs seuils plutôt qu’une moyenne générale qui pourrait masquer les ventes non rentables."
+                        ],
+                        "bullets": [
+                            "Utiliser un revenu après remises et retours estimés.",
+                            "Inclure COGS, livraison, frais et taxes pertinents.",
+                            "Ne pas déduire deux fois la dépense publicitaire."
+                        ]
+                    },
+                    {
+                        "id": "use",
+                        "title": "Utiliser le breakeven sans automatisme",
+                        "paragraphs": [
+                            "Le seuil sert de garde-fou, pas de verdict isolé. Comparez-le au ROAS observé sur une fenêtre suffisamment représentative et tenez compte des délais de conversion.",
+                            "Pour une décision de budget, associez le breakeven au volume, au profit absolu, à la couverture d’attribution et à la stabilité de la marge."
+                        ],
+                        "bullets": [
+                            "Sous le seuil : vérifier données et causes avant d’agir.",
+                            "Au-dessus du seuil : contrôler le profit absolu et le volume.",
+                            "Recalculer après tout changement important de prix ou coût."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Google Ads Help — About target ROAS bidding",
+                        "url": "https://support.google.com/google-ads/answer/6268637"
+                    },
+                    {
+                        "label": "Calculateur ROAS & breakeven Scaliente",
+                        "url": "https://www.scaliente.com/fr/tools/roas-calculator"
+                    }
+                ],
+                "productTitle": "Tester votre seuil avec vos hypothèses",
+                "productDescription": "Le calculateur Scaliente détaille prix, coûts, taxes, retours et budget pour rendre le résultat contrôlable.",
+                "productCta": "Ouvrir le calculateur ROAS"
+            },
+            "shopifyCosts": {
+                "meta": {
+                    "title": "Quels Coûts Déduire du CA Shopify ? | Scaliente",
+                    "description": "Listez les coûts produits, livraison, paiement, taxes, publicité et dépenses nécessaires pour lire votre profit Shopify."
+                },
+                "eyebrow": "Méthode · Structure de coûts",
+                "title": "Quels coûts déduire du chiffre d’affaires Shopify ?",
+                "summary": "Un calcul de profit est aussi fiable que la liste de coûts qui l’alimente.",
+                "answer": "Pour piloter la rentabilité Shopify, rapprochez au minimum le revenu des coûts produits, de la livraison supportée, des frais de paiement, des taxes pertinentes, des dépenses publicitaires et des dépenses opérationnelles affectées à la période.",
+                "updated": "23 juillet 2026",
+                "readTime": "7 min",
+                "keyPoints": [
+                    "Séparer coûts variables, coûts fixes et flux de trésorerie.",
+                    "Attribuer chaque coût à la bonne période et à la bonne devise.",
+                    "Documenter les hypothèses lorsqu’un coût n’est pas disponible."
+                ],
+                "sections": [
+                    {
+                        "id": "variable-costs",
+                        "title": "Les coûts liés à chaque commande",
+                        "paragraphs": [
+                            "Les coûts variables évoluent avec les ventes : achat ou fabrication du produit, livraison fournisseur, emballage, livraison prise en charge, frais de paiement et taxes applicables selon votre méthode de suivi.",
+                            "Ils doivent idéalement être enregistrés au niveau de la variante et de la transaction. Une moyenne globale reste une hypothèse et doit être présentée comme telle."
+                        ],
+                        "bullets": [
+                            "COGS par produit ou variante.",
+                            "Livraison, emballage et frais de transaction.",
+                            "Remises, retours et remboursements observés."
+                        ]
+                    },
+                    {
+                        "id": "period-costs",
+                        "title": "Ads, dépenses fixes et période",
+                        "paragraphs": [
+                            "Les dépenses publicitaires doivent couvrir la même fenêtre que les ventes analysées. Les abonnements, prestataires et dépenses fixes peuvent ensuite être ajoutés pour passer d’une marge contributive à une lecture opérationnelle plus large.",
+                            "Ne confondez pas résultat de pilotage, trésorerie et résultat comptable. Les investissements, décalages de paiement et obligations fiscales peuvent nécessiter un traitement distinct avec votre comptable."
+                        ],
+                        "bullets": [
+                            "Aligner ads, ventes et taux de change sur la période.",
+                            "Séparer dépenses récurrentes et coûts exceptionnels.",
+                            "Rapprocher le reporting de gestion de la comptabilité."
+                        ]
+                    }
+                ],
+                "sources": [
+                    {
+                        "label": "Shopify Help — Profit reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"
+                    },
+                    {
+                        "label": "Shopify Help — Finance reports",
+                        "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"
+                    }
+                ],
+                "productTitle": "Rassembler les coûts au niveau de la boutique",
+                "productDescription": "Scaliente rapproche les catégories de coûts disponibles et garde les hypothèses configurées visibles dans la lecture de profit.",
+                "productCta": "Voir l’analyse produit"
             }
         }
     },
-    "teamwork": {
-        "badge": "À plusieurs",
+    "inboxStory": {
+        "eyebrow": "Service client contextualisé",
         "title": {
-            "main": "Piloter à",
-            "highlight": "plusieurs"
+            "main": "L’IA prépare. Votre équipe",
+            "highlight": "garde la main"
         },
-        "subtitle": "Votre associé, votre média-buyer et votre comptable ne regardent pas les mêmes chiffres.",
-        "cards": {
-            "roles": {
-                "title": "Équipe et rôles",
-                "desc": "Invitez qui vous voulez avec le bon niveau d'accès : lecture seule, éditeur, admin ou propriétaire. Chacun voit ce qui le concerne, personne ne casse votre configuration."
-            },
-            "multiShop": {
-                "title": "Vue consolidée multi-boutiques",
-                "desc": "Plusieurs boutiques Shopify ? Basculez de l'une à l'autre en un clic, ou regardez le profit agrégé de toutes, converti dans votre devise principale."
-            },
-            "export": {
-                "title": "Export CSV",
-                "desc": "Sortez vos données quand vous voulez, sur la période que vous voulez. Vos chiffres restent les vôtres."
-            }
+        "description": "L’Inbox en bêta fermée réunit les informations utiles avant de proposer une réponse : commande, client, livraison et historique de contact.",
+        "beta": "Bêta fermée",
+        "cta": "Découvrir l’Inbox IA",
+        "context": {
+            "order": "Commande et articles",
+            "customer": "Contexte client",
+            "delivery": "Suivi de livraison et historique"
+        },
+        "flow": {
+            "requestLabel": "Message client",
+            "request": "Bonjour, où en est ma commande ?",
+            "contextLabel": "Contexte rassemblé",
+            "draftLabel": "Brouillon proposé",
+            "guard": "Contrôle humain",
+            "draft": "La réponse est préparée à partir des données disponibles. Votre équipe peut la relire, la modifier et décider de l’envoyer.",
+            "approval": "Aucun envoi automatique sans les garde-fous configurés."
+        },
+        "publicLaunch": {
+            "eyebrow": "Service client IA Shopify",
+            "description": "L’Inbox IA réunit la commande, le client, la livraison, les litiges et l’historique de contact avant de proposer une réponse.",
+            "beta": null
         }
     }
 }

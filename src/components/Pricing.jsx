@@ -1,435 +1,130 @@
 'use client';
+
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Check, X, ArrowRight, Sparkles, Zap, Shield, Lock } from 'lucide-react';
+import { ArrowUpRight, Check, Lock, ShoppingBag } from 'lucide-react';
 
-const Pricing = ({ content, common }) => {
+const PLAN_DEFINITIONS = [
+    { key: 'discovery', monthly: 0, annual: 0, included: ['orders', 'shop', 'history', 'adPlatform', 'collaborators'] },
+    { key: 'lite', monthly: 39, annual: 374, included: ['orders', 'shop', 'history', 'adPlatforms', 'export', 'collaborators'] },
+    { key: 'starter', monthly: 89, annual: 854, included: ['orders', 'shop', 'history', 'adPlatforms', 'comparison', 'export', 'collaborators'] },
+    { key: 'growth', monthly: 149, annual: 1430, included: ['orders', 'shops', 'history', 'adPlatforms', 'multiShop', 'comparison', 'collaborators'] },
+    { key: 'scale', monthly: 249, annual: 2390, included: ['orders', 'shops', 'history', 'adPlatforms', 'priority', 'collaborators'] },
+];
+
+export default function Pricing({ content, common }) {
     const [isAnnual, setIsAnnual] = useState(true);
-
-    const plans = [
-        {
-            name: content?.plans?.discovery?.name || 'Discovery',
-            badge: content?.plans?.discovery?.badge,
-            desc: content?.plans?.discovery?.desc || "Testez gratuitement",
-            price: { monthly: 0, annual: 0 },
-            featured: false,
-            tier: 'free',
-            features: [
-                { text: content?.plans?.discovery?.features?.orders || "50 commandes/mois", included: true },
-                { text: content?.plans?.discovery?.features?.shop || "1 boutique", included: true },
-                { text: content?.plans?.discovery?.features?.history || "Historique 30 jours", included: true },
-                { text: content?.plans?.discovery?.features?.adPlatform || "1 plateforme ads", included: true },
-                { text: content?.plans?.discovery?.features?.comparison || "Comparaison périodes", included: false },
-                { text: content?.plans?.discovery?.features?.export || "Export CSV", included: false },
-                { text: content?.plans?.discovery?.features?.collaborators || "1 utilisateur", included: true },
-                { text: content?.plans?.discovery?.features?.aiInsights || "Analyses IA", included: false },
-            ],
-            cta: content?.plans?.discovery?.cta || "Commencer Gratuitement"
-        },
-        {
-            name: content?.plans?.lite?.name || 'Lite',
-            badge: null,
-            desc: content?.plans?.lite?.desc || "Validez votre rentabilité",
-            price: { monthly: 39, annual: 374 },
-            featured: false,
-            tier: 'lite',
-            features: [
-                { text: content?.plans?.lite?.features?.orders || "100 commandes/mois", included: true },
-                { text: content?.plans?.lite?.features?.shop || "1 boutique", included: true },
-                { text: content?.plans?.lite?.features?.history || "Historique 90 jours", included: true },
-                { text: content?.plans?.lite?.features?.adPlatforms || "2 plateformes ads", included: true },
-                { text: content?.plans?.lite?.features?.comparison || "Comparaison périodes", included: false },
-                { text: content?.plans?.lite?.features?.export || "Export CSV", included: true },
-                { text: content?.plans?.lite?.features?.collaborators || "1 utilisateur", included: true },
-                { text: content?.plans?.lite?.features?.aiInsights || "Analyses IA", included: true },
-            ],
-            cta: content?.plans?.lite?.cta || "Débloquer Lite"
-        },
-        {
-            name: content?.plans?.starter?.name || 'Starter',
-            badge: null,
-            desc: content?.plans?.starter?.desc || "Pour démarrer",
-            price: { monthly: 89, annual: 854 },
-            featured: false,
-            tier: 'starter',
-            features: [
-                { text: content?.plans?.starter?.features?.orders || "300 commandes/mois", included: true },
-                { text: content?.plans?.starter?.features?.shop || "1 boutique", included: true },
-                { text: content?.plans?.starter?.features?.history || "Historique illimité", included: true },
-                { text: content?.plans?.starter?.features?.adPlatforms || "5 plateformes ads", included: true },
-                { text: content?.plans?.starter?.features?.comparison || "Comparaison périodes", included: true },
-                { text: content?.plans?.starter?.features?.export || "Export CSV", included: true },
-                { text: content?.plans?.starter?.features?.collaborators || "2 utilisateurs", included: true },
-                { text: content?.plans?.starter?.features?.aiInsights || "Analyses IA", included: true },
-            ],
-            cta: content?.plans?.starter?.cta || "Choisir Starter"
-        },
-        {
-            name: content?.plans?.growth?.name || 'Growth',
-            badge: content?.plans?.growth?.badge || 'Recommandé',
-            desc: content?.plans?.growth?.desc || "Pour scaler",
-            price: { monthly: 149, annual: 1430 },
-            featured: true,
-            tier: 'growth',
-            features: [
-                { text: content?.plans?.growth?.features?.orders || "1,500 commandes/mois", included: true },
-                { text: content?.plans?.growth?.features?.shops || "Jusqu'à 3 boutiques", included: true, highlight: true },
-                { text: content?.plans?.growth?.features?.history || "Historique illimité", included: true },
-                { text: content?.plans?.growth?.features?.adPlatforms || "5 plateformes ads", included: true },
-                { text: content?.plans?.growth?.features?.multiShop || "Vue consolidée", included: true },
-                { text: content?.plans?.growth?.features?.comparison || "Comparaison avancée", included: true },
-                { text: content?.plans?.growth?.features?.collaborators || "5 utilisateurs", included: true },
-                { text: content?.plans?.growth?.features?.aiInsights || "Analyses IA", included: true },
-            ],
-            cta: content?.plans?.growth?.cta || "Choisir Growth"
-        },
-        {
-            name: content?.plans?.scale?.name || 'Scale',
-            badge: content?.plans?.scale?.badge || 'Ultimate',
-            desc: content?.plans?.scale?.desc || "Sans limites",
-            price: { monthly: 249, annual: 2390 },
-            featured: false,
-            tier: 'scale',
-            features: [
-                { text: content?.plans?.scale?.features?.orders || "Commandes illimitées", included: true, highlight: true },
-                { text: content?.plans?.scale?.features?.shops || "Boutiques illimitées", included: true, highlight: true },
-                { text: content?.plans?.scale?.features?.history || "Historique illimité", included: true },
-                { text: content?.plans?.scale?.features?.adPlatforms || "5 plateformes ads", included: true },
-                { text: content?.plans?.scale?.features?.slackSupport || "Support Slack dédié", included: true },
-                { text: content?.plans?.scale?.features?.priority || "Support prioritaire", included: true },
-                { text: content?.plans?.scale?.features?.collaborators || "Utilisateurs illimités", included: true },
-                { text: content?.plans?.scale?.features?.aiInsights || "Analyses IA", included: true },
-            ],
-            cta: content?.plans?.scale?.cta || "Choisir Scale"
-        }
-    ];
+    const [selectedKey, setSelectedKey] = useState('starter');
+    const selectedDefinition = PLAN_DEFINITIONS.find((plan) => plan.key === selectedKey) || PLAN_DEFINITIONS[2];
+    const selectedCopy = content?.plans?.[selectedDefinition.key] || {};
+    const displayPrice = isAnnual && selectedDefinition.annual
+        ? Math.round(selectedDefinition.annual / 12)
+        : selectedDefinition.monthly;
 
     return (
-        <section id="pricing" className="py-24 relative overflow-x-hidden">
-            <div className="max-w-7xl mx-auto px-6 relative z-10">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
-                        {content?.header?.title?.main}{' '}
-                        <span className="text-orange-500">{content?.header?.title?.highlight}</span>
-                    </h2>
+        <section className="py-20 text-[var(--text-primary)] sm:py-24 lg:py-28">
+            <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+                <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
+                    <div className="max-w-4xl">
+                        <h2 className="text-balance font-brand text-[clamp(2.7rem,5.4vw,5.4rem)] font-semibold leading-[0.95] tracking-[-0.055em]">
+                            {content?.header?.title?.main} <span className="text-orange-500">{content?.header?.title?.highlight}</span>
+                        </h2>
+                        <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-secondary)]">{content?.header?.quote}</p>
+                    </div>
 
-                    <p className="text-lg text-[var(--text-secondary)] max-w-2xl mx-auto mb-12 leading-relaxed">
-                        {content?.header?.quote}
-                    </p>
-
-                    {/* Toggle - Enhanced design */}
-                    <div className="inline-flex items-center p-1.5 bg-[var(--card-bg-alt)] border border-[var(--card-border)] rounded-full shadow-sm">
-                        <button
-                            onClick={() => setIsAnnual(false)}
-                            className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
-                                !isAnnual
-                                    ? 'text-white'
-                                    : 'text-[var(--text-secondary)] hover:text-[var(--text-muted)]'
-                            }`}
-                        >
-                            {!isAnnual && (
-                                <motion.div
-                                    layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-[var(--text-primary)] rounded-full shadow-lg"
-                                    transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                                />
-                            )}
-                            <span className="relative z-10">{content?.toggle?.monthly}</span>
+                    <div className="inline-flex w-fit rounded-full border border-[var(--card-border)] bg-[var(--card-bg)] p-1" aria-label={content?.billingLabel || 'Billing'}>
+                        <button type="button" onClick={() => setIsAnnual(false)} className={`min-h-11 rounded-full px-5 text-sm font-medium transition-colors ${!isAnnual ? 'bg-zinc-950 text-white' : 'text-[var(--text-secondary)]'}`}>
+                            {content?.toggle?.monthly}
                         </button>
-                        <button
-                            onClick={() => setIsAnnual(true)}
-                            className={`relative px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 ${
-                                isAnnual
-                                    ? 'text-white'
-                                    : 'text-[var(--text-secondary)] hover:text-[var(--text-muted)]'
-                            }`}
-                        >
-                            {isAnnual && (
-                                <motion.div
-                                    layoutId="toggle-bg"
-                                    className="absolute inset-0 bg-[var(--text-primary)] rounded-full shadow-lg"
-                                    transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
-                                />
-                            )}
-                            <span className="relative z-10 flex items-center gap-2">
-                                {content?.toggle?.annual}
-                                <span className="px-2 py-0.5 bg-emerald-500 text-white text-[10px] font-bold rounded-full shadow-sm">
-                                    {content?.toggle?.discount}
-                                </span>
-                            </span>
+                        <button type="button" onClick={() => setIsAnnual(true)} className={`min-h-11 rounded-full px-5 text-sm font-medium transition-colors ${isAnnual ? 'bg-zinc-950 text-white' : 'text-[var(--text-secondary)]'}`}>
+                            {content?.toggle?.annual} <span className="ml-1 text-orange-500">{content?.toggle?.discount}</span>
                         </button>
                     </div>
-                </motion.div>
+                </div>
 
-                {/* Pricing Cards */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-4 mb-24"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-                >
-                    {plans.map((plan, idx) => {
-                        const monthlyEquivalent = Math.round(plan.price.annual / 12);
-                        const displayPrice = isAnnual ? monthlyEquivalent : plan.price.monthly;
+                <div className="mt-14">
+                    <div className="mb-4 flex items-center gap-2 text-sm font-medium text-[var(--text-secondary)]">
+                        <ShoppingBag className="h-4 w-4 text-orange-500" aria-hidden="true" />
+                        {content?.volume?.label}
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 sm:grid-cols-5" role="group" aria-label={content?.volume?.label}>
+                        {PLAN_DEFINITIONS.map((plan) => {
+                            const copy = content?.plans?.[plan.key] || {};
+                            const selected = selectedKey === plan.key;
+                            return (
+                                <button
+                                    key={plan.key}
+                                    type="button"
+                                    onClick={() => setSelectedKey(plan.key)}
+                                    aria-pressed={selected}
+                                    className={`min-h-24 rounded-[13px] border p-4 text-left transition-[background-color,border-color,color,transform] sm:min-h-28 ${selected ? 'border-orange-500 bg-orange-500 text-white sm:-translate-y-1' : 'border-[var(--card-border)] bg-[var(--card-bg)] hover:border-[var(--card-border-hover)]'}`}
+                                >
+                                    <span className={`block text-xs ${selected ? 'text-orange-100' : 'text-[var(--text-muted)]'}`}>{copy.name}</span>
+                                    <span className="mt-4 block font-mono text-xl font-semibold">{content?.volume?.options?.[plan.key]}</span>
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
 
-                        return (
-                            <motion.div
-                                key={plan.name}
-                                variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }}
-                                className={`group relative flex flex-col rounded-2xl transition-all duration-500 ${
-                                    plan.featured
-                                        ? 'lg:-mt-6 lg:mb-6 lg:scale-[1.02]'
-                                        : 'hover:-translate-y-1'
-                                }`}
-                            >
-                                {/* Card Background */}
-                                <div className={`absolute inset-0 rounded-2xl transition-all duration-500 ${
-                                    plan.featured
-                                        ? 'bg-gradient-to-b from-orange-50 via-[var(--card-bg)] to-[var(--card-bg)] border-2 border-orange-300/80 shadow-[0_0_40px_rgba(251,146,60,0.2)]'
-                                        : 'bg-[var(--card-bg)] border border-[var(--card-border)] group-hover:border-[var(--card-border-hover)] group-hover:shadow-xl group-hover:shadow-zinc-100'
-                                }`} />
-
-                                {/* Glow effect for featured — rendered as box-shadow on card background instead */}
-
-                                {/* Content */}
-                                <div className="relative p-6 flex flex-col flex-1">
-                                    {/* Badge */}
-                                    {plan.badge && (
-                                        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                                            <motion.span
-                                                initial={{ scale: 0.8, opacity: 0 }}
-                                                animate={{ scale: 1, opacity: 1 }}
-                                                transition={{ delay: 0.3 + idx * 0.1 }}
-                                                className={`inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold shadow-lg ${
-                                                    plan.featured
-                                                        ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white'
-                                                        : 'bg-zinc-800 text-zinc-300'
-                                                }`}
-                                            >
-                                                {plan.featured ? <Sparkles className="w-3.5 h-3.5" /> : <Zap className="w-3 h-3" />}
-                                                {plan.badge}
-                                            </motion.span>
-                                        </div>
-                                    )}
-
-                                    {/* Plan Name & Description */}
-                                    <div className="mb-5 pt-3">
-                                        <h3 className={`font-brand text-xl font-semibold mb-1.5 ${
-                                            plan.featured ? 'text-orange-600' : 'text-[var(--text-primary)]'
-                                        }`}>
-                                            {plan.name}
-                                        </h3>
-                                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{plan.desc}</p>
-                                    </div>
-
-                                    {/* Price */}
-                                    <div className="mb-6">
-                                        <div className="flex items-baseline gap-2">
-                                            {isAnnual && plan.price.monthly > 0 && (
-                                                <span className="text-base text-[var(--text-secondary)] line-through font-medium">
-                                                    {plan.price.monthly}€
-                                                </span>
-                                            )}
-                                            <AnimatePresence mode="wait">
-                                                <motion.span
-                                                    key={displayPrice}
-                                                    initial={{ opacity: 0, y: -10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    exit={{ opacity: 0, y: 10 }}
-                                                    transition={{ duration: 0.2 }}
-                                                    className="text-4xl font-sans font-bold text-[var(--text-primary)] tracking-tight"
-                                                >
-                                                    {displayPrice === 0 ? (common?.free || 'Gratuit') : `${displayPrice}€`}
-                                                </motion.span>
-                                            </AnimatePresence>
-                                            {displayPrice > 0 && (
-                                                <span className="text-[var(--text-muted)] text-sm font-medium">/{common?.month || 'mois'}</span>
-                                            )}
-                                        </div>
-                                        {isAnnual && plan.price.annual > 0 && (
-                                            <p className="text-xs text-[var(--text-muted)] mt-1.5">
-                                                {common?.billed || 'Facturé'} {plan.price.annual}€/{common?.year || 'an'}
-                                            </p>
-                                        )}
-                                        {plan.price.monthly === 0 && (
-                                            <p className="text-xs text-emerald-600 mt-1.5 font-medium">
-                                                {common?.noCard || 'Aucune carte requise'}
-                                            </p>
-                                        )}
-                                    </div>
-
-                                    {/* Divider */}
-                                    <div className={`h-px mb-5 ${
-                                        plan.featured
-                                            ? 'bg-gradient-to-r from-transparent via-orange-300 to-transparent'
-                                            : 'bg-[var(--divider)]'
-                                    }`} />
-
-                                    {/* Features */}
-                                    <ul className="space-y-3 mb-6 flex-1">
-                                        {plan.features.map((feature, i) => (
-                                            <li key={i} className={`flex items-start gap-2.5 text-sm ${
-                                                !feature.included ? 'opacity-35' : ''
-                                            }`}>
-                                                {feature.included ? (
-                                                    <div className={`w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 ${
-                                                        plan.featured
-                                                            ? 'bg-orange-100'
-                                                            : 'bg-emerald-100'
-                                                    }`}>
-                                                        <Check className={`w-3 h-3 ${
-                                                            plan.featured ? 'text-orange-600' : 'text-emerald-600'
-                                                        }`} />
-                                                    </div>
-                                                ) : (
-                                                    <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5 bg-[var(--card-bg-alt)]">
-                                                        <X className="w-3 h-3 text-[var(--text-muted)]" />
-                                                    </div>
-                                                )}
-                                                <span className={
-                                                    feature.highlight && feature.included
-                                                        ? 'text-[var(--text-primary)] font-medium'
-                                                        : 'text-[var(--text-secondary)]'
-                                                }>
-                                                    {feature.text}
-                                                </span>
-                                            </li>
-                                        ))}
-                                    </ul>
-
-                                    {/* CTA Button */}
-                                    <a
-                                        href="https://apps.shopify.com/scaliente"
-                                        className={`w-full py-3.5 rounded-xl font-semibold text-center transition-all duration-300 flex items-center justify-center gap-2 ${
-                                            plan.featured
-                                                ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:shadow-[0_8px_30px_rgba(249,115,22,0.35)] hover:-translate-y-0.5'
-                                                : 'bg-[var(--text-primary)] text-white hover:opacity-90'
-                                        }`}
-                                    >
-                                        {plan.cta}
-                                        {plan.featured && <ArrowRight className="w-4 h-4" />}
-                                    </a>
-                                    {plan.featured && content?.plans?.growth?.socialProof && (
-                                        <p className="mt-3 text-xs text-center text-orange-500/80 font-medium">
-                                            {content.plans.growth.socialProof}
-                                        </p>
-                                    )}
-                                    {/* trialDays = 7 on every paid tier (config/plans.js); free has none */}
-                                    {plan.tier !== 'free' && content?.trial && (
-                                        <p className="mt-3 text-xs text-center text-[var(--text-muted)]">
-                                            {content.trial}
-                                        </p>
-                                    )}
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
-
-                {/* Enterprise Section */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="max-w-4xl mx-auto"
-                >
-                    <div className="relative p-8 md:p-10 rounded-3xl bg-zinc-900 border border-zinc-800 overflow-hidden">
-                        {/* Decorative Elements */}
-                        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-orange-500/20 to-transparent rounded-full blur-3xl -mr-32 -mt-32" />
-                        <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-orange-500/10 to-transparent rounded-full blur-3xl -ml-20 -mb-20" />
-
-                        <div className="relative flex flex-col md:flex-row items-center justify-between gap-8">
-                            <div className="flex-1">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-400 text-xs font-semibold mb-4">
-                                    <Sparkles className="w-3 h-3" />
-                                    Enterprise
-                                </div>
-                                <h3 className="font-brand text-2xl md:text-3xl font-bold text-white mb-3">
-                                    {content?.enterprise?.title}
-                                </h3>
-                                <p className="text-zinc-400 mb-6 max-w-lg leading-relaxed">
-                                    {content?.enterprise?.desc}
-                                </p>
-                                <div className="flex flex-wrap gap-x-6 gap-y-2">
-                                    {content?.enterprise?.features && Object.values(content.enterprise.features).map((feature, i) => (
-                                        <span key={i} className="flex items-center gap-2 text-sm text-zinc-300">
-                                            <Check className="w-4 h-4 text-orange-400" />
-                                            {feature}
-                                        </span>
-                                    ))}
-                                </div>
+                <div className="mt-4 overflow-hidden rounded-[18px] border border-[var(--card-border)] bg-[var(--card-bg)]">
+                    <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
+                        <div className="flex flex-col justify-between border-b border-[var(--divider)] p-6 sm:p-9 lg:border-b-0 lg:border-r lg:p-11">
+                            <div>
+                                <p className="text-xs font-semibold uppercase tracking-[0.13em] text-orange-500">{content?.volume?.recommendation}</p>
+                                <h3 data-recommended="true" className="mt-5 font-brand text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">{selectedCopy.name}</h3>
+                                <p className="mt-4 max-w-sm leading-7 text-[var(--text-secondary)]">{selectedCopy.desc}</p>
                             </div>
 
-                            <div className="text-center md:text-right shrink-0">
-                                <p className="text-zinc-500 text-sm mb-1">{content?.enterprise?.price?.custom}</p>
-                                <p className="text-3xl font-sans font-bold text-white mb-5">
-                                    {content?.enterprise?.price?.range}
-                                    <span className="text-base font-normal text-zinc-500 ml-1">/{common?.month || 'mois'}</span>
+                            <div className="mt-10">
+                                <div className="flex items-end gap-2">
+                                    <span className="font-mono text-5xl font-semibold tracking-[-0.055em]">{displayPrice === 0 ? common?.free : `${displayPrice}€`}</span>
+                                    {displayPrice > 0 && <span className="pb-1.5 text-sm text-[var(--text-secondary)]">/{common?.month}</span>}
+                                </div>
+                                <p className="mt-3 min-h-5 text-xs text-[var(--text-muted)]">
+                                    {isAnnual && selectedDefinition.annual > 0
+                                        ? `${common?.billed} ${selectedDefinition.annual}€/${common?.year}`
+                                        : selectedDefinition.monthly === 0 ? common?.noCard : ' '}
                                 </p>
-                                <a href="mailto:contact@scaliente.com?subject=Enterprise%20Plan%20-%20Scaliente" className="inline-flex items-center gap-2 px-8 py-3.5 bg-white text-zinc-900 font-semibold rounded-xl hover:bg-zinc-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                                    {content?.enterprise?.cta}
-                                    <ArrowRight className="w-4 h-4" />
+                                <a
+                                    href="https://apps.shopify.com/scaliente"
+                                    data-analytics="pricing_cta_click"
+                                    data-analytics-location="pricing"
+                                    data-analytics-plan={selectedDefinition.key}
+                                    data-analytics-billing={isAnnual ? 'annual' : 'monthly'}
+                                    className="group mt-7 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-[10px] bg-zinc-950 px-6 font-semibold text-white transition-[background-color,transform] hover:-translate-y-0.5 hover:bg-orange-500 sm:w-auto"
+                                >
+                                    {selectedCopy.cta}
+                                    <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
                                 </a>
+                                {selectedDefinition.monthly > 0 && <p className="mt-3 text-xs text-[var(--text-muted)]">{content?.trial}</p>}
+                            </div>
+                        </div>
+
+                        <div className="p-6 sm:p-9 lg:p-11">
+                            <p className="text-xs font-semibold uppercase tracking-[0.13em] text-[var(--text-muted)]">{content?.includedLabel || content?.volume?.selected}</p>
+                            <ul className="mt-6 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+                                {selectedDefinition.included.map((featureKey) => {
+                                    const feature = selectedCopy.features?.[featureKey];
+                                    if (!feature) return null;
+                                    return (
+                                        <li key={featureKey} className="flex items-start gap-3 text-sm leading-6 text-[var(--text-secondary)]">
+                                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-orange-500/10 text-orange-500"><Check className="h-3 w-3" strokeWidth={2.5} /></span>
+                                            {feature}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                            <div className="mt-10 flex items-start gap-4 border-t border-[var(--divider)] pt-7">
+                                <Lock className="mt-1 h-5 w-5 shrink-0 text-orange-500" aria-hidden="true" />
+                                <div>
+                                    <p className="font-brand text-lg font-semibold">{content?.antiObjection?.title}</p>
+                                    <p className="mt-2 max-w-xl text-sm leading-6 text-[var(--text-secondary)]">{content?.antiObjection?.description}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </motion.div>
-
-                {/* Anti-Objection / Guarantee */}
-                {content?.antiObjection && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                        className="max-w-3xl mx-auto mt-16 text-center"
-                    >
-                        <div className="p-8 rounded-2xl bg-orange-50 border border-orange-200">
-                            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-orange-100 text-orange-600 mb-4">
-                                <Lock className="w-7 h-7" />
-                            </div>
-                            <h3 className="font-brand text-2xl font-bold text-[var(--text-primary)] mb-3">
-                                {content.antiObjection.title}
-                            </h3>
-                            <p className="text-[var(--text-secondary)] leading-relaxed max-w-xl mx-auto">
-                                {content.antiObjection.description}
-                            </p>
-                        </div>
-
-                        {/* Trust Badges */}
-                        <div className="flex flex-wrap justify-center gap-6 mt-8">
-                            {['AES-256', 'GDPR', content?.antiObjection?.readOnly || 'Lecture seule', 'SOC 2 Hosting'].map((badge, i) => (
-                                <div key={i} className="flex items-center gap-2 text-sm text-[var(--text-muted)]">
-                                    <Shield className="w-4 h-4 text-emerald-500" />
-                                    <span>{badge}</span>
-                                </div>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-
-                {/* Final Quote */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-center mt-16 text-[var(--text-muted)] italic max-w-xl mx-auto"
-                >
-                    {content?.finalQuote}
-                </motion.p>
+                </div>
             </div>
         </section>
     );
-};
-
-export default Pricing;
+}

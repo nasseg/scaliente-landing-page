@@ -44,3 +44,6 @@ next-env.d.ts
 # Local config backups
 CLAUDE.md.backup*
 *.bak.*
+
+# Local design-review session state
+.impeccable/

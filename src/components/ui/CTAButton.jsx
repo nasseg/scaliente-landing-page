@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const CTAButton = ({
     href = 'https://apps.shopify.com/scaliente',
@@ -6,55 +6,30 @@ const CTAButton = ({
     variant = 'primary',
     size = 'md',
     className = '',
-    showArrow = true
+    showArrow = true,
+    analytics = 'primary_cta_click',
+    analyticsLocation = 'unknown',
 }) => {
-    const sizeClasses = {
-        sm: 'px-5 py-2.5 text-sm rounded-xl',
-        md: 'px-8 py-4 text-lg rounded-2xl',
-        lg: 'px-10 py-5 text-lg rounded-2xl',
+    const sizes = {
+        sm: 'min-h-11 px-5 py-2.5 text-sm',
+        md: 'min-h-12 px-6 py-3 text-base',
+        lg: 'min-h-14 px-7 py-4 text-base',
+    };
+    const variants = {
+        primary: 'bg-orange-500 text-white hover:bg-orange-400 active:bg-orange-600 shadow-[0_14px_35px_-18px_rgba(249,115,22,0.9)] hover:-translate-y-0.5',
+        secondary: 'border border-white/20 bg-black/20 text-white hover:border-white/45 hover:bg-white/[0.06]',
+        ghost: 'border border-zinc-300 text-zinc-900 hover:border-zinc-900 hover:bg-zinc-900 hover:text-white',
     };
 
-    if (variant === 'secondary') {
-        return (
-            <a
-                href={href}
-                className={`group w-full sm:w-auto ${sizeClasses[size]} text-white/90 font-medium border border-white/10 hover:border-white/20 hover:bg-white/[0.03] transition-all duration-300 text-center relative overflow-hidden inline-flex items-center justify-center gap-3 ${className}`}
-            >
-                <span className="relative z-10">{children}</span>
-            </a>
-        );
-    }
-
-    if (variant === 'ghost') {
-        return (
-            <a
-                href={href}
-                className={`group ${sizeClasses[size]} bg-zinc-900 text-white font-semibold hover:bg-zinc-800 transition-all duration-300 inline-flex items-center justify-center gap-2 ${className}`}
-            >
-                {children}
-                {showArrow && <ArrowRight className="w-4 h-4" />}
-            </a>
-        );
-    }
-
-    // Primary variant
     return (
         <a
             href={href}
-            className={`group relative w-full sm:w-auto ${sizeClasses[size]} text-white font-semibold transition-all duration-300 inline-flex items-center justify-center gap-3 overflow-hidden ${className}`}
+            data-analytics={analytics}
+            data-analytics-location={analyticsLocation}
+            className={`group inline-flex w-full items-center justify-center gap-2 rounded-[10px] font-semibold transition-[background-color,border-color,color,transform,box-shadow] duration-200 sm:w-auto ${sizes[size]} ${variants[variant]} ${className}`}
         >
-            {/* Gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-b from-orange-500 to-orange-600 transition-all duration-300" />
-            {/* Hover glow */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-gradient-to-b from-orange-400 to-orange-500" />
-            {/* Shine effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-            </div>
-            {/* Shadow */}
-            <div className="absolute inset-0 rounded-[inherit] shadow-[0_8px_32px_rgba(249,115,22,0.25)] group-hover:shadow-[0_12px_40px_rgba(249,115,22,0.4)] transition-shadow duration-300" />
-            <span className="relative z-10">{children}</span>
-            {showArrow && <ArrowRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-1" />}
+            <span className="whitespace-nowrap">{children}</span>
+            {showArrow && <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />}
         </a>
     );
 };

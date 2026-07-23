@@ -1,17 +1,18 @@
 import { NextResponse } from 'next/server';
 import { affiliateLimiter } from '@/lib/rate-limit';
+import { buildAffiliateIdempotencyKey, normalizeAffiliateApplication } from '@/lib/affiliate-application';
 
 const CONFIRMATION_COPY = {
     fr: {
         subject: 'Programme Partenaire Scaliente - Candidature re\u00e7ue',
         greeting: (name) => `Merci pour votre candidature, ${name}\u00a0!`,
-        body: 'Nous avons bien re\u00e7u votre candidature pour le Programme Partenaire Scaliente. Notre \u00e9quipe l\u2019examinera et vous recontactera sous 48 heures.',
+        body: 'Nous avons bien re\u00e7u votre candidature pour le Programme Partenaire Scaliente. Notre \u00e9quipe va maintenant l\u2019examiner.',
         reminder: 'Pour rappel, le Programme Partenaire Scaliente offre\u00a0:',
         benefits: [
-            '<strong>15% de commission \u00e0 vie</strong> sur tous les paiements de vos filleuls',
-            '<strong>50% de r\u00e9duction</strong> pour vos filleuls sur leur premier mois',
+            '<strong>10% \u00e0 20% de commission</strong> selon votre palier, pendant 12 mois',
+            '<strong>20% de r\u00e9duction</strong> pour vos filleuls sur leur premier mois',
             '<strong>Cookie de 90 jours</strong> pour le suivi des conversions',
-            '<strong>Paiements mensuels PayPal</strong> (minimum 50\u00a0\u20ac)',
+            '<strong>Paiements trait\u00e9s mensuellement</strong> (minimum 50\u00a0\u20ac)',
         ],
         questions: 'Si vous avez des questions, n\u2019h\u00e9sitez pas \u00e0 r\u00e9pondre \u00e0 cet email.',
         sign: 'L\u2019\u00e9quipe Scaliente',
@@ -19,13 +20,13 @@ const CONFIRMATION_COPY = {
     en: {
         subject: 'Scaliente Partner Program - Application Received',
         greeting: (name) => `Thank you for your application, ${name}!`,
-        body: 'We have received your application for the Scaliente Partner Program. Our team will review it and get back to you within 48 hours.',
+        body: 'We have received your application for the Scaliente Partner Program. Our team will now review it.',
         reminder: 'As a reminder, the Scaliente Partner Program offers:',
         benefits: [
-            '<strong>15% lifetime commission</strong> on all referral payments',
-            '<strong>50% discount</strong> for your referrals on their first month',
+            '<strong>10% to 20% commission</strong> depending on your tier, for 12 months',
+            '<strong>20% discount</strong> for your referrals on their first month',
             '<strong>90-day cookie</strong> tracking window',
-            '<strong>Monthly PayPal payouts</strong> (minimum \u20ac50)',
+            '<strong>Monthly payout processing</strong> (minimum \u20ac50)',
         ],
         questions: 'If you have any questions, feel free to reply to this email.',
         sign: 'The Scaliente Team',
@@ -33,13 +34,13 @@ const CONFIRMATION_COPY = {
     de: {
         subject: 'Scaliente Partnerprogramm - Bewerbung eingegangen',
         greeting: (name) => `Vielen Dank f\u00fcr Ihre Bewerbung, ${name}!`,
-        body: 'Wir haben Ihre Bewerbung f\u00fcr das Scaliente Partnerprogramm erhalten. Unser Team wird sie pr\u00fcfen und sich innerhalb von 48 Stunden bei Ihnen melden.',
-        reminder: 'Zur Erinnerung \u2013 das Scaliente Partnerprogramm bietet:',
+        body: 'Wir haben Ihre Bewerbung f\u00fcr das Scaliente Partnerprogramm erhalten. Unser Team wird sie jetzt pr\u00fcfen.',
+        reminder: 'Zur Erinnerung: Das Scaliente Partnerprogramm bietet:',
         benefits: [
-            '<strong>15% lebenslange Provision</strong> auf alle Zahlungen Ihrer Empfehlungen',
-            '<strong>50% Rabatt</strong> f\u00fcr Ihre Empfehlungen im ersten Monat',
+            '<strong>10% bis 20% Provision</strong> je nach Stufe, f\u00fcr 12 Monate',
+            '<strong>20% Rabatt</strong> f\u00fcr Ihre Empfehlungen im ersten Monat',
             '<strong>90-Tage-Cookie</strong> f\u00fcr die Conversion-Verfolgung',
-            '<strong>Monatliche PayPal-Auszahlungen</strong> (Minimum 50\u00a0\u20ac)',
+            '<strong>Monatliche Auszahlungsverarbeitung</strong> (Minimum 50\u00a0\u20ac)',
         ],
         questions: 'Bei Fragen antworten Sie einfach auf diese E-Mail.',
         sign: 'Das Scaliente Team',
@@ -82,7 +83,7 @@ function buildConfirmationHtml(lang, firstName) {
 
 <!-- Footer -->
 <tr><td style="padding:24px 40px;border-top:1px solid #eee;text-align:center;">
-    <p style="margin:0;font-size:13px;color:#999;">&mdash; ${copy.sign}</p>
+    <p style="margin:0;font-size:13px;color:#999;">${copy.sign}</p>
     <p style="margin:8px 0 0;font-size:12px;color:#bbb;">scaliente.com</p>
 </td></tr>
 
@@ -112,14 +113,14 @@ export async function POST(request) {
         }
 
         const body = await request.json();
-        const { lang } = body;
+        const application = normalizeAffiliateApplication(body);
 
         // Sanitize all user inputs
-        const firstName = escapeHtml(body.firstName?.trim());
-        const lastName = escapeHtml(body.lastName?.trim());
-        const email = body.email?.trim()?.toLowerCase();
-        const website = escapeHtml(body.website?.trim());
-        const promotion = escapeHtml(body.promotion?.trim());
+        const firstName = escapeHtml(application.firstName);
+        const lastName = escapeHtml(application.lastName);
+        const email = application.email;
+        const website = escapeHtml(application.website);
+        const promotion = escapeHtml(application.promotion);
 
         if (!firstName || !lastName || !email) {
             return NextResponse.json(
@@ -154,7 +155,8 @@ export async function POST(request) {
             );
         }
 
-        const safeLang = ['fr', 'en', 'de'].includes(lang) ? lang : 'en';
+        const safeLang = application.lang;
+        const idempotencyDate = new Date();
 
         // Send team notification email
         const teamEmailRes = await fetch('https://api.resend.com/emails', {
@@ -162,6 +164,7 @@ export async function POST(request) {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${apiKey}`,
+                'Idempotency-Key': buildAffiliateIdempotencyKey('team', application, idempotencyDate),
             },
             body: JSON.stringify({
                 from: 'Scaliente <noreply@scaliente.com>',
@@ -197,6 +200,7 @@ export async function POST(request) {
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${apiKey}`,
+                'Idempotency-Key': buildAffiliateIdempotencyKey('confirmation', application, idempotencyDate),
             },
             body: JSON.stringify({
                 from: 'Scaliente <noreply@scaliente.com>',
@@ -209,7 +213,10 @@ export async function POST(request) {
         if (!confirmRes.ok) {
             const err = await confirmRes.text();
             console.error('Failed to send confirmation email:', err);
-            // Team was notified, so still return success
+            return NextResponse.json(
+                { error: 'Failed to send confirmation' },
+                { status: 502 }
+            );
         }
 
         return NextResponse.json({ success: true });

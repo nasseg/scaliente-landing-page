@@ -20,29 +20,52 @@
         "pricing": "Preise",
         "comparison": "Vergleich",
         "faq": "FAQ",
+        "guides": "Leitfäden",
         "login": "Anmelden",
         "freeTrial": "Kostenlos testen",
+        "navigationLabel": "Hauptnavigation",
+        "mobileMenuLabel": "Hauptmenü",
+        "openMenu": "Menü öffnen",
+        "closeMenu": "Menü schließen",
         "dropdown": {
+            "overviewGroup": "Übersicht",
+            "acquisitionGroup": "Akquisition",
+            "operationsGroup": "Betrieb",
             "profitDashboard": "Gewinn-Dashboard",
+            "profitDashboardDescription": "Umsatz, Kosten und Nettogewinn an einem Ort.",
             "adTracking": "Ads-Tracking",
+            "adTrackingDescription": "Werbeausgaben mit Verkäufen abgleichen.",
             "productAnalytics": "Produktanalyse",
+            "productAnalyticsDescription": "Marge und Leistung nach Produkt.",
             "multiShop": "Multi-Shop",
+            "multiShopDescription": "Mehrere Shops in einer Ansicht steuern.",
             "multiCurrency": "Multi-Wahrung",
+            "multiCurrencyDescription": "Eine einheitliche Sicht in Ihrer Hauptwährung.",
             "reports": "Berichte",
-            "roasCalculator": "ROAS-Rechner"
+            "reportsDescription": "Daten analysieren, vergleichen und exportieren.",
+            "pixelAttribution": "Pixel & Attribution",
+            "pixelAttributionDescription": "Den Shopify-Pfad bis zur Bestellung verfolgen.",
+            "aiCustomerService": "KI-Kundenservice",
+            "aiCustomerServiceDescription": "Kontextbezogene Entwürfe, menschliche Kontrolle.",
+            "closedBeta": "Geschlossene Beta",
+            "roasCalculator": "ROAS-Rechner",
+            "roasCalculatorDescription": "Den Break-even Ihrer Werbung berechnen."
         }
     },
     "hero": {
-        "pill": "Präzision auf den Cent genau",
-        "title": "Ihr echter Gewinn.",
-        "subtitle": "Kosten, Währungen und Streitfälle inklusive.",
-        "description": "Verbinden Sie Shopify und Ihre Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) mit 1 Klick. Scaliente zieht Werbeausgaben, COGS, Versandkosten, Zahlungsgebühren und Steuern automatisch von Ihren Verkäufen ab, rechnet Ihre Währungen zu EZB-Kursen um und verfolgt Ihre Shopify-Payments-Streitfälle. Bestellungen in Echtzeit, Werbeausgaben täglich aktualisiert.",
-        "definition": "Scaliente ist eine Gewinnverfolgungs-App für Shopify-Shops. Sie zieht automatisch Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat sowie COGS, Versandkosten, Zahlungsgebühren und Steuern vom Umsatz ab, um den Nettogewinn zu berechnen. Bestellungen laufen in Echtzeit über Shopify-Webhooks ein; Werbeausgaben werden täglich aktualisiert.",
-        "ctaStart": "Meinen Nettogewinn berechnen",
-        "ctaLogin": "Bereits registriert? App öffnen",
-        "microText": "Anmeldung in 30 Sekunden. Shopify verbinden. Gewinn sehen.",
+        "pill": "Shopify-Gewinn-Tracker",
+        "title": "Shopify zeigt Ihre Umsätze.",
+        "subtitle": "Scaliente zeigt, was Ihnen bleibt.",
+        "description": "Scaliente bündelt Shopify-Bestellungen, Kosten und Werbeausgaben, berechnet den Nettogewinn und zeigt Margenverluste.",
+        "definition": "Scaliente ist eine Gewinnanalyse für Shopify-Shops. Sie führt Bestellungen, Produktkosten, Versand, Gebühren, Steuern und Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat zusammen. Bestellungen kommen über Shopify-Webhooks; Werbeausgaben werden ein- bis zweimal täglich aktualisiert und können manuell neu geladen werden.",
+        "ctaStart": "Scaliente zu Shopify hinzufügen",
+        "ctaLogin": "Meinen Bereich öffnen",
+        "microText": "Discovery für 0 € · keine Kreditkarte erforderlich.",
         "dashboard": {
             "overview": "Übersicht",
+            "profit": "Anonymisiertes Scaliente-Gewinn-Dashboard mit Nettogewinn, Marge und Kostenaufteilung",
+            "report": "Anonymisierter Scaliente-Monatsbericht mit Nettogewinn, Umsatz und Kosten",
+            "inbox": "Scaliente KI-Kundenservice mit anonymisiertem Gespräch, Shopify-Kontext und Antwortentwurf",
             "performance": "Ihre Leistung in Echtzeit",
             "today": "Heute",
             "yesterday": "Gestern",
@@ -62,178 +85,79 @@
                 "logout": "Abmelden",
                 "store": "Shop"
             }
+        },
+        "publicLaunch": {
+            "descriptionSegments": {
+                "before": "Scaliente vereint Gewinn, Werbezuordnung und ",
+                "link": "KI-Kundenservice",
+                "after": " in einem mit Ihren Shopify-Daten verbundenen Bereich."
+            }
         }
     },
     "logoMarquee": {
-        "title": "Offizielle Integrationen"
+        "title": "Shopify, Meta, Google, TikTok, Pinterest und Snapchat, vereint"
     },
     "howItWorks": {
-        "badge": "Einfache Einrichtung",
+        "badge": "Geführte Einrichtung",
         "title": {
-            "part1": "Einsatzbereit in",
-            "part2": "5 Minuten"
+            "part1": "Eine Einrichtung",
+            "part2": "ohne Code"
         },
-        "description": "Verbinden Sie Ihre Tools, konfigurieren Sie Ihre Kosten und sehen Sie Ihren echten Gewinn. Keine technische Expertise erforderlich.",
+        "description": "Verbinden Sie Quellen, konfigurieren Sie Kosten und prüfen Sie die Datenqualität vor der Entscheidung.",
         "steps": {
             "shopify": {
                 "title": "Shopify verbinden",
-                "desc": "OAuth-Verbindung mit einem Klick. Ihre Bestellungen, Produkte und Umsätze werden automatisch synchronisiert.",
-                "time": "30 Sekunden"
+                "desc": "Autorisieren Sie die App und lassen Sie Bestellungen, Produkte und Umsatz in Ihren Bereich einlaufen.",
+                "time": "01"
             },
             "ads": {
-                "title": "Ads verknüpfen",
-                "desc": "Verbinden Sie Meta, Google, TikTok, Pinterest und Snapchat per OAuth. Alle Ihre Werbeausgaben zentralisiert.",
-                "time": "2 Minuten"
+                "title": "Werbekonten verknüpfen",
+                "desc": "Verbinden Sie die benötigten Plattformen über deren OAuth-Abläufe.",
+                "time": "02"
             },
             "mode": {
-                "title": "Wählen Sie Ihren Modus",
-                "desc": "Dropshipping oder Classic - konfigurieren Sie, wie Ihre Kosten berechnet werden.",
-                "time": "1 Minute"
+                "title": "Kosten konfigurieren",
+                "desc": "Wählen Sie den passenden Berechnungsmodus und hinterlegen Sie COGS, Versand und Gebühren.",
+                "time": "03"
             },
             "expenses": {
-                "title": "Kosten hinzufügen",
-                "desc": "Abonnements, Gehälter, Fixkosten. Erstellen Sie Berichte mit Ihrem echten Gewinn nach allen Abzügen.",
-                "time": "Optional"
+                "title": "Prüfen und steuern",
+                "desc": "Ergänzen Sie wiederkehrende Ausgaben, prüfen Sie Abweichungen und nutzen Sie Berichte für Entscheidungen.",
+                "time": "04"
             }
         },
-        "modes": {
-            "title": "Zwei Berechnungsmodi",
-            "subtitle": "Wählen Sie den, der zu Ihrem Geschäftsmodell passt",
-            "dropshipping": {
-                "title": "Dropshipping-Modus",
-                "badge": "Print-on-demand, AliExpress...",
-                "desc": "COGS basierend auf der Anzahl der verkauften Produkte pro Bestellung berechnet.",
-                "example": "Beispiel",
-                "product": "Produkt",
-                "shipping1": "Versand 1 Produkt",
-                "shipping2": "Versand 2 Produkte"
-            },
-            "classic": {
-                "title": "Classic-Modus",
-                "badge": "E-Commerce mit Lagerbestand",
-                "desc": "Versandpreis basierend auf Paketgewicht. Konfiguration nach Gewichtsstufen.",
-                "example": "Beispiel",
-                "weight1": "0 - 500g",
-                "weight2": "500g - 1kg",
-                "weight3": "1kg - 2kg"
-            }
-        },
-        "result": {
-            "title": "Ergebnis: Ihre vollständigen Analytics",
-            "subtitle": "Alles, was Sie brauchen, um Ihre Rentabilität zu steuern",
-            "metrics": {
-                "profit": "Nettogewinn",
-                "roas": "ROAS & ROI",
-                "breakeven": "Breakeven ROAS",
-                "reports": "Monatsberichte"
-            }
-        },
-        "cta": "Kostenlos starten"
-    },
-    "features": {
-        "title": {
-            "part1": "Zentralisieren. Analysieren.",
-            "part2": "Skalieren."
-        },
-        "description": "Scaliente verbindet sich mit einem Klick mit all Ihren Tools. Keine Excel-Tabellen und manuellen Berechnungen um 2 Uhr morgens mehr.",
-        "cards": {
-            "ads": {
-                "title": "Alle Ihre Ads zentralisiert",
-                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - Alle Kampagnen in einem Dashboard zentralisiert."
-            },
-            "profit": {
-                "title": "Echter Reingewinn (POAS)",
-                "desc": "Wir ziehen alles ab: Produktkosten (COGS), Versandkosten, Stripe/PayPal-Transaktionsgebühren und Steuern."
-            },
-            "realtime": {
-                "title": "Ihre Zahlen, in Echtzeit",
-                "desc": "Ihre Bestellungen laufen in Echtzeit über Shopify-Webhooks ein, Ihre Werbeausgaben werden täglich aktualisiert. Entscheiden Sie auf Basis der Zahlen von heute, nicht von gestern."
-            },
-            "multiCurrency": {
-                "title": "Native Multi-Wahrung",
-                "desc": "Ads in USD, Verkaufe in EUR? Scaliente konvertiert automatisch mit taglichen EZB-Kursen."
-            },
-            "customerLtv": {
-                "title": "Customer LTV",
-                "desc": "Verfolgen Sie den Customer Lifetime Value und identifizieren Sie Ihre profitabelsten Segmente zur Optimierung der Akquise."
-            },
-            "adsPage": {
-                "title": "Detaillierte Ads-Seite",
-                "desc": "ROAS, CTR, CPM pro Kampagne. Nach Plattform filtern, Leistung in Echtzeit vergleichen."
-            }
-        },
-        "howItWorks": "Wie es funktioniert",
-        "bento": {
-            "totalRevenue": "Gesamtumsatz",
-            "ads": "Ads",
-            "cogs": "COGS",
-            "shipping": "Versand",
-            "fees": "Gebühren",
-            "trueProfit": "Ihr wahrer Gewinn",
-            "margin": "Marge:"
-        }
-    },
-    "beforeAfter": {
-        "title": {
-            "main": "Ein radikales",
-            "highlight": "Vorher/Nachher"
-        },
-        "subtitle": "Hören Sie auf, mit 10 Tabs zu jonglieren. Zentralisieren Sie alles.",
-        "before": {
-            "label": "Aktuelles Chaos",
-            "tabs": {
-                "profitCalc": "Profit Calc v3",
-                "businessManager": "Business Manager",
-                "googleAds": "Google Ads",
-                "tiktokAds": "TikTok Ads",
-                "snapchatAds": "Snapchat Ads",
-                "pinterest": "Pinterest",
-                "shopifyAdmin": "Shopify Admin"
-            },
-            "excel": {
-                "filename": "Gewinnverfolgung_Dezember_v3_FINAL.xlsx",
-                "columns": [
-                    "Datum",
-                    "Umsatz",
-                    "Ads",
-                    "COGS",
-                    "Netto"
-                ],
-                "error": "Berechnungsfehler"
-            },
-            "quote": "\"Ich habe vergessen, die TikTok-Ausgaben von gestern einzutragen...\""
-        },
-        "after": {
-            "label": "Scaliente Klarheit",
-            "tabs": {
-                "scaliente": "Scaliente"
-            },
-            "dashboard": {
-                "title": "Dashboard",
-                "lastUpdate": "Letzte Akt.: vor 2 Min",
-                "live": "LIVE",
-                "netProfit": "Reingewinn",
-                "vsYesterday": "+12% vs gestern",
-                "margin": "Marge",
-                "stable": "Stabil",
-                "synced": "Daten synchronisiert"
-            },
-            "quote": "Alles ist da. Automatisch. In Echtzeit."
-        }
+        "cta": "Mit Discovery starten"
     },
     "pricing": {
         "header": {
             "title": {
-                "main": "Investieren Sie in Ihre",
-                "highlight": "Kontrolle"
+                "main": "Zahlen Sie für",
+                "highlight": "Ihr Volumen"
             },
-            "quote": "\"Shopify zeigt Ihren Umsatz. Scaliente zeigt, was Sie wirklich behalten.\""
+            "quote": "Fünf öffentliche Tarife – vom ersten Shop bis zum Multi-Shop-Portfolio."
         },
         "toggle": {
             "monthly": "Monatlich",
             "annual": "Jährlich",
             "discount": "-20%"
         },
+        "volume": {
+            "label": "Monatliche Bestellungen",
+            "options": {
+                "discovery": "50",
+                "lite": "100",
+                "starter": "300",
+                "growth": "1.500",
+                "scale": "Unbegrenzt"
+            },
+            "recommendation": "Passend zu Ihrem Volumen",
+            "selected": "Gewählter Tarif"
+        },
+        "antiObjection": {
+            "title": "Starten Sie mit Ihrem tatsächlichen Bedarf",
+            "description": "Die Empfehlung hängt nur vom gewählten Bestellvolumen ab. Starten Sie mit Discovery und wechseln Sie später in der App."
+        },
+        "trial": "7 Tage Testphase für bezahlte Tarife, ohne Bindung",
         "plans": {
             "discovery": {
                 "name": "Discovery",
@@ -283,7 +207,6 @@
             },
             "growth": {
                 "name": "Growth",
-                "badge": "Empfohlen",
                 "desc": "Mehrere Shops präzise steuern",
                 "features": {
                     "orders": "Bis zu 1.500 Bestellungen/Monat",
@@ -295,16 +218,15 @@
                     "collaborators": "5 Nutzer",
                     "aiInsights": "KI-Analysen"
                 },
-                "cta": "Auf Growth wechseln",
-                "socialProof": "Von 7 von 10 Scaliente-Nutzern gewählt"
+                "cta": "Auf Growth wechseln"
             },
             "scale": {
                 "name": "Scale",
                 "badge": "Ultimate",
-                "desc": "Totale Kontrolle ohne Limits",
+                "desc": "Für Teams mit hohem Volumen und mehreren Shops",
                 "features": {
                     "orders": "Unbegrenzte Bestellungen",
-                    "shops": "Unbegrenzte Shops",
+                    "shops": "7 Shops inklusive",
                     "history": "Unbegrenzte Historie",
                     "adPlatforms": "5 Werbeplattformen",
                     "slackSupport": "Unbegrenzte Mitarbeiter",
@@ -314,40 +236,7 @@
                 },
                 "cta": "Auf Scale wechseln"
             }
-        },
-        "enterprise": {
-            "title": "Enterprise / Agentur",
-            "desc": "Für Agenturen und E-Commerce-Gruppen mit hohem Volumen. Unbegrenzte Shops, Teamzugriff und erweiterte Berechtigungen.",
-            "features": {
-                "unlimitedShops": "Unbegrenzte Shops",
-                "clientReporting": "Kunden-Reporting",
-                "slaSupport": "SLA Support"
-            },
-            "price": {
-                "custom": "Auf Anfrage",
-                "range": "500€ - 2000€"
-            },
-            "cta": "Kontaktieren Sie das Sales-Team"
-        },
-        "monthlyEquivalent": "Entspricht {{price}}€/Monat",
-        "comparison": {
-            "title": "Detaillierter Vergleich",
-            "features": {
-                "dataSources": "Datenquellen (Shopify, Ads, Stripe)",
-                "updateFreq": "Aktualisierungsfrequenz",
-                "history": "Datenhistorie",
-                "support": "Kundensupport",
-                "apiAccess": "API-Zugriff",
-                "teams": "Teamverwaltung"
-            }
-        },
-        "antiObjection": {
-            "title": "Ihre Daten gehören Ihnen",
-            "description": "Ihre Finanzdaten sind Ende-zu-Ende verschlüsselt (AES-256) und werden niemals geteilt, verkauft oder für kommerzielle Zwecke genutzt. Scaliente nutzt nur Lesezugriff auf APIs — wir können Ihren Shop oder Ihre Werbekonten nicht verändern.",
-            "readOnly": "Nur Lesen"
-        },
-        "finalQuote": "\"Ein einziger schlecht gesteuerter Tag kostet mehr als ein Monatsabonnement. Shopify-Zahlen zeigen nicht, was Sie behalten.\"",
-        "trial": "7 Tage testen, jederzeit kündbar"
+        }
     },
     "founderStory": {
         "founderStory": {
@@ -387,75 +276,54 @@
         }
     },
     "faq": {
-        "badge": "Support & Fragen",
-        "title": "Alles was Sie wissen müssen",
-        "subtitle": "Alles, was Sie wissen müssen, bevor Sie die Kontrolle zurückgewinnen.",
+        "badge": "Wichtige Fragen",
+        "title": "Bevor Sie Ihre Daten verbinden",
+        "subtitle": "Präzise Antworten zu Berechnung, Attribution und Einrichtung.",
         "questions": {
-            "slowDown": {
-                "q": "Wird Scaliente meinen Shopify-Shop verlangsamen?",
-                "a": "Nein. Scaliente arbeitet über die offizielle Shopify-API und verändert niemals den Code Ihres Themes. Das Attributions-Tracking nutzt die offizielle Web-Pixel-Erweiterung von Shopify, die in der von Shopify bereitgestellten isolierten Umgebung läuft: Sie hat keinen Zugriff auf Ihr Theme und keine messbaren Auswirkungen auf Ladezeiten oder Core Web Vitals."
+            "profit": {
+                "q": "Wie berechnet Scaliente den Nettogewinn?",
+                "a": "Scaliente beginnt beim Umsatz und gleicht Werbeausgaben, Produktkosten, Versand, Zahlungsgebühren, Steuern und Ihre erfassten Ausgaben ab. Jeder Posten bleibt sichtbar, damit Sie die Berechnung prüfen können."
             },
-            "customTheme": {
-                "q": "Mein Shop verwendet ein benutzerdefiniertes Theme, ist es kompatibel?",
-                "a": "Ja, Scaliente ist mit 100% der Shopify-Themes (2.0 und älter) kompatibel. Da wir Ihren Theme-Code nicht ändern, funktioniert alles perfekt, unabhängig von Ihrer visuellen Konfiguration."
+            "freshness": {
+                "q": "Wie oft werden Daten aktualisiert?",
+                "a": "Bestellungen kommen über Shopify-Webhooks. Werbeausgaben werden ein- bis zweimal täglich synchronisiert und können zusätzlich manuell aktualisiert werden."
             },
-            "installation": {
-                "q": "Ist die Installation kompliziert? Ich bin kein Entwickler.",
-                "a": "Nein, die Installation dauert unter 3 Minuten ohne Programmierkenntnisse. Scaliente wird in 3 Schritten installiert: (1) App aus dem Shopify App Store mit einem Klick hinzufügen, (2) Nur-Lese-OAuth-Zugriff für Ihren Shopify-Shop autorisieren, (3) Werbekonten (Meta, Google, TikTok, Pinterest, Snapchat) über sicheres OAuth verbinden. Ihr Gewinn-Dashboard wird in unter 2 Minuten mit Daten gefüllt. Keine Programmierkenntnisse oder technisches Wissen erforderlich."
+            "attribution": {
+                "q": "Warum kann die Attribution von Werbeplattformen abweichen?",
+                "a": "Jede Plattform verwendet eigene Zeitfenster und Modelle. Scaliente gleicht First-Party-Signale mit der Bestellung ab und lässt direkte, nicht zugeordnete oder signalschwache Verkäufe sichtbar."
             },
-            "security": {
-                "q": "Sind meine Daten sicher?",
-                "a": "Ja, Ihre Daten sind mit Enterprise-Verschlüsselung vollständig gesichert. Scaliente nutzt ausschließlich Nur-Lese-API-Zugriff auf Shopify und Werbeplattformen — es kann Ihren Shop oder Ihre Werbekonten nicht verändern. Alle Daten werden mit AES-256 im Ruhezustand und TLS 1.3 bei der Übertragung verschlüsselt. Scaliente verkauft, teilt oder überträgt Ihre Daten nicht an Dritte. Die App wird auf der SOC-2-konformen Infrastruktur von Vercel gehostet."
-            },
-            "shopifyAnalytics": {
-                "q": "Warum nicht einfach Shopify Analytics nutzen?",
-                "a": "Shopify Analytics zeigt den Bruttoumsatz an, berechnet aber nicht den Nettogewinn. Beispiel: Wenn Ihr Shopify-Shop 10.000€ Umsatz generiert, Sie aber 3.000€ für Meta Ads, 2.000€ für COGS, 800€ für Versand und 400€ für Stripe-Gebühren ausgegeben haben, zeigt Shopify 10.000€ an, während Ihr tatsächlicher Gewinn nur 3.800€ beträgt. Scaliente zieht all diese Kosten automatisch ab: Bestellungen laufen in Echtzeit ein, Werbeausgaben werden täglich aktualisiert."
-            },
-            "commitment": {
-                "q": "Bin ich langfristig gebunden?",
-                "a": "Keine Bindung. Sie können Ihr Scaliente-Abonnement mit einem Klick in Ihrem Dashboard jederzeit kündigen. Ihr Zugang bleibt bis zum Ende Ihres aktuellen Abrechnungszeitraums bestehen. Keine Kündigungsgebühren, keine versteckten Kosten."
-            },
-            "story": {
-                "q": "Warum habe ich noch nie von Scaliente gehört?",
-                "a": "Scaliente wurde 2024 als privates Gewinnverfolgungs-Tool für E-Commerce-Agenturen gestartet, die Multi-Store-Shopify-Portfolios verwalten. Nachdem eine große Nutzerbasis ausschließlich durch Mundpropaganda aufgebaut wurde, öffnete sich Scaliente der Öffentlichkeit mit Self-Service-Plänen ab 0€/Monat (Discovery-Plan, 50 Bestellungen/Monat inklusive)."
+            "pixel": {
+                "q": "Verändert das Pixel mein Shopify-Theme?",
+                "a": "Das Tracking nutzt Shopifys offizielle Web-Pixel-Erweiterung in der isolierten Shopify-Umgebung. Es injiziert keine Änderung in Ihr Theme."
             },
             "freePlan": {
-                "q": "Gibt es einen kostenlosen Plan?",
-                "a": "Ja! Unser Discovery-Plan ist 100% kostenlos mit 50 Bestellungen/Monat, perfekt zum Testen oder für kleine Shops. Keine Kreditkarte erforderlich."
+                "q": "Kann ich kostenlos starten?",
+                "a": "Ja. Discovery enthält bis zu 50 Bestellungen pro Monat, einen Shop und eine Werbeplattform – ohne Kreditkarte."
             },
             "adPlatforms": {
                 "q": "Welche Werbeplattformen werden unterstützt?",
-                "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads und Snapchat Ads. Alle Kampagnen in einem Dashboard mit echten ROAS- und POAS-Berechnungen zentralisiert."
+                "a": "Meta, Google Ads, TikTok Ads, Pinterest Ads und Snapchat Ads sind im Plattformregister von Scaliente verfügbar."
             },
-            "bestApp": {
-                "q": "Was ist die beste Shopify-Gewinnverfolgungs-App 2026?",
-                "a": "Scaliente ist die bestbewertete Shopify-Gewinnverfolgungs-App 2026 mit 4,9/5 Sternen. Im Gegensatz zu Konkurrenten wie TrueProfit oder Triple Whale bietet Scaliente einen kostenlosen Plan (50 Bestellungen/Monat), keine Gebühren pro Bestellung, native Multi-Währungs-Unterstützung mit täglichen EZB-Kursen und Daten in Europa gehostet. Werbeausgaben von Meta, Google, TikTok, Pinterest und Snapchat werden in Echtzeit verfolgt."
-            },
-            "calculateProfit": {
-                "q": "Wie berechnet man den echten E-Commerce-Gewinn?",
-                "a": "Der echte E-Commerce-Gewinn entspricht dem Umsatz minus aller Kosten: Werbeausgaben (Meta, Google, TikTok, Pinterest, Snapchat), COGS (Wareneinsatzkosten), Versandkosten, Zahlungsgebühren (Stripe, PayPal), Transaktionsgebühren, Erstattungen und Steuern. Scaliente automatisiert diese Berechnung durch Synchronisation mit Shopify in Echtzeit und mit den Werbeplattformen täglich."
-            },
-            "poas": {
-                "q": "Was ist POAS (Profit on Ad Spend)?",
-                "a": "POAS (Profit on Ad Spend) misst den Gewinn, der für jede in Werbung investierte Einheit erzielt wird. Im Gegensatz zum ROAS, der nur den Umsatz berücksichtigt, zieht der POAS COGS, Versandkosten, Gebühren und Steuern ab, um die tatsächliche Rendite zu zeigen. Beispiel: Bei 100 Werbeausgaben und 500 Umsatz aber 300 Kosten beträgt der ROAS 5x, aber der POAS nur 2x. Scaliente berechnet ROAS und POAS automatisch."
-            },
-            "roasVsPoas": {
-                "q": "Was ist der Unterschied zwischen ROAS und POAS?",
-                "a": "ROAS (Return on Ad Spend) = Umsatz ÷ Werbeausgaben. Er zeigt, wie viel Umsatz jede Werbeeinheit generiert. POAS (Profit on Ad Spend) = Nettogewinn ÷ Werbeausgaben. Er zeigt, wie viel tatsächlichen Gewinn jede Werbeeinheit nach Abzug von COGS, Versand, Zahlungsgebühren und Steuern generiert. POAS ist die Kennzahl, die für die Rentabilität zählt. Ein Shop kann einen ROAS von 5x haben, aber Geld verlieren, wenn die Kosten zu hoch sind. Scaliente zeigt beide Metriken in Echtzeit."
-            },
-            "costDeductions": {
-                "q": "Welche Kosten sollte ich vom Shopify-Umsatz abziehen?",
-                "a": "Für den echten Gewinn vom Shopify-Umsatz abziehen: (1) Werbeausgaben — Meta/Facebook, Google, TikTok, Pinterest, Snapchat-Kampagnen, (2) COGS — Produktkosten, Verpackung, Lieferantengebühren, (3) Versand — Frachtkosten, Fulfillment-Kosten, (4) Zahlungsgebühren — Stripe/PayPal-Verarbeitung, Shopify-Transaktionsgebühren, (5) Steuern — MwSt, Einfuhrzölle, (6) Fixkosten — Abonnements, Gehälter, Miete. Scaliente automatisiert die Punkte 1-5 und ermöglicht das manuelle Hinzufügen von Punkt 6."
+            "inbox": {
+                "q": "Ist der KI-Kundenservice in den Tarifen enthalten?",
+                "a": "Noch nicht. Die KI-Inbox ist in geschlossener Beta. Sie wird separat vorgestellt; in den aktuellen öffentlichen Tarifen ist kein Kontingent enthalten."
+            }
+        },
+        "publicLaunch": {
+            "questions": {
+                "inbox": {
+                    "a": "Die KI-Inbox ist ein separates Zusatzmodul für 39 € pro Monat und aktiviertem Shop. Sie setzt einen kostenpflichtigen Scaliente-Tarif voraus und enthält monatlich 200 KI-Entwürfe pro Shop."
+                }
             }
         }
     },
     "cta": {
-        "badge": "Kostenlos starten",
-        "title": "Bereit, die Wahrheit zu sehen?",
-        "subtitle": "Schließen Sie sich den E-Händlern an, die aufgehört haben, mit unscharfen Daten Geld zu verlieren.",
+        "badge": "Starten Sie mit Ihren eigenen Daten",
+        "title": "Ihren Umsatz kennen Sie. Sehen Sie jetzt, was bleibt.",
+        "subtitle": "Verbinden Sie Shopify, konfigurieren Sie Kosten und prüfen Sie Ihren Gewinn in einer Oberfläche für klare Entscheidungen.",
         "button": "Kostenlos starten",
-        "noCard": "Keine Kreditkarte erforderlich.",
-        "socialProof": "Von 200+ E-Händlern genutzt"
+        "noCard": "Discovery ohne Kreditkarte.",
+        "socialProof": "Von 200+ E-Commerce-Händlern genutzt"
     },
     "exitPopup": {
         "title": "Warten Sie! Ein Geschenk bevor Sie gehen",
@@ -467,8 +335,8 @@
     },
     "affiliate": {
         "metadata": {
-            "title": "Scaliente Partnerprogramm | 20% Provision für 12 Monate",
-            "description": "Treten Sie dem Scaliente-Partnerprogramm bei. Verdienen Sie 20% wiederkehrende Provision für 12 Monate auf jeden vermittelten Kunden. 90-Tage-Cookie. Monatliche PayPal-Auszahlungen."
+            "title": "Scaliente Partnerprogramm | 10% bis 20% für 12 Monate",
+            "description": "Treten Sie dem Scaliente-Partnerprogramm bei. Verdienen Sie je nach Stufe 10% bis 20% Provision für 12 Monate. 90-Tage-Cookie und monatliche Auszahlungsverarbeitung."
         },
         "stats": {
             "commissionLabel": "Wiederkehrende Provision",
@@ -482,23 +350,23 @@
             "title": "Affiliate-Dashboard",
             "live": "Live",
             "referrals": "Empfehlungen",
-            "referralsChange": "+3 diesen Monat",
+            "referralsChange": "Detaillierte Verfolgung",
             "commissions": "Provisionen",
-            "commissionsChange": "+156€ diesen Monat"
+            "commissionsChange": "Prüfbarer Verlauf"
         },
         "hero": {
             "badge": "Partnerprogramm",
             "titleWhite": "Verwandeln Sie Ihr Publikum in",
             "titleOrange": "wiederkehrende Einnahmen",
-            "subtitle": "Verdienen Sie 20% wiederkehrende Provision für 12 Monate auf jeden Scaliente-Kunden, den Sie vermitteln. Ihre Empfehlungen erhalten 20% Rabatt im ersten Monat.",
+            "subtitle": "Verdienen Sie je nach Stufe 10% bis 20% Provision für 12 Monate. Ihre Empfehlungen erhalten 20% Rabatt im ersten Monat.",
             "cta": "Jetzt bewerben"
         },
         "benefits": {
             "title": "Programmvorteile",
             "items": {
                 "commission": {
-                    "title": "20% für 12 Monate",
-                    "desc": "Wiederkehrende Provision auf jede Zahlung Ihrer Empfehlungen, jeden Monat für 12 Monate — nicht nur im ersten Monat."
+                    "title": "10% bis 20% für 12 Monate",
+                    "desc": "Ihr Provisionssatz hängt von der zugewiesenen Stufe ab. Wiederkehrende Provisionen werden für 12 Monate generiert."
                 },
                 "discount": {
                     "title": "20% für Ihre Empfehlungen",
@@ -509,7 +377,7 @@
                     "desc": "Ihr Empfehlungslink bleibt 90 Tage aktiv. Wenn sie sich in diesem Zeitraum anmelden, verdienen Sie."
                 },
                 "payment": {
-                    "title": "Monatlich per PayPal",
+                    "title": "Monatliche Verarbeitung",
                     "desc": "Auszahlungen am 5. jedes Monats. Mindestschwelle von 50€."
                 }
             }
@@ -520,7 +388,7 @@
                 {
                     "step": "Schritt 1",
                     "title": "Bewerben",
-                    "desc": "Füllen Sie das Formular unten aus. Wir prüfen Bewerbungen innerhalb von 48 Stunden."
+                    "desc": "Füllen Sie das Formular unten aus. Unser Team prüft jede Bewerbung."
                 },
                 {
                     "step": "Schritt 2",
@@ -530,45 +398,45 @@
                 {
                     "step": "Schritt 3",
                     "title": "Verdienen",
-                    "desc": "Verdienen Sie 20% auf jede Zahlung Ihrer Empfehlungen, für 12 Monate."
+                    "desc": "Verdienen Sie für 12 Monate die Provision Ihrer zugewiesenen Stufe."
                 }
             ]
         },
         "earnings": {
-            "title": "Ihr Verdienstpotenzial",
-            "subtitle": "Sehen Sie, wie sich Provisionen mit dem wiederkehrenden Modell von Scaliente summieren.",
-            "colReferrals": "Empfehlungen",
-            "colPlan": "Durchschn. Plan",
-            "colMonthly": "Monatlich",
-            "colYearly": "Über 12 Monate",
+            "title": "Eine klare Stufenfolge",
+            "subtitle": "Das Programm verwendet drei klar definierte Provisionssätze. Bronze ist die Standardstufe.",
+            "colReferrals": "Stufe",
+            "colPlan": "Status",
+            "colMonthly": "Provision",
+            "colYearly": "Dauer",
             "rows": [
                 {
-                    "referrals": "5 Kunden",
-                    "plan": "Starter (89€)",
-                    "monthly": "86,42€",
-                    "yearly": "1.037€"
+                    "referrals": "Bronze",
+                    "plan": "Standardstufe",
+                    "monthly": "10%",
+                    "yearly": "12 Monate"
                 },
                 {
-                    "referrals": "10 Kunden",
-                    "plan": "Growth (149€)",
-                    "monthly": "289,36€",
-                    "yearly": "3.472€"
+                    "referrals": "Silver",
+                    "plan": "Zugewiesene Stufe",
+                    "monthly": "15%",
+                    "yearly": "12 Monate"
                 },
                 {
-                    "referrals": "20 Kunden",
-                    "plan": "Scale (249€)",
-                    "monthly": "967,12€",
-                    "yearly": "11.605€"
+                    "referrals": "Gold",
+                    "plan": "Zugewiesene Stufe",
+                    "monthly": "20%",
+                    "yearly": "12 Monate"
                 }
             ],
-            "disclaimer": "Schätzungen basierend auf 20% wiederkehrender Provision für 12 Monate, nach Abzug der Bearbeitungsgebühren (2,9%). Die tatsächlichen Einnahmen hängen vom gewählten Plan und der Kundenbindung ab."
+            "disclaimer": "Die Provision wird nach Abzug der Plattformgebühr von 2,9% berechnet. Die angezeigten Sätze gelten für das öffentliche Partnerprogramm."
         },
         "audiences": {
             "title": "Wer sollte beitreten",
             "items": {
                 "creators": {
                     "title": "Content Creator",
-                    "desc": "YouTube, TikTok, Instagram — monetarisieren Sie Ihr E-Commerce-Publikum."
+                    "desc": "YouTube, TikTok, Instagram: Monetarisieren Sie Ihr E-Commerce-Publikum."
                 },
                 "bloggers": {
                     "title": "Blogger & Autoren",
@@ -598,8 +466,8 @@
             "title": "Häufig gestellte Fragen",
             "items": [
                 {
-                    "q": "Wie funktioniert die 20% Provision?",
-                    "a": "Sie verdienen 20% von jeder Zahlung, die Ihre Empfehlungen an Scaliente leisten, für 12 Monate ab deren erster Zahlung — nicht nur im ersten Monat. Wenn sie auf einen höheren Plan upgraden, steigt auch Ihre Provision."
+                    "q": "Wie funktioniert die gestaffelte Provision?",
+                    "a": "Bronze beginnt bei 10%, Silver bei 15% und Gold bei 20%. Wiederkehrende Provisionen werden ab der Conversion für 12 Monate generiert."
                 },
                 {
                     "q": "Was erhält meine Empfehlung?",
@@ -611,7 +479,7 @@
                 },
                 {
                     "q": "Wann und wie werde ich bezahlt?",
-                    "a": "Provisionen werden nach einer 30-tägigen Clearing-Periode validiert. Auszahlungen erfolgen per PayPal am 5. jedes Monats, mit einer Mindestschwelle von 50€."
+                    "a": "Provisionen werden nach einer 30-tägigen Clearing-Periode validiert. Auszahlungen werden am 5. jedes Monats verarbeitet, mit einer Mindestschwelle von 50€."
                 },
                 {
                     "q": "Kostet die Teilnahme etwas?",
@@ -640,9 +508,9 @@
                 "promotion": "Beschreiben Sie Ihre Werbestrategie..."
             },
             "submit": "Bewerbung einreichen",
-            "disclaimer": "Kostenlos. Wir prüfen Bewerbungen innerhalb von 48 Stunden.",
+            "disclaimer": "Die Bewerbung ist kostenlos. Unser Team prüft jede Anfrage.",
             "successTitle": "Bewerbung eingereicht!",
-            "successMessage": "Vielen Dank! Wir werden Ihre Bewerbung prüfen und uns innerhalb von 48 Stunden bei Ihnen melden."
+            "successMessage": "Vielen Dank! Unser Team wird Ihre Bewerbung prüfen und Sie danach kontaktieren."
         }
     },
     "footer": {
@@ -662,6 +530,7 @@
             "terms": "Nutzungsbedingungen",
             "legalMentions": "Impressum",
             "calculator": "ROAS-Rechner",
+            "guides": "Shopify-Gewinnleitfäden",
             "compare": "Scaliente vs TrueProfit",
             "compareTripleWhale": "Scaliente vs Triple Whale",
             "compareLifetimely": "Scaliente vs Lifetimely",
@@ -678,11 +547,11 @@
     },
     "metadata": {
         "title": "Scaliente | Nettogewinn & Echter Gewinn Tracker für Shopify",
-        "description": "Berechnen Sie Ihren wahren Gewinn in Echtzeit. Scaliente zieht automatisch Ads, COGS und Versand von Ihrem Shopify-Umsatz ab. Kostenlos testen ohne Kreditkarte.",
+        "description": "Führen Sie Shopify-Bestellungen, Werbeausgaben, Produktkosten, Versand, Gebühren und Steuern zusammen. Analysieren Sie Nettogewinn und Attribution in einer Oberfläche.",
         "ogTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
         "ogDescription": "Hören Sie auf zu raten. Scaliente zentralisiert Ihre Einnahmen und Ausgaben, um Ihren wahren Gewinn zu enthüllen.",
         "twitterTitle": "Scaliente | Nettogewinn & Echter Gewinn Tracker",
-        "twitterDescription": "Hören Sie auf zu raten. Sehen Sie Ihren echten Gewinn in Echtzeit.",
+        "twitterDescription": "Bestellungen, Kosten und Werbeausgaben zusammengeführt für einen klaren Blick auf Nettogewinn und Attribution.",
         "keywords": [
             "E-Commerce Gewinn Tracker",
             "Shopify Gewinnrechner",
@@ -827,7 +696,7 @@
         "profitDashboard": {
             "meta": {
                 "title": "Nettogewinn-Dashboard für Shopify | Scaliente",
-                "description": "Sehen Sie Ihren echten Shopify-Gewinn in Echtzeit. Scaliente zieht COGS, Ads, Versand und Gebühren automatisch ab."
+                "description": "Verfolgen Sie Ihren Shopify-Gewinn: Jede Bestellung berechnet den Nettogewinn neu, Werbeausgaben werden ein- bis zweimal täglich synchronisiert."
             },
             "hero": {
                 "title": "Ihr echter Gewinn, nicht der Shopify-Umsatz",
@@ -844,7 +713,7 @@
                     },
                     {
                         "title": "Versteckte Gebühren fressen Ihre Margen",
-                        "description": "Stripe nimmt 2,9%, PayPal 3,49%, Klarna 5%. Diese Gebühren summieren sich still über Hunderte von Bestellungen und niemand verfolgt sie pro Transaktion."
+                        "description": "Zahlungsgebühren unterscheiden sich je nach Gateway und Transaktion. Ohne Abgleich auf Bestellebene schmälern sie die Marge, ohne im Shopify-Umsatz sichtbar zu sein."
                     },
                     {
                         "title": "Tabellen versagen bei Wachstum",
@@ -881,8 +750,8 @@
                 },
                 {
                     "icon": "Zap",
-                    "title": "Auto-Aktualisierung alle 5 Min",
-                    "description": "Keine manuelle Synchronisation. Ihre Daten werden automatisch aktualisiert, damit Sie immer die neuesten Zahlen sehen."
+                    "title": "Eine klare Datenkadenz",
+                    "description": "Bestellungen kommen über Shopify-Webhooks. Werbeausgaben werden ein- bis zweimal täglich synchronisiert und können manuell aktualisiert werden."
                 },
                 {
                     "icon": "PieChart",
@@ -896,7 +765,7 @@
                 "steps": [
                     {
                         "title": "Shopify verbinden",
-                        "description": "Ein-Klick OAuth. Ihre Bestellungen, Produkte und Umsätze synchronisieren automatisch in unter 2 Minuten."
+                        "description": "Autorisieren Sie die Verbindung zu Ihrem Shop. Scaliente startet anschließend die erste Synchronisierung von Bestellungen, Produkten und Umsatz."
                     },
                     {
                         "title": "Kosten konfigurieren",
@@ -910,7 +779,7 @@
             },
             "finalCta": {
                 "title": "Hören Sie auf, Ihren Gewinn zu raten",
-                "subtitle": "Verbinden Sie Shopify und sehen Sie Ihre echten Zahlen in unter 2 Minuten."
+                "subtitle": "Verbinden Sie Shopify und führen Sie Umsatz, Kosten und Werbeausgaben in einer Ansicht zusammen."
             }
         },
         "adTracking": {
@@ -1357,6 +1226,530 @@
                 "title": "Verschwenden Sie keine Stunden mehr mit manuellen Berichten",
                 "subtitle": "Verbinden Sie Shopify und erstellen Sie Gewinnberichte in Sekunden."
             }
+        },
+        "pixelAttribution": {
+            "meta": {
+                "title": "Shopify Pixel und Multi-Touch-Attribution | Scaliente",
+                "description": "Installieren Sie einen Shopify Web Pixel und analysieren Sie Bestellpfade, Attribution, ROAS und Gewinn in Scaliente.",
+                "keywords": [
+                    "Shopify Pixel",
+                    "Shopify Attribution",
+                    "Shopify Tracking",
+                    "Meta Pixel Shopify",
+                    "Multi-Touch-Attribution E-Commerce"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Shopify Web Pixel · Multi-Touch-Attribution",
+                "title": "Der Shopify Pixel, der jeden Verkauf mit dem Gewinn verbindet.",
+                "subtitle": "Verfolgen Sie den Pfad, ordnen Sie die Bestellung ihrer Quelle zu und vergleichen Sie Umsatz mit Werbeausgaben und tatsächlichen Kosten.",
+                "note": "Die Erfassung beginnt mit der Aktivierung des Pixels. Scaliente erfindet keine frühere Historie.",
+                "offer": "Ohne Aufpreis in jedem Tarif enthalten, einschließlich Discovery für 0 €.",
+                "primaryCta": "Scaliente installieren",
+                "secondaryCta": "Funktionsweise ansehen",
+                "visualAlt": "Anonymisiertes Scaliente Dashboard für Werbeattribution",
+                "visualLabel": "Attribution",
+                "statusLabel": "Shopify Web Pixel aktiv",
+                "proof": [
+                    {
+                        "value": "Shopify Web Pixel",
+                        "label": "Erweiterung aus Scaliente installiert"
+                    },
+                    {
+                        "value": "Vollständiger Pfad",
+                        "label": "Vom Seitenaufruf bis zur Bestellung"
+                    },
+                    {
+                        "value": "6 Modelle",
+                        "label": "Deterministische Attributionsregeln"
+                    },
+                    {
+                        "value": "5 Werbeplattformen",
+                        "label": "In der Akquisitionsansicht vereint"
+                    }
+                ]
+            },
+            "architecture": {
+                "eyebrow": "Eine Beweiskette",
+                "title": "Vom Klick zum Gewinn, ohne Blackbox.",
+                "description": "Scaliente bewahrt relevante Pfadsignale auf, verbindet sie mit der Shopify-Bestellung und stellt sie in den wirtschaftlichen Kontext des Shops.",
+                "steps": [
+                    {
+                        "icon": "MousePointerClick",
+                        "title": "Klick und Kampagne",
+                        "description": "Verfügbare UTM-Parameter, Klick-IDs und Werbe-Cookies werden mit dem Ereignis erfasst."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Shopify-Pfad",
+                        "description": "Der Web Pixel verfolgt Standardereignisse in Storefront, Warenkorb und Checkout."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Zugeordnete Bestellung",
+                        "description": "Die Shopify-Client-ID verbindet Berührungspunkte mit der abgeschlossenen Bestellung."
+                    },
+                    {
+                        "icon": "CircleDollarSign",
+                        "title": "Profitable Entscheidung",
+                        "description": "Zugeordneter Umsatz wird mit Werbeausgaben, Produktkosten, Gebühren, Versand und Steuern gelesen."
+                    }
+                ]
+            },
+            "events": {
+                "eyebrow": "Beobachteter Funnel",
+                "title": "Ein Pixel für den vollständigen Shopify-Pfad.",
+                "description": "Standardereignisse werden in einer konsistenten Struktur erfasst, mit der sich der Weg vor dem Kauf rekonstruieren lässt.",
+                "items": [
+                    "Seite aufgerufen",
+                    "Produkt angesehen",
+                    "Produkt zum Warenkorb hinzugefügt",
+                    "Produkt aus dem Warenkorb entfernt",
+                    "Kollektion angesehen",
+                    "Suche ausgeführt",
+                    "Warenkorb angesehen",
+                    "Checkout gestartet",
+                    "Zahlungsdaten eingegeben",
+                    "Bestellung abgeschlossen"
+                ],
+                "privacyNote": "Der Pixel läuft als Shopify-Erweiterung in einer isolierten Umgebung. Die Einstellungen zur serverseitigen Übertragung enthalten eine Einwilligungssperre; der Händler bleibt für die rechtliche Konfiguration verantwortlich."
+            },
+            "models": {
+                "eyebrow": "Erklärbare Attribution",
+                "title": "Modell wechseln. Dieselbe Historie behalten.",
+                "description": "Die Modelle sind deterministische Regeln, die auf den erfassten Pfad angewendet werden. Vergleichen Sie ihre Sichtweisen, ohne den Pixel zu ersetzen.",
+                "items": [
+                    {
+                        "title": "Letzter Klick",
+                        "description": "Der letzte Berührungspunkt erhält die Gutschrift für die Conversion."
+                    },
+                    {
+                        "title": "Letzter nicht direkter Klick",
+                        "description": "Der letzte bekannte Kanal erhält die Gutschrift, wenn der letzte Besuch direkt war."
+                    },
+                    {
+                        "title": "Erster Klick",
+                        "description": "Der erste beobachtete Berührungspunkt erhält die Gutschrift."
+                    },
+                    {
+                        "title": "Linear",
+                        "description": "Die Gutschrift wird gleichmäßig auf alle Berührungspunkte verteilt."
+                    },
+                    {
+                        "title": "Zeitlicher Verfall",
+                        "description": "Interaktionen näher an der Bestellung erhalten mehr Gewicht."
+                    },
+                    {
+                        "title": "Positionsbasiert",
+                        "description": "Der erste und letzte Kontakt werden stärker gewichtet als die Zwischenschritte."
+                    }
+                ],
+                "coverageTitle": "Die Abdeckung bleibt sichtbar",
+                "coverageDescription": "Scaliente betrachtet die Kanalansicht ab 60 % zugeordnetem Umsatz als aussagekräftig. Unterhalb dieses Schwellenwerts weist die Oberfläche auf die teilweise Abdeckung hin und bleibt vorsichtig."
+            },
+            "difference": {
+                "eyebrow": "Der Scaliente-Unterschied",
+                "title": "Der Pixel endet nicht bei der Conversion.",
+                "description": "Ein Kaufereignis sagt, dass ein Verkauf stattgefunden hat. Scaliente verbindet es mit den Daten, die zeigen, ob dieser Verkauf tatsächlich Marge geschaffen hat.",
+                "inputLabel": "Verbundene Daten",
+                "inputs": [
+                    "Pfad und Werbequelle",
+                    "Shopify-Bestellungen und Rückerstattungen",
+                    "Konsolidierte Werbeausgaben",
+                    "Produktkosten, Versand, Gebühren und Steuern"
+                ],
+                "outputLabel": "Ergebnisansicht",
+                "outputs": [
+                    "Zugeordneter Umsatz nach Kanal",
+                    "Plattform-ROAS im Vergleich zum beobachteten ROAS",
+                    "Gewinn und Beitrag nach Kanal",
+                    "Tracking-Abdeckung und -Status"
+                ],
+                "platforms": [
+                    "Shopify",
+                    "Meta",
+                    "Google",
+                    "TikTok",
+                    "Pinterest",
+                    "Snapchat"
+                ]
+            },
+            "setup": {
+                "eyebrow": "Einrichtung",
+                "title": "Aus Ihrem Scaliente-Bereich installiert.",
+                "steps": [
+                    {
+                        "title": "Shopify verbinden",
+                        "description": "Erlauben Sie Scaliente, Kundenereignisse zu lesen und den Web Pixel zu erstellen."
+                    },
+                    {
+                        "title": "Pixel aktivieren",
+                        "description": "Scaliente erstellt oder aktualisiert die Erweiterung idempotent aus den Einstellungen."
+                    },
+                    {
+                        "title": "Status überwachen",
+                        "description": "Ereignisvolumen, Bestellabdeckung und konfigurierte Übertragungen bleiben sichtbar."
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "Direkte Antworten",
+                "title": "Shopify Pixel: die wichtigen Fragen.",
+                "items": [
+                    {
+                        "question": "Was ist ein Shopify-Attributionspixel?",
+                        "answer": "Es ist eine Erweiterung, die Shopify-Pfadereignisse erfasst, verfügbare Kampagnensignale bewahrt und sie mit Bestellungen verbindet, um Verkaufsquellen zu analysieren."
+                    },
+                    {
+                        "question": "Ersetzt der Scaliente Pixel die Pixel von Meta, Google oder TikTok?",
+                        "answer": "Nein. Er ergänzt die Werbeintegrationen: Scaliente erstellt eine eigene Pfadansicht und konsolidiert die Leistung der fünf unterstützten Plattformen."
+                    },
+                    {
+                        "question": "Verlangsamt der Pixel den Shop?",
+                        "answer": "Er läuft als Shopify Web-Pixel-Erweiterung in einer isolierten Umgebung. Die Übertragung an Scaliente erfolgt asynchron und ist so konzipiert, dass sie den Storefront nicht blockiert."
+                    },
+                    {
+                        "question": "Wann werden die Daten aussagekräftig?",
+                        "answer": "Die Erfassung beginnt nach der Installation und rekonstruiert die Vergangenheit nicht. Scaliente zeigt die Abdeckung und betrachtet die Kanalansicht ab 60 % zugeordnetem Umsatz als aussagekräftig."
+                    },
+                    {
+                        "question": "Welche Attributionsmodelle sind verfügbar?",
+                        "answer": "Letzter Klick, letzter nicht direkter Klick, erster Klick, linear, zeitlicher Verfall und positionsbasierte Attribution."
+                    },
+                    {
+                        "question": "Welche Werbeplattformen werden vereint?",
+                        "answer": "Meta, Google, TikTok, Pinterest und Snapchat werden in Ads Insights konsolidiert. Verfügbare serverseitige Übertragungen werden je Plattform konfiguriert."
+                    }
+                ]
+            },
+            "finalCta": {
+                "eyebrow": "Vom Signal zur Entscheidung",
+                "title": "Verknüpfen Sie Verkäufe mit ihrer Quelle — und dann mit dem Gewinn.",
+                "subtitle": "Verbinden Sie Shopify, aktivieren Sie den Pixel und lassen Sie die Historie in Scaliente wachsen.",
+                "button": "Scaliente installieren",
+                "note": "Der Pixel ist in jedem Tarif enthalten, einschließlich Discovery für 0 €. Die Erfassung beginnt nach der Aktivierung."
+            }
+        },
+        "aiCustomerService": {
+            "meta": {
+                "title": "KI-Kundenservice für Shopify — Geschlossene Beta | Scaliente",
+                "description": "Eine Shopify KI-Inbox, die E-Mail, Bestellung, Lieferung, Verlauf und Streitfälle für Antworten unter menschlicher Kontrolle verbindet. Geschlossene Beta.",
+                "keywords": [
+                    "KI Kundenservice Shopify",
+                    "Shopify KI Support",
+                    "E-Commerce KI Inbox",
+                    "Shopify E-Mail Assistent",
+                    "Shopify Kundenservice Automatisierung"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Geschlossene Beta · E-Mail + Shopify",
+                "title": "Mit Kontext antworten. Kontrolle behalten.",
+                "subtitle": "Bestellung, Lieferung, Verlauf und Streitfälle stehen vor jedem Entwurf bereit. Ihr Team entscheidet über den Versand.",
+                "primaryCta": "Zugang anfragen",
+                "primaryHref": "mailto:contact@scaliente.com?subject=KI-Inbox%20Beta",
+                "secondaryCta": "Funktionsweise ansehen",
+                "visualAlt": "Anonymisierte Scaliente KI-Inbox-Demo mit Kundengespräch und vorgeschlagenem Entwurf",
+                "visualLabel": "Anonymisierte Demo",
+                "proof": [
+                    {
+                        "value": "Bestellung",
+                        "label": "Dem richtigen Shopify-Kauf zugeordnet"
+                    },
+                    {
+                        "value": "Lieferung",
+                        "label": "Verfügbares Tracking im Kontext"
+                    },
+                    {
+                        "value": "Streitfall",
+                        "label": "Vor sensiblen Antworten markiert"
+                    },
+                    {
+                        "value": "Verlauf",
+                        "label": "Gespräche und Käufe verbunden"
+                    }
+                ]
+            },
+            "problem": {
+                "eyebrow": "Was den Support bremst",
+                "title": "Der Kunde wartet. Ihr Team sucht noch den Kontext.",
+                "description": "Die wiederholte Arbeit besteht nicht nur aus Schreiben. Sie entsteht durch Suche, Prüfung und Wechsel zwischen Werkzeugen.",
+                "items": [
+                    {
+                        "icon": "Route",
+                        "title": "Vor der Antwort Tabs wechseln",
+                        "description": "Kunde, richtige Bestellung, Lieferstatus und Erstattung zu finden, unterbricht jeden Supportvorgang."
+                    },
+                    {
+                        "icon": "Clock3",
+                        "title": "Dieselben Suchen wiederholen",
+                        "description": "Tracking-, Storno- und Rückgabeanfragen kosten Zeit, obwohl die Daten bereits in Shopify vorhanden sind."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Eine zu sichere KI korrigieren",
+                        "description": "Eine plausible, aber falsche Aussage zu Erstattung, Lieferung oder Streitfall kostet mehr als ein freizugebender Entwurf."
+                    }
+                ]
+            },
+            "workflow": {
+                "eyebrow": "Von der Nachricht zur Antwort",
+                "title": "Ein kurzer Ablauf mit menschlicher Entscheidung im richtigen Moment.",
+                "description": "Scaliente sammelt die Fakten vor dem Schreiben und hält sensible Aktionen hinter einer ausdrücklichen Freigabe.",
+                "steps": [
+                    {
+                        "icon": "Inbox",
+                        "title": "Die Nachricht kommt an",
+                        "description": "Ein verbundenes Support-Postfach speist eine Inbox für E-Commerce-Anfragen."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Der Kontext kommt zusammen",
+                        "description": "Kunde, Bestellung, Lieferung, Erstattungen, Streitfälle und Verlauf werden dem Thread zugeordnet."
+                    },
+                    {
+                        "icon": "BrainCircuit",
+                        "title": "Der Entwurf wird vorbereitet",
+                        "description": "Der Assistent schlägt eine Antwort in der Sprache der letzten Nachricht und nach bekannten Regeln vor."
+                    },
+                    {
+                        "icon": "UserCheck",
+                        "title": "Das Team entscheidet",
+                        "description": "Prüfen, bearbeiten, Freigabe anfordern oder senden bleibt eine menschliche Entscheidung."
+                    }
+                ]
+            },
+            "context": {
+                "eyebrow": "Nativer Shopify-Kontext",
+                "title": "Die Antwort beginnt mit Fakten aus dem Shop.",
+                "description": "Die Inbox behandelt eine E-Mail nicht als isolierten Text. Sie baut einen begrenzten und prüfbaren Commerce-Kontext auf.",
+                "items": [
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Zugeordnete Bestellung",
+                        "description": "Eine Bestellnummer in der Nachricht, die Kunden-E-Mail oder eine manuelle Verknüpfung identifizieren den passenden Kauf."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Lieferung und Tracking",
+                        "description": "Fulfillment-Status, Versanddienstleister und ein verfügbarer Tracking-Link helfen ohne erfundenes Lieferdatum."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Erstattung und Streitfall",
+                        "description": "Eine vorhandene Erstattung oder ein offener Shopify-Payments-Streitfall erscheint vor dem Entwurf im Kontext."
+                    },
+                    {
+                        "icon": "History",
+                        "title": "Kundenverlauf",
+                        "description": "Frühere Gespräche und Bestellungen verhindern, dass Kunden bekannte Informationen wiederholen müssen."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Shop-Regeln",
+                        "description": "Ton, Signatur, Richtlinien und freigegebene Präzedenzfälle rahmen den vorgeschlagenen Entwurf."
+                    }
+                ]
+            },
+            "control": {
+                "eyebrow": "Sensible Fälle",
+                "title": "Die KI schlägt vor. Sie verspricht nichts für Sie.",
+                "description": "Erstattungen, Chargebacks, fehlende Bestellungen und widersprüchliches Tracking erhöhen das Risiko und verlangen eine Prüfung.",
+                "visualAlt": "Anonymisierte Scaliente KI-Inbox mit einem Erstattungsentwurf, der eine Freigabe benötigt",
+                "visualLabel": "Freigabe erforderlich",
+                "items": [
+                    "Keine Erstattung, Stornierung oder Bestelländerung gilt ohne Nachweis im Kontext als ausgeführt.",
+                    "Streitfälle, Erstattungen, Chargebacks und Tracking-Widersprüche lösen eine deterministische Risikostufe aus.",
+                    "Eine neue Nachricht oder ein geänderter Kontext macht den Entwurf veraltet, statt ihn unbemerkt zu versenden.",
+                    "Zusagen ohne freigegebenen Präzedenzfall bleiben einer menschlichen Prüfung unterworfen."
+                ]
+            },
+            "team": {
+                "eyebrow": "Delegieren ohne Kontextverlust",
+                "title": "Eine gemeinsame Arbeitswarteschlange, kein weiteres geteiltes Postfach.",
+                "description": "Gespräche behalten Verantwortliche, Priorität, Tags und Prüfstatus, damit jeder weiß, was zu bearbeiten ist.",
+                "items": [
+                    {
+                        "icon": "Users",
+                        "title": "Klare Zuweisung",
+                        "description": "Ein Gespräch übernehmen, einem Teammitglied zuweisen oder in die nicht zugewiesene Warteschlange zurückgeben."
+                    },
+                    {
+                        "icon": "Inbox",
+                        "title": "Operative Warteschlangen",
+                        "description": "Alle Gespräche, eigene Fälle, nicht zugewiesene Fälle und ausstehende Prüfungen anzeigen."
+                    },
+                    {
+                        "icon": "Tags",
+                        "title": "Prioritäten und Kategorien",
+                        "description": "Dringlichkeit, Risiko, Bestellstatus, Erstattung oder Streitfall machen die Warteschlange übersichtlich."
+                    },
+                    {
+                        "icon": "MessageSquareText",
+                        "title": "Interne Notizen",
+                        "description": "Entscheidungen oder Teamkontext weitergeben, ohne sie an den Kunden zu senden."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Prüfablauf",
+                        "description": "Prüfung anfordern, Entwurf freigeben oder Änderungen mit dokumentierter Entscheidung verlangen."
+                    },
+                    {
+                        "icon": "ShieldCheck",
+                        "title": "Rollenbasierte Rechte",
+                        "description": "Lesen, Bearbeiten, Zuweisen und Freigeben folgen der Zugriffsstufe jedes Mitarbeiters."
+                    }
+                ]
+            },
+            "learning": {
+                "eyebrow": "Überwachtes Lernen",
+                "title": "Ihre Art zu antworten wird zu einer expliziten Arbeitsgrundlage.",
+                "description": "Scaliente wertet gesendete Antworten und freigegebene Entscheidungen aus, um einen prüfbaren Ton und Präzedenzfälle vorzuschlagen.",
+                "inputLabel": "Was den Assistenten informiert",
+                "inputs": [
+                    "Tatsächlich aus dem Support-Postfach gesendete Antworten",
+                    "Vom Shop definierter Ton, Signatur und Richtlinien",
+                    "Menschliche Korrekturen und Entscheidungen nach dem Versand",
+                    "Freigegebene Präzedenzfälle für sensible Situationen"
+                ],
+                "outputLabel": "Was das Team erhält",
+                "outputs": [
+                    "Entwürfe in der Sprache des Kunden",
+                    "Ein sichtbarer und bearbeitbarer Tonvorschlag",
+                    "Wiederverwendbare Präzedenzfälle mit Herkunft",
+                    "Nicht abgedeckte Fälle vor einer Zusage markiert"
+                ],
+                "note": "Erkannte Regeln werden nicht unbemerkt zu Tatsachen. Sie bleiben sichtbar, bearbeitbar und freigabepflichtig."
+            },
+            "availability": {
+                "eyebrow": "Preis und Zugang",
+                "title": "Geschlossene Beta. Kein öffentlicher Preis vor dem Start.",
+                "description": "Die KI-Inbox wird noch mit einer begrenzten Zahl von Shops validiert. Sie kann heute nicht selbstständig aktiviert oder abgerechnet werden.",
+                "items": [
+                    {
+                        "label": "Verfügbarkeit",
+                        "value": "Auf Einladung"
+                    },
+                    {
+                        "label": "Aktueller Kanal",
+                        "value": "Verbundenes E-Mail-Postfach"
+                    },
+                    {
+                        "label": "Öffentliche Abrechnung",
+                        "value": "Während der Beta nicht verfügbar"
+                    },
+                    {
+                        "label": "Selbstständige Aktivierung",
+                        "value": "Nicht verfügbar"
+                    }
+                ],
+                "button": "Bedarf beschreiben",
+                "href": "mailto:contact@scaliente.com?subject=KI-Inbox%20Beta",
+                "note": "Die Konditionen werden veröffentlicht, sobald die allgemeine Aktivierung tatsächlich verfügbar ist."
+            },
+            "faq": {
+                "eyebrow": "Direkte Antworten",
+                "title": "Was Sie vor der Delegation an eine KI wissen sollten.",
+                "items": [
+                    {
+                        "question": "Was ist KI-Kundenservice für Shopify?",
+                        "answer": "Es ist ein Support-Arbeitsbereich, der verfügbare Shopdaten zur Bearbeitung von Kundenanfragen nutzt. In Scaliente erstellt der Assistent einen Entwurf aus E-Mail, Bestellung und zugehörigem Kontext."
+                    },
+                    {
+                        "question": "Sendet die KI Antworten automatisch?",
+                        "answer": "Nicht im hier gezeigten Ablauf. Der Entwurf bleibt prüfbar und bearbeitbar, und das Team entscheidet über den Versand. Sensible Fälle können eine zusätzliche Freigabe verlangen."
+                    },
+                    {
+                        "question": "Welche Shopify-Daten werden verwendet?",
+                        "answer": "Je nach Fall kann der Kontext die zugeordnete Bestellung, Artikel, Finanzstatus, Fulfillment, Tracking, Erstattungen und einen offenen Shopify-Payments-Streitfall enthalten."
+                    },
+                    {
+                        "question": "Können Gespräche zugewiesen und delegiert werden?",
+                        "answer": "Ja. Der Workflow umfasst Zuweisung, persönliche und nicht zugewiesene Warteschlangen, Prioritäten, Tags, interne Notizen und Prüfanforderungen nach Rolle."
+                    },
+                    {
+                        "question": "Wie lernt die KI den Markenton?",
+                        "answer": "Das System kann tatsächlich gesendete Antworten analysieren und daraus ein sichtbares Tonprofil und Regeln vorschlagen. Das Team kann sie prüfen, bearbeiten oder verwerfen."
+                    },
+                    {
+                        "question": "Was kostet die Scaliente KI-Inbox?",
+                        "answer": "Solange die Inbox in geschlossener Beta bleibt, gibt es keinen öffentlichen Preis. Konditionen werden veröffentlicht, sobald allgemeine Aktivierung und Abrechnung verfügbar sind."
+                    },
+                    {
+                        "question": "Welche Kanäle werden unterstützt?",
+                        "answer": "Die derzeit validierte Version beginnt mit einem verbundenen E-Mail-Postfach. Social Media, Chat und Sprache werden auf dieser Seite nicht als verfügbar dargestellt."
+                    }
+                ]
+            },
+            "finalCta": {
+                "href": "mailto:contact@scaliente.com?subject=KI-Inbox%20Beta",
+                "eyebrow": "Ihr Support mit seinem Kontext",
+                "title": "Zeigen Sie uns die Anfragen, die Ihr Team Zeit kosten.",
+                "subtitle": "Volumen, Sprachen, sensible Fälle und aktuelle Werkzeuge helfen uns, Ihren Beta-Zugang zu bewerten.",
+                "button": "Zugang anfragen",
+                "note": "Der Zugang wird schrittweise nach Beta-Kapazität und Anwendungsfällen vergeben."
+            },
+            "publicLaunch": {
+                "meta": {
+                    "entityName": "Scaliente KI-Inbox",
+                    "title": "KI-Kundenservice für Shopify mit Kundenkontext | Scaliente",
+                    "description": "Scaliente verbindet E-Mails, Bestellungen, Lieferung, Verlauf und Shopify-Streitfälle für kontrollierbare KI-Antworten."
+                },
+                "hero": {
+                    "eyebrow": "KI-Kundenservice für Shopify",
+                    "primaryCta": "KI-Inbox aktivieren",
+                    "primaryHref": "https://app.scaliente.com/inbox/discover"
+                },
+                "availability": {
+                    "eyebrow": "Preis",
+                    "title": "39 € pro Monat und aktiviertem Shop.",
+                    "description": "Die KI-Inbox ergänzt einen kostenpflichtigen Scaliente-Tarif. Jeder aktivierte Shop trägt zum gemeinsamen Kontingent des Kontos bei.",
+                    "items": [
+                        {
+                            "label": "Monatlicher Preis",
+                            "value": "39 € pro Shop"
+                        },
+                        {
+                            "label": "Enthaltene KI-Entwürfe",
+                            "value": "200 pro Shop und Monat"
+                        },
+                        {
+                            "label": "Aufladung",
+                            "value": "100 Entwürfe für 10 €"
+                        },
+                        {
+                            "label": "Gültigkeit der Aufladung",
+                            "value": "90 Tage"
+                        }
+                    ],
+                    "button": "KI-Inbox aktivieren",
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "note": "Die Kontingente aktivierter Shops werden auf Kontoebene gebündelt. Ihr Team entscheidet über den Versand."
+                },
+                "faq": {
+                    "items": [
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {
+                            "answer": "Die KI-Inbox kostet 39 € pro Monat und aktiviertem Shop. Sie enthält monatlich 200 KI-Entwürfe pro Shop. Eine Aufladung mit 100 Entwürfen kostet 10 € und bleibt 90 Tage gültig."
+                        },
+                        {
+                            "answer": "Die KI-Inbox unterstützt ein verbundenes E-Mail-Postfach. Social Media, Chat und Sprache werden nicht als verfügbar dargestellt."
+                        }
+                    ]
+                },
+                "finalCta": {
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "eyebrow": "Ihr Support mit seinem Kontext",
+                    "title": "Öffnen Sie eine Inbox, die Ihre Bestellungen kennt.",
+                    "subtitle": "Verbinden Sie E-Mail mit Shopify und bereiten Sie Antworten mit verfügbarem Kunden-, Liefer- und Streitfallkontext vor.",
+                    "button": "KI-Inbox aktivieren",
+                    "note": "Separates Zusatzmodul mit einem kostenpflichtigen Scaliente-Tarif."
+                }
+            }
         }
     },
     "compare": {
@@ -1634,48 +2027,223 @@
             }
         }
     },
-    "operations": {
-        "badge": "Mehr als Umsatz",
+    "profitStory": {
+        "eyebrow": "Die Wahrheit über Gewinn",
         "title": {
-            "main": "Was Ihre Marge",
-            "highlight": "still auffrisst"
+            "main": "Vom Umsatz zum",
+            "highlight": "Nettogewinn"
         },
-        "subtitle": "Die Posten, die gewöhnliche Dashboards weglassen.",
-        "cards": {
-            "disputes": {
-                "title": "Streitfälle und Rückbuchungen",
-                "desc": "Verfolgen Sie Ihre Shopify-Payments-Streitfälle direkt im Dashboard: Betrag im Risiko, gewonnen, verloren, und welche vor Fristablauf auf Sie warten."
+        "description": "Umsatz zeigt nicht, was bleibt. Scaliente führt die Posten, die Ihre Marge bewegen, in einer Ansicht zusammen.",
+        "equation": {
+            "label": "Die Margenkaskade",
+            "revenue": "Umsatz",
+            "resultLabel": "Berechnetes Ergebnis",
+            "result": "Ihr Nettogewinn"
+        },
+        "costs": {
+            "ads": "Werbeausgaben",
+            "cogs": "Produktkosten (COGS)",
+            "shipping": "Versand",
+            "fees": "Zahlungsgebühren und Steuern",
+            "expenses": "Erfasste Ausgaben"
+        },
+        "imageAlt": "Anonymisiertes Scaliente-Dashboard mit Nettogewinn und Kosten"
+    },
+    "attributionStory": {
+        "eyebrow": "First-Party-Attribution",
+        "title": {
+            "main": "Verbinden Sie jeden Verkauf mit dem",
+            "highlight": "richtigen Signal"
+        },
+        "description": "Das Shopify-Pixel erfasst Journey-Ereignisse und Marketing-IDs. Scaliente gleicht sie mit der Bestellung ab, ohne direkte oder nicht zugeordnete Verkäufe zu verstecken.",
+        "signal": {
+            "title": "Nachvollziehbare Attribution statt Blackbox.",
+            "description": "Kanal, Kampagne und Journey bleiben prüfbar. Fehlt das Signal, bleibt die Unsicherheit sichtbar.",
+            "transparency": "Attributionen unterhalb der Zuverlässigkeitsschwelle werden nicht als sicher dargestellt."
+        },
+        "journey": {
+            "click": "Klick",
+            "session": "Sitzung",
+            "checkout": "Bestellung",
+            "channel": "Kanal"
+        },
+        "screenLabel": "Ads Insights",
+        "screenNote": "Anonymisierte Daten",
+        "imageAlt": "Anonymisierte Scaliente Ads-Insights-Ansicht"
+    },
+    "decisionStory": {
+        "eyebrow": "Von Messung zu Handlung",
+        "title": {
+            "main": "Zahlen, die zeigen,",
+            "highlight": "was zu tun ist"
+        },
+        "description": "Ein Dashboard ist dann wertvoll, wenn es die nächste Entscheidung klarer macht – nicht wenn es nur Metriken stapelt.",
+        "aside": "Vergleichen Sie zugeordneten Umsatz, Ausgaben, ROAS, Break-even und Gewinn ohne Toolwechsel.",
+        "decisions": {
+            "budgets": {
+                "title": "Budgets anpassen",
+                "description": "Prüfen Sie Ausgaben, zugeordneten Umsatz und ROAS je Kanal, bevor Sie eine Kampagne skalieren oder stoppen."
             },
-            "expenses": {
-                "title": "Erfasste Ausgaben",
-                "desc": "Abos, Gehälter, Dienstleister, Fixkosten. Einmal eintragen, bei Bedarf wiederkehrend, und sehen, was nach allen Belastungen übrig bleibt — nicht nur nach den Produktkosten."
+            "margin": {
+                "title": "Marge schützen",
+                "description": "Betrachten Sie Produktkosten, Gebühren, Versand und Break-even-ROAS im selben Kontext."
             },
-            "reports": {
-                "title": "Monatsbericht",
-                "desc": "Der Wasserfall vom Umsatz bis zum Nettogewinn, Ihre Kostenaufteilung und der Vergleich mit der Vorperiode. Als CSV exportierbar für Ihre Buchhaltung."
+            "anomalies": {
+                "title": "Abweichungen erkennen",
+                "description": "Erstattungen, ausstehende Bestellungen und Disputes bleiben getrennt sichtbar und leichter nachzuverfolgen."
+            }
+        },
+        "imageAlt": "Anonymisierte Meta-Ads-Analyse in Scaliente"
+    },
+    "guides": {
+        "common": {
+            "readArticle": "Leitfaden lesen",
+            "backToGuides": "Alle Leitfäden",
+            "updatedLabel": "Aktualisiert",
+            "readTimeLabel": "Lesezeit",
+            "contentsLabel": "In diesem Leitfaden",
+            "authorLabel": "Geschrieben von",
+            "author": "Scaliente Produktteam",
+            "directAnswerLabel": "Kurzantwort",
+            "keyPointsLabel": "Das Wichtigste",
+            "sourcesLabel": "Quellen und Methode",
+            "sourcesIntro": "Externe Definitionen verweisen auf Primärquellen. Aussagen über Scaliente entsprechen dem im Produkt geprüften Verhalten.",
+            "productEyebrow": "Von der Theorie zu Ihren Zahlen",
+            "relatedLabel": "Weiterlesen"
+        },
+        "hub": {
+            "meta": {"title": "Shopify Gewinn, ROAS und Marge Leitfäden | Scaliente", "description": "Nettogewinn, ROAS, POAS, Kosten und Break-even für Shopify mit transparenten Formeln verstehen."},
+            "eyebrow": "Shopify-Gewinnbibliothek",
+            "title": "Verstehen Sie die Zahlen hinter Ihrer Marge.",
+            "subtitle": "Direkte Antworten, prüfbare Formeln und die Grenzen, die vor einer Entscheidung wichtig sind.",
+            "indexLabel": "Hier starten",
+            "intro": "Diese Bibliothek erklärt den Weg vom Shopify-Umsatz zu einer nutzbaren Nettogewinn-Sicht. Fakten, Annahmen und fehlende Daten bleiben getrennt.",
+            "ctaEyebrow": "Ihr Shop, Ihre Daten",
+            "ctaTitle": "Wenden Sie die Methode auf Ihre Bestellungen an.",
+            "ctaDescription": "Scaliente führt Umsatz, Kosten und Werbeausgaben in einer Gewinnsicht zusammen.",
+            "ctaButton": "Meinen echten Gewinn sehen"
+        },
+        "pages": {
+            "profitTracker": {
+                "meta": {"title": "Shopify Gewinn-Tracker: Leitfaden 2026 | Scaliente", "description": "Was ist ein Shopify Gewinn-Tracker, welche Daten braucht er und wie bewerten Sie eine verlässliche Nettogewinn-Sicht?"},
+                "eyebrow": "Grundlagen · Shopify-Gewinn",
+                "title": "Was ist ein Shopify Gewinn-Tracker?",
+                "summary": "Verstehen Sie, was ein Gewinn-Tracker berechnet, was er nicht ableiten kann und wie Umsatz und Rentabilität getrennt bleiben.",
+                "answer": "Ein Shopify Gewinn-Tracker gleicht Bestellungen mit Produktkosten, Versand, Gebühren, Steuern und Werbeausgaben ab, um den Nettogewinn eines Zeitraums zu schätzen.",
+                "updated": "23. Juli 2026",
+                "readTime": "8 Min.",
+                "keyPoints": ["Shopify-Umsatz ist nicht Nettogewinn.", "Das Ergebnis hängt von vollständigen Kosten ab.", "Eine klare Datenkadenz ist besser als ein vages Echtzeitversprechen."],
+                "sections": [
+                    {"id": "definition", "title": "Vom Umsatz zum Nettogewinn", "paragraphs": ["Shopify erfasst Verkäufe, Erstattungen und Zahlungen. Für eine Gewinnsicht müssen auch variable und fixe Kosten einbezogen werden. Fehlende Kosten fehlen nur im Rechenmodell, nicht wirtschaftlich.", "Lesen Sie das Ergebnis immer mit Zeitraum, Währung und Datenabdeckung. Es ist eine Steuerungssicht, kein Ersatz für den Jahresabschluss."], "bullets": ["Nettoumsatz nach Rabatten und Erstattungen.", "COGS, Versand, Gebühren, Steuern und Ads.", "Erfasste Ausgaben und sichtbare Annahmen."]},
+                    {"id": "selection", "title": "Einen Gewinn-Tracker bewerten", "paragraphs": ["Ein nützliches Werkzeug erklärt Formel, Datenquelle und Aktualisierung. Prüfen Sie Erstattungen, Währungen, offene Bestellungen und nicht zugeordnete Verkäufe.", "Scaliente erhält Bestellungen über Shopify-Webhooks. Werbeausgaben von fünf Plattformen werden ein- bis zweimal täglich synchronisiert und können manuell aktualisiert werden."], "bullets": ["Fragen, was berechnet, ausgeschlossen oder geschätzt wird.", "Letzte Synchronisierung jeder Quelle prüfen.", "Sichtbare Unsicherheit einer erzwungenen Attribution vorziehen."]},
+                    {"id": "usage", "title": "Vom Dashboard zur Entscheidung", "paragraphs": ["Verbinden Sie jede Kennzahl mit einer operativen Frage: Liegt der Margenrückgang an COGS, Versand, Rabatten oder Ads?", "Prüfen Sie fehlende Daten, vergleichen Sie gleiche Zeiträume und dokumentieren Sie die Maßnahme."], "bullets": ["Vor Budgetänderungen diagnostizieren.", "Gewinn, Marge und Ausgaben im gleichen Zeitraum vergleichen.", "Die Rechenmethode im Team teilen."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Gewinn in einer Oberfläche lesen",
+                "productDescription": "Scaliente gleicht Bestellungen, Kosten, Steuern, Gebühren und Ads ab und zeigt die Kadenz jeder Quelle.",
+                "productCta": "Gewinn-Dashboard entdecken"
+            },
+            "methodology": {
+                "meta": {"title": "So berechnet Scaliente den Shopify-Gewinn", "description": "Formel, Datenquellen, Aktualisierung und Grenzen der Shopify-Gewinnberechnung von Scaliente."},
+                "eyebrow": "Methodik · Transparenz",
+                "title": "So berechnet Scaliente den Shopify-Gewinn.",
+                "summary": "Eine lesbare Methode: welche Daten einfließen, wann sie aktualisiert werden und was geprüft werden muss.",
+                "answer": "Scaliente startet mit dem verfügbaren Shopify-Umsatz und zieht verfügbare Produktkosten, Versand, Gebühren, Steuern, Werbeausgaben und erfasste Ausgaben ab.",
+                "updated": "23. Juli 2026",
+                "readTime": "7 Min.",
+                "keyPoints": ["Jeder Wert behält Quelle und Zeitraum.", "Bestellungen und Ads haben verschiedene Kadenzen.", "Fehlende Daten dürfen nicht als Gewissheit erscheinen."],
+                "sections": [
+                    {"id": "formula", "title": "Die Arbeitsformel", "paragraphs": ["Die Steuerungssicht zieht verfügbare Kosten vom beobachteten Umsatz ab. Erstattungen und Bestellstatus bleiben getrennt.", "Für steuerliche Entscheidungen muss das Ergebnis mit der Buchhaltung abgestimmt werden."], "bullets": ["Umsatz − COGS − Versand − Gebühren − Steuern − Ads − Ausgaben.", "Eine Währung und ein Datumsfenster verwenden.", "Erstattungen und Disputes getrennt zeigen."]},
+                    {"id": "freshness", "title": "Quelle, Kadenz und Abdeckung", "paragraphs": ["Bestellungen kommen über Shopify-Webhooks, Ads ein- bis zweimal täglich. Wechselkurse stammen von der EZB.", "Der Web Pixel sammelt erst ab Aktivierung. Direkte und nicht zugeordnete Verkäufe bleiben sichtbar."], "bullets": ["Keine nicht beobachtete Historie behaupten.", "Letzte Aktualisierung und fehlende Integrationen zeigen.", "Nicht zugeordnete Verkäufe im Gesamtwert behalten."]}
+                ],
+                "sources": [{"label": "Shopify Dev — Order object", "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/Order"}, {"label": "Europäische Zentralbank — Wechselkurse", "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"}],
+                "productTitle": "Berechnung mit eigenen Daten prüfen",
+                "productDescription": "Scaliente zeigt Kostenkategorien und Integrationskadenz für eine prüfbare Gewinnsicht.",
+                "productCta": "Berechnung ansehen"
+            },
+            "revenueVsProfit": {
+                "meta": {"title": "Shopify Umsatz vs Nettogewinn | Scaliente", "description": "Unterschied zwischen Shopify-Umsatz, Bruttomarge und Nettogewinn verstehen."},
+                "eyebrow": "Grundlagen · Rentabilität",
+                "title": "Shopify-Umsatz oder Nettogewinn?",
+                "summary": "Zwei Shops können den gleichen Umsatz und sehr unterschiedliche Gewinne haben.",
+                "answer": "Umsatz misst Verkäufe. Nettogewinn misst, was nach Produkt-, Versand-, Zahlungs-, Steuer-, Werbe- und weiteren berücksichtigten Kosten bleibt.",
+                "updated": "23. Juli 2026", "readTime": "6 Min.",
+                "keyPoints": ["Umsatz beschreibt Volumen, nicht behaltenen Wert.", "Bruttomarge und Nettogewinn beantworten andere Fragen.", "Vergleiche brauchen gleichen Zeitraum und gleiche Methode."],
+                "sections": [
+                    {"id": "levels", "title": "Drei Ebenen unterscheiden", "paragraphs": ["Umsatz beginnt mit Verkäufen, Bruttomarge zieht vor allem Produktkosten ab, Nettogewinn weitere beobachtbare Kosten.", "Umsatz kann steigen, während Gewinn durch Rabatte, Ads, Versand oder Gebühren fällt."], "bullets": ["Umsatz: Verkäufe im Zeitraum.", "Bruttomarge: Umsatz minus Produktkosten.", "Nettogewinn: Umsatz minus berücksichtigte Kosten."]},
+                    {"id": "reading", "title": "Veränderungen richtig lesen", "paragraphs": ["Vergleichen Sie gleiche Zeiträume und prüfen Sie die Abdeckung. Zerlegen Sie danach die Veränderung nach Kosten.", "Eine Kennzahl wird handlungsfähig, wenn ihre Ursache prüfbar ist."], "bullets": ["Abdeckung vor dem Vergleich prüfen.", "Marge zerlegen statt nur einen Gesamtwert lesen.", "Ursache der Abweichung dokumentieren."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Umsatz in Kontext setzen", "productDescription": "Das Gewinn-Dashboard zeigt die Kosten hinter den Shopify-Verkäufen.", "productCta": "Gewinn-Dashboard ansehen"
+            },
+            "roasVsPoas": {
+                "meta": {"title": "ROAS vs POAS für Shopify | Scaliente", "description": "ROAS und POAS vergleichen und Umsatzattribution nicht mit Gewinn verwechseln."},
+                "eyebrow": "Akquisition · Werbegewinn", "title": "ROAS vs POAS: Umsatz oder Gewinn?", "summary": "ROAS misst zugeordneten Umsatz, POAS stellt Werbeausgaben dem Gewinn gegenüber.",
+                "answer": "ROAS teilt zugeordneten Umsatz durch Werbeausgaben. POAS teilt den berücksichtigten zurechenbaren Gewinn durch diese Ausgaben.",
+                "updated": "23. Juli 2026", "readTime": "6 Min.",
+                "keyPoints": ["Hoher ROAS garantiert keine positive Marge.", "POAS hängt von vollständigen Kosten ab.", "Attributionsmodell vor Vergleichen nennen."],
+                "sections": [
+                    {"id": "formulas", "title": "Zwei Formeln, zwei Sichtweisen", "paragraphs": ["ROAS vergleicht Umsatz und Budget, ignoriert aber die Produktökonomie.", "POAS ergänzt die Marge. Gleicher ROAS kann zu anderem Ergebnis führen."], "bullets": ["ROAS = zugeordneter Umsatz ÷ Ads.", "POAS = zurechenbarer Gewinn ÷ Ads.", "Modell und Fenster nennen."]},
+                    {"id": "decisions", "title": "Kennzahl nach Entscheidung wählen", "paragraphs": ["ROAS hilft bei der Mediensicht; POAS und Break-even bei Margenentscheidungen.", "Vor dem Stoppen einer Kampagne direkte Verkäufe, fehlende Signale und Verzögerungen prüfen."], "bullets": ["Media: ROAS und Umsatz.", "Wirtschaftlich: POAS, Marge und Break-even.", "Entscheidung: Abdeckung und Gewinn kombinieren."]}
+                ],
+                "sources": [{"label": "Google Ads Help — Target ROAS", "url": "https://support.google.com/google-ads/answer/6268637"}, {"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}],
+                "productTitle": "Akquisition und Gewinn vergleichen", "productDescription": "Ads Insights verbindet Ausgaben, Umsatz, ROAS, Marge und Gewinn.", "productCta": "Ads Insights entdecken"
+            },
+            "breakevenRoas": {
+                "meta": {"title": "Break-even ROAS Formel und Shopify-Rechner | Scaliente", "description": "Minimalen ROAS zur Kostendeckung berechnen und Shopify-Kampagnen bewerten."},
+                "eyebrow": "Berechnung · Break-even", "title": "Ihren Break-even ROAS berechnen.", "summary": "Der Break-even ROAS ist der Punkt, an dem Umsatz die berücksichtigten Kosten deckt.",
+                "answer": "Als Umsatzanteil ausgedrückt kann der Break-even ROAS als 1 geteilt durch die Deckungsmarge geschätzt werden. Werbeausgaben dürfen darin noch nicht abgezogen sein.",
+                "updated": "23. Juli 2026", "readTime": "6 Min.",
+                "keyPoints": ["Der Schwellenwert braucht korrekte Kosten.", "Ein Durchschnitt kann Produktunterschiede verbergen.", "Retouren, Rabatte und Steuern verschieben ihn."],
+                "sections": [
+                    {"id": "formula", "title": "Schwellenwert korrekt aufbauen", "paragraphs": ["Starten Sie mit Nettoumsatz und ziehen Sie variable Kosten ohne Ads ab.", "Bei großen Produkt- oder Länderunterschieden sind mehrere Schwellenwerte sinnvoll."], "bullets": ["Umsatz nach Rabatten und Retouren nutzen.", "COGS, Versand, Gebühren und Steuern einbeziehen.", "Ads nicht doppelt abziehen."]},
+                    {"id": "use", "title": "Break-even als Leitplanke", "paragraphs": ["Vergleichen Sie mit einem repräsentativen ROAS-Fenster und beachten Sie Conversion-Verzögerungen.", "Kombinieren Sie Schwelle, Volumen, absoluten Gewinn und Attribution."], "bullets": ["Darunter: Daten und Ursachen prüfen.", "Darüber: Gewinn und Volumen prüfen.", "Nach Preis- oder Kostenänderungen neu berechnen."]}
+                ],
+                "sources": [{"label": "Google Ads Help — Target ROAS", "url": "https://support.google.com/google-ads/answer/6268637"}, {"label": "Scaliente ROAS-Rechner", "url": "https://www.scaliente.com/de/tools/roas-calculator"}],
+                "productTitle": "Schwelle mit eigenen Annahmen testen", "productDescription": "Der Rechner zeigt Preis, Kosten, Steuern, Retouren und Budget.", "productCta": "ROAS-Rechner öffnen"
+            },
+            "shopifyCosts": {
+                "meta": {"title": "Welche Kosten vom Shopify-Umsatz abziehen?", "description": "Produkt-, Versand-, Zahlungs-, Steuer-, Werbe- und Betriebskosten für Shopify-Gewinn erfassen."},
+                "eyebrow": "Methode · Kostenstruktur", "title": "Welche Kosten vom Shopify-Umsatz abziehen?", "summary": "Eine Gewinnberechnung ist nur so zuverlässig wie ihre Kostenliste.",
+                "answer": "Mindestens Produktkosten, vom Shop getragener Versand, Zahlungsgebühren, relevante Steuern, Werbeausgaben und dem Zeitraum zugeordnete Betriebsausgaben berücksichtigen.",
+                "updated": "23. Juli 2026", "readTime": "7 Min.",
+                "keyPoints": ["Variable Kosten, Fixkosten und Cashflow trennen.", "Kosten dem richtigen Zeitraum und der Währung zuordnen.", "Annahmen bei fehlenden Daten dokumentieren."],
+                "sections": [
+                    {"id": "variable-costs", "title": "Kosten je Bestellung", "paragraphs": ["Variable Kosten umfassen Produkt, Lieferantenversand, Verpackung, Versandzuschuss, Zahlungsgebühren und relevante Steuern.", "Wenn möglich nach Variante und Transaktion erfassen; ein Durchschnitt ist eine Annahme."], "bullets": ["COGS nach Produkt oder Variante.", "Versand, Verpackung und Transaktionsgebühren.", "Rabatte, Retouren und Erstattungen."]},
+                    {"id": "period-costs", "title": "Ads, Fixkosten und Zeitraum", "paragraphs": ["Werbeausgaben müssen dasselbe Fenster wie Verkäufe abdecken. Abos und Fixkosten erweitern die operative Sicht.", "Management-Reporting, Cashflow und Jahresabschluss nicht verwechseln."], "bullets": ["Ads, Verkäufe und Wechselkurse ausrichten.", "Regelmäßige und einmalige Ausgaben trennen.", "Steuerung mit Buchhaltung abstimmen."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Shop-Kosten zusammenführen", "productDescription": "Scaliente gleicht verfügbare Kosten ab und hält Annahmen sichtbar.", "productCta": "Produktanalyse ansehen"
             }
         }
     },
-    "teamwork": {
-        "badge": "Gemeinsam",
+    "inboxStory": {
+        "eyebrow": "Kundenservice mit Kontext",
         "title": {
-            "main": "Im Team",
-            "highlight": "steuern"
+            "main": "KI bereitet vor. Ihr Team",
+            "highlight": "behält die Kontrolle"
         },
-        "subtitle": "Ihr Mitgründer, Ihr Media-Buyer und Ihre Buchhaltung schauen nicht auf dieselben Zahlen.",
-        "cards": {
-            "roles": {
-                "title": "Team und Rollen",
-                "desc": "Laden Sie jeden mit der passenden Zugriffsstufe ein: nur lesen, Bearbeiter, Admin oder Inhaber. Jeder sieht, was ihn betrifft, niemand zerschießt Ihre Konfiguration."
-            },
-            "multiShop": {
-                "title": "Konsolidierte Multi-Shop-Ansicht",
-                "desc": "Mehrere Shopify-Shops? Wechseln Sie mit einem Klick, oder sehen Sie den aggregierten Gewinn aller Shops, umgerechnet in Ihre Hauptwährung."
-            },
-            "export": {
-                "title": "CSV-Export",
-                "desc": "Ziehen Sie Ihre Daten, wann Sie wollen, über den Zeitraum, den Sie wollen. Ihre Zahlen bleiben Ihre."
-            }
+        "description": "Die Inbox in geschlossener Beta sammelt vor einem Antwortvorschlag relevante Informationen: Bestellung, Kunde, Lieferung und Kontaktverlauf.",
+        "beta": "Geschlossene Beta",
+        "cta": "KI-Inbox entdecken",
+        "context": {
+            "order": "Bestellung und Artikel",
+            "customer": "Kundenkontext",
+            "delivery": "Sendungsverfolgung und Verlauf"
+        },
+        "flow": {
+            "requestLabel": "Kundennachricht",
+            "request": "Hallo, wo ist meine Bestellung?",
+            "contextLabel": "Zusammengeführter Kontext",
+            "draftLabel": "Antwortentwurf",
+            "guard": "Menschliche Kontrolle",
+            "draft": "Die Antwort wird aus verfügbaren Daten vorbereitet. Ihr Team kann sie prüfen, bearbeiten und über den Versand entscheiden.",
+            "approval": "Kein automatischer Versand ohne konfigurierte Schutzregeln."
+        },
+        "publicLaunch": {
+            "eyebrow": "KI-Kundenservice für Shopify",
+            "description": "Die KI-Inbox bündelt Bestellung, Kunde, Lieferung, Streitfälle und Kontaktverlauf, bevor sie eine Antwort vorschlägt.",
+            "beta": null
         }
     }
 }

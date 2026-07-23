@@ -40,10 +40,18 @@
   --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
   --gradient-warm: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
   --gradient-glow: radial-gradient(ellipse at center, var(--color-accent-glow) 0%, transparent 70%);
+
+  /* Spatial system */
+  --page-gutter: clamp(1.25rem, 3vw, 2rem);
+  --content-max: 80rem;
+  --ease-out-premium: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Font System - Unified Poppins */
-.font-sans,
+/* Font System - mirrors the product: Geist for reading, Poppins for display */
+.font-sans {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
 .font-display,
 .font-brand {
   font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
@@ -56,11 +64,29 @@ body {
   width: 100%;
   overflow-x: hidden;
   color: var(--color-text-primary);
-  background: transparent;
+  background: #09090b;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* Selection Style */
@@ -149,43 +175,24 @@ body {
     pointer-events: none;
   }
 
-  /* Text Gradient - Orange/Scaliente - Enhanced */
+  /* Solid brand emphasis: legible, durable and consistent with the product UI. */
   .text-gradient-orange {
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 40%, #fbbf24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% 200%;
-    animation: gradient-text 8s ease infinite;
-  }
-
-  @keyframes gradient-text {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    color: #f97316;
   }
 
   /* Text Gradient - Warm */
   .text-gradient-warm {
-    background: linear-gradient(135deg, #f97316 0%, #fb7185 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f97316;
   }
 
   /* Text Gradient - Subtle White */
   .text-gradient-white {
-    background: linear-gradient(180deg, #ffffff 0%, #d4d4d8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #ffffff;
   }
 
   /* Text Gradient - Static Orange (no animation) */
   .text-gradient-orange-static {
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #f97316;
   }
 
   /* Glow Effects - Orange */
@@ -710,9 +717,9 @@ textarea:focus-visible {
 }
 
 .alternating-sections > *:nth-child(odd) {
-  --section-bg: #fafafa;
-  --text-primary: #18181b;
-  --text-secondary: #71717a;
+  --section-bg: #f7f7f8;
+  --text-primary: #151517;
+  --text-secondary: #62626b;
   --text-muted: #52525b;
   --card-bg: #ffffff;
   --card-bg-alt: #f4f4f5;
@@ -723,16 +730,108 @@ textarea:focus-visible {
 }
 
 .alternating-sections > *:nth-child(even) {
-  --section-bg: #09090b;
+  --section-bg: #0a0a0c;
   --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --card-bg: rgba(255,255,255,0.05);
-  --card-bg-alt: rgba(255,255,255,0.08);
-  --card-border: rgba(255,255,255,0.08);
-  --card-border-hover: rgba(255,255,255,0.12);
-  --card-hover: rgba(255,255,255,0.08);
-  --divider: rgba(255,255,255,0.08);
+  --text-secondary: #b4b4bc;
+  --text-muted: #8b8b95;
+  --card-bg: #151517;
+  --card-bg-alt: #1b1b1e;
+  --card-border: rgba(255,255,255,0.10);
+  --card-border-hover: rgba(255,255,255,0.18);
+  --card-hover: #1b1b1e;
+  --divider: rgba(255,255,255,0.11);
+}
+
+/* One deliberate first-load sequence. Content is visible before animation and
+   the reduced-motion block below disables it entirely. */
+@keyframes hero-copy-enter {
+  from { opacity: 0.001; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes hero-stage-enter {
+  from { opacity: 0.001; transform: translateY(26px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* A single product-focused light treatment replaces the previous WebGL layer.
+   The blur is static; only the isolated light sheet transforms and fades. */
+.hero-ambient {
+  isolation: isolate;
+  background: linear-gradient(104deg, #09090b 0%, #09090b 54%, #0d0b0a 76%, #09090b 100%);
+}
+
+.hero-ambient__depth {
+  background: radial-gradient(ellipse 38% 50% at 80% 42%, rgba(249, 115, 22, 0.085), rgba(249, 115, 22, 0.025) 42%, transparent 72%);
+}
+
+.hero-ambient__light-pass {
+  inset-block: -24%;
+  left: 48%;
+  width: min(34rem, 38vw);
+  contain: paint;
+  opacity: 0;
+  background: linear-gradient(102deg, transparent 30%, rgba(249, 115, 22, 0.018) 42%, rgba(255, 184, 117, 0.09) 50%, rgba(249, 115, 22, 0.028) 57%, transparent 70%);
+  filter: blur(20px);
+  transform: translate3d(-58%, 0, 0) rotate(7deg);
+  will-change: transform, opacity;
+}
+
+@keyframes hero-light-pass {
+  0%, 8% { opacity: 0; transform: translate3d(-58%, 0, 0) rotate(7deg); }
+  28% { opacity: 0.28; }
+  68% { opacity: 0.36; }
+  92%, 100% { opacity: 0; transform: translate3d(84%, 0, 0) rotate(7deg); }
+}
+
+@keyframes hero-integrations-enter {
+  from { opacity: 0.001; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes section-reveal {
+  from { opacity: 0.001; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-copy {
+  animation: hero-copy-enter 700ms var(--ease-out-premium) both;
+}
+
+.hero-stage {
+  animation: hero-stage-enter 900ms 120ms var(--ease-out-premium) both;
+}
+
+.hero-integration-rail {
+  background: linear-gradient(90deg, rgba(9, 9, 11, 0.92), rgba(9, 9, 11, 0.38) 58%, rgba(9, 9, 11, 0.78));
+  animation: hero-integrations-enter 720ms 360ms var(--ease-out-premium) both;
+}
+
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  .hero-ambient__light-pass {
+    animation: hero-light-pass 18s var(--ease-out-premium) infinite;
+  }
+}
+
+@keyframes hero-product-mobile-flow {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-product-mobile-flow {
+    animation: hero-product-mobile-flow var(--hero-mobile-duration, 18s) linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal-section > section {
+      animation: section-reveal 1ms var(--ease-out-premium) both;
+      animation-timeline: view();
+      animation-range: entry 4% entry 30%;
+    }
+  }
 }
 
 .alternating-sections > [data-theme="dark"] {
@@ -759,6 +858,53 @@ textarea:focus-visible {
   --card-border-hover: #d4d4d8;
   --card-hover: #f4f4f5;
   --divider: #e4e4e7;
+}
+
+/* Shared document typography for legal routes. The routes keep their own
+   substantive copy while the visual hierarchy stays in one place. */
+.legal-article h2 {
+  margin-bottom: 1rem;
+  font-family: var(--font-poppins), sans-serif;
+  font-size: clamp(1.35rem, 2vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: #18181b;
+}
+
+.legal-article h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #27272a;
+}
+
+.legal-article p,
+.legal-article li,
+.legal-article dd,
+.legal-article div:not([class]) {
+  color: #52525b;
+  line-height: 1.75;
+}
+
+.legal-article ul {
+  margin-top: 0.75rem;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.legal-article a {
+  color: #ea580c;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.legal-article dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #71717a;
 }
 
 /* Disable pulse-glow on mobile */
@@ -790,5 +936,6 @@ textarea:focus-visible {
     * {
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+        animation-delay: 0ms !important;
     }
 }

@@ -1,56 +1,16 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { Users, Share2, DollarSign } from 'lucide-react';
-
-const stepIcons = [Users, Share2, DollarSign];
-
-const AffiliateHowItWorks = ({ content }) => {
-    const steps = content?.howItWorks?.steps || [];
-
+export default function AffiliateHowItWorks({ content }) {
     return (
-        <div className="py-20">
-            <div className="max-w-4xl mx-auto px-6">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="font-brand text-3xl md:text-4xl font-bold text-[var(--text-primary)] text-center mb-16"
-                >
-                    {content?.howItWorks?.title}
-                </motion.h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {steps.map((step, i) => {
-                        const Icon = stepIcons[i] || Users;
-                        return (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.15 }}
-                                className="text-center relative"
-                            >
-                                <div className="w-14 h-14 rounded-2xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center mx-auto mb-5">
-                                    <Icon className="w-6 h-6 text-orange-400" />
-                                </div>
-                                <div className="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">
-                                    {step.step}
-                                </div>
-                                <h3 className="text-lg font-bold text-[var(--text-primary)] mb-2">{step.title}</h3>
-                                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{step.desc}</p>
-
-                                {i < steps.length - 1 && (
-                                    <div className="hidden md:block absolute top-7 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-gradient-to-r from-orange-500/30 to-transparent" />
-                                )}
-                            </motion.div>
-                        );
-                    })}
-                </div>
-            </div>
+        <div className="mx-auto max-w-[1240px] px-5 py-20 sm:px-8 sm:py-28">
+            <h2 className="max-w-3xl text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl">{content?.howItWorks?.title}</h2>
+            <ol className="mt-16 border-t border-white/[0.12]">
+                {(content?.howItWorks?.steps || []).map((step, index) => (
+                    <li key={step.title} className="grid gap-5 border-b border-white/[0.1] py-8 md:grid-cols-[5rem_0.8fr_1.2fr] md:items-baseline md:gap-8">
+                        <span className="font-mono text-xs text-orange-400">0{index + 1}</span>
+                        <h3 className="text-xl font-semibold text-white">{step.title}</h3>
+                        <p className="max-w-xl text-sm leading-6 text-zinc-400">{step.desc}</p>
+                    </li>
+                ))}
+            </ol>
         </div>
     );
-};
-
-export default AffiliateHowItWorks;
+}
