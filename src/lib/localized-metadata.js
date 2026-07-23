@@ -1,7 +1,9 @@
 import { DEFAULT_LANGUAGE, LANGUAGES, localizedUrl } from '@/lib/site';
 
 export function buildLocalizedAlternates(lang, path) {
-    const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+    const normalizedPath = path
+        ? (path.startsWith('/') ? path : `/${path}`)
+        : '';
     const url = (locale) => localizedUrl(locale, normalizedPath);
 
     return {

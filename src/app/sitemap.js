@@ -23,7 +23,6 @@ const pages = [
   { path: '/terms-of-sale', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/cookies', priority: 0.3, changeFrequency: 'yearly' },
   { path: '/legal-mentions', priority: 0.3, changeFrequency: 'yearly' },
-  { path: '/legal', priority: 0.3, changeFrequency: 'yearly' },
 ];
 
 export default function sitemap() {
