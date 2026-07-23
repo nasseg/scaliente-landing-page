@@ -45,10 +45,12 @@ const StickyMobileCTA = ({ label, href = 'https://apps.shopify.com/scaliente' })
     if (!visible) return null;
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden p-3 bg-white border-t border-zinc-200 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-zinc-200 bg-white p-3 lg:hidden">
             <a
                 href={href}
-                className="block w-full text-center py-3.5 bg-gradient-to-b from-orange-500 to-orange-600 rounded-xl text-sm font-semibold text-white shadow-[0_4px_16px_rgba(249,115,22,0.3)] active:scale-[0.98] transition-transform"
+                data-analytics="primary_cta_click"
+                data-analytics-location="sticky_mobile"
+                className="block min-h-12 w-full rounded-[10px] bg-orange-500 py-3.5 text-center text-sm font-semibold text-white transition-colors active:bg-orange-600"
             >
                 {label}
             </a>

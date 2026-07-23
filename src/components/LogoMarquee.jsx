@@ -1,6 +1,3 @@
-'use client';
-import { useState, useEffect } from 'react';
-
 // --- LOGOS SVG ---
 const Logos = {
     Shopify: () => (
@@ -48,66 +45,38 @@ const Logos = {
     ),
 };
 
-const LogoMarquee = ({ content }) => {
-    const [reducedMotion, setReducedMotion] = useState(false);
-
-    useEffect(() => {
-        setReducedMotion(window.matchMedia('(prefers-reduced-motion: reduce)').matches);
-    }, []);
-
+const LogoMarquee = ({ content, embedded = false }) => {
     const logos = [
         { name: "Shopify", Component: Logos.Shopify },
         { name: "Google", Component: Logos.Google },
         { name: "Meta", Component: Logos.Meta },
-        { name: "Instagram", Component: Logos.Instagram },
-        { name: "Facebook", Component: Logos.Facebook },
         { name: "TikTok", Component: Logos.TikTok },
         { name: "Pinterest", Component: Logos.Pinterest },
         { name: "Snapchat", Component: Logos.Snapchat },
     ];
 
-    return (
-        <section className="py-10 relative overflow-hidden">
-            <div className="text-center mb-6">
-                <p className="text-sm font-medium text-zinc-500 uppercase tracking-widest">{content?.title}</p>
-            </div>
+    const Wrapper = embedded ? 'div' : 'section';
 
-            <div className="flex relative w-full overflow-hidden mask-linear-fade">
-                <div
-                    className={`flex gap-16 items-center whitespace-nowrap px-8 ${!reducedMotion ? 'animate-[marquee-scroll_40s_linear_infinite]' : ''}`}
-                    style={{ width: "max-content", willChange: "transform" }}
-                >
-                    {/* First Set */}
-                    {logos.map((logo, idx) => (
-                        <div key={`logo-1-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
-                                <logo.Component />
-                            </div>
-                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
-                        </div>
-                    ))}
-                    {/* Second Set */}
-                    {logos.map((logo, idx) => (
-                        <div key={`logo-2-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
-                                <logo.Component />
-                            </div>
-                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
-                        </div>
-                    ))}
-                    {/* Third Set */}
-                    {logos.map((logo, idx) => (
-                        <div key={`logo-3-${idx}`} className="flex items-center gap-2 group cursor-default">
-                            <div className="text-zinc-500 group-hover:text-white transition-colors duration-300">
-                                <logo.Component />
-                            </div>
-                            <span className="text-lg font-bold text-zinc-600 group-hover:text-white transition-colors duration-300 hidden md:block">{logo.name}</span>
+    return (
+        <Wrapper className={embedded
+            ? 'hero-integration-rail border-t border-white/[0.09] text-white'
+            : 'border-b border-white/[0.08] bg-[#0b0b0c]/35 text-white'}>
+            <div className={embedded
+                ? 'mx-auto flex h-11 max-w-[1740px] items-center justify-center px-5 sm:px-8 lg:h-[76px] lg:justify-between lg:px-10'
+                : 'mx-auto flex max-w-7xl flex-col items-center gap-6 px-5 py-9 sm:px-8 lg:flex-row lg:justify-between'}>
+                <p className={embedded
+                    ? 'hidden shrink-0 text-sm font-medium text-zinc-300 lg:block'
+                    : 'shrink-0 text-sm font-medium text-zinc-500'}>{content?.title}</p>
+                <div className="flex items-center justify-center gap-x-5 sm:gap-x-7 lg:justify-end lg:gap-x-[clamp(1.5rem,2.2vw,2.5rem)]">
+                    {logos.map((logo) => (
+                        <div key={logo.name} className="flex items-center gap-2 text-zinc-400 transition-colors duration-200 hover:text-zinc-100" title={logo.name}>
+                            <div className="[&>svg]:h-[18px] [&>svg]:w-[18px] lg:[&>svg]:h-5 lg:[&>svg]:w-5" aria-hidden="true"><logo.Component /></div>
+                            <span className={embedded ? 'sr-only text-sm font-semibold lg:not-sr-only' : 'text-sm font-semibold'}>{logo.name}</span>
                         </div>
                     ))}
                 </div>
-
             </div>
-        </section>
+        </Wrapper>
     );
 };
 

@@ -1,36 +1,41 @@
 import { getDictionary } from '../i18n';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import LogoMarquee from '@/components/LogoMarquee';
-import BeforeAfter from '@/components/BeforeAfter';
-import FeatureSection from '@/components/Features';
+import ProfitStory from '@/components/stories/ProfitStory';
+import AttributionStory from '@/components/stories/AttributionStory';
+import DecisionStory from '@/components/stories/DecisionStory';
+import InboxStory from '@/components/stories/InboxStory';
 import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
-import CTAButton from '@/components/ui/CTAButton';
 import Section from '@/components/ui/Section';
 import StickyMobileCTA from '@/components/StickyMobileCTA';
-import ExitIntentPopup from '@/components/ExitIntentPopup';
+import { SITE_URL, localizedUrl } from '@/lib/site';
+import { resolvePublicLaunchContent } from '@/lib/public-launch-content';
 
 export default async function Home({ params }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+  const heroContent = resolvePublicLaunchContent(dict.hero);
+  const inboxStoryContent = resolvePublicLaunchContent(dict.inboxStory);
+  const faqContent = resolvePublicLaunchContent(dict.faq);
 
-  const faqQuestions = dict.faq?.questions ? Object.values(dict.faq.questions) : [];
+  const faqQuestions = faqContent?.questions ? Object.values(faqContent.questions) : [];
 
   const softwareAppSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "Scaliente",
     description: dict.metadata.description,
-    url: `https://scaliente.com/${lang}`,
+    "@id": `${localizedUrl(lang)}/#software`,
+    url: localizedUrl(lang),
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     inLanguage: lang,
-    author: { "@type": "Organization", "name": "Scaliente" },
+    author: { "@id": `${SITE_URL}/#organization` },
     datePublished: "2024-01-01",
     dateModified: new Date().toISOString().split('T')[0],
     aggregateRating: {
@@ -39,23 +44,11 @@ export default async function Home({ params }) {
       ratingCount: "150",
       bestRating: "5",
     },
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Lucas M." },
-      },
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Sophie D." },
-      },
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "Max K." },
-      },
-    ],
+    review: (dict.testimonials?.reviews || []).map((review) => ({
+      "@type": "Review",
+      reviewBody: review.text,
+      author: { "@type": "Person", name: review.author },
+    })),
     offers: [
       { "@type": "Offer", price: "0", priceCurrency: "EUR", name: "Discovery" },
       { "@type": "Offer", price: "39", priceCurrency: "EUR", name: "Lite" },
@@ -70,7 +63,6 @@ export default async function Home({ params }) {
     "@type": "HowTo",
     name: dict.howItWorks?.title?.part1 + " " + dict.howItWorks?.title?.part2,
     description: dict.howItWorks?.description,
-    totalTime: "PT5M",
     step: [
       {
         "@type": "HowToStep",
@@ -126,48 +118,52 @@ export default async function Home({ params }) {
       />
       <Navbar content={dict.navbar} common={dict.common} lang={lang} />
 
-      {/* Hero + LogoMarquee - Frosted glass with rounded bottom (outside alternation) */}
-      <div className="relative z-10">
-        <div className="relative text-white bg-[#09090b]/85 md:bg-[#09090b]/50 md:backdrop-blur-xl md:backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa] hero-clip">
-          <Hero content={dict.hero} common={dict.common} />
-          <LogoMarquee content={dict.logoMarquee} />
-          <div data-hero-end />
-        </div>
+      <div data-header-theme="dark" className="relative z-10 bg-[#09090b]">
+        <Hero content={heroContent} common={dict.common} integrations={dict.logoMarquee} lang={lang} />
+        <div data-hero-end />
       </div>
 
       {/* Auto-alternating sections: odd=light, even=dark */}
-      <div className="alternating-sections">
+      <div className="alternating-sections relative z-20 bg-[#09090b]">
         {/* 1 = odd = LIGHT */}
-        <Section id="before-after">
-          <BeforeAfter content={dict.beforeAfter} />
+        <Section id="profit-truth">
+          <ProfitStory content={dict.profitStory} />
         </Section>
 
         {/* 2 = even = DARK */}
-        <Section id="features" frosted>
-          <FeatureSection content={dict.features} />
+        <Section id="attribution" frosted>
+          <AttributionStory content={dict.attributionStory} />
         </Section>
 
-        {/* 3 = odd = LIGHT — Testimonials early for trust */}
+        <Section id="decisions">
+          <DecisionStory content={dict.decisionStory} />
+        </Section>
+
+        <Section id="inbox-beta" frosted>
+          <InboxStory content={inboxStoryContent} lang={lang} />
+        </Section>
+
+        {/* 5 = odd = LIGHT */}
         <Section id="testimonials">
           <Testimonials content={dict.testimonials} founderStory={dict.founderStory} />
         </Section>
 
-        {/* 4 = even = DARK */}
+        {/* 6 = even = DARK */}
         <Section id="how-it-works" frosted>
           <HowItWorks content={dict.howItWorks} />
         </Section>
 
-        {/* 5 = odd = LIGHT */}
+        {/* 7 = odd = LIGHT */}
         <Section id="pricing">
           <Pricing content={dict.pricing} common={dict.common} />
         </Section>
 
-        {/* 6 = even = DARK */}
+        {/* 8 = even = DARK */}
         <Section id="faq" frosted>
-          <FAQ content={dict.faq} />
+          <FAQ content={faqContent} />
         </Section>
 
-        {/* 7 = odd = LIGHT */}
+        {/* 9 = odd = LIGHT */}
         <Section data-cta-final="">
           <CTA content={dict.cta} />
         </Section>
@@ -176,7 +172,6 @@ export default async function Home({ params }) {
       {/* Footer */}
       <Footer content={dict.footer} lang={lang} />
       <StickyMobileCTA label={dict.common?.getStarted || 'Commencer Gratuitement'} />
-      <ExitIntentPopup content={dict.exitPopup} />
     </div>
   );
 }

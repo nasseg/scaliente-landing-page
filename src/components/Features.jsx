@@ -1,264 +1,73 @@
-'use client';
-import { motion } from 'framer-motion';
-import { Layers, DollarSign, Activity, Globe, Users, BarChart3 } from 'lucide-react';
+import { Activity, BarChart3, CircleDollarSign, Globe2, Layers3, Users } from 'lucide-react';
 
 const FeatureSection = ({ content }) => {
     const features = [
-        {
-            icon: Layers,
-            color: 'purple',
-            title: content?.cards?.ads?.title,
-            desc: content?.cards?.ads?.desc,
-        },
-        {
-            icon: DollarSign,
-            color: 'green',
-            title: content?.cards?.profit?.title,
-            desc: content?.cards?.profit?.desc,
-        },
-        {
-            icon: Activity,
-            color: 'orange',
-            title: content?.cards?.realtime?.title,
-            desc: content?.cards?.realtime?.desc,
-        },
-        {
-            icon: Globe,
-            color: 'cyan',
-            title: content?.cards?.multiCurrency?.title,
-            desc: content?.cards?.multiCurrency?.desc,
-        },
-        {
-            icon: Users,
-            color: 'pink',
-            title: content?.cards?.customerLtv?.title,
-            desc: content?.cards?.customerLtv?.desc,
-        },
-        {
-            icon: BarChart3,
-            color: 'amber',
-            title: content?.cards?.adsPage?.title,
-            desc: content?.cards?.adsPage?.desc,
-        },
+        [Layers3, content?.cards?.ads],
+        [CircleDollarSign, content?.cards?.profit],
+        [Activity, content?.cards?.realtime],
+        [Globe2, content?.cards?.multiCurrency],
+        [Users, content?.cards?.customerLtv],
+        [BarChart3, content?.cards?.adsPage],
+    ];
+    const deductions = [
+        content?.bento?.ads,
+        content?.bento?.cogs,
+        content?.bento?.shipping,
+        content?.bento?.fees,
+    ];
+    const cardStyles = [
+        'lg:col-span-5 bg-[#151517] border-white/10 text-white',
+        'lg:col-span-5 bg-[#f4f4f5] border-zinc-200 text-zinc-950',
+        'lg:col-span-3 bg-[#151517] border-white/10 text-white',
+        'lg:col-span-3 bg-[#151517] border-white/10 text-white',
+        'lg:col-span-3 bg-[#151517] border-white/10 text-white',
+        'lg:col-span-3 bg-[#151517] border-white/10 text-white',
     ];
 
-    const colorMap = {
-        purple: {
-            bg: 'bg-purple-500/10',
-            iconBg: 'bg-purple-500/15',
-            text: 'text-purple-400',
-            border: 'group-hover:border-purple-500/30',
-            glow: 'group-hover:shadow-purple-500/10'
-        },
-        green: {
-            bg: 'bg-emerald-500/10',
-            iconBg: 'bg-emerald-500/15',
-            text: 'text-emerald-400',
-            border: 'group-hover:border-emerald-500/30',
-            glow: 'group-hover:shadow-emerald-500/10'
-        },
-        orange: {
-            bg: 'bg-orange-500/10',
-            iconBg: 'bg-orange-500/15',
-            text: 'text-orange-400',
-            border: 'group-hover:border-orange-500/30',
-            glow: 'group-hover:shadow-orange-500/10'
-        },
-        cyan: {
-            bg: 'bg-cyan-500/10',
-            iconBg: 'bg-cyan-500/15',
-            text: 'text-cyan-400',
-            border: 'group-hover:border-cyan-500/30',
-            glow: 'group-hover:shadow-cyan-500/10'
-        },
-        pink: {
-            bg: 'bg-pink-500/10',
-            iconBg: 'bg-pink-500/15',
-            text: 'text-pink-400',
-            border: 'group-hover:border-pink-500/30',
-            glow: 'group-hover:shadow-pink-500/10'
-        },
-        amber: {
-            bg: 'bg-amber-500/10',
-            iconBg: 'bg-amber-500/15',
-            text: 'text-amber-400',
-            border: 'group-hover:border-amber-500/30',
-            glow: 'group-hover:shadow-amber-500/10'
-        },
-    };
-
-    // Stagger animation variants
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.08,
-                delayChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                ease: [0.22, 1, 0.36, 1]
-            }
-        }
-    };
-
     return (
-        <section id="features" className="py-24 relative overflow-x-hidden">
-            <div className="max-w-6xl mx-auto px-6">
-                {/* Header */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-                    className="text-center mb-20"
-                >
-                    <h2 className="font-brand text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-[var(--text-primary)] mb-6 tracking-[-0.025em]">
-                        {content?.title?.part1}{' '}
-                        <span className="text-orange-500">{content?.title?.part2}</span>
+        <section className="py-24 text-[var(--text-primary)] sm:py-32">
+            <div className="mx-auto max-w-[1400px] px-5 sm:px-8">
+                <div className="max-w-5xl">
+                    <h2 className="text-balance font-brand text-[clamp(2.8rem,5.8vw,5.5rem)] font-bold leading-[0.95] tracking-[-0.045em]">
+                        {content?.title?.part1} <span className="text-orange-500">{content?.title?.part2}</span>
                     </h2>
-                    <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed">
-                        {content?.description}
-                    </p>
-                </motion.div>
+                    <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-[var(--text-secondary)]">{content?.description}</p>
+                </div>
 
-                {/* Feature Grid - Enhanced Bento Style */}
-                <motion.div
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-24"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                >
-                    {features.map((feature, idx) => {
-                        const colors = colorMap[feature.color];
-                        const isWide = idx === 0 || idx === 5;
-                        const spanClass = idx === 0 ? 'lg:col-span-2' : idx === 5 ? 'lg:col-span-3' : '';
+                <div className="mt-16 grid gap-4 lg:grid-cols-12">
+                    <article className="group relative flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[16px] bg-orange-500 p-7 text-white sm:p-10 lg:col-span-7 lg:row-span-2">
+                        <div>
+                            <p className="text-sm font-semibold text-orange-100">{content?.howItWorks}</p>
+                            <h3 className="mt-4 max-w-[11ch] text-balance font-brand text-4xl font-semibold leading-[1] tracking-[-0.04em] sm:text-6xl">
+                                {content?.bento?.trueProfit}
+                            </h3>
+                        </div>
+
+                        <div className="mt-16 grid gap-3 sm:grid-cols-[1fr_auto_1fr] sm:items-end">
+                            <div>
+                                <p className="text-sm text-orange-100">{content?.bento?.totalRevenue}</p>
+                                <div className="mt-3 h-px bg-white/40" />
+                            </div>
+                            <span className="font-mono text-3xl" aria-hidden="true">-</span>
+                            <div className="grid grid-cols-2 gap-x-5 gap-y-2 text-sm text-white">
+                                {deductions.map((label) => <span key={label}>{label}</span>)}
+                            </div>
+                        </div>
+                    </article>
+
+                    {features.map(([Icon, feature], index) => {
+                        const lightCard = index === 1;
                         return (
-                            <motion.div
-                                key={idx}
-                                variants={itemVariants}
-                                className={`group relative p-7 rounded-2xl bg-[var(--card-bg)] border border-[var(--card-border)] hover:border-[var(--card-border-hover)] transition-all duration-500 hover:-translate-y-1 hover:shadow-xl ${colors.glow} ${colors.border} ${spanClass}`}
-                            >
-                                {/* Subtle gradient overlay on hover */}
-                                <div className={`absolute inset-0 rounded-2xl ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
-
-                                <div className={`relative ${isWide ? 'lg:flex lg:items-start lg:gap-6' : ''}`}>
-                                    <div className={`w-12 h-12 rounded-xl ${colors.iconBg} flex items-center justify-center shrink-0 ${isWide ? 'mb-5 lg:mb-0' : 'mb-5'} transition-transform duration-300 group-hover:scale-110`}>
-                                        <feature.icon className={`w-6 h-6 ${colors.text}`} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-brand text-xl font-semibold text-[var(--text-primary)] mb-3 tracking-[-0.01em]">
-                                            {feature.title}
-                                        </h3>
-                                        <p className="text-[var(--text-muted)] text-sm leading-relaxed">
-                                            {feature.desc}
-                                        </p>
-                                    </div>
+                            <article key={feature?.title} className={`group flex min-h-[230px] flex-col justify-between rounded-[16px] border p-6 transition-transform duration-300 hover:-translate-y-1 sm:p-7 ${cardStyles[index]}`}>
+                                <Icon className={`h-6 w-6 ${lightCard ? 'text-orange-600' : 'text-orange-500'}`} strokeWidth={1.6} aria-hidden="true" />
+                                <div className="mt-12">
+                                    <h3 className="font-brand text-xl font-semibold tracking-[-0.025em] sm:text-2xl">{feature?.title}</h3>
+                                    <p className={`mt-3 text-pretty text-sm leading-6 ${lightCard ? 'text-zinc-600' : 'text-zinc-400'}`}>{feature?.desc}</p>
                                 </div>
-                            </motion.div>
+                            </article>
                         );
                     })}
-                </motion.div>
-
-                {/* Profit Calculator - Premium Bento Grid */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, amount: 0.2 }}
-                    variants={{ visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } } }}
-                    className="max-w-4xl mx-auto"
-                >
-                    {/* Section Label */}
-                    <motion.div variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }} className="text-center mb-10">
-                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-orange-200 bg-orange-50 text-orange-600 text-sm font-medium">
-                            <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                            {content?.howItWorks}
-                        </span>
-                    </motion.div>
-
-                    {/* Calculator Grid */}
-                    <div className="grid grid-cols-12 gap-3">
-                        {/* Revenue - Full Width */}
-                        <motion.div
-                            variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } } }}
-                            className="col-span-12 bg-gradient-to-r from-blue-500/10 to-blue-500/5 border border-blue-500/20 rounded-2xl p-5 flex items-center justify-between"
-                        >
-                            <div className="flex items-center gap-4">
-                                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
-                                    <span className="text-blue-400 font-brand font-bold text-sm">CA</span>
-                                </div>
-                                <span className="text-[var(--text-primary)] font-medium">{content?.bento?.totalRevenue || "Chiffre d'affaires Total"}</span>
-                            </div>
-                            <span className="text-2xl md:text-3xl font-sans font-bold text-[var(--text-primary)] number-display">68,540 €</span>
-                        </motion.div>
-
-                        {/* Expenses Row */}
-                        {[
-                            { label: content?.bento?.ads || "Ads", value: "8,340 €", bgClass: 'bg-red-500/10', borderClass: 'border-red-500/20', text: 'text-red-400' },
-                            { label: content?.bento?.cogs || "COGS", value: "12,120 €", bgClass: 'bg-orange-500/10', borderClass: 'border-orange-500/20', text: 'text-orange-400' },
-                            { label: content?.bento?.shipping || "Shipping", value: "18,750 €", bgClass: 'bg-amber-500/10', borderClass: 'border-amber-500/20', text: 'text-amber-400' },
-                            { label: content?.bento?.fees || "Fees", value: "2,878 €", bgClass: 'bg-purple-500/10', borderClass: 'border-purple-500/20', text: 'text-purple-400' },
-                        ].map((item, i) => (
-                            <motion.div
-                                key={i}
-                                variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } } }}
-                                className={`col-span-6 md:col-span-3 rounded-2xl p-4 border ${item.bgClass} ${item.borderClass}`}
-                            >
-                                <div className="flex items-center gap-1 mb-2">
-                                    <span className="text-lg text-[var(--text-secondary)]">−</span>
-                                    <span className={`text-xs font-semibold uppercase tracking-wider ${item.text}`}>{item.label}</span>
-                                </div>
-                                <span className={`text-xl font-sans font-bold ${item.text} number-display`}>{item.value}</span>
-                            </motion.div>
-                        ))}
-
-                        {/* Result - Full Width with Premium Styling */}
-                        <motion.div
-                            variants={{ hidden: { opacity: 0, scale: 0.98 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } } }}
-                            className="col-span-12 relative group"
-                        >
-                            {/* Glow Effect */}
-                            <div className="absolute -inset-1 bg-gradient-to-r from-orange-300/40 via-amber-300/30 to-orange-300/40 rounded-2xl blur-xl opacity-0 group-hover:opacity-80 transition-opacity duration-500" />
-
-                            <div className="relative bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-                                <div className="flex items-center gap-5">
-                                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/30 to-green-500/10 flex items-center justify-center">
-                                        <span className="text-green-400 font-brand font-bold text-xl">=</span>
-                                    </div>
-                                    <div>
-                                        <div className="flex items-center gap-3 mb-1">
-                                            <span className="text-zinc-400 text-sm font-medium">
-                                                {content?.bento?.trueProfit || "Votre Vrai Profit"}
-                                            </span>
-                                            <span className="px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-orange-400 bg-orange-500/20 border border-orange-500/30 rounded-md">
-                                                Scaliente
-                                            </span>
-                                        </div>
-                                        <span className="text-3xl md:text-4xl font-sans font-bold text-gradient-orange number-display">
-                                            26,450 €
-                                        </span>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <div className="px-4 py-2 bg-green-500/15 border border-green-500/30 rounded-xl">
-                                        <span className="text-zinc-400 text-sm mr-2">{content?.bento?.margin || "Marge:"}</span>
-                                        <span className="text-green-400 font-bold font-sans">38.6%</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

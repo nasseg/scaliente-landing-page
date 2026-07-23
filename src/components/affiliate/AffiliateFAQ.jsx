@@ -1,53 +1,17 @@
-'use client';
-
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-
-const AffiliateFAQ = ({ content }) => {
-    const [openFaq, setOpenFaq] = useState(null);
-    const faqItems = content?.faq?.items || [];
-
+export default function AffiliateFAQ({ content }) {
     return (
-        <div className="py-20">
-            <div className="max-w-3xl mx-auto px-6">
-                <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="font-brand text-3xl md:text-4xl font-bold text-[var(--text-primary)] text-center mb-12"
-                >
-                    {content?.faq?.title}
-                </motion.h2>
-
-                <div className="space-y-3">
-                    {faqItems.map((item, i) => (
-                        <motion.div
-                            key={i}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: i * 0.05 }}
-                            className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-xl overflow-hidden"
-                        >
-                            <button
-                                onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                                className="w-full flex items-center justify-between p-5 text-left cursor-pointer"
-                            >
-                                <span className="text-[var(--text-primary)] font-medium pr-4">{item.q}</span>
-                                <ChevronDown className={`w-5 h-5 text-[var(--text-muted)] shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`} />
-                            </button>
-                            {openFaq === i && (
-                                <div className="px-5 pb-5 text-[var(--text-secondary)] text-sm leading-relaxed">
-                                    {item.a}
-                                </div>
-                            )}
-                        </motion.div>
-                    ))}
-                </div>
+        <div className="mx-auto grid max-w-[1240px] gap-12 px-5 py-20 sm:px-8 sm:py-28 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+            <h2 className="text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em] text-white sm:text-6xl">{content?.faq?.title}</h2>
+            <div className="border-t border-white/[0.12]">
+                {(content?.faq?.items || []).map((item) => (
+                    <details key={item.q} className="group border-b border-white/[0.1]">
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-6 text-base font-semibold text-white marker:hidden">
+                            {item.q}<span className="text-orange-400 transition-transform group-open:rotate-45">+</span>
+                        </summary>
+                        <p className="max-w-2xl pb-6 text-sm leading-7 text-zinc-400">{item.a}</p>
+                    </details>
+                ))}
             </div>
         </div>
     );
-};
-
-export default AffiliateFAQ;
+}

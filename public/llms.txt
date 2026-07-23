@@ -1,23 +1,26 @@
 # Scaliente
 
 ## What is Scaliente?
-Scaliente is a real-time profit tracking SaaS application for Shopify e-commerce stores. It connects to Shopify, Meta Ads, Google Ads, TikTok Ads, Pinterest Ads, and Snapchat Ads to automatically calculate net profit by deducting ad spend, COGS (cost of goods sold), shipping costs, payment processing fees, and taxes from revenue. The dashboard updates every 5 minutes.
+Scaliente is a profit-tracking application for Shopify stores. It reconciles orders, product costs, shipping, payment fees, taxes and advertising spend to calculate net profit. Shopify orders arrive through webhooks. Advertising spend is synchronized once or twice daily depending on the source and can also be refreshed manually.
 
 ## Key Features
-- Real-time profit dashboard with net profit, margins, and breakeven ROAS
-- Automatic ad spend tracking across 5 platforms (Meta, Google, TikTok, Pinterest, Snapchat)
+- Net profit and margin dashboard recalculated as Shopify orders arrive
+- Advertising spend tracking across exactly five platforms: Meta, Google, TikTok, Pinterest and Snapchat
 - Product-level analytics with profit per SKU
-- Multi-store management (manage multiple Shopify stores in one dashboard)
+- Multi-store management from one account
 - Multi-currency support with daily ECB exchange rates
-- Automated P&L reports exportable to PDF/CSV
-- GDPR compliant, European hosting, SOC 2 infrastructure
+- CSV report exports
+- Shopify Web Pixel attribution from the date the pixel is activated
+- Data hosted in Europe
+- AI customer-service inbox that combines connected email with Shopify order, delivery, dispute and customer-history context while keeping replies under human control
 
 ## Pricing
-- Discovery: Free (20 orders/month)
-- Lite: €39/month (500 orders/month)
-- Starter: €89/month (3,000 orders/month)
-- Growth: €149/month (10,000 orders/month)
-- Scale: €249/month (25,000 orders/month)
+- Discovery: €0/month, up to 50 orders and one advertising platform
+- Lite: €39/month, up to 100 orders and two advertising platforms
+- Starter: €89/month, up to 300 orders
+- Growth: €149/month, up to 1,500 orders
+- Scale: €249/month, unlimited orders
+- Paid plans include a seven-day trial. Annual billing is discounted by 20%.
 
 ## Company
 - Founded: 2024
@@ -25,7 +28,10 @@ Scaliente is a real-time profit tracking SaaS application for Shopify e-commerce
 - Contact: contact@scaliente.com
 
 ## Links
-- Website: https://scaliente.com
+- Website: https://www.scaliente.com
 - App: https://app.scaliente.com
 - Shopify App Store: https://apps.shopify.com/scaliente
-- ROAS Calculator: https://scaliente.com/fr/tools/roas-calculator
+- ROAS Calculator: https://www.scaliente.com/fr/tools/roas-calculator
+- AI Customer Service: https://www.scaliente.com/fr/features/ai-customer-service
+- AI Customer Service (English): https://www.scaliente.com/en/features/ai-customer-service
+- KI-Kundenservice (Deutsch): https://www.scaliente.com/de/features/ai-customer-service

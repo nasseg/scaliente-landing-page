@@ -20,29 +20,52 @@
         "pricing": "Pricing",
         "comparison": "Compare",
         "faq": "FAQ",
+        "guides": "Guides",
         "login": "Login",
         "freeTrial": "Free Trial",
+        "navigationLabel": "Main navigation",
+        "mobileMenuLabel": "Main menu",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
         "dropdown": {
+            "overviewGroup": "Overview",
+            "acquisitionGroup": "Acquisition",
+            "operationsGroup": "Operations",
             "profitDashboard": "Profit Dashboard",
+            "profitDashboardDescription": "Revenue, costs and net profit in one place.",
             "adTracking": "Ad Tracking",
+            "adTrackingDescription": "Match ad spend with sales.",
             "productAnalytics": "Product Analytics",
+            "productAnalyticsDescription": "Margin and performance by product.",
             "multiShop": "Multi-Store",
+            "multiShopDescription": "Run multiple stores from one view.",
             "multiCurrency": "Multi-Currency",
+            "multiCurrencyDescription": "A consistent view in your main currency.",
             "reports": "Reports",
-            "roasCalculator": "ROAS Calculator"
+            "reportsDescription": "Analyse, compare and export your data.",
+            "pixelAttribution": "Pixel & attribution",
+            "pixelAttributionDescription": "Follow the Shopify journey through checkout.",
+            "aiCustomerService": "AI customer service",
+            "aiCustomerServiceDescription": "Contextual drafts, human control.",
+            "closedBeta": "Closed beta",
+            "roasCalculator": "ROAS Calculator",
+            "roasCalculatorDescription": "Estimate your advertising break-even point."
         }
     },
     "hero": {
-        "pill": "Precision down to the penny",
-        "title": "Your Real Profit.",
-        "subtitle": "No Surprises.",
-        "description": "Connect Shopify and your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) in 1 click. Scaliente automatically deducts ad spend, COGS, shipping, payment fees, and taxes to show your real net profit — updated every 5 minutes.",
-        "definition": "Scaliente is a real-time profit tracking application for Shopify stores. It automatically deducts ad spend from Meta, Google, TikTok, Pinterest, and Snapchat, plus COGS, shipping costs, payment processing fees, and taxes from revenue to calculate net profit. The dashboard updates every 5 minutes.",
-        "ctaStart": "Calculate My Net Profit",
-        "ctaLogin": "Already signed up? Open app",
-        "microText": "Sign up in 30 seconds. Connect Shopify. See your profit.",
+        "pill": "Shopify profit tracker",
+        "title": "Shopify shows your sales.",
+        "subtitle": "Scaliente shows what you keep.",
+        "description": "Scaliente combines Shopify orders, costs and ad spend to calculate net profit and reveal margin leaks.",
+        "definition": "Scaliente is a profit-tracking application for Shopify stores. It brings together orders, product costs, shipping, fees, taxes and ad spend from Meta, Google, TikTok, Pinterest and Snapchat. Orders arrive through Shopify webhooks; ad spend is updated once or twice daily and can be refreshed manually.",
+        "ctaStart": "Add Scaliente to Shopify",
+        "ctaLogin": "Open my workspace",
+        "microText": "Discovery at €0 · no credit card required.",
         "dashboard": {
             "overview": "Overview",
+            "profit": "Anonymised Scaliente real-profit dashboard with net profit, margin and cost breakdown",
+            "report": "Anonymised Scaliente monthly report with net profit, revenue and costs",
+            "inbox": "Scaliente AI customer service with an anonymised conversation, Shopify context and reply draft",
             "performance": "Your real-time performance",
             "today": "Today",
             "yesterday": "Yesterday",
@@ -62,190 +85,93 @@
                 "logout": "Log out",
                 "store": "Store"
             }
+        },
+        "publicLaunch": {
+            "descriptionSegments": {
+                "before": "Scaliente brings profit, ad attribution and ",
+                "link": "AI customer service",
+                "after": " into one workspace connected to your Shopify data."
+            }
         }
     },
     "logoMarquee": {
-        "title": "Officially integrates with"
+        "title": "Shopify, Meta, Google, TikTok, Pinterest and Snapchat, together"
     },
     "howItWorks": {
-        "badge": "Simple setup",
+        "badge": "Guided setup",
         "title": {
-            "part1": "Operational in",
-            "part2": "5 minutes"
+            "part1": "A setup flow",
+            "part2": "without code"
         },
-        "description": "Connect your tools, configure your costs, and start seeing your true profit. No technical expertise required.",
+        "description": "Connect your sources, configure costs, then check data quality before making a decision.",
         "steps": {
             "shopify": {
                 "title": "Connect Shopify",
-                "desc": "One-click OAuth connection. Your orders, products, and revenue sync automatically.",
-                "time": "30 seconds"
+                "desc": "Authorize the app and let orders, products and revenue flow into your workspace.",
+                "time": "01"
             },
             "ads": {
-                "title": "Link your Ads",
-                "desc": "Connect Meta, Google, TikTok, Pinterest, and Snapchat via OAuth. All your ad spend centralized.",
-                "time": "2 minutes"
+                "title": "Link your ad accounts",
+                "desc": "Connect the platforms you need through their OAuth flows.",
+                "time": "02"
             },
             "mode": {
-                "title": "Choose your Mode",
-                "desc": "Dropshipping or Classic - configure how your costs are calculated.",
-                "time": "1 minute"
+                "title": "Configure your costs",
+                "desc": "Choose the relevant calculation mode and enter COGS, shipping and fees.",
+                "time": "03"
             },
             "expenses": {
-                "title": "Add your Expenses",
-                "desc": "Subscriptions, salaries, fixed costs. Generate reports with your real profit after all charges.",
-                "time": "Optional"
+                "title": "Review, then operate",
+                "desc": "Add recurring expenses, investigate gaps and use reports to make decisions.",
+                "time": "04"
             }
         },
-        "modes": {
-            "title": "Two calculation modes",
-            "subtitle": "Choose the one that matches your business model",
-            "dropshipping": {
-                "title": "Dropshipping Mode",
-                "badge": "Print-on-demand, AliExpress...",
-                "desc": "COGS calculated based on the number of products sold per order.",
-                "example": "Example",
-                "product": "Product",
-                "shipping1": "Shipping 1 product",
-                "shipping2": "Shipping 2 products"
-            },
-            "classic": {
-                "title": "Classic Mode",
-                "badge": "E-commerce with inventory",
-                "desc": "Shipping price based on package weight. Configure by weight ranges.",
-                "example": "Example",
-                "weight1": "0 - 500g",
-                "weight2": "500g - 1kg",
-                "weight3": "1kg - 2kg"
-            }
-        },
-        "result": {
-            "title": "Result: Your Complete Analytics",
-            "subtitle": "Everything you need to drive your profitability",
-            "metrics": {
-                "profit": "Net Profit",
-                "roas": "ROAS & ROI",
-                "breakeven": "Breakeven ROAS",
-                "reports": "Monthly Reports"
-            }
-        },
-        "cta": "Start Free"
-    },
-    "features": {
-        "title": {
-            "part1": "Centralize. Analyze.",
-            "part2": "Scale."
-        },
-        "description": "Scaliente connects to all your tools in one click. No more Excel spreadsheets and manual calculations at 2 AM.",
-        "cards": {
-            "ads": {
-                "title": "All Your Ads Centralized",
-                "desc": "Meta, Google, TikTok, Pinterest, Snapchat - No more multiple tabs, everything is here."
-            },
-            "profit": {
-                "title": "Net Profit & Real ROI",
-                "desc": "We deduct everything: Product cost (COGS), shipping fees, Stripe/PayPal transaction fees, and taxes."
-            },
-            "realtime": {
-                "title": "Your numbers, to the minute",
-                "desc": "Your data refreshes every 5 minutes. Make decisions based on the present moment, not yesterday."
-            },
-            "multiCurrency": {
-                "title": "Native Multi-Currency",
-                "desc": "Ads in USD, sales in EUR? Scaliente automatically converts with daily ECB rates."
-            },
-            "customerLtv": {
-                "title": "Customer LTV",
-                "desc": "Track customer lifetime value and identify your most profitable segments to optimize acquisition."
-            },
-            "adsPage": {
-                "title": "Detailed Ads Page",
-                "desc": "ROAS, CTR, CPM per campaign. Filter by platform, compare performance in real-time."
-            }
-        },
-        "howItWorks": "How it works",
-        "bento": {
-            "totalRevenue": "Total Revenue",
-            "ads": "Ads",
-            "cogs": "COGS",
-            "shipping": "Shipping",
-            "fees": "Fees",
-            "trueProfit": "Your True Profit",
-            "margin": "Margin:"
-        }
-    },
-    "beforeAfter": {
-        "title": {
-            "main": "A radical",
-            "highlight": "Before/After"
-        },
-        "subtitle": "Stop juggling 10 tabs. Centralize everything.",
-        "before": {
-            "label": "Current Chaos",
-            "tabs": {
-                "profitCalc": "Profit Calc v3",
-                "businessManager": "Business Manager",
-                "googleAds": "Google Ads",
-                "tiktokAds": "TikTok Ads",
-                "snapchatAds": "Snapchat Ads",
-                "pinterest": "Pinterest",
-                "shopifyAdmin": "Shopify Admin"
-            },
-            "excel": {
-                "filename": "Profit_Tracking_December_v3_FINAL.xlsx",
-                "columns": [
-                    "Date",
-                    "Rev",
-                    "Ads",
-                    "COGS",
-                    "Net"
-                ],
-                "error": "Calculation Error"
-            },
-            "quote": "\"I forgot to log yesterday's TikTok spend...\""
-        },
-        "after": {
-            "label": "Scaliente Clarity",
-            "tabs": {
-                "scaliente": "Scaliente"
-            },
-            "dashboard": {
-                "title": "Dashboard",
-                "lastUpdate": "Last update: 2 min ago",
-                "live": "LIVE",
-                "netProfit": "Net Profit",
-                "vsYesterday": "+12% vs yesterday",
-                "margin": "Margin",
-                "stable": "Stable",
-                "synced": "Data synced"
-            },
-            "quote": "Everything is there. Automatic. Real-time."
-        }
+        "cta": "Start with Discovery"
     },
     "pricing": {
         "header": {
             "title": {
-                "main": "Take Control of Your",
-                "highlight": "Profitability"
+                "main": "Pay for",
+                "highlight": "your volume"
             },
-            "quote": "\"Shopify shows your revenue. Scaliente shows what you actually keep.\""
+            "quote": "Five public plans, from a first store to a multi-store portfolio."
         },
         "toggle": {
             "monthly": "Monthly",
             "annual": "Annual",
             "discount": "-20%"
         },
+        "volume": {
+            "label": "Monthly orders",
+            "options": {
+                "discovery": "50",
+                "lite": "100",
+                "starter": "300",
+                "growth": "1,500",
+                "scale": "Unlimited"
+            },
+            "recommendation": "Fits your volume",
+            "selected": "Selected plan"
+        },
+        "antiObjection": {
+            "title": "Start with what you actually need",
+            "description": "The recommendation depends only on the selected order volume. Start with Discovery, then change plans from the app."
+        },
+        "trial": "7-day trial on paid plans, no commitment",
         "plans": {
             "discovery": {
                 "name": "Discovery",
                 "badge": "Free Forever",
                 "desc": "Ideal to start (Referrals & New shops)",
                 "features": {
-                    "orders": "Up to 20 orders/month",
+                    "orders": "Up to 50 orders/month",
                     "shop": "1 store",
                     "history": "30-day history",
                     "adPlatform": "1 ad platform",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "1 user",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Create Free Account"
             },
@@ -258,7 +184,9 @@
                     "history": "90-day history",
                     "adPlatforms": "2 ad platforms",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "1 user",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Unlock Lite Mode"
             },
@@ -271,13 +199,14 @@
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
                     "comparison": "Period comparison",
-                    "export": "CSV export"
+                    "export": "CSV export",
+                    "collaborators": "2 users",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Unlock Starter Mode"
             },
             "growth": {
                 "name": "Growth",
-                "badge": "Recommended",
                 "desc": "Drive multiple stores with precision",
                 "features": {
                     "orders": "Up to 1,500 orders/month",
@@ -285,62 +214,33 @@
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
                     "multiShop": "Multi-store consolidated view",
-                    "comparison": "Advanced comparison"
+                    "comparison": "Advanced comparison",
+                    "collaborators": "5 users",
+                    "aiInsights": "AI Insights"
                 },
-                "cta": "Switch to Growth",
-                "socialProof": "Chosen by 7 out of 10 Scaliente users"
+                "cta": "Switch to Growth"
             },
             "scale": {
                 "name": "Scale",
                 "badge": "Ultimate",
-                "desc": "Total mastery with no limits",
+                "desc": "For high-volume, multi-store teams",
                 "features": {
                     "orders": "Unlimited orders",
-                    "shops": "Unlimited stores",
+                    "shops": "7 stores included",
                     "history": "Unlimited history",
                     "adPlatforms": "5 ad platforms",
-                    "slackSupport": "Dedicated Slack support",
-                    "priority": "Priority support"
+                    "slackSupport": "Unlimited collaborators",
+                    "priority": "Priority support",
+                    "collaborators": "Unlimited users",
+                    "aiInsights": "AI Insights"
                 },
                 "cta": "Switch to Scale"
             }
-        },
-        "enterprise": {
-            "title": "Enterprise / Agency",
-            "desc": "For agencies and e-commerce groups managing high volume. Unlimited shops, team access, and advanced permissions.",
-            "features": {
-                "unlimitedShops": "Unlimited Shops",
-                "clientReporting": "Client Reporting",
-                "slaSupport": "SLA Support"
-            },
-            "price": {
-                "custom": "Custom quote",
-                "range": "500€ - 2000€"
-            },
-            "cta": "Contact Sales Team"
-        },
-        "monthlyEquivalent": "Comes to {{price}}€/month",
-        "comparison": {
-            "title": "Detailed Comparison",
-            "features": {
-                "dataSources": "Data Sources (Shopify, Ads, Stripe)",
-                "updateFreq": "Update Frequency",
-                "history": "Data History",
-                "support": "Customer Support",
-                "apiAccess": "API Access",
-                "teams": "Team Management"
-            }
-        },
-        "antiObjection": {
-            "title": "Your Data Stays Yours",
-            "description": "Your financial data is encrypted end-to-end (AES-256) and never shared, sold, or used for commercial purposes. Scaliente uses read-only API access — we cannot modify your store or ad accounts.",
-            "readOnly": "Read-only"
-        },
-        "finalQuote": "\"A single poorly managed day costs more than a month's subscription. Shopify numbers don't show what you keep.\""
+        }
     },
     "founderStory": {
         "founderStory": {
-            "quote": "We started with Excel spreadsheets to track profit across our agency\u2019s Shopify stores. We looked at every tool on the market \u2014 nothing matched what we needed. So we built our own. First as a private tool for our agency, then shared with a handful of clients, and today Scaliente is available to everyone on the Shopify App Store.",
+            "quote": "We started with Excel spreadsheets to track profit across our agency’s Shopify stores. We looked at every tool on the market — nothing matched what we needed. So we built our own. First as a private tool for our agency, then shared with a handful of clients, and today Scaliente is available to everyone on the Shopify App Store.",
             "author": "The Scaliente Team",
             "role": "Founder Team"
         }
@@ -376,75 +276,54 @@
         }
     },
     "faq": {
-        "badge": "Support & Questions",
-        "title": "Everything you need to know",
-        "subtitle": "Everything you need to know before taking back control.",
+        "badge": "Useful questions",
+        "title": "Before connecting your data",
+        "subtitle": "Precise answers about calculations, attribution and setup.",
         "questions": {
-            "slowDown": {
-                "q": "Will Scaliente slow down my Shopify site?",
-                "a": "No, Scaliente does not affect your Shopify store's performance. It works via the official Shopify API and connects in the background. No script is injected onto your storefront, so zero impact on loading times or Core Web Vitals."
+            "profit": {
+                "q": "How does Scaliente calculate net profit?",
+                "a": "Scaliente starts with revenue and reconciles ad spend, product costs, shipping, payment fees, taxes and expenses you declare. Each line item remains visible so you can verify the calculation."
             },
-            "customTheme": {
-                "q": "My store uses a custom theme, is it compatible?",
-                "a": "Yes, Scaliente is compatible with 100% of Shopify themes (2.0 and older). Since we don't alter your theme code, everything works perfectly regardless of your visual setup."
+            "freshness": {
+                "q": "How often is data updated?",
+                "a": "Orders arrive through Shopify webhooks. Ad spend is synchronized once or twice daily and can also be refreshed manually."
             },
-            "installation": {
-                "q": "Is it complicated to install? I'm not a dev.",
-                "a": "No, installation takes under 3 minutes with zero coding. Scaliente installs in 3 steps: (1) Add the app from the Shopify App Store with one click, (2) Authorize read-only OAuth access to your Shopify store, (3) Connect your ad accounts (Meta, Google, TikTok, Pinterest, Snapchat) via secure OAuth. Your profit dashboard populates with data in under 2 minutes. No coding or technical expertise required."
+            "attribution": {
+                "q": "Why can attribution differ from ad platforms?",
+                "a": "Each platform applies its own windows and models. Scaliente reconciles first-party signals with the order and keeps direct, unattributed or low-signal sales visible."
             },
-            "security": {
-                "q": "Is my data safe?",
-                "a": "Yes, your data is fully secure with enterprise-grade encryption. Scaliente uses read-only API access to Shopify and ad platforms — it cannot modify your store or ad accounts. All data is encrypted with AES-256 at rest and TLS 1.3 in transit. Scaliente does not sell, share, or transfer your data to third parties. The app is hosted on Vercel's SOC 2 compliant infrastructure."
-            },
-            "shopifyAnalytics": {
-                "q": "Why not just use Shopify Analytics?",
-                "a": "Shopify Analytics displays gross revenue but does not calculate net profit. For example, if your Shopify store generates €10,000 in revenue but you spent €3,000 on Meta Ads, €2,000 on COGS, €800 on shipping, and €400 on Stripe fees, Shopify shows €10,000 while your real profit is only €3,800. Scaliente deducts all these costs automatically and updates every 5 minutes."
-            },
-            "commitment": {
-                "q": "Am I locked in?",
-                "a": "Zero commitment. You can cancel your Scaliente subscription in one click from your dashboard at any time. Your access continues until the end of your current billing period. No cancellation fees, no hidden charges."
-            },
-            "story": {
-                "q": "Why have I never heard of Scaliente before?",
-                "a": "Scaliente launched in 2024 as a private profit-tracking tool for e-commerce agencies managing multi-store Shopify portfolios. After growing a large user base through word-of-mouth referrals alone, Scaliente opened to the public with self-serve plans starting at €0/month (Discovery plan, 20 orders/month included)."
+            "pixel": {
+                "q": "Does the pixel modify my Shopify theme?",
+                "a": "Tracking uses Shopify's official Web Pixel extension, running in Shopify's isolated environment. It does not inject a modification into your theme."
             },
             "freePlan": {
-                "q": "Is there a free plan?",
-                "a": "Yes! Our Discovery plan is 100% free with 20 orders/month, perfect for testing or small stores. No credit card required."
+                "q": "Can I start for free?",
+                "a": "Yes. Discovery includes up to 50 orders per month, one store and one ad platform, with no credit card."
             },
             "adPlatforms": {
                 "q": "Which ad platforms are supported?",
-                "a": "Meta (Facebook + Instagram), Google Ads, TikTok Ads, Pinterest Ads, and Snapchat Ads. All your campaigns centralized in one dashboard with true ROAS and POAS calculations."
+                "a": "Meta, Google Ads, TikTok Ads, Pinterest Ads and Snapchat Ads are available in Scaliente's platform registry."
             },
-            "bestApp": {
-                "q": "What is the best Shopify profit tracking app in 2026?",
-                "a": "Scaliente is the top-rated Shopify profit tracking app in 2026 with 4.9/5 stars. Unlike competitors such as TrueProfit or Triple Whale, Scaliente offers a free plan (20 orders/month), no per-order fees, native multi-currency support with daily ECB rates, and European hosting. It tracks ad spend from Meta, Google, TikTok, Pinterest, and Snapchat in real time."
-            },
-            "calculateProfit": {
-                "q": "How to calculate real e-commerce profit?",
-                "a": "Real e-commerce profit equals revenue minus all costs: ad spend (Meta, Google, TikTok, Pinterest, Snapchat), COGS (cost of goods sold), shipping fees, payment processing fees (Stripe, PayPal), transaction fees, refunds, and taxes. Scaliente automates this calculation by syncing with Shopify and ad platforms, updating your net profit every 5 minutes."
-            },
-            "poas": {
-                "q": "What is POAS (Profit on Ad Spend)?",
-                "a": "POAS (Profit on Ad Spend) measures the profit generated for every unit spent on advertising. Unlike ROAS which only considers revenue, POAS deducts COGS, shipping, fees, and taxes to show your true return. For example, if you spend 100 on ads and generate 500 in revenue but 300 in costs, your ROAS is 5x but your POAS is only 2x. Scaliente calculates both ROAS and POAS automatically."
-            },
-            "roasVsPoas": {
-                "q": "What is the difference between ROAS and POAS?",
-                "a": "ROAS (Return on Ad Spend) = Revenue ÷ Ad Spend. It tells you how much revenue each ad dollar generates. POAS (Profit on Ad Spend) = Net Profit ÷ Ad Spend. It tells you how much actual profit each ad dollar generates after deducting COGS, shipping, payment fees, and taxes. POAS is the metric that matters for profitability. A store can have a 5x ROAS but be losing money if costs are too high. Scaliente shows both metrics in real time."
-            },
-            "costDeductions": {
-                "q": "What costs should I deduct from Shopify revenue?",
-                "a": "To calculate true profit, deduct from Shopify revenue: (1) Ad spend — Meta/Facebook, Google, TikTok, Pinterest, Snapchat campaigns, (2) COGS — product cost, packaging, supplier fees, (3) Shipping — carrier fees, fulfillment costs, (4) Payment fees — Stripe/PayPal processing, Shopify transaction fees, (5) Taxes — VAT, sales tax, import duties, (6) Fixed costs — subscriptions, salaries, rent. Scaliente automates items 1-5 and lets you add item 6 manually."
+            "inbox": {
+                "q": "Is AI customer service included in the plans?",
+                "a": "Not yet. AI Inbox is in closed beta. It is presented separately and no capacity or quota is included in current public plans."
+            }
+        },
+        "publicLaunch": {
+            "questions": {
+                "inbox": {
+                    "a": "AI Inbox is a separate add-on priced at €39 per month for each activated store. It requires a paid Scaliente plan and includes 200 AI drafts per store each month."
+                }
             }
         }
     },
     "cta": {
-        "badge": "Start for free",
-        "title": "Ready to see the truth?",
-        "subtitle": "Join the Shopify store owners who stopped losing money with blurry data.",
-        "button": "Start Free",
-        "noCard": "No credit card required.",
-        "socialProof": "Joined by 200+ store owners"
+        "badge": "Start with your own data",
+        "title": "You know your revenue. Now see what remains.",
+        "subtitle": "Connect Shopify, configure costs and review profit in an interface built for decisions.",
+        "button": "Start for free",
+        "noCard": "Discovery requires no credit card.",
+        "socialProof": "Trusted by 200+ e-commerce merchants"
     },
     "exitPopup": {
         "title": "Wait! A gift before you go",
@@ -456,49 +335,49 @@
     },
     "affiliate": {
         "metadata": {
-            "title": "Scaliente Partner Program | 15% Lifetime Commission",
-            "description": "Join the Scaliente partner program. Earn 15% lifetime recurring commission on every customer you refer. 90-day cookie. Monthly PayPal payouts."
+            "title": "Scaliente Partner Program | 10% to 20% for 12 Months",
+            "description": "Join the Scaliente partner program. Earn 10% to 20% commission depending on your tier for 12 months. 90-day cookie and monthly payout processing."
         },
         "stats": {
-            "commissionLabel": "Lifetime commission",
+            "commissionLabel": "Recurring commission",
             "discountLabel": "For your referrals",
             "cookieValue": "90d",
             "cookieLabel": "Cookie duration",
-            "durationValue": "Lifetime",
-            "durationLabel": "Recurring"
+            "durationValue": "12 months",
+            "durationLabel": "Commission duration"
         },
         "dashboard": {
             "title": "Affiliate Dashboard",
             "live": "Live",
             "referrals": "Referrals",
-            "referralsChange": "+3 this month",
+            "referralsChange": "Detailed tracking",
             "commissions": "Commissions",
-            "commissionsChange": "+€156 this month"
+            "commissionsChange": "Verifiable history"
         },
         "hero": {
             "badge": "Partner Program",
             "titleWhite": "Turn your audience into",
             "titleOrange": "recurring income",
-            "subtitle": "Earn 15% lifetime commission on every Scaliente customer you refer. Your referrals get 50% off their first month.",
+            "subtitle": "Earn 10% to 20% commission depending on your tier for 12 months. Your referrals get 20% off their first month.",
             "cta": "Apply Now"
         },
         "benefits": {
             "title": "Program Benefits",
             "items": {
                 "commission": {
-                    "title": "15% Lifetime",
-                    "desc": "Recurring commission on every payment from your referrals — not just the first month, forever."
+                    "title": "10% to 20% for 12 months",
+                    "desc": "Your commission rate depends on the tier assigned to you. Recurring commissions are generated for 12 months."
                 },
                 "discount": {
-                    "title": "50% for Referrals",
-                    "desc": "Your referrals get 50% off their first month. Makes your recommendation an easy sell."
+                    "title": "20% for your referrals",
+                    "desc": "Your referrals get 20% off their first month. Makes your recommendation easier to sell."
                 },
                 "cookie": {
                     "title": "90-Day Cookie",
                     "desc": "Your referral link stays active for 90 days. If they sign up within that window, you earn."
                 },
                 "payment": {
-                    "title": "Monthly PayPal",
+                    "title": "Monthly processing",
                     "desc": "Payouts on the 5th of every month. Minimum €50 threshold."
                 }
             }
@@ -506,31 +385,58 @@
         "howItWorks": {
             "title": "How It Works",
             "steps": [
-                { "step": "Step 1", "title": "Apply", "desc": "Fill out the form below. We review applications within 48 hours." },
-                { "step": "Step 2", "title": "Share", "desc": "Get your unique referral link and share it with your audience." },
-                { "step": "Step 3", "title": "Earn", "desc": "Earn 15% on every payment your referrals make, for life." }
+                {
+                    "step": "Step 1",
+                    "title": "Apply",
+                    "desc": "Complete the form below. Our team reviews every application."
+                },
+                {
+                    "step": "Step 2",
+                    "title": "Share",
+                    "desc": "Get your unique referral link and share it with your audience."
+                },
+                {
+                    "step": "Step 3",
+                    "title": "Earn",
+                    "desc": "Earn the commission associated with your tier for 12 months."
+                }
             ]
         },
         "earnings": {
-            "title": "Your Earning Potential",
-            "subtitle": "See how commissions add up with Scaliente's recurring model.",
-            "colReferrals": "Referrals",
-            "colPlan": "Avg. Plan",
-            "colMonthly": "Monthly",
-            "colYearly": "Yearly",
+            "title": "A clear tier progression",
+            "subtitle": "The program applies three clearly defined commission rates. Bronze is the default tier.",
+            "colReferrals": "Tier",
+            "colPlan": "Status",
+            "colMonthly": "Commission",
+            "colYearly": "Duration",
             "rows": [
-                { "referrals": "5 customers", "plan": "Starter (€89)", "monthly": "€66.75", "yearly": "€801" },
-                { "referrals": "10 customers", "plan": "Growth (€149)", "monthly": "€223.50", "yearly": "€2,682" },
-                { "referrals": "20 customers", "plan": "Scale (€249)", "monthly": "€747", "yearly": "€8,964" }
+                {
+                    "referrals": "Bronze",
+                    "plan": "Default tier",
+                    "monthly": "10%",
+                    "yearly": "12 months"
+                },
+                {
+                    "referrals": "Silver",
+                    "plan": "Assigned tier",
+                    "monthly": "15%",
+                    "yearly": "12 months"
+                },
+                {
+                    "referrals": "Gold",
+                    "plan": "Assigned tier",
+                    "monthly": "20%",
+                    "yearly": "12 months"
+                }
             ],
-            "disclaimer": "Estimates based on 15% recurring commission. Actual earnings depend on referral plan and retention."
+            "disclaimer": "Commission is calculated after the 2.9% platform fee is deducted. The displayed rates apply to the public partner program."
         },
         "audiences": {
             "title": "Who Should Join",
             "items": {
                 "creators": {
                     "title": "Content Creators",
-                    "desc": "YouTube, TikTok, Instagram — monetize your e-commerce audience."
+                    "desc": "YouTube, TikTok, Instagram: monetize your e-commerce audience."
                 },
                 "bloggers": {
                     "title": "Bloggers & Writers",
@@ -559,12 +465,30 @@
         "faq": {
             "title": "Frequently Asked Questions",
             "items": [
-                { "q": "How does the 15% lifetime commission work?", "a": "You earn 15% of every payment your referrals make to Scaliente — not just the first month. As long as they stay subscribed, you earn. If they upgrade plans, your commission increases too." },
-                { "q": "What does my referral get?", "a": "Your referrals receive 50% off their first month on any paid plan. This makes it easy for you to pitch — they save money, you earn commission." },
-                { "q": "How long does the 90-day cookie last?", "a": "When someone clicks your referral link, a 90-day tracking cookie is set. If they sign up within those 90 days, even if they come back directly, the referral is attributed to you." },
-                { "q": "When and how do I get paid?", "a": "Commissions are validated after a 30-day clearing period. Payouts are made via PayPal on the 5th of every month, with a minimum threshold of €50." },
-                { "q": "Is there a cost to join?", "a": "No. The partner program is completely free to join. No hidden fees, no requirements." },
-                { "q": "Can I promote Scaliente with paid ads?", "a": "Yes, as long as you don't bid on the Scaliente brand name. All other promotion strategies are welcome." }
+                {
+                    "q": "How does tiered commission work?",
+                    "a": "Bronze starts at 10%, Silver at 15% and Gold at 20%. Recurring commissions are generated for 12 months from conversion."
+                },
+                {
+                    "q": "What does my referral get?",
+                    "a": "Your referrals receive 20% off their first month on any paid plan. They save money while you earn commission."
+                },
+                {
+                    "q": "How long does the 90-day cookie last?",
+                    "a": "When someone clicks your referral link, a 90-day tracking cookie is set. If they sign up within those 90 days, even if they come back directly, the referral is attributed to you."
+                },
+                {
+                    "q": "When and how do I get paid?",
+                    "a": "Commissions are validated after a 30-day clearing period. Payouts are processed on the 5th of every month, with a minimum threshold of €50."
+                },
+                {
+                    "q": "Is there a cost to join?",
+                    "a": "No. The partner program is completely free to join. No hidden fees, no requirements."
+                },
+                {
+                    "q": "Can I promote Scaliente with paid ads?",
+                    "a": "Yes, as long as you don't bid on the Scaliente brand name. All other promotion strategies are welcome."
+                }
             ]
         },
         "form": {
@@ -584,9 +508,9 @@
                 "promotion": "Describe your promotion strategy..."
             },
             "submit": "Submit Application",
-            "disclaimer": "Free to join. We review applications within 48 hours.",
+            "disclaimer": "Applications are free. Our team reviews every request.",
             "successTitle": "Application Submitted!",
-            "successMessage": "Thank you! We'll review your application and get back to you within 48 hours."
+            "successMessage": "Thank you! Our team will review your application and contact you afterwards."
         }
     },
     "footer": {
@@ -606,6 +530,7 @@
             "terms": "Terms of Service",
             "legalMentions": "Legal Mentions",
             "calculator": "ROAS Calculator",
+            "guides": "Shopify Profit Guides",
             "compare": "Scaliente vs TrueProfit",
             "compareTripleWhale": "Scaliente vs Triple Whale",
             "compareLifetimely": "Scaliente vs Lifetimely",
@@ -622,12 +547,21 @@
     },
     "metadata": {
         "title": "Scaliente | Net Profit & Real Profitability Tracker for Shopify",
-        "description": "Calculate your True Profit in real-time. Scaliente automatically deducts Ads, COGS, and Shipping from your Shopify Revenue. Try free without credit card.",
+        "description": "Reconcile Shopify orders, ad spend, product costs, shipping, fees and taxes. Analyze net profit and attribution in one interface.",
         "ogTitle": "Scaliente | Net Profit & Real Profitability Tracker",
         "ogDescription": "Stop guessing your profitability. Scaliente centralizes your revenue and expenses to reveal your true profit.",
         "twitterTitle": "Scaliente | Net Profit & Real Profitability Tracker",
-        "twitterDescription": "Stop guessing. See your real profit in real-time.",
-        "keywords": ["ecommerce profit tracker", "shopify profit calculator", "net profit dashboard", "ad spend tracking", "ecommerce margin tracker", "shopify analytics tool", "real profit tracking", "dropshipping profit calculator"]
+        "twitterDescription": "Reconcile orders, costs and ad spend to understand your net profit and attribution.",
+        "keywords": [
+            "ecommerce profit tracker",
+            "shopify profit calculator",
+            "net profit dashboard",
+            "ad spend tracking",
+            "ecommerce margin tracker",
+            "shopify analytics tool",
+            "real profit tracking",
+            "dropshipping profit calculator"
+        ]
     },
     "calculator": {
         "meta": {
@@ -760,51 +694,99 @@
     },
     "featurePages": {
         "profitDashboard": {
-            "meta": { "title": "Net Profit Dashboard for Shopify | Scaliente", "description": "See your real Shopify profit in real-time. Scaliente deducts COGS, ads, shipping, and fees automatically." },
+            "meta": {
+                "title": "Net Profit Dashboard for Shopify | Scaliente",
+                "description": "Track Shopify profit as each order recalculates net profit, while advertising spend synchronizes once or twice daily."
+            },
             "hero": {
                 "title": "Your Real Profit, Not Shopify Revenue",
-                "subtitle": "See exactly what you keep after every cost. Updated every 5 minutes."
+                "subtitle": "See exactly what you keep after every cost. Orders in real time, ad spend refreshed daily."
             },
             "problem": {
                 "badge": "The Problem",
                 "title": "Revenue Is Not Profit",
                 "subtitle": "Shopify shows what comes in. Not what stays.",
                 "points": [
-                    { "title": "Revenue looks great, profit doesn't", "description": "Shopify reports gross revenue. It never subtracts your ad spend, product costs, shipping, or payment fees. You think you're profitable until you check your bank account." },
-                    { "title": "Hidden fees erode your margins", "description": "Stripe takes 2.9%, PayPal takes 3.49%, Klarna takes 5%. These fees add up silently across hundreds of orders and nobody tracks them per transaction." },
-                    { "title": "Spreadsheets break at scale", "description": "Manual tracking works for 10 orders a week. At 100+ orders per month across multiple ad platforms, one missed row means wrong decisions for the entire month." }
+                    {
+                        "title": "Revenue looks great, profit doesn't",
+                        "description": "Shopify reports gross revenue. It never subtracts your ad spend, product costs, shipping, or payment fees. You think you're profitable until you check your bank account."
+                    },
+                    {
+                        "title": "Hidden fees erode your margins",
+                        "description": "Payment fees vary by gateway and transaction. Without order-level reconciliation, they erode margin without appearing in Shopify revenue."
+                    },
+                    {
+                        "title": "Spreadsheets break at scale",
+                        "description": "Manual tracking works for 10 orders a week. At 100+ orders per month across multiple ad platforms, one missed row means wrong decisions for the entire month."
+                    }
                 ]
             },
             "solution": {
                 "badge": "The Solution",
                 "title": "One dashboard that shows",
                 "titleHighlight": "what you actually keep",
-                "description": "Scaliente connects to Shopify and your ad accounts, then automatically deducts every cost: product costs, shipping, payment gateway fees, ad spend, and taxes. Your net profit updates every 5 minutes."
+                "description": "Scaliente connects to Shopify and your ad accounts, then automatically deducts every cost: product costs, shipping, payment gateway fees, ad spend, and taxes. Your net profit is recalculated on every order; ad spend is refreshed daily."
             },
             "features": [
-                { "icon": "TrendingUp", "title": "Real-time net profit", "description": "Calculated for every order as it comes in. Daily, weekly, monthly views with automatic cost deduction." },
-                { "icon": "Percent", "title": "True net margin", "description": "Your margin after ALL costs, not just COGS. See exactly what percentage of revenue you keep." },
-                { "icon": "CalendarRange", "title": "Period comparison", "description": "Compare any date range against another. Spot trends, measure growth, and catch margin drops before they hurt." },
-                { "icon": "LayoutGrid", "title": "Consolidated multi-store view", "description": "Running multiple Shopify stores? See aggregated profit across all of them in a single dashboard." },
-                { "icon": "Zap", "title": "5-minute auto-refresh", "description": "No manual syncing. Your data refreshes automatically so you always see the latest numbers." },
-                { "icon": "PieChart", "title": "Cost breakdown", "description": "See exactly where your money goes: COGS, shipping, ad spend, gateway fees, and taxes in one visual breakdown." }
+                {
+                    "icon": "TrendingUp",
+                    "title": "Real-time net profit",
+                    "description": "Calculated for every order as it comes in. Daily, weekly, monthly views with automatic cost deduction."
+                },
+                {
+                    "icon": "Percent",
+                    "title": "True net margin",
+                    "description": "Your margin after ALL costs, not just COGS. See exactly what percentage of revenue you keep."
+                },
+                {
+                    "icon": "CalendarRange",
+                    "title": "Period comparison",
+                    "description": "Compare any date range against another. Spot trends, measure growth, and catch margin drops before they hurt."
+                },
+                {
+                    "icon": "LayoutGrid",
+                    "title": "Consolidated multi-store view",
+                    "description": "Running multiple Shopify stores? See aggregated profit across all of them in a single dashboard."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "A clear data cadence",
+                    "description": "Orders arrive through Shopify webhooks. Advertising spend synchronizes once or twice daily and can also be refreshed manually."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Cost breakdown",
+                    "description": "See exactly where your money goes: COGS, shipping, ad spend, gateway fees, and taxes in one visual breakdown."
+                }
             ],
             "howItWorks": {
                 "title": "Get your profit in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Connect Shopify", "description": "One-click OAuth. Your orders, products, and revenue sync automatically in under 2 minutes." },
-                    { "title": "Set your costs", "description": "Add product costs and shipping rates. Scaliente detects your payment gateways automatically." },
-                    { "title": "See your real profit", "description": "Your dashboard populates instantly. Net profit, margins, and trends updated every 5 minutes." }
+                    {
+                        "title": "Connect Shopify",
+                        "description": "Authorize the connection to your store. Scaliente then starts the initial sync of orders, products and revenue."
+                    },
+                    {
+                        "title": "Set your costs",
+                        "description": "Add product costs and shipping rates. Scaliente detects your payment gateways automatically."
+                    },
+                    {
+                        "title": "See your real profit",
+                        "description": "Your dashboard fills up from the first sync. Net profit, margins, and trends are recalculated on every new order."
+                    }
                 ]
             },
             "finalCta": {
                 "title": "Stop guessing your profit",
-                "subtitle": "Connect Shopify and see your real numbers in under 2 minutes."
+                "subtitle": "Connect Shopify and bring revenue, costs and advertising spend into one view."
             }
         },
         "adTracking": {
-            "meta": { "title": "Multi-Platform Ad Tracking for Shopify | Scaliente", "description": "Centralize Meta, Google, TikTok, Pinterest, and Snapchat ad spend. See true ROAS and POAS in one dashboard." },
+            "meta": {
+                "title": "Multi-Platform Ad Tracking for Shopify | Scaliente",
+                "description": "Centralize Meta, Google, TikTok, Pinterest, and Snapchat ad spend. See true ROAS and POAS in one dashboard."
+            },
             "hero": {
                 "title": "5 Ad Platforms. 1 Profit Dashboard.",
                 "subtitle": "Connect Meta, Google, TikTok, Pinterest, and Snapchat. See your real ROAS and POAS."
@@ -814,9 +796,18 @@
                 "title": "Ad Platforms Lie About Your ROAS",
                 "subtitle": "Each platform claims credit. None shows the full picture.",
                 "points": [
-                    { "title": "5 dashboards, 5 different stories", "description": "Meta says ROAS 4x, Google claims 3x, TikTok shows 5x. None of them account for product costs, shipping, or fees. Your real ROAS could be below breakeven." },
-                    { "title": "Platform attribution is inflated", "description": "Each ad platform counts conversions its own way. They all take credit for the same sale. You end up thinking you're printing money when you're actually losing it." },
-                    { "title": "No way to compare platforms fairly", "description": "Without a single source of truth that reconciles ad spend with actual profit, you can't decide where to increase budget and where to cut." }
+                    {
+                        "title": "5 dashboards, 5 different stories",
+                        "description": "Meta says ROAS 4x, Google claims 3x, TikTok shows 5x. None of them account for product costs, shipping, or fees. Your real ROAS could be below breakeven."
+                    },
+                    {
+                        "title": "Platform attribution is inflated",
+                        "description": "Each ad platform counts conversions its own way. They all take credit for the same sale. You end up thinking you're printing money when you're actually losing it."
+                    },
+                    {
+                        "title": "No way to compare platforms fairly",
+                        "description": "Without a single source of truth that reconciles ad spend with actual profit, you can't decide where to increase budget and where to cut."
+                    }
                 ]
             },
             "solution": {
@@ -826,20 +817,53 @@
                 "description": "Scaliente pulls ad spend from all 5 platforms and reconciles it with your Shopify revenue minus all costs. You see true ROAS (revenue-based) and POAS (profit-based) for every platform, every campaign."
             },
             "features": [
-                { "icon": "Layers", "title": "5 platforms in one view", "description": "Meta, Google, TikTok, Pinterest, Snapchat. All connected via secure OAuth in minutes. One unified dashboard." },
-                { "icon": "Target", "title": "True ROAS & POAS", "description": "ROAS based on real revenue, POAS based on actual profit after all costs. No more inflated platform metrics." },
-                { "icon": "Activity", "title": "Breakeven ROAS", "description": "Know the exact ROAS threshold below which you lose money. Different for each product based on its cost structure." },
-                { "icon": "BarChart3", "title": "Campaign-level insights", "description": "Drill down into individual campaigns. See spend, revenue, profit, ROAS, and POAS per campaign per platform." },
-                { "icon": "ArrowLeftRight", "title": "Cross-platform comparison", "description": "Compare Meta vs Google vs TikTok performance side by side. Identify which platform delivers the best profit per euro spent." },
-                { "icon": "DollarSign", "title": "Daily spend tracking", "description": "See your daily ad spend across all platforms and its direct impact on your daily profit margin." }
+                {
+                    "icon": "Layers",
+                    "title": "5 platforms in one view",
+                    "description": "Meta, Google, TikTok, Pinterest, Snapchat. All connected via secure OAuth in minutes. One unified dashboard."
+                },
+                {
+                    "icon": "Target",
+                    "title": "True ROAS & POAS",
+                    "description": "ROAS based on real revenue, POAS based on actual profit after all costs. No more inflated platform metrics."
+                },
+                {
+                    "icon": "Activity",
+                    "title": "Breakeven ROAS",
+                    "description": "Know the exact ROAS threshold below which you lose money. Different for each product based on its cost structure."
+                },
+                {
+                    "icon": "BarChart3",
+                    "title": "Campaign-level insights",
+                    "description": "Drill down into individual campaigns. See spend, revenue, profit, ROAS, and POAS per campaign per platform."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Cross-platform comparison",
+                    "description": "Compare Meta vs Google vs TikTok performance side by side. Identify which platform delivers the best profit per euro spent."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Daily spend tracking",
+                    "description": "See your daily ad spend across all platforms and its direct impact on your daily profit margin."
+                }
             ],
             "howItWorks": {
                 "title": "Unify your ads in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Connect your ad accounts", "description": "Secure OAuth for each platform. No API keys, no manual setup. Takes 2 minutes for all 5." },
-                    { "title": "Automatic reconciliation", "description": "Scaliente matches ad spend to Shopify sales and subtracts all costs to calculate true profitability." },
-                    { "title": "Make better decisions", "description": "See which campaigns print profit and which burn cash. Reallocate budget based on real data." }
+                    {
+                        "title": "Connect your ad accounts",
+                        "description": "Secure OAuth for each platform. No API keys, no manual setup. Takes 2 minutes for all 5."
+                    },
+                    {
+                        "title": "Automatic reconciliation",
+                        "description": "Scaliente matches ad spend to Shopify sales and subtracts all costs to calculate true profitability."
+                    },
+                    {
+                        "title": "Make better decisions",
+                        "description": "See which campaigns print profit and which burn cash. Reallocate budget based on real data."
+                    }
                 ]
             },
             "finalCta": {
@@ -848,7 +872,10 @@
             }
         },
         "productAnalytics": {
-            "meta": { "title": "Product Profitability Analytics | Scaliente", "description": "Analyze the net profit of each product. Identify top performers and money losers in your catalog." },
+            "meta": {
+                "title": "Product Profitability Analytics | Scaliente",
+                "description": "Analyze the net profit of each product. Identify top performers and money losers in your catalog."
+            },
             "hero": {
                 "title": "Know Which Products Make Money",
                 "subtitle": "Identify your star products and cut the losers."
@@ -858,9 +885,18 @@
                 "title": "Your Best-Seller Might Be Losing Money",
                 "subtitle": "High revenue doesn't mean high profit.",
                 "points": [
-                    { "title": "Revenue hides the truth", "description": "A product selling 500 units/month looks great. But if the margin is 5% after COGS, shipping, and fees, you're running a charity. Without per-product profit data, you can't know." },
-                    { "title": "Ad spend isn't allocated per product", "description": "You spend thousands on ads but have no idea which products those ads are actually driving. You optimize for revenue, not for the products that deliver the highest profit." },
-                    { "title": "Catalog decisions are based on gut feeling", "description": "Which products to promote, which to discontinue, which to reorder? Without profit-per-product data, every decision is a guess." }
+                    {
+                        "title": "Revenue hides the truth",
+                        "description": "A product selling 500 units/month looks great. But if the margin is 5% after COGS, shipping, and fees, you're running a charity. Without per-product profit data, you can't know."
+                    },
+                    {
+                        "title": "Ad spend isn't allocated per product",
+                        "description": "You spend thousands on ads but have no idea which products those ads are actually driving. You optimize for revenue, not for the products that deliver the highest profit."
+                    },
+                    {
+                        "title": "Catalog decisions are based on gut feeling",
+                        "description": "Which products to promote, which to discontinue, which to reorder? Without profit-per-product data, every decision is a guess."
+                    }
                 ]
             },
             "solution": {
@@ -870,20 +906,53 @@
                 "description": "Scaliente calculates the real profit of every product by deducting its cost, allocated shipping, and payment fees. See exactly which SKUs drive your bottom line and which ones drag it down."
             },
             "features": [
-                { "icon": "Package", "title": "Per-product net margin", "description": "Each product shows its revenue, cost, shipping allocation, fees, and resulting net margin. No manual calculation needed." },
-                { "icon": "TrendingUp", "title": "Top & flop ranking", "description": "Products ranked by profitability. Instantly see your top performers and the ones costing you money." },
-                { "icon": "DollarSign", "title": "Cost management", "description": "Set product costs per variant and quantity. Supports dropshipping (per-unit) and classic (weight-based) models." },
-                { "icon": "PieChart", "title": "Margin distribution", "description": "Visualize how profit is distributed across your catalog. Identify concentration risks and diversification opportunities." },
-                { "icon": "Layers", "title": "Multi-variant support", "description": "Different costs per size, color, or variant? Scaliente handles it. Each variant tracks its own cost and margin." },
-                { "icon": "Target", "title": "Data-driven catalog decisions", "description": "Stop guessing which products to promote or discontinue. Let profit data guide your catalog strategy." }
+                {
+                    "icon": "Package",
+                    "title": "Per-product net margin",
+                    "description": "Each product shows its revenue, cost, shipping allocation, fees, and resulting net margin. No manual calculation needed."
+                },
+                {
+                    "icon": "TrendingUp",
+                    "title": "Top & flop ranking",
+                    "description": "Products ranked by profitability. Instantly see your top performers and the ones costing you money."
+                },
+                {
+                    "icon": "DollarSign",
+                    "title": "Cost management",
+                    "description": "Set product costs per variant and quantity. Supports dropshipping (per-unit) and classic (weight-based) models."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Margin distribution",
+                    "description": "Visualize how profit is distributed across your catalog. Identify concentration risks and diversification opportunities."
+                },
+                {
+                    "icon": "Layers",
+                    "title": "Multi-variant support",
+                    "description": "Different costs per size, color, or variant? Scaliente handles it. Each variant tracks its own cost and margin."
+                },
+                {
+                    "icon": "Target",
+                    "title": "Data-driven catalog decisions",
+                    "description": "Stop guessing which products to promote or discontinue. Let profit data guide your catalog strategy."
+                }
             ],
             "howItWorks": {
                 "title": "Analyze your products in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Sync your catalog", "description": "Shopify products and variants import automatically during setup. No manual data entry." },
-                    { "title": "Set your product costs", "description": "Add COGS per product or variant. Supports per-unit pricing for dropshippers and bulk pricing." },
-                    { "title": "See per-product profit", "description": "Each product shows its true margin after all costs. Sort, filter, and optimize your catalog." }
+                    {
+                        "title": "Sync your catalog",
+                        "description": "Shopify products and variants import automatically during setup. No manual data entry."
+                    },
+                    {
+                        "title": "Set your product costs",
+                        "description": "Add COGS per product or variant. Supports per-unit pricing for dropshippers and bulk pricing."
+                    },
+                    {
+                        "title": "See per-product profit",
+                        "description": "Each product shows its true margin after all costs. Sort, filter, and optimize your catalog."
+                    }
                 ]
             },
             "finalCta": {
@@ -892,7 +961,10 @@
             }
         },
         "multiShop": {
-            "meta": { "title": "Multi-Store Management for Shopify | Scaliente", "description": "Manage up to 3 Shopify stores from a single Scaliente account. Consolidated view, instant switching." },
+            "meta": {
+                "title": "Multi-Store Management for Shopify | Scaliente",
+                "description": "Manage up to 3 Shopify stores from a single Scaliente account. Consolidated view, instant switching."
+            },
             "hero": {
                 "title": "Multiple Stores. One Dashboard.",
                 "subtitle": "Manage all your Shopify stores from a single account."
@@ -902,9 +974,18 @@
                 "title": "Multiple Stores Multiply the Chaos",
                 "subtitle": "More stores means more tabs, more spreadsheets, more confusion.",
                 "points": [
-                    { "title": "Separate tools for each store", "description": "Every store needs its own analytics login, its own spreadsheet, its own ad tracking. Managing 3 stores means 3x the work and 3x the chance of mistakes." },
-                    { "title": "No consolidated view", "description": "You can't see total profit across all stores without manually exporting and merging data. If one store is losing money, you might not notice until the end of the month." },
-                    { "title": "Comparing stores is painful", "description": "Is Store A more profitable than Store B? After accounting for different currencies, different ad accounts, and different cost structures? Good luck figuring that out in a spreadsheet." }
+                    {
+                        "title": "Separate tools for each store",
+                        "description": "Every store needs its own analytics login, its own spreadsheet, its own ad tracking. Managing 3 stores means 3x the work and 3x the chance of mistakes."
+                    },
+                    {
+                        "title": "No consolidated view",
+                        "description": "You can't see total profit across all stores without manually exporting and merging data. If one store is losing money, you might not notice until the end of the month."
+                    },
+                    {
+                        "title": "Comparing stores is painful",
+                        "description": "Is Store A more profitable than Store B? After accounting for different currencies, different ad accounts, and different cost structures? Good luck figuring that out in a spreadsheet."
+                    }
                 ]
             },
             "solution": {
@@ -914,20 +995,53 @@
                 "description": "Connect up to 3 Shopify stores to a single Scaliente account. See consolidated profit across all stores, or drill into any single store. Switch between them instantly."
             },
             "features": [
-                { "icon": "LayoutGrid", "title": "Consolidated 'All stores' view", "description": "See total revenue, profit, margins, and ad spend aggregated across all your stores in one dashboard." },
-                { "icon": "RefreshCw", "title": "Instant store switching", "description": "Switch between stores with one click. No logging out, no separate accounts, no waiting." },
-                { "icon": "BarChart3", "title": "Cross-store comparison", "description": "Compare performance metrics between stores. Identify which store drives the most profit per euro invested." },
-                { "icon": "Shield", "title": "Separate cost configurations", "description": "Each store keeps its own product costs, shipping rates, and gateway fees. The consolidated view handles the math." },
-                { "icon": "ArrowLeftRight", "title": "Multi-currency normalization", "description": "Stores in different currencies? Scaliente converts everything to your primary currency with daily ECB rates before consolidation." },
-                { "icon": "FileText", "title": "Per-store and combined reports", "description": "Generate profit reports for individual stores or across all stores combined. Export to CSV for accounting." }
+                {
+                    "icon": "LayoutGrid",
+                    "title": "Consolidated 'All stores' view",
+                    "description": "See total revenue, profit, margins, and ad spend aggregated across all your stores in one dashboard."
+                },
+                {
+                    "icon": "RefreshCw",
+                    "title": "Instant store switching",
+                    "description": "Switch between stores with one click. No logging out, no separate accounts, no waiting."
+                },
+                {
+                    "icon": "BarChart3",
+                    "title": "Cross-store comparison",
+                    "description": "Compare performance metrics between stores. Identify which store drives the most profit per euro invested."
+                },
+                {
+                    "icon": "Shield",
+                    "title": "Separate cost configurations",
+                    "description": "Each store keeps its own product costs, shipping rates, and gateway fees. The consolidated view handles the math."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Multi-currency normalization",
+                    "description": "Stores in different currencies? Scaliente converts everything to your primary currency with daily ECB rates before consolidation."
+                },
+                {
+                    "icon": "FileText",
+                    "title": "Per-store and combined reports",
+                    "description": "Generate profit reports for individual stores or across all stores combined. Export to CSV for accounting."
+                }
             ],
             "howItWorks": {
                 "title": "Consolidate your stores in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Connect your stores", "description": "Add each Shopify store via OAuth. Each store syncs its data independently." },
-                    { "title": "Configure costs per store", "description": "Set product costs, shipping rates, and payment fees for each store. They're kept separate." },
-                    { "title": "View consolidated or individual", "description": "Toggle between 'All stores' for the big picture or drill into any single store." }
+                    {
+                        "title": "Connect your stores",
+                        "description": "Add each Shopify store via OAuth. Each store syncs its data independently."
+                    },
+                    {
+                        "title": "Configure costs per store",
+                        "description": "Set product costs, shipping rates, and payment fees for each store. They're kept separate."
+                    },
+                    {
+                        "title": "View consolidated or individual",
+                        "description": "Toggle between 'All stores' for the big picture or drill into any single store."
+                    }
                 ]
             },
             "finalCta": {
@@ -936,7 +1050,10 @@
             }
         },
         "multiCurrency": {
-            "meta": { "title": "Multi-Currency Profit Tracking | Scaliente", "description": "Automatic currency conversion with daily ECB rates. Track profit across multiple currencies accurately." },
+            "meta": {
+                "title": "Multi-Currency Profit Tracking | Scaliente",
+                "description": "Automatic currency conversion with daily ECB rates. Track profit across multiple currencies accurately."
+            },
             "hero": {
                 "title": "Multi-Currency, Zero Headaches",
                 "subtitle": "Spending in USD, selling in EUR? Scaliente converts everything automatically."
@@ -946,9 +1063,18 @@
                 "title": "Currency Mismatches Corrupt Your Data",
                 "subtitle": "When ad spend and revenue are in different currencies, your profit numbers lie.",
                 "points": [
-                    { "title": "Ads in USD, sales in EUR", "description": "Your Meta ad account charges in US dollars, but your Shopify store sells in euros. If you compare the raw numbers, your ROAS looks 10% better than it actually is." },
-                    { "title": "Manual conversion is always wrong", "description": "Using a fixed exchange rate or monthly average introduces errors on every single transaction. Rates fluctuate daily, and small differences compound across hundreds of orders." },
-                    { "title": "Multi-store, multi-currency nightmare", "description": "Store A sells in EUR, Store B in GBP, ads run in USD. Consolidating profit across stores without proper conversion is impossible to get right manually." }
+                    {
+                        "title": "Ads in USD, sales in EUR",
+                        "description": "Your Meta ad account charges in US dollars, but your Shopify store sells in euros. If you compare the raw numbers, your ROAS looks 10% better than it actually is."
+                    },
+                    {
+                        "title": "Manual conversion is always wrong",
+                        "description": "Using a fixed exchange rate or monthly average introduces errors on every single transaction. Rates fluctuate daily, and small differences compound across hundreds of orders."
+                    },
+                    {
+                        "title": "Multi-store, multi-currency nightmare",
+                        "description": "Store A sells in EUR, Store B in GBP, ads run in USD. Consolidating profit across stores without proper conversion is impossible to get right manually."
+                    }
                 ]
             },
             "solution": {
@@ -958,20 +1084,53 @@
                 "description": "Scaliente uses official European Central Bank exchange rates updated daily. Every transaction is converted individually on the date it occurred, then aggregated. No approximations, no manual work."
             },
             "features": [
-                { "icon": "Globe", "title": "30+ currencies supported", "description": "EUR, USD, GBP, CZK, PLN, SEK, CHF, and more. Whatever currency your stores and ad accounts use, Scaliente handles it." },
-                { "icon": "ArrowLeftRight", "title": "Per-transaction conversion", "description": "Each order and each ad spend entry is converted using the exchange rate from that specific date. Not a monthly average." },
-                { "icon": "Coins", "title": "Official ECB rates", "description": "Rates sourced from the European Central Bank, the reference for euro-area transactions. Updated automatically every business day." },
-                { "icon": "Zap", "title": "Automatic detection", "description": "Scaliente detects your store currency from Shopify and your ad account currencies from each platform. No manual configuration." },
-                { "icon": "Clock", "title": "Historical accuracy", "description": "Past transactions use the historical rate from their date, not today's rate. Your old reports stay accurate even as rates change." },
-                { "icon": "Layers", "title": "Consolidated multi-currency view", "description": "Running stores in different currencies? The 'All stores' view converts everything to your primary currency before aggregating." }
+                {
+                    "icon": "Globe",
+                    "title": "30+ currencies supported",
+                    "description": "EUR, USD, GBP, CZK, PLN, SEK, CHF, and more. Whatever currency your stores and ad accounts use, Scaliente handles it."
+                },
+                {
+                    "icon": "ArrowLeftRight",
+                    "title": "Per-transaction conversion",
+                    "description": "Each order and each ad spend entry is converted using the exchange rate from that specific date. Not a monthly average."
+                },
+                {
+                    "icon": "Coins",
+                    "title": "Official ECB rates",
+                    "description": "Rates sourced from the European Central Bank, the reference for euro-area transactions. Updated automatically every business day."
+                },
+                {
+                    "icon": "Zap",
+                    "title": "Automatic detection",
+                    "description": "Scaliente detects your store currency from Shopify and your ad account currencies from each platform. No manual configuration."
+                },
+                {
+                    "icon": "Clock",
+                    "title": "Historical accuracy",
+                    "description": "Past transactions use the historical rate from their date, not today's rate. Your old reports stay accurate even as rates change."
+                },
+                {
+                    "icon": "Layers",
+                    "title": "Consolidated multi-currency view",
+                    "description": "Running stores in different currencies? The 'All stores' view converts everything to your primary currency before aggregating."
+                }
             ],
             "howItWorks": {
                 "title": "Multi-currency in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Connect your accounts", "description": "Scaliente auto-detects currencies from your Shopify store and ad platform accounts." },
-                    { "title": "Automatic daily conversion", "description": "ECB rates update every business day. Each transaction converts using the rate from its date." },
-                    { "title": "See accurate profit", "description": "All amounts displayed in your primary currency. No manual conversion, no approximation errors." }
+                    {
+                        "title": "Connect your accounts",
+                        "description": "Scaliente auto-detects currencies from your Shopify store and ad platform accounts."
+                    },
+                    {
+                        "title": "Automatic daily conversion",
+                        "description": "ECB rates update every business day. Each transaction converts using the rate from its date."
+                    },
+                    {
+                        "title": "See accurate profit",
+                        "description": "All amounts displayed in your primary currency. No manual conversion, no approximation errors."
+                    }
                 ]
             },
             "finalCta": {
@@ -980,7 +1139,10 @@
             }
         },
         "reports": {
-            "meta": { "title": "Profit Reports for Shopify | Scaliente", "description": "Generate detailed profit reports with all your metrics. Export to CSV. Compare periods." },
+            "meta": {
+                "title": "Profit Reports for Shopify | Scaliente",
+                "description": "Generate detailed profit reports with all your metrics. Export to CSV. Compare periods."
+            },
             "hero": {
                 "title": "Profit Reports That Actually Help",
                 "subtitle": "Generate detailed reports with every metric you need. Export anytime."
@@ -990,9 +1152,18 @@
                 "title": "Building Reports Manually Wastes Hours",
                 "subtitle": "Every month, the same painful ritual of exporting, merging, and calculating.",
                 "points": [
-                    { "title": "Export, merge, pray", "description": "Download Shopify data, pull ad spend from 5 platforms, merge in Excel, manually calculate margins. One wrong formula and your entire month's analysis is off." },
-                    { "title": "No standardized format", "description": "Every month you rebuild the same report from scratch. There's no template that automatically pulls all the data. And when someone asks 'what was our margin in March?', you need 30 minutes to answer." },
-                    { "title": "Period comparison is manual", "description": "Comparing this month vs last month means two separate exports, manual alignment of date ranges, and hoping you didn't mix up the columns." }
+                    {
+                        "title": "Export, merge, pray",
+                        "description": "Download Shopify data, pull ad spend from 5 platforms, merge in Excel, manually calculate margins. One wrong formula and your entire month's analysis is off."
+                    },
+                    {
+                        "title": "No standardized format",
+                        "description": "Every month you rebuild the same report from scratch. There's no template that automatically pulls all the data. And when someone asks 'what was our margin in March?', you need 30 minutes to answer."
+                    },
+                    {
+                        "title": "Period comparison is manual",
+                        "description": "Comparing this month vs last month means two separate exports, manual alignment of date ranges, and hoping you didn't mix up the columns."
+                    }
                 ]
             },
             "solution": {
@@ -1002,41 +1173,607 @@
                 "description": "Scaliente generates your profit reports automatically with all metrics: revenue, costs, margins, ROAS, and ad spend. Pick any date range, compare periods, and export to CSV in one click."
             },
             "features": [
-                { "icon": "Download", "title": "One-click CSV export", "description": "Export your full report with all metrics in CSV format. Ready for your accountant, your partner, or your own analysis." },
-                { "icon": "FileText", "title": "Comprehensive metrics", "description": "Revenue, COGS, shipping, fees, ad spend, net profit, net margin, ROAS, POAS. Everything in one report." },
-                { "icon": "CalendarRange", "title": "Flexible date ranges", "description": "Today, yesterday, last 7 days, this month, last month, or any custom date range. Your report adapts instantly." },
-                { "icon": "PieChart", "title": "Visual breakdowns", "description": "Charts showing cost distribution, profit trends, and margin evolution. See the story behind the numbers." },
-                { "icon": "Clock", "title": "Period-over-period comparison", "description": "Compare any period against the previous one. See growth, spot regressions, and measure the impact of your changes." },
-                { "icon": "Users", "title": "Shareable insights", "description": "Export reports for your team, your investors, or your accountant. Standardized format every time." }
+                {
+                    "icon": "Download",
+                    "title": "One-click CSV export",
+                    "description": "Export your full report with all metrics in CSV format. Ready for your accountant, your partner, or your own analysis."
+                },
+                {
+                    "icon": "FileText",
+                    "title": "Comprehensive metrics",
+                    "description": "Revenue, COGS, shipping, fees, ad spend, net profit, net margin, ROAS, POAS. Everything in one report."
+                },
+                {
+                    "icon": "CalendarRange",
+                    "title": "Flexible date ranges",
+                    "description": "Today, yesterday, last 7 days, this month, last month, or any custom date range. Your report adapts instantly."
+                },
+                {
+                    "icon": "PieChart",
+                    "title": "Visual breakdowns",
+                    "description": "Charts showing cost distribution, profit trends, and margin evolution. See the story behind the numbers."
+                },
+                {
+                    "icon": "Clock",
+                    "title": "Period-over-period comparison",
+                    "description": "Compare any period against the previous one. See growth, spot regressions, and measure the impact of your changes."
+                },
+                {
+                    "icon": "Users",
+                    "title": "Shareable insights",
+                    "description": "Export reports for your team, your investors, or your accountant. Standardized format every time."
+                }
             ],
             "howItWorks": {
                 "title": "Generate reports in",
                 "titleHighlight": "3 steps",
                 "steps": [
-                    { "title": "Select your date range", "description": "Choose from presets or pick any custom range. Reports generate instantly." },
-                    { "title": "Review your metrics", "description": "Revenue, costs, margins, ROAS and more. All calculated automatically from your synced data." },
-                    { "title": "Export or compare", "description": "Download as CSV or compare against another period to measure growth and spot trends." }
+                    {
+                        "title": "Select your date range",
+                        "description": "Choose from presets or pick any custom range. Reports generate instantly."
+                    },
+                    {
+                        "title": "Review your metrics",
+                        "description": "Revenue, costs, margins, ROAS and more. All calculated automatically from your synced data."
+                    },
+                    {
+                        "title": "Export or compare",
+                        "description": "Download as CSV or compare against another period to measure growth and spot trends."
+                    }
                 ]
             },
             "finalCta": {
                 "title": "Stop wasting hours on manual reports",
                 "subtitle": "Connect Shopify and generate profit reports in seconds."
             }
+        },
+        "pixelAttribution": {
+            "meta": {
+                "title": "Shopify Pixel and Multi-Touch Attribution | Scaliente",
+                "description": "Install a Shopify Web Pixel, connect journeys to orders, and analyse attribution, ROAS and profit in Scaliente.",
+                "keywords": [
+                    "Shopify pixel",
+                    "Shopify attribution",
+                    "Shopify tracking",
+                    "Meta pixel Shopify",
+                    "ecommerce multi-touch attribution"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Shopify Web Pixel · Multi-touch attribution",
+                "title": "The Shopify pixel that connects every sale to profit.",
+                "subtitle": "Follow the journey, connect the order to its source, and compare revenue with ad spend and actual costs.",
+                "note": "Collection starts when the Pixel is activated. Scaliente does not invent earlier history.",
+                "offer": "Included at no extra cost in every plan, including €0 Discovery.",
+                "primaryCta": "Install Scaliente",
+                "secondaryCta": "See how it works",
+                "visualAlt": "Anonymised Scaliente advertising attribution dashboard",
+                "visualLabel": "Attribution",
+                "statusLabel": "Shopify Web Pixel active",
+                "proof": [
+                    {
+                        "value": "Shopify Web Pixel",
+                        "label": "Extension installed from Scaliente"
+                    },
+                    {
+                        "value": "Full journey",
+                        "label": "From page view to order"
+                    },
+                    {
+                        "value": "6 models",
+                        "label": "Deterministic attribution rules"
+                    },
+                    {
+                        "value": "5 ad platforms",
+                        "label": "Combined in the acquisition view"
+                    }
+                ]
+            },
+            "architecture": {
+                "eyebrow": "A chain of evidence",
+                "title": "From click to profit, without a black box.",
+                "description": "Scaliente retains useful journey signals, connects them to the Shopify order, then puts them in the economic context of the store.",
+                "steps": [
+                    {
+                        "icon": "MousePointerClick",
+                        "title": "Click and campaign",
+                        "description": "Available UTM parameters, click identifiers and advertising cookies are captured with the event."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Shopify journey",
+                        "description": "The Web Pixel follows standard storefront, cart and checkout events."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Matched order",
+                        "description": "The Shopify client identifier connects touchpoints to the completed order."
+                    },
+                    {
+                        "icon": "CircleDollarSign",
+                        "title": "Profitable decision",
+                        "description": "Attributed revenue is read alongside ad spend, product costs, fees, shipping and taxes."
+                    }
+                ]
+            },
+            "events": {
+                "eyebrow": "Observed funnel",
+                "title": "A pixel built for the complete Shopify journey.",
+                "description": "Standard events are collected in a consistent structure that can reconstruct the path preceding a purchase.",
+                "items": [
+                    "Page viewed",
+                    "Product viewed",
+                    "Product added to cart",
+                    "Product removed from cart",
+                    "Collection viewed",
+                    "Search submitted",
+                    "Cart viewed",
+                    "Checkout started",
+                    "Payment information submitted",
+                    "Order completed"
+                ],
+                "privacyNote": "The Pixel runs as a Shopify extension in a sandboxed environment. Server-side forwarding settings include a consent gate; the merchant remains responsible for its legal configuration."
+            },
+            "models": {
+                "eyebrow": "Explainable attribution",
+                "title": "Change the model. Keep the same history.",
+                "description": "Models are deterministic rules applied to the collected journey. Compare their readings without replacing the Pixel.",
+                "items": [
+                    {
+                        "title": "Last click",
+                        "description": "The last touchpoint receives the conversion credit."
+                    },
+                    {
+                        "title": "Last non-direct click",
+                        "description": "The last known channel receives credit when the final visit is direct."
+                    },
+                    {
+                        "title": "First click",
+                        "description": "The first observed touchpoint receives the credit."
+                    },
+                    {
+                        "title": "Linear",
+                        "description": "Credit is split equally across all touchpoints."
+                    },
+                    {
+                        "title": "Time decay",
+                        "description": "Interactions closer to the order receive more credit."
+                    },
+                    {
+                        "title": "Position based",
+                        "description": "The first and last touchpoints receive more weight than the middle steps."
+                    }
+                ],
+                "coverageTitle": "Coverage remains visible",
+                "coverageDescription": "Scaliente considers the channel reading actionable from 60% attributed revenue. Below that threshold, the interface flags partial coverage and keeps the interpretation cautious."
+            },
+            "difference": {
+                "eyebrow": "The Scaliente difference",
+                "title": "The pixel does not stop at conversion.",
+                "description": "A purchase event says that a sale happened. Scaliente connects it to the data needed to understand whether that sale actually created margin.",
+                "inputLabel": "Connected data",
+                "inputs": [
+                    "Journey and advertising source",
+                    "Shopify orders and refunds",
+                    "Consolidated advertising spend",
+                    "Product costs, shipping, fees and taxes"
+                ],
+                "outputLabel": "Resulting view",
+                "outputs": [
+                    "Attributed revenue by channel",
+                    "Platform ROAS compared with observed ROAS",
+                    "Profit and contribution by channel",
+                    "Tracking coverage and health"
+                ],
+                "platforms": [
+                    "Shopify",
+                    "Meta",
+                    "Google",
+                    "TikTok",
+                    "Pinterest",
+                    "Snapchat"
+                ]
+            },
+            "setup": {
+                "eyebrow": "Setup",
+                "title": "Installed from your Scaliente workspace.",
+                "steps": [
+                    {
+                        "title": "Connect Shopify",
+                        "description": "Allow Scaliente to read customer events and create the Web Pixel."
+                    },
+                    {
+                        "title": "Activate the Pixel",
+                        "description": "Scaliente creates or updates the extension idempotently from settings."
+                    },
+                    {
+                        "title": "Monitor health",
+                        "description": "Event volume, order coverage and configured forwarding remain visible."
+                    }
+                ]
+            },
+            "faq": {
+                "eyebrow": "Direct answers",
+                "title": "Shopify pixel: useful questions.",
+                "items": [
+                    {
+                        "question": "What is a Shopify attribution pixel?",
+                        "answer": "It is an extension that listens to Shopify journey events, retains available campaign signals and connects them to orders so sales sources can be analysed."
+                    },
+                    {
+                        "question": "Does the Scaliente Pixel replace Meta, Google or TikTok pixels?",
+                        "answer": "No. It complements advertising integrations: Scaliente builds its own journey view and consolidates performance from the five supported platforms."
+                    },
+                    {
+                        "question": "Does the Pixel slow down the store?",
+                        "answer": "It runs as a Shopify Web Pixel extension in a sandboxed environment. Sending to the Scaliente collector is asynchronous and designed not to block the storefront."
+                    },
+                    {
+                        "question": "When does the data become actionable?",
+                        "answer": "Collection begins after installation and does not recreate the past. Scaliente displays coverage and considers the channel view actionable from 60% attributed revenue."
+                    },
+                    {
+                        "question": "Which attribution models are available?",
+                        "answer": "Last click, last non-direct click, first click, linear, time decay and position-based attribution."
+                    },
+                    {
+                        "question": "Which advertising platforms are combined?",
+                        "answer": "Meta, Google, TikTok, Pinterest and Snapchat are consolidated in Ads Insights. Available server-side forwarding is configured by platform."
+                    }
+                ]
+            },
+            "finalCta": {
+                "eyebrow": "From signal to decision",
+                "title": "Connect sales to their source — then to profit.",
+                "subtitle": "Connect Shopify, activate the Pixel and let the history build in Scaliente.",
+                "button": "Install Scaliente",
+                "note": "The Pixel is included in every plan, including €0 Discovery. Collection starts after activation."
+            }
+        },
+        "aiCustomerService": {
+            "meta": {
+                "title": "AI Customer Service for Shopify — Closed Beta | Scaliente",
+                "description": "A Shopify AI Inbox that brings together email, orders, delivery, history and disputes to prepare replies under human control. Closed beta.",
+                "keywords": [
+                    "AI customer service Shopify",
+                    "Shopify AI support",
+                    "ecommerce AI inbox",
+                    "Shopify email assistant",
+                    "Shopify customer support automation"
+                ]
+            },
+            "hero": {
+                "eyebrow": "Closed beta · Email + Shopify",
+                "title": "Reply with context. Keep control.",
+                "subtitle": "Orders, delivery, history and disputes come together before each draft. Your team decides what gets sent.",
+                "primaryCta": "Request access",
+                "primaryHref": "mailto:contact@scaliente.com?subject=AI%20Inbox%20Beta",
+                "secondaryCta": "See how it works",
+                "visualAlt": "Anonymised Scaliente AI Inbox demo with a customer conversation and proposed draft",
+                "visualLabel": "Anonymised demo",
+                "proof": [
+                    {
+                        "value": "Order",
+                        "label": "Matched to the right Shopify purchase"
+                    },
+                    {
+                        "value": "Delivery",
+                        "label": "Available tracking in context"
+                    },
+                    {
+                        "value": "Dispute",
+                        "label": "Flagged before a sensitive reply"
+                    },
+                    {
+                        "value": "History",
+                        "label": "Conversations and purchases connected"
+                    }
+                ]
+            },
+            "problem": {
+                "eyebrow": "What slows support down",
+                "title": "The customer waits. Your team is still finding the context.",
+                "description": "The repetitive work is not only writing. It is searching, checking facts and moving between tools.",
+                "items": [
+                    {
+                        "icon": "Route",
+                        "title": "Switch tabs before replying",
+                        "description": "Finding the customer, the right order, delivery status and any refund fragments every support task."
+                    },
+                    {
+                        "icon": "Clock3",
+                        "title": "Repeat the same searches",
+                        "description": "Tracking, cancellation and return requests take time even when the data already exists in Shopify."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Correct an overconfident AI",
+                        "description": "A plausible but wrong refund, delivery or dispute answer costs more than a draft that asks for approval."
+                    }
+                ]
+            },
+            "workflow": {
+                "eyebrow": "From message to reply",
+                "title": "A short workflow, with a human decision at the right moment.",
+                "description": "Scaliente gathers the facts before writing and keeps sensitive actions behind explicit approval.",
+                "steps": [
+                    {
+                        "icon": "Inbox",
+                        "title": "The message arrives",
+                        "description": "A connected support mailbox feeds an Inbox designed for ecommerce requests."
+                    },
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Context comes together",
+                        "description": "Customer, order, delivery, refunds, disputes and history are linked to the thread."
+                    },
+                    {
+                        "icon": "BrainCircuit",
+                        "title": "The draft is prepared",
+                        "description": "The assistant proposes a reply in the latest message language using the known rules."
+                    },
+                    {
+                        "icon": "UserCheck",
+                        "title": "The team decides",
+                        "description": "Review, edit, request approval or send remains a human choice."
+                    }
+                ]
+            },
+            "context": {
+                "eyebrow": "Native Shopify context",
+                "title": "The reply starts from store facts.",
+                "description": "The Inbox does not treat an email as isolated text. It builds a bounded, verifiable commerce context.",
+                "items": [
+                    {
+                        "icon": "PackageCheck",
+                        "title": "Matched order",
+                        "description": "An order number in the message, the customer email or a manual link can identify the relevant purchase."
+                    },
+                    {
+                        "icon": "Route",
+                        "title": "Delivery and tracking",
+                        "description": "Fulfilment status, carrier and an available tracking link can guide the reply without inventing a date."
+                    },
+                    {
+                        "icon": "CircleAlert",
+                        "title": "Refund and dispute",
+                        "description": "An existing refund or open Shopify Payments dispute appears in context before the draft is written."
+                    },
+                    {
+                        "icon": "History",
+                        "title": "Customer history",
+                        "description": "Previous conversations and orders reduce the need for customers to repeat information the store already has."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Store rules",
+                        "description": "Tone, signature, policies and approved precedents frame the proposed draft."
+                    }
+                ]
+            },
+            "control": {
+                "eyebrow": "Sensitive cases",
+                "title": "AI proposes. It does not make promises for you.",
+                "description": "Refund, chargeback, missing order and inconsistent tracking requests raise the risk level and call for review.",
+                "visualAlt": "Anonymised Scaliente AI Inbox showing a refund draft that requires approval",
+                "visualLabel": "Approval required",
+                "items": [
+                    "No refund, cancellation or order change is described as completed without evidence in context.",
+                    "Disputes, refunds, chargebacks and tracking inconsistencies trigger a deterministic risk level.",
+                    "A new message or changed context makes the draft stale instead of letting it send silently.",
+                    "Commitments without an approved precedent stay subject to human review."
+                ]
+            },
+            "team": {
+                "eyebrow": "Delegation without losing context",
+                "title": "A shared work queue, not another shared mailbox.",
+                "description": "Conversations keep their owner, priority, tags and review state so everyone knows what to handle.",
+                "items": [
+                    {
+                        "icon": "Users",
+                        "title": "Clear assignment",
+                        "description": "Take a conversation, assign it to a teammate or return it to the unassigned queue."
+                    },
+                    {
+                        "icon": "Inbox",
+                        "title": "Operational queues",
+                        "description": "View all conversations, mine, unassigned conversations and those waiting for review."
+                    },
+                    {
+                        "icon": "Tags",
+                        "title": "Priorities and categories",
+                        "description": "Urgency, risk, order status, refund or dispute make the queue easier to scan."
+                    },
+                    {
+                        "icon": "MessageSquareText",
+                        "title": "Internal notes",
+                        "description": "Pass a decision or team context without sending it to the customer."
+                    },
+                    {
+                        "icon": "FileCheck2",
+                        "title": "Review workflow",
+                        "description": "Request a review, approve the draft or ask for changes with a recorded decision."
+                    },
+                    {
+                        "icon": "ShieldCheck",
+                        "title": "Role-based rights",
+                        "description": "Viewing, editing, assignment and approval follow each collaborator’s access level."
+                    }
+                ]
+            },
+            "learning": {
+                "eyebrow": "Supervised learning",
+                "title": "How you reply becomes an explicit working base.",
+                "description": "Scaliente observes sent replies and approved decisions to propose a tone and precedents your team can review and edit.",
+                "inputLabel": "What informs the assistant",
+                "inputs": [
+                    "Replies actually sent from the support mailbox",
+                    "Tone, signature and policies defined by the store",
+                    "Human corrections and decisions after delivery",
+                    "Approved precedents for sensitive cases"
+                ],
+                "outputLabel": "What the team gets",
+                "outputs": [
+                    "Drafts adapted to the customer’s language",
+                    "A visible and editable proposed tone",
+                    "Reusable precedents with their provenance",
+                    "Uncovered cases flagged before commitment"
+                ],
+                "note": "Detected rules do not silently become facts. They remain visible, editable and subject to approval."
+            },
+            "availability": {
+                "eyebrow": "Pricing and access",
+                "title": "Closed beta. No public price before release.",
+                "description": "The AI Inbox is still being validated with a limited number of stores. It cannot be activated or billed through self-service today.",
+                "items": [
+                    {
+                        "label": "Availability",
+                        "value": "By invitation"
+                    },
+                    {
+                        "label": "Current channel",
+                        "value": "Connected email mailbox"
+                    },
+                    {
+                        "label": "Public billing",
+                        "value": "Unavailable during beta"
+                    },
+                    {
+                        "label": "Self-service activation",
+                        "value": "Unavailable"
+                    }
+                ],
+                "button": "Tell us what you need",
+                "href": "mailto:contact@scaliente.com?subject=AI%20Inbox%20Beta",
+                "note": "Commercial terms will be published when general activation is actually available."
+            },
+            "faq": {
+                "eyebrow": "Direct answers",
+                "title": "What to know before delegating work to AI.",
+                "items": [
+                    {
+                        "question": "What is AI customer service for Shopify?",
+                        "answer": "It is a support workspace that uses available store data to assist with customer requests. In Scaliente, the assistant prepares a draft from the email, order and associated context."
+                    },
+                    {
+                        "question": "Does the AI send replies automatically?",
+                        "answer": "Not in the workflow shown here. The draft stays reviewable and editable, and the team decides whether to send it. Sensitive cases can require additional approval."
+                    },
+                    {
+                        "question": "Which Shopify data is used?",
+                        "answer": "When available for the case, context can include the matched order, items, financial status, fulfilment, tracking, refunds and an open Shopify Payments dispute."
+                    },
+                    {
+                        "question": "Can conversations be assigned and delegated?",
+                        "answer": "Yes. The workflow includes assignment, personal and unassigned queues, priorities, tags, internal notes and review requests according to roles."
+                    },
+                    {
+                        "question": "How does the AI learn the brand voice?",
+                        "answer": "The system can analyse replies that were actually sent, then propose a visible tone profile and rules. The team can review, edit or discard them."
+                    },
+                    {
+                        "question": "How much does Scaliente AI Inbox cost?",
+                        "answer": "There is no public price while the Inbox remains in closed beta. Commercial terms will be published when general activation and billing become available."
+                    },
+                    {
+                        "question": "Which channels are supported?",
+                        "answer": "The version currently being validated starts from a connected email mailbox. Social media, chat and voice are not presented as available on this page."
+                    }
+                ]
+            },
+            "finalCta": {
+                "href": "mailto:contact@scaliente.com?subject=AI%20Inbox%20Beta",
+                "eyebrow": "Your support, with its context",
+                "title": "Show us the requests that cost your team time.",
+                "subtitle": "Volume, languages, sensitive cases and current tools will help us assess your beta access.",
+                "button": "Request access",
+                "note": "Access is granted progressively according to beta capacity and use cases."
+            },
+            "publicLaunch": {
+                "meta": {
+                    "entityName": "Scaliente AI Inbox",
+                    "title": "AI Customer Service for Shopify with Customer Context | Scaliente",
+                    "description": "Scaliente combines email, orders, delivery, history and Shopify disputes to prepare AI replies that your team controls."
+                },
+                "hero": {
+                    "eyebrow": "AI customer service for Shopify",
+                    "primaryCta": "Activate AI Inbox",
+                    "primaryHref": "https://app.scaliente.com/inbox/discover"
+                },
+                "availability": {
+                    "eyebrow": "Pricing",
+                    "title": "€39 per month for each activated store.",
+                    "description": "AI Inbox is added to a paid Scaliente plan. Each activated store contributes to the account’s shared allowance.",
+                    "items": [
+                        {
+                            "label": "Monthly price",
+                            "value": "€39 per store"
+                        },
+                        {
+                            "label": "AI drafts included",
+                            "value": "200 per store each month"
+                        },
+                        {
+                            "label": "Top-up",
+                            "value": "100 drafts for €10"
+                        },
+                        {
+                            "label": "Top-up validity",
+                            "value": "90 days"
+                        }
+                    ],
+                    "button": "Activate AI Inbox",
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "note": "Allowances from activated stores are pooled at account level. Your team keeps control of sending."
+                },
+                "faq": {
+                    "items": [
+                        {},
+                        {},
+                        {},
+                        {},
+                        {},
+                        {
+                            "answer": "AI Inbox costs €39 per month for each activated store. It includes 200 AI drafts per store each month. A top-up of 100 drafts costs €10 and remains valid for 90 days."
+                        },
+                        {
+                            "answer": "AI Inbox supports a connected email mailbox. Social media, chat and voice are not presented as available."
+                        }
+                    ]
+                },
+                "finalCta": {
+                    "href": "https://app.scaliente.com/inbox/discover",
+                    "eyebrow": "Your support, with its context",
+                    "title": "Open an Inbox that knows your orders.",
+                    "subtitle": "Connect email to Shopify and prepare replies with the available customer, delivery and dispute context.",
+                    "button": "Activate AI Inbox",
+                    "note": "Separate add-on available with a paid Scaliente plan."
+                }
+            }
         }
     },
     "compare": {
         "meta": {
-            "title": "Scaliente vs TrueProfit \u2014 2026 Comparison | Scaliente",
-            "description": "Detailed comparison between Scaliente and TrueProfit for Shopify profit tracking. Free plan, multi-currency, European hosting."
+            "title": "Scaliente vs TrueProfit — 2026 Comparison | Scaliente",
+            "description": "Detailed comparison between Scaliente and TrueProfit for Shopify profit tracking. Free plan, multi-currency, your data hosted in Europe."
         },
         "hero": {
             "title": "Scaliente vs TrueProfit",
             "subtitle": "Which solution for your Shopify profit? A factual and transparent comparison."
         },
         "differentiators": {
-            "freePlan": { "title": "Generous free plan", "desc": "Test without time limits with 20 orders/month. TrueProfit does not offer a permanent free plan." },
-            "noSurcharge": { "title": "No per-order surcharge", "desc": "One predictable price, no surprises. No per-order fees that quietly inflate your bill as you scale — you always know exactly what you pay." },
-            "multiCurrency": { "title": "Native multi-currency", "desc": "Automatic conversion with daily ECB rates. Manage stores in EUR, USD, GBP, CZK and more." }
+            "freePlan": {
+                "title": "Generous free plan",
+                "desc": "Test with no time limit at 50 orders/month, no credit card. Our free plan is permanent — not a trial that expires."
+            },
+            "noSurcharge": {
+                "title": "No per-order surcharge",
+                "desc": "One predictable price, no surprises. No per-order fees that quietly inflate your bill as you scale — you always know exactly what you pay."
+            },
+            "multiCurrency": {
+                "title": "Native multi-currency",
+                "desc": "Automatic conversion with daily ECB rates. Manage stores in EUR, USD, GBP, CZK and more."
+            }
         },
         "tableToggle": "See detailed comparison",
         "table": {
@@ -1049,30 +1786,39 @@
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
-            "scalinetPrice": "\u20ac0/month",
+            "scalinetPrice": "€0/month",
             "competitorPrice": "$49/month"
         },
         "whyScaliente": {
             "title": "Why European merchants choose Scaliente",
-            "p1": "Scaliente was built specifically for European e-commerce merchants. European hosting, native GDPR compliance, multi-currency support with European Central Bank rates.",
-            "p2": "We acknowledge TrueProfit's strengths, including its market seniority. But Scaliente matches its features — including a mobile app (PWA) — while offering European hosting, transparent pricing, and no hidden fees."
+            "p1": "Scaliente was built specifically for European e-commerce merchants. Your data is hosted in Europe, with native GDPR compliance and multi-currency support using European Central Bank rates.",
+            "p2": "We acknowledge TrueProfit's strengths, including its market seniority. Scaliente covers the same ground — including a mobile app (PWA) — with your data hosted in Europe, publicly listed pricing, and no per-order fees."
         }
     },
     "compareTripleWhale": {
         "meta": {
             "title": "Scaliente vs Triple Whale — 2026 Comparison | Scaliente",
-            "description": "Detailed comparison between Scaliente and Triple Whale. Free plan, transparent pricing, European hosting vs US premium solution."
+            "description": "Detailed comparison between Scaliente and Triple Whale. Free plan, transparent pricing, your data hosted in Europe vs US premium solution."
         },
         "hero": {
             "title": "Scaliente vs Triple Whale",
-            "subtitle": "All the essential profit tracking — with transparent pricing and European DNA."
+            "subtitle": "All the essential profit tracking — with public pricing and your data hosted in Europe."
         },
         "differentiators": {
-            "freePlan": { "title": "Free plan available", "desc": "Scaliente offers a permanent free plan with 20 orders/month. Triple Whale starts at $100+/month with no free option." },
-            "noSurcharge": { "title": "Transparent, predictable pricing", "desc": "Scaliente starts free, then \u20ac39/month — no hidden fees. Triple Whale starts at $100/month and can exceed $800/month, with additional per-order charges on certain plans." },
-            "multiCurrency": { "title": "Native multi-currency (ECB)", "desc": "Automatic conversion with daily ECB rates for EUR, GBP, CZK and more. Triple Whale is built for the US market — Scaliente is built for European merchants." }
+            "freePlan": {
+                "title": "Free plan available",
+                "desc": "Scaliente offers a permanent free plan with 50 orders/month. Triple Whale starts at $100+/month with no free option."
+            },
+            "noSurcharge": {
+                "title": "Transparent, predictable pricing",
+                "desc": "Scaliente starts free, then €39/month, with flat pricing and no per-order fees: your bill doesn't climb as your volume grows. Triple Whale does not publish its pricing on its site."
+            },
+            "multiCurrency": {
+                "title": "Native multi-currency (ECB)",
+                "desc": "Automatic conversion at daily ECB rates for EUR, GBP, CZK and more, with your data hosted in Europe."
+            }
         },
         "tableToggle": "See detailed comparison",
         "table": {
@@ -1081,13 +1827,13 @@
             "perOrderFee": "No per-order fee",
             "multiCurrency": "Native multi-currency",
             "multiShop": "Multi-store",
-            "adPlatforms": "5+ ad platforms",
+            "adPlatforms": "5 ad platforms",
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
-            "scalinetPrice": "\u20ac0/month",
+            "scalinetPrice": "€0/month",
             "competitorFreePlan": false,
             "competitorPerOrderFee": false,
             "competitorMultiCurrency": false,
@@ -1097,12 +1843,12 @@
             "competitorMobileApp": true,
             "competitorGdpr": false,
             "competitorEuropeanHosting": false,
-            "competitorPrice": "$100+/month"
+            "competitorPrice": "Not published"
         },
         "whyScaliente": {
             "title": "Why choose Scaliente over Triple Whale",
-            "p1": "Triple Whale is an established tool on the US market. However, with pricing from $100 to over $800/month — plus per-order fees on some plans — total costs can add up quickly. Its US-centric approach also means limited support for European currencies, regulations, and hosting.",
-            "p2": "Scaliente delivers the same core value — real-time profit dashboard, 5 ad platforms, multi-store — with predictable pricing starting at \u20ac0/month. European hosting, native GDPR compliance, and automatic multi-currency conversion with ECB rates."
+            "p1": "Triple Whale is an established tool on the US market. Its pricing is not published publicly — you have to go through a sales rep to get it. Scaliente lists its prices, starts at €0/month, and charges a flat rate with no per-order fees.",
+            "p2": "Scaliente delivers the same core value — real-time profit dashboard, 5 ad platforms, multi-store — with predictable pricing starting at €0/month. Your data is hosted in Europe, with native GDPR compliance and automatic multi-currency conversion at ECB rates."
         }
     },
     "compareLifetimely": {
@@ -1115,9 +1861,18 @@
             "subtitle": "Complete profit tracking vs LTV analytics. Which solution fits your needs?"
         },
         "differentiators": {
-            "freePlan": { "title": "Permanent free plan", "desc": "Test Scaliente with no time limit at 20 orders/month. Lifetimely only offers a 14-day free trial." },
-            "noSurcharge": { "title": "5 ad platforms integrated", "desc": "Meta, Google, TikTok, Pinterest and Snapchat Ads. Lifetimely mainly focuses on Facebook Ads." },
-            "multiCurrency": { "title": "Native multi-currency", "desc": "Daily ECB rates for multi-currency stores. Lifetimely doesn't offer automatic currency conversion." }
+            "freePlan": {
+                "title": "Permanent free plan",
+                "desc": "Test Scaliente with no time limit at 50 orders/month. Lifetimely only offers a 14-day free trial."
+            },
+            "noSurcharge": {
+                "title": "5 ad platforms integrated",
+                "desc": "Meta, Google, TikTok, Pinterest and Snapchat Ads: all five platforms connected natively and reconciled against your Shopify sales in a single dashboard."
+            },
+            "multiCurrency": {
+                "title": "Native multi-currency",
+                "desc": "Automatic conversion at daily ECB rates, applied on the exact date of each transaction — not a monthly average."
+            }
         },
         "tableToggle": "See detailed comparison",
         "table": {
@@ -1126,13 +1881,13 @@
             "perOrderFee": "No per-order fee",
             "multiCurrency": "Native multi-currency",
             "multiShop": "Multi-store",
-            "adPlatforms": "5+ ad platforms",
+            "adPlatforms": "5 ad platforms",
             "realtime": "Real-time data",
             "mobileApp": "Mobile app (PWA)",
             "gdpr": "GDPR compliant",
-            "europeanHosting": "European hosting",
+            "europeanHosting": "Data hosted in Europe",
             "startingPrice": "Starting from",
-            "scalinetPrice": "\u20ac0/month",
+            "scalinetPrice": "€0/month",
             "competitorFreePlan": false,
             "competitorPerOrderFee": true,
             "competitorMultiCurrency": false,
@@ -1147,7 +1902,7 @@
         "whyScaliente": {
             "title": "Why choose Scaliente over Lifetimely",
             "p1": "Lifetimely excels at customer lifetime value (LTV) analysis and cohorts. If that's your primary need, it's an excellent choice. But for complete profit tracking with multi-platform ads, Scaliente offers more.",
-            "p2": "Scaliente natively integrates 5 ad platforms, supports multi-currency with ECB rates, and offers a permanent free plan. All with European hosting and native GDPR compliance."
+            "p2": "Scaliente natively integrates 5 ad platforms, supports multi-currency with ECB rates, and offers a permanent free plan. All with your data hosted in Europe and native GDPR compliance."
         }
     },
     "legalPage": {
@@ -1270,6 +2025,246 @@
                 "process": "What happens next?",
                 "process_text": "Once the request is received (or action taken via dashboard), we instantly delete your API keys and access tokens. Your historical data is purged from our active databases within 24h and from our backups within 30 days."
             }
+        }
+    },
+    "profitStory": {
+        "eyebrow": "The truth about profit",
+        "title": {
+            "main": "From revenue to",
+            "highlight": "net profit"
+        },
+        "description": "Revenue does not tell you what remains. Scaliente reconciles the line items that actually move your margin in one view.",
+        "equation": {
+            "label": "The margin waterfall",
+            "revenue": "Revenue",
+            "resultLabel": "Calculated result",
+            "result": "Your net profit"
+        },
+        "costs": {
+            "ads": "Ad spend",
+            "cogs": "Product costs (COGS)",
+            "shipping": "Shipping",
+            "fees": "Payment fees and taxes",
+            "expenses": "Declared expenses"
+        },
+        "imageAlt": "Anonymized Scaliente dashboard showing net profit and costs"
+    },
+    "attributionStory": {
+        "eyebrow": "First-party attribution",
+        "title": {
+            "main": "Connect every sale to the",
+            "highlight": "right signal"
+        },
+        "description": "The Shopify pixel collects journey events and their marketing identifiers. Scaliente reconciles them with the order without hiding direct or unattributed sales.",
+        "signal": {
+            "title": "Readable attribution, not a black box.",
+            "description": "The channel, campaign and journey remain inspectable. When the signal is missing, the uncertainty stays visible.",
+            "transparency": "Attributions below the reliability threshold are not presented as certain."
+        },
+        "journey": {
+            "click": "Click",
+            "session": "Session",
+            "checkout": "Order",
+            "channel": "Channel"
+        },
+        "screenLabel": "Ads Insights",
+        "screenNote": "Anonymized data",
+        "imageAlt": "Anonymized Scaliente Ads Insights view"
+    },
+    "decisionStory": {
+        "eyebrow": "From measurement to action",
+        "title": {
+            "main": "Numbers that show you",
+            "highlight": "what to do"
+        },
+        "description": "A dashboard earns its place by making the next decision clearer, not by stacking more metrics.",
+        "aside": "Compare attributed revenue, spend, ROAS, breakeven and profit without switching tools.",
+        "decisions": {
+            "budgets": {
+                "title": "Adjust budgets",
+                "description": "Read spend, attributed revenue and ROAS by channel before scaling or stopping a campaign."
+            },
+            "margin": {
+                "title": "Protect margin",
+                "description": "Review product costs, fees, shipping and breakeven ROAS in the same context."
+            },
+            "anomalies": {
+                "title": "Spot anomalies",
+                "description": "Refunds, pending orders and disputes remain separate and visible for easier follow-up."
+            }
+        },
+        "imageAlt": "Anonymized Meta Ads analysis in Scaliente"
+    },
+    "guides": {
+        "common": {
+            "readArticle": "Read the guide",
+            "backToGuides": "All guides",
+            "updatedLabel": "Updated",
+            "readTimeLabel": "Reading time",
+            "contentsLabel": "In this guide",
+            "authorLabel": "Written by",
+            "author": "Scaliente product team",
+            "directAnswerLabel": "Short answer",
+            "keyPointsLabel": "Key points",
+            "sourcesLabel": "Sources and method",
+            "sourcesIntro": "External definitions link to primary sources. Statements about Scaliente reflect behavior verified in the product.",
+            "productEyebrow": "From theory to your numbers",
+            "relatedLabel": "Continue reading"
+        },
+        "hub": {
+            "meta": {
+                "title": "Shopify Profit, ROAS and Margin Guides | Scaliente",
+                "description": "Understand Shopify net profit, ROAS, POAS, costs and break-even with transparent formulas and practical guides."
+            },
+            "eyebrow": "Shopify profit library",
+            "title": "Understand the numbers that drive your margin.",
+            "subtitle": "Direct answers, checkable formulas and the limits to understand before making a decision.",
+            "indexLabel": "Start here",
+            "intro": "This library explains how to move from Shopify revenue to an actionable net-profit view. Each guide separates facts, assumptions and missing data.",
+            "ctaEyebrow": "Your store, your data",
+            "ctaTitle": "Apply the method to your orders.",
+            "ctaDescription": "Scaliente brings revenue, costs and advertising spend into one profit view.",
+            "ctaButton": "See my real profit"
+        },
+        "pages": {
+            "profitTracker": {
+                "meta": {"title": "Shopify Profit Tracker: Complete 2026 Guide | Scaliente", "description": "What is a Shopify profit tracker, which data should it reconcile and how can you evaluate a reliable net-profit view?"},
+                "eyebrow": "Pillar guide · Shopify profit",
+                "title": "What is a Shopify profit tracker?",
+                "summary": "Understand what a profit tracker calculates, what it cannot infer and how to use it without confusing revenue with profitability.",
+                "answer": "A Shopify profit tracker reconciles orders with product costs, shipping, fees, taxes and advertising spend to estimate net profit over a selected period.",
+                "updated": "July 23, 2026",
+                "readTime": "8 min",
+                "keyPoints": ["Shopify revenue is not net profit.", "The result depends on complete, accurate costs.", "A clear data cadence is more useful than a vague real-time claim."],
+                "sections": [
+                    {"id": "definition", "title": "From revenue to net profit", "paragraphs": ["Shopify records sales, refunds and payments. A profit view also needs the variable and fixed costs borne by the store. Missing costs do not disappear economically; they are simply absent from the calculation.", "Always read the result with its period, currency and coverage. The tracker is an operating view, not a substitute for statutory accounts."], "bullets": ["Net revenue after discounts and refunds.", "COGS, shipping, fees, taxes and ad spend.", "Declared expenses and visible assumptions."]},
+                    {"id": "selection", "title": "How to evaluate a profit tracker", "paragraphs": ["A useful tool explains its formula, each data source and refresh cadence. Check how it treats refunds, currencies, pending orders and unattributed sales.", "Scaliente receives orders through Shopify webhooks. Spend from five supported ad platforms syncs once or twice daily and can be refreshed manually."], "bullets": ["Ask what is calculated, excluded or estimated.", "Check the last sync time for each source.", "Prefer visible uncertainty to forced attribution."]},
+                    {"id": "usage", "title": "Turn the dashboard into decisions", "paragraphs": ["Connect every metric to an operating question: did margin fall because of COGS, shipping, discounts or ads? Is ROAS above break-even?", "Check missing data, compare equivalent periods and document the action taken."], "bullets": ["Diagnose before changing a budget.", "Compare profit, margin and spend over one period.", "Share the calculation method with the team."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Read profit in one interface",
+                "productDescription": "Scaliente reconciles orders, costs, taxes, fees and ad spend while keeping each source cadence visible.",
+                "productCta": "Explore the profit dashboard"
+            },
+            "methodology": {
+                "meta": {"title": "How Scaliente Calculates Shopify Profit", "description": "See the formula, data sources, refresh cadence and limits behind Scaliente's Shopify profit calculation."},
+                "eyebrow": "Methodology · Transparency",
+                "title": "How Scaliente calculates Shopify profit.",
+                "summary": "A readable method showing what enters the calculation, when data is refreshed and what still needs verification.",
+                "answer": "Scaliente starts with available Shopify revenue for the period, then deducts available product costs, shipping, fees, taxes, advertising spend and declared expenses.",
+                "updated": "July 23, 2026",
+                "readTime": "7 min",
+                "keyPoints": ["Each value keeps its source and period.", "Orders and ad spend do not share the same cadence.", "Missing data must be fixed rather than presented as certainty."],
+                "sections": [
+                    {"id": "formula", "title": "The working formula", "paragraphs": ["The operating view starts from observed revenue and subtracts available cost categories. Refunds and order statuses stay separate so collected revenue, refunded revenue and risk are not mixed.", "The result depends on store configuration and should be reconciled with accounting for tax or statutory decisions."], "bullets": ["Revenue − COGS − shipping − fees − taxes − ads − expenses.", "Use one currency and date window.", "Keep refunds and disputes separately visible."]},
+                    {"id": "freshness", "title": "Source, cadence and coverage", "paragraphs": ["Orders arrive through Shopify webhooks. Ad spend syncs once or twice daily, with manual refresh available. Exchange rates come from the European Central Bank.", "The Web Pixel collects only after activation. Scaliente keeps direct and unattributed sales visible instead of inventing prior history."], "bullets": ["Never claim history the pixel did not observe.", "Show last refresh and missing integrations.", "Keep unattributed sales in the total."]}
+                ],
+                "sources": [{"label": "Shopify Dev — Order object", "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/Order"}, {"label": "European Central Bank — Exchange rates", "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"}],
+                "productTitle": "Verify the calculation with your data",
+                "productDescription": "Scaliente exposes cost categories and integration cadence so your team can review the profit view.",
+                "productCta": "View the calculation"
+            },
+            "revenueVsProfit": {
+                "meta": {"title": "Shopify Revenue vs Net Profit | Scaliente", "description": "Understand the difference between Shopify revenue, gross margin and net profit before deciding where to invest."},
+                "eyebrow": "Fundamentals · Profitability",
+                "title": "Shopify revenue or net profit?",
+                "summary": "Two stores can report the same revenue and keep very different profit.",
+                "answer": "Revenue measures sales. Net profit measures what remains after the product, shipping, payment, tax, advertising and other included costs.",
+                "updated": "July 23, 2026",
+                "readTime": "6 min",
+                "keyPoints": ["Revenue describes sales volume, not retained value.", "Gross margin and net profit answer different questions.", "Comparisons require the same period and method."],
+                "sections": [
+                    {"id": "levels", "title": "Three levels not to confuse", "paragraphs": ["Revenue starts with sales. Gross margin mainly removes product cost. An operating net-profit view includes additional observable costs.", "Revenue can rise while profit falls when discounts, ads, shipping or fees rise faster."], "bullets": ["Revenue: sales over the period.", "Gross margin: revenue minus product cost.", "Net profit: revenue minus included costs."]},
+                    {"id": "reading", "title": "Read a change correctly", "paragraphs": ["Compare equal periods and verify that integrations cover the full window. Then break down the change by cost.", "A metric becomes actionable when its movement can be tied to a checkable cause."], "bullets": ["Verify coverage before comparing.", "Break down margin instead of reading one total.", "Document the change behind the variance."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Put revenue in context",
+                "productDescription": "The profit dashboard brings together the costs that explain what remains behind Shopify sales.",
+                "productCta": "View the profit dashboard"
+            },
+            "roasVsPoas": {
+                "meta": {"title": "ROAS vs POAS for Shopify | Scaliente", "description": "Compare ROAS and POAS, understand their formulas and avoid confusing attributed revenue with profit."},
+                "eyebrow": "Acquisition · Advertising profit",
+                "title": "ROAS vs POAS: revenue or profit?",
+                "summary": "ROAS measures revenue attributed to advertising. POAS places ad spend against profit.",
+                "answer": "ROAS divides attributed revenue by ad spend. POAS divides the selected attributable profit by that spend. They are complementary but answer different questions.",
+                "updated": "July 23, 2026",
+                "readTime": "6 min",
+                "keyPoints": ["High ROAS does not guarantee positive margin.", "POAS depends on complete cost data.", "State the attribution model before comparing."],
+                "sections": [
+                    {"id": "formulas", "title": "Two formulas, two views", "paragraphs": ["ROAS compares attributed revenue with budget but ignores product economics.", "POAS adds margin. Campaigns with the same ROAS can have different outcomes."], "bullets": ["ROAS = attributed revenue ÷ ad spend.", "POAS = attributable profit ÷ ad spend.", "State the model and attribution window."]},
+                    {"id": "decisions", "title": "Choose the metric for the decision", "paragraphs": ["Use ROAS to read media revenue; add POAS and break-even for margin decisions.", "Before cutting a campaign, inspect direct sales, missing signals and conversion delay."], "bullets": ["Media view: ROAS and attributed revenue.", "Economic view: POAS, margin and break-even.", "Final decision: combine coverage and profit."]}
+                ],
+                "sources": [{"label": "Google Ads Help — Target ROAS", "url": "https://support.google.com/google-ads/answer/6268637"}, {"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}],
+                "productTitle": "Compare acquisition and profit",
+                "productDescription": "Ads Insights brings spend, attributed revenue, ROAS, margin and profit into one view.",
+                "productCta": "Explore Ads Insights"
+            },
+            "breakevenRoas": {
+                "meta": {"title": "Break-even ROAS Formula and Shopify Calculator | Scaliente", "description": "Calculate the minimum ROAS needed to cover costs and understand when a Shopify campaign becomes profitable."},
+                "eyebrow": "Calculation · Break-even",
+                "title": "Calculate your break-even ROAS.",
+                "summary": "Break-even ROAS is the point where revenue exactly covers the costs included in the calculation.",
+                "answer": "When contribution margin is expressed as a share of revenue, break-even ROAS can be estimated as 1 divided by that margin. The margin must already exclude advertising spend.",
+                "updated": "July 23, 2026",
+                "readTime": "6 min",
+                "keyPoints": ["The threshold depends on accurate costs.", "One average can hide product-level differences.", "Returns, discounts and taxes move break-even."],
+                "sections": [
+                    {"id": "formula", "title": "Build the threshold correctly", "paragraphs": ["Start with expected net revenue and remove variable costs excluding ads. The remaining contribution funds acquisition.", "Use separate thresholds when costs differ significantly by product or country."], "bullets": ["Use revenue after discounts and expected returns.", "Include relevant COGS, shipping, fees and taxes.", "Do not deduct ad spend twice."]},
+                    {"id": "use", "title": "Use break-even as a guardrail", "paragraphs": ["Compare it with observed ROAS over a representative window and consider conversion delay.", "Pair the threshold with volume, absolute profit and attribution coverage."], "bullets": ["Below: verify data and causes.", "Above: inspect absolute profit and volume.", "Recalculate after material price or cost changes."]}
+                ],
+                "sources": [{"label": "Google Ads Help — Target ROAS", "url": "https://support.google.com/google-ads/answer/6268637"}, {"label": "Scaliente ROAS calculator", "url": "https://www.scaliente.com/en/tools/roas-calculator"}],
+                "productTitle": "Test the threshold with your assumptions",
+                "productDescription": "The Scaliente calculator exposes price, costs, taxes, returns and budget for a reviewable result.",
+                "productCta": "Open the ROAS calculator"
+            },
+            "shopifyCosts": {
+                "meta": {"title": "Which Costs Should You Deduct from Shopify Revenue?", "description": "List product, shipping, payment, tax, advertising and operating costs needed to understand Shopify profit."},
+                "eyebrow": "Method · Cost structure",
+                "title": "Which costs should you deduct from Shopify revenue?",
+                "summary": "A profit calculation is only as reliable as the cost list behind it.",
+                "answer": "At minimum, reconcile revenue with product costs, shipping borne by the store, payment fees, relevant taxes, ad spend and operating expenses assigned to the period.",
+                "updated": "July 23, 2026",
+                "readTime": "7 min",
+                "keyPoints": ["Separate variable costs, fixed costs and cash flow.", "Assign each cost to the correct period and currency.", "Document assumptions when data is unavailable."],
+                "sections": [
+                    {"id": "variable-costs", "title": "Costs tied to each order", "paragraphs": ["Variable costs include the product, supplier shipping, packaging, shipping subsidy, payment fees and relevant taxes.", "Record them by variant and transaction when possible; a global average is an assumption."], "bullets": ["COGS by product or variant.", "Shipping, packaging and transaction fees.", "Discounts, returns and observed refunds."]},
+                    {"id": "period-costs", "title": "Ads, fixed expenses and period", "paragraphs": ["Ad spend must cover the same window as sales. Add subscriptions and fixed costs for a broader operating view.", "Do not confuse management reporting, cash flow and statutory accounts."], "bullets": ["Align ads, sales and exchange rates.", "Separate recurring and exceptional expenses.", "Reconcile management reporting with accounting."]}
+                ],
+                "sources": [{"label": "Shopify Help — Profit reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/profit-reports"}, {"label": "Shopify Help — Finance reports", "url": "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/finances-report"}],
+                "productTitle": "Bring store costs together",
+                "productDescription": "Scaliente reconciles available cost categories and keeps configured assumptions visible.",
+                "productCta": "View product analytics"
+            }
+        }
+    },
+    "inboxStory": {
+        "eyebrow": "Context-aware customer service",
+        "title": {
+            "main": "AI prepares. Your team",
+            "highlight": "stays in control"
+        },
+        "description": "The closed-beta Inbox gathers useful context before proposing a reply: order, customer, delivery and conversation history.",
+        "beta": "Closed beta",
+        "cta": "Explore AI Inbox",
+        "context": {
+            "order": "Order and items",
+            "customer": "Customer context",
+            "delivery": "Delivery tracking and history"
+        },
+        "flow": {
+            "requestLabel": "Customer message",
+            "request": "Hi, where is my order?",
+            "contextLabel": "Context assembled",
+            "draftLabel": "Suggested draft",
+            "guard": "Human control",
+            "draft": "The reply is prepared from available data. Your team can review it, edit it and decide whether to send it.",
+            "approval": "No automatic sending without configured safeguards."
+        },
+        "publicLaunch": {
+            "eyebrow": "AI customer service for Shopify",
+            "description": "AI Inbox brings together the order, customer, delivery, disputes and conversation history before proposing a reply.",
+            "beta": null
         }
     }
 }

@@ -2,153 +2,76 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LanguageSelector from './LanguageSelector';
 
-const Footer = ({ content, lang }) => (
-    <footer className="bg-[#09090b] relative z-20" style={{'--text-primary':'#fff','--text-secondary':'#a1a1aa','--text-muted':'#71717a','--divider':'rgba(255,255,255,0.08)'}}>
-        <div className="max-w-6xl mx-auto px-6 py-16">
-            <nav aria-label="Footer navigation">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
-                    {/* Logo & Tagline */}
-                    <div className="col-span-2 md:col-span-4 lg:col-span-1 lg:max-w-xs">
-                        <div className="mb-4">
-                            <Image
-                                src="/scaliente_horizontale.png"
-                                alt="Scaliente - Profit Tracker Shopify"
-                                width={140}
-                                height={36}
-                                className="h-8 w-auto"
-                            />
-                        </div>
-                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-4">
-                            {content?.tagline}
-                        </p>
-                        <div className="flex items-center gap-2 text-xs text-[var(--text-muted)]">
-                            <span>🇺🇸</span>
-                            <span>{content?.madeInUsa || 'Made in USA'}</span>
-                        </div>
+const Footer = ({ content, lang }) => {
+    const groups = [
+        {
+            title: content?.product || 'Produit',
+            links: [
+                [content?.links?.features || 'Fonctionnalités', `/${lang}/#profit-truth`],
+                [content?.links?.pricing || 'Tarifs', `/${lang}/#pricing`],
+                [content?.links?.login || 'Connexion', 'https://app.scaliente.com'],
+            ],
+        },
+        {
+            title: content?.resources || 'Ressources',
+            links: [
+                [content?.links?.guides || 'Guides', `/${lang}/guides`],
+                [content?.links?.calculator || 'Calculateur ROAS', `/${lang}/tools/roas-calculator`],
+                [content?.links?.compare || 'Scaliente vs TrueProfit', `/${lang}/compare/scaliente-vs-trueprofit`],
+                [content?.links?.compareTripleWhale || 'Scaliente vs Triple Whale', `/${lang}/compare/scaliente-vs-triple-whale`],
+                [content?.links?.compareLifetimely || 'Scaliente vs Lifetimely', `/${lang}/compare/scaliente-vs-lifetimely`],
+                [content?.links?.affiliate || 'Programme affilié', `/${lang}/affiliate`],
+            ],
+        },
+        {
+            title: content?.legal || 'Légal',
+            links: [
+                [content?.links?.privacy || 'Vie privée', `/${lang}/privacy-policy`],
+                [content?.links?.terms || 'CGU', `/${lang}/terms-of-service`],
+                [content?.links?.termsOfSale || 'CGV', `/${lang}/terms-of-sale`],
+                [content?.links?.cookies || 'Cookies', `/${lang}/cookies`],
+                [content?.links?.legalMentions || 'Mentions légales', `/${lang}/legal-mentions`],
+            ],
+        },
+    ];
+
+    return (
+        <footer data-header-theme="dark" className="relative z-20 border-t border-white/[0.08] bg-[#08080a] text-white">
+            <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 sm:py-18">
+                <div className="grid gap-12 lg:grid-cols-[1.1fr_1.9fr]">
+                    <div className="max-w-sm">
+                        <Image src="/scaliente_horizontale.png" alt="Scaliente - Profit Tracker Shopify" width={132} height={44} className="h-8 w-auto" />
+                        <p className="mt-5 text-sm leading-6 text-zinc-400">{content?.tagline}</p>
+                        <span className="mt-6 block h-1 w-12 rounded-full bg-orange-500" aria-hidden="true" />
+                        <p className="mt-5 text-xs text-zinc-500">🇺🇸 {content?.madeInUsa || 'Made in USA'}</p>
                     </div>
 
-                    {/* Product */}
-                    <div>
-                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
-                            {content?.product || "Produit"}
-                        </h4>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href={`/${lang}/#features`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.features || "Fonctionnalites"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/#pricing`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.pricing || "Tarifs"}
-                                </Link>
-                            </li>
-                            <li>
-                                <a href="https://app.scaliente.com" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.login || "Connexion"}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Resources */}
-                    <div>
-                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
-                            {content?.resources || "Ressources"}
-                        </h4>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href={`/${lang}/tools/roas-calculator`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.calculator || "Calculateur ROAS"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-trueprofit`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.compare || "Scaliente vs TrueProfit"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-triple-whale`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.compareTripleWhale || "Scaliente vs Triple Whale"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/compare/scaliente-vs-lifetimely`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.compareLifetimely || "Scaliente vs Lifetimely"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/affiliate`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.affiliate || "Programme affilie"}
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Legal */}
-                    <div>
-                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
-                            {content?.legal || "Legal"}
-                        </h4>
-                        <ul className="space-y-3">
-                            <li>
-                                <Link href={`/${lang}/privacy-policy`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.privacy || "Vie privee"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/terms-of-service`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.terms || "CGU"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/terms-of-sale`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.termsOfSale || "CGV"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/cookies`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.cookies || "Cookies"}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href={`/${lang}/legal-mentions`} className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    {content?.links?.legalMentions || "Mentions legales"}
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
-
-                    {/* Company */}
-                    <div>
-                        <h4 className="font-brand text-[var(--text-primary)] font-semibold mb-4 text-sm">
-                            {content?.company || "Entreprise"}
-                        </h4>
-                        <ul className="space-y-3">
-                            <li>
-                                <a href="mailto:contact@scaliente.com" className="text-sm text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-
-                    </div>
-                </div>
-            </nav>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-[var(--divider)]">
-            <div className="max-w-6xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p className="text-[var(--text-muted)] text-sm">
-                    &copy; {new Date().getFullYear()} Scaliente. All rights reserved.
-                </p>
-                <div className="flex items-center gap-6">
-                    <LanguageSelector currentLang={lang} position="top" theme="dark" />
+                    <nav aria-label="Navigation de pied de page" className="grid gap-9 sm:grid-cols-3">
+                        {groups.map((group) => (
+                            <div key={group.title}>
+                                <h3 className="font-brand text-sm font-semibold">{group.title}</h3>
+                                <ul className="mt-4 space-y-3">
+                                    {group.links.map(([label, href]) => (
+                                        <li key={href}><Link href={href} className="text-sm text-zinc-400 transition-colors hover:text-white">{label}</Link></li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </nav>
                 </div>
             </div>
-        </div>
-    </footer>
-);
+
+            <div className="border-t border-white/[0.08]">
+                <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-5 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+                    <p>&copy; {new Date().getFullYear()} Scaliente. All rights reserved.</p>
+                    <div className="flex items-center gap-6">
+                        <a href="mailto:contact@scaliente.com" className="transition-colors hover:text-white">Contact</a>
+                        <LanguageSelector currentLang={lang} position="top" theme="dark" />
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};
 
 export default Footer;

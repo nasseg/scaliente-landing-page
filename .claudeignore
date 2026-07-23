@@ -1,0 +1,26 @@
+# Build output and dependencies
+node_modules/
+.next/
+.swc/
+.vercel/
+out/
+coverage/
+
+# Media assets — large binaries, never useful as context
+*.mp4
+*.webm
+*.webp
+*.jpeg
+*.jpg
+*.png
+*.ico
+
+# Local reference material, not part of the site
+_reference/
+
+# Backups and local state
+*.bak
+*.bak.*
+CLAUDE.md.backup*
+.DS_Store
+.env.local

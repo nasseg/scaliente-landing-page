@@ -2,6 +2,10 @@ import { getDictionary } from '../../../i18n';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import RoasCalculator from '@/components/RoasCalculator';
+import PageHero from '@/components/ui/PageHero';
+import CTAButton from '@/components/ui/CTAButton';
+import { buildLocalizedAlternates } from '@/lib/localized-metadata';
+import { localizedUrl } from '@/lib/site';
 
 export async function generateMetadata({ params }) {
     const { lang } = await params;
@@ -11,19 +15,11 @@ export async function generateMetadata({ params }) {
     return {
         title: calc?.meta?.title || 'ROAS Calculator - Scaliente',
         description: calc?.meta?.description || 'Free ROAS and breakeven calculator for Shopify store owners',
-        alternates: {
-            canonical: `https://scaliente.com/${lang}/tools/roas-calculator`,
-            languages: {
-                'fr': 'https://scaliente.com/fr/tools/roas-calculator',
-                'en': 'https://scaliente.com/en/tools/roas-calculator',
-                'de': 'https://scaliente.com/de/tools/roas-calculator',
-                'x-default': 'https://scaliente.com/fr/tools/roas-calculator',
-            },
-        },
+        alternates: buildLocalizedAlternates(lang, '/tools/roas-calculator'),
         openGraph: {
             title: calc?.meta?.title,
             description: calc?.meta?.description,
-            url: `https://scaliente.com/${lang}/tools/roas-calculator`,
+            url: localizedUrl(lang, '/tools/roas-calculator'),
             siteName: "Scaliente",
             type: "website",
             images: [{ url: "/scalienteog.png", width: 1200, height: 630 }],
@@ -46,7 +42,7 @@ export default async function RoasCalculatorPage({ params }) {
         "@type": "WebApplication",
         name: "Scaliente ROAS Calculator",
         description: dict.calculator?.meta?.description,
-        url: `https://scaliente.com/${lang}/tools/roas-calculator`,
+        url: localizedUrl(lang, '/tools/roas-calculator'),
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web",
         offers: {
@@ -80,50 +76,40 @@ export default async function RoasCalculatorPage({ params }) {
             />
             <Navbar content={dict.navbar} lang={lang} isHomePage={false} />
 
-            {/* Hero */}
-            <div className="relative z-10">
-                <div className="relative text-white bg-[#09090b]/85 md:bg-[#09090b]/50 md:backdrop-blur-xl md:backdrop-saturate-150 rounded-b-[2.5rem] md:rounded-b-[3rem] shadow-[0_0_0_2.5rem_#fafafa] md:shadow-[0_0_0_3rem_#fafafa] hero-clip">
-                    <div className="absolute inset-0 grain pointer-events-none" />
-                    <div className="max-w-4xl mx-auto px-6 pt-32 pb-16 text-center relative z-10">
-                        <h1 className="font-brand text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-[-0.025em]">
-                            {dict.calculator?.hero?.title || 'Calculateur ROAS & Breakeven'}
-                        </h1>
-                        <p className="text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed">
-                            {dict.calculator?.hero?.subtitle || 'Calculez votre point de rentabilit\u00e9 en quelques secondes. Gratuit, sans inscription.'}
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <PageHero
+                eyebrow="ROAS / Breakeven"
+                title={dict.calculator?.hero?.title}
+                subtitle={dict.calculator?.hero?.subtitle}
+            />
 
             {/* Calculator */}
-            <div className="bg-[#fafafa] text-zinc-900">
+            <div data-header-theme="light" className="bg-[#fafafa] text-zinc-900">
                 <RoasCalculator content={dict.calculator} common={dict.common} lang={lang} />
             </div>
 
             {/* SEO Content */}
-            <div className="bg-[#fafafa] text-zinc-900 py-16">
-                <div className="max-w-3xl mx-auto px-6 prose prose-zinc">
-                    <h2 className="font-brand text-2xl font-bold text-zinc-900 mb-4">{dict.calculator?.seo?.title || 'Comment utiliser le calculateur ROAS'}</h2>
-                    <p className="text-zinc-600 leading-relaxed mb-4">{dict.calculator?.seo?.p1}</p>
-                    <p className="text-zinc-600 leading-relaxed mb-4">{dict.calculator?.seo?.p2}</p>
-                    <p className="text-zinc-600 leading-relaxed">{dict.calculator?.seo?.p3}</p>
+            <div data-header-theme="light" className="bg-[#fafafa] px-5 py-20 text-zinc-900 sm:px-8 sm:py-28">
+                <div className="mx-auto grid max-w-[1180px] gap-10 border-t border-zinc-200 pt-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-20">
+                    <h2 className="text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em]">{dict.calculator?.seo?.title}</h2>
+                    <div className="space-y-5 text-lg leading-8 text-zinc-600">
+                        <p>{dict.calculator?.seo?.p1}</p>
+                        <p>{dict.calculator?.seo?.p2}</p>
+                        <p>{dict.calculator?.seo?.p3}</p>
+                    </div>
                 </div>
             </div>
 
             {/* CTA */}
-            <div className="bg-[#fafafa] py-16 text-center border-t border-zinc-200">
-                <div className="max-w-4xl mx-auto px-6">
-                    <h2 className="font-brand text-2xl md:text-3xl font-bold text-zinc-900 mb-4">
-                        {dict.calculator?.cta?.title || 'Vous voulez ces m\u00e9triques en temps r\u00e9el ?'}
-                    </h2>
-                    <p className="text-zinc-500 mb-8">{dict.calculator?.cta?.subtitle || 'Essayez Scaliente gratuitement'}</p>
-                    <a
-                        href="https://apps.shopify.com/scaliente"
-                        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-b from-orange-500 to-orange-600 text-white font-semibold text-lg rounded-2xl hover:shadow-[0_12px_40px_rgba(249,115,22,0.4)] transition-all duration-300"
-                    >
-                        {dict.calculator?.cta?.button || 'Essayer Scaliente Gratuitement'}
-                    </a>
-                    <p className="mt-4 text-sm text-zinc-500">{dict.common?.noCard || 'Aucune carte requise'}</p>
+            <div data-header-theme="dark" className="bg-[#09090b] px-5 py-20 text-white sm:px-8 sm:py-28">
+                <div className="mx-auto grid max-w-[1180px] gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+                    <div>
+                        <h2 className="max-w-3xl text-balance font-brand text-4xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-5xl">{dict.calculator?.cta?.title}</h2>
+                        <p className="mt-6 text-lg text-zinc-400">{dict.calculator?.cta?.subtitle}</p>
+                    </div>
+                    <div className="lg:justify-self-end">
+                        <CTAButton href="https://apps.shopify.com/scaliente" size="lg">{dict.calculator?.cta?.button}</CTAButton>
+                        <p className="mt-4 text-sm text-zinc-500">{dict.common?.noCard}</p>
+                    </div>
                 </div>
             </div>
 
